@@ -3,9 +3,6 @@ title: "Welcome"
 author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
 ---
 
-
-# Welcome 
-
 Welcome to the Complex Disordered Matter Course!
 
 This course introduces your to the theoretical, computational and experimental aspects of the physics of disordered systems.
