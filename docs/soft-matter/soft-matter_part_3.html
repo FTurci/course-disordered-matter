@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>soft-matter_part_3 – Complex Disordered Matter</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-828dd9dc578bda216345a962a047c26c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_plan.html">Soft Matter</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_part_3.html">Entropy matters</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Complex Disordered Matter</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Intro to Disordered Matter</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Soft Matter</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_plan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entropy matters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_part_3.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Entropy matters</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_part_4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Entropy matters</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#colloids" id="toc-colloids" class="nav-link active" data-scroll-target="#colloids">COLLOIDS</a>
+  <ul class="collapse">
+  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion">Brownian Motion</a></li>
+  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history">Brief history:</a></li>
+  <li><a href="#diffusion" id="toc-diffusion" class="nav-link" data-scroll-target="#diffusion">Diffusion</a></li>
+  <li><a href="#stokes-einstein-relation" id="toc-stokes-einstein-relation" class="nav-link" data-scroll-target="#stokes-einstein-relation">Stokes-Einstein relation</a></li>
+  <li><a href="#interacting-colloidal-particles" id="toc-interacting-colloidal-particles" class="nav-link" data-scroll-target="#interacting-colloidal-particles">Interacting colloidal particles</a></li>
+  <li><a href="#particle-dynamics" id="toc-particle-dynamics" class="nav-link" data-scroll-target="#particle-dynamics">Particle dynamics</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_plan.html">Soft Matter</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_part_3.html">Entropy matters</a></li></ol></nav></header>
+
+
+
+
+<section id="colloids" class="level2">
+<h2 class="anchored" data-anchor-id="colloids">COLLOIDS</h2>
+<section id="brownian-motion" class="level3">
+<h3 class="anchored" data-anchor-id="brownian-motion">Brownian Motion</h3>
+</section>
+<section id="brief-history" class="level3">
+<h3 class="anchored" data-anchor-id="brief-history">Brief history:</h3>
+<p>1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water. ~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory 1905 Brownian motion explained by Albert Einstein 1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro’s number which led to the acceptance of the ‘molecular hypothesis’.</p>
+</section>
+<section id="diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="diffusion">Diffusion</h3>
+<p>Idea: So far we considered a single particle and calculated the probability for finding it after N steps in the volume element <span class="math inline">\(d \underline{r}\)</span> centred at <span class="math inline">\(\underline{r}\)</span>. We found that <span class="math inline">\(\left\langle r^{2}\right\rangle=N b^{2}\)</span>, which suggests <span class="math inline">\(\left\langle\underline{r}^{2}\right\rangle \propto t\)</span>.</p>
+<p>Now we are interested in many particles, where each undergoes a random walk and is not influenced by the others. We then ask: What fraction will be in a certain volume element after time <span class="math inline">\(t\)</span> ? This is the process of diffusion, e.g.&nbsp;spread of a drop of colour ink in water.</p>
+<p>Mathematics: Suppose that the distribution of particles <span class="math inline">\(n(x, t)\)</span> is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration. We are interested in the time-dependent concentration (number per unit volume) profile of particles <span class="math inline">\(n(x, t)\)</span>. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to <span class="math inline">\(x\)</span>. The mean number of particles crossing unit area of a plane (perpendicular to the <span class="math inline">\(x\)</span>-axis) per unit time (i.e.&nbsp;the ‘flux’), is denoted by <span class="math inline">\(J_{x}\)</span>. This flux is expected to be (to a good approximation) proportional to the concentration gradient:</p>
+<p><span class="math display">\[
+J(x, t)=-D \frac{\partial n(x, t)}{\partial x} \quad \text { Fick's law }
+\]</span></p>
+<p>where the diffusion constant (or coefficient) <span class="math inline">\(D\)</span> has been defined as the constant of proportionality</p>
+<p>Now, conservation of particle number demands</p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp; \frac{\partial}{\partial t}(n(x, t) A d x)=A J_{x}(x, t)-A J_{x}(x+d x, t) \\
+&amp; \text { Flux in ................. Flux out } \\
+&amp; =A\left(J_{x}(x, t)-\left(J_{x}(x, t)+\frac{\partial J_{x}(x, t)}{\partial x} d x\right)\right)
+\end{aligned}
+\]</span></p>
+<p>and thus</p>
+<p><span class="math display">\[
+\frac{\partial n(x, t)}{\partial t}=-\frac{\partial J_{x}(x, t)}{\partial x} \quad \text { Particle conservation }
+\]</span></p>
+<p>Fick’s law and particle conservation together give (assuming <span class="math inline">\(D \neq D(x)\)</span> ):</p>
+<p><span class="math display">\[
+\frac{\partial n(x, t)}{\partial t}=D \frac{\partial^{2} n(x, t)}{\partial x^{2}} \quad \text { Diffusion equation }
+\]</span></p>
+<p>The solution, up to a constant <span class="math inline">\(C\)</span>, which satisfies the initial condition <span class="math inline">\((\mathrm{t}=0)\)</span> of having all the particles close together at <span class="math inline">\(x=0\)</span> is</p>
+<p><span class="math display">\[
+n(x, t)=C \frac{1}{\sqrt{4 \pi D t}} \exp \left(-x^{2} / 4 D t\right) \quad \text { Gaussian Distribution }
+\]</span></p>
+<p>The constant <span class="math inline">\(C\)</span> can be determined by <span class="math inline">\(N_{\text {total }}=\int n d V=A \int n d x=A C\)</span>. Hence</p>
+<p><span class="math display">\[
+p(x, t) d x=\frac{A d x n(x, t)}{N_{\text {tot }}}=\frac{1}{\sqrt{4 \pi D t}} \exp \left(-x^{2} / 4 D t\right) d x
+\]</span></p>
+<p><img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=972&amp;width=722&amp;top_left_y=327&amp;top_left_x=271" class="img-fluid"> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=1004&amp;width=762&amp;top_left_y=338&amp;top_left_x=1034" class="img-fluid"></p>
+<p>But the spreading of the particle distribution with time is due to the random walk of individual particles, for which we already have an equation (1-D):</p>
+<p><span class="math display">\[
+p_{N}(x)=\frac{1}{\sqrt{2 \pi&lt;(\Delta x)^{2}&gt;}} \exp \left(-\frac{(x-&lt;x&gt;)^{2}}{2&lt;(\Delta x)^{2}&gt;}\right)
+\]</span></p>
+<p>Comparing the result from the two points of view and setting <span class="math inline">\(\langle x\rangle=0\)</span>, we get <span class="math inline">\(&lt;\Delta x^{2}&gt;=2 D t\)</span> As expected the mean square displacement increases linearly with time, but we have now found the constant of proportionality: <span class="math inline">\(2 D\)</span>. Generalisation to three dimensions yields:</p>
+<p><span class="math display">\[
+\begin{array}{ll}
+J=-D \nabla n(\underline{r}, t) &amp; \text { Fick's law } \\
+\frac{\partial n}{\partial t}=-\nabla \cdot \underline{J} &amp; \text { Particle conservation } \\
+\frac{\partial n}{\partial t}=D \nabla^{2} n &amp; \text { Diffusion equation } \\
+\left\langle\underline{r}^{2}\right\rangle=6 D t &amp; \text { Mean square displacement }
+\end{array}
+\]</span></p>
+<p>This last relation could constitute an alternative definition of the diffusion coefficient, instead of Fick’s law.</p>
+</section>
+<section id="stokes-einstein-relation" class="level3">
+<h3 class="anchored" data-anchor-id="stokes-einstein-relation">Stokes-Einstein relation</h3>
+<p>Suppose that the particles are subjected to an external force F in the x direction, e.g.&nbsp;gravity. In thermal equilibrium the Maxwell-Boltzmann distribution is valid, i.e.&nbsp;the particle density <span class="math inline">\(n(x)\)</span> is given by</p>
+<p><span class="math display">\[
+n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\right)
+\]</span></p>
+<p>where we assumed a constant force <span class="math inline">\(F\)</span> in the last equation. In the case of gravity <span class="math inline">\(F=m_{B} g\)</span> with <span class="math inline">\(m_{B}\)</span> the buoyant mass. <span class="math inline">\(n(x)\)</span> results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick’s law. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&amp;width=619&amp;top_left_y=1597&amp;top_left_x=466" class="img-fluid"></p>
+<p>In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, <span class="math inline">\(J_{F}\)</span></p>
+<p>The velocity of a particle under an applied force <span class="math inline">\(F\)</span> in a viscous fluid can be written as <span class="math inline">\(v=\)</span> <span class="math inline">\(F / \xi\)</span> which defines the friction coefficient <span class="math inline">\(\xi\)</span>. Hence</p>
+<p><span class="math display">\[
+J_{F}=n(x) v=\frac{n(x) F}{\xi}
+\]</span></p>
+<ol start="2" type="a">
+<li>Diffusive flux, <span class="math inline">\(J_{D}\)</span> <span class="math inline">\(J_{D}\)</span> is given by Fick’s Law (see above):</li>
+</ol>
+<p><span class="math display">\[
+J_{D}(x)=-D \frac{\partial n(x)}{\partial x}
+\]</span></p>
+<p>Equating the two fluxes <span class="math inline">\(J_{F}=J_{D}\)</span> we get</p>
+<p><span class="math display">\[
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=+D \frac{F}{k_{B} T} n(x)
+\]</span></p>
+<p>The second equation is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:</p>
+<p><span class="math display">\[
+D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
+\]</span></p>
+<p>The last equation applies to a spherical particle of radius <span class="math inline">\(R\)</span> in a fluid of viscosity <span class="math inline">\(\eta\)</span>, for which Stokes’s Law gives <span class="math inline">\(\xi=6 \pi \eta R\)</span> (which applies only at low Reynold’s number, <span class="math inline">\(\rho R v / \eta\)</span> <span class="math inline">\(\ll 1\)</span> ) resulting in the Stokes-Einstein relation.</p>
+<ul>
+<li>The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and <span class="math inline">\(D\)</span> is therefore the ‘fluctuation’ part. A sheared fluid will dissipate energy because of its finite viscosity and thus <span class="math inline">\(\eta\)</span> represents the dissipative part.</li>
+<li>More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. ‘This depends upon where [the mirror] is getting its ’kicks’ from. If it is through the fibre, we cool it … if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.’ (Feynman, Chapter 41)</li>
+</ul>
+</section>
+<section id="interacting-colloidal-particles" class="level3">
+<h3 class="anchored" data-anchor-id="interacting-colloidal-particles">Interacting colloidal particles</h3>
+<p>So far we have dealt with colloidal particles as independent spheres suspended in a medium. Now we will study concentrated suspensions in which interparticle interactions cannot be ignored.</p>
+<section id="samples-model-hard-sphere-colloids" class="level4">
+<h4 class="anchored" data-anchor-id="samples-model-hard-sphere-colloids">Samples: model hard-sphere colloids</h4>
+<p>To be specific let us discuss a monodisperse colloid made up of polymethyl- methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&amp;width=684&amp;top_left_y=718&amp;top_left_x=1138" class="img-fluid"></p>
+<p>The radius of the colloid is typically <span class="math inline">\(R \leq 0.5 \mu m\)</span> with a very small polydispersity (size variation) of <span class="math inline">\(\Delta R / R&lt;0.05\)</span>. The usual way of referring to particle densities is the ‘volume fraction’ <span class="math inline">\(\phi\)</span>, defined to be the fraction of the suspension occupied by particles. If we have <span class="math inline">\(N\)</span> monodisperse spheres with radius <span class="math inline">\(R\)</span> in the total volume <span class="math inline">\(V\)</span>, then</p>
+<p><span class="math display">\[
+\phi=\frac{V_{\mathrm{part}}}{V}=\frac{N}{V} \frac{4}{3} \pi R^{3}
+\]</span></p>
+</section>
+<section id="phase-behaviour" class="level4">
+<h4 class="anchored" data-anchor-id="phase-behaviour">Phase Behaviour</h4>
+<p>As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential <span class="math inline">\(U(r)\)</span> exhibits the infinite hard sphere repulsion as well as an attractive part of depth <span class="math inline">\(\varepsilon\)</span>. The <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&amp;width=893&amp;top_left_y=1971&amp;top_left_x=277" class="img-fluid"> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&amp;width=581&amp;top_left_y=1973&amp;top_left_x=1225" class="img-fluid"> corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature <span class="math inline">\(T_{C}\)</span> is given by <span class="math inline">\(k_{B} T_{C} \sim \varepsilon\)</span>. If <span class="math inline">\(\varepsilon \rightarrow 0\)</span>, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.</p>
+</section>
+<section id="phase-behaviour-of-hard-sphere-colloids" class="level4">
+<h4 class="anchored" data-anchor-id="phase-behaviour-of-hard-sphere-colloids">Phase behaviour of hard-sphere colloids:</h4>
+<p>At very low densities, the structure of a hard-sphere suspension is like that of a perfect gas; the positions of the colloidal particles are practically uncorrelated and the chance of finding a particle in any particular vicinity is almost independent of the presence of all the other particles.</p>
+<p>Upon an increase in particle density, their positions begin to become correlated as the particles are mutually excluding. If we look inside a suspension of volume fraction <span class="math inline">\(\phi \geq 0.3\)</span>, then we will find that, at any one instant, each particle is surrounded by a `cage’ of neighbours (short-ranged order). The cage tightens as <span class="math inline">\(\phi\)</span> increases. The cage size <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&amp;width=354&amp;top_left_y=1082&amp;top_left_x=1273" class="img-fluid"> represents a dominant length scale in the system. Despite the appearance of correlations between particle positions, a hard-sphere suspension below <span class="math inline">\(\phi \lesssim 0.5\)</span> is still in what one might call a ‘colloid fluid’ phase, i.e.&nbsp;the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g.&nbsp;fluid argon) - on average the particle centres are more or <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&amp;width=825&amp;top_left_y=1966&amp;top_left_x=257" class="img-fluid"> less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function <span class="math inline">\(g(r)\)</span>. Given a particle centred at <span class="math inline">\(\underline{r}=0\)</span>, <span class="math inline">\((N / V) g(\underline{r}) d \underline{r}\)</span> is the number of particles in <span class="math inline">\(d \underline{r}\)</span> at a distance <span class="math inline">\(\underline{r}\)</span>.</p>
+<p>If we increase the volume fraction above <span class="math inline">\(\phi \approx 0.55\)</span>, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a ‘colloidal crystal’. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between <span class="math inline">\(\phi=0.5\)</span> and <span class="math inline">\(\phi=0.55\)</span>, we find coexistence between colloidal fluid and crystal. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&amp;width=1364&amp;top_left_y=680&amp;top_left_x=359" class="img-fluid"></p>
+<p>Note that no colloidal liquid is formed ( <span class="math inline">\(T_{\mathcal{C}}=0\)</span> ), as expected for an interaction potential without attraction. At the highest particle concentrations (above <span class="math inline">\(\phi \approx 0.58\)</span> ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.</p>
+</section>
+</section>
+<section id="particle-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="particle-dynamics">Particle dynamics</h3>
+<section id="hard-spheres" class="level4">
+<h4 class="anchored" data-anchor-id="hard-spheres">Hard-spheres</h4>
+<p>We are interested in the mean-square displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle\)</span> as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t\)</span> as already seen earlier. Above <span class="math inline">\(\phi \sim 0.3\)</span>, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&amp;width=432&amp;top_left_y=368&amp;top_left_x=1351" class="img-fluid"> with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math inline">\(\left\langle\underline{r}^{2}(t)&gt;\propto t\right.\)</span>, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&amp;width=1086&amp;top_left_y=868&amp;top_left_x=539" class="img-fluid"> short time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{S} t\)</span> short-time self diff. coeff. <span class="math inline">\(D_{S}&lt;D_{0}\)</span> purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{L} t\)</span> long-time self diff. coeff. <span class="math inline">\(D_{L}&lt;D_{S}\left(&lt;D_{0}\right)\)</span> because of hydrodyn. and direct interactions theory very complicated, but some predictions exist</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: ../docs  # Uncomment if you want to specify output directory
+  # render:
+    # - "Week*/*"
+
+website:
+  title: "Complex Disordered Matter"
+  sidebar:
+    smooth-scroll: true
+    # logo: img/logo.png
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Theory of disordered matter"
+        # contents:
+        #   - href: Week01/Week1_slides.ipynb
+        #     text: "First steps in Python"
+          
+      - section: "Soft Matter"
+        contents:
+          - href: soft-matter/soft-matter_plan.qmd
+            text: "Plan"
+          - href: soft-matter/soft-matter_intro.qmd
+            text: "Entropy matters"
+          - href: soft-matter/soft-matter_colloids.qmd
+            text: "Colloids"
+          - href: soft-matter/soft-matter_polymers.qmd
+            text: "Polymers"
+          - href: soft-matter/soft-matter_surfactants.qmd
+            text: "Surfactants"
+          - href: soft-matter/soft-matter_glasses.qmd
+            text: "Glasses"
+          - href: soft-matter/soft-matter_readings.qmd
+            text: "Readings"
+          - href: soft-matter/soft-matter_problems.qmd
+            text: "Problems"
+
+
+format:
+  html:
+    theme: journal
+    grid:
+      sidebar-width: 305px
+    toc: true
+    number-sections: false  # Removed number-chapters

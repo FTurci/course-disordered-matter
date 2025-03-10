@@ -1,0 +1,29 @@
+---
+title: "Welcome"
+author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
+---
+
+
+# Welcome 
+
+Welcome to the Complex Disordered Matter Course!
+
+This course introduces your to the theoretical, computational and experimental aspects of the physics of disordered systems.
+
+## Intended learning outcomes
+
+The course will 
+
+- Introduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.
+- Provide you with elementary computational tools to model complex disordered systems and predict their properties
+- Allow you to apply your physics background to understand a variety of **inter-disciplinary** subjects
+- Connect with the most recent advances in the research on complex disordered matter.
+
+
+## Contacts
+
+The course will be taught by
+
+- Prof Nigel B. Wilding (Unit director)
+- Dr Francesco Turci
+- Dr Adrian Barnes

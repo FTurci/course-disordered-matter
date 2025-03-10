@@ -1,0 +1,87 @@
+{
+  "welcome.qmd": {
+    "welcome.html": "78589c1a"
+  },
+  "soft-matter/soft-matter.qmd": {
+    "soft-matter.tex": "05c41547",
+    "sm.html": "409b59bf",
+    "sm-slide.html": "52709bab",
+    "soft-matter.html": "ef4c4118"
+  },
+  "soft-matter/soft-matter_part_4.md": {
+    "soft-matter_part_4.html": "7539ae8e"
+  },
+  "soft-matter/soft-matter_part_5.md": {
+    "soft-matter_part_5.html": "8b38d21a"
+  },
+  "soft-matter/soft-matter_part_1.md": {
+    "sm.html": "69f8a01f",
+    "sm-slide.html": "ed80976a"
+  },
+  "soft-matter/soft-matter_part_8.md": {
+    "soft-matter_part_8.html": "94021a83"
+  },
+  "soft-matter/soft-matter_part_6.md": {
+    "soft-matter_part_6.html": "a732c5bc"
+  },
+  "soft-matter/soft-matter_part_2.md": {
+    "soft-matter_part_2.html": "8bdb3200"
+  },
+  "soft-matter/soft-matter_part_3.md": {
+    "soft-matter_part_3.html": "d4f41586"
+  },
+  "soft-matter/soft-matter_part_7.md": {
+    "soft-matter_part_7.html": "204eb1ae"
+  },
+  "soft-matter/soft-matter_part_8.qmd": {
+    "soft-matter_part_8.html": "511c9c87"
+  },
+  "soft-matter/soft-matter_part_1.qmd": {
+    "soft-matter_part_1.html": "b949312e"
+  },
+  "soft-matter/soft-matter_part_3.qmd": {
+    "soft-matter_part_3.html": "fff2ec99"
+  },
+  "soft-matter/soft-matter_part_2.qmd": {
+    "soft-matter_part_2.html": "da3e7402"
+  },
+  "soft-matter/soft-matter_part_6.qmd": {
+    "soft-matter_part_6.html": "54a3878e"
+  },
+  "soft-matter/soft-matter_part_7.qmd": {
+    "soft-matter_part_7.html": "e7fd479b"
+  },
+  "soft-matter/soft-matter_part_5.qmd": {
+    "soft-matter_part_5.html": "d215a7ed"
+  },
+  "soft-matter/soft-matter_part_4.qmd": {
+    "soft-matter_part_4.html": "27e6e13c"
+  },
+  "soft-matter/soft-matter_plan.qmd": {
+    "soft-matter_plan.html": "0d7d9407"
+  },
+  "soft-matter/soft-matter_intro.qmd": {
+    "soft-matter_intro.html": "a24d046d"
+  },
+  "soft-matter/soft-matter_glasses.qmd": {
+    "soft-matter_glasses.html": "4b6bf2fa"
+  },
+  "soft-matter/soft-matter_problems.qmd": {
+    "soft-matter_problems.html": "5a191189"
+  },
+  "soft-matter/soft-matter_polymers.qmd": {
+    "soft-matter_polymers.html": "d7418512"
+  },
+  "soft-matter/soft-matter_colloids.qmd": {
+    "soft-matter_colloids.html": "d7dd1b9c"
+  },
+  "soft-matter/soft-matter_readings.qmd": {
+    "soft-matter_readings.html": "775d1405"
+  },
+  "soft-matter/soft-matter_surfactants.qmd": {
+    "soft-matter_surfactants.html": "cf5c39e1"
+  },
+  "index.qmd": {
+    "index.html": "fa71c37c"
+  }
+}
