@@ -1,6 +1,6 @@
 ---
 title: "Welcome"
-author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
+# author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
 ---
 
 Welcome to the Complex Disordered Matter Course!

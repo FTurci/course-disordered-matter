@@ -59,7 +59,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to the Complex Disordered Matter Course!\nThis course introduces your to the theoretical, computational and experimental aspects of the physics of disordered systems.\n\n\nThe course will\n\nIntroduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.\nProvide you with elementary computational tools to model complex disordered systems and predict their properties\nAllow you to apply your physics background to understand a variety of inter-disciplinary subjects\nConnect with the most recent advances in the research on complex disordered matter.\n\n\n\n\nThe course will be taught by\n\nProf Nigel B. Wilding (Unit director)\nDr Francesco Turci\nDr Adrian Barnes",
+    "text": "Welcome to the Complex Disordered Matter Course!\nThis course introduces your to the theoretical, computational and experimental aspects of the physics of disordered systems.",
     "crumbs": [
       "Welcome"
     ]
@@ -68,8 +68,8 @@
     "objectID": "index.html#intended-learning-outcomes",
     "href": "index.html#intended-learning-outcomes",
     "title": "Welcome",
-    "section": "",
-    "text": "The course will\n\nIntroduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.\nProvide you with elementary computational tools to model complex disordered systems and predict their properties\nAllow you to apply your physics background to understand a variety of inter-disciplinary subjects\nConnect with the most recent advances in the research on complex disordered matter.",
+    "section": "Intended learning outcomes",
+    "text": "Intended learning outcomes\nThe course will\n\nIntroduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.\nProvide you with elementary computational tools to model complex disordered systems and predict their properties\nAllow you to apply your physics background to understand a variety of inter-disciplinary subjects\nConnect with the most recent advances in the research on complex disordered matter.",
     "crumbs": [
       "Welcome"
     ]
@@ -78,8 +78,8 @@
     "objectID": "index.html#contacts",
     "href": "index.html#contacts",
     "title": "Welcome",
-    "section": "",
-    "text": "The course will be taught by\n\nProf Nigel B. Wilding (Unit director)\nDr Francesco Turci\nDr Adrian Barnes",
+    "section": "Contacts",
+    "text": "Contacts\nThe course will be taught by\n\nProf Nigel B. Wilding (Unit director)\nDr Francesco Turci\nDr Adrian Barnes",
     "crumbs": [
       "Welcome"
     ]
