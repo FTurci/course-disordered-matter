@@ -19,7 +19,11 @@ website:
         # contents:
         #   - href: Week01/Week1_slides.ipynb
         #     text: "First steps in Python"
-          
+
+      - section: "Phase transitions and critical phenomena"
+        contents:
+          - href: phase-transitions/index.qmd
+            text: "Overview"
       - section: "Soft Matter"
         contents:
           - href: soft-matter/soft-matter_plan.qmd
