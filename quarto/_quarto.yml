@@ -16,9 +16,9 @@ website:
       - href: index.qmd
         text: "Welcome"
       - section: "Theory of disordered matter"
-        # contents:
-        #   - href: Week01/Week1_slides.ipynb
-        #     text: "First steps in Python"
+        contents: 
+      - href: phase-transitions/index.qmd
+        text: "Introduction"
 
       - section: "Phase transitions and critical phenomena"
         contents:
