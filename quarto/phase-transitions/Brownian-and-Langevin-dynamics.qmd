@@ -7,6 +7,7 @@ The concept of a random walk and its continuum limit — diffusion — introduce
 $$
 \frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2},
 $$
+
 which is a standard example of a so called *Fokker-Planck* equation, which is second-order in space and first-order in time.
 
 In contrast, the *Langevin equation* provides a stochastic differential equation for the particle’s trajectory $x(t)$. 
