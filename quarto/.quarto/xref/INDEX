@@ -119,5 +119,14 @@
   },
   "phase-transitions/scaling.qmd": {
     "scaling.html": "4a3de53c"
+  },
+  "phase-transitions/rg-effective-coupling.qmd": {
+    "rg-effective-coupling.html": "90275a34"
+  },
+  "phase-transitions/lattice-gas.qmd": {
+    "lattice-gas.html": "afd873f4"
+  },
+  "phase-transitions/literature.qmd": {
+    "literature.html": "c5659552"
   }
 }

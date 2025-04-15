@@ -17,13 +17,40 @@ website:
         text: "Welcome"
       - section: "Theory of disordered matter"
         contents: 
-      - href: phase-transitions/index.qmd
-        text: "Introduction"
+        - href: phase-transitions/index.qmd
+          text: "Introduction"
+        - href: phase-transitions/background.qmd
+          text: "Background"
+        - href: phase-transitions/Ising-model.qmd
+          text: "Ising Model"
+        - href: phase-transitions/mean-field-theory.qmd
+          text: "Mean Field Theory"
+        - href: phase-transitions/lattice-gas.qmd
+          text: "Lattice Gas"
+        - href: phase-transitions/rg.qmd
+          text: "Renormalization Group (RG)"
+        - href: phase-transitions/rg-effective-coupling.qmd
+          text: "RG Effective Coupling"
+        - href: phase-transitions/scaling.qmd
+          text: "Scaling"
+        - href: phase-transitions/approach-to-criticality.qmd
+          text: "Approach to Criticality"
+        - href: phase-transitions/dynamics-of-fluctuations.qmd
+          text: "Dynamics of Fluctuations"
+        - href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
+          text: "Brownian and Langevin Dynamics"
 
-      - section: "Phase transitions and critical phenomena"
-        contents:
-          - href: phase-transitions/index.qmd
-            text: "Overview"
+
+        - href: phase-transitions/master-equation-and-diffusion.qmd
+          text: "Master Equation and Diffusion"
+
+        - href: phase-transitions/problems.qmd
+          text: "Problems"
+        
+        - href: phase-transitions/literature.qmd
+          text: "Literature"
+   
+ 
       - section: "Soft Matter"
         contents:
           - href: soft-matter/soft-matter_plan.qmd
