@@ -5,6 +5,7 @@ project:
     # - "Week*/*"
 
 website:
+  page-navigation: true
   title: "Complex Disordered Matter"
   sidebar:
     smooth-scroll: true
@@ -39,8 +40,6 @@ website:
           text: "Dynamics of Fluctuations"
         - href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
           text: "Brownian and Langevin Dynamics"
-
-
         - href: phase-transitions/master-equation-and-diffusion.qmd
           text: "Master Equation and Diffusion"
 
