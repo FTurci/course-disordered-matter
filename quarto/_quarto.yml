@@ -1,10 +1,10 @@
 project:
-  type: website
+  type: book
   output-dir: ../docs  # Uncomment if you want to specify output directory
   # render:
     # - "Week*/*"
 
-website:
+book:
   page-navigation: true
   back-to-top-navigation: true
   title: "Complex Disordered Matter"
@@ -14,62 +14,61 @@ website:
     style: "docked"
     search: true
     collapse-level: 1
-    contents:
-      - href: index.qmd
-        text: "Welcome"
-      - section: "Theory of disordered matter"
-        contents: 
-        - href: phase-transitions/index.qmd
-          text: "Introduction"
-        - href: phase-transitions/background.qmd
-          text: "Background"
-        - href: phase-transitions/Ising-model.qmd
-          text: "Ising Model"
-        - href: phase-transitions/mean-field-theory.qmd
-          text: "Mean Field Theory"
-        - href: phase-transitions/lattice-gas.qmd
-          text: "Lattice Gas"
-        - href: phase-transitions/rg.qmd
-          text: "Renormalization Group (RG)"
-        - href: phase-transitions/rg-effective-coupling.qmd
-          text: "RG Effective Coupling"
-        - href: phase-transitions/scaling.qmd
-          text: "Scaling"
-        - href: phase-transitions/approach-to-criticality.qmd
-          text: "Approach to Criticality"
-        - href: phase-transitions/dynamics-of-fluctuations.qmd
-          text: "Dynamics of Fluctuations"
-        - href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
-          text: "Brownian and Langevin Dynamics"
-        - href: phase-transitions/master-equation-and-diffusion.qmd
-          text: "Master Equation and Diffusion"
-        - href: phase-transitions/nucleation-and-growth.qmd
-          text: "Nucleation and growth"
-        - href: phase-transitions/problems.qmd
+  chapters:
+    - href: index.qmd
+      text: "Welcome"
+    - part: "Theory of disordered matter"
+      chapters:
+      - href: phase-transitions/index.qmd
+        text: "Introduction"
+      - href: phase-transitions/background.qmd
+        text: "Background"
+      - href: phase-transitions/Ising-model.qmd
+        text: "Ising Model"
+      - href: phase-transitions/mean-field-theory.qmd
+        text: "Mean Field Theory"
+      - href: phase-transitions/lattice-gas.qmd
+        text: "Lattice Gas"
+      - href: phase-transitions/rg.qmd
+        text: "Renormalization Group (RG)"
+      - href: phase-transitions/rg-effective-coupling.qmd
+        text: "RG Effective Coupling"
+      - href: phase-transitions/scaling.qmd
+        text: "Scaling"
+      - href: phase-transitions/approach-to-criticality.qmd
+        text: "Approach to Criticality"
+      - href: phase-transitions/dynamics-of-fluctuations.qmd
+        text: "Dynamics of Fluctuations"
+      - href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
+        text: "Brownian and Langevin Dynamics"
+      - href: phase-transitions/master-equation-and-diffusion.qmd
+        text: "Master Equation and Diffusion"
+      - href: phase-transitions/nucleation-and-growth.qmd
+        text: "Nucleation and growth"
+      - href: phase-transitions/problems.qmd
+        text: "Problems"
+      - href: phase-transitions/literature.qmd
+        text: "Literature"
+  
+
+    - part: "Soft Matter"
+      chapters:
+        - href: soft-matter/soft-matter_plan.qmd
+          text: "Plan"
+        - href: soft-matter/soft-matter_intro.qmd
+          text: "Entropy matters"
+        - href: soft-matter/soft-matter_colloids.qmd
+          text: "Colloids"
+        - href: soft-matter/soft-matter_polymers.qmd
+          text: "Polymers"
+        - href: soft-matter/soft-matter_surfactants.qmd
+          text: "Surfactants"
+        - href: soft-matter/soft-matter_glasses.qmd
+          text: "Glasses"
+        - href: soft-matter/soft-matter_readings.qmd
+          text: "Readings"
+        - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
-        
-        - href: phase-transitions/literature.qmd
-          text: "Literature"
-   
- 
-      - section: "Soft Matter"
-        contents:
-          - href: soft-matter/soft-matter_plan.qmd
-            text: "Plan"
-          - href: soft-matter/soft-matter_intro.qmd
-            text: "Entropy matters"
-          - href: soft-matter/soft-matter_colloids.qmd
-            text: "Colloids"
-          - href: soft-matter/soft-matter_polymers.qmd
-            text: "Polymers"
-          - href: soft-matter/soft-matter_surfactants.qmd
-            text: "Surfactants"
-          - href: soft-matter/soft-matter_glasses.qmd
-            text: "Glasses"
-          - href: soft-matter/soft-matter_readings.qmd
-            text: "Readings"
-          - href: soft-matter/soft-matter_problems.qmd
-            text: "Problems"
 
 
 format:
@@ -79,4 +78,7 @@ format:
     grid:
       sidebar-width: 305px
     toc: true
-    number-sections: false  # Removed number-chapters
+    number-sections: true  # Removed number-chapters
+    number-depth: 3
+    filters:
+      - auto-eq

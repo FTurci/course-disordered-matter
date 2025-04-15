@@ -1,5 +1,8 @@
+---
+title: "The Lattice Gas model"
 
-# The Lattice Gas model
+---
+
 
 A crude representation of a fluid is the lattice gas model. Here
 particles can occupy the sites of a hypercubic lattice. The occupancy of
@@ -8,8 +11,9 @@ vacant. The complete list of these occupancies $\{c\}$ specifies a
 microstate. The average particle number density (fraction of occupied
 sites) is given by
 
-$$c=L^{-d}\sum_ic_i$$ where $L$ is the linear extent of the lattice and
-$d$ its dimensionality.
+$$c=L^{-d}\sum_i c_i $$ 
+
+where $L$ is the linear extent of the lattice and $d$ its dimensionality.
 
 The Hamiltonian of the lattice gas model is
 
@@ -29,7 +33,7 @@ model for a fluid, it maps onto the Ising model. This extends the
 applicability of the Ising model. To expose the mapping we write the
 grand partition function of the lattice gas:
 
-$$\Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{<i,j>}c_ic_j +\beta\mu\sum_ic_i\right]$$
+$$ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{<i,j>}c_ic_j +\beta\mu\sum_ic_i\right] $$
 where the sum is an unrestricted sum over the occupancies of the lattice
 sites. We now change variables to
 

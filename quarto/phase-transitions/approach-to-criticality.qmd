@@ -1,4 +1,7 @@
-# The Approach to Criticality
+---
+title: "The Approach to Criticality"
+
+---
 
 It is a matter of experimental fact that the approach to criticality in
 a given system is characterized by the divergence of various
@@ -11,8 +14,9 @@ found to be singular functions, diverging as a *power* of the reduced
 (T-T_c)/T_c$:-
 
 $$\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0) 
-\label{eq:chipow}
-$$ (where $M=mN$),
+\label{eq:chipow}$$
+
+(where $M=mN$),
 $$C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant}) 
 \label{eq:Cv}$$
 

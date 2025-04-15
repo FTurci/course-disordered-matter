@@ -16,53 +16,48 @@ temperature $T$ will have a particular microscopic arrangement
 (configuration), labelled $a$, of energy $E_a$ is
 
 $$p_a=\frac{1}{Z}e^{-E_a/k_BT}
-\label{eq:probs}$$
+$${#eq-probs}
 
 The prefactor $Z^{-1}$ is the *partition function*: since the system
 must always have *some* specific arrangement, the sum of the
 probabilities $p_a$ must be unity, implying that
 
 $$Z=\sum_ae^{-E_a/k_BT}
-\label{eq:partition}$$ where the sum extends over all possible
+$${#eq-partition} where the sum extends over all possible
 microscopic arrangements.
 
 These equations assume that physical system evolves rapidly (on the
 timescale of typical observations) amongst all its allowed arrangements,
-sampling them with the probabilities
-eq. [\[eq:probs\]](#eq:probs){reference-type="ref"
-reference="eq:probs"}; the expectation value of any physical observable
+sampling them with the probabilities @eq-probs the expectation value of any physical observable
 $O$ will thus be given by averaging $O$ over all the arrangements $a$,
 weighting each contribution by the appropriate probability:
 
 $$\bar {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
-\label{eq:observable}$$
+$${#eq-observable}
 
-Sums like eq. [\[eq:observable\]](#eq:observable){reference-type="ref"
-reference="eq:observable"} are not easily evaluated. Nevertheless, some
+Sums like @eq-observable are not easily evaluated. Nevertheless, some
 important insights follow painlessly. Consider the case where the
 observable of interest is the order parameter, or more specifically the
 magnetisation of a ferromagnet.
 
 $$Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
-\label{eq:op}$$
+$${#eq-op}
 
-It is clear from eq. [\[eq:probs\]](#eq:probs){reference-type="ref"
-reference="eq:probs"} that at very low temperature the system will be
+It is clear from @eq-probs that at very low temperature the system will be
 overwhelmingly likely to be found in its minimum energy arrangements
 (ground states). For the ferromagnet, these are the fully ordered spin
 arrangements having magnetisation $+1$, or $-1$.
 
 Now consider the high temperature limit. The enhanced weight that the
 fully ordered arrangement carries in the sum of
-eq. [\[eq:op\]](#eq:op){reference-type="ref" reference="eq:op"} by
+@eq-op by
 virtue of its low energy, is now no longer sufficient to offset the fact
 that arrangements in which $Q_a$ has some intermediate value, though
 each carry a smaller weight, are vastly greater in number. A little
 thought shows that the arrangements which have essentially zero
 magnetisation (equal populations of up and down spins) are by far the
 most numerous. At high temperature, these disordered arrangements
-dominate the sum in eq. [\[eq:op\]](#eq:op){reference-type="ref"
-reference="eq:op"} and the order parameter is zero.
+dominate the sum in @eq-op and the order parameter is zero.
 
 The competition between energy-of-arrangements weighting (or simply
 'energy') and the 'number of arrangements' weighting (or 'entropy') is
@@ -77,17 +72,19 @@ compatible with classical thermodynamics. Specifically, the bridge
 between the two disciplines is provided by the following equation
 
 $$F=-k_BT \ln Z
-\label{eq:free}$$ where $F$ is the "Helmholtz free energy". All
+$$ {#eq-free}
+
+where $F$ is the "Helmholtz free energy". All
 thermodynamic observables, for example the order parameter $Q$, and
 response functions such as the specific heat or magnetic susceptibility
 are obtainable as appropriate derivatives of the free energy. For
 instance, utilizing
-eq. [\[eq:partition\]](#eq:partition){reference-type="ref"
-reference="eq:partition"}, one can readily verify (try it as an
+@eq-partition, one can readily verify (try it as an
 exercise!) that the average internal energy is given by
 
-$$\bar{E}=-\frac{\partial \ln Z}{\partial \beta},$$ where
-$\beta=(k_BT)^{-1}$.
+$$\bar{E}=-\frac{\partial \ln Z}{\partial \beta},$$ 
+
+where $\beta=(k_BT)^{-1}$.
 
 The relationship between other thermodynamic quantities and derivatives
 of the free energy are given in

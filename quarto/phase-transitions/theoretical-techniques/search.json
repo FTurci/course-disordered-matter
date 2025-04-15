@@ -52,5 +52,71 @@
       "Chapters",
       "13. Nucleation and domain growth"
     ]
+  },
+  {
+    "objectID": "lattice-gas.html",
+    "href": "lattice-gas.html",
+    "title": "The Lattice Gas model",
+    "section": "",
+    "text": "A crude representation of a fluid is the lattice gas model. Here particles can occupy the sites of a hypercubic lattice. The occupancy of a site \\(i\\) is specified by the variable \\(c_i=1\\) (occupied) or \\(c_i=0\\) vacant. The complete list of these occupancies \\(\\{c\\}\\) specifies a microstate. The average particle number density (fraction of occupied sites) is given by\n\\[c=L^{-d}\\sum_i c_i \\]\nwhere \\(L\\) is the linear extent of the lattice and \\(d\\) its dimensionality.\nThe Hamiltonian of the lattice gas model is\n\\[{\\cal H}_{LG}=-\\epsilon\\sum_{&lt;i,j&gt;}c_ic_j - \\mu\\sum_ic_i\\]\nwhere \\(\\epsilon\\) is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and \\(\\mu\\) is a field known as the chemical potential, which couples to the particle density which is assumed to fluctuate around a mean value controlled by the prescribed chemical potential. This representation of the model in which the overall density fluctuates is known as the Grand Canonical ensemble.",
+    "crumbs": [
+      "Chapters",
+      "6. Lattice gas"
+    ]
+  },
+  {
+    "objectID": "lattice-gas.html#mapping-between-ising-model-and-lattice-gas",
+    "href": "lattice-gas.html#mapping-between-ising-model-and-lattice-gas",
+    "title": "The Lattice Gas model",
+    "section": "Mapping between Ising model and lattice gas",
+    "text": "Mapping between Ising model and lattice gas\nThe lattice gas model is interesting because whilst being a plausible model for a fluid, it maps onto the Ising model. This extends the applicability of the Ising model. To expose the mapping we write the grand partition function of the lattice gas:\n\\[ \\Xi=\\sum_\\textrm{ state}\\exp-\\beta{\\cal H}_{LG}=\\sum_{\\{c\\}}\\exp\\left[\\beta \\epsilon\\sum_{&lt;i,j&gt;}c_ic_j +\\beta\\mu\\sum_ic_i\\right] \\] where the sum is an unrestricted sum over the occupancies of the lattice sites. We now change variables to\n\\[c_i=(1+s_i)/2; ~~~~ J=\\frac{\\epsilon}{4} ~~~~\nh=\\frac{\\epsilon q+2\\mu}{4}\\] Hence\n\\[{\\cal H}_{LG}={\\cal H}_\\textrm{ I} + \\textrm{ constant}\\] Since the last term does not depend on the configuration, it feeds through as an additive constant in the free energy; and since all observables feature as derivatives of the free energy, the constant has no physical implications.",
+    "crumbs": [
+      "Chapters",
+      "6. Lattice gas"
+    ]
+  },
+  {
+    "objectID": "lattice-gas.html#phase-diagram",
+    "href": "lattice-gas.html#phase-diagram",
+    "title": "The Lattice Gas model",
+    "section": "Phase diagram",
+    "text": "Phase diagram\nUsing these translation rules we can plot the phase diagram of the lattice gas in the \\(\\mu-T\\) plane.\n\n\n\n\n\n\nFigure 1: Phase diagram of the lattice gas model\n\n\n\nAgain there is a line of first order phase transitions terminating at a critical point. The first order line means that if \\(T&lt;T_c\\) we smoothly increase the chemical potential through the coexistence value of \\(\\mu\\), the density of particles on our lattice \\(c\\) jumps discontinuously from a low to a high value.\n\\[c_\\textrm{ gas}=\\frac{1-m^\\star}{2} \\to c_\\textrm{ liquid}=\\frac{1+m^\\star}{2}\\] These values merge at \\(T_c\\), the gas-liquid critical point. At higher temperatures, the distinction between the phases disappears.",
+    "crumbs": [
+      "Chapters",
+      "6. Lattice gas"
+    ]
+  },
+  {
+    "objectID": "lattice-gas.html#real-fluids",
+    "href": "lattice-gas.html#real-fluids",
+    "title": "The Lattice Gas model",
+    "section": "Real Fluids",
+    "text": "Real Fluids\nYou may wish to compare this with the results of (say) van der Waals equation (see recommended textbooks for the required phase diagram). The main difference is that the lattice gas has “Particle-hole” symmetry, \\(c\\to 1-c\\) which is not present for an ordinary fluid. Accordingly, the phase diagram in a real fluid looks like a lopsided version of the above picture.",
+    "crumbs": [
+      "Chapters",
+      "6. Lattice gas"
+    ]
+  },
+  {
+    "objectID": "approach-to-criticality.html",
+    "href": "approach-to-criticality.html",
+    "title": "The Approach to Criticality",
+    "section": "",
+    "text": "It is a matter of experimental fact that the approach to criticality in a given system is characterized by the divergence of various thermodynamic observables. Let us remain with the archetypal example of a critical system, the ferromagnet, whose critical temperature will be denoted as \\(T_c\\). For temperatures close to \\(T_c\\), the magnetic response functions (the magnetic susceptibility \\(\\chi\\) and the specific heat) are found to be singular functions, diverging as a power of the reduced (dimensionless) temperature \\(t \\equiv\n(T-T_c)/T_c\\):-\n\\[\\chi \\equiv \\frac{\\partial M}{\\partial H}\\propto t^{-\\gamma} ~~~~ (H=0)\n\\label{eq:chipow}\\]\n(where \\(M=mN\\)), \\[C_H \\equiv \\frac{\\partial E}{\\partial T}\\propto t^{-\\alpha} ~~~~ (H=\\textrm{ constant})\n\\label{eq:Cv}\\]\nAnother key quantity is the correlation length \\(\\xi\\), which measures the distance over which fluctuations of the magnetic moments are correlated. This is observed to diverge near the critical point with an exponent \\(\\nu\\).\n\\[\\xi \\propto t^{-\\nu} ~~~~ (T &gt; T_c,\\: H=0)\n\\label{eq:corr}\\]\nSimilar power law behaviour is found for the order parameter \\(Q\\) (in this case the magnetisation) which vanishes in a singular fashion (it has infinite gradient) as the critical point is is approached as a function of temperature:\n\\[m \\propto t^{\\beta} ~~~~ (T &lt; T_c,\\: H=0) \\label{eq:mag},\\] (here the symbol \\(\\beta\\), is not to be confused with \\(\\beta=1/k_BT\\)– this unfortunately is the standard notation.)\nFinally, as a function of magnetic field:\n\\[m \\propto h^{1/\\delta} ~~~~ (T = T_c,\\: H&gt;0) \\label{eq:field}.\\] with \\(h=(H-H_c)/H_c\\), the reduced magnetic field.\nAs examples, the behaviour of the magnetisation and correlation length are plotted in fig. 4 as a function of \\(t\\).\n\n\n\n\n\n\nFigure 1: Singular behaviour of the correlation length and order parameter in the vicinity of the critical point as a function of the reduced temperature \\(t\\).\n\n\n\nThe quantities \\(\\gamma, \\alpha, \\nu, \\beta\\) in the above equations are known as critical exponents. They serve to control the rate at which the various thermodynamic quantities change on the approach to criticality.\nRemarkably, the form of singular behaviour observed at criticality for the example ferromagnet also occurs in qualitatively quite different systems such as the fluid. All that is required to obtain the corresponding power law relationships for the fluid is to substitute the analogous thermodynamic quantities in to the above equations. Accordingly the magnetisation order parameter is replaced by the density difference \\(\\rho_{liq}-\\rho_{gas}\\) while the susceptibility is replaced by the isothermal compressibility and the specific heat capacity at constant field is replaced by the specific heat capacity at constant volume. The approach to criticality in a variety of qualitatively quite different systems can therefore be expressed in terms of a set of critical exponents describing the power law behaviour for that system (see the book by Yeomans for examples).\nEven more remarkable is the experimental observation that the values of the critical exponents for a whole range of fluids and magnets (and indeed many other systems with critical points) are identical. This is the phenomenon of universality. It implies a deep underlying physical similarity between ostensibly disparate critical systems. The principal aim of theories of critical point phenomena is to provide a sound theoretical basis for the existence of power law behaviour, the factors governing the observed values of critical exponents and the universality phenomenon. Ultimately this basis is provided by the Renormalisation Group (RG) theory, for which K.G. Wilson was awarded the Nobel Prize in Physics in 1982.",
+    "crumbs": [
+      "Chapters",
+      "3. The approach to criticality"
+    ]
+  },
+  {
+    "objectID": "background.html",
+    "href": "background.html",
+    "title": "Background concepts",
+    "section": "",
+    "text": "Background concepts\nIn seeking to describe near-critical phenomena, it is useful to have a quantitative measure of the difference between the phases coalescing at the critical point: this is the role of the order parameter, \\(Q\\). In the case of the fluid, the order parameter is taken as the difference between the densities of the liquid and vapour phases. In the ferromagnet it is taken as the magnetisation. As its name suggest, the order parameter serves as a measure of the kind of orderliness that sets in when the temperature is cooled below a critical temperature.\nOur first task is to give some feeling for the principles which underlie the ordering process. The probability \\(p_a\\) that a physical system at temperature \\(T\\) will have a particular microscopic arrangement (configuration), labelled \\(a\\), of energy \\(E_a\\) is\n\\[p_a=\\frac{1}{Z}e^{-E_a/k_BT}\n\\tag{1}\\]\nThe prefactor \\(Z^{-1}\\) is the partition function: since the system must always have some specific arrangement, the sum of the probabilities \\(p_a\\) must be unity, implying that\n\\[Z=\\sum_ae^{-E_a/k_BT}\n\\tag{2}\\] where the sum extends over all possible microscopic arrangements.\nThese equations assume that physical system evolves rapidly (on the timescale of typical observations) amongst all its allowed arrangements, sampling them with the probabilities Equation 1 the expectation value of any physical observable \\(O\\) will thus be given by averaging \\(O\\) over all the arrangements \\(a\\), weighting each contribution by the appropriate probability:\n\\[\\bar {O}=\\frac{1}{Z}\\sum_a O_a e^{-E_a/k_BT}\n\\tag{3}\\]\nSums like Equation 3 are not easily evaluated. Nevertheless, some important insights follow painlessly. Consider the case where the observable of interest is the order parameter, or more specifically the magnetisation of a ferromagnet.\n\\[Q=\\frac{1}{Z}\\sum_a Q_a e^{-E_a/k_BT}\n\\tag{4}\\]\nIt is clear from Equation 1 that at very low temperature the system will be overwhelmingly likely to be found in its minimum energy arrangements (ground states). For the ferromagnet, these are the fully ordered spin arrangements having magnetisation \\(+1\\), or \\(-1\\).\nNow consider the high temperature limit. The enhanced weight that the fully ordered arrangement carries in the sum of Equation 4 by virtue of its low energy, is now no longer sufficient to offset the fact that arrangements in which \\(Q_a\\) has some intermediate value, though each carry a smaller weight, are vastly greater in number. A little thought shows that the arrangements which have essentially zero magnetisation (equal populations of up and down spins) are by far the most numerous. At high temperature, these disordered arrangements dominate the sum in Equation 4 and the order parameter is zero.\nThe competition between energy-of-arrangements weighting (or simply ‘energy’) and the ‘number of arrangements’ weighting (or ‘entropy’) is then the key principle at work here. The distinctive feature of a system with a critical point is that, in the course of this competition, the system is forced to choose amongst a number of macroscopically different sets of microscopic arrangements.\nFinally in this section, we note that the probabilistic (statistical mechanics) approach to thermal systems outlined above is completely compatible with classical thermodynamics. Specifically, the bridge between the two disciplines is provided by the following equation\n\\[F=-k_BT \\ln Z\n\\tag{5}\\]\nwhere \\(F\\) is the “Helmholtz free energy”. All thermodynamic observables, for example the order parameter \\(Q\\), and response functions such as the specific heat or magnetic susceptibility are obtainable as appropriate derivatives of the free energy. For instance, utilizing Equation 2, one can readily verify (try it as an exercise!) that the average internal energy is given by\n\\[\\bar{E}=-\\frac{\\partial \\ln Z}{\\partial \\beta},\\]\nwhere \\(\\beta=(k_BT)^{-1}\\).\nThe relationship between other thermodynamic quantities and derivatives of the free energy are given in fig. 3\n\n\n\nRelationships between the partition function and thermodynamic observables",
+    "crumbs": [
+      "Chapters",
+      "2. Background concepts"
+    ]
   }
 ]
