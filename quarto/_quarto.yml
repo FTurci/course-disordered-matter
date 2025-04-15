@@ -75,6 +75,7 @@ website:
 format:
   html:
     theme: journal
+    
     grid:
       sidebar-width: 305px
     toc: true
