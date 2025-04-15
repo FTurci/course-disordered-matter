@@ -1,0 +1,57 @@
+
+project:
+  type: website
+  output-dir: theoretical-techniques
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-expand: 1
+
+website:
+  title: "Complex Disordered Matter"
+  sidebar:
+    collapse-level: 1
+    style: "docked"
+    search: true
+    logo: Figs/courselogo.png
+    contents:
+        - href: index.qmd
+          text: Home
+        - href: literature.qmd
+          text: "Course texts"
+        - section: "Chapters"
+          contents:
+           - text: "1. Introduction to phase behaviour"
+             href:  introduction.qmd
+           - text: "2. Background concepts"
+             href: background.qmd
+           - text: "3. The approach to criticality"
+             href:  approach-to-criticality.qmd
+           - text: "4. The Ising model"
+             href: Ising-model.qmd            
+           - text: "5. Mean field theory"
+             href:  mean-field-theory.qmd
+           - text: "6. Lattice gas"
+             href: lattice-gas.qmd
+           - text: "7. Scaling Hypothesis"
+             href: scaling.qmd
+           - text: "8. The Renormalization group"
+             href:  rg.qmd
+           - text: "9. RG- the effective coupling viewpoint"
+             href: rg-effective-coupling.qmd
+           - text: "10. Introduction to stochastic processes"  
+             href: master-equation-and-diffusion.qmd
+           - text: "11. Brownian and Langevin dynamics"
+             href: Brownian-and-Langevin-dynamics.qmd
+           - text: "12. Dynamics of fluctuations"
+             href: dynamics-of-fluctuations.qmd  
+           - text: "13. Nucleation and domain growth"
+             href: nucleation-and-growth.qmd  
+        - section: "Problems"
+          contents:
+            - text: "Theoretical techniques: problems"
+              href: problems.qmd                  
+ 

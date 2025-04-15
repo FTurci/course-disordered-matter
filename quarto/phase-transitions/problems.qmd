@@ -1,0 +1,284 @@
+
+
+# Phase transitions: Problems
+
+Although you should try all of these questions, some of them are
+deliberately quite challenging. If you don't get very far with some,
+don't worry. We'll be going over them in problems classes, so you can
+just regard them as worked examples.
+
+1.  **Existence of a phase transition in $d=2$.**
+
+    (Straightforward) In lectures it was argued that no long ranged
+    order occurs at finite-temperatures in a one dimensional system
+    because of the presence of domain walls. Were macroscopic domain
+    walls to exist in two dimensions at finite temperature, they would
+    similarly destroy long ranged order and prevent a phase transition.
+    By calculating the free energy of a 2D domain wall for an Ising
+    lattice, show that domain walls do not in fact exist for
+    sufficiently low $T$.
+
+    (*Hint: Model the domain wall as a non-reversing $N$-step random
+    walk on the lattice and find an expression for its energy and -from
+    the number of random walk configurations- its entropy.*)
+
+2.  **Correlation Length**
+
+    (Challenging) For a 1D Ising model, show that the correlation
+    between the spins at sites $i$ and $j$, is
+
+    $$\langle s_i s_j\rangle =\sum_m p_m(-1)^m$$ where $m$ is the number
+    of domain walls between $i$ and $j$ and $p_m$ is the probability of
+    finding $m$ domain walls between them.
+
+    Hence show that when $R_{ij}=|i-j|a$ is large (with $a$ the lattice
+    spacing) and the temperature is small, that
+
+    $$\langle s_i s_j\rangle =\exp(-R_{ij}/\xi)$$ with $\xi=a/2p$ and
+    $p$ the probability of finding a domain wall on a bond.
+
+    *Hint: In the second part note that $p_m$ is given by a binomial
+    distribution because there is a probability $p$ of each bond
+    containing a domain wall and $(1-p)$ that it doesn't. What special
+    type of distribution does $p_m$ tend to when $p$ is small (as occurs
+    at low $T$)?*
+
+3.  **A model fluid**
+
+    (Straightforward) The van der Waals (vdW) equation of state (recall
+    PH10002) is essentially a mean field theory for fluids. It relates
+    the pressure and the volume of a fluid to the temperature:
+
+    $$\left(P+\frac{a}{V^2}\right)(V-b)=N_Ak_BT$$ where $a$ and $b$ are
+    constants and $N_A$ is Avogadro's number.
+
+    The critical point of a fluid corresponds to the point at which the
+    isothermal compressibility diverges, that is
+
+    $$\left(\frac{\partial P}{\partial V}\right)_T=0$$ Additionally, one
+    finds that isotherms of $P$ versus $V$ exhibit a point of inflection
+    at the critical point, that is
+
+    $$\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0$$
+
+    - Use these two requirements to show that the critical point of the
+      vdW fluid is located at
+
+      $$V_c=3b, ~~~ P_c=\frac{a}{27b^2},~~~ N_AK_BT_c=\frac{8a}{27b}$$
+
+    - Hence show that when written in terms of reduced variables
+
+      $$p=\frac{P}{P_c}, ~~~~ v=\frac{V}{V_c} ~~~~ t=\frac{T}{T_c}$$
+
+      the equation takes the form
+
+      $$\left(p+\frac{3}{v^2}\right)(v-\frac{1}{3})=\frac{8t}{3}$$
+
+    - Use a graph-plotting program such as "Excel" to plot a selection
+      of isotherms close to the critical temperature (you will need to
+      choose suitable units for your axes). Plot also the gradient and
+      second derivative of P vs V on the critical isotherm and confirm
+      numerically that it exhibits a point of inflection at the critical
+      pressure and temperature.
+
+    - Obtain the value of the critical exponent $\gamma$ of the vdW
+      model and confirm that it takes a mean-field value.
+
+4.  **Mean field theory of the Ising model heat capacity**
+
+    (Straightforward) Using results derived in lectures, obtain an
+    expression for the mean energy $\langle E\rangle$ of the Ising model
+    in zero field, within the simplest mean field approximation $\langle
+      s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$. Hence
+    show that for $H=0$ the heat capacity $\partial \langle
+      E\rangle/\partial T$ has the behaviour
+
+    \begin{aligned}
+    C_H=& 0 ~~~~ T>T_c\\
+    C_H=& 3Nk_B/2 ~~~~ T\le T_c
+    \end{aligned}
+
+5.  **Magnetisation and fluctuations**
+
+    (Slightly tricky) A system of spins on a lattice, has, in the
+    absence of an applied field, a Hamiltonian ${\cal H}$. In the
+    presence of a field $h$ the Hamiltonian becomes
+    $$\tilde {\cal H}={\cal H}-hM$$ where $M$ is the total magnetisation
+    and $h$ is the magnetic field. By considering the partition function
+    $Z(T,h)$ and its relationship to the free energy $F$ show that in
+    general
+
+    $$\langle M \rangle=-\left(\frac{\partial F}{\partial h}\right)_T$$
+
+    Show also that the variance of the magnetisation fluctuations is
+
+    $$\langle M^2\rangle-\langle M\rangle^2=-k_BT\left(\frac{\partial^2 F}{\partial h^2}\right)_T$$
+
+    (*Hint: This is an important standard derivation found in many text
+    books on Statistical Mechanics. You will need to differentiate $F$
+    (twice) and use the product and chain rules.*)
+
+6.  **Spin-1 Ising model**
+
+    (Straightforward) A set of spins on a lattice of coordination number
+    $q$ can take values $(-1,0,1)$, as opposed to just $(-1,1)$ as in
+    the spin-1/2 Ising model. The Hamiltonian is
+
+    $${\cal H}=-J\sum_{<ij>}s_is_j + h\sum_i s_i$$
+
+    Find the partition function and hence show that in the mean field
+    approximation, the magnetisation per site obeys
+
+    $$m=\frac{2\sinh[\beta(Jqm+h)]}{2\cosh[\beta(Jqm+h)]+1}$$
+
+    and find the critical temperature $T_c$ at which the net
+    magnetisation vanishes.
+
+7.  **Transfer Matrix.**
+
+    (Straightforward strategy but some lengthy algebra required)
+
+    Verify the calculation of the free energy of the 1D periodic chain
+    Ising model in a field outlined in lectures using the Transfer
+    Matrix method.
+
+    Use your results to show that the spontaneous magnetisation is:
+
+    $$m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{-4\beta J}}}$$
+    Comment on the value of $m$ in zero field.
+
+    (*Hint: Follow the prescription given in lectures. Depending on your
+    approach you may need to use the trigonometrical identities
+    $\cosh^2x-\sinh^2x=1$, $\cosh(2x)=2\cosh^2x-1$.*)
+
+8.  **Lattice gas model** (Straightforward). Check the claim, made in
+    lectures that the "Hamiltonian" of the Lattice Gas model in the
+    grand canonical ensemble
+
+    $${\cal H}_{LG}=-\epsilon\sum_{<i,j>}c_ic_j -\mu\sum_ic_i$$
+
+    is transformed to that of the Ising model by means of the change of
+    variable
+
+    $$s_i=2c_i-1;~~~~ J=\frac{\epsilon}{4}~~~~
+    h=\frac{\epsilon q+2\mu}{4}$$
+
+    (*Hint: Note that when doing sums over bonds $\sum_{\langle
+        i,j\rangle}$ for a lattice of coordination $q$ there are $q/2$
+    bonds per site since each bond is shared between two sites.*)
+
+9.  **Landau theory**
+
+    Check and complete the Landau theory calculations, given in
+    lectures, for the critical exponents $\gamma=1$ and $\alpha=0$ of
+    the Ising model. For the latter, you should first prove the result
+
+    $$C_H =-T\frac{\partial^2 F}{\partial T^2}$$ starting from the
+    classical theormodynamics expression for changes in the free energy
+    of a magnet $dF=-SdT-MdH$.
+
+    (*Hint: If you get stuck with the proof see standard thermodynamics
+    text books. To get the susceptibility exponent in Landau theory add
+    a term $-Hm$ to the Hamiltonian.*)
+
+10. **Scaling laws**
+
+    (Straightforward.)Using the generalised homogeneous form for the
+    free energy given in lectures, take appropriate derivatives to find
+    the relationships to the critical exponents:
+
+    $$\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}.$$
+
+    Hence derive the scaling laws among the critical exponents:
+
+    \begin{aligned}
+    \alpha+\beta(\delta+1)=2 \\
+    \alpha+2\beta+\gamma=2\\
+    %\gamma=\beta(\delta-1)
+    \end{aligned} (*Hint: For the heat capacity exponent $\alpha$ use
+    the result from problem 9:
+    $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
+
+11. **Renormalization Group transformation for the 1D Ising model**
+
+    (Challenging.) Consider a 1D Ising model of $N$ spins in zero field
+    given by the Hamiltonian
+
+    $${\cal H}_I/k_BT=-K\sum_{<ij>}s_is_j -\sum_iC$$ where a background
+    term is included because even if set zero initially, it will be
+    generated by an RG transformation.
+
+    - A renormalisation is to be implemented with a scale factor $b=2$.
+      By partially performing the sum in the partition function over the
+      spins on the even numbered lattice sites, show that the partially
+      summed partition function can be written
+
+      $$Z=\sum_{s_1,s_3,s_5...}\prod_{i=2,4,6...} [\exp
+      [K(s_{i-1}+s_{i+1})+2C] + \exp[-K(s_{i-1}+s_{i+1})+2C]$$
+
+    - Next, relabel the remaining (odd numbered) spins so that they are
+      numbered consecutively eg by an index $j$ (this is a matter of
+      convenience only). Then cast this partially summed partition
+      function in a form that makes it look the same as that for an
+      Ising model with $N/2$ spins. i.e. require that $Z^\prime$ has the
+      form
+
+      $$Z=\sum_{\{s\}}\prod_{j=1}^{N/2}\exp[K^\prime s_js_{j+1}+C^\prime]\:,$$
+      for all $s_j,s_{j+1}=\pm 1$.
+
+      Hence show that the effective coupling $K^\prime$, and background
+      constant $C^\prime$ of the renormalised system are related to
+      those of the underlying Hamiltonian by
+
+      \begin{aligned}
+      \exp(K^\prime+C^\prime) &=& \exp(2C)[\exp(2K)+\exp(-2K)] \\
+      \exp(-K^\prime+C^\prime) &=& 2\exp(2C)
+      \end{aligned}
+
+    - Use these results to show that the effective coupling flows under
+      the renormalization according to:
+
+      $$K^\prime = (1/2)\ln (\cosh 2K)$$
+
+      Does this flow drive the effective coupling to the low or high
+      temperature fixed point?
+
+    - Finally show that the partition function transforms under the RG
+      as
+
+      $$Z(K,N)=2^{N/2}\exp(NK^\prime/2)Z(K^\prime,N/2)$$
+
+    *Note. The above is a hard question, which we'll go over this in
+    detail in a problems class. So if you don't make much progress,
+    don't worry, just treat it as a worked example.*
+
+12. **RG flow of the free energy**
+
+    (Straightforward) An alternative RG equation for the effective
+    coupling in the 1D Ising model is
+
+    $$K = (1/2)\cosh^{-1}(\exp 2K^\prime)$$ which is the inverse of the
+    transformation found in the previous question. This transformation
+    thus drives the system from small effective coupling (high
+    temperature) to high effective coupling (low temperature).
+
+    Under the transformation, the free energy density transforms like
+
+    $$\beta f(K)=(1/2)\beta f(K^\prime)-(1/2)\ln 2-K^\prime/2\:.$$
+
+    - Use these findings to iteratively calculate the free energy
+      density of the Ising model at low temperatures, starting from the
+      high temperature limit.
+
+      *Hint: Start with a very low coupling eg. $K^\prime=0.01$, and
+      show that because interactions between spins are negligible,
+      $\beta f(K^\prime)\approx
+      -\ln 2$. Then iterate the RG equations above $8$ or so times to
+      generate a sequence of $K$ and $\beta f(K)$ values.*
+
+    - Compare your results for each iteration with the exact results for
+      the free energy density of the 1D Ising model obtained in
+      lectures.
+
+
+13. Further problems on new stuff with solutions

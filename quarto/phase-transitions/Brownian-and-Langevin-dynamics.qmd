@@ -1,0 +1,271 @@
+# The Langevin Approach
+
+## The Random Walk and the Langevin equation
+
+The concept of a random walk and its continuum limit — diffusion — introduced in the previous chapter, expresses the time evolution of the probability distribution $p(x, t)$ for a particle's position $x$ is described by the diffusion equation:
+
+$$
+\frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2},
+$$
+which is a standard example of a so called *Fokker-Planck* equation, which is second-order in space and first-order in time.
+
+In contrast, the *Langevin equation* provides a stochastic differential equation for the particle’s trajectory $x(t)$. 
+To understand it, consider the motion over a small time increment $\Delta t$:
+
+$$
+x(t + \Delta t) = x(t) + \Delta x(t)
+$$
+
+Here, $\Delta x(t)$ is a random displacement. If the lattice spacing is $a$, we define the step statistics as:
+
+$$
+\Delta x(t) = 
+\begin{cases}
++a & \text{with probability } \nu \Delta t \\
+-a & \text{with probability } \nu \Delta t \\
+0 & \text{with probability } 1 - 2\nu \Delta t
+\end{cases}
+$$
+
+This defines a discrete-time, discrete-space random walk. The average and variance of the step are:
+
+* Mean: $\langle \Delta x \rangle = 0$
+
+* Variance: $\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t$
+
+The steps $\Delta x(t)$ are uncorrelated across time.
+
+To take the continuum limit, we let both $a \to 0$ and $\Delta t \to 0$ in such a way that:
+
+$$
+a \propto \sqrt{\Delta t}
+$$
+
+In this limit, we obtain the **Langevin equation**:
+
+$$
+\dot{x}(t) = \eta(t)
+$$
+
+where $\eta(t)$ is a stochastic force (noise) satisfying:
+
+$$
+\langle \eta(t) \rangle = 0
+$$
+
+$$
+\langle \eta(t) \eta(t') \rangle = \Gamma \delta(t - t')
+$$
+
+This $\eta(t)$ is known as white noise — it has zero mean and is uncorrelated at different times.
+
+The Langevin equation tells us that the velocity $\dot{x}(t)$ is purely driven by noise. We can formally integrate it:
+
+$$
+x(t) - x_0 = \int_0^t \eta(t')\, dt'
+$$
+
+Taking ensemble averages:
+
+* Mean displacement:
+  $$
+  \langle x(t) - x_0 \rangle = 0
+  $$
+
+* Mean square displacement:
+  $$
+  \langle [x(t) - x_0]^2 \rangle = \int_0^t \int_0^t \langle \eta(t') \eta(t'') \rangle\, dt'\, dt'' = \Gamma \int_0^t dt' = \Gamma t
+  $$
+
+Comparing this with the diffusion equation result, we identify:
+
+$$
+\Gamma = 2D
+$$
+
+Hence, the Langevin description yields the same physical behavior — not just the mean-square displacement but also the full probability distribution $p(x, t)$ — as the diffusion (Fokker-Planck) equation. This equivalence arises from the fact that the integral of many small, independent random steps leads to a Gaussian distribution, in agreement with the solution of the diffusion equation.
+
+For more details, see: *Stochastic Processes in Physics and Chemistry* by N.G. van Kampen (North Holland, 1981).
+
+## Brownian Motion
+
+Let us now examine Brownian motion, originally observed as the erratic motion of colloidal particles suspended in a fluid. These particles undergo constant collisions with surrounding (smaller) fluid molecules, which results in seemingly random movement.
+
+From a coarse-grained perspective — where we do not track each individual collision — this appears as motion under random forces. This statistical treatment introduces irreversibility at the macroscopic level, even though the underlying molecular dynamics are reversible.
+
+The Langevin equation provides a way to model this behavior. For a particle of mass $m$ in one dimension, Langevin proposed the equation:
+
+$$
+m \ddot{x} = -\gamma \dot{x} + f(t)
+$$
+
+Here:
+
+* $-\gamma \dot{x}$ is a frictional damping force, where $\gamma$ is the damping coefficient.
+* $f(t)$ is a random force due to molecular collisions.
+
+> Often, the mobility is defined as $\mu = 1/\gamma$ — note that this is unrelated to chemical potential.
+
+---
+
+### Noise Properties
+
+
+
+In principle the random forces are \textit{correlated} in time since the molecular collisions which cause them are correlated and have some definite duration. 
+
+![Sketch of $g(t1− t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
+width=60%} 
+
+But if we assume that there is some correlation time $t_c$ over which
+\[
+\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)
+\]
+decays rapidly then as long as we consider timescales $ \gg t_c $ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus  we can approximate the noise by
+
+$$
+\langle f(t) \rangle = 0
+$$
+
+$$
+\langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
+$$
+
+---
+
+### Solving the Langevin Equation (Velocity)
+
+Let’s set $m = 1$ for simplicity and solve the equation:
+
+$$
+\dot{v} + \gamma v = f(t)
+$$
+
+We apply an integrating factor:
+
+$$
+\frac{d}{dt} \left[ v e^{\gamma t} \right] = e^{\gamma t} f(t)
+$$
+
+Integrating both sides:
+
+$$
+v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
+$$
+
+Taking the average:
+
+$$
+\langle v(t) \rangle = v_0 e^{-\gamma t}
+$$
+
+Thus:
+- At short times ($\gamma t \ll 1$): $\langle v \rangle \approx v_0$ — friction is negligible.
+- At long times ($\gamma t \gg 1$): $\langle v \rangle \to 0$ — the system loses memory of the initial velocity.
+
+---
+
+### Mean-Square Velocity
+
+We now compute:
+
+$$
+\langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
+$$
+
+So:
+- Short time: $\langle v^2 \rangle \approx v_0^2$
+- Long time: $\langle v^2 \rangle \to \Gamma / (2\gamma)$
+
+At equilibrium, the equipartition theorem gives:
+
+$$
+\frac{1}{2} m \langle v^2 \rangle = \frac{1}{2} k_B T
+$$
+
+Using this to identify $\Gamma$:
+
+$$
+\Gamma = 2 \gamma k_B T
+$$
+
+This important result relates the noise strength to the damping and temperature — they have the same microscopic origin (molecular collisions).
+
+---
+
+### Mean-Square Displacement
+
+We now integrate $v(t)$ again to get position $x(t)$ (with $m = 1$):
+
+Using the result above and substituting $\Gamma = 2\gamma k_B T$, we find:
+
+$$
+\langle [x(t) - x_0]^2 \rangle = \frac{(v_0^2 - k_B T)}{\gamma^2} (1 - e^{-\gamma t})^2 + \frac{2 k_B T}{\gamma} \left[ t - \frac{1 - e^{-\gamma t}}{\gamma} \right]
+$$
+
+Limiting behaviors:
+
+- **Short time ($\gamma t \ll 1$):**
+
+  $$
+  \langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2
+  $$
+
+  (Ballistic motion)
+
+- **Long time ($\gamma t \gg 1$):**
+
+  $$
+  \langle [x(t) - x_0]^2 \rangle \approx \frac{2 k_B T}{\gamma} t
+  $$
+
+  (Diffusive motion)
+
+The effective diffusion constant is:
+
+$$
+D = \frac{k_B T}{\gamma}
+$$
+
+This is the **Einstein relation**, connecting the rate of diffusion to temperature and damping.
+ It is useful as it allows an explicit expression for the diffusion
+constant if one knows $\gamma$. A famous example is a sphere: the equation for fluid flow past a moving
+sphere may be solved and yields  $\gamma=6\pi\eta a$ where $a$ is the radius of the sphere and here $\eta$ is
+the fluid viscosity. This gives
+
+$$
+D=\frac{6\pi\eta a}{kT}
+$$
+which is the **Stokes-Einstein** formula for the diffusion constant of a colloidal particle.
+
+---
+
+### External Forces and Mobility
+
+Now consider a charged particle with charge $q$ under an external electric field $E$. The Langevin equation becomes:
+
+$$
+m \dot{v} = -\gamma v + qE
+$$
+
+At long times, the particle reaches a steady drift velocity:
+
+$$
+\langle v \rangle = \frac{qE}{\gamma} = \frac{qED}{k_B T}
+$$
+
+Defining the mobility $\mu$ by $\langle v \rangle = \mu qE$, we get the **Nernst-Einstein relation**:
+
+$$
+\mu = \frac{D}{k_B T}
+$$
+
+This relation connects the response of a system to an external perturbation (mobility) with its internal fluctuations (diffusivity).
+
+
+
+
+
+
+
+
