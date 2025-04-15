@@ -340,14 +340,15 @@ window.Quarto = {
 
 
 <p>A crude representation of a fluid is the lattice gas model. Here particles can occupy the sites of a hypercubic lattice. The occupancy of a site <span class="math inline">\(i\)</span> is specified by the variable <span class="math inline">\(c_i=1\)</span> (occupied) or <span class="math inline">\(c_i=0\)</span> vacant. The complete list of these occupancies <span class="math inline">\(\{c\}\)</span> specifies a microstate. The average particle number density (fraction of occupied sites) is given by</p>
-<p><span class="math display">\[c=L^{-d}\sum_ic_i\]</span> where <span class="math inline">\(L\)</span> is the linear extent of the lattice and <span class="math inline">\(d\)</span> its dimensionality.</p>
+<p><span id="eq-unnamed-0"><span class="math display">\[c=L^{-d}\sum_i c_i  \tag{6.1}\]</span></span></p>
+<p>where <span class="math inline">\(L\)</span> is the linear extent of the lattice and <span class="math inline">\(d\)</span> its dimensionality.</p>
 <p>The Hamiltonian of the lattice gas model is</p>
-<p><span id="eq-unnamed-0"><span class="math display">\[{\cal H}_{LG}=-\epsilon\sum_{&lt;i,j&gt;}c_ic_j - \mu\sum_ic_i \tag{6.1}\]</span></span></p>
+<p><span id="eq-unnamed-1"><span class="math display">\[{\cal H}_{LG}=-\epsilon\sum_{&lt;i,j&gt;}c_ic_j - \mu\sum_ic_i \tag{6.2}\]</span></span></p>
 <p>where <span class="math inline">\(\epsilon\)</span> is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and <span class="math inline">\(\mu\)</span> is a field known as the chemical potential, which couples to the particle density which is assumed to fluctuate around a mean value controlled by the prescribed chemical potential. This representation of the model in which the overall density fluctuates is known as the <em>Grand Canonical ensemble.</em></p>
 <section id="mapping-between-ising-model-and-lattice-gas" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="mapping-between-ising-model-and-lattice-gas"><span class="header-section-number">6.1</span> Mapping between Ising model and lattice gas</h2>
 <p>The lattice gas model is interesting because whilst being a plausible model for a fluid, it maps onto the Ising model. This extends the applicability of the Ising model. To expose the mapping we write the grand partition function of the lattice gas:</p>
-<p><span class="math display">\[\Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{&lt;i,j&gt;}c_ic_j +\beta\mu\sum_ic_i\right]\]</span> where the sum is an unrestricted sum over the occupancies of the lattice sites. We now change variables to</p>
+<p><span class="math display">\[ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{&lt;i,j&gt;}c_ic_j +\beta\mu\sum_ic_i\right] \]</span> where the sum is an unrestricted sum over the occupancies of the lattice sites. We now change variables to</p>
 <p><span class="math display">\[c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4} ~~~~
 h=\frac{\epsilon q+2\mu}{4}\]</span> Hence</p>
 <p><span class="math display">\[{\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}\]</span> Since the last term does not depend on the configuration, it feeds through as an additive constant in the free energy; and since all observables feature as derivatives of the free energy, the constant has no physical implications.</p>

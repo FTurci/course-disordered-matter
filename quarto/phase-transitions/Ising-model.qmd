@@ -18,7 +18,9 @@ two values, $+1$ ('up' spins) or $-1$ ('down' spins) and is assumed to
 interact with its nearest neighbours according to the Hamiltonian
 
 $${\cal H}_I=-J\sum_{<ij>}s_is_j - H\sum_i s_i
-\label{eq:ising}$$ where $J>0$ measures the strength of the coupling
+$${eq-ising}
+
+where $J>0$ measures the strength of the coupling
 between spins and the sum extends over nearest neighbour spins $s_i$ and
 $s_j$, i.e it is a sum of the bonds of the lattice. $H$ is a magnetic
 field term which can be positive or negative (although for the time
@@ -28,9 +30,7 @@ average magnetisation:
 $$m=\frac{1}{N} \langle \sum_i s_i \rangle\:,$$ where
 $\langle\cdot\rangle$ means an average over configurations.
 
-The fact that the Ising model displays a phase transition was argued in
-sec. [2](#sec:background){reference-type="ref"
-reference="sec:background"}. Thus at low temperatures for which there is
+The fact that the Ising model displays a phase transition was argued in @sec-background. Thus at low temperatures for which there is
 little thermal disorder, there is a preponderance of aligned spins and
 hence a net spontaneous magnetic moment (ie. the system is
 ferromagnetic). As the temperature is raised, thermal disorder increases
@@ -155,23 +155,23 @@ H(\{s\})=&-\sum_{i=1}^N (Js_is_{i+1}+Hs_i)\\
 Now the partition function may be written
 
 \begin{aligned}
-\label{eq:tm}
+{eq-tm}
 Z_N =& \sum_{\{s\}}\exp\left(-\beta H(\{s\})\right)\nonumber \\
  =&\sum_{\{s\}}\exp\left(-\beta[E(s_1,s_2)+E(s_2,s_3)+....E(s_N,s_1)]\right) \nonumber\\
  =&\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
-=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} \label{eq:Vs}
+=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} {eq-Vs}
 \end{aligned}
 where the $V_{ij}=\exp(-\beta E_{ij})$ are elements of
 an $m \times m$ matrix ${\bf V}$, known as the transfer matrix ($i,j,k$
 etc are dummy indices that run over the matrix elements). You should see
 that the sum over the product of matrix elements picks up all the terms
 in the partition function and therefore
-Eq. [\[eq:Vs\]](#eq:Vs){reference-type="ref" reference="eq:Vs"} is an
+Eq. [\[eq-Vs\]](#eq-Vs){reference-type="ref" reference="eq-Vs"} is an
 alternative way of writing the partition function.
 
 The reason it is useful to transform to a matrix representation is that
 it transpires that the sum over the product of matrix elements in
-equation ([\[eq:Vs\]](#eq:Vs){reference-type="ref" reference="eq:Vs"})
+equation ([\[eq-Vs\]](#eq-Vs){reference-type="ref" reference="eq-Vs"})
 is simply just the trace of ${\bf V}^N$ (check this yourself for a short
 periodic chain), given by the sum of its eigenvalues:-
 

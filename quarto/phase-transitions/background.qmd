@@ -1,5 +1,9 @@
+---
+# title: "Background concepts"
 
-# Background concepts {#sec:background}
+---
+
+# Background concepts {#sec-background}
 
 In seeking to describe near-critical phenomena, it is useful to have a
 quantitative measure of the difference between the phases coalescing at
