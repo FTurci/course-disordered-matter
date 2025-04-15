@@ -43,7 +43,8 @@ website:
           text: "Brownian and Langevin Dynamics"
         - href: phase-transitions/master-equation-and-diffusion.qmd
           text: "Master Equation and Diffusion"
-
+        - href: phase-transitions/nucleation-and-growth.qmd
+          text: "Nucleation and growth"
         - href: phase-transitions/problems.qmd
           text: "Problems"
         

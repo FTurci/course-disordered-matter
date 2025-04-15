@@ -128,5 +128,8 @@
   },
   "phase-transitions/literature.qmd": {
     "literature.html": "c5659552"
+  },
+  "phase-transitions/nucleation-and-growth.qmd": {
+    "nucleation-and-growth.html": "ea1b1d92"
   }
 }
