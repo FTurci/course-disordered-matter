@@ -9,7 +9,20 @@ This means that cellular **life itself **(the very constituents that make us) ob
 
 This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**.
 
-While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that if 
+While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
+
+This is because soft matter systems are typically composed of **many microscopic constituents** in contact with an **environment**. The appropriate description of the **macroscopic state** of such systems is therefore **statistical** and uses the language of **statistical mechanics**. The relevant **energy**, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy
+
+$$F = U-TS$$
+
+where $U$ is the internal energy, $T$ the temperature and $S$ is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales. 
+
+In other words, **fluctuations of the internal energy** are on the same scale as **thermal fluctuations**:
+
+$$\Delta U \sim k_BT $$
+
+where $k_B$ is the Bolztmann constant and $\Delta U$ indicates standard deviations from the average internal energy.
+
 
 
 ::: {.callout-note collapse="true"}

@@ -6,6 +6,7 @@ project:
 
 website:
   page-navigation: true
+  back-to-top-navigation: true
   title: "Complex Disordered Matter"
   sidebar:
     smooth-scroll: true
