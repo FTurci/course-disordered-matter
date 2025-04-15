@@ -28,3 +28,7 @@ following more advanced texts
  For revision on thermodynamics and statistical mechanics
 
   + **[F. Mandl: Statistical Physics](https://bris.on.worldcat.org/search/detail/15487191?queryString=F.%20Mandl&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false){.external target="_blank"}**. 
+
+  For Stochastic dynamics
+  
+  + **[N.G. van Kampen: Stochastic processess in Physics and Chemistry](https://bris.on.worldcat.org/search/detail/162131511?queryString=Stochastic%20Processes%20in%20Physics%20and%20Chemistry%20by%20N.G.%20van%20Kampen&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)**
