@@ -114,14 +114,13 @@ Here:
 
 In principle the random forces are \textit{correlated} in time since the molecular collisions which cause them are correlated and have some definite duration. 
 
+
+Let us assume that there is some correlation time $t_c$ over which $\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)$ decays rapidly as shown in the sketch:
+
 ![Sketch of $g(t1− t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
 width=60%} 
 
-But if we assume that there is some correlation time $t_c$ over which
-\[
-\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)
-\]
-decays rapidly then as long as we consider timescales $ \gg t_c $ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus  we can approximate the noise by
+Then as long as we consider timescales $\gg t_c$ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus  we can approximate the noise by
 
 $$
 \langle f(t) \rangle = 0
@@ -160,8 +159,9 @@ $$
 $$
 
 Thus:
-- At short times ($\gamma t \ll 1$): $\langle v \rangle \approx v_0$ — friction is negligible.
-- At long times ($\gamma t \gg 1$): $\langle v \rangle \to 0$ — the system loses memory of the initial velocity.
+
+* At short times: ($\gamma t \ll 1$): $\langle v \rangle \approx v_0$ ie. friction is negligible.
+* At long times: ($\gamma t \gg 1$): $\langle v \rangle \to 0$ ie. the system loses memory of the initial velocity.
 
 ---
 
@@ -173,9 +173,10 @@ $$
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
 $$
 
-So:
-- Short time: $\langle v^2 \rangle \approx v_0^2$
-- Long time: $\langle v^2 \rangle \to \Gamma / (2\gamma)$
+Implying that at
+
+* Short times: $\langle v^2 \rangle \approx v_0^2$
+* Long times: $\langle v^2 \rangle \to \Gamma / (2\gamma)$
 
 At equilibrium, the equipartition theorem gives:
 
@@ -205,21 +206,21 @@ $$
 
 Limiting behaviors:
 
-- **Short time ($\gamma t \ll 1$):**
+* Short times: ($\gamma t \ll 1$):
 
   $$
   \langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2
   $$
 
-  (Ballistic motion)
+  (correspinding to *ballistic* motion)
 
-- **Long time ($\gamma t \gg 1$):**
+* Long time ($\gamma t \gg 1$): 
 
   $$
   \langle [x(t) - x_0]^2 \rangle \approx \frac{2 k_B T}{\gamma} t
   $$
 
-  (Diffusive motion)
+  (corresponding to *diffusive motion*)
 
 The effective diffusion constant is:
 
