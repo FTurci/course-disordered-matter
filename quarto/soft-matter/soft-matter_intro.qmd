@@ -2,7 +2,27 @@
 title: "Entropy matters"
 ---
 
-**Soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**, is the study of colloids, polymers and surfactants. All these systems contain structural units in the colloidal length scale, $1 \mathrm{~nm} \lesssim \mathrm{R} \lesssim 1 \mu \mathrm{~m}$.
+Most of the matter around us does not simply fit within the idealised pictures of crystallines solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes. 
+
+This means that cellular **life itself **(the very constituents that make us) obeys to principles that go beyond the standard patters of conventional solid-state physics.
+
+
+This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**.
+
+While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that if 
+
+
+::: {.callout-note collapse="true"}
+
+# The Physics of Entropy
+
+Soft matter physics is fundamentally the physics of **entropy**. Unlike traditional systems where energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behavior of the system. The interplay between entropy and energy leads to the rich and diverse phenomena observed in soft matter systems.
+:::
+
+<!-- colloids, polymers and surfactants.  -->
+
+
+All these systems contain structural units in the colloidal length scale, $1 \mathrm{~nm} \lesssim \mathrm{R} \lesssim 1 \mu \mathrm{~m}$.
 
 ### Systems and definitions
 

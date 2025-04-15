@@ -83,5 +83,41 @@
   },
   "index.qmd": {
     "index.html": "fa71c37c"
+  },
+  "phase-transitions/rg.qmd": {
+    "rg.html": "4b124417"
+  },
+  "phase-transitions/background.qmd": {
+    "background.html": "1994acb3"
+  },
+  "phase-transitions/index.qmd": {
+    "index.html": "2edc39f6"
+  },
+  "phase-transitions/master-equation-and-diffusion.qmd": {
+    "master-equation-and-diffusion.html": "a31fb6b1"
+  },
+  "phase-transitions/Brownian-and-Langevin-dynamics.qmd": {
+    "Brownian-and-Langevin-dynamics.html": "36e1bea4"
+  },
+  "phase-transitions/problems.qmd": {
+    "problems.html": "38e42ef7"
+  },
+  "phase-transitions/approach-to-criticality.qmd": {
+    "approach-to-criticality.html": "ab270b57"
+  },
+  "phase-transitions/introduction.qmd": {
+    "introduction.html": "0145d772"
+  },
+  "phase-transitions/Ising-model.qmd": {
+    "Ising-model.html": "a4bc53c5"
+  },
+  "phase-transitions/dynamics-of-fluctuations.qmd": {
+    "dynamics-of-fluctuations.html": "54f8374a"
+  },
+  "phase-transitions/mean-field-theory.qmd": {
+    "mean-field-theory.html": "bc5c5fb9"
+  },
+  "phase-transitions/scaling.qmd": {
+    "scaling.html": "4a3de53c"
   }
 }
