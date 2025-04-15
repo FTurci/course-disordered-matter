@@ -52,7 +52,6 @@ If you have any questions about the course, please don’t hesitate to contact m
 Finally, this is a new course for 2025/26, with the lecture notes written from scratch. If you find any errors or mistakes or something which isn’t clear, please let me know, or fill in this anonymous form:
 
 ::: {.callout-note appearance="minimal"}
-<!-- TODO update the link below -->
-<!-- [Submit an error/mistake/query](https://forms.office.com/e/6uL2Bd5QGq) -->
+[Submit an error/mistake/query](https://forms.office.com/e/6uL2Bd5QGq)
 
 :::
