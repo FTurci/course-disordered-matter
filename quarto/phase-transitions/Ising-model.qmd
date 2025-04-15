@@ -38,8 +38,7 @@ until at a certain temperature $T_c$, entropy drives the system through
 a continuous phase transition to a disordered spin arrangement with zero
 net magnetisation (ie. the system is paramagnetic). These trends are
 visible in configurational snapshots from computer simulations of the 2D
-Ising model (see fig. [5](#fig:snapshots){reference-type="ref"
-reference="fig:snapshots"}). Although each spin interacts only with its
+Ising model (see @fig-snapshots). Although each spin interacts only with its
 nearest neighbours, the phase transition occurs due to cooperative
 effects among a large number of spins. In the neighbourhood of the
 transition temperature these cooperative effects engender fluctuations
