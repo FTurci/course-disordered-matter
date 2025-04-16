@@ -79,9 +79,9 @@ $\langle s_i\rangle=m$. Thus
 
 $$
 \begin{aligned}
-m =& \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
- \:=& \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
- \:=&\tanh(\beta(qJm+H))
+m & = \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
+ \: & = \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
+ \: & = \tanh(\beta(qJm+H))
 \end{aligned}$${#eq-mfmag} as before.
 
 ## Spontaneous symmetry breaking {#sec-breaking}
@@ -277,7 +277,7 @@ $a_4$ assumed positive (which ensures that the magnetisation remains
 bounded). This is shown in @fig-landau .
 
 
- ![Form of the Landau Free energy for a selection of values of the $a$ parameter.](Figs/landau.png){width=80% fig-align="center" #fig-landau}
+ ![Form of the Landau Free energy for a selection of values of the $a$ parameter.](Figs/landau.png){width=60% fig-align="center" #fig-landau}
 
 
 The situation is qualitatively similar to that discussed in @sec-breaking.

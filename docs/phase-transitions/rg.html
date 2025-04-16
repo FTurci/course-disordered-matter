@@ -486,8 +486,8 @@ p(S(L),t)=b(L)\tilde{p}(b(L)S(L),a(L)t)
 \tag{8.3}\]</span></span> where <span class="math inline">\(\tilde{p}\)</span> is a function unique to a universality class. The role of the scale factors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is to absorb the basic non-universal scales identified in <a href="#sec-rgmethod" class="quarto-xref"><span>Section 8.2</span></a>. The critical exponents are implicit in the <span class="math inline">\(L\)</span>-dependence of these scale factors. Specifically one finds:</p>
 <p><span id="eq-scalefacs"><span class="math display">\[
 \begin{aligned}
-a(L)&amp;=&amp;a_0L^{1/\nu} \\
-b(L)&amp;=&amp;b_0L^{\beta/\nu}
+a(L) &amp; =a_0L^{1/\nu} \\
+b(L) &amp; =b_0L^{\beta/\nu}
 \end{aligned}
 \tag{8.4}\]</span></span> where the amplitudes <span class="math inline">\(a_0\)</span> and <span class="math inline">\(b_0\)</span> are system specific (non-universal) constants.</p>
 <p>These results state that the critical exponents (in the form <span class="math inline">\(1/\nu\)</span> and <span class="math inline">\(\beta/\nu\)</span>) characterize the ways in which the configuration spectrum evolves under coarse-graining. Consider, first the exponent ratio <span class="math inline">\(\beta/\nu\)</span>. Precisely at the critical point, there is only one way in which the coarse-grained configurations change with <span class="math inline">\(L\)</span>: the overall scale of the coarse-grained variable (the black-white contrast in our grey scale representation) is eroded with increasing <span class="math inline">\(L\)</span>. Thus the configurations of coarse-graining length <span class="math inline">\(L_1\)</span> match those of a larger coarse-graining length <span class="math inline">\(L_2\)</span> only if the variable scale in the latter configurations is amplified. The required amplification follows from <a href="#eq-blocks" class="quarto-xref">Equation&nbsp;<span>8.3</span></a> and and <a href="#eq-scalefacs" class="quarto-xref">Equation&nbsp;<span>8.4</span></a>: it is</p>
@@ -511,9 +511,9 @@ Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)
 \tag{8.5}\]</span></span></p>
 <p>To integrate this we need to change the integration variable from <span class="math inline">\(S(L)\)</span> to <span class="math inline">\(b(L)S(L)\)</span>. We have <span class="math inline">\(d(b(L)S(L))=b(L)dS(L)\)</span> since <span class="math inline">\(b(L)\)</span> does not fluctuate. Thus</p>
 <span class="math display">\[\begin{aligned}
-Q(L,t) =&amp; b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
-       =&amp; b^{-1}(L)f(a(L)t)\nonumber\\
-       =&amp; b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
+Q(L,t)  &amp; =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
+        &amp; =  b^{-1}(L)f(a(L)t)\nonumber\\
+       &amp; =  b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
 \end{aligned}\]</span>
 <p>where <span class="math inline">\(f\)</span> is a universal function (defined as the first moment of <span class="math inline">\(\tilde{p}(x,y)\)</span> with respect to <span class="math inline">\(y\)</span>).</p>
 <p>The above results provide a method for determining the critical exponent ratios <span class="math inline">\(\beta/\nu\)</span> and <span class="math inline">\(1/\nu\)</span> via computer simulations of near critical systems. For instance, at the critical point (<span class="math inline">\(t=0\)</span>) and for finite block size, <span class="math inline">\(Q(L,0)\)</span> will not be zero (the <span class="math inline">\(T\)</span> at which Q vanishes for finite <span class="math inline">\(L\)</span> is above the true <span class="math inline">\(T_c\)</span>, cf. <a href="scaling.html#sec-compsim" class="quarto-xref"><span>Section 7.2</span></a>. However, we know that its value must vanish in the limit of infinite <span class="math inline">\(L\)</span>; it does so like</p>

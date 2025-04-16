@@ -304,8 +304,8 @@ $L$-dependence of these scale factors. Specifically one finds:
 
 $$
 \begin{aligned}
-a(L)&=&a_0L^{1/\nu} \\
-b(L)&=&b_0L^{\beta/\nu}
+a(L) & =a_0L^{1/\nu} \\
+b(L) & =b_0L^{\beta/\nu}
 \end{aligned} 
 $${#eq-scalefacs}
 where the amplitudes $a_0$ and $b_0$ are system specific (non-universal) constants.
@@ -371,9 +371,9 @@ to $b(L)S(L)$. We have $d(b(L)S(L))=b(L)dS(L)$ since $b(L)$ does not
 fluctuate. Thus
 
 \begin{aligned}
-Q(L,t) =& b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
-       =& b^{-1}(L)f(a(L)t)\nonumber\\
-       =& b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
+Q(L,t)  & =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
+        & =  b^{-1}(L)f(a(L)t)\nonumber\\
+       & =  b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
 \end{aligned} where $f$ is a universal function (defined as the first
 moment of $\tilde{p}(x,y)$ with respect to $y$).
 
