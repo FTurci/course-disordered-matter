@@ -17,7 +17,7 @@ book:
   chapters:
     - href: index.qmd
       text: Overview  
-    - part: "Unifying theoretical concepts for disordered matter"
+    - part: "Unifying theoretical concepts"
       chapters:
          - href: phase-transitions/literature.qmd
            text: "Recommended texts"
@@ -68,7 +68,7 @@ book:
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
-
+    - part: "Experimental techniques"
   appendices:
     - href: revision_guide.qmd
       text: "Revision guide"
