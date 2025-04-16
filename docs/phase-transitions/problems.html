@@ -153,7 +153,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Course texts</span></a>
+ <span class="menu-text">Recommended texts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -195,7 +195,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The static scaling Hypothesis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -336,12 +336,18 @@ window.Quarto = {
 <li><p><strong>Existence of a phase transition in <span class="math inline">\(d=2\)</span>.</strong></p>
 <p>(Straightforward) In lectures it was argued that no long ranged order occurs at finite-temperatures in a one dimensional system because of the presence of domain walls. Were macroscopic domain walls to exist in two dimensions at finite temperature, they would similarly destroy long ranged order and prevent a phase transition. By calculating the free energy of a 2D domain wall for an Ising lattice, show that domain walls do not in fact exist for sufficiently low <span class="math inline">\(T\)</span>.</p>
 <p>(<em>Hint: Model the domain wall as a non-reversing <span class="math inline">\(N\)</span>-step random walk on the lattice and find an expression for its energy and -from the number of random walk configurations- its entropy.</em>)</p></li>
+</ol>
+<hr>
+<ol start="2" type="1">
 <li><p><strong>Correlation Length</strong></p>
 <p>(Challenging) For a 1D Ising model, show that the correlation between the spins at sites <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>, is</p>
 <p><span class="math display">\[\langle s_i s_j\rangle =\sum_m p_m(-1)^m\]</span> where <span class="math inline">\(m\)</span> is the number of domain walls between <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> and <span class="math inline">\(p_m\)</span> is the probability of finding <span class="math inline">\(m\)</span> domain walls between them.</p>
 <p>Hence show that when <span class="math inline">\(R_{ij}=|i-j|a\)</span> is large (with <span class="math inline">\(a\)</span> the lattice spacing) and the temperature is small, that</p>
 <p><span class="math display">\[\langle s_i s_j\rangle =\exp(-R_{ij}/\xi)\]</span> with <span class="math inline">\(\xi=a/2p\)</span> and <span class="math inline">\(p\)</span> the probability of finding a domain wall on a bond.</p>
 <p><em>Hint: In the second part note that <span class="math inline">\(p_m\)</span> is given by a binomial distribution because there is a probability <span class="math inline">\(p\)</span> of each bond containing a domain wall and <span class="math inline">\((1-p)\)</span> that it doesn’t. What special type of distribution does <span class="math inline">\(p_m\)</span> tend to when <span class="math inline">\(p\)</span> is small (as occurs at low <span class="math inline">\(T\)</span>)?</em></p></li>
+</ol>
+<hr>
+<ol start="3" type="1">
 <li><p><strong>A model fluid</strong></p>
 <p>(Straightforward) The van der Waals (vdW) equation of state (recall PH10002) is essentially a mean field theory for fluids. It relates the pressure and the volume of a fluid to the temperature:</p>
 <p><span class="math display">\[\left(P+\frac{a}{V^2}\right)(V-b)=N_Ak_BT\]</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are constants and <span class="math inline">\(N_A\)</span> is Avogadro’s number.</p>
@@ -358,6 +364,9 @@ window.Quarto = {
 <li><p>Use a graph-plotting program such as “Excel” to plot a selection of isotherms close to the critical temperature (you will need to choose suitable units for your axes). Plot also the gradient and second derivative of P vs V on the critical isotherm and confirm numerically that it exhibits a point of inflection at the critical pressure and temperature.</p></li>
 <li><p>Obtain the value of the critical exponent <span class="math inline">\(\gamma\)</span> of the vdW model and confirm that it takes a mean-field value.</p></li>
 </ul></li>
+</ol>
+<hr>
+<ol start="4" type="1">
 <li><p><strong>Mean field theory of the Ising model heat capacity</strong></p>
 <p>(Straightforward) Using results derived in lectures, obtain an expression for the mean energy <span class="math inline">\(\langle E\rangle\)</span> of the Ising model in zero field, within the simplest mean field approximation <span class="math inline">\(\langle
   s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2\)</span>. Hence show that for <span class="math inline">\(H=0\)</span> the heat capacity <span class="math inline">\(\partial \langle
@@ -366,24 +375,36 @@ window.Quarto = {
 C_H=&amp; 0 ~~~~ T&gt;T_c\\
 C_H=&amp; 3Nk_B/2 ~~~~ T\le T_c
 \end{aligned}\]</span></li>
+</ol>
+<hr>
+<ol start="5" type="1">
 <li><p><strong>Magnetisation and fluctuations</strong></p>
 <p>(Slightly tricky) A system of spins on a lattice, has, in the absence of an applied field, a Hamiltonian <span class="math inline">\({\cal H}\)</span>. In the presence of a field <span class="math inline">\(h\)</span> the Hamiltonian becomes <span class="math display">\[\tilde {\cal H}={\cal H}-hM\]</span> where <span class="math inline">\(M\)</span> is the total magnetisation and <span class="math inline">\(h\)</span> is the magnetic field. By considering the partition function <span class="math inline">\(Z(T,h)\)</span> and its relationship to the free energy <span class="math inline">\(F\)</span> show that in general</p>
 <p><span id="eq-unnamed-4"><span class="math display">\[\langle M \rangle=-\left(\frac{\partial F}{\partial h}\right)_T \tag{15.5}\]</span></span></p>
 <p>Show also that the variance of the magnetisation fluctuations is</p>
 <p><span id="eq-unnamed-5"><span class="math display">\[\langle M^2\rangle-\langle M\rangle^2=-k_BT\left(\frac{\partial^2 F}{\partial h^2}\right)_T \tag{15.6}\]</span></span></p>
 <p>(<em>Hint: This is an important standard derivation found in many text books on Statistical Mechanics. You will need to differentiate <span class="math inline">\(F\)</span> (twice) and use the product and chain rules.</em>)</p></li>
+</ol>
+<hr>
+<ol start="6" type="1">
 <li><p><strong>Spin-1 Ising model</strong></p>
 <p>(Straightforward) A set of spins on a lattice of coordination number <span class="math inline">\(q\)</span> can take values <span class="math inline">\((-1,0,1)\)</span>, as opposed to just <span class="math inline">\((-1,1)\)</span> as in the spin-1/2 Ising model. The Hamiltonian is</p>
 <p><span id="eq-unnamed-6"><span class="math display">\[{\cal H}=-J\sum_{&lt;ij&gt;}s_is_j + h\sum_i s_i \tag{15.7}\]</span></span></p>
 <p>Find the partition function and hence show that in the mean field approximation, the magnetisation per site obeys</p>
 <p><span id="eq-unnamed-7"><span class="math display">\[m=\frac{2\sinh[\beta(Jqm+h)]}{2\cosh[\beta(Jqm+h)]+1} \tag{15.8}\]</span></span></p>
 <p>and find the critical temperature <span class="math inline">\(T_c\)</span> at which the net magnetisation vanishes.</p></li>
+</ol>
+<hr>
+<ol start="7" type="1">
 <li><p><strong>Transfer Matrix.</strong></p>
 <p>(Straightforward strategy but some lengthy algebra required)</p>
 <p>Verify the calculation of the free energy of the 1D periodic chain Ising model in a field outlined in lectures using the Transfer Matrix method.</p>
 <p>Use your results to show that the spontaneous magnetisation is:</p>
 <p><span class="math display">\[m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{-4\beta J}}}\]</span> Comment on the value of <span class="math inline">\(m\)</span> in zero field.</p>
 <p>(<em>Hint: Follow the prescription given in lectures. Depending on your approach you may need to use the trigonometrical identities <span class="math inline">\(\cosh^2x-\sinh^2x=1\)</span>, <span class="math inline">\(\cosh(2x)=2\cosh^2x-1\)</span>.</em>)</p></li>
+</ol>
+<hr>
+<ol start="8" type="1">
 <li><p><strong>Lattice gas model</strong> (Straightforward). Check the claim, made in lectures that the “Hamiltonian” of the Lattice Gas model in the grand canonical ensemble</p>
 <p><span id="eq-unnamed-8"><span class="math display">\[{\cal H}_{LG}=-\epsilon\sum_{&lt;i,j&gt;}c_ic_j -\mu\sum_ic_i \tag{15.9}\]</span></span></p>
 <p>is transformed to that of the Ising model by means of the change of variable</p>
@@ -391,10 +412,16 @@ C_H=&amp; 3Nk_B/2 ~~~~ T\le T_c
 h=\frac{\epsilon q+2\mu}{4} \tag{15.10}\]</span></span></p>
 <p>(<em>Hint: Note that when doing sums over bonds <span class="math inline">\(\sum_{\langle
     i,j\rangle}\)</span> for a lattice of coordination <span class="math inline">\(q\)</span> there are <span class="math inline">\(q/2\)</span> bonds per site since each bond is shared between two sites.</em>)</p></li>
+</ol>
+<hr>
+<ol start="9" type="1">
 <li><p><strong>Landau theory</strong></p>
 <p>Check and complete the Landau theory calculations, given in lectures, for the critical exponents <span class="math inline">\(\gamma=1\)</span> and <span class="math inline">\(\alpha=0\)</span> of the Ising model. For the latter, you should first prove the result</p>
 <p><span class="math display">\[C_H =-T\frac{\partial^2 F}{\partial T^2}\]</span> starting from the classical theormodynamics expression for changes in the free energy of a magnet <span class="math inline">\(dF=-SdT-MdH\)</span>.</p>
 <p>(<em>Hint: If you get stuck with the proof see standard thermodynamics text books. To get the susceptibility exponent in Landau theory add a term <span class="math inline">\(-Hm\)</span> to the Hamiltonian.</em>)</p></li>
+</ol>
+<hr>
+<ol start="10" type="1">
 <li><p><strong>Scaling laws</strong></p>
 <p>(Straightforward.)Using the generalised homogeneous form for the free energy given in lectures, take appropriate derivatives to find the relationships to the critical exponents:</p>
 <p><span id="eq-unnamed-10"><span class="math display">\[\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}. \tag{15.11}\]</span></span></p>
@@ -405,6 +432,9 @@ h=\frac{\epsilon q+2\mu}{4} \tag{15.10}\]</span></span></p>
 %\gamma=\beta(\delta-1)
 \end{aligned}\]</span>
 <p>(<em>Hint: For the heat capacity exponent <span class="math inline">\(\alpha\)</span> use the result from problem 9: <span class="math inline">\(C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\)</span></em>)</p></li>
+</ol>
+<hr>
+<ol start="11" type="1">
 <li><p><strong>Renormalization Group transformation for the 1D Ising model</strong></p>
 <p>(Challenging.) Consider a 1D Ising model of <span class="math inline">\(N\)</span> spins in zero field given by the Hamiltonian</p>
 <p><span class="math display">\[{\cal H}_I/k_BT=-K\sum_{&lt;ij&gt;}s_is_j -\sum_iC\]</span> where a background term is included because even if set zero initially, it will be generated by an RG transformation.</p>
@@ -426,6 +456,9 @@ h=\frac{\epsilon q+2\mu}{4} \tag{15.10}\]</span></span></p>
 <p><span id="eq-unnamed-13"><span class="math display">\[Z(K,N)=2^{N/2}\exp(NK^\prime/2)Z(K^\prime,N/2) \tag{15.14}\]</span></span></p></li>
 </ul>
 <p><em>Note. The above is a hard question, which we’ll go over this in detail in a problems class. So if you don’t make much progress, don’t worry, just treat it as a worked example.</em></p></li>
+</ol>
+<hr>
+<ol start="12" type="1">
 <li><p><strong>RG flow of the free energy</strong></p>
 <p>(Straightforward) An alternative RG equation for the effective coupling in the 1D Ising model is</p>
 <p><span class="math display">\[K = (1/2)\cosh^{-1}(\exp 2K^\prime)\]</span> which is the inverse of the transformation found in the previous question. This transformation thus drives the system from small effective coupling (high temperature) to high effective coupling (low temperature).</p>
@@ -437,8 +470,89 @@ h=\frac{\epsilon q+2\mu}{4} \tag{15.10}\]</span></span></p>
 -\ln 2\)</span>. Then iterate the RG equations above <span class="math inline">\(8\)</span> or so times to generate a sequence of <span class="math inline">\(K\)</span> and <span class="math inline">\(\beta f(K)\)</span> values.</em></p></li>
 <li><p>Compare your results for each iteration with the exact results for the free energy density of the 1D Ising model obtained in lectures.</p></li>
 </ul></li>
-<li><p>Further problems on new stuff with solutions</p></li>
 </ol>
+<hr>
+<ol start="13" type="1">
+<li><strong>Colloidal diffusion</strong></li>
+</ol>
+<p>A large colloidal particle of mass <span class="math inline">\(M\)</span> moves in a fluid under the influence of a random force <span class="math inline">\(F(t)\)</span> and a coefficient of Stokes friction drag <span class="math inline">\(\gamma\)</span>, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by</p>
+<p><span id="eq-unnamed-15"><span class="math display">\[
+u = u_0 e^{-\gamma t} + e^{-\gamma t} \int_0^t dt' \, e^{\gamma t'} F(t'),
+\tag{15.16}\]</span></span></p>
+<p>where <span class="math inline">\(u_0\)</span> is the velocity at <span class="math inline">\(t = 0\)</span>, show that for long times the velocity of the particle satisfies the relation</p>
+<p><span id="eq-unnamed-16"><span class="math display">\[
+\langle u^2 \rangle = \frac{kT}{M} + \left( u_0^2 - \frac{kT}{M} \right) e^{-2\gamma t},
+\tag{15.17}\]</span></span></p>
+<p>where <span class="math inline">\(k\)</span> is the Boltzmann constant and <span class="math inline">\(T\)</span> is the absolute temperature.</p>
+<p>State clearly any assumptions that you make.</p>
+<hr>
+<ol start="14" type="1">
+<li><strong>Einstein’s expression for the diffusion coefficient</strong></li>
+</ol>
+<p>In 1905, Einstein showed that the friction coefficient <span class="math inline">\(\gamma\)</span> (per unit mass) of a colloidal particle must be related to the diffusion coefficient <span class="math inline">\(D\)</span> of the particle by</p>
+<p><span id="eq-unnamed-17"><span class="math display">\[
+D = \frac{kT}{\gamma}.
+\tag{15.18}\]</span></span></p>
+<p>If a marked particle covers a distance <span class="math inline">\(X\)</span> in a given time <span class="math inline">\(t\)</span> (assuming a one-dimensional random walk), the diffusion coefficient is defined to be</p>
+<p><span id="eq-unnamed-18"><span class="math display">\[
+D = \lim_{t \to \infty} \frac{1}{2t} \langle \{ X(t) - X(0) \}^2 \rangle,
+\tag{15.19}\]</span></span></p>
+<p>where the average <span class="math inline">\(\langle \cdot \rangle\)</span> is taken over an ensemble in thermal equilibrium.</p>
+<p>Show that the Einstein relation may be written as</p>
+<p><span id="eq-unnamed-19"><span class="math display">\[
+\gamma = \frac{1}{\mu} = \frac{D}{kT} = \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle \, dt,
+\tag{15.20}\]</span></span></p>
+<p>where <span class="math inline">\(\mu\)</span> is known as the mobility of the particle and <span class="math inline">\(t_0\)</span> is any arbitrarily chosen time.</p>
+<hr>
+<ol start="15" type="1">
+<li><strong>Life in one dimension</strong></li>
+</ol>
+<p>A particle lives on the sites of a one-dimensional lattice. At any instant it has probability <span class="math inline">\(\alpha\)</span> per unit time that it will hop to the site on its right and probability <span class="math inline">\(\alpha\)</span> per unit time of hopping to the site on its left.</p>
+<p>Write down the master equation for the set of probabilities <span class="math inline">\(p_n(t)\)</span> of finding the particle at the <span class="math inline">\(n^{\text{th}}\)</span> site, where <span class="math inline">\(-\infty &lt; n &lt; \infty\)</span>.</p>
+<p>Solve the master equation for the <span class="math inline">\(p_n\)</span>, subject to the initial condition that the particle was at the site <span class="math inline">\(n = 0\)</span> at time <span class="math inline">\(t = 0\)</span>. Hence obtain the mean position <span class="math inline">\(\langle n \rangle\)</span> and root mean square deviation from the mean, both as functions of time.</p>
+<p><strong>Hint</strong>: The second part of the question is most easily done by introducing the generating function</p>
+<p><span id="eq-unnamed-20"><span class="math display">\[
+F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
+\tag{15.21}\]</span></span></p>
+<hr>
+<ol start="16" type="1">
+<li><strong>Master equation</strong></li>
+</ol>
+<p>A system of <span class="math inline">\(N\)</span> atoms, each having two energy levels <span class="math inline">\(E = \pm \epsilon\)</span>, is brought into contact with a heat bath at temperature <span class="math inline">\(T\)</span>. The atoms do not interact with each other, but each atom interacts with the heat bath to have a probability <span class="math inline">\(\lambda_{-\to+}(T)\)</span> per unit time of transition from lower to higher level, and a probability <span class="math inline">\(\lambda_{+\to-}(T)\)</span> per unit time of the reverse transition.</p>
+<p>If at any time <span class="math inline">\(t\)</span> there are <span class="math inline">\(n_+(t)\)</span> atoms at the higher level and <span class="math inline">\(n_-(t)\)</span> at the lower level, then <span class="math inline">\(n(t) = n_-(t) - n_+(t)\)</span> is a convenient measure of the non-equilibrium state.</p>
+<p>Obtain the master equation for <span class="math inline">\(n(t)\)</span> and hence the relaxation time <span class="math inline">\(\tau\)</span> which characterizes the exponential approach of the system to equilibrium.</p>
+<hr>
+<ol start="17" type="1">
+<li><strong>Detailed balance</strong></li>
+</ol>
+<p><strong>(a)</strong> Starting from the principle of detailed balance for an isolated system, show that for two groups of states within it, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the overall rate of transitions from group <span class="math inline">\(A\)</span> to group <span class="math inline">\(B\)</span> is balanced, in equilibrium, by those from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span>:</p>
+<p><span id="eq-unnamed-21"><span class="math display">\[
+\lambda_{A \to B} p^{\text{eq}}_A = \lambda_{B \to A} p^{\text{eq}}_B
+\tag{15.22}\]</span></span></p>
+<p><strong>(b)</strong> Deduce that the principle applies to microstates in the canonical ensemble, and hence that the jump rates between states of a subsystem (of fixed number of particles) connected to a heat bath must obey</p>
+<p><span id="eq-unnamed-22"><span class="math display">\[
+\frac{\lambda_{i \to j}}{\lambda_{j \to i}} = e^{-(E_j - E_i)/kT}.
+\tag{15.23}\]</span></span></p>
+<hr>
+<ol start="18" type="1">
+<li><strong>Jump processes</strong></li>
+</ol>
+<p>An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability <span class="math inline">\(\lambda_0\)</span> that the system makes a jump, from the state it is in, into (each of) the other state(s) it can reach.</p>
+<p><strong>(a)</strong> Show that the occupancy probabilities <span class="math inline">\(p = (p_1, p_2, p_3)\)</span> of the three states obey the master equation</p>
+<p><span id="eq-unnamed-23"><span class="math display">\[
+\dot{p} = M \cdot p
+\tag{15.24}\]</span></span></p>
+<p>where the transition matrix is</p>
+<p><span id="eq-unnamed-24"><span class="math display">\[
+M = \lambda_0 \begin{bmatrix}
+-1 &amp; 1 &amp; 0 \\
+1 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; -1
+\end{bmatrix}
+\tag{15.25}\]</span></span></p>
+<p><strong>(b)</strong> Confirm that an equilibrium state is <span class="math inline">\(p = (1, 1, 1)/3\)</span>.</p>
+<p><strong>(c)</strong> Prove this equilibrium state is unique.</p>
+<p><strong>Hint</strong>: For part (c), consider the eigenvalues of <span class="math inline">\(M\)</span>.</p>
 
 
 

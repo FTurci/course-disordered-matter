@@ -5,7 +5,7 @@
 
 In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the *dynamical* mechanism by which a system evolves from one phase to another. We now address this question explicitly.
 
-Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at zero external field, $H = 0$. We now examine the system’s response to the application of a small negative external field $ H < 0 $, which lowers the free energy of the spin-down phase relative to the spin-up phase.
+Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at zero external field, $H = 0$. We now examine the system’s response to the application of a small negative external field $H < 0$, which lowers the free energy of the spin-down phase relative to the spin-up phase.
 
 Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
 
