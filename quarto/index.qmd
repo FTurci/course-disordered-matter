@@ -1,13 +1,7 @@
----
-title: "Welcome"
-# author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
----
-# Preface{.unnumbered}
-
-**Welcome to the Complex Disordered Matter Course!**
+# Welcome to the Complex Disordered Matter Course! {.unnumbered}
 
 
-![](NotesFigs/Ising1.png){fig-align="left" width=300}
+![Place holder figure](placeholder_figure.png){fig-align="left" width=400}
 
 This course introduces your to the theoretical, computational and experimental aspects of the physics of complex disordered matter.
 

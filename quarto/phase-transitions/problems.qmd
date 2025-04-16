@@ -1,6 +1,6 @@
 
 
-# Phase transitions: Problems{#literature .unnumbered}
+# Unifying theoretical concepts: Problems {#problems .unnumbered}
 
 Although you should try all of these questions, some of them are
 deliberately quite challenging. If you don't get very far with some,
