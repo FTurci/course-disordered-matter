@@ -2,6 +2,7 @@
 title: "Welcome"
 # author: "Nigel B. Wilding, Francesco Turci, Adrian Barnes"
 ---
+# Preface{.unnumbered}
 
 **Welcome to the Complex Disordered Matter Course!**
 
@@ -30,7 +31,7 @@ In addition to theory and experiment, computer simulation plays a central role i
 
 
 
-### Delivery and format
+### Delivery and format{.unnumbered}
 
 * Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is also available. 
 
@@ -47,7 +48,7 @@ In addition to theory and experiment, computer simulation plays a central role i
 * The navigation bar on the left will allow you to access the lecture notes and problem sets.
 
 
-## Intended learning outcomes
+## Intended learning outcomes{.unnumbered}
 
 The course will 
 
@@ -57,7 +58,7 @@ The course will
 - Connect with the most recent advances in the research on complex disordered matter.
 
 
-## Contacts
+## Contacts{.unnumbered}
 
 The course will be taught by
 
@@ -65,7 +66,7 @@ The course will be taught by
 - Dr Francesco Turci: F.Turci@bristol.ac.uk
 - Dr Adrian Barnes: a.c.barnes@bristol.ac.uk
 
-### Questions and comments
+### Questions and comments{.unnumbered}
 If you have any questions about the course, please don’t hesitate to contact me, either by email (see above) or in a problems class.
 
 Finally, this is a new course for 2025/26, with the lecture notes written from scratch. If you find any errors or mistakes or something which isn’t clear, please let us know by email, or fill in this anonymous form:

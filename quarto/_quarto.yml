@@ -71,7 +71,9 @@ book:
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
 
-
+  appendices:
+    - href: revision_guide.qmd
+      text: "Revision guide"
 format:
   html:
     theme: journal

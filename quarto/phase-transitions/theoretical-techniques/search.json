@@ -195,5 +195,15 @@
       "Problems",
       "Theoretical techniques: problems"
     ]
+  },
+  {
+    "objectID": "literature.html",
+    "href": "literature.html",
+    "title": "Literature",
+    "section": "",
+    "text": "Literature\nOne motivation for supplying you with detailed notes for this course is the absence of a wholly ideal text book. However, it should be stressed that while these notes approach (in places) the detail of a book, the notes are not fully comprehensive and should be regarded as the ‘bare bones’ of the course, to be fleshed out via your own reading and supplementary note taking. To this end perhaps the most appropriate textbooks are:\nA good book at the right level for the phase transitions and critical phenomena part of the course is\n\nJ.M. Yeomans: Statistical Mechanics of Phase Transitions\n\nA good book covering all aspects of this part of the course including non-equilibrium systems is\n\nD. Chandler: Introduction to Modern Statistical Mechanics\n\nYou might also wish to dip into the introductory chapters of the following more advanced texts\n\nN Goldenfeld: Lectures on Phase Transitions and the Renormalization Group\nJ.J. Binney, N.J. Dowrick, A.J.Fisher and M.E.J. Newman: The Theory of Critical Phenomena\n\nFor revision on thermodynamics and statistical mechanics\n\nF. Mandl: Statistical Physics.\n\nFor Stochastic dynamics\n\nN.G. van Kampen: Stochastic processess in Physics and Chemistry",
+    "crumbs": [
+      "Course texts"
+    ]
   }
 ]

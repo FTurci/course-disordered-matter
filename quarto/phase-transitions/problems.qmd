@@ -1,6 +1,6 @@
 
 
-# Phase transitions: Problems
+# Phase transitions: Problems{#literature .unnumbered}
 
 Although you should try all of these questions, some of them are
 deliberately quite challenging. If you don't get very far with some,
