@@ -118,7 +118,7 @@ role of co-operative phenomena at the critical point. In particular it
 provides no means for calculating the values of the critical exponents
 appropriate to given model systems.
 
-## Computer simulation {#sec:compsim}
+## Computer simulation {#sec-compsim}
 
 In seeking to employ simulation to obtain estimates of bulk critical
 point properties (such as the location of a critical point and the

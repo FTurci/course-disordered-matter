@@ -17,7 +17,7 @@ book:
   chapters:
     - href: index.qmd
       text: Overview  
-    - part: "Unifying theoretical concepts for disordered matter"
+    - part: "Unifying theoretical concepts"
       chapters:
          - href: phase-transitions/literature.qmd
            text: "Recommended texts"
@@ -37,8 +37,8 @@ book:
            href: phase-transitions/scaling.qmd
          - text: "Renormalization group theory"
            href:  phase-transitions/rg.qmd
-         - text: "RG- the effective coupling viewpoint"
-           href: phase-transitions/rg-effective-coupling.qmd
+        #  - text: "RG- the effective coupling viewpoint"
+        #    href: phase-transitions/rg-effective-coupling.qmd
          - text: "Nucleation and domain growth"
            href: phase-transitions/nucleation-and-growth.qmd  
          - text: "Introduction to stochastic processes"  
@@ -70,8 +70,12 @@ book:
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
+<<<<<<< HEAD
 
 
+=======
+    - part: "Experimental techniques"
+>>>>>>> bad484ed1bbe56d9323e3062b7288d18197b6227
   appendices:
     - href: revision_guide.qmd
       text: "Revision guide"
