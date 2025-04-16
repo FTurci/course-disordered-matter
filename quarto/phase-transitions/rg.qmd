@@ -50,7 +50,7 @@ easily accessed by computer simulation because it entails studying very
 large system sizes $L_\textrm{
 max}$, often requiring considerable computing resources.
 
-## Methodology of the RG {#sec:rgmethod}
+## Methodology of the RG {#sec-rgmethod}
 
 The central idea of the renormalisation group (RG) method is a stepwise
 elimination of the degrees of freedom of the system on successively
@@ -61,8 +61,7 @@ thought of as typifying the size of the smallest resolvable detail in a
 description of the system's microstructure.
 
 Consider the Ising model arrangements displayed in
-fig. [5](#fig:snapshots){reference-type="ref"
-reference="fig:snapshots"}(a)-(c). These pictures contain *all* the
+@fig-snapshots(a)-(c). These pictures contain *all* the
 details of each configuration shown: the resolution length $L$ in this
 case has its smallest possible value, coinciding with the lattice
 spacing i.e. $L=L_{\min}$. In the present context, the most detailed
@@ -82,8 +81,9 @@ indexed by $I=1,2,....,N/L^d$. We associate with each block lattice
 point centre, $I$, a coarse-grained or block variable $S_I(L)$ defined
 as the spatial average of the local variables it contains:
 
-$$S_I(L)=L^{-d}\sum_i^Is_i
-\label{eq:blkvar}$$ where the sum extends over the $L^d$ sites in the
+$$
+S_I(L)=L^{-d}\sum_i^Is_i
+$${#eq-blkvar} where the sum extends over the $L^d$ sites in the
 block $I$. The set of coarse grained coordinates $\{S(L)\}$ are the
 basic ingredients of a picture of the system having spatial resolution
 of order $L$.
@@ -93,16 +93,13 @@ doing one is faced with the fact that while the underlying Ising spins
 can only take two possible values, the block variables $S_I(L)$ have
 $L^d+1$ possible values. Accordingly in displaying the consequences of
 the blocking procedure, we need a more elaborate colour convention than
-that used in fig. [5](#fig:snapshots){reference-type="ref"
-reference="fig:snapshots"}. We will associate with each block a shade of
+that used in @fig-snapshots. We will associate with each block a shade of
 grey drawn from a spectrum ranging from black to white.
 
-![See text for details](Figs/coarseconf1.jpg){#fig:c1 width=80%}
+![See text for details](Figs/coarseconf1.jpg){#fig-c1 width=80%}
 
 The results of coarse-graining configurations typical of three different
-temperatures are shown in fig. [15](#fig:c1){reference-type="ref"
-reference="fig:c1"} and fig. [16](#fig:c2){reference-type="ref"
-reference="fig:c2"}. Two auxiliary operations are implicit in these
+temperatures are shown in @fig-c1 and @fig-c2. Two auxiliary operations are implicit in these
 results. The first operation is a *length scaling*: the lattice spacing
 on each blocked lattice has been scaled to the same size as that of the
 original lattice, making possible the display of correspondingly larger
@@ -114,10 +111,7 @@ to the spectrum of shades at our disposal.
 Consider first a system marginally above its critical point at a
 temperature $T$ chosen so that the correlation length $\xi$ is
 approximately 6 lattice spacing units. A typical arrangement (without
-coarse-graining) is shown in fig. [15](#fig:c1){reference-type="ref"
-reference="fig:c1"}(ai). The succeeding figures,
- [15](#fig:c1){reference-type="ref" reference="fig:c1"}(aii) and
- [15](#fig:c1){reference-type="ref" reference="fig:c1"}(aiii), show the
+coarse-graining) is shown in @fig-c1(ai). The succeeding figures, @fig-c1(aii) and @fig-c1(aiii), show the
 result of coarse-graining with block sizes $L=4$ and $L=8$,
 respectively. A clear trend is apparent. The coarse-graining *amplifies*
 the consequences of the small deviation of $T$ from $T_c$. As $L$ is
@@ -127,9 +121,7 @@ provides a natural measure of how 'critical' is a configuration. Thus
 the coarse-graining operation generates a representation of the system
 that is effectively less critical the larger the coarse-graining length.
 The limit point of this trend is the effectively fully disordered
-arrangement shown in fig. [15](#fig:c1){reference-type="ref"
-reference="fig:c1"}(aiii) and in an alternative form in
-fig. [15](#fig:c1){reference-type="ref" reference="fig:c1"}(aiv), which
+arrangement shown in @fig-c1(aiii)  and in an alternative form in @fig-c1(aiv), which
 shows the limiting distribution of the coarse grained variables,
 averaged over many realizations of the underlying configurations: the
 distribution is a Gaussian which is narrow (even more so the larger the
@@ -139,21 +131,18 @@ microstructure is no longer explicitly apparent; each coarse-grained
 variable is essentially independent of the others.
 
 A similar trend is apparent below the critical point.
-Fig. [15](#fig:c1){reference-type="ref" reference="fig:c1"}(bi) show a
+@fig-c1(bi) show a
 typical arrangement at a temperature $T<T_c$ such that again $\xi$ is
 approximately $6$ lattice spacings. Coarse-graining with $L=4$ and $L=8$
 again generates representations which are effectively less critical
-(figs. [15](#fig:c1){reference-type="ref" reference="fig:c1"}(bii) and
-(biii)). This time the coarse-graining smoothes out the microstructure
+(@fig-c1(bii) and (biii)). This time the coarse-graining smoothes out the microstructure
 which makes the order incomplete. The limit point of this procedure is a
 homogeneously ordered arrangement in which the block variables have a
 random (Gaussian) distribution centred on the order parameter
-(fig. [15](#fig:c1){reference-type="ref" reference="fig:c1"}(biv)).
+(@fig-c1(biv)).
 
-Consider now the situation *at* the critical point.
-Fig. [16](#fig:c2){reference-type="ref" reference="fig:c2"}(ai) shows a
-typical arrangement; figs.  [16](#fig:c2){reference-type="ref"
-reference="fig:c2"}(aii) and (aiii) show the results of coarse-graining
+Consider now the situation *at* the critical point. @fig-c2(ai) shows a
+typical arrangement; @fig-c2(aii) and (aiii) show the results of coarse-graining
 with $L=4$ and $L=8$ respectively. Since the $\xi$ is as large as the
 system itself the coarse graining does not produce less critical
 representations of the physical system: each of the figures displays
@@ -170,15 +159,14 @@ The implication of this limiting behaviour is clear: the patterns formed
 by the ordering variable at criticality look the same (in a statistical
 sense) when viewed on all sufficiently large length scales.
 
-![See text for details](Figs/coarseconf2.png){#fig:c2 width=80%}
+![See text for details](Figs/coarseconf2.png){#fig-c2 width=80%}
 
 Let us summarize. Under the coarse-graining operation there is an
 evolution or *flow* of the system's configuration spectrum. The flow
 tends to a limit, or fixed point, such that the pattern spectrum does
 not change under further coarse-graining. These scale-invariant limits
 have a trivial character for $T>T_c$, (a perfectly disordered
-arrangement) and $T
-< T_c$, (a perfectly ordered arrangement). The hallmark of the critical
+arrangement) and $T< T_c$, (a perfectly ordered arrangement). The hallmark of the critical
 point is the existence of a scale-invariant limit which is neither fully
 ordered nor fully disordered but which possesses structure on all length
 scales.
@@ -207,8 +195,7 @@ We have already seen that the coarse-graining operation bears the
 configuration spectrum of the critical two-state Ising model to a
 non-trivial scale-invariant limit. It is scarcely surprising that the
 same is true for the three-state model. What is remarkable is that the
-two limits are the same! This is expressed in
-fig. [16](#fig:c2){reference-type="ref" reference="fig:c2"}(iv), which
+two limits are the same! This is expressed in @fig-c2(iv), which
 shows the near coincidence of the distribution of block variables
 (grey-levels) for the two different coarse-graining lengths. Thus the
 coarse-graining erases the physical differences apparent in
@@ -222,21 +209,15 @@ configurations are those formed by the coarse-grained magnetisation (the
 magnetic moment averaged over a block of side $L$). In a fluid, the
 relevant configurations are those of the coarse-grained density (the
 mass averaged over a block if side $L$) or more precisely, its
-fluctuation from its macroscopic average
-(Fig. [17](#fig:fmcoarse){reference-type="ref"
-reference="fig:fmcoarse"}). The patterns in the latter (bubbles of
+fluctuation from its macroscopic average (@fig-fmcoarse). The patterns in the latter (bubbles of
 liquid or vapour) may be matched to pattern in the former (microdomains
 of the magnetisation), given appropriate scaling operations to
 camouflage the differences between the length scales and the differences
 between the variable scales.
 
-![Schematic representation of the coarse graining operation via which the universal properties of fluids and magnets may be exposed.](Figs/coarse.png){#fig:fmcoarse width=50%}
+![Schematic representation of the coarse graining operation via which the universal properties of fluids and magnets may be exposed.](Figs/coarse.png){#fig-fmcoarse width=50%}
 
-The results is illustrated in
-Fig. [18](#fig:confscomp){reference-type="ref"
-reference="fig:confscomp"}. For the full demonstration the YouTube video
-at\
-https://www.youtube.com/watch?v=Kd4UvhUsBAU.
+The results is illustrated in @fig-confscomp. See also the [full demonstration](https://www.youtube.com/watch?v=Kd4UvhUsBAU&ab_channel=DouglasAshton) on YouTube.
 
 ::: {#fig-confscomp layout-ncol=2}
 ![2D critical Ising model](Figs/fluid-magnet.png){}
@@ -266,7 +247,7 @@ minimum-length-scale structure (set by $L_1$ and $L_2$) looks the same
 for each system. Precisely what they look like depends upon our choice
 of $\xi/L$.
 
-## Universality classes {#sec:unipics}
+## Universality classes {#sec-unipics}
 
 Coarse graining does not erase all differences between the physical
 properties of critical systems. Differences in the space dimension $d$
@@ -312,20 +293,22 @@ that, for *any* $L$ and $t$, scale factors $a(L)$ and $b(L)$ may be
 found such that the probability distribution $p(S(L),t)$ can be written
 in the form
 
-$$p(S(L),t)=b(L)\tilde{p}(b(L)S(L),a(L)t)
-\label{eq:blocks}$$ where $\tilde{p}$ is a function unique to a
-universality class. The role of the scale factors $a$ and $b$ is to
+$$
+p(S(L),t)=b(L)\tilde{p}(b(L)S(L),a(L)t)
+$${#eq-blocks}
+where $\tilde{p}$ is a function unique to a universality class. 
+The role of the scale factors $a$ and $b$ is to
 absorb the basic non-universal scales identified in
-sec. [9.2](#sec:rgmethod){reference-type="ref"
-reference="sec:rgmethod"}. The critical exponents are implicit in the
+@sec-rgmethod. The critical exponents are implicit in the
 $L$-dependence of these scale factors. Specifically one finds:
 
+$$
 \begin{aligned}
 a(L)&=&a_0L^{1/\nu} \\
 b(L)&=&b_0L^{\beta/\nu}
-\label{eq:scalefacs}
-\end{aligned} where the amplitudes $a_0$ and $b_0$ are system specific
-(non-universal) constants.
+\end{aligned} 
+$${#eq-scalefacs}
+where the amplitudes $a_0$ and $b_0$ are system specific (non-universal) constants.
 
 These results state that the critical exponents (in the form $1/\nu$ and
 $\beta/\nu$) characterize the ways in which the configuration spectrum
@@ -337,12 +320,11 @@ grey scale representation) is eroded with increasing $L$. Thus the
 configurations of coarse-graining length $L_1$ match those of a larger
 coarse-graining length $L_2$ only if the variable scale in the latter
 configurations is amplified. The required amplification follows from
-eqns. [\[eq:blocks\]](#eq:blocks){reference-type="ref"
-reference="eq:blocks"}
-and [\[eq:scalefacs\]](#eq:scalefacs){reference-type="ref"
-reference="eq:scalefacs"}: it is
+@eq-blocks and and @eq-scalefacs: it is
 
-$$\frac{b(L_2)}{b(L_1)}=\left(\frac{L_2}{L_1}\right)^{\beta/\nu}\:.$$
+$$
+\frac{b(L_2)}{b(L_1)}=\left(\frac{L_2}{L_1}\right)^{\beta/\nu}\:.
+$$
 The exponent ratio $\beta/\nu$ thus controls the rate at which the scale
 of the ordering variable decays with increasing coarse-graining length.
 
@@ -351,14 +333,14 @@ temperature (large but finite $\xi$) there is second way in which the
 configuration spectrum evolves with $L$. As noted previously, coarse
 graining reduces the ratio of correlation length to coarse-graining
 length, and results in configurations with a less critical appearance.
-More precisely, we see from
-eq. [\[eq:blocks\]](#eq:blocks){reference-type="ref"
-reference="eq:blocks"} that increasing the coarse graining length from
+More precisely, we see from @eq-blocks that increasing the coarse graining length from
 $L_1$ to $L_2$ while keeping the reduced temperature constant has the
 same effect on the configuration spectrum as keeping coarse-graining
 length constant which amplifying the reduced temperature $t$ by a factor
 
-$$\frac{a(L_2)}{a(L_1)}=\left(\frac{L_2}{L_1}\right)^{1/\nu}\:.$$ One
+$$
+\frac{a(L_2)}{a(L_1)}=\left(\frac{L_2}{L_1}\right)^{1/\nu}\:.
+$$ One
 may think of the combination $a(L)t$ as a measure of the effective
 reduced temperature of the physical system viewed with resolution length
 $L$. The exponent $1/\nu$ controls the rate at which the effective
@@ -369,19 +351,20 @@ reduced temperature flows with increasing coarse-graining length.
 We can exploit the fact that the scale factors $a(L)$ and $b(L)$ depend
 on critical exponents to estimate the values of these exponents using
 computer simulation. Consider the average of the block variable $S(L)$.
-Consideration of eq. [\[eq:blkvar\]](#eq:blkvar){reference-type="ref"
-reference="eq:blkvar"} shows that this is non other than the value of
+Consideration of @eq-blkvar shows that this is non other than the value of
 the order parameter $Q$, measured over a block of side $L$. Thus from
 the definition of an average
 
-$$Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)$$ where $p(S(L))$ is the
+$$
+Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)
+$$ where $p(S(L))$ is the
 probability distribution of $S(L)$.
 
-Making use of the representation of
-eq. [\[eq:blocks\]](#eq:blocks){reference-type="ref"
-reference="eq:blocks"}, we then have that
+Making use of the representation of @eq-blocks, we then have that
 
-$$Q(L,t) = \int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)dS(L)$$
+$$Q
+(L,t) = \int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)dS(L)
+$$
 
 To integrate this we need to change the integration variable from $S(L)$
 to $b(L)S(L)$. We have $d(b(L)S(L))=b(L)dS(L)$ since $b(L)$ does not
@@ -398,8 +381,7 @@ The above results provide a method for determining the critical exponent
 ratios $\beta/\nu$ and $1/\nu$ via computer simulations of near critical
 systems. For instance, at the critical point ($t=0$) and for finite
 block size, $Q(L,0)$ will not be zero (the $T$ at which Q vanishes for
-finite $L$ is above the true $T_c$, cf.
-sec [8.2](#sec:compsim){reference-type="ref" reference="sec:compsim"}).
+finite $L$ is above the true $T_c$, cf. @sec-compsim.
 However, we know that its value must vanish in the limit of infinite
 $L$; it does so like
 
@@ -433,7 +415,7 @@ As this is quite a long chapter let us summarise the main points:
 
 - **Universality**:
   - Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.
-  - The concept of **universality** explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.
+  - The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.
   - Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.
 
 

@@ -3,8 +3,7 @@
 
 # The renormalisation group: effective coupling viewpoint
 
-Let us begin by returning to our fundamental equation (eq.
-[\[eq:probs\]](#eq:probs){reference-type="ref" reference="eq:probs"}),
+Let us begin by returning to our fundamental @eq-probs,
 which we rewrite as
 
 $$p = Z^{-1}e^{-{\cal H}}$$ where ${\cal H}\equiv E/k_BT$.
@@ -29,15 +28,10 @@ to replace a hard problem by a less hard problem. Specifically, suppose
 that our system is near a critical point and that we wish to calculate
 its large-distance properties. If we address this task by utilizing the
 configurational energy and appealing to the basic machinery of
-statistical mechanics set out in
-eqs. [\[eq:probs\]](#eq:probs){reference-type="ref"
-reference="eq:probs"} and
- [\[eq:partition\]](#eq:partition){reference-type="ref"
-reference="eq:partition"}, the problem is hard. It is hard because the
+statistical mechanics set out in @eq-probs and @eq-partition, the problem is hard. It is hard because the
 system has fluctuations on all the (many) length scales intermediate
 between the correlation length $\xi$ and the minimum length scale
-$L_\textrm{
-min}$.
+$L_\textrm{min}$.
 
 However, the task may instead be addressed by tackling the
 coarse-grained system described by the energy ${\cal H}^\prime$. The
@@ -92,12 +86,11 @@ new couplings depend on the old couplings: $K_1^\prime$ is some function
 $f_1$ of all the original couplings, and generally
 
 $$K^\prime_a=f_a(K_1,K_2,\dots) =f_a({\bf K}),~~~~ a= 1, 2,\dots
-\label{eq:rgt}$$ where **K** is shorthand for the set $K_1, K_2,\dots$
+$${#eq-rgt} where **K** is shorthand for the set $K_1, K_2,\dots$
 
 ## A simple example
 
-This example illustrates how one can perform the RG transformation
-([\[eq:rgt\]](#eq:rgt){reference-type="ref" reference="eq:rgt"})
+This example illustrates how one can perform the RG transformation @eq-rgt
 directly, without recourse to a 'sequence of typical configurations'.
 The calculation involves a very crude approximation which has the
 advantage that it simplifies the subsequent analysis.
@@ -110,15 +103,15 @@ spins is obtained by performing the configurational average over the
 $\{\tilde{s}\}$ ](Figs/rglat.png){#fig-rglat width=50%}
 
 Consider an Ising model in two dimensions, with only nearest neighbour
-interactions as shown in fig. [19](#fig:rglat){reference-type="ref"
-reference="fig:rglat"}. We have divided the spins into two sets, the
+interactions as shown in @fig-rglat. We have divided the spins into two sets, the
 spins $\{s^\prime\}$ form a square lattice of spacing $2$, the others
 being denoted by $\{\tilde{s}\}$. One then defines an effective energy
 function ${\cal H^\prime}$ for the $s^\prime$ spins by performing an
 average over all the possible arrangements of the $\tilde{s}$ spins
 
-$$\exp(-{\cal H}^\prime)=\sum_{\{\tilde {s}\}} \exp(-{\cal H}).
-\label{eq:decimate}$$
+$$
+\exp(-{\cal H}^\prime)=\sum_{\{\tilde {s}\}} \exp(-{\cal H}).
+$${#eq-decimate}
 
 This particular coarse-graining scheme is called 'decimation' because a
 certain fraction (not necessarily one-tenth!) of spins on the lattice is
@@ -130,9 +123,7 @@ are the same as one can see by summing both sides over $s^\prime$) and
 the new system is further from critically because the ratio of $\xi$ to
 lattice spacing ('minimum length scale') has been reduced by a factor of
 $1/2$ (the ratio of the lattice spacings of the two systems). We must
-now face the question of how to perform the configuration sum in
-eq. [\[eq:decimate\]](#eq:decimate){reference-type="ref"
-reference="eq:decimate"}. This cannot in general be done exactly, so we
+now face the question of how to perform the configuration sum in @eq-decimate. This cannot in general be done exactly, so we
 must resort to some approximation scheme. The particular approximation
 which we invoke is the high temperature series expansion. In its simplest mathematical form, since
 ${\cal H}$ contains a factor $1/k_BT$, it involves the expansion of
@@ -140,9 +131,8 @@ $\exp(-{\cal H})$ as a power series:
 
 $$\exp(-{\cal H}/k_BT)=1-{\cal H}/k_BT +\frac{1}{2!}({\cal H}/k_BT)^2+.....$$
 
-We substitute this expansion into the right hand side of
-eq. [\[eq:decimate\]](#eq:decimate){reference-type="ref"
-reference="eq:decimate"} and proceed to look for terms which depend on
+We substitute this expansion into the right hand side of @eq-decimate
+and proceed to look for terms which depend on
 the $s^\prime$ spins after the sum over the possible arrangements of the
 $\tilde{s}$ spins is performed. This sum extends over all the possible
 ($\pm 1$) values of all the $\tilde{s}$ spins. The first term (the 1) in
@@ -157,46 +147,39 @@ $K^2s_1^\prime\tilde{s}\tilde{s}s_2^\prime=K^2s_1^\prime s_2^\prime$,
 where $s_1^\prime$ and $s_2^\prime$ denote two spins at nearest
 neighbour sites on the lattice of $s^\prime$ spins and $\tilde{s}$ is
 the spin (in the other set) which lies between them. Now, in the
-corresponding expansion of the left hand side of
-eq. [\[eq:decimate\]](#eq:decimate){reference-type="ref"
-reference="eq:decimate"}, we find terms of the form
+corresponding expansion of the left hand side of @eq-decimate, we find terms of the form
 $K^\prime s_1^\prime s_2^\prime$, where $K^\prime$ is the nearest
 neighbour coupling for the $s^\prime$ spins. We conclude (with a little
 more thought than we detail here) that
 
-$$K^\prime=K^2
-\label{eq:rgdec}$$
+$$
+K^\prime=K^2
+$${#eq-rgdec}
 
 Of course many other terms and couplings are generated by the higher
 orders of the high temperature expansion and it is necssary to include
 these if one wishes reliable values for the critical temperature and
 exponents, However, our aim here is to use this simple calculation to
 illustrate the RG method. Let us therefore close our eyes, forget about
-the higher order terms and show how the RGT
-(eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref"
-reference="eq:rgdec"}) can be used to obtain information on the phase
+the higher order terms and show how the RGT @eq-rgdec can be used to obtain information on the phase
 transition.
 
 ![Coupling flow under the decimation transformation described in the text.](Figs/flow1.png){#fig-flow1 width=60%}
 
-The first point to note is that that mathematically
-eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref" reference="eq:rgdec"}
+The first point to note is that that mathematically @eq-rgdec
 has the fixed point $K^*= 1$; if $K= 1$ then the new effective coupling
 $K^\prime$ has the same value $1$. Further, if $K$ is just larger than
 $1$, then $K^\prime$ is larger than $K$, i.e. further away from $1$.
 Similarly, if $K$ is less than $1$, $K^\prime$ is less than $K$. We say
 that the fixed point is unstable: the flow of couplings under repeated
-iteration of eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref"
-reference="eq:rgdec"} is away from the fixed point, as illustrated in
-fig. [20](#fig:flow1){reference-type="ref" reference="fig:flow1"}. The
-physical significance of this is as follows: suppose that the original
+iteration of @eq-rgdec is away from the fixed point, as illustrated in
+@fig-flow1. The physical significance of this is as follows: suppose that the original
 system is at its critical point so that the ratio of $\xi$ to lattice
 spacing is infinite. After one application of the decimation
 transformation, the effective lattice spacing has increased by a factor
 of two, but this ratio remains infinite; the new system is therefore
 also at its critical point. Within the approximations inherent in
-eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref"
-reference="eq:rgdec"}, the original system is an Ising model with
+@eq-rgdec, the original system is an Ising model with
 nearest neighbour coupling $K$ and the new system is an Ising model with
 nearest neighbour coupling $K^\prime$. If these two systems are going to
 be at a common critically, we must identify $K^\prime=
@@ -210,13 +193,13 @@ deviations of $K$ from $K^*$ is a further necessary condition for its
 interpretation as a critical point of the system. In summary then we
 make the prediction
 
-$$K_c=J/k_BT_c=1
-\label{eq:Kc}$$
+$$
+K_c=J/k_BT_c=1
+$${#eq-Kc}
 
 We can obtain further information about the behaviour of the system
-close to its critical point. In order to do so, we rewrite the
-transformation (eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref"
-reference="eq:rgdec"}) in terms of the deviation of the coupling from
+close to its critical point. In order to do so, we rewrite the 
+transformation (@eq-rgdec) in terms of the deviation of the coupling from
 its fixed point value. A Taylor expansion of the function $K^\prime=K^2$
 yields
 
@@ -253,8 +236,7 @@ a factor of more than two. In order to obtain reliable estimates more
 sophisticated and systematic methods must be used.
 
 The crude approximation in the calculation above produced a
-transformation, eq. [\[eq:rgdec\]](#eq:rgdec){reference-type="ref"
-reference="eq:rgdec"}, involving only the nearest neighbour coupling,
+transformation, @eq-rgdec, involving only the nearest neighbour coupling,
 with the subsequent advantages of simple algebra. We pay a penalty for
 this simplicity in two ways: the results obtained for critical
 properties are in rather poor agreement with accepted values, and we
@@ -266,11 +248,9 @@ In order to expose how universality can arise, we should from the start
 allow for several different kinds of coupling $J_a$, and show how the
 systems with *different* $J_a$ can have the *same* critical behaviour.
 
-![General flow in coupling space](Figs/flow2.png){#fig-flow2
-width=80%}
+![General flow in coupling space](Figs/flow2.png){#fig-flow2 width=80%}
 
-Fig. [21](#fig-flow2){reference-type="ref" reference="fig:flow2"} is a
-representation of the space of all coupling strengths $K_a$ in the
+@fig-flow2 is a representation of the space of all coupling strengths $K_a$ in the
 energy function ${\cal H}/k_BT$. This is of course actually a space of
 infinite dimension, but representing three of these, as we have done,
 enables us to illustrate all the important aspects. First let us be
@@ -287,16 +267,14 @@ J_a/k_BT, a= 1,2,\dots$ The set of critical points on all of the
 possible rays forms a *surface*, the critical surface. Formally, it is
 defined by the set of all possible models (of the Ising type) which have
 infinite $\xi$. It is shown schematically as the shaded surface in
-fig. [21](#fig:flow2){reference-type="ref" reference="fig:flow2"}. (In
-the figure it is a two-dimensional surface; more generally it has one
+@fig-flow2. (In the figure it is a two-dimensional surface; more generally it has one
 dimension less than the full coupling constant space, dividing all
-models into high and low tempera- ture phases.)
+models into high and low temperature phases.)
 
 Our immediate goal then is to understand how the RGT can explain why
 different physical systems near this critical surface have the same
 behaviour. Let us turn now to the schematic representation of the RG
-flow in fig. [21](#fig:flow2){reference-type="ref"
-reference="fig:flow2"}. Suppose we start with a physical system, with
+flow in @fig-flow2. Suppose we start with a physical system, with
 coupling strengths $K_a,  a= 1,2, \dots$. What the RGT does is generate
 a new point in the figure, at the coupling strengths
 $K_a^{(1)}=f_a({\bf K})$; these are the couplings appearing in the
@@ -309,8 +287,7 @@ effective couplings after $n$ coarse-graining steps. if the change in
 coarse-graining scale is $b$ ($> 1$) at each step, the total change in
 coarse-graining scale is $b^n$ after $n$ steps. In the process,
 therefore, the ratio of $\xi$ to coarse-graining scale is reduced by a
-factor of $b^{-n}$. The dots in
-fig. [21](#fig:flow2){reference-type="ref" reference="fig:flow2"}
+factor of $b^{-n}$. The dots in @fig-flow2
 identify three lines of RG flow starting from three systems differing
 only in their temperature. (The flow lines are schematic but display the
 essential features revealed in detailed calculations.)
@@ -350,8 +327,7 @@ described by the single set of fixed point coupling constants. The
 uniqueness of this limiting set of coupling constants is the essence of
 critical point universality. It is, of course, the algebraic counterpart
 of the unique limiting spectrum of coarse-grained configurations,
-discussed in sec [9.5](#sec:unipics){reference-type="ref"
-reference="sec:unipics"}. Similarly the scale-invariance of the critical
+discussed in @sec-unipics. Similarly the scale-invariance of the critical
 point configuration spectrum (viewed on large enough length scales) is
 expressed in the invariance of the couplings under iteration of the
 transformation (after a number of iterations large enough to secure
@@ -363,9 +339,8 @@ explicit studies). The flow line stemming from any such system will, we
 have argued, be borne towards the fixed point before ultimately
 deviating from it after a number of iterations large enough to expose
 the system's noncritical character. We assume that (as indicated
-schematically in the streams of red and blue lines in
-fig. [21](#fig:flow2){reference-type="ref" reference="fig:flow2"}) the
-deviations lie along a single line through the fixed point, the
+schematically in the streams of red and blue lines in @fig-flow2
+the deviations lie along a single line through the fixed point, the
 direction followed along this line differing according to the sign of
 the temperature deviation $T-T_c$. Since any two sets of coupling
 constants on the line (on the same side of the fixed point) are related
