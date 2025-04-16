@@ -47,6 +47,8 @@ website:
           text: "Nucleation and growth"
         - href: phase-transitions/problems.qmd
           text: "Problems"
+        - href: phase-transitions/live-test.qmd
+          text: "Coding"  
         
         - href: phase-transitions/literature.qmd
           text: "Literature"
@@ -73,7 +75,7 @@ website:
 
 
 format:
-  html:
+  live-html:
     theme: journal
     
     grid:
