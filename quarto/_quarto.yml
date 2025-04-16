@@ -70,12 +70,8 @@ book:
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
-<<<<<<< HEAD
-
-
-=======
     - part: "Experimental techniques"
->>>>>>> bad484ed1bbe56d9323e3062b7288d18197b6227
+
   appendices:
     - href: revision_guide.qmd
       text: "Revision guide"
