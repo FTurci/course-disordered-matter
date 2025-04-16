@@ -48,7 +48,9 @@ book:
          - text: "Dynamics of fluctuations"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
-           text: "Problems"     
+           text: "Problems"   
+         - href: phase-transitions/live-test.qmd
+           text: "Coding"  
 
     - part: "Complex disordered matter"
       chapters:
@@ -69,19 +71,18 @@ book:
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
 
+
   appendices:
     - href: revision_guide.qmd
       text: "Revision guide"
     - href: phase-transitions/concepts_map.qmd
       text: "Concept maps"    
 format:
-  html:
-    theme: journal
-    
+  live-html:
+    theme: cosmo
     grid:
       sidebar-width: 305px
     toc: true
-    number-sections: true  # Removed number-chapters
-    number-depth: 3
-    filters:
-      - auto-eq
+    pyodide:
+        cell-options:
+          autorun: true
