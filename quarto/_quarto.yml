@@ -49,8 +49,10 @@ book:
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
            text: "Problems"
+ #        - href: revision_guide.qmd
+ #          text: "Revision guide"        
 
-    - part: "Soft Matter"
+    - part: "Complex disordered matter"
       chapters:
         - href: soft-matter/soft-matter_plan.qmd
           text: "Plan"
