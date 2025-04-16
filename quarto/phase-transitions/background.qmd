@@ -19,14 +19,16 @@ the ordering process. The probability $p_a$ that a physical system at
 temperature $T$ will have a particular microscopic arrangement
 (configuration), labelled $a$, of energy $E_a$ is
 
-$$p_a=\frac{1}{Z}e^{-E_a/k_BT}
+$$
+p_a=\frac{1}{Z}e^{-E_a/k_BT}
 $${#eq-probs}
 
 The prefactor $Z^{-1}$ is the *partition function*: since the system
 must always have *some* specific arrangement, the sum of the
 probabilities $p_a$ must be unity, implying that
 
-$$Z=\sum_ae^{-E_a/k_BT}
+$$
+Z=\sum_ae^{-E_a/k_BT}
 $${#eq-partition} where the sum extends over all possible
 microscopic arrangements.
 
@@ -44,7 +46,8 @@ important insights follow painlessly. Consider the case where the
 observable of interest is the order parameter, or more specifically the
 magnetisation of a ferromagnet.
 
-$$Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
+$$
+Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
 $${#eq-op}
 
 It is clear from @eq-probs that at very low temperature the system will be
@@ -75,7 +78,8 @@ mechanics) approach to thermal systems outlined above is completely
 compatible with classical thermodynamics. Specifically, the bridge
 between the two disciplines is provided by the following equation
 
-$$F=-k_BT \ln Z
+$$
+F=-k_BT \ln Z
 $$ {#eq-free}
 
 where $F$ is the "Helmholtz free energy". All

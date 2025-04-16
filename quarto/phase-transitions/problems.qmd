@@ -1,6 +1,6 @@
 
 
-# Phase transitions: Problems
+# Unifying theoretical concepts: Problems {#problems .unnumbered}
 
 Although you should try all of these questions, some of them are
 deliberately quite challenging. If you don't get very far with some,
@@ -22,6 +22,8 @@ just regard them as worked examples.
     walk on the lattice and find an expression for its energy and -from
     the number of random walk configurations- its entropy.*)
 
+---
+
 2.  **Correlation Length**
 
     (Challenging) For a 1D Ising model, show that the correlation
@@ -42,6 +44,8 @@ just regard them as worked examples.
     containing a domain wall and $(1-p)$ that it doesn't. What special
     type of distribution does $p_m$ tend to when $p$ is small (as occurs
     at low $T$)?*
+
+---
 
 3.  **A model fluid**
 
@@ -84,6 +88,8 @@ just regard them as worked examples.
     - Obtain the value of the critical exponent $\gamma$ of the vdW
       model and confirm that it takes a mean-field value.
 
+---
+
 4.  **Mean field theory of the Ising model heat capacity**
 
     (Straightforward) Using results derived in lectures, obtain an
@@ -97,6 +103,8 @@ just regard them as worked examples.
     C_H=& 0 ~~~~ T>T_c\\
     C_H=& 3Nk_B/2 ~~~~ T\le T_c
     \end{aligned}
+
+---
 
 5.  **Magnetisation and fluctuations**
 
@@ -118,6 +126,8 @@ just regard them as worked examples.
     books on Statistical Mechanics. You will need to differentiate $F$
     (twice) and use the product and chain rules.*)
 
+---
+
 6.  **Spin-1 Ising model**
 
     (Straightforward) A set of spins on a lattice of coordination number
@@ -133,6 +143,8 @@ just regard them as worked examples.
 
     and find the critical temperature $T_c$ at which the net
     magnetisation vanishes.
+
+---
 
 7.  **Transfer Matrix.**
 
@@ -151,6 +163,8 @@ just regard them as worked examples.
     approach you may need to use the trigonometrical identities
     $\cosh^2x-\sinh^2x=1$, $\cosh(2x)=2\cosh^2x-1$.*)
 
+---
+
 8.  **Lattice gas model** (Straightforward). Check the claim, made in
     lectures that the "Hamiltonian" of the Lattice Gas model in the
     grand canonical ensemble
@@ -167,6 +181,8 @@ just regard them as worked examples.
         i,j\rangle}$ for a lattice of coordination $q$ there are $q/2$
     bonds per site since each bond is shared between two sites.*)
 
+---
+
 9.  **Landau theory**
 
     Check and complete the Landau theory calculations, given in
@@ -180,6 +196,8 @@ just regard them as worked examples.
     (*Hint: If you get stuck with the proof see standard thermodynamics
     text books. To get the susceptibility exponent in Landau theory add
     a term $-Hm$ to the Hamiltonian.*)
+
+---
 
 10. **Scaling laws**
 
@@ -198,6 +216,8 @@ just regard them as worked examples.
     \end{aligned} (*Hint: For the heat capacity exponent $\alpha$ use
     the result from problem 9:
     $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
+
+---
 
 11. **Renormalization Group transformation for the 1D Ising model**
 
@@ -252,6 +272,8 @@ just regard them as worked examples.
     detail in a problems class. So if you don't make much progress,
     don't worry, just treat it as a worked example.*
 
+---
+
 12. **RG flow of the free energy**
 
     (Straightforward) An alternative RG equation for the effective
@@ -279,6 +301,118 @@ just regard them as worked examples.
     - Compare your results for each iteration with the exact results for
       the free energy density of the 1D Ising model obtained in
       lectures.
+---
 
+13. **Colloidal diffusion**
 
-13. Further problems on new stuff with solutions
+A large colloidal particle of mass $M$ moves in a fluid under the influence of a random force $F(t)$ and a coefficient of Stokes friction drag $\gamma$, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by
+
+$$
+u = u_0 e^{-\gamma t} + e^{-\gamma t} \int_0^t dt' \, e^{\gamma t'} F(t'),
+$$
+
+where $u_0$ is the velocity at $t = 0$, show that for long times the velocity of the particle satisfies the relation
+
+$$
+\langle u^2 \rangle = \frac{kT}{M} + \left( u_0^2 - \frac{kT}{M} \right) e^{-2\gamma t},
+$$
+
+where $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+
+State clearly any assumptions that you make.
+
+---
+
+14.  **Einstein's expression for the diffusion coefficient**
+
+In 1905, Einstein showed that the friction coefficient $\gamma$ (per unit mass) of a colloidal particle must be related to the diffusion coefficient $D$ of the particle by
+
+$$
+D = \frac{kT}{\gamma}.
+$$
+
+If a marked particle covers a distance $X$ in a given time $t$ (assuming a one-dimensional random walk), the diffusion coefficient is defined to be
+
+$$
+D = \lim_{t \to \infty} \frac{1}{2t} \langle \{ X(t) - X(0) \}^2 \rangle,
+$$
+
+where the average $\langle \cdot \rangle$ is taken over an ensemble in thermal equilibrium.
+
+Show that the Einstein relation may be written as
+
+$$
+\gamma = \frac{1}{\mu} = \frac{D}{kT} = \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle \, dt,
+$$
+
+where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitrarily chosen time.
+
+---
+
+15. **Life in one dimension** 
+
+A particle lives on the sites of a one-dimensional lattice. At any instant it has probability $\alpha$ per unit time that it will hop to the site on its right and probability $\alpha$ per unit time of hopping to the site on its left. 
+
+Write down the master equation for the set of probabilities $p_n(t)$ of finding the particle at the $n^{\text{th}}$ site, where $-\infty < n < \infty$.
+
+Solve the master equation for the $p_n$, subject to the initial condition that the particle was at the site $n = 0$ at time $t = 0$. Hence obtain the mean position $\langle n \rangle$ and root mean square deviation from the mean, both as functions of time.
+
+**Hint**: The second part of the question is most easily done by introducing the generating function
+
+$$
+F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
+$$
+
+---
+
+16. **Master equation**
+
+A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have a probability $\lambda_{-\to+}(T)$ per unit time of transition from lower to higher level, and a probability $\lambda_{+\to-}(T)$ per unit time of the reverse transition.
+
+If at any time $t$ there are $n_+(t)$ atoms at the higher level and $n_-(t)$ at the lower level, then $n(t) = n_-(t) - n_+(t)$ is a convenient measure of the non-equilibrium state.
+
+Obtain the master equation for $n(t)$ and hence the relaxation time $\tau$ which characterizes the exponential approach of the system to equilibrium.
+
+---
+
+17. **Detailed balance**
+
+**(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states within it, $A$ and $B$, the overall rate of transitions from group $A$ to group $B$ is balanced, in equilibrium, by those from $B$ to $A$:
+
+$$
+\lambda_{A \to B} p^{\text{eq}}_A = \lambda_{B \to A} p^{\text{eq}}_B
+$$
+
+**(b)** Deduce that the principle applies to microstates in the canonical ensemble, and hence that the jump rates between states of a subsystem (of fixed number of particles) connected to a heat bath must obey
+
+$$
+\frac{\lambda_{i \to j}}{\lambda_{j \to i}} = e^{-(E_j - E_i)/kT}.
+$$
+
+---
+
+18. **Jump processes**
+
+An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability $\lambda_0$ that the system makes a jump, from the state it is in, into (each of) the other state(s) it can reach.
+
+**(a)** Show that the occupancy probabilities $p = (p_1, p_2, p_3)$ of the three states obey the master equation
+
+$$
+\dot{p} = M \cdot p
+$$
+
+where the transition matrix is
+
+$$
+M = \lambda_0 \begin{bmatrix}
+-1 & 1 & 0 \\
+1 & -2 & 1 \\
+0 & 1 & -1
+\end{bmatrix}
+$$
+
+**(b)** Confirm that an equilibrium state is $p = (1, 1, 1)/3$.
+
+**(c)** Prove this equilibrium state is unique.
+
+**Hint**: For part (c), consider the eigenvalues of $M$.

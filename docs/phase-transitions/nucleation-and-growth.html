@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>14&nbsp; Dynamics of first order phase transitions: nucleation and growth – Complex Disordered Matter</title>
+<title>10&nbsp; Dynamics of first order phase transitions: nucleation and growth</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,14 +30,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../phase-transitions/problems.html" rel="next">
-<link href="../phase-transitions/master-equation-and-diffusion.html" rel="prev">
+<link href="../phase-transitions/master-equation-and-diffusion.html" rel="next">
+<link href="../phase-transitions/rg-effective-coupling.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bb80c9187f58eb7f0e62b92359fce2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/index.html">Theory of disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Nucleation and growth</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts for disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,9 +124,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Complex Disordered Matter</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../phase-transitions/Figs/courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -138,13 +138,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Theory of disordered matter</span></a>
+ <span class="menu-text">Unifying theoretical concepts for disordered matter</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -152,92 +152,92 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended texts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ising Model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean Field Theory</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lattice Gas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Renormalization Group (RG)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RG Effective Coupling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Approach to Criticality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></span></a>
+  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin Dynamics</span></span></a>
+  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Master Equation and Diffusion</span></span></a>
+  <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The lattice gas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Renormalization group theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Nucleation and growth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Literature</span></a>
+ <span class="menu-text">Problems</span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +245,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Soft Matter</span></a>
+ <span class="menu-text">Complex disordered matter</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,49 +254,72 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_plan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_readings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../revision_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Revision guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/concepts_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Concept maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,18 +334,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">14.1</span> Introduction to nucleation</a></li>
-  <li><a href="#classical-nucleation-theory-homogeneous-nucleation" id="toc-classical-nucleation-theory-homogeneous-nucleation" class="nav-link" data-scroll-target="#classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">14.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
+  <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</a></li>
+  <li><a href="#classical-nucleation-theory-homogeneous-nucleation" id="toc-classical-nucleation-theory-homogeneous-nucleation" class="nav-link" data-scroll-target="#classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
   <ul class="collapse">
-  <li><a href="#interpretation-and-scaling-behavior" id="toc-interpretation-and-scaling-behavior" class="nav-link" data-scroll-target="#interpretation-and-scaling-behavior"><span class="header-section-number">14.2.1</span> Interpretation and Scaling Behavior</a></li>
+  <li><a href="#interpretation-and-scaling-behavior" id="toc-interpretation-and-scaling-behavior" class="nav-link" data-scroll-target="#interpretation-and-scaling-behavior"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behavior</a></li>
   </ul></li>
-  <li><a href="#late-time-dynamics-domain-growth-and-coarsening" id="toc-late-time-dynamics-domain-growth-and-coarsening" class="nav-link" data-scroll-target="#late-time-dynamics-domain-growth-and-coarsening"><span class="header-section-number">14.3</span> Late-Time Dynamics: Domain Growth and Coarsening</a>
+  <li><a href="#late-time-dynamics-domain-growth-and-coarsening" id="toc-late-time-dynamics-domain-growth-and-coarsening" class="nav-link" data-scroll-target="#late-time-dynamics-domain-growth-and-coarsening"><span class="header-section-number">10.3</span> Late-Time Dynamics: Domain Growth and Coarsening</a>
   <ul class="collapse">
-  <li><a href="#non-conserved-order-parameter-dynamics-model-a" id="toc-non-conserved-order-parameter-dynamics-model-a" class="nav-link" data-scroll-target="#non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">14.3.1</span> Non-Conserved Order Parameter Dynamics (Model A)</a></li>
-  <li><a href="#conserved-order-parameter-dynamics-model-b" id="toc-conserved-order-parameter-dynamics-model-b" class="nav-link" data-scroll-target="#conserved-order-parameter-dynamics-model-b"><span class="header-section-number">14.3.2</span> Conserved Order Parameter Dynamics (Model B)</a></li>
-  <li><a href="#schematic-of-domain-growth-in-2d-ising-model" id="toc-schematic-of-domain-growth-in-2d-ising-model" class="nav-link" data-scroll-target="#schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">14.3.3</span> Schematic of Domain Growth in 2D Ising model</a></li>
-  <li><a href="#dynamics-scaling-hypothesis" id="toc-dynamics-scaling-hypothesis" class="nav-link" data-scroll-target="#dynamics-scaling-hypothesis"><span class="header-section-number">14.3.4</span> Dynamics Scaling Hypothesis</a></li>
-  <li><a href="#summary-of-growth-laws" id="toc-summary-of-growth-laws" class="nav-link" data-scroll-target="#summary-of-growth-laws"><span class="header-section-number">14.3.5</span> Summary of Growth Laws</a></li>
+  <li><a href="#non-conserved-order-parameter-dynamics-model-a" id="toc-non-conserved-order-parameter-dynamics-model-a" class="nav-link" data-scroll-target="#non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.3.1</span> Non-Conserved Order Parameter Dynamics (Model A)</a></li>
+  <li><a href="#conserved-order-parameter-dynamics-model-b" id="toc-conserved-order-parameter-dynamics-model-b" class="nav-link" data-scroll-target="#conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.3.2</span> Conserved Order Parameter Dynamics (Model B)</a></li>
+  <li><a href="#schematic-of-domain-growth-in-2d-ising-model" id="toc-schematic-of-domain-growth-in-2d-ising-model" class="nav-link" data-scroll-target="#schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">10.3.3</span> Schematic of Domain Growth in 2D Ising model</a></li>
+  <li><a href="#dynamics-scaling-hypothesis" id="toc-dynamics-scaling-hypothesis" class="nav-link" data-scroll-target="#dynamics-scaling-hypothesis"><span class="header-section-number">10.3.4</span> Dynamics Scaling Hypothesis</a></li>
+  <li><a href="#summary-of-growth-laws" id="toc-summary-of-growth-laws" class="nav-link" data-scroll-target="#summary-of-growth-laws"><span class="header-section-number">10.3.5</span> Summary of Growth Laws</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -330,9 +353,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/index.html">Theory of disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Nucleation and growth</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts for disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Dynamics of first order phase transitions: nucleation and growth</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dynamics of first order phase transitions: nucleation and growth</span></h1>
 </div>
 
 
@@ -349,59 +372,59 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction-to-nucleation" class="level2" data-number="14.1">
-<h2 data-number="14.1" class="anchored" data-anchor-id="introduction-to-nucleation"><span class="header-section-number">14.1</span> Introduction to nucleation</h2>
+<section id="introduction-to-nucleation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</h2>
 <p>In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the <em>dynamical</em> mechanism by which a system evolves from one phase to another. We now address this question explicitly.</p>
-<p>Consider again the Ising model at a temperature <span class="math inline">\(T &lt; T_c\)</span>, where the system is initially prepared in the majority spin-up phase at zero external field, <span class="math inline">\(H = 0\)</span>. We now examine the system’s response to the application of a small negative external field $ H &lt; 0 $, which lowers the free energy of the spin-down phase relative to the spin-up phase.</p>
+<p>Consider again the Ising model at a temperature <span class="math inline">\(T &lt; T_c\)</span>, where the system is initially prepared in the majority spin-up phase at zero external field, <span class="math inline">\(H = 0\)</span>. We now examine the system’s response to the application of a small negative external field <span class="math inline">\(H &lt; 0\)</span>, which lowers the free energy of the spin-down phase relative to the spin-up phase.</p>
 <p>Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via <em>nucleation</em> of localized regions—referred to as <em>droplets</em>—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.</p>
 <p>The nucleation of a droplet of the stable phase of size <span class="math inline">\(n\)</span> spins entails a competition between bulk and interfacial contributions to the free energy. The bulk free energy gain is linear in <span class="math inline">\(n\)</span>, given by <span class="math inline">\(-nH\)</span>, due to the alignment of spins with the external field. However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, each broken bond contributes an energy cost of <span class="math inline">\(+2J\)</span>, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. This interfacial contribution is referred to as the <em>surface tension</em>, and constitutes a true free energy cost: it includes not only the energetic penalty from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.</p>
 <p>The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size <span class="math inline">\(n_c\)</span> will grow; smaller droplets will shrink. This framework is formalized in <em>classical nucleation theory</em>, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.</p>
 </section>
-<section id="classical-nucleation-theory-homogeneous-nucleation" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">14.2</span> Classical Nucleation Theory: Homogeneous Nucleation</h2>
+<section id="classical-nucleation-theory-homogeneous-nucleation" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</h2>
 <p>We now present the framework of <strong>classical nucleation theory</strong> (CNT) for the case of <em>homogeneous nucleation</em>, in which the nucleation of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, defects, or surfaces.</p>
 <p>Let us consider a droplet of the stable (spin-down) phase of radius <span class="math inline">\(R\)</span> embedded within the metastable (spin-up) background. The total change in free energy <span class="math inline">\(\Delta F(R)\)</span> associated with forming such a droplet consists of two competing contributions:</p>
 <ol type="1">
 <li><p><strong>Bulk free energy gain</strong>: The interior of the droplet consists of <span class="math inline">\(V \sim R^d\)</span> spins aligned with the external field <span class="math inline">\(H &lt; 0\)</span>, leading to a volume free energy change</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-0"><span class="math display">\[
 \Delta F_{\text{bulk}}(R) = -|\Delta f| \, R^d,
-\]</span></p>
+\tag{10.1}\]</span></span></p>
 <p>where <span class="math inline">\(|\Delta f| \propto |H|\)</span> is the free energy density difference between the metastable and stable phases, and <span class="math inline">\(d\)</span> is the spatial dimensionality of the system.</p></li>
 <li><p><strong>Interfacial free energy cost</strong>: The boundary between the two phases has a surface area scaling as <span class="math inline">\(R^{d-1}\)</span>, and incurs a free energy cost proportional to the <em>surface tension</em> <span class="math inline">\(\sigma\)</span>:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-1"><span class="math display">\[
 \Delta F_{\text{surface}}(R) = \sigma \, S_d \, R^{d-1},
-\]</span></p>
+\tag{10.2}\]</span></span></p>
 <p>where <span class="math inline">\(S_d\)</span> is a geometrical factor (e.g., <span class="math inline">\(S_2 = 2\pi\)</span> in 2D and <span class="math inline">\(S_3 = 4\pi\)</span> in 3D).</p></li>
 </ol>
 <p>The total free energy change is therefore given by</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-2"><span class="math display">\[
 \Delta F(R) = \sigma \, S_d \, R^{d-1} - |\Delta f| \, V_d \, R^d,
-\]</span></p>
+\tag{10.3}\]</span></span></p>
 <p>where <span class="math inline">\(V_d\)</span> is another dimension-dependent constant. This expression exhibits a characteristic maximum at a critical droplet radius <span class="math inline">\(R_c\)</span>, obtained by extremizing <span class="math inline">\(\Delta F(R)\)</span> with respect to <span class="math inline">\(R\)</span>:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-3"><span class="math display">\[
 \frac{d \Delta F}{dR} = 0 \quad \Rightarrow \quad R_c = \frac{(d-1)\sigma S_d}{d |\Delta f| V_d}.
-\]</span></p>
+\tag{10.4}\]</span></span></p>
 <div id="fig-cnt-schem" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-cnt-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Figs/cnt_schematic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cnt-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.1: Free energy barrier <span class="math inline">\(\Delta F(r)\)</span> for nucleation of a spherical droplet as a function of radius <span class="math inline">\(R\)</span> (schematic)
+Figure&nbsp;10.1: Free energy barrier <span class="math inline">\(\Delta F(r)\)</span> for nucleation of a spherical droplet as a function of radius <span class="math inline">\(R\)</span> (schematic)
 </figcaption>
 </figure>
 </div>
 <p>The corresponding free energy barrier for nucleation is</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-4"><span class="math display">\[
 \Delta F_c = \Delta F(R_c) = \frac{(d-1)^{d-1}}{d^d} \cdot \frac{(S_d)^d \, \sigma^d}{(|\Delta f|)^{d-1} \, (V_d)^{d-1}}.
-\]</span></p>
+\tag{10.5}\]</span></span></p>
 <p>This barrier must be surmounted by thermal fluctuations in order for a critical nucleus to form and grow. The nucleation rate per unit volume is given (in the Arrhenius approximation) by</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-5"><span class="math display">\[
 I \sim I_0 \exp\left( -\frac{\Delta F_c}{k_B T} \right),
-\]</span></p>
+\tag{10.6}\]</span></span></p>
 <p>where <span class="math inline">\(I_0\)</span> is a prefactor determined by microscopic kinetics, and <span class="math inline">\(k_B\)</span> is Boltzmann’s constant.</p>
-<section id="interpretation-and-scaling-behavior" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="interpretation-and-scaling-behavior"><span class="header-section-number">14.2.1</span> Interpretation and Scaling Behavior</h3>
+<section id="interpretation-and-scaling-behavior" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="interpretation-and-scaling-behavior"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behavior</h3>
 <p>Several key features emerge from this analysis:</p>
 <ul>
 <li><strong>Barrier scaling</strong>: The nucleation barrier <span class="math inline">\(\Delta F_c \sim \sigma^d / |\Delta f|^{d-1}\)</span> diverges as <span class="math inline">\(H \to 0\)</span>, reflecting the increasing stability of the metastable phase near the coexistence point.</li>
@@ -411,44 +434,44 @@ I \sim I_0 \exp\left( -\frac{\Delta F_c}{k_B T} \right),
 <p>In summary, homogeneous nucleation in a first-order transition is governed by a delicate balance between surface tension and bulk free energy gain. Only droplets exceeding a critical size can overcome the barrier and initiate a transition. This sets an intrinsic timescale for the dynamics of phase transformation, which can become extremely long near coexistence due to the exponentially small nucleation rate.</p>
 </section>
 </section>
-<section id="late-time-dynamics-domain-growth-and-coarsening" class="level2" data-number="14.3">
-<h2 data-number="14.3" class="anchored" data-anchor-id="late-time-dynamics-domain-growth-and-coarsening"><span class="header-section-number">14.3</span> Late-Time Dynamics: Domain Growth and Coarsening</h2>
+<section id="late-time-dynamics-domain-growth-and-coarsening" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="late-time-dynamics-domain-growth-and-coarsening"><span class="header-section-number">10.3</span> Late-Time Dynamics: Domain Growth and Coarsening</h2>
 <p>Following successful nucleation of a supercritical droplet, the system enters a regime where the global transformation is driven by the deterministic growth of domains of the stable phase. This phase of the dynamics is often referred to as coarsening or phase ordering dynamics.</p>
 <p>At late times, the dynamics are controlled not by rare fluctuations, but by the energetically-driven evolution of domain structures. The nature of domain growth depends sensitively on whether the order parameter is conserved or not.</p>
 <hr>
-<section id="non-conserved-order-parameter-dynamics-model-a" class="level3" data-number="14.3.1">
-<h3 data-number="14.3.1" class="anchored" data-anchor-id="non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">14.3.1</span> Non-Conserved Order Parameter Dynamics (Model A)</h3>
+<section id="non-conserved-order-parameter-dynamics-model-a" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.3.1</span> Non-Conserved Order Parameter Dynamics (Model A)</h3>
 <p>In systems with a non-conserved order parameter, such as the Ising model with single spin flip (so called Glauber) dynamics, the order parameter can relax locally without constraint. This leads to curvature-driven motion of interfaces.</p>
 <p>The typical domain size <span class="math inline">\(L(t)\)</span> grows algebraically with time:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-6"><span class="math display">\[
 L(t) \sim t^{1/2},
-\]</span></p>
+\tag{10.7}\]</span></span></p>
 <p>corresponding to a dynamic exponent <span class="math inline">\(z = 2\)</span>. The growth is driven by reduction of the total interfacial area—regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.</p>
 <p>Let is aassume that domain walls move with velocity proportional to curvature: <span class="math display">\[
   v \sim \frac{1}{L}
   \]</span> Then with the typical domain size being <span class="math inline">\(L(t)\)</span> it follows that</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-7"><span class="math display">\[
   \frac{dL}{dt} \sim \frac{1}{L}
-  \]</span></p>
+   \tag{10.8}\]</span></span></p>
 <p>Integrating both sides yields the <span class="math inline">\(t^{1/2}\)</span> domain growth law.</p>
 <p>It turns out that the detailed evolution of the coarse-grained order parameter field <span class="math inline">\(\phi(\mathbf{r}, t)\)</span> is governed by the <strong>Allen–Cahn equation</strong>:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-8"><span class="math display">\[
 \frac{\partial \phi}{\partial t} = - \frac{\delta F[\phi]}{\delta \phi},
-\]</span></p>
+\tag{10.9}\]</span></span></p>
 <p>where <span class="math inline">\(F[\phi]\)</span> is a coarse-grained Ginzburg–Landau free energy functional:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-9"><span class="math display">\[
 F[\phi] = \int d^d x \left[ \frac{1}{2} (\nabla \phi)^2 + V(\phi) \right],
-\]</span></p>
+\tag{10.10}\]</span></span></p>
 <p>with <span class="math inline">\(V(\phi)\)</span> typically a double-well potential such as <span class="math inline">\(V(\phi) = \frac{1}{4}(\phi^2 - 1)^2\)</span>.</p>
 <hr>
 </section>
-<section id="conserved-order-parameter-dynamics-model-b" class="level3" data-number="14.3.2">
-<h3 data-number="14.3.2" class="anchored" data-anchor-id="conserved-order-parameter-dynamics-model-b"><span class="header-section-number">14.3.2</span> Conserved Order Parameter Dynamics (Model B)</h3>
+<section id="conserved-order-parameter-dynamics-model-b" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.3.2</span> Conserved Order Parameter Dynamics (Model B)</h3>
 <p>For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model with spin-swap (so called ‘Kawasaki’) dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. This imposes a diffusive constraint on the dynamics.</p>
 <p>The domain size again grows algebraically, but with a different exponent:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-10"><span class="math display">\[
 L(t) \sim t^{1/3},
-\]</span></p>
+\tag{10.11}\]</span></span></p>
 <p>corresponding to a dynamic exponent <span class="math inline">\(z = 3\)</span>.</p>
 <p>A chemical potential difference drives diffusion and is given by <span class="math display">\[
 \Delta \mu \sim \frac{\sigma}{L}
@@ -462,13 +485,13 @@ L(t) \sim t^{1/3},
 L(t) \sim t^{1/3}
 \]</span></p>
 <p>It turns out that the detailed dynamics are described by the <strong>Cahn–Hilliard equation</strong>, a continuity equation of the form:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-11"><span class="math display">\[
 \frac{\partial \phi}{\partial t} = \nabla^2 \left( \frac{\delta F[\phi]}{\delta \phi} \right),
-\]</span></p>
+\tag{10.12}\]</span></span></p>
 <p>reflecting that the order parameter can only evolve via diffusion of its conjugate chemical potential. This leads to the slow transport of material across domains and a more sluggish coarsening process compared to the non-conserved case.</p>
 </section>
-<section id="schematic-of-domain-growth-in-2d-ising-model" class="level3" data-number="14.3.3">
-<h3 data-number="14.3.3" class="anchored" data-anchor-id="schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">14.3.3</span> Schematic of Domain Growth in 2D Ising model</h3>
+<section id="schematic-of-domain-growth-in-2d-ising-model" class="level3" data-number="10.3.3">
+<h3 data-number="10.3.3" class="anchored" data-anchor-id="schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">10.3.3</span> Schematic of Domain Growth in 2D Ising model</h3>
 <p>Here are schematic illustrations of domain growth for:</p>
 <ul>
 <li><p>Non-conserved dynamics (Model A): Domains coarsen rapidly, with smoother and larger regions due to free relaxation of the order parameter.</p></li>
@@ -497,26 +520,26 @@ L(t) \sim t^{1/3}
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;14.2: Schematic illustrations of domain morphology resulting from non-conserved and conserved dynamics.
+Figure&nbsp;10.2: Schematic illustrations of domain morphology resulting from non-conserved and conserved dynamics.
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="dynamics-scaling-hypothesis" class="level3" data-number="14.3.4">
-<h3 data-number="14.3.4" class="anchored" data-anchor-id="dynamics-scaling-hypothesis"><span class="header-section-number">14.3.4</span> Dynamics Scaling Hypothesis</h3>
+<section id="dynamics-scaling-hypothesis" class="level3" data-number="10.3.4">
+<h3 data-number="10.3.4" class="anchored" data-anchor-id="dynamics-scaling-hypothesis"><span class="header-section-number">10.3.4</span> Dynamics Scaling Hypothesis</h3>
 <p>At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by <span class="math inline">\(L(t)\)</span>.</p>
 <p>For example, the equal-time two-point correlation function satisfies</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-12"><span class="math display">\[
 C(r, t) = f\left( \frac{r}{L(t)} \right),
-\]</span></p>
+\tag{10.13}\]</span></span></p>
 <p>where <span class="math inline">\(f(x)\)</span> is a time-independent scaling function. Plots of <span class="math inline">\(C(r,t)\)</span> collapse when plotted as a function of <span class="math inline">\(r/L(t)\)</span>.The structure factor <span class="math inline">\(S(k, t)\)</span> also obeys dynamic scaling:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-13"><span class="math display">\[
 S(k, t) = L(t)^d \, g(k L(t)),
-\]</span></p>
+\tag{10.14}\]</span></span></p>
 <p>with <span class="math inline">\(g(x)\)</span> a universal scaling function dependent on the dynamical class and dimensionality.</p>
 </section>
-<section id="summary-of-growth-laws" class="level3" data-number="14.3.5">
-<h3 data-number="14.3.5" class="anchored" data-anchor-id="summary-of-growth-laws"><span class="header-section-number">14.3.5</span> Summary of Growth Laws</h3>
+<section id="summary-of-growth-laws" class="level3" data-number="10.3.5">
+<h3 data-number="10.3.5" class="anchored" data-anchor-id="summary-of-growth-laws"><span class="header-section-number">10.3.5</span> Summary of Growth Laws</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 25%">
@@ -986,13 +1009,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../phase-transitions/master-equation-and-diffusion.html" class="pagination-link" aria-label="Master Equation and Diffusion">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Master Equation and Diffusion</span></span>
+      <a href="../phase-transitions/rg-effective-coupling.html" class="pagination-link" aria-label="RG- the effective coupling viewpoint">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../phase-transitions/problems.html" class="pagination-link" aria-label="Problems">
-        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Problems</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../phase-transitions/master-equation-and-diffusion.html" class="pagination-link" aria-label="Introduction to stochastic processes">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

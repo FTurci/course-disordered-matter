@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Dynamics of Fluctuations – Complex Disordered Matter</title>
+<title>13&nbsp; Dynamics of Fluctuations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,14 +30,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../phase-transitions/Brownian-and-Langevin-dynamics.html" rel="next">
-<link href="../phase-transitions/approach-to-criticality.html" rel="prev">
+<link href="../phase-transitions/problems.html" rel="next">
+<link href="../phase-transitions/Brownian-and-Langevin-dynamics.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-6bb80c9187f58eb7f0e62b92359fce2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/index.html">Theory of disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/dynamics-of-fluctuations.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts for disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/dynamics-of-fluctuations.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -124,9 +124,9 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Complex Disordered Matter</a> 
-    </div>
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../phase-transitions/Figs/courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
@@ -138,13 +138,13 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome</span></span></a>
+ <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Theory of disordered matter</span></a>
+ <span class="menu-text">Unifying theoretical concepts for disordered matter</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -152,92 +152,92 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended texts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Ising Model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean Field Theory</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Lattice Gas</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Renormalization Group (RG)</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RG Effective Coupling</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Scaling</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Approach to Criticality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></span></a>
+  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin Dynamics</span></span></a>
+  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Master Equation and Diffusion</span></span></a>
+  <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The lattice gas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Renormalization group theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Nucleation and growth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Literature</span></a>
+ <span class="menu-text">Problems</span></a>
   </div>
 </li>
       </ul>
@@ -245,7 +245,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Soft Matter</span></a>
+ <span class="menu-text">Complex disordered matter</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,49 +254,72 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_plan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_readings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Appendices</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../revision_guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Revision guide</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/concepts_map.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Concept maps</span></span></a>
   </div>
 </li>
       </ul>
@@ -311,17 +334,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#linear-response-theory-and-the-fluctuation-dissipation-theorem" id="toc-linear-response-theory-and-the-fluctuation-dissipation-theorem" class="nav-link active" data-scroll-target="#linear-response-theory-and-the-fluctuation-dissipation-theorem"><span class="header-section-number">11.1</span> Linear Response Theory and the Fluctuation-Dissipation Theorem</a></li>
-  <li><a href="#onsagers-theorem" id="toc-onsagers-theorem" class="nav-link" data-scroll-target="#onsagers-theorem"><span class="header-section-number">11.2</span> Onsager’s Theorem</a></li>
+  <li><a href="#linear-response-theory-and-the-fluctuation-dissipation-theorem" id="toc-linear-response-theory-and-the-fluctuation-dissipation-theorem" class="nav-link active" data-scroll-target="#linear-response-theory-and-the-fluctuation-dissipation-theorem"><span class="header-section-number">13.1</span> Linear Response Theory and the Fluctuation-Dissipation Theorem</a></li>
+  <li><a href="#onsagers-theorem" id="toc-onsagers-theorem" class="nav-link" data-scroll-target="#onsagers-theorem"><span class="header-section-number">13.2</span> Onsager’s Theorem</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/index.html">Theory of disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/dynamics-of-fluctuations.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts for disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/dynamics-of-fluctuations.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of Fluctuations</span></h1>
 </div>
 
 
@@ -341,55 +364,55 @@ window.Quarto = {
 <p>Consider a thermodynamic variable <span class="math inline">\(x\)</span> with zero mean that fluctuates over time. Examples include the local magnetization in a magnetic system or the local density in a fluid. Here, <span class="math inline">\(x\)</span> represents a deviation from the average value — a fluctuation.</p>
 <p>We’re interested in how such fluctuations are correlated over time when the system is in thermal equilibrium. For instance, if <span class="math inline">\(x\)</span> is positive at some time <span class="math inline">\(t\)</span>, it’s more likely to remain positive shortly after.</p>
 <p>These temporal correlations are characterized by the two-time correlation function:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-0"><span class="math display">\[
 \langle x(\tau) x(\tau + t) \rangle
-\]</span></p>
+\tag{13.1}\]</span></span></p>
 <p>In equilibrium, the correlation function must be independent of the starting time <span class="math inline">\(\tau\)</span>. Therefore, we define:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-1"><span class="math display">\[
 \langle x(\tau) x(\tau + t) \rangle = M_{xx}(t)
-\]</span></p>
+\tag{13.2}\]</span></span></p>
 <p>That is, <span class="math inline">\(M_{xx}(t)\)</span> depends only on the time difference <span class="math inline">\(t\)</span>.</p>
 <p>We typically expect <span class="math inline">\(M_{xx}(t)\)</span> to decay exponentially over a characteristic correlation time <span class="math inline">\(t_c\)</span>:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-2"><span class="math display">\[
 M_{xx}(t) \sim \exp(-t / t_c)
-\]</span></p>
+\tag{13.3}\]</span></span></p>
 <div id="fig-Mxx" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-Mxx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Figs/Mxx(t).png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Mxx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.1: Sketch of <span class="math inline">\(M_{xx}(t)\)</span> against <span class="math inline">\(t\)</span>
+Figure&nbsp;13.1: Sketch of <span class="math inline">\(M_{xx}(t)\)</span> against <span class="math inline">\(t\)</span>
 </figcaption>
 </figure>
 </div>
 <p>This exponential decay reflects how the memory of fluctuations fades with time.</p>
 <p>Now consider two different fluctuating variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> (e.g., local magnetizations at different positions). Their cross-correlation function is defined as:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-3"><span class="math display">\[
 \langle x(\tau) y(\tau + t) \rangle = M_{xy}(t)
-\]</span></p>
+\tag{13.4}\]</span></span></p>
 <p>This defines the elements of a dynamic correlation matrix, of which <span class="math inline">\(M_{xx}(t)\)</span> is the diagonal.</p>
 <p>In equilibrium, the principle of <strong>detailed balance</strong> implies microscopic reversibility — there are no net probability currents. As a result, time evolution is symmetric: fluctuations are time-reversal invariant. Therefore:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-4"><span class="math display">\[
 M_{xx}(t) = \langle x(\tau) x(\tau + t) \rangle = \langle x(\tau) x(\tau - t) \rangle = M_{xx}(-t)
-\]</span></p>
+\tag{13.5}\]</span></span></p>
 <p>For the cross-correlation <span class="math inline">\(M_{xy}\)</span>, we have:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-5"><span class="math display">\[
 M_{xy}(-t) = \langle y(\tau - t) x(\tau) \rangle = \langle y(\tau) x(\tau + t) \rangle
-\]</span></p>
+\tag{13.6}\]</span></span></p>
 <p>(using time translation invariance of the equilibrium state). Combining this with the previous symmetry, we find:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-6"><span class="math display">\[
 M_{xy}(t) = M_{yx}(t)
-\]</span></p>
+\tag{13.7}\]</span></span></p>
 <p>This means the dynamic correlation matrix is symmetric in its indices — a non-trivial consequence of microscopic time-reversal symmetry.</p>
-<section id="linear-response-theory-and-the-fluctuation-dissipation-theorem" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="linear-response-theory-and-the-fluctuation-dissipation-theorem"><span class="header-section-number">11.1</span> Linear Response Theory and the Fluctuation-Dissipation Theorem</h2>
+<section id="linear-response-theory-and-the-fluctuation-dissipation-theorem" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="linear-response-theory-and-the-fluctuation-dissipation-theorem"><span class="header-section-number">13.1</span> Linear Response Theory and the Fluctuation-Dissipation Theorem</h2>
 <p>Now suppose we gently perturb the system. For example, we might apply a small thermodynamic force <span class="math inline">\(f_x\)</span> that couples to a fluctuating variable <span class="math inline">\(x\)</span> — like a weak magnetic field <span class="math inline">\(h\)</span> acting on a local magnetization.</p>
 <p>(Formally, this means adding a perturbation <span class="math inline">\(-f_x x\)</span> to the Hamiltonian.)</p>
 <p>A typical experimental protocol applies the perturbation from <span class="math inline">\(t = -\infty\)</span> and switches it off at <span class="math inline">\(t = 0\)</span>. For <span class="math inline">\(t &gt; 0\)</span>, the average response of another variable <span class="math inline">\(y\)</span> is observed to decay:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-7"><span class="math display">\[
 \langle y(t) \rangle_f = R_{yx}(t) \, f_x
-\]</span></p>
+\tag{13.8}\]</span></span></p>
 <p>Here, <span class="math inline">\(R_{yx}(t)\)</span> is the <strong>response function</strong> describing how <span class="math inline">\(y\)</span> responds to a small force applied to <span class="math inline">\(x\)</span> at earlier times (for <span class="math inline">\(t \geq 0\)</span>).</p>
 <div id="fig-perturbation" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -397,31 +420,31 @@ M_{xy}(t) = M_{yx}(t)
 <img src="Figs/perturbation.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-perturbation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;11.2: Eﬀect of perturbation on a quantity which is zero in equilibrium
+Figure&nbsp;13.2: Eﬀect of perturbation on a quantity which is zero in equilibrium
 </figcaption>
 </figure>
 </div>
 <p>The key idea is this: If the perturbation is small enough, its effects are indistinguishable from those of a spontaneous fluctuation. So, the decay of the response function should mirror the decay of the correlation function of naturally occurring fluctuations.</p>
 <p>This is the essence of the <strong>fluctuation-dissipation theorem</strong>:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-8"><span class="math display">\[
 k_B T \, R_{yx}(t) = M_{yx}(t)
-\]</span></p>
+\tag{13.9}\]</span></span></p>
 <p>This powerful result says that the system’s response to a small disturbance is directly related to the correlation of fluctuations in thermal equilibrium.</p>
 <p>The factor <span class="math inline">\(k_B T\)</span> ensures both sides of the equation have the same physical dimensions.</p>
 <blockquote class="blockquote">
 <p><em>Note:</em> We skip the full proof, which requires formal machinery from classical mechanics (e.g., Poisson brackets) or quantum mechanics (density matrices). For more, see the final chapter of Chandler.</p>
 </blockquote>
 </section>
-<section id="onsagers-theorem" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="onsagers-theorem"><span class="header-section-number">11.2</span> Onsager’s Theorem</h2>
+<section id="onsagers-theorem" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="onsagers-theorem"><span class="header-section-number">13.2</span> Onsager’s Theorem</h2>
 <p>Now, recall from the previous section that the correlation matrix is symmetric:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-9"><span class="math display">\[
 M_{xy}(t) = M_{yx}(t)
-\]</span></p>
+\tag{13.10}\]</span></span></p>
 <p>Combining this with the fluctuation-dissipation theorem gives:</p>
-<p><span class="math display">\[
+<p><span id="eq-unnamed-10"><span class="math display">\[
 R_{xy}(t) = R_{yx}(t)
-\]</span></p>
+\tag{13.11}\]</span></span></p>
 <p>This result is known as <strong>Onsager’s reciprocal relation</strong>. It states that the response of variable <span class="math inline">\(x\)</span> to a force acting on <span class="math inline">\(y\)</span> is the same as the response of <span class="math inline">\(y\)</span> to a force acting on <span class="math inline">\(x\)</span> — provided the system is in equilibrium.</p>
 <p>This is a deep and subtle consequence of microscopic reversibility, and Onsager’s real contribution was realizing such a connection could exist. (Onsager also solved the 2D Ising model and won the Nobel Prize in Chemistry in 1968.)</p>
 
@@ -848,13 +871,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../phase-transitions/approach-to-criticality.html" class="pagination-link" aria-label="Approach to Criticality">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Approach to Criticality</span></span>
+      <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="pagination-link" aria-label="Brownian and Langevin dynamics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="pagination-link" aria-label="Brownian and Langevin Dynamics">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin Dynamics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../phase-transitions/problems.html" class="pagination-link" aria-label="Problems">
+        <span class="nav-page-text">Problems</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

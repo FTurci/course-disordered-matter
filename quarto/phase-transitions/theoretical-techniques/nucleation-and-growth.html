@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-2be10d9e998f81ff6e49e26833438aa5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -292,7 +292,7 @@ window.Quarto = {
 <section id="introduction-to-nucleation" class="level2">
 <h2 class="anchored" data-anchor-id="introduction-to-nucleation">Introduction to nucleation</h2>
 <p>In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the <em>dynamical</em> mechanism by which a system evolves from one phase to another. We now address this question explicitly.</p>
-<p>Consider again the Ising model at a temperature <span class="math inline">\(T &lt; T_c\)</span>, where the system is initially prepared in the majority spin-up phase at zero external field, <span class="math inline">\(H = 0\)</span>. We now examine the system’s response to the application of a small negative external field $ H &lt; 0 $, which lowers the free energy of the spin-down phase relative to the spin-up phase.</p>
+<p>Consider again the Ising model at a temperature <span class="math inline">\(T &lt; T_c\)</span>, where the system is initially prepared in the majority spin-up phase at zero external field, <span class="math inline">\(H = 0\)</span>. We now examine the system’s response to the application of a small negative external field <span class="math inline">\(H &lt; 0\)</span>, which lowers the free energy of the spin-down phase relative to the spin-up phase.</p>
 <p>Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via <em>nucleation</em> of localized regions—referred to as <em>droplets</em>—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.</p>
 <p>The nucleation of a droplet of the stable phase of size <span class="math inline">\(n\)</span> spins entails a competition between bulk and interfacial contributions to the free energy. The bulk free energy gain is linear in <span class="math inline">\(n\)</span>, given by <span class="math inline">\(-nH\)</span>, due to the alignment of spins with the external field. However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, each broken bond contributes an energy cost of <span class="math inline">\(+2J\)</span>, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. This interfacial contribution is referred to as the <em>surface tension</em>, and constitutes a true free energy cost: it includes not only the energetic penalty from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.</p>
 <p>The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size <span class="math inline">\(n_c\)</span> will grow; smaller droplets will shrink. This framework is formalized in <em>classical nucleation theory</em>, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.</p>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; Readings</title>
+<title>brownian-and-langevin-dynamics – Complex Disordered Matter</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../soft-matter/soft-matter_problems.html" rel="next">
-<link href="../soft-matter/soft-matter_glasses.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6bb80c9187f58eb7f0e62b92359fce2b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2be10d9e998f81ff6e49e26833438aa5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,7 +67,37 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar docked">
@@ -81,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_plan.html">Complex disordered matter</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_readings.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Chapters</a></li><li class="breadcrumb-item"><a href="./Brownian-and-Langevin-dynamics.html">11. Brownian and Langevin dynamics</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -95,8 +123,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../phase-transitions/Figs/courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./Figs/courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -108,189 +136,118 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./literature.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course texts</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Unifying theoretical concepts for disordered matter</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Chapters</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
+  <a href="./introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1. Introduction to phase behaviour</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
+  <a href="./background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2. Background concepts</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
+  <a href="./approach-to-criticality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3. The approach to criticality</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
+  <a href="./Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">4. The Ising model</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
+  <a href="./mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">5. Mean field theory</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
+  <a href="./lattice-gas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Lattice gas</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The lattice gas</span></span></a>
+  <a href="./scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Scaling Hypothesis</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  <a href="./rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. The Renormalization group</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Renormalization group theory</span></span></a>
+  <a href="./rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. RG- the effective coupling viewpoint</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span></a>
+  <a href="./master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Introduction to stochastic processes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span></a>
+  <a href="./Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">11. Brownian and Langevin dynamics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  <a href="./dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Dynamics of fluctuations</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+  <a href="./nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">13. Nucleation and domain growth</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Problems</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Complex disordered matter</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_plan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_readings.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../revision_guide.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">A</span>&nbsp; <span class="chapter-title">Revision guide</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/concepts_map.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">Concept maps</span></span></a>
+  <a href="./problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theoretical techniques: problems</span></a>
   </div>
 </li>
       </ul>
@@ -301,65 +258,231 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#colloids" id="toc-colloids" class="nav-link active" data-scroll-target="#colloids"><span class="header-section-number">20.0.1</span> Colloids</a></li>
-  <li><a href="#polymers-and-surfactants" id="toc-polymers-and-surfactants" class="nav-link" data-scroll-target="#polymers-and-surfactants"><span class="header-section-number">20.0.2</span> Polymers and surfactants</a></li>
-  <li><a href="#glasses" id="toc-glasses" class="nav-link" data-scroll-target="#glasses"><span class="header-section-number">20.0.3</span> Glasses</a></li>
+  <li><a href="#the-langevin-approach" id="toc-the-langevin-approach" class="nav-link active" data-scroll-target="#the-langevin-approach">The Langevin Approach</a>
+  <ul class="collapse">
+  <li><a href="#the-random-walk-and-the-langevin-equation" id="toc-the-random-walk-and-the-langevin-equation" class="nav-link" data-scroll-target="#the-random-walk-and-the-langevin-equation">The Random Walk and the Langevin equation</a></li>
+  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion">Brownian Motion</a>
+  <ul class="collapse">
+  <li><a href="#noise-properties" id="toc-noise-properties" class="nav-link" data-scroll-target="#noise-properties">Noise Properties</a></li>
+  <li><a href="#solving-the-langevin-equation-velocity" id="toc-solving-the-langevin-equation-velocity" class="nav-link" data-scroll-target="#solving-the-langevin-equation-velocity">Solving the Langevin Equation (Velocity)</a></li>
+  <li><a href="#mean-square-velocity" id="toc-mean-square-velocity" class="nav-link" data-scroll-target="#mean-square-velocity">Mean-Square Velocity</a></li>
+  <li><a href="#mean-square-displacement" id="toc-mean-square-displacement" class="nav-link" data-scroll-target="#mean-square-displacement">Mean-Square Displacement</a></li>
+  <li><a href="#external-forces-and-mobility" id="toc-external-forces-and-mobility" class="nav-link" data-scroll-target="#external-forces-and-mobility">External Forces and Mobility</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./introduction.html">Chapters</a></li><li class="breadcrumb-item"><a href="./Brownian-and-Langevin-dynamics.html">11. Brownian and Langevin dynamics</a></li></ol></nav></header>
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_plan.html">Complex disordered matter</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_readings.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></h1>
+
+
+
+<section id="the-langevin-approach" class="level1">
+<h1>The Langevin Approach</h1>
+<section id="the-random-walk-and-the-langevin-equation" class="level2">
+<h2 class="anchored" data-anchor-id="the-random-walk-and-the-langevin-equation">The Random Walk and the Langevin equation</h2>
+<p>The concept of a random walk and its continuum limit — diffusion — introduced in the previous chapter, expresses the time evolution of the probability distribution <span class="math inline">\(p(x, t)\)</span> for a particle’s position <span class="math inline">\(x\)</span> is described by the diffusion equation:</p>
+<p><span class="math display">\[
+\frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2},
+\]</span></p>
+<p>which is a standard example of a so called <em>Fokker-Planck</em> equation, which is second-order in space and first-order in time.</p>
+<p>In contrast, the <em>Langevin equation</em> provides a stochastic differential equation for the particle’s trajectory <span class="math inline">\(x(t)\)</span>. To understand it, consider the motion over a small time increment <span class="math inline">\(\Delta t\)</span>:</p>
+<p><span class="math display">\[
+x(t + \Delta t) = x(t) + \Delta x(t)
+\]</span></p>
+<p>Here, <span class="math inline">\(\Delta x(t)\)</span> is a random displacement. If the lattice spacing is <span class="math inline">\(a\)</span>, we define the step statistics as:</p>
+<p><span class="math display">\[
+\Delta x(t) =
+\begin{cases}
++a &amp; \text{with probability } \nu \Delta t \\
+-a &amp; \text{with probability } \nu \Delta t \\
+0 &amp; \text{with probability } 1 - 2\nu \Delta t
+\end{cases}
+\]</span></p>
+<p>This defines a discrete-time, discrete-space random walk. The average and variance of the step are:</p>
+<ul>
+<li><p>Mean: <span class="math inline">\(\langle \Delta x \rangle = 0\)</span></p></li>
+<li><p>Variance: <span class="math inline">\(\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t\)</span></p></li>
+</ul>
+<p>The steps <span class="math inline">\(\Delta x(t)\)</span> are uncorrelated across time.</p>
+<p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span> in such a way that:</p>
+<p><span class="math display">\[
+a \propto \sqrt{\Delta t}
+\]</span></p>
+<p>In this limit, we obtain the <strong>Langevin equation</strong>:</p>
+<p><span class="math display">\[
+\dot{x}(t) = \eta(t)
+\]</span></p>
+<p>where <span class="math inline">\(\eta(t)\)</span> is a stochastic force (noise) satisfying:</p>
+<p><span class="math display">\[
+\langle \eta(t) \rangle = 0
+\]</span></p>
+<p><span class="math display">\[
+\langle \eta(t) \eta(t') \rangle = \Gamma \delta(t - t')
+\]</span></p>
+<p>This <span class="math inline">\(\eta(t)\)</span> is known as white noise — it has zero mean and is uncorrelated at different times.</p>
+<p>The Langevin equation tells us that the velocity <span class="math inline">\(\dot{x}(t)\)</span> is purely driven by noise. We can formally integrate it:</p>
+<p><span class="math display">\[
+x(t) - x_0 = \int_0^t \eta(t')\, dt'
+\]</span></p>
+<p>Taking ensemble averages:</p>
+<ul>
+<li><p>Mean displacement: <span class="math display">\[
+\langle x(t) - x_0 \rangle = 0
+\]</span></p></li>
+<li><p>Mean square displacement: <span class="math display">\[
+\langle [x(t) - x_0]^2 \rangle = \int_0^t \int_0^t \langle \eta(t') \eta(t'') \rangle\, dt'\, dt'' = \Gamma \int_0^t dt' = \Gamma t
+\]</span></p></li>
+</ul>
+<p>Comparing this with the diffusion equation result, we identify:</p>
+<p><span class="math display">\[
+\Gamma = 2D
+\]</span></p>
+<p>Hence, the Langevin description yields the same physical behavior — not just the mean-square displacement but also the full probability distribution <span class="math inline">\(p(x, t)\)</span> — as the diffusion (Fokker-Planck) equation. This equivalence arises from the fact that the integral of many small, independent random steps leads to a Gaussian distribution, in agreement with the solution of the diffusion equation.</p>
+<p>For more details, see: <em>Stochastic Processes in Physics and Chemistry</em> by N.G. van Kampen (North Holland, 1981).</p>
+</section>
+<section id="brownian-motion" class="level2">
+<h2 class="anchored" data-anchor-id="brownian-motion">Brownian Motion</h2>
+<p>Let us now examine Brownian motion, originally observed as the erratic motion of colloidal particles suspended in a fluid. These particles undergo constant collisions with surrounding (smaller) fluid molecules, which results in seemingly random movement.</p>
+<p>From a coarse-grained perspective — where we do not track each individual collision — this appears as motion under random forces. This statistical treatment introduces irreversibility at the macroscopic level, even though the underlying molecular dynamics are reversible.</p>
+<p>The Langevin equation provides a way to model this behavior. For a particle of mass <span class="math inline">\(m\)</span> in one dimension, Langevin proposed the equation:</p>
+<p><span class="math display">\[
+m \ddot{x} = -\gamma \dot{x} + f(t)
+\]</span></p>
+<p>Here:</p>
+<ul>
+<li><span class="math inline">\(-\gamma \dot{x}\)</span> is a frictional damping force, where <span class="math inline">\(\gamma\)</span> is the damping coefficient.</li>
+<li><span class="math inline">\(f(t)\)</span> is a random force due to molecular collisions.</li>
+</ul>
+<blockquote class="blockquote">
+<p>Often, the mobility is defined as <span class="math inline">\(\mu = 1/\gamma\)</span> — note that this is unrelated to chemical potential.</p>
+</blockquote>
+<hr>
+<section id="noise-properties" class="level3">
+<h3 class="anchored" data-anchor-id="noise-properties">Noise Properties</h3>
+<p>In principle the random forces are in time since the molecular collisions which cause them are correlated and have some definite duration.</p>
+<p>Let us assume that there is some correlation time <span class="math inline">\(t_c\)</span> over which <span class="math inline">\(\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)\)</span> decays rapidly as shown in the sketch:</p>
+<div id="fig-autocorrelate" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-autocorrelate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/autocorrelate.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>The best overall text is: R.A.L Jones, Soft Condensed Matter, Oxford University Press. Shelfmark [539.2 Jon].</p>
-<p>Additionally, the following more specialised texts should also be useful. They can be found in the University Library under the stated shelfmark.</p>
-<section id="colloids" class="level3" data-number="20.0.1">
-<h3 data-number="20.0.1" class="anchored" data-anchor-id="colloids"><span class="header-section-number">20.0.1</span> Colloids</h3>
-<ol type="1">
-<li>D.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet. VCH Publishers (1994). [541.18 Eva]</li>
-<li>R.J.Hunter: Introduction to Modern Colloid Science. Oxford University Press (1993). 541.18 Hun]</li>
-<li>W.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions Cambridge University Press (1989).[541.18 Rus]</li>
-<li>D.H.Everett: Basic Principles of Colloid Science.</li>
-</ol>
-<p>Royal Society of Chemistry Paperbacks (1988) [ 541.18 Eve]</p>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-autocorrelate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Sketch of <span class="math inline">\(g(t1− t2)\)</span> against <span class="math inline">\(|t1− t2|\)</span>
+</figcaption>
+</figure>
+</div>
+<p>Then as long as we consider timescales <span class="math inline">\(\gg t_c\)</span> we can safely replace <span class="math inline">\(g(t_1 - t_2)\)</span> by a delta function. Thus we can approximate the noise by</p>
+<p><span class="math display">\[
+\langle f(t) \rangle = 0
+\]</span></p>
+<p><span class="math display">\[
+\langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
+\]</span></p>
+<hr>
 </section>
-<section id="polymers-and-surfactants" class="level3" data-number="20.0.2">
-<h3 data-number="20.0.2" class="anchored" data-anchor-id="polymers-and-surfactants"><span class="header-section-number">20.0.2</span> Polymers and surfactants</h3>
-<ol type="1">
-<li>R.J. Young and P.A. Lovell: Introduction to polymers [678 You].</li>
-<li>M. Doi: Introduction to polymer physics [541.64 Doi]</li>
-<li>J.Israelachvili, Intermolecular and Surface Forces, Academic Press (1992), Chs. 16 and 17</li>
-</ol>
+<section id="solving-the-langevin-equation-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="solving-the-langevin-equation-velocity">Solving the Langevin Equation (Velocity)</h3>
+<p>Let’s set <span class="math inline">\(m = 1\)</span> for simplicity and solve the equation:</p>
+<p><span class="math display">\[
+\dot{v} + \gamma v = f(t)
+\]</span></p>
+<p>We apply an integrating factor:</p>
+<p><span class="math display">\[
+\frac{d}{dt} \left[ v e^{\gamma t} \right] = e^{\gamma t} f(t)
+\]</span></p>
+<p>Integrating both sides:</p>
+<p><span class="math display">\[
+v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
+\]</span></p>
+<p>Taking the average:</p>
+<p><span class="math display">\[
+\langle v(t) \rangle = v_0 e^{-\gamma t}
+\]</span></p>
+<p>Thus:</p>
+<ul>
+<li>At short times: (<span class="math inline">\(\gamma t \ll 1\)</span>): <span class="math inline">\(\langle v \rangle \approx v_0\)</span> ie. friction is negligible.</li>
+<li>At long times: (<span class="math inline">\(\gamma t \gg 1\)</span>): <span class="math inline">\(\langle v \rangle \to 0\)</span> ie. the system loses memory of the initial velocity.</li>
+</ul>
+<hr>
 </section>
-<section id="glasses" class="level3" data-number="20.0.3">
-<h3 data-number="20.0.3" class="anchored" data-anchor-id="glasses"><span class="header-section-number">20.0.3</span> Glasses</h3>
-<ol type="1">
-<li>J. Zarzycki; Glasses and the vitreous state. Cambridge University Press (1991).</li>
-</ol>
+<section id="mean-square-velocity" class="level3">
+<h3 class="anchored" data-anchor-id="mean-square-velocity">Mean-Square Velocity</h3>
+<p>We now compute:</p>
+<p><span class="math display">\[
+\langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
+\]</span></p>
+<p>Implying that at</p>
+<ul>
+<li>Short times: <span class="math inline">\(\langle v^2 \rangle \approx v_0^2\)</span></li>
+<li>Long times: <span class="math inline">\(\langle v^2 \rangle \to \Gamma / (2\gamma)\)</span></li>
+</ul>
+<p>At equilibrium, the equipartition theorem gives:</p>
+<p><span class="math display">\[
+\frac{1}{2} m \langle v^2 \rangle = \frac{1}{2} k_B T
+\]</span></p>
+<p>Using this to identify <span class="math inline">\(\Gamma\)</span>:</p>
+<p><span class="math display">\[
+\Gamma = 2 \gamma k_B T
+\]</span></p>
+<p>This important result relates the noise strength to the damping and temperature — they have the same microscopic origin (molecular collisions).</p>
+<hr>
+</section>
+<section id="mean-square-displacement" class="level3">
+<h3 class="anchored" data-anchor-id="mean-square-displacement">Mean-Square Displacement</h3>
+<p>We now integrate <span class="math inline">\(v(t)\)</span> again to get position <span class="math inline">\(x(t)\)</span> (with <span class="math inline">\(m = 1\)</span>):</p>
+<p>Using the result above and substituting <span class="math inline">\(\Gamma = 2\gamma k_B T\)</span>, we find:</p>
+<p><span class="math display">\[
+\langle [x(t) - x_0]^2 \rangle = \frac{(v_0^2 - k_B T)}{\gamma^2} (1 - e^{-\gamma t})^2 + \frac{2 k_B T}{\gamma} \left[ t - \frac{1 - e^{-\gamma t}}{\gamma} \right]
+\]</span></p>
+<p>Limiting behaviors:</p>
+<ul>
+<li><p>Short times: (<span class="math inline">\(\gamma t \ll 1\)</span>):</p>
+<p><span class="math display">\[
+\langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2
+\]</span></p>
+<p>(correspinding to <em>ballistic</em> motion)</p></li>
+<li><p>Long time (<span class="math inline">\(\gamma t \gg 1\)</span>):</p>
+<p><span class="math display">\[
+\langle [x(t) - x_0]^2 \rangle \approx \frac{2 k_B T}{\gamma} t
+\]</span></p>
+<p>(corresponding to <em>diffusive motion</em>)</p></li>
+</ul>
+<p>The effective diffusion constant is:</p>
+<p><span class="math display">\[
+D = \frac{k_B T}{\gamma}
+\]</span></p>
+<p>This is the <strong>Einstein relation</strong>, connecting the rate of diffusion to temperature and damping. It is useful as it allows an explicit expression for the diffusion constant if one knows <span class="math inline">\(\gamma\)</span>. A famous example is a sphere: the equation for fluid flow past a moving sphere may be solved and yields <span class="math inline">\(\gamma=6\pi\eta a\)</span> where <span class="math inline">\(a\)</span> is the radius of the sphere and here <span class="math inline">\(\eta\)</span> is the fluid viscosity. This gives</p>
+<p><span class="math display">\[
+D=\frac{6\pi\eta a}{kT}
+\]</span> which is the <strong>Stokes-Einstein</strong> formula for the diffusion constant of a colloidal particle.</p>
+<hr>
+</section>
+<section id="external-forces-and-mobility" class="level3">
+<h3 class="anchored" data-anchor-id="external-forces-and-mobility">External Forces and Mobility</h3>
+<p>Now consider a charged particle with charge <span class="math inline">\(q\)</span> under an external electric field <span class="math inline">\(E\)</span>. The Langevin equation becomes:</p>
+<p><span class="math display">\[
+m \dot{v} = -\gamma v + qE
+\]</span></p>
+<p>At long times, the particle reaches a steady drift velocity:</p>
+<p><span class="math display">\[
+\langle v \rangle = \frac{qE}{\gamma} = \frac{qED}{k_B T}
+\]</span></p>
+<p>Defining the mobility <span class="math inline">\(\mu\)</span> by <span class="math inline">\(\langle v \rangle = \mu qE\)</span>, we get the <strong>Nernst-Einstein relation</strong>:</p>
+<p><span class="math display">\[
+\mu = \frac{D}{k_B T}
+\]</span></p>
+<p>This relation connects the response of a system to an external perturbation (mobility) with its internal fluctuations (diffusivity).</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -780,18 +903,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../soft-matter/soft-matter_glasses.html" class="pagination-link" aria-label="Glasses">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Glasses</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../soft-matter/soft-matter_problems.html" class="pagination-link" aria-label="Problems">
-        <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Problems</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 
 
