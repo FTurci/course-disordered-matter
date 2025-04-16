@@ -364,7 +364,7 @@ reduced temperature of the physical system viewed with resolution length
 $L$. The exponent $1/\nu$ controls the rate at which the effective
 reduced temperature flows with increasing coarse-graining length.
 
-## Finite-size scaling {#sec:fss}
+## Finite-size scaling {#sec-fss}
 
 We can exploit the fact that the scale factors $a(L)$ and $b(L)$ depend
 on critical exponents to estimate the values of these exponents using

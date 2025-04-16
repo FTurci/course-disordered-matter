@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -35,7 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-2be10d9e998f81ff6e49e26833438aa5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -276,31 +276,39 @@ window.Quarto = {
 <h1>Background concepts</h1>
 <p>In seeking to describe near-critical phenomena, it is useful to have a quantitative measure of the difference between the phases coalescing at the critical point: this is the role of the <em>order parameter</em>, <span class="math inline">\(Q\)</span>. In the case of the fluid, the order parameter is taken as the difference between the densities of the liquid and vapour phases. In the ferromagnet it is taken as the magnetisation. As its name suggest, the order parameter serves as a measure of the kind of orderliness that sets in when the temperature is cooled below a critical temperature.</p>
 <p>Our first task is to give some feeling for the principles which underlie the ordering process. The probability <span class="math inline">\(p_a\)</span> that a physical system at temperature <span class="math inline">\(T\)</span> will have a particular microscopic arrangement (configuration), labelled <span class="math inline">\(a\)</span>, of energy <span class="math inline">\(E_a\)</span> is</p>
-<p><span id="eq-probs"><span class="math display">\[p_a=\frac{1}{Z}e^{-E_a/k_BT}
+<p><span id="eq-probs"><span class="math display">\[
+p_a=\frac{1}{Z}e^{-E_a/k_BT}
 \tag{1}\]</span></span></p>
 <p>The prefactor <span class="math inline">\(Z^{-1}\)</span> is the <em>partition function</em>: since the system must always have <em>some</em> specific arrangement, the sum of the probabilities <span class="math inline">\(p_a\)</span> must be unity, implying that</p>
-<p><span id="eq-partition"><span class="math display">\[Z=\sum_ae^{-E_a/k_BT}
+<p><span id="eq-partition"><span class="math display">\[
+Z=\sum_ae^{-E_a/k_BT}
 \tag{2}\]</span></span> where the sum extends over all possible microscopic arrangements.</p>
 <p>These equations assume that physical system evolves rapidly (on the timescale of typical observations) amongst all its allowed arrangements, sampling them with the probabilities&nbsp;<a href="#eq-probs" class="quarto-xref">Equation&nbsp;1</a> the expectation value of any physical observable <span class="math inline">\(O\)</span> will thus be given by averaging <span class="math inline">\(O\)</span> over all the arrangements <span class="math inline">\(a\)</span>, weighting each contribution by the appropriate probability:</p>
 <p><span id="eq-observable"><span class="math display">\[\bar {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
 \tag{3}\]</span></span></p>
 <p>Sums like <a href="#eq-observable" class="quarto-xref">Equation&nbsp;3</a> are not easily evaluated. Nevertheless, some important insights follow painlessly. Consider the case where the observable of interest is the order parameter, or more specifically the magnetisation of a ferromagnet.</p>
-<p><span id="eq-op"><span class="math display">\[Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
+<p><span id="eq-op"><span class="math display">\[
+Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
 \tag{4}\]</span></span></p>
 <p>It is clear from <a href="#eq-probs" class="quarto-xref">Equation&nbsp;1</a> that at very low temperature the system will be overwhelmingly likely to be found in its minimum energy arrangements (ground states). For the ferromagnet, these are the fully ordered spin arrangements having magnetisation <span class="math inline">\(+1\)</span>, or <span class="math inline">\(-1\)</span>.</p>
 <p>Now consider the high temperature limit. The enhanced weight that the fully ordered arrangement carries in the sum of <a href="#eq-op" class="quarto-xref">Equation&nbsp;4</a> by virtue of its low energy, is now no longer sufficient to offset the fact that arrangements in which <span class="math inline">\(Q_a\)</span> has some intermediate value, though each carry a smaller weight, are vastly greater in number. A little thought shows that the arrangements which have essentially zero magnetisation (equal populations of up and down spins) are by far the most numerous. At high temperature, these disordered arrangements dominate the sum in <a href="#eq-op" class="quarto-xref">Equation&nbsp;4</a> and the order parameter is zero.</p>
 <p>The competition between energy-of-arrangements weighting (or simply ‘energy’) and the ‘number of arrangements’ weighting (or ‘entropy’) is then the key principle at work here. The distinctive feature of a system with a critical point is that, in the course of this competition, the system is forced to choose amongst a number of macroscopically different sets of microscopic arrangements.</p>
 <p>Finally in this section, we note that the probabilistic (statistical mechanics) approach to thermal systems outlined above is completely compatible with classical thermodynamics. Specifically, the bridge between the two disciplines is provided by the following equation</p>
-<p><span id="eq-free"><span class="math display">\[F=-k_BT \ln Z
+<p><span id="eq-free"><span class="math display">\[
+F=-k_BT \ln Z
 \tag{5}\]</span></span></p>
 <p>where <span class="math inline">\(F\)</span> is the “Helmholtz free energy”. All thermodynamic observables, for example the order parameter <span class="math inline">\(Q\)</span>, and response functions such as the specific heat or magnetic susceptibility are obtainable as appropriate derivatives of the free energy. For instance, utilizing <a href="#eq-partition" class="quarto-xref">Equation&nbsp;2</a>, one can readily verify (try it as an exercise!) that the average internal energy is given by</p>
 <p><span class="math display">\[\bar{E}=-\frac{\partial \ln Z}{\partial \beta},\]</span></p>
 <p>where <span class="math inline">\(\beta=(k_BT)^{-1}\)</span>.</p>
-<p>The relationship between other thermodynamic quantities and derivatives of the free energy are given in fig.&nbsp;<a href="#fig:thermo" data-reference-type="ref" data-reference="fig:thermo">3</a></p>
-<div id="fig:thermo" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="Figs/thermo.png" class="img-fluid figure-img"></p>
-<figcaption>Relationships between the partition function and thermodynamic observables</figcaption>
+<p>The relationship between other thermodynamic quantities and derivatives of the free energy are given in fig.@fig-thermo</p>
+<div id="fig-thermo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-thermo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/thermo.png" class="img-fluid quarto-figure quarto-figure-center figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-thermo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Relationships between the partition function and thermodynamic observables
+</figcaption>
 </figure>
 </div>
 

@@ -3,6 +3,8 @@
 
 ![Place holder figure](placeholder_figure.png){fig-align="left" width=400}
 
+## Overview
+
 This course introduces your to the theoretical, computational and experimental aspects of the physics of complex disordered matter.
 
 
@@ -16,7 +18,7 @@ This course is organized into three interconnected parts, each offering a distin
 
 * **Part 1: Unifying theoretical concepts** (Nigel Wilding) introduces the theoretical framework for rationalising complex disordered matter which is grounded in statistical mechanics and thermodynamics. We emphasize the theory of phase transitions, critical phenomena, and stochastic dynamics—providing the essential tools needed to describe and predict the behavior of soft and disordered systems.  
 * **Part 2: Complex disordered matter** (Francesco Turci) explores the phenomenology of key examples of complex disordered soft matter systems, including colloids, polymers, liquid crystals, glasses, gels, and active matter. These systems will be analyzed using the theoretical concepts introduced in Part 1, highlighting how disorder, interactions, and fluctuations shape their macroscopic behavior.  
-* **Part 3: Experimental techniques** (Adrian Barnes) focuses on the methods of microscopy, and scattering via x-rays, neutrons and light that are used to study these complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
+* **Part 3: Experimental techniques** (Adrian Barnes) focuses on the methods of microscopy, and scattering via x-rays, neutrons and light that are used to study  complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
 
 In addition to theory and experiment, computer simulation plays a central role in soft matter research. This course includes a substantial coursework component consisting of two computational projects. These exercises will allow you to apply state-of-the-art simulation techniques to investigate the complex behavior of disordered systems, bridging theory and observation through hands-on exploration.
 
@@ -25,19 +27,17 @@ In addition to theory and experiment, computer simulation plays a central role i
 
 
 
-### Delivery and format{.unnumbered}
+## Delivery and format{.unnumbered}
 
-* Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is also available. 
+* Detailed e-notes (accessible via Blackboard) can be viewed on a variety of devices. Pdf is also available. 
 
 * We will give 'traditional' lectures (XXday, YYYday) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
-
 
 * Try to read ahead in the notes, then come to lectures, listen to the explanations and then reread the notes.
 
 * Rewriting the notes or slides to express your own thoughts and understanding, or annotating a pdf copy can help wire the material into your own way of thinking.
 
-* There are problem classes (XXXday) where you can try problem sheets and seek help. I will go over some problems with the class.
-
+* There are problem classes (XXXday) where you can try problem sheets and seek help. Lecturers will go over some problems with the class.
 
 * The navigation bar on the left will allow you to access the lecture notes and problem sets.
 
@@ -52,18 +52,18 @@ The course will
 - Connect with the most recent advances in the research on complex disordered matter.
 
 
-## Contacts{.unnumbered}
+## Contact details{.unnumbered}
 
 The course will be taught by
 
-- Prof Nigel B. Wilding (Unit director): nigel.wilding@bristol.ac.uk
+- Prof Nigel B. Wilding (unit director): nigel.wilding@bristol.ac.uk
 - Dr Francesco Turci: F.Turci@bristol.ac.uk
 - Dr Adrian Barnes: a.c.barnes@bristol.ac.uk
 
-### Questions and comments{.unnumbered}
-If you have any questions about the course, please don’t hesitate to contact me, either by email (see above) or in a problems class.
+## Questions and comments{.unnumbered}
+If you have any questions about the course, please don’t hesitate to contact the relevant lecturer, either by email (see above) or in a problems class.
 
-Finally, this is a new course for 2025/26, with the lecture notes written from scratch. If you find any errors or mistakes or something which isn’t clear, please let us know by email, or fill in this anonymous form:
+Finally, this is a new course for 2025/26. If you find any errors or mistakes or something which isn’t clear, please let us know by email, or fill in this anonymous form:
 
 ::: {.callout-note appearance="minimal"}
 [Submit an error/mistake/query](https://forms.office.com/e/6uL2Bd5QGq)

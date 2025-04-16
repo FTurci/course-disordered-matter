@@ -17,8 +17,9 @@ of magnetic moments or 'spins' on an infinite plane. Each spin can take
 two values, $+1$ ('up' spins) or $-1$ ('down' spins) and is assumed to
 interact with its nearest neighbours according to the Hamiltonian
 
-$${\cal H}_I=-J\sum_{<ij>}s_is_j - H\sum_i s_i
-$${eq-ising}
+$$
+{\cal H}_I=-J\sum_{<ij>}s_is_j - H\sum_i s_i
+$${#eq-ising}
 
 where $J>0$ measures the strength of the coupling
 between spins and the sum extends over nearest neighbour spins $s_i$ and
@@ -93,7 +94,7 @@ This will have all spins aligned the same way (say up), and hence be
 ferromagnetic. Now consider a configuration with a various "domain
 walls" dividing spin up and spin down regions:
 
- ![(a) Schematic of an Ising chain at $T=0$. (b) At a small finite temperature the chain is split into domains of spins ordered in the same direction. Domains are separated by notional domain “walls”, which cost energy $\Delta=2J$. Periodic boundary conditions are assumed.](Figs/chain.png){width=80% fig-align="center" #fig-isingpd}
+ ![(a) Schematic of an Ising chain at $T=0$. (b) At a small finite temperature the chain is split into domains of spins ordered in the same direction. Domains are separated by notional domain “walls”, which cost energy $\Delta=2J$. Periodic boundary conditions are assumed.](Figs/chain.png){width=80% fig-align="center" #fig-isingchain}
 
 
 Instead of considering the underlying spin configurations, we shall
@@ -153,20 +154,18 @@ H(\{s\})=&-\sum_{i=1}^N (Js_is_{i+1}+Hs_i)\\
 
 Now the partition function may be written
 
-\begin{aligned}
-{eq-tm}
+$$\begin{aligned}
 Z_N =& \sum_{\{s\}}\exp\left(-\beta H(\{s\})\right)\nonumber \\
  =&\sum_{\{s\}}\exp\left(-\beta[E(s_1,s_2)+E(s_2,s_3)+....E(s_N,s_1)]\right) \nonumber\\
  =&\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
-=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} {eq-Vs}
-\end{aligned}
+=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} 
+\end{aligned}$${#eq-Vs}
+
 where the $V_{ij}=\exp(-\beta E_{ij})$ are elements of
 an $m \times m$ matrix ${\bf V}$, known as the transfer matrix ($i,j,k$
 etc are dummy indices that run over the matrix elements). You should see
 that the sum over the product of matrix elements picks up all the terms
-in the partition function and therefore
-Eq. [\[eq-Vs\]](#eq-Vs){reference-type="ref" reference="eq-Vs"} is an
-alternative way of writing the partition function.
+in the partition function and therefore @eq-Vs is an alternative way of writing the partition function.
 
 The reason it is useful to transform to a matrix representation is that
 it transpires that the sum over the product of matrix elements in

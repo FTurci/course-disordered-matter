@@ -16,7 +16,7 @@ book:
     collapse-level: 1
   chapters:
     - href: index.qmd
-      text: Home  
+      text: Overview  
     - part: "Unifying theoretical concepts for disordered matter"
       chapters:
          - href: phase-transitions/literature.qmd

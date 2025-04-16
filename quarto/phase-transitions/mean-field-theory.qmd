@@ -23,17 +23,16 @@ theory.
 ## Mean field solution of the Ising model {#sec:mfising}
 
 Let us look for a mean field expression for the free energy of the Ising
-model whose Hamiltonian is given in Eq.
-([\[eq:ising\]](#eq:ising){reference-type="ref" reference="eq:ising"}).
+model whose Hamiltonian is given in @eq-ising .
 Write
 
 $$s_i=\langle s_i\rangle+(s_i-\langle s_i\rangle)=m+(s_i-m)=m+\delta s_i$$
 
-Then \begin{aligned}
+Then $$\begin{aligned}
 {\cal H}_I=&-J\sum_{<i,j>}[m+(s_i-m)][m+(s_j-m)]-H\sum_i s_i\nonumber\\
 =&-J\sum_{<i,j>}[m^2+m(s_i-m)+m(s_j-m)+\delta s_i\delta s_j]-H\sum_i s_i\nonumber\\
-=&-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{<i,j>}\delta s_i\delta s_j\label{eq:mfa}
-\end{aligned}
+=&-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{<i,j>}\delta s_i\delta s_j 
+\end{aligned}$$ {#eq-mfa}
 where in the last line we have used the fact that when
 for each site $i$ we perform the sum $\sum_{<i,j>}$ over bonds of a
 quantity which is independent of $s_j$, then the result is just the
@@ -42,18 +41,20 @@ on a lattice of $N$ sites of coordination $q$ is $Nq/2$ (because each
 bond is shared between two sites), there are therefore $q/2$ bonds per
 site.
 
-Now the mean field approximation is to ignore the last term in
-([\[eq:mfa\]](#eq:mfa){reference-type="ref" reference="eq:mfa"}) giving
-the configurational energy as
+Now the mean field approximation is to ignore the last term in the last line of @eq-mfa giving the configurational energy as
 
-$${\cal H}_{mf}=-\sum_{i}H_{mf}s_i+NqJm^2/2$$ with $H_{mf}\equiv qJm+ H$
-the "mean field" seen by spin $s_i$. As all the spins are decoupled
+$$
+{\cal H}_{mf}=-\sum_{i}H_{mf}s_i+NqJm^2/2
+$$ 
+with $H_{mf}\equiv qJm+ H$ the "mean field" seen by spin $s_i$. As all the spins are decoupled
 (independent) in this approximation we can write down the partition
 function, which follows by taking the partition function for a single
 spin (by summing the Boltzmann factor for $s_i=\pm 1$) and raising to
 the power $N$ to find
 
-$$Z=e^{-\beta qJm^2N/2}[2\cosh(\beta(qJm+H))]^N$$
+$$
+Z=e^{-\beta qJm^2N/2}[2\cosh(\beta(qJm+H))]^N
+$$
 
 The free energy follows as
 
@@ -61,7 +62,9 @@ $$F(m)=NJqm^2/2-Nk_BT\ln[2\cosh(\beta (qJm+H)]\:.$$
 
 and the magnetisation as
 
-$$m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H))$$
+$$
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H))
+$$
 
 To find $m(H,T)$, we must numerically solve this last equation self
 consistently.
@@ -74,13 +77,14 @@ $p(s_i)=e^{-\beta{\cal H}_{mf}(s_i)}/Z$ of each, we have that
 $$\langle s_i\rangle=\sum_{s_i=\pm 1}s_ip(s_i)$$ but for consistancy,
 $\langle s_i\rangle=m$. Thus
 
+$$
 \begin{aligned}
 m =& \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
  \:=& \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
- \:=&\tanh(\beta(qJm+H)) \label{eq:mfmag}
-\end{aligned} as before.
+ \:=&\tanh(\beta(qJm+H))
+\end{aligned}$${#eq-mfmag} as before.
 
-## Spontaneous symmetry breaking {#sec:breaking}
+## Spontaneous symmetry breaking {#sec-breaking}
 
 
  ![Schematic of the form of the free energy for a critical, subcritical and supercritical temperature](Figs/freeenergy.png){width=70% fig-align="left" #fig-freeenergy}
@@ -88,12 +92,11 @@ m =& \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
 
 This mean field analysis reveals what is happening in the Ising model
 near the critical temperature $T_c$.
-Fig. [7](#fig:freeenergy){reference-type="ref"
-reference="fig:freeenergy"} shows sketches for $\beta F(m)/N$ as a
-function of temperature, where for simplicity we restrict attention to
+@fig-freeenergy shows sketches for $\beta F(m)/N$ as a
+function of temperature, where for f simplicity we restrict attention to
 $H=0$. In this case $F(m)$ is symmetric in $m$, Moreover, at high $T$,
 the entropy dominates and there is a single minimum in $F(m)$ at $m=0$.
-At $T$ is lowered, there comes a point ($T=T_c=qJ/k_B$) where the
+As $T$ is lowered, there comes a point ($T=T_c=qJ/k_B$) where the
 curvature of $F(m)$ at the origin changes sign; precisely at this point
 
 $$\frac{\partial^2 F}{\partial m^2}=0.$$ At lower temperature, there are
@@ -117,7 +120,7 @@ unmagnetized state.
 ## Phase diagram
 
 The resulting zero-field magnetisation curve $m(T,H=0)$ looks like
-fig. [8](#fig:isingmag){reference-type="ref" reference="fig:isingmag"}.
+@fig-isingmag.
 
  ![Phase diagram of a simple magnet in the $m$-$T$ plane.](Figs/isingmag.png){width=70% fig-align="left" #fig-isingmag}
 
@@ -203,19 +206,16 @@ $$m^2\simeq -3t$$
 
 Hence
 
-\begin{aligned}
+$$\begin{aligned}
 m= 0  &    ~~~\textrm{for } T>T_c \:\:\:  \textrm{ since~otherwise~{\it m}~imaginary}\nonumber\\
 m= \pm\sqrt{-3t} & ~~\textrm{ for}  \:\:\: T<T_c ~~\textrm{ real}
-\label{eq:mbeta}
-\end{aligned} 
+\end{aligned} $${#eq-mbeta}
 This result implies that (within the mean field
 approximation) the critical exponent $\beta=1/2$.
 
 ### Finite (but small) field solution: the susceptibility exponent {#sec:closerlook}
 
-In a finite, but small field we can expand
-Eq. ([\[eq:mfmag\]](#eq:mfmag){reference-type="ref"
-reference="eq:mfmag"}) thus:
+In a finite, but small field we can expand @eq-mfmag thus:
 
 $$m=\frac{mT_c}{T}-\frac{1}{3}\left(\frac{mT_c}{T} \right)^3 +\frac{H}{kT}$$
 
@@ -234,10 +234,9 @@ Hence near $T_c$
 
 $$\chi=\frac{1}{k_BT_c}\left(\frac{1}{t+m^2}\right)$$
 
-Then using the results of
-Eq. ([\[eq:mbeta\]](#eq:mbeta){reference-type="ref"
-reference="eq:mbeta"}) \
-begin{aligned}
+Then using the results of @eq-mbeta
+
+\begin{aligned}
 \chi= (k_BT_ct)^{-1} & \textrm{ for} ~~~ T> T_c \\
 \chi= (-2k_BT_ct)^{-1} & \textrm{ for}  ~~~T \le T_c 
 \end{aligned} 
@@ -247,11 +246,10 @@ implies that (within the mean field approximation) the critical exponent
 $\gamma=1$.
 
 The schematic behaviour of the Ising order parameter and susceptibility
-are shown in fig. [10](#fig:mfsum){reference-type="ref"
-reference="fig:mfsum"}.
+are shown in @fig-mfsum 
 
 
- ![Mean field behaviour of the Ising magnetisation and susceptibility (schematic)](Figs/summary.png){width=80% fig-align="center" #fig-isingpd}
+ ![Mean field behaviour of the Ising magnetisation and susceptibility (schematic)](Figs/summary.png){width=80% fig-align="center" #fig-mfsum}
 
 
 
@@ -265,7 +263,7 @@ power series expansion of the order parameter. For a ferromagnet this
 takes the form
 
 $$F(m)=F_0+a_2m^2+a_4m^4
-\label{eq:landau}$$
+$${eq-landau}
 
 Here only the terms compatible with the order parameter symmetry are
 included in the expansion. On symmetry grounds, the free energy of a
@@ -276,18 +274,15 @@ $m\to -m$, and so do not feature.
 One can understand how the Landau free energy can give rise to a
 critical point by plotting its form for various values of $a_2$ with
 $a_4$ assumed positive (which ensures that the magnetisation remains
-bounded). This is shown in fig. [11](#fig:landau){reference-type="ref"
-reference="fig:landau"}
+bounded). This is shown in @fig-landau .
 
 
  ![Form of the Landau Free energy for a selection of values of the $a$ parameter.](Figs/landau.png){width=80% fig-align="center" #fig-landau}
 
 
-The situation is qualitatively similar to that discussed in
-sec [5.2](#sec:breaking){reference-type="ref" reference="sec:breaking"}.
+The situation is qualitatively similar to that discussed in @sec-breaking.
 Thermodynamics tells us that the system adopts the state of lowest free
-energy. Thus from fig. [11](#fig:landau){reference-type="ref"
-reference="fig:landau"}, we see that for $a_2>0$, the system will have
+energy. Thus from @fig-landau, we see that for $a_2>0$, the system will have
 $m=0$, i.e. will be in the disordered (or paramagnetic) phase. For
 $a_2<0$, the minimum in the free energy occurs at a finite value of $m$,
 indicating that the ordered (ferromagnetic) phase is the stable one. In
@@ -306,8 +301,9 @@ ourselves first to the magnetisation exponent $\beta$ defined by
 $m=t^\beta$, we first find the equilibrium magnetisation, corresponding
 to the minimum of the Landau free energy:
 
-$$\frac{dF}{dm}=2\tilde{a_2} tm+4a_4m^3=0
-\label{eq:minimize}$$
+$$
+\frac{dF}{dm}=2\tilde{a_2} tm+4a_4m^3=0
+$${#eq-minimize}
 
 which implies
 
@@ -349,9 +345,7 @@ often the case). The heat capacity can be calculated from
 
 $$C_H =-T\frac{\partial^2 F}{\partial T^2}$$
 
-From the minimization over $m$
-(Eq. [\[eq:minimize\]](#eq:minimize){reference-type="ref"
-reference="eq:minimize"}, one finds (*exercise*: check this)
+From the minimization over $m$ @#eq-minimize one finds (*exercise*: check this)
 
 \begin{aligned}
 F = & 0 ~~~~T>T_c\nonumber\\
@@ -380,7 +374,7 @@ shall start to take the first steps to including the effects of long
 range correlations.
 
 :::: center
-::: {#tab:exponents}
+::: {#tab-exponents}
   ----------------------------------- --------------- ---------- --------------- -------------------
                  $\:$                   Mean Field      $d=1$         $d=2$             $d=3$
     Critical temperature $k_BT/qJ$          $1$          $0$        $0.5673$           $0.754$
@@ -393,5 +387,4 @@ range correlations.
   theory predictions in a number of dimensions.
 :::
 
-[]{#tab:exponents label="tab:exponents"}
 ::::

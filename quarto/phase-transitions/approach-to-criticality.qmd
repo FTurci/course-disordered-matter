@@ -1,7 +1,4 @@
----
-title: "The Approach to Criticality"
-
----
+# The Approach to Criticality {#sec:approach}
 
 It is a matter of experimental fact that the approach to criticality in
 a given system is characterized by the divergence of various
@@ -13,41 +10,44 @@ found to be singular functions, diverging as a *power* of the reduced
 (dimensionless) temperature $t \equiv
 (T-T_c)/T_c$:-
 
-$$\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0) 
-\label{eq:chipow}$$
+$$
+\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0) 
+$${#eq-chipow}
 
 (where $M=mN$),
-$$C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant}) 
-\label{eq:Cv}$$
+$$
+C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant}) 
+$${#eq-Cv}
 
 Another key quantity is the correlation length $\xi$, which measures the
 distance over which fluctuations of the magnetic moments are correlated.
 This is observed to diverge near the critical point with an exponent
 $\nu$.
 
-$$\xi \propto t^{-\nu} ~~~~ (T > T_c,\: H=0)
-\label{eq:corr}$$
+$$
+\xi \propto t^{-\nu} ~~~~ (T > T_c,\: H=0)
+$${#eq-corr}
 
 Similar power law behaviour is found for the order parameter $Q$ (in
 this case the magnetisation) which vanishes in a singular fashion (it
 has infinite gradient) as the critical point is is approached as a
 function of temperature:
 
-$$m \propto t^{\beta} ~~~~ (T < T_c,\: H=0) \label{eq:mag},$$
+$$
+m \propto t^{\beta} ~~~~ (T < T_c,\: H=0) 
+$${#eq-mag}
 (here the symbol $\beta$, is not to be confused with $\beta=1/k_BT$--
 this unfortunately is the standard notation.)
 
 Finally, as a function of magnetic field:
 
-$$m \propto h^{1/\delta} ~~~~ (T = T_c,\: H>0) \label{eq:field}.$$
+$$m \propto h^{1/\delta} ~~~~ (T = T_c,\: H>0) .$${#eq-field}
 with $h=(H-H_c)/H_c$, the reduced magnetic field.
 
 As examples, the behaviour of the magnetisation and correlation length
-are plotted in fig. [4](#fig:sing){reference-type="ref"
-reference="fig:sing"} as a function of $t$.
+are plotted in @fig-sing  as a function of $t$.
 
  ![Singular behaviour of the correlation length and order parameter in the vicinity of the critical point as a function of the reduced temperature $t$.](Figs/sing.png){width=60% fig-align="center" #fig-sing}
-
 
 The quantities $\gamma, \alpha, \nu, \beta$ in the above equations are
 known as critical exponents. They serve to control the rate at which the

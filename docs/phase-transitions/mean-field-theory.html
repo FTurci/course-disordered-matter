@@ -138,7 +138,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -335,7 +335,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#sec:mfising" id="toc-sec:mfising" class="nav-link active" data-scroll-target="#sec\:mfising"><span class="header-section-number">5.1</span> Mean field solution of the Ising model</a></li>
-  <li><a href="#sec:breaking" id="toc-sec:breaking" class="nav-link" data-scroll-target="#sec\:breaking"><span class="header-section-number">5.2</span> Spontaneous symmetry breaking</a></li>
+  <li><a href="#sec-breaking" id="toc-sec-breaking" class="nav-link" data-scroll-target="#sec-breaking"><span class="header-section-number">5.2</span> Spontaneous symmetry breaking</a></li>
   <li><a href="#phase-diagram" id="toc-phase-diagram" class="nav-link" data-scroll-target="#phase-diagram"><span class="header-section-number">5.3</span> Phase diagram</a></li>
   <li><a href="#a-closer-look-critical-exponents" id="toc-a-closer-look-critical-exponents" class="nav-link" data-scroll-target="#a-closer-look-critical-exponents"><span class="header-section-number">5.4</span> A closer look: critical exponents</a>
   <ul class="collapse">
@@ -373,34 +373,38 @@ window.Quarto = {
 <p>The inability to solve many models exactly often means that one must resort to approximations. One such approximation scheme is mean field theory.</p>
 <section id="sec:mfising" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="sec:mfising"><span class="header-section-number">5.1</span> Mean field solution of the Ising model</h2>
-<p>Let us look for a mean field expression for the free energy of the Ising model whose Hamiltonian is given in Eq. (<a href="#eq:ising" data-reference-type="ref" data-reference="eq:ising">[eq:ising]</a>). Write</p>
+<p>Let us look for a mean field expression for the free energy of the Ising model whose Hamiltonian is given in <a href="Ising-model.html#eq-ising" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> . Write</p>
 <p><span id="eq-unnamed-0"><span class="math display">\[s_i=\langle s_i\rangle+(s_i-\langle s_i\rangle)=m+(s_i-m)=m+\delta s_i \tag{5.1}\]</span></span></p>
-Then
-<span class="math display">\[\begin{aligned}
+<p>Then <span id="eq-mfa"><span class="math display">\[\begin{aligned}
 {\cal H}_I=&amp;-J\sum_{&lt;i,j&gt;}[m+(s_i-m)][m+(s_j-m)]-H\sum_i s_i\nonumber\\
 =&amp;-J\sum_{&lt;i,j&gt;}[m^2+m(s_i-m)+m(s_j-m)+\delta s_i\delta s_j]-H\sum_i s_i\nonumber\\
-=&amp;-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{&lt;i,j&gt;}\delta s_i\delta s_j\label{eq:mfa}
-\end{aligned}\]</span>
-<p>where in the last line we have used the fact that when for each site <span class="math inline">\(i\)</span> we perform the sum <span class="math inline">\(\sum_{&lt;i,j&gt;}\)</span> over bonds of a quantity which is independent of <span class="math inline">\(s_j\)</span>, then the result is just the number of bonds per site times that quantity. Since the number of bonds on a lattice of <span class="math inline">\(N\)</span> sites of coordination <span class="math inline">\(q\)</span> is <span class="math inline">\(Nq/2\)</span> (because each bond is shared between two sites), there are therefore <span class="math inline">\(q/2\)</span> bonds per site.</p>
-<p>Now the mean field approximation is to ignore the last term in (<a href="#eq:mfa" data-reference-type="ref" data-reference="eq:mfa">[eq:mfa]</a>) giving the configurational energy as</p>
-<p><span class="math display">\[{\cal H}_{mf}=-\sum_{i}H_{mf}s_i+NqJm^2/2\]</span> with <span class="math inline">\(H_{mf}\equiv qJm+ H\)</span> the “mean field” seen by spin <span class="math inline">\(s_i\)</span>. As all the spins are decoupled (independent) in this approximation we can write down the partition function, which follows by taking the partition function for a single spin (by summing the Boltzmann factor for <span class="math inline">\(s_i=\pm 1\)</span>) and raising to the power <span class="math inline">\(N\)</span> to find</p>
-<p><span id="eq-unnamed-1"><span class="math display">\[Z=e^{-\beta qJm^2N/2}[2\cosh(\beta(qJm+H))]^N \tag{5.2}\]</span></span></p>
+=&amp;-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{&lt;i,j&gt;}\delta s_i\delta s_j
+\end{aligned} \tag{5.2}\]</span></span> where in the last line we have used the fact that when for each site <span class="math inline">\(i\)</span> we perform the sum <span class="math inline">\(\sum_{&lt;i,j&gt;}\)</span> over bonds of a quantity which is independent of <span class="math inline">\(s_j\)</span>, then the result is just the number of bonds per site times that quantity. Since the number of bonds on a lattice of <span class="math inline">\(N\)</span> sites of coordination <span class="math inline">\(q\)</span> is <span class="math inline">\(Nq/2\)</span> (because each bond is shared between two sites), there are therefore <span class="math inline">\(q/2\)</span> bonds per site.</p>
+<p>Now the mean field approximation is to ignore the last term in the last line of <a href="#eq-mfa" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> giving the configurational energy as</p>
+<p><span class="math display">\[
+{\cal H}_{mf}=-\sum_{i}H_{mf}s_i+NqJm^2/2
+\]</span> with <span class="math inline">\(H_{mf}\equiv qJm+ H\)</span> the “mean field” seen by spin <span class="math inline">\(s_i\)</span>. As all the spins are decoupled (independent) in this approximation we can write down the partition function, which follows by taking the partition function for a single spin (by summing the Boltzmann factor for <span class="math inline">\(s_i=\pm 1\)</span>) and raising to the power <span class="math inline">\(N\)</span> to find</p>
+<p><span id="eq-unnamed-1"><span class="math display">\[
+Z=e^{-\beta qJm^2N/2}[2\cosh(\beta(qJm+H))]^N
+\tag{5.3}\]</span></span></p>
 <p>The free energy follows as</p>
-<p><span id="eq-unnamed-2"><span class="math display">\[F(m)=NJqm^2/2-Nk_BT\ln[2\cosh(\beta (qJm+H)]\:. \tag{5.3}\]</span></span></p>
+<p><span id="eq-unnamed-2"><span class="math display">\[F(m)=NJqm^2/2-Nk_BT\ln[2\cosh(\beta (qJm+H)]\:. \tag{5.4}\]</span></span></p>
 <p>and the magnetisation as</p>
-<p><span id="eq-unnamed-3"><span class="math display">\[m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H)) \tag{5.4}\]</span></span></p>
+<p><span id="eq-unnamed-3"><span class="math display">\[
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H))
+\tag{5.5}\]</span></span></p>
 <p>To find <span class="math inline">\(m(H,T)\)</span>, we must numerically solve this last equation self consistently.</p>
 <p>Note that we can obtain <span class="math inline">\(m\)</span> in a different way. Consider some arbitary spin, <span class="math inline">\(s_i\)</span> say. Then this spin has an energy <span class="math inline">\({\cal H}_{mf}(s_i)\)</span>. Considering this energy for both cases <span class="math inline">\(s_i=\pm 1\)</span> and the probability <span class="math inline">\(p(s_i)=e^{-\beta{\cal H}_{mf}(s_i)}/Z\)</span> of each, we have that</p>
 <p><span class="math display">\[\langle s_i\rangle=\sum_{s_i=\pm 1}s_ip(s_i)\]</span> but for consistancy, <span class="math inline">\(\langle s_i\rangle=m\)</span>. Thus</p>
-<span class="math display">\[\begin{aligned}
+<p><span id="eq-mfmag"><span class="math display">\[
+\begin{aligned}
 m =&amp; \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
 \:=&amp; \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
-\:=&amp;\tanh(\beta(qJm+H)) \label{eq:mfmag}
-\end{aligned}\]</span>
-<p>as before.</p>
+\:=&amp;\tanh(\beta(qJm+H))
+\end{aligned} \tag{5.6}\]</span></span> as before.</p>
 </section>
-<section id="sec:breaking" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sec:breaking"><span class="header-section-number">5.2</span> Spontaneous symmetry breaking</h2>
+<section id="sec-breaking" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-breaking"><span class="header-section-number">5.2</span> Spontaneous symmetry breaking</h2>
 <div id="fig-freeenergy" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-freeenergy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -411,14 +415,14 @@ Figure&nbsp;5.1: Schematic of the form of the free energy for a critical, subcri
 </figcaption>
 </figure>
 </div>
-<p>This mean field analysis reveals what is happening in the Ising model near the critical temperature <span class="math inline">\(T_c\)</span>. Fig.&nbsp;<a href="#fig:freeenergy" data-reference-type="ref" data-reference="fig:freeenergy">7</a> shows sketches for <span class="math inline">\(\beta F(m)/N\)</span> as a function of temperature, where for simplicity we restrict attention to <span class="math inline">\(H=0\)</span>. In this case <span class="math inline">\(F(m)\)</span> is symmetric in <span class="math inline">\(m\)</span>, Moreover, at high <span class="math inline">\(T\)</span>, the entropy dominates and there is a single minimum in <span class="math inline">\(F(m)\)</span> at <span class="math inline">\(m=0\)</span>. At <span class="math inline">\(T\)</span> is lowered, there comes a point (<span class="math inline">\(T=T_c=qJ/k_B\)</span>) where the curvature of <span class="math inline">\(F(m)\)</span> at the origin changes sign; precisely at this point</p>
+<p>This mean field analysis reveals what is happening in the Ising model near the critical temperature <span class="math inline">\(T_c\)</span>. <a href="#fig-freeenergy" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> shows sketches for <span class="math inline">\(\beta F(m)/N\)</span> as a function of temperature, where for f simplicity we restrict attention to <span class="math inline">\(H=0\)</span>. In this case <span class="math inline">\(F(m)\)</span> is symmetric in <span class="math inline">\(m\)</span>, Moreover, at high <span class="math inline">\(T\)</span>, the entropy dominates and there is a single minimum in <span class="math inline">\(F(m)\)</span> at <span class="math inline">\(m=0\)</span>. As <span class="math inline">\(T\)</span> is lowered, there comes a point (<span class="math inline">\(T=T_c=qJ/k_B\)</span>) where the curvature of <span class="math inline">\(F(m)\)</span> at the origin changes sign; precisely at this point</p>
 <p><span class="math display">\[\frac{\partial^2 F}{\partial m^2}=0.\]</span> At lower temperature, there are instead two minima at nonzero <span class="math inline">\(m=\pm m^\star\)</span>, where the <em>equilibrium magnetisation</em> <span class="math inline">\(m^\star\)</span> is the positive root (calculated explicitly below) of</p>
 <p><span class="math display">\[m^\star=\tanh(\beta Jqm^\star)= \tanh(\frac{m^\star T_c}{T})\]</span> The point <span class="math inline">\(m=0\)</span> which remains a root of this equation, is clearly an unstable point for <span class="math inline">\(T&lt;T_c\)</span> (since <span class="math inline">\(F\)</span> has a maximum there).</p>
 <p>This is an example of spontaneous symmetry breaking. In the absence of an external field, the Hamiltonian (and therefore the free energy) is symmetric under <span class="math inline">\(m\to -m\)</span>. Accordingly, one might expect the actual state of the system to also show this symmetry. This is true at high temperature, but spontaneously breaks down at low ones. Instead there are a pair of ferromagnetic states (spins mostly up, or spins mostly down) which – by symmetry– have the same free energy, lower than the unmagnetized state.</p>
 </section>
 <section id="phase-diagram" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="phase-diagram"><span class="header-section-number">5.3</span> Phase diagram</h2>
-<p>The resulting zero-field magnetisation curve <span class="math inline">\(m(T,H=0)\)</span> looks like fig.&nbsp;<a href="#fig:isingmag" data-reference-type="ref" data-reference="fig:isingmag">8</a>.</p>
+<p>The resulting zero-field magnetisation curve <span class="math inline">\(m(T,H=0)\)</span> looks like <a href="#fig-isingmag" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>.</p>
 <div id="fig-isingmag" class="quarto-float quarto-figure quarto-figure-left anchored" data-fig-align="left">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-isingmag-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -471,39 +475,41 @@ Aside on Quantum Criticality
 <p><span class="math display">\[m=\tanh(\frac{mT_c}{T})\]</span> where <span class="math inline">\(T_c=qJ/k_B\)</span> is the critical temperature at which <span class="math inline">\(m\)</span> first goes to zero.</p>
 <p>We look for a solution where <span class="math inline">\(m\)</span> is small (<span class="math inline">\(\ll 1\)</span>). Expanding the tanh function and replacing <span class="math inline">\(\beta=(k_BT)^{-1}\)</span> yields</p>
 <p><span class="math display">\[m=\frac{mT_c}{T}-\frac{1}{3}\left(\frac{mT_c}{T} \right)^3 +O(m^5)\:.\]</span> Then <span class="math inline">\(m=0\)</span> is one solution. The other solution is given by</p>
-<p><span id="eq-unnamed-4"><span class="math display">\[m^2=3\left(\frac{T}{T_c} \right)^3\left(\frac{T_c}{T} -1\right) \tag{5.5}\]</span></span></p>
+<p><span id="eq-unnamed-4"><span class="math display">\[m^2=3\left(\frac{T}{T_c} \right)^3\left(\frac{T_c}{T} -1\right) \tag{5.7}\]</span></span></p>
 <p>Now, considering temperatures close to <span class="math inline">\(T_c\)</span> to guarantee small <span class="math inline">\(m\)</span>, and employing the reduced temperature <span class="math inline">\(t=(T-T_c)/T_c\)</span>, one finds</p>
-<p><span id="eq-unnamed-5"><span class="math display">\[m^2\simeq -3t \tag{5.6}\]</span></span></p>
+<p><span id="eq-unnamed-5"><span class="math display">\[m^2\simeq -3t \tag{5.8}\]</span></span></p>
 <p>Hence</p>
-<span class="math display">\[\begin{aligned}
+<p><span id="eq-mbeta"><span class="math display">\[\begin{aligned}
 m= 0  &amp;    ~~~\textrm{for } T&gt;T_c \:\:\:  \textrm{ since~otherwise~{\it m}~imaginary}\nonumber\\
 m= \pm\sqrt{-3t} &amp; ~~\textrm{ for}  \:\:\: T&lt;T_c ~~\textrm{ real}
-\label{eq:mbeta}
-\end{aligned}\]</span>
-<p>This result implies that (within the mean field approximation) the critical exponent <span class="math inline">\(\beta=1/2\)</span>.</p>
+\end{aligned}  \tag{5.9}\]</span></span> This result implies that (within the mean field approximation) the critical exponent <span class="math inline">\(\beta=1/2\)</span>.</p>
 </section>
 <section id="sec:closerlook" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="sec:closerlook"><span class="header-section-number">5.4.2</span> Finite (but small) field solution: the susceptibility exponent</h3>
-<p>In a finite, but small field we can expand Eq.&nbsp;(<a href="#eq:mfmag" data-reference-type="ref" data-reference="eq:mfmag">[eq:mfmag]</a>) thus:</p>
-<p><span id="eq-unnamed-6"><span class="math display">\[m=\frac{mT_c}{T}-\frac{1}{3}\left(\frac{mT_c}{T} \right)^3 +\frac{H}{kT} \tag{5.7}\]</span></span></p>
+<p>In a finite, but small field we can expand <a href="#eq-mfmag" class="quarto-xref">Equation&nbsp;<span>5.6</span></a> thus:</p>
+<p><span id="eq-unnamed-6"><span class="math display">\[m=\frac{mT_c}{T}-\frac{1}{3}\left(\frac{mT_c}{T} \right)^3 +\frac{H}{kT} \tag{5.10}\]</span></span></p>
 <p>Consider now the isothermal susceptibility</p>
 <span class="math display">\[\begin{aligned}
 \chi  \equiv &amp; \left(\frac{\partial m}{\partial H}\right)_T\\
       =     &amp; \frac{T_c}{T}\chi - \left(\frac{T_c}{T}\right)^3 \chi m^2 + \frac{1}{k_BT}  
 \end{aligned}\]</span>
 <p>Then</p>
-<p><span id="eq-unnamed-7"><span class="math display">\[\chi \left[ 1-\frac{T_c}{T} +\left(\frac{T_c}{T}\right)^3m^2  \right]=\frac{1}{k_BT} \tag{5.8}\]</span></span></p>
+<p><span id="eq-unnamed-7"><span class="math display">\[\chi \left[ 1-\frac{T_c}{T} +\left(\frac{T_c}{T}\right)^3m^2  \right]=\frac{1}{k_BT} \tag{5.11}\]</span></span></p>
 <p>Hence near <span class="math inline">\(T_c\)</span></p>
-<p><span id="eq-unnamed-8"><span class="math display">\[\chi=\frac{1}{k_BT_c}\left(\frac{1}{t+m^2}\right) \tag{5.9}\]</span></span></p>
-<p>Then using the results of Eq.&nbsp;(<a href="#eq:mbeta" data-reference-type="ref" data-reference="eq:mbeta">[eq:mbeta]</a>)<br>
-begin{aligned} = (k_BT_ct)^{-1} &amp; ~~~ T&gt; T_c \ = (-2k_BT_ct)^{-1} &amp; ~~~T T_c \end{aligned} where one has to take the non-zero value for <span class="math inline">\(m\)</span> below <span class="math inline">\(T_c\)</span> to ensure +ve <span class="math inline">\(\chi\)</span>, i.e.&nbsp;thermodynamic stability. This result implies that (within the mean field approximation) the critical exponent <span class="math inline">\(\gamma=1\)</span>.</p>
-<p>The schematic behaviour of the Ising order parameter and susceptibility are shown in fig.&nbsp;<a href="#fig:mfsum" data-reference-type="ref" data-reference="fig:mfsum">10</a>.</p>
-<div id="fig-isingpd" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<p><span id="eq-unnamed-8"><span class="math display">\[\chi=\frac{1}{k_BT_c}\left(\frac{1}{t+m^2}\right) \tag{5.12}\]</span></span></p>
+<p>Then using the results of <a href="#eq-mbeta" class="quarto-xref">Equation&nbsp;<span>5.9</span></a></p>
+<span class="math display">\[\begin{aligned}
+\chi= (k_BT_ct)^{-1} &amp; \textrm{ for} ~~~ T&gt; T_c \\
+\chi= (-2k_BT_ct)^{-1} &amp; \textrm{ for}  ~~~T \le T_c
+\end{aligned}\]</span>
+<p>where one has to take the non-zero value for <span class="math inline">\(m\)</span> below <span class="math inline">\(T_c\)</span> to ensure +ve <span class="math inline">\(\chi\)</span>, i.e.&nbsp;thermodynamic stability. This result implies that (within the mean field approximation) the critical exponent <span class="math inline">\(\gamma=1\)</span>.</p>
+<p>The schematic behaviour of the Ising order parameter and susceptibility are shown in <a href="#fig-mfsum" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>&nbsp;</p>
+<div id="fig-mfsum" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-isingpd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-mfsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="Figs/summary.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-isingpd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mfsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;5.4: Mean field behaviour of the Ising magnetisation and susceptibility (schematic)
 </figcaption>
 </figure>
@@ -513,10 +519,10 @@ Figure&nbsp;5.4: Mean field behaviour of the Ising magnetisation and susceptibil
 <section id="landau-theory" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="landau-theory"><span class="header-section-number">5.5</span> Landau theory</h2>
 <p>Landau theory is a slightly more general type of mean field theory than that discussed in the previous subsection because it is not based on a particular microscopic model. Its starting point is the Helmholtz free energy, which Landau asserted can be written in terms of a truncated power series expansion of the order parameter. For a ferromagnet this takes the form</p>
-<p><span id="eq-unnamed-9"><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
-\label{eq:landau} \tag{5.10}\]</span></span></p>
+<p><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
+\]</span>{eq-landau}</p>
 <p>Here only the terms compatible with the order parameter symmetry are included in the expansion. On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the magnetisation. Terms linear and cubic in <span class="math inline">\(m\)</span> are not invariant under <span class="math inline">\(m\to -m\)</span>, and so do not feature.</p>
-<p>One can understand how the Landau free energy can give rise to a critical point by plotting its form for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in fig.&nbsp;<a href="#fig:landau" data-reference-type="ref" data-reference="fig:landau">11</a></p>
+<p>One can understand how the Landau free energy can give rise to a critical point by plotting its form for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> .</p>
 <div id="fig-landau" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-landau-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -527,28 +533,29 @@ Figure&nbsp;5.5: Form of the Landau Free energy for a selection of values of the
 </figcaption>
 </figure>
 </div>
-<p>The situation is qualitatively similar to that discussed in sec&nbsp;<a href="#sec:breaking" data-reference-type="ref" data-reference="sec:breaking">5.2</a>. Thermodynamics tells us that the system adopts the state of lowest free energy. Thus from fig.&nbsp;<a href="#fig:landau" data-reference-type="ref" data-reference="fig:landau">11</a>, we see that for <span class="math inline">\(a_2&gt;0\)</span>, the system will have <span class="math inline">\(m=0\)</span>, i.e.&nbsp;will be in the disordered (or paramagnetic) phase. For <span class="math inline">\(a_2&lt;0\)</span>, the minimum in the free energy occurs at a finite value of <span class="math inline">\(m\)</span>, indicating that the ordered (ferromagnetic) phase is the stable one. In fact, the physical (up-down) spin symmetry built into <span class="math inline">\(F\)</span> indicates that there are two equivalent stable states at <span class="math inline">\(m=\pm m^\star\)</span>. <span class="math inline">\(a_2=0\)</span> corresponds to the critical point which marks the border between the ordered and disordered phases.</p>
+<p>The situation is qualitatively similar to that discussed in <a href="#sec-breaking" class="quarto-xref"><span>Section 5.2</span></a>. Thermodynamics tells us that the system adopts the state of lowest free energy. Thus from <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>, we see that for <span class="math inline">\(a_2&gt;0\)</span>, the system will have <span class="math inline">\(m=0\)</span>, i.e.&nbsp;will be in the disordered (or paramagnetic) phase. For <span class="math inline">\(a_2&lt;0\)</span>, the minimum in the free energy occurs at a finite value of <span class="math inline">\(m\)</span>, indicating that the ordered (ferromagnetic) phase is the stable one. In fact, the physical (up-down) spin symmetry built into <span class="math inline">\(F\)</span> indicates that there are two equivalent stable states at <span class="math inline">\(m=\pm m^\star\)</span>. <span class="math inline">\(a_2=0\)</span> corresponds to the critical point which marks the border between the ordered and disordered phases.</p>
 <p>Clearly <span class="math inline">\(a_2\)</span> controls the deviation from the critical temperature, and accordingly we may write</p>
 <p><span class="math display">\[a_2=\tilde{a_2} t\]</span> where <span class="math inline">\(t\)</span> is the reduced temperature.</p>
 <p>We can now attempt to calculate critical exponents. Restricting ourselves first to the magnetisation exponent <span class="math inline">\(\beta\)</span> defined by <span class="math inline">\(m=t^\beta\)</span>, we first find the equilibrium magnetisation, corresponding to the minimum of the Landau free energy:</p>
-<p><span id="eq-unnamed-10"><span class="math display">\[\frac{dF}{dm}=2\tilde{a_2} tm+4a_4m^3=0
-\label{eq:minimize} \tag{5.11}\]</span></span></p>
+<p><span id="eq-minimize"><span class="math display">\[
+\frac{dF}{dm}=2\tilde{a_2} tm+4a_4m^3=0
+\tag{5.13}\]</span></span></p>
 <p>which implies</p>
 <p><span class="math display">\[m\propto (-t)^{1/2},\]</span> so <span class="math inline">\(\beta=1/2\)</span>, which is again a mean field result.</p>
 <p>Likewise we can calculate the effect of a small field <span class="math inline">\(H\)</span> if we sit at the critical temperature <span class="math inline">\(T_c\)</span>. Since <span class="math inline">\(a_2=0\)</span>, we have</p>
-<p><span id="eq-unnamed-11"><span class="math display">\[F(m)=F_0+a_4m^4-Hm \tag{5.12}\]</span></span></p>
-<p><span id="eq-unnamed-12"><span class="math display">\[\frac{\partial F}{\partial m}=0 \Rightarrow m(H,T_c)=\left(\frac{H}{4a_4}\right)^{1/3} \tag{5.13}\]</span></span></p>
+<p><span id="eq-unnamed-9"><span class="math display">\[F(m)=F_0+a_4m^4-Hm \tag{5.14}\]</span></span></p>
+<p><span id="eq-unnamed-10"><span class="math display">\[\frac{\partial F}{\partial m}=0 \Rightarrow m(H,T_c)=\left(\frac{H}{4a_4}\right)^{1/3} \tag{5.15}\]</span></span></p>
 <p>or</p>
 <p><span class="math display">\[H \sim m^\delta ~~~~~ \delta=3\]</span> which defines a second critical exponent.</p>
 <p>Note that at the critical point, a small applied field causes a very big increase in magnetisation; formally, <span class="math inline">\((\partial m/\partial H)_T\)</span> is infinite at <span class="math inline">\(T=T_c\)</span>.</p>
 <p>A third critical exponent can be defined from the magnetic susceptibility at zero field</p>
-<p><span id="eq-unnamed-13"><span class="math display">\[\chi=\left(\frac{\partial m}{\partial H}\right)_{T,V} \sim |T-T_c|^{-\gamma} \tag{5.14}\]</span></span></p>
+<p><span id="eq-unnamed-11"><span class="math display">\[\chi=\left(\frac{\partial m}{\partial H}\right)_{T,V} \sim |T-T_c|^{-\gamma} \tag{5.16}\]</span></span></p>
 <p><em>Exercise</em>: Show that the Landau expansion predicts <span class="math inline">\(\gamma=1\)</span>.</p>
 <p>Finally we define a fourth critical exponent via the variation of the heat capacity (per site or per unit volume) <span class="math inline">\(C_H\)</span>, in fixed external field <span class="math inline">\(H=0\)</span>:</p>
-<p><span id="eq-unnamed-14"><span class="math display">\[C_H \sim |T-T_c|^{-\alpha} \tag{5.15}\]</span></span></p>
+<p><span id="eq-unnamed-12"><span class="math display">\[C_H \sim |T-T_c|^{-\alpha} \tag{5.17}\]</span></span></p>
 <p>By convention, <span class="math inline">\(\alpha\)</span> is defined to be positive for systems where there is a <em>divergence</em> of the heat capacity at the critical point (very often the case). The heat capacity can be calculated from</p>
-<p><span id="eq-unnamed-15"><span class="math display">\[C_H =-T\frac{\partial^2 F}{\partial T^2} \tag{5.16}\]</span></span></p>
-<p>From the minimization over <span class="math inline">\(m\)</span> (Eq.&nbsp;<a href="#eq:minimize" data-reference-type="ref" data-reference="eq:minimize">[eq:minimize]</a>, one finds (<em>exercise</em>: check this)</p>
+<p><span id="eq-unnamed-13"><span class="math display">\[C_H =-T\frac{\partial^2 F}{\partial T^2} \tag{5.18}\]</span></span></p>
+<p>From the minimization over <span class="math inline">\(m\)</span> @#eq-minimize one finds (<em>exercise</em>: check this)</p>
 <span class="math display">\[\begin{aligned}
 F = &amp; 0 ~~~~T&gt;T_c\nonumber\\
 F = &amp; -a_2^2/4a_4 ~~~~ T &lt; T_c
@@ -564,7 +571,7 @@ C_H =&amp; \frac{T\tilde a_2^2}{2a_4} ~~~~ T \to T_c^-\:,
 <h2 data-number="5.6" class="anchored" data-anchor-id="shortcomings-of-mean-field-theory"><span class="header-section-number">5.6</span> Shortcomings of mean field theory</h2>
 <p>While mean field theories provide a useful route to understanding qualitatively the phenomenology of phase transitions, in real ferromagnets, as well as in more sophisticated theories, the critical exponents are not the simple fraction and integers found here. This failure of mean field theory to predict the correct exponents is of course traceable to their neglect of correlations. In later sections we shall start to take the first steps to including the effects of long range correlations.</p>
 <div class="center">
-<div id="tab:exponents">
+<div id="tab-exponents">
 <table class="caption-top table">
 <caption>Comparison of true Ising critical exponents with their mean field theory predictions in a number of dimensions.</caption>
 <tbody>
@@ -606,7 +613,6 @@ C_H =&amp; \frac{T\tilde a_2^2}{2a_4} ~~~~ T \to T_c^-\:,
 </tbody>
 </table>
 </div>
-<p><span id="tab:exponents" data-label="tab:exponents"></span></p>
 </div>
 
 

@@ -138,7 +138,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -343,7 +343,7 @@ window.Quarto = {
   <li><a href="#near-critical-scaling" id="toc-near-critical-scaling" class="nav-link" data-scroll-target="#near-critical-scaling"><span class="header-section-number">8.4</span> Near critical scaling</a></li>
   <li><a href="#sec:unipics" id="toc-sec:unipics" class="nav-link" data-scroll-target="#sec\:unipics"><span class="header-section-number">8.5</span> Universality classes</a></li>
   <li><a href="#critical-exponents" id="toc-critical-exponents" class="nav-link" data-scroll-target="#critical-exponents"><span class="header-section-number">8.6</span> Critical exponents</a></li>
-  <li><a href="#sec:fss" id="toc-sec:fss" class="nav-link" data-scroll-target="#sec\:fss"><span class="header-section-number">8.7</span> Finite-size scaling</a></li>
+  <li><a href="#sec-fss" id="toc-sec-fss" class="nav-link" data-scroll-target="#sec-fss"><span class="header-section-number">8.7</span> Finite-size scaling</a></li>
   <li><a href="#summary-of-main-points" id="toc-summary-of-main-points" class="nav-link" data-scroll-target="#summary-of-main-points"><span class="header-section-number">8.8</span> Summary of main points</a></li>
   </ul>
 </nav>
@@ -484,8 +484,8 @@ b(L)&amp;=&amp;b_0L^{\beta/\nu}
 <p>Consider now the exponent <span class="math inline">\(1/\nu\)</span>. For small but non-zero reduced temperature (large but finite <span class="math inline">\(\xi\)</span>) there is second way in which the configuration spectrum evolves with <span class="math inline">\(L\)</span>. As noted previously, coarse graining reduces the ratio of correlation length to coarse-graining length, and results in configurations with a less critical appearance. More precisely, we see from eq.&nbsp;<a href="#eq:blocks" data-reference-type="ref" data-reference="eq:blocks">[eq:blocks]</a> that increasing the coarse graining length from <span class="math inline">\(L_1\)</span> to <span class="math inline">\(L_2\)</span> while keeping the reduced temperature constant has the same effect on the configuration spectrum as keeping coarse-graining length constant which amplifying the reduced temperature <span class="math inline">\(t\)</span> by a factor</p>
 <p><span class="math display">\[\frac{a(L_2)}{a(L_1)}=\left(\frac{L_2}{L_1}\right)^{1/\nu}\:.\]</span> One may think of the combination <span class="math inline">\(a(L)t\)</span> as a measure of the effective reduced temperature of the physical system viewed with resolution length <span class="math inline">\(L\)</span>. The exponent <span class="math inline">\(1/\nu\)</span> controls the rate at which the effective reduced temperature flows with increasing coarse-graining length.</p>
 </section>
-<section id="sec:fss" class="level2" data-number="8.7">
-<h2 data-number="8.7" class="anchored" data-anchor-id="sec:fss"><span class="header-section-number">8.7</span> Finite-size scaling</h2>
+<section id="sec-fss" class="level2" data-number="8.7">
+<h2 data-number="8.7" class="anchored" data-anchor-id="sec-fss"><span class="header-section-number">8.7</span> Finite-size scaling</h2>
 <p>We can exploit the fact that the scale factors <span class="math inline">\(a(L)\)</span> and <span class="math inline">\(b(L)\)</span> depend on critical exponents to estimate the values of these exponents using computer simulation. Consider the average of the block variable <span class="math inline">\(S(L)\)</span>. Consideration of eq.&nbsp;<a href="#eq:blkvar" data-reference-type="ref" data-reference="eq:blkvar">[eq:blkvar]</a> shows that this is non other than the value of the order parameter <span class="math inline">\(Q\)</span>, measured over a block of side <span class="math inline">\(L\)</span>. Thus from the definition of an average</p>
 <p><span class="math display">\[Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)\]</span> where <span class="math inline">\(p(S(L))\)</span> is the probability distribution of <span class="math inline">\(S(L)\)</span>.</p>
 <p>Making use of the representation of eq.&nbsp;<a href="#eq:blocks" data-reference-type="ref" data-reference="eq:blocks">[eq:blocks]</a>, we then have that</p>

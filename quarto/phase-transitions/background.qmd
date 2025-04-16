@@ -96,8 +96,7 @@ where $\beta=(k_BT)^{-1}$.
 
 The relationship between other thermodynamic quantities and derivatives
 of the free energy are given in
-fig. [3](#fig:thermo){reference-type="ref" reference="fig:thermo"}
+fig. @fig-thermo
 
-
- ![Relationships between the partition function and thermodynamic observables](Figs/thermo.png){fig-align="center" #fig:thermo}
+ ![Relationships between the partition function and thermodynamic observables](Figs/thermo.png){fig-align="center" #fig-thermo}
 

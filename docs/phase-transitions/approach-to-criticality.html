@@ -138,7 +138,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Home</span></a>
+ <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -337,7 +337,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts for disordered matter</a></li><li class="breadcrumb-item"><a href="../phase-transitions/approach-to-criticality.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Approach to Criticality</span></h1>
+<h1 class="title"><span id="sec:approach" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Approach to Criticality</span></span></h1>
 </div>
 
 
@@ -356,18 +356,23 @@ window.Quarto = {
 
 <p>It is a matter of experimental fact that the approach to criticality in a given system is characterized by the divergence of various thermodynamic observables. Let us remain with the archetypal example of a critical system, the ferromagnet, whose critical temperature will be denoted as <span class="math inline">\(T_c\)</span>. For temperatures close to <span class="math inline">\(T_c\)</span>, the magnetic response functions (the magnetic susceptibility <span class="math inline">\(\chi\)</span> and the specific heat) are found to be singular functions, diverging as a <em>power</em> of the reduced (dimensionless) temperature <span class="math inline">\(t \equiv
 (T-T_c)/T_c\)</span>:-</p>
-<p><span id="eq-unnamed-0"><span class="math display">\[\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0)
-\label{eq:chipow} \tag{3.1}\]</span></span></p>
-<p>(where <span class="math inline">\(M=mN\)</span>), <span class="math display">\[C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant})
-\label{eq:Cv}\]</span></p>
+<p><span id="eq-chipow"><span class="math display">\[
+\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0)
+\tag{3.1}\]</span></span></p>
+<p>(where <span class="math inline">\(M=mN\)</span>), <span id="eq-Cv"><span class="math display">\[
+C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant})
+\tag{3.2}\]</span></span></p>
 <p>Another key quantity is the correlation length <span class="math inline">\(\xi\)</span>, which measures the distance over which fluctuations of the magnetic moments are correlated. This is observed to diverge near the critical point with an exponent <span class="math inline">\(\nu\)</span>.</p>
-<p><span id="eq-unnamed-1"><span class="math display">\[\xi \propto t^{-\nu} ~~~~ (T &gt; T_c,\: H=0)
-\label{eq:corr} \tag{3.2}\]</span></span></p>
+<p><span id="eq-corr"><span class="math display">\[
+\xi \propto t^{-\nu} ~~~~ (T &gt; T_c,\: H=0)
+\tag{3.3}\]</span></span></p>
 <p>Similar power law behaviour is found for the order parameter <span class="math inline">\(Q\)</span> (in this case the magnetisation) which vanishes in a singular fashion (it has infinite gradient) as the critical point is is approached as a function of temperature:</p>
-<p><span class="math display">\[m \propto t^{\beta} ~~~~ (T &lt; T_c,\: H=0) \label{eq:mag},\]</span> (here the symbol <span class="math inline">\(\beta\)</span>, is not to be confused with <span class="math inline">\(\beta=1/k_BT\)</span>– this unfortunately is the standard notation.)</p>
+<p><span id="eq-mag"><span class="math display">\[
+m \propto t^{\beta} ~~~~ (T &lt; T_c,\: H=0)
+\tag{3.4}\]</span></span> (here the symbol <span class="math inline">\(\beta\)</span>, is not to be confused with <span class="math inline">\(\beta=1/k_BT\)</span>– this unfortunately is the standard notation.)</p>
 <p>Finally, as a function of magnetic field:</p>
-<p><span class="math display">\[m \propto h^{1/\delta} ~~~~ (T = T_c,\: H&gt;0) \label{eq:field}.\]</span> with <span class="math inline">\(h=(H-H_c)/H_c\)</span>, the reduced magnetic field.</p>
-<p>As examples, the behaviour of the magnetisation and correlation length are plotted in fig.&nbsp;<a href="#fig:sing" data-reference-type="ref" data-reference="fig:sing">4</a> as a function of <span class="math inline">\(t\)</span>.</p>
+<p><span id="eq-field"><span class="math display">\[m \propto h^{1/\delta} ~~~~ (T = T_c,\: H&gt;0) . \tag{3.5}\]</span></span> with <span class="math inline">\(h=(H-H_c)/H_c\)</span>, the reduced magnetic field.</p>
+<p>As examples, the behaviour of the magnetisation and correlation length are plotted in <a href="#fig-sing" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> as a function of <span class="math inline">\(t\)</span>.</p>
 <div id="fig-sing" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-sing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

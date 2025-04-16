@@ -54,20 +54,17 @@ Then $$F(t,h)=t^{1/a}F(1,t^{-b/a}h)$$ where our choice of $\lambda$
 ensures that $F$ on the rhs is now a function of a single variable
 $t^{-b/a}h$.
 
-Now, as stated in sec. [2](#sec:background){reference-type="ref"
-reference="sec:background"} the free energy provides the route to all
+Now, as stated in @sec:background, the free energy provides the route to all
 thermodynamic functions of interest. An expression for the magnetisation
-can be obtained simply by taking the field derivative of $F$ (cf.
-fig. [3](#fig:thermo){reference-type="ref" reference="fig:thermo"})
+can be obtained simply by taking the field derivative of $F$ (cf. @fig-thermo)
 
 $$m(t,h)=-t^{(1-b)/a}m(1,t^{-b/a}h)
-\label{eq:magscale}$$
+$${#eq-magscale}
 
 In zero applied field $h=0$, this reduces to
 
 $$m(t,0)=(-t)^{(1-b)/a}m(1,0)$$ where the r.h.s. is a power law in $t$.
-Equation ([\[eq:mag\]](#eq:mag){reference-type="ref"
-reference="eq:mag"}) then allows identification of the exponent $\beta$
+@eq-mag then allows identification of the exponent $\beta$
 in terms of the scaling parameters $a$ and $b$.
 
 $$\beta=\frac{1-b}{a}$$
@@ -94,13 +91,12 @@ critical point.
 
 The validity of the scaling hypothesis finds startling verification in
 experiment. To facilitate contact with experimental data for real
-systems, consider again
-eq. [\[eq:magscale\]](#eq:magscale){reference-type="ref"
-reference="eq:magscale"}. Eliminating the scaling parameters $a$ and $b$
+systems, consider again @eq-magscale. Eliminating the scaling parameters $a$ and $b$
 in favour of the exponents $\beta$ and $\delta$ gives
 
-$$\frac{m(t,h)}{t^{\beta}}=m(1,\frac{h}{t^{\beta\delta}})$$ where the
-RHS of this last equation can be regarded as a function of the single
+$$
+\frac{m(t,h)}{t^{\beta}}=m(1,\frac{h}{t^{\beta\delta}})
+$$ where the RHS of this last equation can be regarded as a function of the single
 scaled variable $\tilde{H} \equiv t^{-\beta\delta} h(t,M)$.
 
 For some particular magnetic system, one can perform an experiment in
@@ -113,7 +109,7 @@ is found that all isotherms (for $t$ close to zero) coincide to within
 experimental error. Reassuringly, similar results are found using the
 scaled equation of state of simple fluid systems such as He$^3$ or Xe.
 
-![Magnetisation of CrBr$_3$ in the critical region plotted in scaled form (see text).](Figs/scaling1.jpg){width=80%}
+![Magnetisation of CrBr$_3$ in the critical region plotted in scaled form (see text).](Figs/scaling1.jpg){width=80% #fig-scalingexp }
 
 In summary, the static scaling hypothesis is remarkably successful in
 providing a foundation for the observation of power laws and scaling
@@ -131,14 +127,11 @@ a difficulty. The problem is that simulations are necessarily restricted
 to dealing with systems of finite-size and cannot therefore accommodate
 the truly long ranged fluctuations that characterize the near-critical
 regime. As a consequence, the critical singularities in $C_v$, order
-parameter, etc. appear rounded and shifted in a simulation study.
-Fig. [14](#fig:shift){reference-type="ref" reference="fig:shift"} shows
-a schematic example for the susceptibility of a magnet.
+parameter, etc. appear rounded and shifted in a simulation study. @fig-shift
+shows a schematic example for the susceptibility of a magnet.
 
-
-![Schematic of the near-critical temperature dependence of the magnet susceptibility in a finite-sized system.](Figs/shift.png){width=60%}
-
-
+![Schematic of the near-critical temperature dependence of the magnet susceptibility in a finite-sized system.](Figs/shift.png){width=60% #fig-shift}
+ 
 Thus the position of the peak in a response function (such as $C_v$)
 measured for a finite-sized system does not provide an accurate estimate
 of the critical temperature. Although the degree of rounding and
@@ -148,4 +141,4 @@ which would provide accurate estimates of critical parameters. To help
 deal with this difficulty, finite-size scaling (FSS) methods have been
 developed to allow extraction of bulk critical properties from
 simulations of finite size. FSS will be discussed
-in [9.7](#sec:fss){reference-type="ref" reference="sec:fss"}.
+in @sec-fss
