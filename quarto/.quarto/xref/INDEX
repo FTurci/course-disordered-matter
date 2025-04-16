@@ -134,5 +134,8 @@
   },
   "revision_guide.qmd": {
     "revision_guide.html": "ad40266f"
+  },
+  "phase-transitions/concepts_map.qmd": {
+    "concepts_map.html": "81918925"
   }
 }

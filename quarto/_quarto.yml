@@ -72,6 +72,8 @@ book:
   appendices:
     - href: revision_guide.qmd
       text: "Revision guide"
+    - href: phase-transitions/concepts_map.qmd
+      text: "Concept maps"    
 format:
   html:
     theme: journal
