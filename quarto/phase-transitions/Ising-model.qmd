@@ -18,7 +18,7 @@ two values, $+1$ ('up' spins) or $-1$ ('down' spins) and is assumed to
 interact with its nearest neighbours according to the Hamiltonian
 
 $${\cal H}_I=-J\sum_{<ij>}s_is_j - H\sum_i s_i
-$${eq-ising}
+$$
 
 where $J>0$ measures the strength of the coupling
 between spins and the sum extends over nearest neighbour spins $s_i$ and
@@ -27,8 +27,9 @@ field term which can be positive or negative (although for the time
 being we will set it equal to zero). The order parameter is simply the
 average magnetisation:
 
-$$m=\frac{1}{N} \langle \sum_i s_i \rangle\:,$$ where
-$\langle\cdot\rangle$ means an average over configurations.
+$$m=\frac{1}{N} \langle \sum_i s_i \rangle\:,$$ 
+
+where $\langle\cdot\rangle$ means an average over configurations.
 
 The fact that the Ising model displays a phase transition was argued in @sec-background. Thus at low temperatures for which there is
 little thermal disorder, there is a preponderance of aligned spins and
