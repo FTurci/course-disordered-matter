@@ -100,7 +100,7 @@ divided into two sets $\{s^\prime\}$ and $\{\tilde{s}\}$. The
 $\{s^\prime\}$ spins occupy a lattice whose spacing is twice that of the
 original. The effective coupling interaction between the $\{s^\prime\}$
 spins is obtained by performing the configurational average over the
-$\{\tilde{s}\}$ ](Figs/rglat.png){#fig-rglat width=50%}
+$\{\tilde{s}\}$ ](Figs/rglat.png){#fig-rglat width=40%}
 
 Consider an Ising model in two dimensions, with only nearest neighbour
 interactions as shown in @fig-rglat. We have divided the spins into two sets, the
