@@ -263,7 +263,7 @@ power series expansion of the order parameter. For a ferromagnet this
 takes the form
 
 $$F(m)=F_0+a_2m^2+a_4m^4
-$${eq-landau}
+$${#eq-landau}
 
 Here only the terms compatible with the order parameter symmetry are
 included in the expansion. On symmetry grounds, the free energy of a
@@ -277,7 +277,16 @@ $a_4$ assumed positive (which ensures that the magnetisation remains
 bounded). This is shown in @fig-landau .
 
 
- ![Form of the Landau Free energy for a selection of values of the $a$ parameter.](Figs/landau.png){width=60% fig-align="center" #fig-landau}
+
+ ![Form of the Landau Free energy for a selection of values of the $a_2$ parameter.](Figs/landau_free_energy.png){width=80% fig-align="center" #fig-landau}
+
+
+A movie illustrates the development of a double well structure as $a_2$ turns negative.
+
+{{< video Movies/landau_free_energy_evolution.mp4 title="Varying a2 from positive to negative">}}
+
+
+
 
 
 The situation is qualitatively similar to that discussed in @sec-breaking.

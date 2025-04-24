@@ -24,14 +24,12 @@ the critical point for the fluid.
  ![Phase diagram of a simple fluid (schematic)](Figs/ljpd1.png){width=80% fig-align="center" #fig-isingpd}
 
 
-In the vicinity of a critical point a system will exhibit a variety of
-remarkable effects known collectively as critical phenomena. Principal
-among these effects is the divergence of thermal response functions such
-as the specific heat and the fluid compressibility or magnetic
-susceptibility. It transpires that the origin of the singularities in
-these quantities can be traced to large-length-scale co-operative
-effects between the microscopic constituents of the system. The
-recalcitrant problem posed by the critical region is how best to
+In the vicinity of a critical point, a system displays a host of remarkable behaviors known as *critical phenomena*. Chief among these is the divergence of thermal response functions—such as specific heat, compressibility, or magnetic susceptibility—which signal an enhanced sensitivity to external perturbations. These singularities arise from the emergence of large-scale cooperative interactions among the system’s microscopic constituents, leading to a diverging correlation length. One visually striking manifestation of this is *critical opalescence*, particularly observed in fluids like CO$_2$. As carbon dioxide nears its critical temperature and pressure, the distinction between its liquid and gas phases vanishes, giving rise to huge fluctuations in density. These fluctuations scatter visible light, rendering the fluid milky or opalescent. This scattering effect directly reflects the long-range correlations developing within the fluid. The movie below illustrates the effect as the critical temperature of CO$_2$ is approached from above.
+
+
+{{< video Movies/critical_point_1.mov start="4" title="Critical opalesence in Co2">}}
+
+The recalcitrant problem posed by the critical region is how best to
 incorporate such collective effects within the framework of a rigorous
 mathematical theory that affords both physical insight and quantitative
 explanation of the observed phenomena. This matter has been (and still

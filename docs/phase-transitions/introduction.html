@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -355,7 +386,9 @@ Figure&nbsp;1.2: Phase diagram of a simple fluid (schematic)
 </figcaption>
 </figure>
 </div>
-<p>In the vicinity of a critical point a system will exhibit a variety of remarkable effects known collectively as critical phenomena. Principal among these effects is the divergence of thermal response functions such as the specific heat and the fluid compressibility or magnetic susceptibility. It transpires that the origin of the singularities in these quantities can be traced to large-length-scale co-operative effects between the microscopic constituents of the system. The recalcitrant problem posed by the critical region is how best to incorporate such collective effects within the framework of a rigorous mathematical theory that affords both physical insight and quantitative explanation of the observed phenomena. This matter has been (and still is!) the subject of intense theoretical activity.</p>
+<p>In the vicinity of a critical point, a system displays a host of remarkable behaviors known as <em>critical phenomena</em>. Chief among these is the divergence of thermal response functions—such as specific heat, compressibility, or magnetic susceptibility—which signal an enhanced sensitivity to external perturbations. These singularities arise from the emergence of large-scale cooperative interactions among the system’s microscopic constituents, leading to a diverging correlation length. One visually striking manifestation of this is <em>critical opalescence</em>, particularly observed in fluids like CO<span class="math inline">\(_2\)</span>. As carbon dioxide nears its critical temperature and pressure, the distinction between its liquid and gas phases vanishes, giving rise to huge fluctuations in density. These fluctuations scatter visible light, rendering the fluid milky or opalescent. This scattering effect directly reflects the long-range correlations developing within the fluid. The movie below illustrates the effect as the critical temperature of CO<span class="math inline">\(_2\)</span> is approached from above.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="Critical opalesence in Co2"><source src="Movies/critical_point_1.mov"></video></div>
+<p>The recalcitrant problem posed by the critical region is how best to incorporate such collective effects within the framework of a rigorous mathematical theory that affords both physical insight and quantitative explanation of the observed phenomena. This matter has been (and still is!) the subject of intense theoretical activity.</p>
 <p>The importance of the critical point stems largely from the fact that many of the phenomena observed in its vicinity are believed to be common to a whole range of apparently quite disparate physical systems. Systems such as liquid mixtures, superconductors, liquid crystals, ferromagnets, antiferromagnets and molecular crystals may display identical behaviour near criticality. This observation implies a profound underlying similarity among physical systems at criticality, regardless of many aspects of their distinctive microscopic nature. These ideas have found formal expression in the so-called ‘universality hypothesis’ which, since its inception some 35 years ago, has enjoyed considerable success.</p>
 <p>In the next few lectures, principal aspects of the contemporary theoretical viewpoint of phase transitions and critical phenomena will be reviewed. Mean field theories of phase transitions will be discussed and their inadequacies in the critical region will be exposed. The phenomenology of the critical region will we described including power laws, critical exponents and their relationship to scaling phenomena. These will be set within the context of the powerful renormalisation group technique. The notion of universality as a phenomenological hypothesis will be introduced and its implications for real and model systems will be explored. Finally, the utility of finite-size scaling methods for computer studies of critical phenomena will be discussed, culminating in the introduction of a specific technique suitable for exposing universality in model systems.</p>
 
@@ -809,6 +842,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

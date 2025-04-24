@@ -222,10 +222,10 @@ between the variable scales.
 
 
 
-The results is illustrated in @fig-confscomp. See also the [full demonstration](https://www.youtube.com/watch?v=Kd4UvhUsBAU&ab_channel=DouglasAshton) on YouTube.
+The results is illustrated in @fig-confscomp. 
 
 ::: {#fig-confscomp layout-ncol=1}
-![2D critical Ising model and 2d criticcal Lennard-Jones fluid at small lengthscales](Figs/fluid-magnet.png){width=50%}
+![2D critical Ising model and 2d critical Lennard-Jones fluid at small lengthscales](Figs/fluid-magnet.png){width=50%}
 
 ![Same models as above, but viewed at large lengthscales](Figs/fluid-magnet2.png){width=50%}
 
@@ -237,7 +237,7 @@ universal and self similar.
 :::
 
 A movie in which we progressively zoom out shows how the loss of microscopic details reveals the large lengthscale universal features.
-{{< video Movies/universality.mov  width=180% title="Zooming out">}}
+{{< video Movies/universality.mov title="Zooming out">}}
 
 ## Near critical scaling
 

@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -527,27 +529,29 @@ Figure&nbsp;5.4: Mean field behaviour of the Ising magnetisation and susceptibil
 <section id="landau-theory" class="level2" data-number="5.5">
 <h2 data-number="5.5" class="anchored" data-anchor-id="landau-theory"><span class="header-section-number">5.5</span> Landau theory</h2>
 <p>Landau theory is a slightly more general type of mean field theory than that discussed in the previous subsection because it is not based on a particular microscopic model. Its starting point is the Helmholtz free energy, which Landau asserted can be written in terms of a truncated power series expansion of the order parameter. For a ferromagnet this takes the form</p>
-<p><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
-\]</span>{eq-landau}</p>
+<p><span id="eq-landau"><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
+\tag{5.4}\]</span></span></p>
 <p>Here only the terms compatible with the order parameter symmetry are included in the expansion. On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the magnetisation. Terms linear and cubic in <span class="math inline">\(m\)</span> are not invariant under <span class="math inline">\(m\to -m\)</span>, and so do not feature.</p>
 <p>One can understand how the Landau free energy can give rise to a critical point by plotting its form for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> .</p>
 <div id="fig-landau" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-landau-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/landau.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:60.0%">
+<img src="Figs/landau_free_energy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-landau-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Form of the Landau Free energy for a selection of values of the <span class="math inline">\(a\)</span> parameter.
+Figure&nbsp;5.5: Form of the Landau Free energy for a selection of values of the <span class="math inline">\(a_2\)</span> parameter.
 </figcaption>
 </figure>
 </div>
+<p>A movie illustrates the development of a double well structure as <span class="math inline">\(a_2\)</span> turns negative.</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="Varying a2 from positive to negative"><source src="Movies/landau_free_energy_evolution.mp4"></video></div>
 <p>The situation is qualitatively similar to that discussed in <a href="#sec-breaking" class="quarto-xref"><span>Section 5.2</span></a>. Thermodynamics tells us that the system adopts the state of lowest free energy. Thus from <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>, we see that for <span class="math inline">\(a_2&gt;0\)</span>, the system will have <span class="math inline">\(m=0\)</span>, i.e.&nbsp;will be in the disordered (or paramagnetic) phase. For <span class="math inline">\(a_2&lt;0\)</span>, the minimum in the free energy occurs at a finite value of <span class="math inline">\(m\)</span>, indicating that the ordered (ferromagnetic) phase is the stable one. In fact, the physical (up-down) spin symmetry built into <span class="math inline">\(F\)</span> indicates that there are two equivalent stable states at <span class="math inline">\(m=\pm m^\star\)</span>. <span class="math inline">\(a_2=0\)</span> corresponds to the critical point which marks the border between the ordered and disordered phases.</p>
 <p>Clearly <span class="math inline">\(a_2\)</span> controls the deviation from the critical temperature, and accordingly we may write</p>
 <p><span class="math display">\[a_2=\tilde{a_2} t\]</span> where <span class="math inline">\(t\)</span> is the reduced temperature.</p>
 <p>We can now attempt to calculate critical exponents. Restricting ourselves first to the magnetisation exponent <span class="math inline">\(\beta\)</span> defined by <span class="math inline">\(m=t^\beta\)</span>, we first find the equilibrium magnetisation, corresponding to the minimum of the Landau free energy:</p>
 <p><span id="eq-minimize"><span class="math display">\[
 \frac{dF}{dm}=2\tilde{a_2} tm+4a_4m^3=0
-\tag{5.4}\]</span></span></p>
+\tag{5.5}\]</span></span></p>
 <p>which implies</p>
 <p><span class="math display">\[m\propto (-t)^{1/2},\]</span> so <span class="math inline">\(\beta=1/2\)</span>, which is again a mean field result.</p>
 <p>Likewise we can calculate the effect of a small field <span class="math inline">\(H\)</span> if we sit at the critical temperature <span class="math inline">\(T_c\)</span>. Since <span class="math inline">\(a_2=0\)</span>, we have</p>
@@ -1074,6 +1078,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
