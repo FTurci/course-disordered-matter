@@ -107,7 +107,6 @@ Here:
 
 > Often, the mobility is defined as $\mu = 1/\gamma$ — note that this is unrelated to chemical potential.
 
----
 
 ### Noise Properties
 
@@ -118,7 +117,7 @@ In principle the random forces are \textit{correlated} in time since the molecul
 
 Let us assume that there is some correlation time $t_c$ over which $\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)$ decays rapidly as shown in the sketch:
 
-![Sketch of $g(t1− t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
+![Sketch of $g(t1−t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
 width=60%} 
 
 Then as long as we consider timescales $\gg t_c$ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus  we can approximate the noise by
@@ -131,7 +130,6 @@ $$
 \langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
 $$
 
----
 
 ### Solving the Langevin Equation (Velocity)
 
@@ -164,7 +162,6 @@ Thus:
 * At short times: ($\gamma t \ll 1$): $\langle v \rangle \approx v_0$ ie. friction is negligible.
 * At long times: ($\gamma t \gg 1$): $\langle v \rangle \to 0$ ie. the system loses memory of the initial velocity.
 
----
 
 ### Mean-Square Velocity
 
@@ -193,7 +190,6 @@ $$
 
 This important result relates the noise strength to the damping and temperature — they have the same microscopic origin (molecular collisions).
 
----
 
 ### Mean-Square Displacement
 
@@ -240,7 +236,27 @@ D=\frac{6\pi\eta a}{kT}
 $$
 which is the **Stokes-Einstein** formula for the diffusion constant of a colloidal particle.
 
+
+*Simulation of a colloid particle being buffetted by smaller particles and provide the code*
+
+{{< video code/brownian_colloid.mp4 >}}
+
 ---
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
+---
+
+```{python}
+#| echo: true
+#| eval: false
+
+import numpy
+
+
+```
+
 
 ### External Forces and Mobility
 
@@ -263,11 +279,4 @@ $$
 $$
 
 This relation connects the response of a system to an external perturbation (mobility) with its internal fluctuations (diffusivity).
-
-
-
-
-
-
-
 
