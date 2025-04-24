@@ -73,11 +73,6 @@ fluid_pos = initialize_fluid_positions(n_fluid, box_size, sigma_f, sigma_c, coll
 fluid_vel = (np.random.rand(n_fluid, 2) - 0.5)
 colloid_vel = np.zeros((1, 2))
 
-def minimum_image(rij):
-    rij -= box_size * np.round(rij / box_size)
-    return rij
-
-
 @njit
 def compute_forces_numba(fluid_pos, colloid_pos, sigma_cf6, sigma_cf12, sigma_f6, sigma_f12, epsilon, box_size, n_fluid):
     forces_f = np.zeros_like(fluid_pos)

@@ -43,6 +43,8 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="../site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -452,19 +454,21 @@ Figure&nbsp;8.3: Schematic representation of the coarse graining operation via w
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-confscomp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/fluid-magnet.png" class="img-fluid figure-img"></p>
-<figcaption>2D critical Ising model</figcaption>
+<p><img src="Figs/fluid-magnet.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>2D critical Ising model and 2d criticcal Lennard-Jones fluid at small lengthscales</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="Figs/fluid-magnet2.png" class="img-fluid figure-img"></p>
-<figcaption>2D critical Lennard-Jones fluid</figcaption>
+<p><img src="Figs/fluid-magnet2.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>Same models as above, but viewed at large lengthscales</figcaption>
 </figure>
 </div>
 </div>
@@ -475,6 +479,7 @@ Figure&nbsp;8.4: Snapshot configurations of the 2D critical Ising model (left) a
 </figcaption>
 </figure>
 </div>
+<p>A movie in which we progressively zoom out shows how the loss of microscopic details reveals the large lengthscale universal features. </p><div class="quarto-video"><video id="video_shortcode_videojs_video1" width="180%" class="video-js vjs-default-skin " controls="" preload="auto" data-setup="{}" title="Zooming out"><source src="Movies/universality.mov"></video></div><p></p>
 </section>
 </section>
 <section id="near-critical-scaling" class="level2" data-number="8.4">
@@ -1118,6 +1123,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 

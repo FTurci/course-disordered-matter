@@ -215,14 +215,19 @@ of the magnetisation), given appropriate scaling operations to
 camouflage the differences between the length scales and the differences
 between the variable scales.
 
+
+
 ![Schematic representation of the coarse graining operation via which the universal properties of fluids and magnets may be exposed.](Figs/coarse.png){#fig-fmcoarse width=50%}
+
+
+
 
 The results is illustrated in @fig-confscomp. See also the [full demonstration](https://www.youtube.com/watch?v=Kd4UvhUsBAU&ab_channel=DouglasAshton) on YouTube.
 
-::: {#fig-confscomp layout-ncol=2}
-![2D critical Ising model](Figs/fluid-magnet.png){}
+::: {#fig-confscomp layout-ncol=1}
+![2D critical Ising model and 2d criticcal Lennard-Jones fluid at small lengthscales](Figs/fluid-magnet.png){width=50%}
 
-![2D critical Lennard-Jones fluid](Figs/fluid-magnet2.png){}
+![Same models as above, but viewed at large lengthscales](Figs/fluid-magnet2.png){width=50%}
 
 
 Snapshot configurations of the 2D critical Ising model
@@ -230,6 +235,9 @@ Snapshot configurations of the 2D critical Ising model
 sufficiently large length scales the configurational patterns appear
 universal and self similar.
 :::
+
+A movie in which we progressively zoom out shows how the loss of microscopic details reveals the large lengthscale universal features.
+{{< video Movies/universality.mov  width=180% title="Zooming out">}}
 
 ## Near critical scaling
 
