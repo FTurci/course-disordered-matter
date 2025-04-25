@@ -110,8 +110,6 @@ Here:
 
 ### Noise Properties
 
-
-
 In principle the random forces are \textit{correlated} in time since the molecular collisions which cause them are correlated and have some definite duration. 
 
 
@@ -130,6 +128,7 @@ $$
 \langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
 $$
 
+Such uncorrelated noise is known as "white noise".
 
 ### Solving the Langevin Equation (Velocity)
 

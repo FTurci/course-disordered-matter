@@ -401,8 +401,36 @@ sizes $L$, and tune $t$ separately in each case so that the results for
 $QL^{\beta/\nu}$ are identical provides information on the value of
 $1/\nu$.
 
+## Summary of main points
+As this is quite a long chapter let us summarise the main points: 
 
-## The effective coupling viewpoint of the renormalization group (non examinable) 
+
+- **Limitations of conventional theories**: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.
+
+- **Critical region characteristics**: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.
+
+- **Relevant length scales**:
+  1. Correlation length ($\xi$)
+  2. Minimum microscopic scale ($L_\textrm{min}$)
+  3. Macroscopic system size ($L_\textrm{max}$)
+
+- **Window Condition for criticality**: The true critical regime satisfies $L_\textrm{max} \gg \xi \gg L_\textrm{min}$, encompassing a broad range of scales where complex, often fractal-like, structures are present.
+
+- **Renormalisation Group (RG) methodology**: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, $L$, represents the resolution at which the system is described.
+
+- **Effect of coarse-graining**: Coarse-graining changes the effective reduced temperature, captured by the relation $a(L)t$, where $a(L)$ scales with $L$ as $L^{1/\nu}$. This helps describe how critical configurations evolve with resolution.
+
+- **Universality**:
+  - Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.
+  - The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.
+  - Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.
+
+
+- **Finite-Size scaling**:
+  - The average block variable $Q(L,t)$ is related to block size $L$ and reduced temperature $t$ through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents. 
+    
+
+## Addendum: The effective coupling viewpoint of the renormalization group (non examinable) 
 
 ::: {.callout-caution collapse="true"}
 ## Notes for those interested in a different perspective on RG theory.
@@ -756,31 +784,3 @@ universality.
 
 :::
 
-## Summary of main points
-As this is quite a long chapter let us summarise the main points: 
-
-
-- **Limitations of conventional theories**: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.
-
-- **Critical region characteristics**: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.
-
-- **Relevant length scales**:
-  1. Correlation length ($\xi$)
-  2. Minimum microscopic scale ($L_\textrm{min}$)
-  3. Macroscopic system size ($L_\textrm{max}$)
-
-- **Window Condition for criticality**: The true critical regime satisfies $L_\textrm{max} \gg \xi \gg L_\textrm{min}$, encompassing a broad range of scales where complex, often fractal-like, structures are present.
-
-- **Renormalisation Group (RG) methodology**: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, $L$, represents the resolution at which the system is described.
-
-- **Effect of coarse-graining**: Coarse-graining changes the effective reduced temperature, captured by the relation $a(L)t$, where $a(L)$ scales with $L$ as $L^{1/\nu}$. This helps describe how critical configurations evolve with resolution.
-
-- **Universality**:
-  - Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.
-  - The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.
-  - Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.
-
-
-- **Finite-Size scaling**:
-  - The average block variable $Q(L,t)$ is related to block size $L$ and reduced temperature $t$ through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents. 
-    

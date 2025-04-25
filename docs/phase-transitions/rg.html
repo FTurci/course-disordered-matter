@@ -251,7 +251,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
- <span class="menu-text">Complex disordered matter</span></a>
+ <span class="menu-text">Complex disordered systems</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -354,8 +354,8 @@ window.Quarto = {
   <li><a href="#sec-unipics" id="toc-sec-unipics" class="nav-link" data-scroll-target="#sec-unipics"><span class="header-section-number">8.5</span> Universality classes</a></li>
   <li><a href="#critical-exponents" id="toc-critical-exponents" class="nav-link" data-scroll-target="#critical-exponents"><span class="header-section-number">8.6</span> Critical exponents</a></li>
   <li><a href="#sec-fss" id="toc-sec-fss" class="nav-link" data-scroll-target="#sec-fss"><span class="header-section-number">8.7</span> Finite-size scaling</a></li>
-  <li><a href="#the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">8.8</span> The effective coupling viewpoint of the renormalization group (non examinable)</a></li>
-  <li><a href="#summary-of-main-points" id="toc-summary-of-main-points" class="nav-link" data-scroll-target="#summary-of-main-points"><span class="header-section-number">8.9</span> Summary of main points</a></li>
+  <li><a href="#summary-of-main-points" id="toc-summary-of-main-points" class="nav-link" data-scroll-target="#summary-of-main-points"><span class="header-section-number">8.8</span> Summary of main points</a></li>
+  <li><a href="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">8.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</a></li>
   </ul>
 </nav>
     </div>
@@ -535,8 +535,35 @@ Q(L,t)  &amp; =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonu
 <p><span class="math display">\[Q(L,0)=b_0L^{-\beta/\nu}f(0)\equiv Q_0L^{-\beta/\nu}\]</span></p>
 <p>Thus by studying the critical point <span class="math inline">\(L\)</span> dependence of <span class="math inline">\(Q\)</span> we can estimate <span class="math inline">\(\beta/\nu\)</span>. A similar approach in which we study two block sizes <span class="math inline">\(L\)</span>, and tune <span class="math inline">\(t\)</span> separately in each case so that the results for <span class="math inline">\(QL^{\beta/\nu}\)</span> are identical provides information on the value of <span class="math inline">\(1/\nu\)</span>.</p>
 </section>
-<section id="the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="level2" data-number="8.8">
-<h2 data-number="8.8" class="anchored" data-anchor-id="the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">8.8</span> The effective coupling viewpoint of the renormalization group (non examinable)</h2>
+<section id="summary-of-main-points" class="level2" data-number="8.8">
+<h2 data-number="8.8" class="anchored" data-anchor-id="summary-of-main-points"><span class="header-section-number">8.8</span> Summary of main points</h2>
+<p>As this is quite a long chapter let us summarise the main points:</p>
+<ul>
+<li><p><strong>Limitations of conventional theories</strong>: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.</p></li>
+<li><p><strong>Critical region characteristics</strong>: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.</p></li>
+<li><p><strong>Relevant length scales</strong>:</p>
+<ol type="1">
+<li>Correlation length (<span class="math inline">\(\xi\)</span>)</li>
+<li>Minimum microscopic scale (<span class="math inline">\(L_\textrm{min}\)</span>)</li>
+<li>Macroscopic system size (<span class="math inline">\(L_\textrm{max}\)</span>)</li>
+</ol></li>
+<li><p><strong>Window Condition for criticality</strong>: The true critical regime satisfies <span class="math inline">\(L_\textrm{max} \gg \xi \gg L_\textrm{min}\)</span>, encompassing a broad range of scales where complex, often fractal-like, structures are present.</p></li>
+<li><p><strong>Renormalisation Group (RG) methodology</strong>: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, <span class="math inline">\(L\)</span>, represents the resolution at which the system is described.</p></li>
+<li><p><strong>Effect of coarse-graining</strong>: Coarse-graining changes the effective reduced temperature, captured by the relation <span class="math inline">\(a(L)t\)</span>, where <span class="math inline">\(a(L)\)</span> scales with <span class="math inline">\(L\)</span> as <span class="math inline">\(L^{1/\nu}\)</span>. This helps describe how critical configurations evolve with resolution.</p></li>
+<li><p><strong>Universality</strong>:</p>
+<ul>
+<li>Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.</li>
+<li>The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.</li>
+<li>Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.</li>
+</ul></li>
+<li><p><strong>Finite-Size scaling</strong>:</p>
+<ul>
+<li>The average block variable <span class="math inline">\(Q(L,t)\)</span> is related to block size <span class="math inline">\(L\)</span> and reduced temperature <span class="math inline">\(t\)</span> through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents.</li>
+</ul></li>
+</ul>
+</section>
+<section id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="level2" data-number="8.9">
+<h2 data-number="8.9" class="anchored" data-anchor-id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">8.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</h2>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -563,8 +590,8 @@ Notes for those interested in a different perspective on RG theory.
 <p>Now consider the coarse-graining procedure. Let us suppose that this procedure takes the form of a ‘majority rule’ operation in which the new spins are assigned values <span class="math inline">\(+1\)</span> or <span class="math inline">\(-1\)</span> according to the signs of the magnetic moments of the blocks with which they are associated. The new energy function <span class="math inline">\({\cal H}^\prime\)</span> will be expressible in terms of some new coupling strengths <span class="math inline">\(K^\prime\)</span> describing the interactions amongst the new spin variables (and thus, in effect, the interactions between blocks of the original spin variables). The RGT simply states that these new couplings depend on the old couplings: <span class="math inline">\(K_1^\prime\)</span> is some function <span class="math inline">\(f_1\)</span> of all the original couplings, and generally</p>
 <p><span id="eq-rgt"><span class="math display">\[K^\prime_a=f_a(K_1,K_2,\dots) =f_a({\bf K}),~~~~ a= 1, 2,\dots
 \tag{8.4}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
-<section id="a-simple-example" class="level3" data-number="8.8.1">
-<h3 data-number="8.8.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">8.8.1</span> A simple example</h3>
+<section id="a-simple-example" class="level3" data-number="8.9.1">
+<h3 data-number="8.9.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">8.9.1</span> A simple example</h3>
 <p>This example illustrates how one can perform the RG transformation <a href="#eq-rgt" class="quarto-xref">Equation&nbsp;<span>8.4</span></a> directly, without recourse to a ‘sequence of typical configurations’. The calculation involves a very crude approximation which has the advantage that it simplifies the subsequent analysis.</p>
 <div id="fig-rglat" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -617,8 +644,8 @@ K^\prime - K^* =&amp; 2 (K - K^*)+ (K - K^*)^2
 <p>for <span class="math inline">\(T\)</span> close to <span class="math inline">\(T_c\)</span>. Thus we see that the RGT predicts scaling behaviour with calculable critical exponents. In this simple calculation we estimate the critical exponent <span class="math inline">\(\nu=1\)</span> for the square lattice Ising model. This prediction is actually in agreement with the exactly established value. The agreement is fortuitous- the prediction in Eq.&nbsp;refeq:Kc for <span class="math inline">\(K_c\)</span>, is larger than the exactly established value by a factor of more than two. In order to obtain reliable estimates more sophisticated and systematic methods must be used.</p>
 <p>The crude approximation in the calculation above produced a transformation, <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>8.6</span></a>, involving only the nearest neighbour coupling, with the subsequent advantages of simple algebra. We pay a penalty for this simplicity in two ways: the results obtained for critical properties are in rather poor agreement with accepted values, and we gain no insight into the origin of universality.</p>
 </section>
-<section id="universality-and-scaling-1" class="level3" data-number="8.8.2">
-<h3 data-number="8.8.2" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">8.8.2</span> Universality and scaling</h3>
+<section id="universality-and-scaling-1" class="level3" data-number="8.9.2">
+<h3 data-number="8.9.2" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">8.9.2</span> Universality and scaling</h3>
 <p>In order to expose how universality can arise, we should from the start allow for several different kinds of coupling <span class="math inline">\(J_a\)</span>, and show how the systems with <em>different</em> <span class="math inline">\(J_a\)</span> can have the <em>same</em> critical behaviour.</p>
 <div id="fig-flow2" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -644,33 +671,6 @@ K^{(1)}\to\dots\to K^{(n)}}\)</span> where the superscript (<span class="math in
 </div>
 </div>
 </div>
-</section>
-<section id="summary-of-main-points" class="level2" data-number="8.9">
-<h2 data-number="8.9" class="anchored" data-anchor-id="summary-of-main-points"><span class="header-section-number">8.9</span> Summary of main points</h2>
-<p>As this is quite a long chapter let us summarise the main points:</p>
-<ul>
-<li><p><strong>Limitations of conventional theories</strong>: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.</p></li>
-<li><p><strong>Critical region characteristics</strong>: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.</p></li>
-<li><p><strong>Relevant length scales</strong>:</p>
-<ol type="1">
-<li>Correlation length (<span class="math inline">\(\xi\)</span>)</li>
-<li>Minimum microscopic scale (<span class="math inline">\(L_\textrm{min}\)</span>)</li>
-<li>Macroscopic system size (<span class="math inline">\(L_\textrm{max}\)</span>)</li>
-</ol></li>
-<li><p><strong>Window Condition for criticality</strong>: The true critical regime satisfies <span class="math inline">\(L_\textrm{max} \gg \xi \gg L_\textrm{min}\)</span>, encompassing a broad range of scales where complex, often fractal-like, structures are present.</p></li>
-<li><p><strong>Renormalisation Group (RG) methodology</strong>: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, <span class="math inline">\(L\)</span>, represents the resolution at which the system is described.</p></li>
-<li><p><strong>Effect of coarse-graining</strong>: Coarse-graining changes the effective reduced temperature, captured by the relation <span class="math inline">\(a(L)t\)</span>, where <span class="math inline">\(a(L)\)</span> scales with <span class="math inline">\(L\)</span> as <span class="math inline">\(L^{1/\nu}\)</span>. This helps describe how critical configurations evolve with resolution.</p></li>
-<li><p><strong>Universality</strong>:</p>
-<ul>
-<li>Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.</li>
-<li>The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.</li>
-<li>Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.</li>
-</ul></li>
-<li><p><strong>Finite-Size scaling</strong>:</p>
-<ul>
-<li>The average block variable <span class="math inline">\(Q(L,t)\)</span> is related to block size <span class="math inline">\(L\)</span> and reduced temperature <span class="math inline">\(t\)</span> through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents.</li>
-</ul></li>
-</ul>
 
 
 <script type="ojs-module-contents">

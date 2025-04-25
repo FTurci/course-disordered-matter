@@ -52,7 +52,7 @@ book:
          - href: phase-transitions/live-test.qmd
            text: "Coding"  
 
-    - part: "Complex disordered matter"
+    - part: "Complex disordered systems"
       chapters:
         - href: soft-matter/soft-matter_plan.qmd
           text: "Plan"
@@ -83,6 +83,8 @@ format:
     grid:
       sidebar-width: 305px
     toc: true
+    mainfont: sans-serif
+    fontsize: 15px
     pyodide:
         cell-options:
           autorun: true
