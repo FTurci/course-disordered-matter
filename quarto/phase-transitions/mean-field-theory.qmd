@@ -122,7 +122,7 @@ unmagnetized state.
 The resulting zero-field magnetisation curve $m(T,H=0)$ looks like
 @fig-isingmag.
 
- ![Phase diagram of a simple magnet in the $m$-$T$ plane.](Figs/isingmag_new.png){width=70% fig-align="center" #fig-isingmag}
+ ![Phase diagram of a simple magnet in the $m$-$T$ plane.](Figs/isingmag_new.png){width=60% fig-align="center" #fig-isingmag}
 
 
 This shows the sudden change of behaviour at $T_c$ (phase transition).
@@ -143,7 +143,7 @@ a *very* sudden change of behaviour at $h=0$: the equilibrium state
 jumps discontinuously from $m=m^\star$ to $m=-m^\star$.
 
 
- ![Phase diagram of a simple magnet in the $H$-$T$ plane.](Figs/isingpdH.png){width=70% #fig-isingpdH}
+ ![Phase diagram of a simple magnet in the $H$-$T$ plane.](Figs/isingpdH.png){width=50% #fig-isingpdH}
 
 This is called a first order phase transition as opposed to the "second
 order" or continuous transition that occurs at $T_c$ in zero field. The
@@ -249,7 +249,7 @@ The schematic behaviour of the Ising order parameter and susceptibility
 are shown in @fig-mfsum 
 
 
- ![Mean field behaviour of the Ising magnetisation and susceptibility (schematic)](Figs/summary.png){width=80% fig-align="center" #fig-mfsum}
+ ![Mean field behaviour of the Ising magnetisation and susceptibility (schematic)](Figs/summary.png){width=60% fig-align="center" #fig-mfsum}
 
 
 
@@ -278,14 +278,12 @@ bounded). This is shown in @fig-landau .
 
 
 
- ![Form of the Landau Free energy for a selection of values of the $a_2$ parameter.](Figs/landau_free_energy.png){width=80% fig-align="center" #fig-landau}
+ ![Form of the Landau Free energy for a selection of values of the $a_2$ parameter.](Figs/landau_free_energy.png){width=70% fig-align="center" #fig-landau}
 
 
 A movie illustrates the development of a double well structure as $a_2$ turns negative.
 
 {{< video Movies/landau_free_energy_evolution.mp4 title="Varying a2 from positive to negative">}}
-
-
 
 
 

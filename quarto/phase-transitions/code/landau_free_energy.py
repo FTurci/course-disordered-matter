@@ -20,11 +20,11 @@ for a2 in a2_values:
 
 # Labeling
 #plt.title('Landau Free Energy for Different $a_2$ Values')
-plt.xlabel('Magnetization (m)')
-plt.ylabel('Free Energy $F(m)$')
+plt.xlabel('Magnetization (m)', fontsize=24)
+plt.ylabel('Free Energy $F(m)$', fontsize=24)
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
-plt.legend()
+plt.legend(fontsize=16)
 plt.grid(True)
 plt.tight_layout()
 
