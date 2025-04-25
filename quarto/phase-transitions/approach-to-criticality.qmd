@@ -47,7 +47,7 @@ with $h=(H-H_c)/H_c$, the reduced magnetic field.
 As examples, the behaviour of the magnetisation and correlation length
 are plotted in @fig-sing  as a function of $t$.
 
- ![Singular behaviour of the correlation length and order parameter in the vicinity of the critical point as a function of the reduced temperature $t$.](Figs/sing.png){width=60% fig-align="center" #fig-sing}
+ ![Singular behaviour of the correlation length and order parameter in the vicinity of the critical point as a function of the reduced temperature $t$.](Figs/sing_color.png){width=60% fig-align="center" #fig-sing}
 
 The quantities $\gamma, \alpha, \nu, \beta$ in the above equations are
 known as critical exponents. They serve to control the rate at which the

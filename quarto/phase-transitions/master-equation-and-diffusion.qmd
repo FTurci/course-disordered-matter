@@ -152,9 +152,11 @@ $$
 
 ### Computer simulation
 
-In computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion (this is the *molecular dynamics* method). However, to obtain the equilibrium properties of the system, it may be much faster to use a dynamics which is nothing like the actual equations of motion. 
+In computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion (this is the *molecular dynamics* method). 
+However, to obtain the equilibrium properties of the system, it may be much faster to use a dynamics which is nothing like the actual equations of motion. 
 
-At first sight, this looks very dangerous; however, if one can prove that in the required equilibrium distribution, the artificial dynamics obey the principle of detailed balance, then it is (almost) guaranteed that the steady state found by simulation is the true equilibrium state.
+At first sight, this looks very dangerous; however, if one can prove that in the required equilibrium distribution, the artificial dynamics
+obey the principle of detailed balance, then it is (almost) guaranteed that the steady state found by simulation is the true equilibrium state.
 
 The best known example is the *Monte Carlo method*, in which the dynamical algorithm consists of random jumps. The jump rates $\nu_{AB}$ for all pairs of states $(A, B)$ take the form:
 

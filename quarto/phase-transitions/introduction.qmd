@@ -9,7 +9,7 @@ temperature of a ferromagnet is increased, its magnetic moment is
 observed to decrease smoothly, until at a certain temperature known as
 the critical temperature, it vanishes altogether.
 
- ![Phase diagram of a simple magnet (schematic)](Figs/isingpd.png){width=80% fig-align="center" #fig-isingpd}
+ ![Phase diagram of a simple magnet (schematic)](Figs/isingpd_color.png){width=80% fig-align="center" #fig-isingpd}
 
 Similarly, a change of state from liquid to gas can be induced in a
 fluid system (though not in an ideal gas) simply by raising the

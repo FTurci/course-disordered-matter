@@ -3,22 +3,34 @@
 
 ## Introduction to nucleation
 
-In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the *dynamical* mechanism by which a system evolves from one phase to another. We now address this question explicitly.
+In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the *dynamical* 
+mechanism by which a system evolves from one phase to another. We now address this question explicitly.
 
-Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at zero external field, $H = 0$. We now examine the system’s response to the application of a small negative external field $H < 0$, which lowers the free energy of the spin-down phase relative to the spin-up phase.
+Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at
+ zero external field, $H = 0$. We now examine the system’s response to the application of a small negative external field $H < 0$, which lowers the free energy of the spin-down phase relative to the spin-up phase.
 
-Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
+Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. 
+This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, 
+as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
 
-The nucleation of a droplet of the stable phase of size $n$ spins entails a competition between bulk and interfacial contributions to the free energy. The bulk free energy gain is linear in $n$, given by $-nH$, due to the alignment of spins with the external field. However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, each broken bond contributes an energy cost of $+2J$, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. This interfacial contribution is referred to as the *surface tension*, and constitutes a true free energy cost: it includes not only the energetic penalty from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.
+The nucleation of a droplet of the stable phase of size $n$ spins entails a competition between bulk and interfacial contributions 
+to the free energy. The bulk free energy gain is linear in $n$, given by $-nH$, due to the alignment of spins with the external field. 
+However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, 
+each broken bond contributes an energy cost of $+2J$, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. 
+This interfacial contribution is referred to as the *surface tension*, and constitutes a true free energy cost: it includes not only the energetic penalty 
+from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.
 
 The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size $n_c$ will grow; smaller droplets will shrink. This framework is formalized in *classical nucleation theory*, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.
 
 
 ## Classical Nucleation Theory: Homogeneous Nucleation
 
-We now present the framework of **classical nucleation theory** (CNT) for the case of *homogeneous nucleation*, in which the nucleation of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, defects, or surfaces.
+We now present the framework of **classical nucleation theory** (CNT) for the case of *homogeneous nucleation*, in which the nucleation 
+of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, 
+defects, or surfaces.
 
-Let us consider a droplet of the stable (spin-down) phase of radius $R$ embedded within the metastable (spin-up) background. The total change in free energy $\Delta F(R)$ associated with forming such a droplet consists of two competing contributions:
+Let us consider a droplet of the stable (spin-down) phase of radius $R$ embedded within the metastable (spin-up) background. 
+The total change in free energy $\Delta F(R)$ associated with forming such a droplet consists of two competing contributions:
 
 1. **Bulk free energy gain**: The interior of the droplet consists of $V \sim R^d$ spins aligned with the external field $H < 0$, leading to a volume free energy change
 
@@ -75,7 +87,8 @@ Several key features emerge from this analysis:
 - **Critical radius**: The critical droplet size $R_c \sim \sigma / |\Delta f|$ also diverges as $|\Delta f| \to 0$, indicating that larger fluctuations are required to initiate nucleation close to the coexistence line.
 - **Dimensional dependence**: Both $\Delta F_c$ and $R_c$ exhibit strong dependence on the spatial dimension $d$, with nucleation becoming increasingly suppressed in higher dimensions due to the dominance of interfacial cost.
 
-In summary, homogeneous nucleation in a first-order transition is governed by a delicate balance between surface tension and bulk free energy gain. Only droplets exceeding a critical size can overcome the barrier and initiate a transition. This sets an intrinsic timescale for the dynamics of phase transformation, which can become extremely long near coexistence due to the exponentially small nucleation rate.
+In summary, homogeneous nucleation in a first-order transition is governed by a delicate balance between surface tension and bulk free energy gain. Only droplets exceeding a critical size can overcome the barrier and initiate a transition. 
+This sets an intrinsic timescale for the dynamics of phase transformation, which can become extremely long near coexistence due to the exponentially small nucleation rate.
 
 
 ## Late-Time Dynamics: Domain Growth and Coarsening
@@ -83,7 +96,8 @@ In summary, homogeneous nucleation in a first-order transition is governed by a 
 Following successful nucleation of a supercritical droplet, the system enters a regime where the global transformation is driven by the deterministic growth of domains of the stable phase. This phase of the dynamics is often referred to as coarsening
  or phase ordering dynamics.
 
-At late times, the dynamics are controlled not by rare fluctuations, but by the energetically-driven evolution of domain structures. The nature of domain growth depends sensitively on whether the order parameter is conserved or not.
+At late times, the dynamics are controlled not by rare fluctuations, but by the energetically-driven evolution of domain structures. 
+The nature of domain growth depends sensitively on whether the order parameter is conserved or not.
 
 ---
 
@@ -132,7 +146,8 @@ with $V(\phi)$ typically a double-well potential such as $V(\phi) = \frac{1}{4}(
 ### Conserved Order Parameter Dynamics (Model B)
 
 For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model 
-with spin-swap (so called 'Kawasaki') dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. This imposes a diffusive constraint on the dynamics.
+with spin-swap (so called 'Kawasaki') dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. 
+This imposes a diffusive constraint on the dynamics.
 
 The domain size again grows algebraically, but with a different exponent:
 
@@ -166,7 +181,8 @@ $$
 \frac{\partial \phi}{\partial t} = \nabla^2 \left( \frac{\delta F[\phi]}{\delta \phi} \right),
 $$
 
-reflecting that the order parameter can only evolve via diffusion of its conjugate chemical potential. This leads to the slow transport of material across domains and a more sluggish coarsening process compared to the non-conserved case.
+reflecting that the order parameter can only evolve via diffusion of its conjugate chemical potential.
+This leads to the slow transport of material across domains and a more sluggish coarsening process compared to the non-conserved case.
 
 ### Schematic of Domain Growth in 2D Ising model
 

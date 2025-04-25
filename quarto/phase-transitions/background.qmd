@@ -98,5 +98,5 @@ The relationship between other thermodynamic quantities and derivatives
 of the free energy are given in
 fig. @fig-thermo
 
- ![Relationships between the partition function and thermodynamic observables](Figs/thermo.png){fig-align="center" #fig-thermo}
+ ![Relationships between the partition function and thermodynamic observables](Figs/thermo.png){width=80% fig-align="center" #fig-thermo}
 
