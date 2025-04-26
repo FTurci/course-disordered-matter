@@ -1,3 +1,4 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -19,13 +20,17 @@ for a2 in a2_values:
     plt.plot(m, F, label=f'$a_2 = {a2}$')
 
 # Labeling
-#plt.title('Landau Free Energy for Different $a_2$ Values')
-plt.xlabel('Magnetization (m)', fontsize=24)
-plt.ylabel('Free Energy $F(m)$', fontsize=24)
+# plt.title('Landau Free Energy for Different $a_2$ Values')
+plt.xlabel('Magnetization (m)', fontsize=20)
+plt.ylabel('Free Energy $F(m)$', fontsize=20)
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
 plt.legend(fontsize=16)
-plt.grid(True)
+
+# Remove grid and tick mark gridlines
+plt.grid(False)
+plt.gca().grid(False)
+
 plt.tight_layout()
 
 # Save the figure to a file

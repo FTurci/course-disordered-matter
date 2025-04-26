@@ -69,13 +69,13 @@ plt.xticks([0])
 plt.tick_params(axis='x', which='both', top=False, bottom=True)
 
 # Label axes
-plt.xlabel('Magnetization m')
-plt.ylabel('Temperature')
+plt.xlabel('Magnetization m', fontsize=16)
+plt.ylabel('Temperature', fontsize=16)
 
 # No automatic grid
 plt.grid(False)
 
 # Save the plot as a PNG file
-plt.savefig('isingmag_new.png', dpi=300)
+plt.savefig('../Figs/isingmag_new.png', dpi=300)
 
 plt.show()

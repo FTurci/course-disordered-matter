@@ -86,8 +86,7 @@ m & = \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
 
 ## Spontaneous symmetry breaking {#sec-breaking}
 
-
- ![Schematic of the form of the free energy for a critical, subcritical and supercritical temperature](Figs/freeenergy_color.png){width=60%  #fig-freeenergy}
+ ![Schematic of the form of the free energy for a critical, subcritical and supercritical temperature](Figs/freeenergy_color.png){width=70%  #fig-freeenergy}
 
 
 This mean field analysis reveals what is happening in the Ising model
@@ -122,7 +121,7 @@ unmagnetized state.
 The resulting zero-field magnetisation curve $m(T,H=0)$ looks like
 @fig-isingmag.
 
- ![Phase diagram of a simple magnet in the $m$-$T$ plane.](Figs/isingmag_new.png){width=60% fig-align="center" #fig-isingmag}
+ ![Phase diagram of a simple magnet in the $m$-$T$ plane.](Figs/isingmag_new.png){width=70% fig-align="center" #fig-isingmag}
 
 
 This shows the sudden change of behaviour at $T_c$ (phase transition).
@@ -143,7 +142,7 @@ a *very* sudden change of behaviour at $h=0$: the equilibrium state
 jumps discontinuously from $m=m^\star$ to $m=-m^\star$.
 
 
- ![Phase diagram of a simple magnet in the $H$-$T$ plane.](Figs/isingpdH.png){width=50% #fig-isingpdH}
+ ![Phase diagram of a simple magnet in the $H$-$T$ plane.](Figs/isingpdH.png){width=70% #fig-isingpdH}
 
 This is called a first order phase transition as opposed to the "second
 order" or continuous transition that occurs at $T_c$ in zero field. The
@@ -246,12 +245,15 @@ implies that (within the mean field approximation) the critical exponent
 $\gamma=1$.
 
 The schematic behaviour of the Ising order parameter and susceptibility
-are shown in @fig-mfsum 
+are shown in @fig-mfsum (a) and (b)
 
+::: {#fig-snapshots layout-ncol=2}
 
- ![Mean field behaviour of the Ising magnetisation and susceptibility (schematic)](Figs/summary.png){width=60% fig-align="center" #fig-mfsum}
+ ![Mean field behaviour of the Ising magnetisation  (schematic)](Figs/mf_mag.png){width=100% fig-align="center" #fig-mfsum}
 
+ ![Mean field behaviour of the Ising susceptibility (schematic)](Figs/mf_chi.png){width=100% fig-align="center" #fig-mfsum}
 
+:::
 
 ## Landau theory
 

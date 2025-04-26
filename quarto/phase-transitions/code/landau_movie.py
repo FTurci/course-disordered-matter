@@ -24,9 +24,9 @@ def animate(a2):
     ax.clear()
     F = landau_free_energy(m, a2)
     ax.plot(m, F, lw=2, color='blue')
-    ax.set_title(f'Landau Free Energy for $a_2$ = {a2:.2f}')
-    ax.set_xlabel('Magnetization (m)')
-    ax.set_ylabel('Free Energy $F(m)$')
+    ax.set_title(f'Landau Free Energy for $a_2$ = {a2:.2f}',fontsize=16)
+    ax.set_xlabel('Magnetization (m)',fontsize=20)
+    ax.set_ylabel('Free Energy $F(m)$',fontsize=20)
     ax.axhline(0, color='black', linewidth=0.5)
     ax.axvline(0, color='black', linewidth=0.5)
     ax.set_xlim(-2.2, 2.2)
@@ -38,7 +38,7 @@ a2_values = np.linspace(2, -2, 100)
 ani = animation.FuncAnimation(fig, animate, frames=a2_values, interval=100)
 
 # Save animation as movie
-ani.save('landau_free_energy_evolution.mp4', writer='ffmpeg', fps=10)
+ani.save('../Movies/landau_free_energy_evolution.mp4', writer='ffmpeg', fps=10)
 
 # Show animation
 plt.show()
