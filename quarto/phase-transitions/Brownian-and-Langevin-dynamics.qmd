@@ -261,7 +261,7 @@ This relation connects the response of a system to an external perturbation (mob
 
 ### Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension
 
-{{< video Movies/brownian_colloid.mp4 >}}
+{{< video Movies/diffusion_evolution.mp4 >}}
 
 
 ```{python}

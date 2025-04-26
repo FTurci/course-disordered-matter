@@ -59,8 +59,7 @@ increase the chemical potential through the coexistence value of $\mu$,
 the density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a
 low to a high value.
 
-$$\
-rho_\textrm{ gas}=\frac{1-m^\star}{2} \to \rho_\textrm{ liquid}=\frac{1+m^\star}{2}
+$$\rho_\textrm{ gas}=\frac{1-m^\star}{2} \to \rho_\textrm{ liquid}=\frac{1+m^\star}{2}
 $$
 These values merge at $T_c$, the gas-liquid critical point. At higher
 temperatures, the distinction between the phases disappears.
