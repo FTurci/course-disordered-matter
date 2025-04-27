@@ -307,7 +307,8 @@ ordered and disordered phases. Note that it is an inflexion point, so has $\frac
 Clearly $a_2$ controls the deviation from the critical temperature, and
 accordingly we may write
 
-$$a_2=\tilde{a_2} t$$ where $t$ is the reduced temperature.
+$$a_2=\tilde{a_2} t$$ where $t$ is the reduced temperature. Thus we see that the trajectory of the minima as a function of $a_2<0$
+in the above movie effective traces out the coexistence curve in the $m-T$ plane.
 
 We can now attempt to calculate critical exponents. Restricting
 ourselves first to the magnetisation exponent $\beta$ defined by
