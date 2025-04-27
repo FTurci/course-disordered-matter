@@ -557,20 +557,18 @@ Figure&nbsp;5.4
 <p><span id="eq-landau"><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
 \tag{5.4}\]</span></span></p>
 <p>Here only the terms compatible with the order parameter symmetry are included in the expansion. On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the magnetisation. Terms linear and cubic in <span class="math inline">\(m\)</span> are not invariant under <span class="math inline">\(m\to -m\)</span>, and so do not feature.</p>
-<p>One can understand how the Landau free energy can give rise to a critical point by plotting its form for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a> .</p>
-<div id="fig-landau" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-landau-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/landau_free_energy.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-landau-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;5.5: Form of the Landau Free energy for a selection of values of the <span class="math inline">\(a_2\)</span> parameter.
-</figcaption>
-</figure>
-</div>
-<p>A movie illustrates the development of a double well structure as <span class="math inline">\(a_2\)</span> turns negative.</p>
+<p>One can understand how the Landau free energy can give rise to a critical point and coexistence values of the magnetisation, by plotting <span class="math inline">\(F(m)\)</span> for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in the following movie:</p>
+<!--
+This is shown in @fig-landau.
+This is shown in the movie below. For $a_2>0$ there is a single mimimum in $F(m)$ at $m=0$ and the system is in the disordered (paramagnetic) phase.
+For $a_2=0$, one has $\frac{d^2F}{dm^2}=0$ corresponding to a critical point. As $a_2$ turns negative, a double well structure emerges, with the positions
+of the minima marking the coexistence magnetisation values, and thus tracing out the coexistence curve.
+
+
+ ![Form of the Landau Free energy for a selection of values of the $a_2$ parameter.](Figs/landau_free_energy.png){width=70% fig-align="center" #fig-landau}
+-->
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="Varying a2 from positive to negative"><source src="Movies/landau_free_energy_evolution.mp4"></video></div>
-<p>The situation is qualitatively similar to that discussed in <a href="#sec-breaking" class="quarto-xref"><span>Section 5.2</span></a>. Thermodynamics tells us that the system adopts the state of lowest free energy. Thus from <a href="#fig-landau" class="quarto-xref">Figure&nbsp;<span>5.5</span></a>, we see that for <span class="math inline">\(a_2&gt;0\)</span>, the system will have <span class="math inline">\(m=0\)</span>, i.e.&nbsp;will be in the disordered (or paramagnetic) phase. For <span class="math inline">\(a_2&lt;0\)</span>, the minimum in the free energy occurs at a finite value of <span class="math inline">\(m\)</span>, indicating that the ordered (ferromagnetic) phase is the stable one. In fact, the physical (up-down) spin symmetry built into <span class="math inline">\(F\)</span> indicates that there are two equivalent stable states at <span class="math inline">\(m=\pm m^\star\)</span>. <span class="math inline">\(a_2=0\)</span> corresponds to the critical point which marks the border between the ordered and disordered phases.</p>
+<p>The situation is qualitatively similar to that discussed in <a href="#sec-breaking" class="quarto-xref"><span>Section 5.2</span></a>. Thermodynamics tells us that the system adopts the state of lowest free energy. From the movie, we see that for <span class="math inline">\(a_2&gt;0\)</span>, the system will have <span class="math inline">\(m=0\)</span>, i.e.&nbsp;will be in the disordered (or paramagnetic) phase. For <span class="math inline">\(a_2&lt;0\)</span>, the minimum in the free energy occurs at a finite value of <span class="math inline">\(m\)</span>, indicating that the ordered (ferromagnetic) phase is the stable one. In fact, the physical (up-down) spin symmetry built into <span class="math inline">\(F\)</span> indicates that there are two equivalent stable states at <span class="math inline">\(m=\pm m^\star\)</span>. <span class="math inline">\(a_2=0\)</span> corresponds to the critical point which marks the border between the ordered and disordered phases. Note that it is an inflexion point, so has <span class="math inline">\(\frac{d^2F}{dm^2}=0\)</span>.</p>
 <p>Clearly <span class="math inline">\(a_2\)</span> controls the deviation from the critical temperature, and accordingly we may write</p>
 <p><span class="math display">\[a_2=\tilde{a_2} t\]</span> where <span class="math inline">\(t\)</span> is the reduced temperature.</p>
 <p>We can now attempt to calculate critical exponents. Restricting ourselves first to the magnetisation exponent <span class="math inline">\(\beta\)</span> defined by <span class="math inline">\(m=t^\beta\)</span>, we first find the equilibrium magnetisation, corresponding to the minimum of the Landau free energy:</p>
