@@ -254,7 +254,26 @@ $$
 
 ### Computer simulation
 
-In computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion (this is the *molecular dynamics* method). 
+In computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion. This is the *molecular dynamics (MD)* method which we now outline.
+
+**Molecular dynaamics**
+
+
+Molecular Dynamics (MD) involves a system of classical particles interacting through specified interparticle forces. The motion of these particles is determined by numerically integrating Newton's equations of motion. In MD simulations, averages of state variables are obtained as time averages over trajectories in phase space. Typically, the forces acting between particles are conservative, ensuring that the total energy \( E \) remains constant. This conservation implies that the motion is restricted to a \( (2dN - 1) \)-dimensional surface in phase space, denoted by \( \Gamma(E) \).
+
+A central aspect of MD is the averaging of observables. For a given observable \( A \), its average is computed as the time average along the trajectory. Mathematically, this is expressed as:
+
+$$
+\left\langle A(\{ \mathbf{p}_i \}, \{ \mathbf{r}_i \}) \right\rangle = \frac{1}{\tau} \int_{t_0}^{t_0+\tau} dt\, A(\{ \mathbf{p}_i(t) \}, \{ \mathbf{r}_i(t) \})
+$$
+
+This formula represents the integral of the observable over a time interval \( \tau \), normalized by the length of that interval.
+
+The practical steps of an MD simulation start with generating an initial random configuration of particle positions \( \{ \mathbf{r}_i \} \) and momenta \( \{ \mathbf{p}_i \} \). The system's equations of motion are then iteratively solved using a suitable algorithm to allow it to reach equilibrium. After equilibration, a production run is performed over many time steps to collect meaningful data. Finally, relevant averages, such as pressure or kinetic energy, are calculated from the collected data.
+
+
+**Monte Carlo**
+
 However, to obtain the equilibrium properties of the system, it may be much faster to use a dynamics which is nothing like the actual equations of motion. 
 
 At first sight, this looks very dangerous; however, if one can prove that in the required equilibrium distribution, the artificial dynamics
