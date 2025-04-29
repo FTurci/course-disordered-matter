@@ -7,24 +7,35 @@ which they are subject. Two classic examples of systems displaying such
 phase transitions are the ferromagnet and fluid systems. As the
 temperature of a ferromagnet is increased, its magnetic moment is
 observed to decrease smoothly, until at a certain temperature known as
-the critical temperature, it vanishes altogether.
+the critical temperature, it vanishes altogether. We define the magnetisation to be the *order parameter* of this phase transition. 
 
  ![Phase diagram of a simple magnet (schematic)](Figs/isingpd_color.png){width=80% fig-align="center" #fig-isingpd}
 
 Similarly, a change of state from liquid to gas can be induced in a
 fluid system (though not in an ideal gas) simply by raising the
 temperature. Typically the liquid-vapour transition is abrupt,
-reflecting the large density difference between the states either side
+reflecting the large number density difference between the states either side
 of the transition. However the abruptness of this transition can be
 reduced by applying pressure. At one particular pressure and temperature
 the discontinuity in the density difference between the two states
 vanishes. These conditions of pressure and temperature serve to locate
-the critical point for the fluid.
+the critical point for the fluid. We define the density difference $\rho_{liq}-\rho_{vap}$ 
+to be the order parameter for the liquid-gas phase transition.
 
  ![Phase diagram of a simple fluid (schematic)](Figs/ljpd1.png){width=80% fig-align="center" #fig-isingpd}
 
 
-In the vicinity of a critical point, a system displays a host of remarkable behaviors known as *critical phenomena*. Chief among these is the divergence of thermal response functions—such as specific heat, compressibility, or magnetic susceptibility—which signal an enhanced sensitivity to external perturbations. These singularities arise from the emergence of large-scale cooperative interactions among the system’s microscopic constituents, leading to a diverging correlation length. One visually striking manifestation of this is *critical opalescence*, particularly observed in fluids like CO$_2$. As carbon dioxide nears its critical temperature and pressure, the distinction between its liquid and gas phases vanishes, giving rise to huge fluctuations in density. These fluctuations scatter visible light, rendering the fluid milky or opalescent. This scattering effect directly reflects the long-range correlations developing within the fluid. The movie below illustrates the effect as the critical temperature of CO$_2$ is approached from above.
+In the vicinity of a critical point, a system displays a host of remarkable behaviors known as *critical phenomena*.
+ Chief among these is the divergence of thermal response functions—such as specific heat, compressibility, or
+  magnetic susceptibility—which signal an enhanced sensitivity to external perturbations. 
+  These singularities arise from the emergence of large-scale cooperative interactions among the system’s
+   microscopic constituents, leading to a diverging correlation length. One visually striking manifestation of this is 
+   *critical opalescence*, particularly observed in fluids like CO$_2$. 
+   As carbon dioxide nears its critical temperature and pressure, the distinction between its liquid and gas phases vanishes, 
+   giving rise to huge fluctuations in density. These fluctuations scatter visible light, rendering the fluid milky 
+   or opalescent. This scattering effect directly reflects the long-range correlations developing within the fluid. 
+   The movie below illustrates the effect as the critical temperature of CO$_2$ is approached from above. 
+   Note the appearence of a liquid-vapour interface (meniscus) as the system enters the two-phase region. 
 
 
 {{< video Movies/critical_point_1.mov start="4" title="Critical opalesence in Co2">}}
