@@ -114,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/approach-to-criticality.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/approach-to-criticality.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -148,7 +148,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Unifying theoretical concepts</span></a>
+ <span class="menu-text">Unifying concepts</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -343,7 +343,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying theoretical concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/approach-to-criticality.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/approach-to-criticality.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec:approach" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The Approach to Criticality</span></span></h1>
 </div>
@@ -374,6 +374,49 @@ C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ con
 <p><span id="eq-corr"><span class="math display">\[
 \xi \propto t^{-\nu} ~~~~ (T &gt; T_c,\: H=0)
 \tag{3.3}\]</span></span></p>
+<div class="callout callout-style-default callout-caution callout-titled" title="More on correlations">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More on correlations
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The two-point correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field <span class="math inline">\(\phi(\vec{R})\)</span>, which could represent eg. the local magnetisation <span class="math inline">\(m\)</span> in a magnet at position vector <span class="math inline">\(\vec{R}\)</span>, or the local particle number density <span class="math inline">\(\rho\)</span> in a fluid, it is defined as:</p>
+<p><span class="math display">\[
+C(r) = \langle \phi(\vec{R}) \phi(\vec{R} + \vec{r}) \rangle - \langle \phi(\vec{R}) \rangle^2,
+\]</span></p>
+<p>where <span class="math inline">\(\langle \cdot \rangle\)</span> denotes an ensemble or spatial average over all <span class="math inline">\(\vec{R}\)</span>, and <span class="math inline">\(r = |\vec{r}|\)</span> is the spatial separation between the two points.</p>
+<p><span class="math inline">\(C(r)\)</span> quantifies the spatial extent over which field values are correlated and in homogeneous and isotropic systems, it depends only on the separation <span class="math inline">\(r\)</span>.</p>
+<p>If <span class="math inline">\(C(r)\)</span> decays quickly, we say that correlations are short-ranged. Typically this occurs well away from criticality and takes the form of exponential decay</p>
+<p><span class="math display">\[
+  C(r) \sim e^{-r/\xi}
+  \]</span> where correlation length <span class="math inline">\(\xi\)</span> is the characteristic scale over which correlations decay.</p>
+<p>Near a critical point <span class="math inline">\(C(r)\)</span> decays more slowly - in a power-law fashion - and correlations are long-ranged.</p>
+<p><span class="math display">\[
+  C(r) \sim r^{-(d - 2 + \eta)}
+  \]</span> where <span class="math inline">\(d\)</span> is the spatial dimension and <span class="math inline">\(\eta\)</span> is a critical exponent.</p>
+<p>Experimentally one doesn’t typically have direct access to <span class="math inline">\(C(r)\)</span>, but rather its Fourier transform known as the <strong>structure factor</strong></p>
+<p><span class="math display">\[
+S(k) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r).
+\]</span> where <span class="math inline">\(k\)</span> is the scattering wavevector.</p>
+<p>In equilibrium:</p>
+<ul>
+<li><p>For short-range correlations (finite <span class="math inline">\(\xi\)</span>), <span class="math inline">\(S(k)\)</span> typically has a Lorentzian form: <span class="math display">\[
+S(k) \sim \frac{1}{k^2 + \xi^{-2}}.
+\]</span></p></li>
+<li><p>At criticality (where <span class="math inline">\(\xi \to \infty\)</span>), <span class="math inline">\(S(k)\)</span> follows a power law: <span class="math display">\[
+S(k) \sim k^{-2 + \eta}.
+\]</span></p></li>
+</ul>
+<p>This relation enables the extraction of <span class="math inline">\(\xi\)</span> from experimental or simulation data, especially via scattering techniques.</p>
+</div>
+</div>
+</div>
 <p>Similar power law behaviour is found for the order parameter <span class="math inline">\(Q\)</span> (in this case the magnetisation) which vanishes in a singular fashion (it has infinite gradient) as the critical point is is approached as a function of temperature:</p>
 <p><span id="eq-mag"><span class="math display">\[
 m \propto t^{\beta} ~~~~ (T &lt; T_c,\: H=0)

@@ -28,6 +28,57 @@ $$
 \xi \propto t^{-\nu} ~~~~ (T > T_c,\: H=0)
 $${#eq-corr}
 
+::: {.callout-caution collapse="true" title="More on correlations"}
+
+The two-point correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field $\phi(\vec{R})$, which could represent eg. the local magnetisation $m$ in a magnet at position vector $\vec{R}$, or the local particle number density $\rho$ in a fluid, it is defined as:
+
+$$
+C(r) = \langle \phi(\vec{R}) \phi(\vec{R} + \vec{r}) \rangle - \langle \phi(\vec{R}) \rangle^2,
+$$
+
+where $\langle \cdot \rangle$ denotes an ensemble or spatial average over all $\vec{R}$, and $r = |\vec{r}|$ is the spatial separation between the two points.
+
+$C(r)$ quantifies the spatial extent over which field values are correlated and in homogeneous and isotropic systems,  it depends only on the separation $r$.
+
+If $C(r)$ decays quickly, we say that correlations are short-ranged. Typically this occurs well away from criticality and takes the form of exponential decay
+
+  $$
+  C(r) \sim e^{-r/\xi}
+  $$
+where correlation length $\xi$ is the characteristic scale over which correlations decay.
+
+
+Near a critical point $C(r)$ decays more slowly - in a power-law fashion - and correlations are long-ranged.
+
+  $$
+  C(r) \sim r^{-(d - 2 + \eta)}
+  $$
+  where $d$ is the spatial dimension and $\eta$ is a critical exponent.
+
+Experimentally one doesn't typically have direct access to $C(r)$, but rather its Fourier transform known as the **structure factor**
+
+$$
+S(k) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r).
+$$
+where $k$ is the scattering wavevector. 
+
+In equilibrium:
+
+- For short-range correlations (finite $\xi$), $S(k)$ typically has a Lorentzian form:
+  $$
+  S(k) \sim \frac{1}{k^2 + \xi^{-2}}.
+  $$
+
+- At criticality (where $\xi \to \infty$), $S(k)$ follows a power law:
+  $$
+  S(k) \sim k^{-2 + \eta}.
+  $$
+
+This relation enables the extraction of $\xi$ from experimental or simulation data, especially via scattering techniques.
+
+:::
+
+
 Similar power law behaviour is found for the order parameter $Q$ (in
 this case the magnetisation) which vanishes in a singular fashion (it
 has infinite gradient) as the critical point is is approached as a

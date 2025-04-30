@@ -202,21 +202,32 @@ Schematic illustrations of domain morphology resulting from non-conserved and co
 
 ### Dynamics Scaling Hypothesis
 
+
 At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by $L(t)$.
 
 For example, the equal-time two-point correlation function satisfies
 
 $$
-C(r, t) = f\left( \frac{r}{L(t)} \right),
+C(r, t) = f\left(\frac{r}{L(t)}\right),
 $$
 
-where $f(x)$ is a time-independent scaling function. Plots of $C(r,t)$ collapse when plotted as a function of $r/L(t)$.The structure factor $S(k, t)$ also obeys dynamic scaling:
+where $f(x)$ is a time-independent scaling function. Plots of $C(r, t)$ collapse when plotted as a function of $r/L(t)$.
+
+The structure factor $S(k, t)$, which is the Fourier transform of the correlation function, is experimentally accessible eg via X-ray or neutron scattering, and also obeys dynamic scaling:
 
 $$
-S(k, t) = L(t)^d \, g(k L(t)),
+S(k, t) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r, t).
+$$
+
+Substituting the scaling form of $C(r, t)$ into this expression, and changing variables to $\vec{u} = \vec{r}/L(t)$, gives:
+
+$$
+S(k, t) = L(t)^d \int d^d u \, e^{-i \vec{k} \cdot L(t) \vec{u}} \, f(u) = L(t)^d \, g(kL(t)),
 $$
 
 with $g(x)$ a universal scaling function dependent on the dynamical class and dimensionality.
+
+
 
 ### Summary of Growth Laws
 

@@ -169,7 +169,7 @@ have a trivial character for $T>T_c$, (a perfectly disordered
 arrangement) and $T< T_c$, (a perfectly ordered arrangement). The hallmark of the critical
 point is the existence of a scale-invariant limit which is neither fully
 ordered nor fully disordered but which possesses structure on all length
-scales.
+scales. A nice illustration of critical point scale invariance in the Ising model can be viewed [here](https://www.youtube.com/watch?v=fi-g2ET97W8&ab_channel=DouglasAshton).
 
 ## Universality and Scaling
 

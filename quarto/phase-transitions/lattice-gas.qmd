@@ -71,6 +71,6 @@ equation (see recommended textbooks for the required phase diagram). The
 main difference is that the lattice gas has so-called "particle-hole" symmetry,
 $\rho\to 1-\rho$ (inherited from the up-down symmetry of the Ising model) which is not present for an real fluid. Accordingly, the
 phase diagram in a real fluid looks like a lopsided version of the above
-picture as shown in @fig-realfluid.
+picture as shown in @fig-realfluid. See [here](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.55.2160) for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.
 
 ![Schematic of the liquid-gas phase diagram in the $\rho-T$ plane for a realistic fluid .](Figs/real_fluid_pd_schem.png){width=60% fig-align="center" #fig-realfluid}

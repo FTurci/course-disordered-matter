@@ -17,7 +17,7 @@ book:
   chapters:
     - href: index.qmd
       text: Overview  
-    - part: "Unifying theoretical concepts"
+    - part: "Unifying concepts"
       chapters:
          - href: phase-transitions/literature.qmd
            text: "Recommended texts"
