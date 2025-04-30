@@ -247,7 +247,7 @@ $\gamma=1$.
 The schematic behaviour of the Ising order parameter and susceptibility
 are shown in @fig-mfsum (a) and (b)
 
-::: {#fig-snapshots layout-ncol=2}
+::: {#fig-mfsum layout-ncol=2}
 
  ![Mean field behaviour of the Ising magnetisation  (schematic)](Figs/mf_mag.png){width=100% fig-align="center" #fig-mfsum}
 

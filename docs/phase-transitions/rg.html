@@ -399,16 +399,87 @@ max}\)</span>, often requiring considerable computing resources.</p>
 <section id="sec-rgmethod" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-rgmethod"><span class="header-section-number">8.2</span> Methodology of the RG</h2>
 <p>The central idea of the renormalisation group (RG) method is a stepwise elimination of the degrees of freedom of the system on successively larger length-scales. To achieve this one introduces a fourth length scale <span class="math inline">\(L\)</span>. In contrast to the other three, which characterize the system itself, <span class="math inline">\(L\)</span> characterises the <em>description</em> of the system. It may be thought of as typifying the size of the smallest resolvable detail in a description of the system’s microstructure.</p>
-<p>Consider the Ising model arrangements displayed in <a href="mean-field-theory.html#fig-snapshots" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>(a)-(c). These pictures contain <em>all</em> the details of each configuration shown: the resolution length <span class="math inline">\(L\)</span> in this case has its smallest possible value, coinciding with the lattice spacing i.e.&nbsp;<span class="math inline">\(L=L_{\min}\)</span>. In the present context, the most detailed description is not the most useful: the essential signals with which we are concerned are hidden in a noise of relevant detail. A clue to eliminating this noise lies in the nature of the correlation length, i.e.&nbsp;the size of the largest droplets. The explicit form of the small scale microstructure is irrelevant to the behaviour of <span class="math inline">\(\xi\)</span>. The small scale microstructure is the noise. To eliminate it, we simply select a larger value of the resolution length (or ‘coarse-graining’ length) <span class="math inline">\(L\)</span>.</p>
+<p>Consider the Ising model arrangements displayed in <a href="Ising-model.html#fig-snapshots" class="quarto-xref">Figure&nbsp;<span>4.1</span></a> (a)-(c). These pictures contain <em>all</em> the details of each configuration shown: the resolution length <span class="math inline">\(L\)</span> in this case has its smallest possible value, coinciding with the lattice spacing i.e.&nbsp;<span class="math inline">\(L=L_{\min}\)</span>. In the present context, the most detailed description is not the most useful: the essential signals with which we are concerned are hidden in a noise of relevant detail. A clue to eliminating this noise lies in the nature of the correlation length, i.e.&nbsp;the size of the largest droplets. The explicit form of the small scale microstructure is irrelevant to the behaviour of <span class="math inline">\(\xi\)</span>. The small scale microstructure is the noise. To eliminate it, we simply select a larger value of the resolution length (or ‘coarse-graining’ length) <span class="math inline">\(L\)</span>.</p>
 <p>There are many ways of implementing this coarse-graining procedure. We adopt a simple strategy in which we divide our sample into blocks of side <span class="math inline">\(L\)</span>, each of which contains <span class="math inline">\(L^d\)</span> sites, with <span class="math inline">\(d\)</span> the space dimensions . The centres of the blocks define a lattice of points indexed by <span class="math inline">\(I=1,2,....,N/L^d\)</span>. We associate with each block lattice point centre, <span class="math inline">\(I\)</span>, a coarse-grained or block variable <span class="math inline">\(S_I(L)\)</span> defined as the spatial average of the local variables it contains:</p>
 <p><span id="eq-blkvar"><span class="math display">\[
 S_I(L)=L^{-d}\sum_i^Is_i
 \tag{8.1}\]</span></span> where the sum extends over the <span class="math inline">\(L^d\)</span> sites in the block <span class="math inline">\(I\)</span>. The set of coarse grained coordinates <span class="math inline">\(\{S(L)\}\)</span> are the basic ingredients of a picture of the system having spatial resolution of order <span class="math inline">\(L\)</span>.</p>
-<p>The coarse graining operation is easily implemented on a computer. In so doing one is faced with the fact that while the underlying Ising spins can only take two possible values, the block variables <span class="math inline">\(S_I(L)\)</span> have <span class="math inline">\(L^d+1\)</span> possible values. Accordingly in displaying the consequences of the blocking procedure, we need a more elaborate colour convention than that used in <a href="mean-field-theory.html#fig-snapshots" class="quarto-xref">Figure&nbsp;<span>5.4</span></a>. We will associate with each block a shade of grey drawn from a spectrum ranging from black to white.</p>
-<div id="fig-c1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<p>The coarse graining operation is easily implemented on a computer. In so doing one is faced with the fact that while the underlying Ising spins can only take two possible values, the block variables <span class="math inline">\(S_I(L)\)</span> have <span class="math inline">\(L^d+1\)</span> possible values. Accordingly in displaying the consequences of the blocking procedure, we need a more elaborate colour convention than that used in <a href="Ising-model.html#fig-snapshots" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. We will associate with each block a shade of grey drawn from a spectrum ranging from black to white.</p>
+<div id="fig-c1" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-c1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/coarseconf1.jpg" class="img-fluid figure-img" style="width:80.0%">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/a1_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(ai)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/b1_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(bi)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/a2_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(aii)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/b2_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(bii)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/a3_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(aiii)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/b3_2state.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>(biii)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/schem_op_disordered.png" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>(aiv)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/schem_op_ordered.png" class="img-fluid figure-img" style="width:74.0%"></p>
+<figcaption>(biv)</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-c1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8.1: See text for details

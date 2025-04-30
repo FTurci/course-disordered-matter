@@ -61,7 +61,7 @@ thought of as typifying the size of the smallest resolvable detail in a
 description of the system's microstructure.
 
 Consider the Ising model arrangements displayed in
-@fig-snapshots(a)-(c). These pictures contain *all* the
+@fig-snapshots (a)-(c). These pictures contain *all* the
 details of each configuration shown: the resolution length $L$ in this
 case has its smallest possible value, coinciding with the lattice
 spacing i.e. $L=L_{\min}$. In the present context, the most detailed
@@ -96,9 +96,28 @@ the blocking procedure, we need a more elaborate colour convention than
 that used in @fig-snapshots. We will associate with each block a shade of
 grey drawn from a spectrum ranging from black to white.
 
-![See text for details](Figs/coarseconf1.jpg){#fig-c1 width=80%}
+::: {layout-ncol=2 #fig-c1}
+![(ai)](Figs/a1_2state.png){width=50%}
 
-The results of coarse-graining configurations typical of three different
+![(bi)](Figs/b1_2state.png){width=50%}
+
+![(aii)](Figs/a2_2state.png){width=50%}
+
+![(bii)](Figs/b2_2state.png){width=50%}
+
+![(aiii)](Figs/a3_2state.png){width=50%}
+
+![(biii)](Figs/b3_2state.png){width=50%}
+
+![(aiv)](Figs/schem_op_disordered.png){width=60%}
+
+![(biv)](Figs/schem_op_ordered.png){width=74%}
+
+See text for details
+:::
+
+  
+The results of coarse-graining configurations typical of three different 
 temperatures are shown in @fig-c1 and @fig-c2. Two auxiliary operations are implicit in these
 results. The first operation is a *length scaling*: the lattice spacing
 on each blocked lattice has been scaled to the same size as that of the
@@ -218,7 +237,6 @@ between the variable scales.
 
 
 ![Schematic representation of the coarse graining operation via which the universal properties of fluids and magnets may be exposed.](Figs/coarse.png){#fig-fmcoarse width=50%}
-
 
 
 
