@@ -58,7 +58,7 @@ Near a critical point $C(r)$ decays more slowly - in a power-law fashion - and c
 Experimentally one doesn't typically have direct access to $C(r)$, but rather its Fourier transform known as the **structure factor**
 
 $$
-S(k) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r).
+S(k) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r),
 $$
 where $k$ is the scattering wavevector. 
 

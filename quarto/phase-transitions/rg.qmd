@@ -77,13 +77,14 @@ There are many ways of implementing this coarse-graining procedure. We
 adopt a simple strategy in which we divide our sample into blocks of
 side $L$, each of which contains $L^d$ sites, with $d$ the space
 dimensions . The centres of the blocks define a lattice of points
-indexed by $I=1,2,....,N/L^d$. We associate with each block lattice
+indexed by $I=1,2,N/L^d$. We associate with each block lattice
 point centre, $I$, a coarse-grained or block variable $S_I(L)$ defined
 as the spatial average of the local variables it contains:
 
 $$
 S_I(L)=L^{-d}\sum_i^Is_i
-$${#eq-blkvar} where the sum extends over the $L^d$ sites in the
+$${#eq-blkvar} 
+where the sum extends over the $L^d$ sites in the
 block $I$. The set of coarse grained coordinates $\{S(L)\}$ are the
 basic ingredients of a picture of the system having spatial resolution
 of order $L$.
@@ -111,7 +112,7 @@ grey drawn from a spectrum ranging from black to white.
 
 ![(aiv)](Figs/schem_op_disordered.png){width=60%}
 
-![(biv)](Figs/schem_op_ordered.png){width=74%}
+![(biv)](Figs/schem_op_ordered.png){width=84%}
 
 See text for details
 :::
@@ -178,7 +179,24 @@ The implication of this limiting behaviour is clear: the patterns formed
 by the ordering variable at criticality look the same (in a statistical
 sense) when viewed on all sufficiently large length scales.
 
-![See text for details](Figs/coarseconf2.png){#fig-c2 width=80%}
+
+::: {layout="[[1,1],[1,1], [1,1], [1]]" #fig-c2}
+![(ai)](Figs/a1_3state.png){width=50%}
+
+![(bi)](Figs/b1_3state.png){width=50%}
+
+![(aii)](Figs/a2_3state.png){width=50%}
+
+![(bii)](Figs/b2_3state.png){width=50%}
+
+![(aiii)](Figs/a3_3state.png){width=50%}
+
+![(biii)](Figs/b3_3state.png){width=50%}
+
+![(iv)](Figs/scaled_block_variable.png){width=60%}
+
+See text for details
+:::
 
 Let us summarize. Under the coarse-graining operation there is an
 evolution or *flow* of the system's configuration spectrum. The flow

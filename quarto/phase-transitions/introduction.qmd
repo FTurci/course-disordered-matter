@@ -70,3 +70,11 @@ explored. Finally, the utility of finite-size scaling methods for
 computer studies of critical phenomena will be discussed, culminating in
 the introduction of a specific technique suitable for exposing
 universality in model systems.
+
+::: {layout="[[1,1], [1]]"}
+![Surus](Figs/surus.png)
+
+![Hanno](Figs/hanno.png)
+
+![Lin Wang](Figs/lin-wang.png)
+:::

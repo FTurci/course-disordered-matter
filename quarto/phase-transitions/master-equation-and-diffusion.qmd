@@ -303,3 +303,10 @@ where $\nu_0$ is a constant.
 
 *Exercise:* Show that this gives the canonical distribution in steady state.
 
+::: {layout="[[1,1], [1]]"}
+![Surus](Figs/surus.png)
+
+![Hanno](Figs/hanno.png)
+
+![Lin Wang](Figs/lin-wang.png)
+:::
