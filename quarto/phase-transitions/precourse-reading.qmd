@@ -1,0 +1,153 @@
+
+## Ensembles and free energies
+
+Statistical mechanics can be formulated in a variety of ensembles reflecting the relationship between the system and its environment. In what follows we summarise the formalism, focussing on the case of a particle fluid. Analogous equations apply to lattice spin models (see lectures and the book by Yeomans).  Key ensembles are:
+
+
+## Microcanonical ensemble 
+
+Applies to a system of $N$ particles (or spins) in a fixed volume $V$ having adiabatic walls (so that the internal energy $E$ is constant (note sometimes one sees the symbol $U$ used instead of $E$). Denoted as constant-$NVE$.  Let $\Omega$ be the number of (micro)states having the prescribed energy: 
+
+$$
+\Omega=\sum_\textrm{all states having energy U}
+$$
+
+Thermodynamically, the states favored in the canonical ensemble are those that maximise the entropy:
+
+$$
+S=k_B\ln \Omega\:.
+$$ 
+
+where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for defining the entropy, but is little used in practice.
+
+## Canonical ensemble 
+
+Applies to a system of $N$ particles in a fixed volume $V$ and coupled to a heat bath at temperature $T$. Denoted as constant-$NVT$. 
+A useful quantity is the {\em partition function} 
+
+$$
+Z_{NVT}=\sum_\textrm{ all states i}e^{-\beta E_i},\beta=1/(k_BT)
+\label{eq:ZNVT}
+$$
+which is a weighted sum over the states.  The partition function provides the normalisation constant in the probability of finding the system in a given state $i$.
+
+$$
+P_i=\frac{e^{-\beta E_i}}{Z_{NVT}}.
+\label{eq:Pi}
+$$
+
+The states favored in the canonical ensemble are those that minimise the free energy: 
+
+$$
+F_{NVT}=-\beta^{-1}\ln Z_{NVT}\:.
+$$
+$F_{NVT}$ is known as the Helmholtz free energy.  Thermodynamics also supplies a relation for the Helmholtz free energy:
+
+ $$
+F_{NVT}=E-TS\:,
+$$
+where $E$ is the average internal energy. In minimising the free energy, the system strikes a compromise between low energy and high entropy. 
+The temperature plays the role of arbiter, favouring high entropy at high $T$, and low energy at low $T$. 
+The canonical ensemble is usually used to describe systems such as magnets, or a fluid held at constant volume. 
+It is the ensemble we shall use most in this course. 
+
+## Grand canonical ensemble
+
+ Applies to a system with a variable number of particle in a fixed volume $V$ coupled to both a heat bath at temperature $T$ and a particle reservoir with chemical potential $\mu$ (which is the field conjugate to $N$). Denoted as constant-$\mu VT$.
+
+The corresponding partition function is a weighted superset of the canonical one
+
+$$
+Z_{\mu VT}=\sum_{N=0}^\infty e^{\beta\mu N}Z_{NVT}
+$$
+and a state probability analogous to Eq.~(\ref{eq:Pi}) holds. One can recast this in a form similar to Eq.~\ref{eq:ZNVT}:
+
+$$
+Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm i}e^{-\beta {\cal H}_i},
+\label{eq:ZmuVT}
+$$
+where ${\cal H}_i=E_i-\mu N$ is the form of the Hamiltonian in the grand canonical ensemble.
+
+Statistically, the states favored in the grand canonical ensemble are those that minimise the free energy: 
+
+$$
+F_{\mu VT}=-\beta^{-1}\ln Z_{\mu VT}
+$$
+$F_{\mu VT}$ is known as the grand potential. It can also be derived from thermodynamics, from which one finds
+
+$$
+F_{\mu VT}=E-TS-\mu N=-pV
+$$
+
+The grand canonical ensemble is usually used to describe systems such as fluid connected to a particle reservoir. Sometimes for a magnet we consider the effects of an applied magnetic field, which is analogous to working in the grand canonical ensemble:  the magnetic field (which is conjugate to the magnetisation) plays a similar role to the chemical potential in a fluid.
+
+## Isothermal-isobaric ensemble
+
+Applies to a system with a fixed number of particles $N$ that is coupled to a heat bath at temperature $T$ and a reservoir that exerts a constant pressure $p$ which allows the sample volume to fluctuate. Denoted as constant-$NpT$.
+
+The corresponding partition function is a weighted superset of the canonical one
+
+$$
+Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}
+$$
+or 
+$$
+Z_{NVT}=\int_0^\infty dV\:\sum_{\rm i}e^{-\beta {\cal H}_i},
+\label{eq:ZNpT}
+$$
+where ${\cal H}_i=E_i+pV$ is the form of the Hamiltonian in the constant-NpT ensemble.
+Again a state probability analogous to Eq.~(\ref{eq:Pi}) holds. 
+
+Statistically, the states favored in the costant-NpT ensemble are those that minimise the free energy: 
+
+$$
+F_{NpT}=-\beta^{-1}\ln Z_{NpT}
+$$
+$F_{NpT}$ is known as the Gibb's free energy (often denoted $G$). It can also be derived from thermodynamics, from which one finds
+
+$$
+F_{NpT}=E-TS+pV=\mu N
+$$
+
+The constant-$NpT$ ensemble is usually used to describe systems such as a fluid subject to a variable pressure, or a magnet coupled to a magnetic field $H$. 
+In the latter case the quantity $HM$ plays the role of $pV$ and
+
+$$
+F_{NpT}=E-TS-MH\:,
+$$
+ with $M$ the total magnetisation.
+\end{itemize}
+
+## From free energies to observables
+
+Free energies are not directly observable quantities. However, all physical observables can be expressed in terms of {\em derivatives} of the free energy. 
+ One can derive the appropriate relations either from Thermodynamics, or the corresponding statistical mechanics (Revise your year-2 Thermal Physics notes on this if necessary). 
+ As an example let us consider a fluid in the isothermal-isobaric ensemble for which the appropriate free energy is $F_{NpT}=E-TS+pV$, and where the volume fluctuates in response to the prescribed pressure. We shall seek an expression for the average volume in terms of the free energy. First lets us take the thermodynamic route. Differentiating the free energy and applying the chain rule we have:
+
+$$
+dF=dE-TdS-sdT+pdV+VdP\:.
+$$
+But from the first law of thermodynamics, $dE=TdS-pdV$, so
+
+$$
+dF=-SdT+Vdp\:,
+$$
+and rearranging yields
+$$
+V=\left(\frac{\partial F}{\partial p}\right)_T\:.
+$$
+
+We can now show that this result is consistent with the definition of $F_{NpT}$ in terms of the partition function. Write
+
+$$
+Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_{all~states}e^{-\beta (p V_i+E_i)}
+$$
+
+Then 
+\begin{eqnarray}
+\left(\frac{\partial F}{\partial p}\right)_T&=&-\frac{1}{\beta}\left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T\nonumber \\
+\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}}\frac{\partial Z_{NpT}}{\partial p}\right)_T\nonumber\\
+\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}} \int_{all~states}(-\beta V)e^{-\beta (p V_i+E_i)}  \right)_T\nonumber\\
+\:&=&\langle V\rangle_T\nonumber\:.
+\end{eqnarray}
+where in the last step we have used the fact that the probability of a state is defined to be $e^{-\beta (p V_i+E_i)}/Z_{NpT}$.
