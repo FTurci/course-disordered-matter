@@ -140,5 +140,8 @@
   },
   "phase-transitions/live-test.qmd": {
     "live-test.html": "39eb5f76"
+  },
+  "phase-transitions/precourse-reading.qmd": {
+    "precourse-reading.html": "24fcf5ef"
   }
 }
