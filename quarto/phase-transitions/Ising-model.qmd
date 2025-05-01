@@ -169,8 +169,7 @@ in the partition function and therefore @eq-Vs is an alternative way of writing 
 
 The reason it is useful to transform to a matrix representation is that
 it transpires that the sum over the product of matrix elements in
-equation ([\[eq-Vs\]](#eq-Vs){reference-type="ref" reference="eq-Vs"})
-is simply just the trace of ${\bf V}^N$ (check this yourself for a short
+@eq-Vs is simply just the trace of ${\bf V}^N$ (check this yourself for a short
 periodic chain), given by the sum of its eigenvalues:-
 
 $$Z_N=\lambda_1^N+\lambda_2^N+...\lambda_m^N$$ For very large $N$, this

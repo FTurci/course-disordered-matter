@@ -6,10 +6,10 @@ Statistical mechanics can be formulated in a variety of ensembles reflecting the
 
 ## Microcanonical ensemble 
 
-Applies to a system of $N$ particles (or spins) in a fixed volume $V$ having adiabatic walls (so that the internal energy $E$ is constant (note sometimes one sees the symbol $U$ used instead of $E$). Denoted as constant-$NVE$.  Let $\Omega$ be the number of (micro)states having the prescribed energy: 
+Applies to a system of $N$ particles (or spins) in a fixed volume $V$ having adiabatic walls so that the internal energy $E$ is constant. Denoted as constant-$NVE$.  Let $\Omega$ be the number of (micro)states having the prescribed energy: 
 
 $$
-\Omega=\sum_\textrm{all states having energy U}
+\Omega=\sum_\textrm{all states having energy E}
 $$
 
 Thermodynamically, the states favored in the canonical ensemble are those that maximise the entropy:
@@ -23,18 +23,16 @@ where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for de
 ## Canonical ensemble 
 
 Applies to a system of $N$ particles in a fixed volume $V$ and coupled to a heat bath at temperature $T$. Denoted as constant-$NVT$. 
-A useful quantity is the {\em partition function} 
+A useful quantity is the *partition function*
 
 $$
-Z_{NVT}=\sum_\textrm{ all states i}e^{-\beta E_i},\beta=1/(k_BT)
-\label{eq:ZNVT}
-$$
+Z_{NVT}=\sum_\textrm{ all states i}e^{-\beta E_i},~~~~~\beta=1/(k_BT)
+$${#eq-ZNVT}
 which is a weighted sum over the states.  The partition function provides the normalisation constant in the probability of finding the system in a given state $i$.
 
 $$
 P_i=\frac{e^{-\beta E_i}}{Z_{NVT}}.
-\label{eq:Pi}
-$$
+$${#eq-Pi}
 
 The states favored in the canonical ensemble are those that minimise the free energy: 
 
@@ -60,12 +58,11 @@ The corresponding partition function is a weighted superset of the canonical one
 $$
 Z_{\mu VT}=\sum_{N=0}^\infty e^{\beta\mu N}Z_{NVT}
 $$
-and a state probability analogous to Eq.~(\ref{eq:Pi}) holds. One can recast this in a form similar to Eq.~\ref{eq:ZNVT}:
+and a state probability analogous to @eq-Pi holds. One can recast this in a form similar to @eq-ZNVT:
 
 $$
 Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm i}e^{-\beta {\cal H}_i},
-\label{eq:ZmuVT}
-$$
+$${#eq-ZmuVT}
 where ${\cal H}_i=E_i-\mu N$ is the form of the Hamiltonian in the grand canonical ensemble.
 
 Statistically, the states favored in the grand canonical ensemble are those that minimise the free energy: 
@@ -93,10 +90,9 @@ $$
 or 
 $$
 Z_{NVT}=\int_0^\infty dV\:\sum_{\rm i}e^{-\beta {\cal H}_i},
-\label{eq:ZNpT}
-$$
-where ${\cal H}_i=E_i+pV$ is the form of the Hamiltonian in the constant-NpT ensemble.
-Again a state probability analogous to Eq.~(\ref{eq:Pi}) holds. 
+$${#eq-ZNpT}
+where ${\cal H}_i=E_i+pV$ is the form of the Hamiltonian in the constant-$NpT$ ensemble.
+Again a state probability analogous to @eq-Pi holds. 
 
 Statistically, the states favored in the costant-NpT ensemble are those that minimise the free energy: 
 
@@ -120,7 +116,7 @@ $$
 
 ## From free energies to observables
 
-Free energies are not directly observable quantities. However, all physical observables can be expressed in terms of {\em derivatives} of the free energy. 
+Free energies are not directly observable quantities. However, all physical observables can be expressed in terms of *derivatives* of the free energy. 
  One can derive the appropriate relations either from Thermodynamics, or the corresponding statistical mechanics (Revise your year-2 Thermal Physics notes on this if necessary). 
  As an example let us consider a fluid in the isothermal-isobaric ensemble for which the appropriate free energy is $F_{NpT}=E-TS+pV$, and where the volume fluctuates in response to the prescribed pressure. We shall seek an expression for the average volume in terms of the free energy. First lets us take the thermodynamic route. Differentiating the free energy and applying the chain rule we have:
 
