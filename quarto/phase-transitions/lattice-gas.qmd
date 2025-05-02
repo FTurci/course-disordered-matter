@@ -69,7 +69,7 @@ temperatures, the distinction between the phases disappears.
 You may wish to compare this with the results of (say) van der Waals
 equation (see recommended textbooks for the required phase diagram). The
 main difference is that the lattice gas has so-called "particle-hole" symmetry,
-$\rho\to 1-\rho$ (inherited from the up-down symmetry of the Ising model) which is not present for an real fluid. Accordingly, the
+$\rho\to 1-\rho$ (inherited from the up-down symmetry of the Ising model) which is not present for a real fluid. Accordingly, the
 phase diagram in a real fluid looks like a lopsided version of the above
 picture as shown in @fig-realfluid. See [here](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.55.2160) for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.
 

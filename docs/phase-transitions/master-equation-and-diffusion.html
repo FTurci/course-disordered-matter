@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Introduction to Stochastic Processes</title>
+<title>10&nbsp; Introduction to Stochastic Processes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -71,10 +71,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3d9ef06f4364d1685246a84990171641.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -147,13 +147,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/master-equation-and-diffusion.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/master-equation-and-diffusion.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -183,9 +183,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Unifying concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -198,80 +198,74 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Precourse reading and revision</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/lattice-gas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The lattice gas</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The lattice gas</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Renormalization group theory</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Renormalization group theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -283,16 +277,16 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/live-test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Coding</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Coding</span></span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Complex disordered systems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -300,49 +294,49 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_plan.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Plan</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Glasses</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_readings.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Readings</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -353,9 +347,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -384,12 +378,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-master-equation" id="toc-the-master-equation" class="nav-link active" data-scroll-target="#the-master-equation"><span class="header-section-number">11.1</span> The Master Equation</a></li>
-  <li><a href="#from-the-master-equation-to-the-diffusion-equation" id="toc-from-the-master-equation-to-the-diffusion-equation" class="nav-link" data-scroll-target="#from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">11.2</span> From the Master Equation to the Diffusion Equation</a></li>
-  <li><a href="#consequences-of-time-reversal-symmetry" id="toc-consequences-of-time-reversal-symmetry" class="nav-link" data-scroll-target="#consequences-of-time-reversal-symmetry"><span class="header-section-number">11.3</span> Consequences of time reversal symmetry</a>
+  <li><a href="#the-master-equation" id="toc-the-master-equation" class="nav-link active" data-scroll-target="#the-master-equation"><span class="header-section-number">10.1</span> The Master Equation</a></li>
+  <li><a href="#from-the-master-equation-to-the-diffusion-equation" id="toc-from-the-master-equation-to-the-diffusion-equation" class="nav-link" data-scroll-target="#from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">10.2</span> From the Master Equation to the Diffusion Equation</a></li>
+  <li><a href="#consequences-of-time-reversal-symmetry" id="toc-consequences-of-time-reversal-symmetry" class="nav-link" data-scroll-target="#consequences-of-time-reversal-symmetry"><span class="header-section-number">10.3</span> Consequences of time reversal symmetry</a>
   <ul class="collapse">
-  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance"><span class="header-section-number">11.3.1</span> Detailed balance</a></li>
-  <li><a href="#computer-simulation" id="toc-computer-simulation" class="nav-link" data-scroll-target="#computer-simulation"><span class="header-section-number">11.3.2</span> Computer simulation</a></li>
+  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance"><span class="header-section-number">10.3.1</span> Detailed balance</a></li>
+  <li><a href="#computer-simulation" id="toc-computer-simulation" class="nav-link" data-scroll-target="#computer-simulation"><span class="header-section-number">10.3.2</span> Computer simulation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -397,9 +391,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/master-equation-and-diffusion.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/master-equation-and-diffusion.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Introduction to Stochastic Processes</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to Stochastic Processes</span></h1>
 </div>
 
 
@@ -420,8 +414,8 @@ window.Quarto = {
 <p>In classical physics, this randomness may arise from our lack of knowledge about microscopic details. For example, in a gas, we do not know the precise positions and velocities of each particle, so their collisions with the container walls appear random.</p>
 <p>In quantum mechanics, stochasticity is even more intrinsic. The fundamental objects are probability amplitudes, and outcomes are inherently probabilistic.</p>
 <p>To describe these systems effectively, we use a coarse-grained probabilistic description, which tracks the likelihood of different outcomes rather than precise trajectories. One of the key tools in this approach is the master equation.</p>
-<section id="the-master-equation" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="the-master-equation"><span class="header-section-number">11.1</span> The Master Equation</h2>
+<section id="the-master-equation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="the-master-equation"><span class="header-section-number">10.1</span> The Master Equation</h2>
 <p>Consider a system in microstate <span class="math inline">\(i\)</span> with energy <span class="math inline">\(E_i\)</span>. It can transition to neighboring microstates <span class="math inline">\(j\)</span>, where the energy difference <span class="math inline">\(|E_j - E_i|\)</span> is small (within <span class="math inline">\(\delta E\)</span>).</p>
 <p>Let <span class="math inline">\(\nu_{ij}\)</span> be the <strong>rate</strong> at which the system jumps from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span>. Over an infinitesimal time interval <span class="math inline">\(dt\)</span>, the probability <span class="math inline">\(p_i\)</span> changes as:</p>
 <p><span class="math display">\[
@@ -449,8 +443,8 @@ dp_i = \left[ -p_i \sum_j  \nu_{ij} + \sum_j \nu_{ji} p_j \right] dt
 <p>This structure ensures probability conservation: the total probability <span class="math inline">\(\sum_i p_i = 1\)</span> remains constant in time.</p>
 <p>The master equation is first order in time and does not have time reversal symmetry so describes an irreversible process. This irreversibility arises from the coarse-graining process that throws away information about underlying microphysics which is described by Newton’s equations and which <em>are</em> time reversible. Only by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. Consequently the increase of entropy is linked to our knowledge about the system rather than anything it is doing internally in a manner that may appear dubious. Can it be possible that macroscopic and reproducible phenomena such as heat flow depend on how we handle information? Perhaps yes since the division between work and heat is somewhat arbitrary. Were we able to track all the particle positions there would be no need to talk about heat energy or heat flow.</p>
 </section>
-<section id="from-the-master-equation-to-the-diffusion-equation" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">11.2</span> From the Master Equation to the Diffusion Equation</h2>
+<section id="from-the-master-equation-to-the-diffusion-equation" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">10.2</span> From the Master Equation to the Diffusion Equation</h2>
 <p>Now consider the situation where the state index <span class="math inline">\(i\)</span> corresponds to a position in space, <span class="math inline">\(x_i = i a\)</span>, ie a one-dimensional lattice with lattice spacing <span class="math inline">\(a\)</span>, and transitions only occur between neighboring lattice sites.</p>
 <p>We assume:</p>
 <ul>
@@ -486,7 +480,7 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
 <p>We explicitly see the arrow of time by examining this Gaussian solution at various times <span class="math inline">\(t\)</span>. As <span class="math inline">\(t\)</span> increases, the Gaussian “bell-shaped” curve spreads out. Its width grows according to <span class="math inline">\(\langle x^2 \rangle^{1/2} \sim t^{1/2}\)</span>. This is known as “diffusive scaling,” and it implies that, after time <span class="math inline">\(t\)</span>, a particle will typically be found at a distance roughly proportional to <span class="math inline">\(t^{1/2}\)</span> from its starting point. Conversely, exploring a region of size <span class="math inline">\(L\)</span> typically requires a time of order <span class="math inline">\(O(L^2)\)</span>.</p>
 <p>The evolution of the solution to the 1d diffusion equation in a spatial region <span class="math inline">\(x=[0,1]\)</span> as a function of times are shown in the movie below. The diffusion constant is <span class="math inline">\(D=0.01\)</span>. The movie corresponds to a particle initialised at <span class="math inline">\(x=0.5\)</span>. One sees how the probability density spreads out over the range as time increases. This can be used to model the diffusion of particles down a concentration gradient as you will see in the next part of the course.</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/diffusion_evolution.mp4"></video></div>
-<div id="379f7083" class="cell" data-execution_count="1">
+<div id="1736404f" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -579,11 +573,11 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
  ![Solutions to the 1d diffusion equation at increasing times](Figs/diffusion_profiles.png){fig-align="center" #fig-diffusion width=70%}
 -->
 </section>
-<section id="consequences-of-time-reversal-symmetry" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="consequences-of-time-reversal-symmetry"><span class="header-section-number">11.3</span> Consequences of time reversal symmetry</h2>
+<section id="consequences-of-time-reversal-symmetry" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="consequences-of-time-reversal-symmetry"><span class="header-section-number">10.3</span> Consequences of time reversal symmetry</h2>
 <p>As we have seen by introducing a type of coarse graining, the master equation violates time reversal symmetry of the underlying Newtonian dynamics. Remarkably however, the fact that the underlying microphysics is actually time reversal symmetric has several deep consequences which survive the coarse graining procedure These results are some of the cornerstones of nonequilibrium thermodynamics</p>
-<section id="detailed-balance" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="detailed-balance"><span class="header-section-number">11.3.1</span> Detailed balance</h3>
+<section id="detailed-balance" class="level3" data-number="10.3.1">
+<h3 data-number="10.3.1" class="anchored" data-anchor-id="detailed-balance"><span class="header-section-number">10.3.1</span> Detailed balance</h3>
 <p>Recall from year 2 Statistical Mechanics that for a system in equilibrium, the principle of equal a-priori probabilities of microstates holds. Therefore</p>
 <p><span class="math display">\[
 \nu_{ij} p_i^{eq} = \nu_{ji} p_j^{eq}
@@ -600,8 +594,8 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
 \]</span></p>
 <p>(This can be easily demonstrated, for example, by considering two groups that contain different numbers of states with similar energies.) Nonetheless, the detailed balance relation holds, in equilibrium, in the general form above.</p>
 </section>
-<section id="computer-simulation" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="computer-simulation"><span class="header-section-number">11.3.2</span> Computer simulation</h3>
+<section id="computer-simulation" class="level3" data-number="10.3.2">
+<h3 data-number="10.3.2" class="anchored" data-anchor-id="computer-simulation"><span class="header-section-number">10.3.2</span> Computer simulation</h3>
 <p>In computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion. This is the <em>molecular dynamics (MD)</em> method which we now outline.</p>
 <p><strong>Molecular dynamics</strong></p>
 <p>Molecular Dynamics (MD) involves a system of classical particles interacting through specified interparticle forces. The motion of these particles is determined by numerically integrating Newton’s equations of motion. In MD simulations, averages of state variables are obtained as time averages over trajectories in phase space. Typically, the forces acting between particles are conservative, ensuring that the total energy <span class="math inline">\(E\)</span> remains constant. This conservation implies that the motion is restricted to a <span class="math inline">\((2dN - 1)\)</span>-dimensional surface in phase space, denoted by <span class="math inline">\(\Gamma(E)\)</span>.</p>
@@ -689,18 +683,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -732,7 +715,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -740,7 +743,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -837,7 +840,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1066,12 +1068,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../phase-transitions/nucleation-and-growth.html" class="pagination-link" aria-label="Nucleation and domain growth">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation and domain growth</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="pagination-link" aria-label="Brownian and Langevin dynamics">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

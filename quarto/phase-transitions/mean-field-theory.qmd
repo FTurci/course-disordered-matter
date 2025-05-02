@@ -260,16 +260,104 @@ are shown in @fig-mfsum (a) and (b)
 Landau theory is a slightly more general type of mean field theory than
 that discussed in the previous subsection because it is not based on a
 particular microscopic model. Its starting point is the Helmholtz free
-energy, which Landau asserted can be written in terms of a truncated
-power series expansion of the order parameter. For a ferromagnet this
-takes the form
+energy, which Landau asserted can be written in terms of
+power series expansion of the order parameter $\phi$:
 
-$$F(m)=F_0+a_2m^2+a_4m^4
+$$
+F_(\phi)=\sum_{i=0}^{\infty}a_i\phi^i
+$$
+The equilibrium value of $\rho$ is that which minimises the Landau free energy.
+
+::: {.callout-caution collapse="true"}
+## A note on order parameters
+
+We have already seen examples of these in earlier sections, e.g., for the liquid-gas transition this was
+$$
+\rho_{liq} - \rho_{gas}: \quad \textrm{difference in density of two coexisting phases},
+$$
+while for the Ising magnet it is the magnetisation $m$. Both quantities vanish at the critical point.
+These are examples of *scalar* order parameters – a single number is required to represent the degree of order ($n = 1$).
+
+In the absence of a symmetry-breaking field, the Landau free-energy density $f_L$ must have symmetry $f_L(-\phi) = f_L(\phi)$ (Ising case).
+
+For some other systems, $n$ component vectors are required in order to represent the order:
+
+$$
+\boldsymbol{\phi} = (\phi_1, \phi_2, \dots, \phi_n)
+$$
+
+Then $f_L(\boldsymbol{\phi})$ should be symmetric under $O(n)$ rotations in $n$-component $\phi$-space.
+
+The table below lists examples of order parameters for various physical systems.
+
+
+
+| Physical System                        | Order Parameter $\varphi$                                 | Symmetry Group |
+|----------------------------------------|-----------------------------------------------------------|----------------|
+| Uniaxial (Ising) ferromagnet           | Magnetisation per spin, $m$                               | $O(1)$         |
+| Fluid (liquid-gas)                     | Density difference, $\rho - \rho_c$                       | $O(1)$         |
+| Liquid mixtures                        | Concentration difference, $c - c_c$                       | $O(1)$         |
+| Binary (AB) alloy (e.g., $\beta$-brass)| Concentration of one of the species, $c$                  | $O(1)$         |
+| Isotropic (vector) ferromagnet         | $n$-component magnetisation, $\mathbf{m} = (m_1, m_2, \dots, m_n)$ | $O(n)$         |
+|                                        | $n = 2$: *xy* model                                       | $O(2)$         |
+|                                        | $n = 3$: Heisenberg model                                 | $O(3)$         |
+| Superfluid He$^4$                      | Macroscopic condensate wavefunction, $\Psi$               | $O(2)$         |
+| Superconductor (*s*-wave)              | Macroscopic condensate wavefunction, $\Psi$               | $O(2)$         |
+| Nematic liquid crystal                 | Orientational order, $\langle P_2(\cos \theta)\rangle$    |                |
+| Smectic A liquid crystal               | 1-dimensional periodic density                            |                |
+| Crystal                                | 3-dimensional periodic density                            |                |
+
+
+**Notes:**
+
+i) In **superfluid** $^4He$ the order parameter is 
+$$
+\Psi = |\Psi| e^{i\theta},
+$$
+the *complex wavefunction* of the macroscopic condensate.
+
+Both the amplitude $|\Psi|$ and phase $\theta$ must be specified, so this corresponds to $n = 2$.  
+**Superconductors** also correspond to $n = 2$.
+
+ii) In a **nematic** liquid crystal, the *orientational* order parameter is
+$$
+\langle P_2(\cos \theta) \rangle \equiv \frac{1}{2}\langle 3\cos^2 \theta - 1\rangle,
+$$
+where $\theta$ is the angle a molecule makes with the average direction of the long axes of the molecules (known as the *director* $\hat{n}$).
+Rotational symmetry is broken. For the case of an $n$ component vector, the free energy should be a function of:
+
+$$
+\phi^2 \equiv |\boldsymbol{\phi}|^2 = \phi_1^2 + \phi_2^2 + \dots + \phi_n^2 = \sum_{i=1}^n \phi_i^2
+$$
+
+in the absence of a symmetry breaking field. Rotational symmetry is incorporated into the theory.
+
+
+::: {#fig-mfsum layout-ncol=2}
+
+ ![Schematic of the isotropic liquid phase of a system of elongated molcules](Figs/isotropic-LC.png){width=50% fig-align="center" #fig-isotropic}
+
+
+ ![Schematic of the nematic liquid phase of a system elongated molcules. This phase has uniaxial ordering](Figs/nematic-LC.png){width=50% fig-align="center" #fig-isotropic}
+
+Isotropic and uniaxially ordered (nematic) phases of liquid crystal molecules.  
+
+:::
+
+
+:::
+
+
+To exemplify the approach, let us specialise to the case of a ferromagnet where $\phi=m$, the magnetisation and write the Landau free energy
+as
+
+$$
+F(m)=F_0+a_2m^2+a_4m^4
 $${#eq-landau}
 
 Here only the terms compatible with the order parameter symmetry are
-included in the expansion. On symmetry grounds, the free energy of a
-ferromagnet should be invariant under a reversal of the sign of the
+included in the expansion and we truncat the series at the 4th power because this is all that is necessary to yield the essential phenomenology.
+On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the
 magnetisation. Terms linear and cubic in $m$ are not invariant under
 $m\to -m$, and so do not feature.
 

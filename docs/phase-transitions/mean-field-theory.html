@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -389,7 +389,7 @@ window.Quarto = {
 <p>The inability to solve many models exactly often means that one must resort to approximations. One such approximation scheme is mean field theory.</p>
 <section id="sec:mfising" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="sec:mfising"><span class="header-section-number">6.1</span> Mean field solution of the Ising model</h2>
-<p>Let us look for a mean field expression for the free energy of the Ising model whose Hamiltonian is given in <a href="Ising-model.html#eq-ising" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> . Write</p>
+<p>Let us look for a mean field expression for the free energy of the Ising model whose Hamiltonian is given in <a href="Ising-model.html#eq-ising" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> . Write</p>
 <p><span class="math display">\[s_i=\langle s_i\rangle+(s_i-\langle s_i\rangle)=m+(s_i-m)=m+\delta s_i\]</span></p>
 <p>Then <span id="eq-mfa"><span class="math display">\[\begin{aligned}
 {\cal H}_I=&amp;-J\sum_{&lt;i,j&gt;}[m+(s_i-m)][m+(s_j-m)]-H\sum_i s_i\nonumber\\
@@ -519,7 +519,7 @@ m= \pm\sqrt{-3t} &amp; ~~\textrm{ for}  \:\:\: T&lt;T_c ~~\textrm{ real}
 \chi= (-2k_BT_ct)^{-1} &amp; \textrm{ for}  ~~~T \le T_c
 \end{aligned}\]</span>
 <p>where one has to take the non-zero value for <span class="math inline">\(m\)</span> below <span class="math inline">\(T_c\)</span> to ensure +ve <span class="math inline">\(\chi\)</span>, i.e.&nbsp;thermodynamic stability. This result implies that (within the mean field approximation) the critical exponent <span class="math inline">\(\gamma=1\)</span>.</p>
-<p>The schematic behaviour of the Ising order parameter and susceptibility are shown in <a href="#fig-mfsum" class="quarto-xref">Figure&nbsp;<span>6.4</span></a>&nbsp;(a) and (b)</p>
+<p>The schematic behaviour of the Ising order parameter and susceptibility are shown in <a href="#fig-mfsum" class="quarto-xref">Figure&nbsp;<span>6.5</span></a>&nbsp;(a) and (b)</p>
 <div id="fig-mfsum" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-mfsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -559,10 +559,168 @@ Figure&nbsp;6.4
 </section>
 <section id="landau-theory" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="landau-theory"><span class="header-section-number">6.5</span> Landau theory</h2>
-<p>Landau theory is a slightly more general type of mean field theory than that discussed in the previous subsection because it is not based on a particular microscopic model. Its starting point is the Helmholtz free energy, which Landau asserted can be written in terms of a truncated power series expansion of the order parameter. For a ferromagnet this takes the form</p>
-<p><span id="eq-landau"><span class="math display">\[F(m)=F_0+a_2m^2+a_4m^4
+<p>Landau theory is a slightly more general type of mean field theory than that discussed in the previous subsection because it is not based on a particular microscopic model. Its starting point is the Helmholtz free energy, which Landau asserted can be written in terms of power series expansion of the order parameter <span class="math inline">\(\phi\)</span>:</p>
+<p><span class="math display">\[
+F_(\phi)=\sum_{i=0}^{\infty}a_i\phi^i
+\]</span> The equilibrium value of <span class="math inline">\(\rho\)</span> is that which minimises the Landau free energy.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A note on order parameters
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have already seen examples of these in earlier sections, e.g., for the liquid-gas transition this was <span class="math display">\[
+\rho_{liq} - \rho_{gas}: \quad \textrm{difference in density of two coexisting phases},
+\]</span> while for the Ising magnet it is the magnetisation <span class="math inline">\(m\)</span>. Both quantities vanish at the critical point. These are examples of <em>scalar</em> order parameters – a single number is required to represent the degree of order (<span class="math inline">\(n = 1\)</span>).</p>
+<p>In the absence of a symmetry-breaking field, the Landau free-energy density <span class="math inline">\(f_L\)</span> must have symmetry <span class="math inline">\(f_L(-\phi) = f_L(\phi)\)</span> (Ising case).</p>
+<p>For some other systems, <span class="math inline">\(n\)</span> component vectors are required in order to represent the order:</p>
+<p><span class="math display">\[
+\boldsymbol{\phi} = (\phi_1, \phi_2, \dots, \phi_n)
+\]</span></p>
+<p>Then <span class="math inline">\(f_L(\boldsymbol{\phi})\)</span> should be symmetric under <span class="math inline">\(O(n)\)</span> rotations in <span class="math inline">\(n\)</span>-component <span class="math inline">\(\phi\)</span>-space.</p>
+<p>The table below lists examples of order parameters for various physical systems.</p>
+<table class="table">
+<colgroup>
+<col style="width: 34%">
+<col style="width: 51%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Physical System</th>
+<th>Order Parameter <span class="math inline">\(\varphi\)</span></th>
+<th>Symmetry Group</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Uniaxial (Ising) ferromagnet</td>
+<td>Magnetisation per spin, <span class="math inline">\(m\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="even">
+<td>Fluid (liquid-gas)</td>
+<td>Density difference, <span class="math inline">\(\rho - \rho_c\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Liquid mixtures</td>
+<td>Concentration difference, <span class="math inline">\(c - c_c\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="even">
+<td>Binary (AB) alloy (e.g., <span class="math inline">\(\beta\)</span>-brass)</td>
+<td>Concentration of one of the species, <span class="math inline">\(c\)</span></td>
+<td><span class="math inline">\(O(1)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Isotropic (vector) ferromagnet</td>
+<td><span class="math inline">\(n\)</span>-component magnetisation, <span class="math inline">\(\mathbf{m} = (m_1, m_2, \dots, m_n)\)</span></td>
+<td><span class="math inline">\(O(n)\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\(n = 2\)</span>: <em>xy</em> model</td>
+<td><span class="math inline">\(O(2)\)</span></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><span class="math inline">\(n = 3\)</span>: Heisenberg model</td>
+<td><span class="math inline">\(O(3)\)</span></td>
+</tr>
+<tr class="even">
+<td>Superfluid He<span class="math inline">\(^4\)</span></td>
+<td>Macroscopic condensate wavefunction, <span class="math inline">\(\Psi\)</span></td>
+<td><span class="math inline">\(O(2)\)</span></td>
+</tr>
+<tr class="odd">
+<td>Superconductor (<em>s</em>-wave)</td>
+<td>Macroscopic condensate wavefunction, <span class="math inline">\(\Psi\)</span></td>
+<td><span class="math inline">\(O(2)\)</span></td>
+</tr>
+<tr class="even">
+<td>Nematic liquid crystal</td>
+<td>Orientational order, <span class="math inline">\(\langle P_2(\cos \theta)\rangle\)</span></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Smectic A liquid crystal</td>
+<td>1-dimensional periodic density</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Crystal</td>
+<td>3-dimensional periodic density</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong></p>
+<ol type="i">
+<li>In <strong>superfluid</strong> <span class="math inline">\(^4He\)</span> the order parameter is <span class="math display">\[
+\Psi = |\Psi| e^{i\theta},
+\]</span> the <em>complex wavefunction</em> of the macroscopic condensate.</li>
+</ol>
+<p>Both the amplitude <span class="math inline">\(|\Psi|\)</span> and phase <span class="math inline">\(\theta\)</span> must be specified, so this corresponds to <span class="math inline">\(n = 2\)</span>.<br>
+<strong>Superconductors</strong> also correspond to <span class="math inline">\(n = 2\)</span>.</p>
+<ol start="2" type="i">
+<li>In a <strong>nematic</strong> liquid crystal, the <em>orientational</em> order parameter is <span class="math display">\[
+\langle P_2(\cos \theta) \rangle \equiv \frac{1}{2}\langle 3\cos^2 \theta - 1\rangle,
+\]</span> where <span class="math inline">\(\theta\)</span> is the angle a molecule makes with the average direction of the long axes of the molecules (known as the <em>director</em> <span class="math inline">\(\hat{n}\)</span>). Rotational symmetry is broken. For the case of an <span class="math inline">\(n\)</span> component vector, the free energy should be a function of:</li>
+</ol>
+<p><span class="math display">\[
+\phi^2 \equiv |\boldsymbol{\phi}|^2 = \phi_1^2 + \phi_2^2 + \dots + \phi_n^2 = \sum_{i=1}^n \phi_i^2
+\]</span></p>
+<p>in the absence of a symmetry breaking field. Rotational symmetry is incorporated into the theory.</p>
+<div id="fig-mfsum" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-mfsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mfsum" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-isotropic" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-isotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/isotropic-LC.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-ref-parent="fig-mfsum">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-isotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Schematic of the isotropic liquid phase of a system of elongated molcules
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-mfsum" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-isotropic" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-isotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/nematic-LC.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%" data-ref-parent="fig-mfsum">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-isotropic-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Schematic of the nematic liquid phase of a system elongated molcules. This phase has uniaxial ordering
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mfsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6.5: Isotropic and uniaxially ordered (nematic) phases of liquid crystal molecules.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>To exemplify the approach, let us specialise to the case of a ferromagnet where <span class="math inline">\(\phi=m\)</span>, the magnetisation and write the Landau free energy as</p>
+<p><span id="eq-landau"><span class="math display">\[
+F(m)=F_0+a_2m^2+a_4m^4
 \tag{6.4}\]</span></span></p>
-<p>Here only the terms compatible with the order parameter symmetry are included in the expansion. On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the magnetisation. Terms linear and cubic in <span class="math inline">\(m\)</span> are not invariant under <span class="math inline">\(m\to -m\)</span>, and so do not feature.</p>
+<p>Here only the terms compatible with the order parameter symmetry are included in the expansion and we truncat the series at the 4th power because this is all that is necessary to yield the essential phenomenology. On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the magnetisation. Terms linear and cubic in <span class="math inline">\(m\)</span> are not invariant under <span class="math inline">\(m\to -m\)</span>, and so do not feature.</p>
 <p>One can understand how the Landau free energy can give rise to a critical point and coexistence values of the magnetisation, by plotting <span class="math inline">\(F(m)\)</span> for various values of <span class="math inline">\(a_2\)</span> with <span class="math inline">\(a_4\)</span> assumed positive (which ensures that the magnetisation remains bounded). This is shown in the following movie:</p>
 <!--
 This is shown in @fig-landau.

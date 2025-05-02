@@ -100,9 +100,11 @@ The shape and structure of the final phase often depend on how growth occurs (e.
 
 
 ## Spinodal decomposition
-Previously we have considered a scenario in which we move our system to a statepoint just inside the coexistence region so that the original phase remains metastable. We then wait for a fluctuation that yields a criticalnucleus and subsequent growth. 
+Previously we have considered a scenario in which we move our system to a statepoint just inside the coexistence region so that the original phase remains metastable. 
+We then wait for a fluctuation that yields a critical nucleus and subsequent growth. 
 
-Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region such that there is no metastable minimum in the free energy. They there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
+Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region such that there is no metastable minimum in the free energy. 
+Then there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
 
 The nature of spinodal decomposition and late-time domain growth depends sensitively on whether the order parameter is conserved or not.
 

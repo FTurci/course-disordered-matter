@@ -23,7 +23,7 @@ where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for de
 ## Canonical ensemble 
 
 Applies to a system of $N$ particles in a fixed volume $V$ and coupled to a heat bath at temperature $T$. Denoted as constant-$NVT$. 
-A useful quantity is the *partition function*
+A central quantity is the *partition function*
 
 $$
 Z_{NVT}=\sum_\textrm{ all states i}e^{-\beta E_i},~~~~~\beta=1/(k_BT)
@@ -99,7 +99,7 @@ Statistically, the states favored in the costant-NpT ensemble are those that min
 $$
 F_{NpT}=-\beta^{-1}\ln Z_{NpT}
 $$
-$F_{NpT}$ is known as the Gibb's free energy (often denoted $G$). It can also be derived from thermodynamics, from which one finds
+$F_{NpT}$ is known as the *Gibb's free energy* (often denoted $G$). It can also be derived from thermodynamics, from which one finds
 
 $$
 F_{NpT}=E-TS+pV=\mu N
@@ -112,7 +112,7 @@ $$
 F_{NpT}=E-TS-MH\:,
 $$
  with $M$ the total magnetisation.
-\end{itemize}
+
 
 ## From free energies to observables
 
