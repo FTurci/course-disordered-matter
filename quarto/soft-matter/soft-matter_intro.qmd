@@ -1,21 +1,27 @@
 ---
 title: "Entropy matters"
+bibliography: references.bib
 ---
 
-Most of the matter around us does not simply fit within the idealised pictures of crystallines solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes. 
+Most of the matter around us does not simply fit within the idealised pictures of crystallines solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
 
-This means that cellular **life itself **(the very constituents that make us) obeys to principles that go beyond the standard patters of conventional solid-state physics.
+This means that cellular **life itself** (the very constituents that make us) obeys to principles that go beyond the standard patters of conventional solid-state physics.
 
-
-This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**.
+This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**. Specifically, *sof matter* refers to an area of condensed matter focused on systems that can be *easily deformed*.
 
 While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
 
+::: {.column-margin}
+
+![Pierre-Gilles de Gennes](https://upload.wikimedia.org/wikipedia/commons/f/f6/Pierre-Gilles_crop.jpg)
+
+1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).
+:::
 This is because soft matter systems are typically composed of **many microscopic constituents** in contact with an **environment**. The appropriate description of the **macroscopic state** of such systems is therefore **statistical** and uses the language of **statistical mechanics**. The relevant **energy**, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy
 
 $$F = U-TS$$
 
-where $U$ is the internal energy, $T$ the temperature and $S$ is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales. 
+where $U$ is the internal energy, $T$ the temperature and $S$ is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales.
 
 In other words, **fluctuations of the internal energy** are on the same scale as **thermal fluctuations**:
 
@@ -24,138 +30,67 @@ $$\Delta U \sim k_BT $$
 where $k_B$ is the Bolztmann constant and $\Delta U$ indicates standard deviations from the average internal energy.
 
 
-
 ::: {.callout-note collapse="true"}
-
 # The Physics of Entropy
 
-Soft matter physics is fundamentally the physics of **entropy**. Unlike traditional systems where energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behavior of the system. The interplay between entropy and energy leads to the rich and diverse phenomena observed in soft matter systems.
+Soft matter physics is fundamentally the physics of **entropy**. Unlike traditional systems where interaction energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behaviour of the system. The interplay between entropy and intermolecular energy leads to the rich and diverse phenomena observed in soft matter systems.
 :::
 
-<!-- colloids, polymers and surfactants.  -->
+
+## Systems and definitions
+
+### Elementary constituents and energy scales
+
+Soft matter covers a wide spectrum of deformable systems. Each is constituted of many parts . Each is deformable because the interactions amongst such parts are **weak** compared to the perturbing forces (e.g. thermal fluctuations or mechanical loading).
+
+In hard condensed matter, the elementary constituents are the atoms themselves, eventually with their subatomic particles. Between atoms, the scale of the interaction energies is in the 0.1 to 10 eV: for example the carbon-carbon covalent bond is approximately 3.6  eV. 
+
+The main units of soft matter are not atoms. They are instead themselves aggregates of atoms such as:
+
+- **colloids**, micrometer- to nanometer-sized particles dispersed in a fluid.
+- **polymers**, macromolecules composed of long chains such as DNA, proteins, plastics
+- **surfactants**, macromolecules wuth polar head and tails that lead to the spontaneous formation of structures such as bilayers (e.g. the cellular membrane).  
+
+Amongst such units, the dominating forces of soft matter are much weaker than in hard condensed matter:
+
+- Van der Waals forces are of the order of 0.001-0.01 eV 
+- weak interactions such as hydrogen-bonds are typically in the 0.01-0.2 eV range
+- the thermal energy at room temperature is $k_B T \approx 0.025 eV$ (check it for yourself)
+
+At the **microscopic** level, all these interactions have essentialy one source: the electrostatic force. However, this information is practically of no use when we want to understand how the units of soft matter come together to give rise to **macroscopic** properties of soft matter systems, such as their elastic properties, their viscosities, their plasticity. In fact, the emphasis on the atomistic details of the various units is fundamentally misleading: atomistically very different objects (e.g. colloids and micelles) can in fact share very similar macroscopic behaviours.
+
+Therefore, theories of soft matter leverage the concept of **coarse-graining**, rooted in the renormalisation group notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain the forms the backbone. An example of DNA coarse garining is provided by the succesful model [oxDNA](https://dna.physics.ox.ac.uk/index.php/Main_Page) (see picture below):
+
+![oxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand.](figs/500px-The_model_half)
 
 
-All these systems contain structural units in the colloidal length scale, $1 \mathrm{~nm} \lesssim \mathrm{R} \lesssim 1 \mu \mathrm{~m}$.
+::: {.callout-note collapse="true"}
+# Coarse graining
+Coarse graining is often motivated by intuition, experimental insights or a simple desire of simplification. It allows for a multi-scale description of the problem which permits to describe large systems and log time scales.
 
-### Systems and definitions
+Nonetheless, coarse-graining can also be made mathematically rigorous. For example, rigorous coarse graining in statistical mechanics can be performed by projecting the dynamics onto a relevant and an irrelevant (fluctutating) part, in the so called [**Mori-Zwanzig** formalism](https://en.wikipedia.org/wiki/Mori-Zwanzig_formalism) [@mori1965].
+:::
 
--   A colloid consists of a disperse phase (solid, liquid or gas 'particles') distributed in a finely divided state in a dispersion medium (solid, liquid or gas 'solvent').
+### Classes of systems
 
-| disp. phase  disp. medium | solid | liquid | gas |
-|-----------------|-------------------|---------------------|-----------------|
-| **solid** | **solid suspension**: *pigmented plastics, stained glass, ruby glass, opal, pearl* | **sol, coll. susp.**: *metal sol, toothpaste, paint, ink, clay slurries, mud* | **solid aerosol**: *smoke, dust* |
-| **liquid** | **solid emulsion**: *bituminous road paving, ice cream* | **emulsion**: *milk, mayonnaise, butter, pharmaceutical creams, digestion* | **liquid aerosol**: *fog, mist, tobacco smoke, hair spray* |
-| **gas** | **solid foam**: *zeolites, expanded polystyrene, 'silica gel'* | **foam**: *froths, soap foam, fire-extinguisher* | \- |
+In our exploration of soft matter we will focus on five main classes of systems which display different physics:
 
--   A **polymer** is a large molecule made up of many (hundreds to millions) repeats of a single subunit ('monomer'). It is kept together by covalent chemical bonds. Different architectures exist: linear-chain homopolymers, (block) copolymers, starpolymers, dendrimers etc. We concentrate on linear chains, which also represents the main building block of the other structures. Examples: polyethylene, cellulose, DNA, proteins. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-04.jpg?height=415&width=329&top_left_y=232&top_left_x=235){width="212"} ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-04.jpg?height=421&width=332&top_left_y=229&top_left_x=656)
--   A **surfactant** (SURFace ACTive AgeNT) is a special kind of molecule. In the simplest case, it has a water-loving (hydrophilic) 'head group', and a water-hating (hydrophobic) 'tail'. Above a certain concentration they spontaneously selfassemble into a wide variety of structures, the simplest being a spherical micelle. They associate by (rather weak) physical interactions ('association colloids'). Examples: ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-04.jpg?height=426&width=752&top_left_y=1009&top_left_x=1086){width="334"} Sodium Dodecylsulfate (SDS), lipids.
+- colloidal dispersions
+- polymeric systems
+- liquid crystals
+- surfactant aggregates
+- arrested systems
 
-Note: In general, when in bulk form, the substance forming colloidal particles is quite insoluble in the dispersion medium. However, when the bulk material is broken down into very small pieces it can be dispersed. Such a system is called a lyophobic ('solvent-avoiding') colloid. Some colloidal particles themselves consist of polymers or surfactant assemblies which can easily be dispersed and are thus labelled lyophilic ('solvent-loving'). Mostly when we talk about "colloids", we do not care about the 'internal' structure of the particles, while we are in general interested in the structure of polymers or surfactant assemblies.
+#### Colloidal dispersions {.unnumbered}
+Colloidal dispersions are systems where small particles, typically in the nanometer to micrometer range, are dispersed in a continuous medium (a solvent). Prototypical colloids are **spherical** particles of various sizes (e.g. as those present in paint) but colloidal science has achieved a high degree of sophistication, with colloidal particles with various different shapes and interactions.
 
--   Many liquid-state soft matter system, particular colloids and polymers can be cooled to very low temperatures without crystallizing. At these low temperatures, the typical relaxation times of the particles becomes very high, even on experimental time scales. Thus the liquid-like disorder is "frozen-in" and we refer to the system as a glass.
+Colloids are often thought as **big atoms**: they exhibit Brownian motion, can form ordered structures (colloidal crystals), and display phase transitions similar to atomic systems. However, their larger size and slower dynamics make them ideal for studying phenomena that are difficult to observe in atomic systems. 
 
-### Macromolecules: principal distinguishing features
+#### Polymeric systems {.unnumbered}
 
-#### Size Range ( $1 \mathrm{~nm} \lesssim R \lesssim 1 \mu \mathrm{~m}$ )
+#### Liquid crystals {.unnumbered}
 
-Lower limit (about 1 nm ): This ensures that the size of the dispersed particles is much larger than the size of the molecules forming the dispersion medium. This not only distinguishes colloids from ordinary (true) solutions, but also results in a 'welldefined' interface between the particles and the surrounding medium. Furthermore, (most of the time) this allows us both, to treat the dispersion medium as a continuum and to avoid quantum mechanics.
+#### Surfactant aggregates {.unnumbered}
 
-#### Upper limit (about $1 \mu \mathrm{~m}$ ):
 
--   Balance of thermal and potential energy:
-
-Every particle has thermal energy $\mathrm{E}_{\text {therm }}=(3 / 2) k_{B} T$ and potential energy $E_{\mathrm{pot}}=m g z=(4 \pi / 3) R^{3} \Delta \rho g z$, where $z$ is a characteristic length, e.g. $R$, and $\Delta \rho$ is the density difference between the particle and the dispersion medium. For a significant influence of the thermal energy we need $E_{\mathrm{pot}}<E_{\text {therm }}$ and thus for a typical system $\left(\Delta \rho \approx 0.3 \mathrm{~g} \mathrm{~cm}^{-3}\right): \quad R<\left(9 k_{B} T / 8 \pi \Delta \rho g\right)^{1 / 4} \approx 1 \mu \mathrm{~m}$.
-
-##### Sedimentation:
-
-Gravity will lead to sedimentation of the suspended particles (or creaming, if the density of the particles is lower than the density of the dispersion medium) and to the formation of a dense sediment.
-
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-05.jpg?height=392&width=523&top_left_y=1443&top_left_x=1252){width="313"}
-
-The sedimentation velocity $v_{\text {sed }}$ results from the balance of gravity and hydrodynamic drag:
-
-$$
-\begin{aligned}
-& \quad \text { gravity: } \\
-F_{g}= & m_{\text {part }} g-m_{\text {liq }} g \\
-= & V\left(\rho_{\text {part }}-\rho_{\text {liq }}\right) g \\
-& =V \Delta \rho g \\
-\downarrow & \text { sphere } \\
-& F_{g}=\frac{4 \pi}{3} R^{3} \Delta \rho g
-\end{aligned}
-$$
-
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-05.jpg?height=678&width=530&top_left_y=1900&top_left_x=803){width="276"}
-
-friction (Stokes law): where $m$ is the mass and $\rho$ the density of the particle (part) and liquid (liq), respectively, $\Delta \rho$ the density difference, $V$ the volume and $R$ the radius of the particle, $\eta$ the viscosity, $v$ the sedimentation velocity and $g$ the acceleration due to gravity.
-
-### Brownian motion and random walks
-
-Random collisions with the liquid molecules cause the particle to change its direction of motion rapidly (resulting in 'mixing' the sample). This can be modelled as a random (drunk!) walk of $N$ steps of length $b$ with a random angle between the individual steps. How far from the origin does the particle get in N steps? ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-06.jpg?height=415&width=313&top_left_y=882&top_left_x=868)
-
-Average over many tries (or many particles):
-
-$$
-\left\langle\underline{R}>=\sum_{j=1}^{N}\left\langle\underline{r}_{j}\right\rangle=0 \quad \text { since } \underline{r}_{j}\right. \text { can be in any direction }
-$$
-
-Mean square displacement:
-
-$$
-\begin{aligned}
-&<\underline{R}^{2}>=<\underline{R} \cdot \underline{R}>=<\sum_{j=1}^{N} \underline{r}_{j} \cdot \sum_{k=1}^{N} \underline{r}_{k}>=\sum_{j=1}^{N} \sum_{k=1}^{N}\left\langle\underline{r}_{j} \cdot \underline{r}_{k}>\right. \\
-& j=k:<\underline{r}_{j} \cdot \underline{r}_{k}>=\left\langle\underline{r}_{j}^{2}>=b^{2}\right. \\
-& j \neq k:<\underline{r}_{j} \cdot \underline{r}_{k}>=b^{2}<\cos \theta>=0 \quad \text { since any } \theta \text { in } 0 \leqq \theta \leqq 2 \pi \\
-&<\underline{R}^{2}>=\sum_{j=1}^{N} b^{2}=N b^{2} \propto t \quad \text { since time } t \propto N
-\end{aligned}
-$$
-
-In fact a more careful treatment shows that the root mean-square displacement $<\underline{R}^{2}>1 / 2$ $=\sqrt{2 D t} \propto \sqrt{t}$ where for spherical particles the diffusion constant $D=k_{B} T / 6 \pi \eta R$, where $R$ is the particle radius.
-
-Example: Consider uncharged protein spheres in water ( $\rho$ protein $=1.35 \mathrm{~g} \mathrm{~cm}^{-3}$ ) at $20^{\circ} \mathrm{C}(\eta$ $=1 \mathrm{Ps})$. We can calculate the displacement due to Brownian motion and sedimentation respectively as a function of the particle radius $R$.
-
-For Brownian motion, we have $\left\langle\underline{R}^{2}\right\rangle^{1 / 2}=\sqrt{2 D t}$ with $D=k_{B} T / 6 \pi \eta R$ For sedimentation, we have $v_{\text {sed }}=2 R^{2} \Delta \rho g / 9 \eta$ Hence we can make a plot of displacement versus particle radius.
-
-| R | $\mathrm{D}\left(20^{\circ} \mathrm{C}\right)$ | $\left(\left\langle\underline{R}^{2}\right\rangle\right)^{1 / 2}$ after 1 h |   | $\mathrm{v}_{\text {sed }} \times 1 \mathrm{~h}$ |
-|:-------------:|:-------------:|:-------------:|:-------------:|:-------------:|
-| 1 nm | $2.1 \cdot 10^{-10} \mathrm{~m}^{2} / \mathrm{s}$ | $1230 \mu \mathrm{~m}$ | $>$ | 2.8 nm |
-| 10 nm | $2.1 \cdot 10^{-11} \mathrm{~m}^{2} / \mathrm{s}$ | $390 \mu \mathrm{~m}$ | $>$ | $0.3 \mu \mathrm{~m}$ |
-| 100 nm | $2.1 \cdot 10^{-12} \mathrm{~m}^{2} / \mathrm{s}$ | $123 \mu \mathrm{~m}$ | $>$ | $30 \mu \mathrm{~m}$ |
-| $1 \mu \mathrm{~m}$ | $2.1 \cdot 10^{-13} \mathrm{~m}^{2} / \mathrm{s}$ | $39 \mu \mathrm{~m}$ | $<$ | 3 mm |
-| $10 \mu \mathrm{~m}$ | $2.1 \cdot 10^{-14} \mathrm{~m}^{2} / \mathrm{s}$ | $12 \mu \mathrm{~m}$ | $<$ | 0.3 m |
-
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-07.jpg?height=855&width=1134&top_left_y=1047&top_left_x=493)
-
-More generally we can write down equations which express the probability of finding a particle at a given vector displacement from its starting point. In the limit of a large number of random steps, one finds that in 1 dimension this probability is given by
-
-$$
-P_{N}(x) d x=\frac{1}{\sqrt{2 \pi<(\Delta x)^{2}>}} e^{-\frac{(x-\langle x\rangle)^{2}}{\left.2<(\Delta x)^{2}\right\rangle}} d x \quad \text { A 1d Gaussian distribution }
-$$
-
-This has mean $\langle x\rangle=0$ and variance $\left\langle(\Delta x)^{2}\right\rangle \equiv \sigma^{2}>0$.
-
-In 3 dimensions, the corresponding relation is
-
-$$
-P(\underline{r}) d \underline{r}=\frac{1}{\left(2 \pi \sigma^{2}\right)^{3 / 2}} e^{-r^{2} / 2 \sigma^{2}} d \underline{r}
-$$
-
-The distribution has its first moment at the origin and second moment
-
-$$
-\left\langle\underline{r}^{2}\right\rangle=\int_{-\infty}^{\infty} \underline{r}^{2} P(\underline{r}) d \underline{r}=\frac{1}{\left(2 \pi \sigma^{2}\right)^{3 / 2}} \int_{0}^{\pi} \sin \theta d \theta \int_{0}^{2 \pi} d \phi \int_{0}^{\infty} r^{4} e^{-r^{2} / 2 \sigma^{2}} d r=3 \sigma^{2}
-$$
-
-This latter result can also be obtained in a direct calculation, considering $N$ random steps in x direction, $N$ in y direction and $N$ in z direction with $\left\langle x^{2}\right\rangle=\left\langle y^{2}\right\rangle=\left\langle z^{2}\right\rangle=\sigma^{2}$ and thus $\left\langle\underline{r}^{2}\right\rangle=\left\langle x^{2}\right\rangle+\left\langle y^{2}\right\rangle+\left\langle z^{2}\right\rangle=3 \sigma^{2}=N b^{2}$
-
-### Large interface between dispersed phase and dispersion medium
-
-In commercial terms it is often highly desirable to produce soft matter systems whose (chemical) properties lie somewhere between those of bulk and molecularly dispersed systems, i.e. whose properties are not just the sum of the contributions from the molecules in the bulk phases. To achieve this, a significant proportion of the molecules should lie within or close to the particle-medium interface, which is equivalent to a large surface-to-volume ratio ('microheterogeneous' systems, link to surface science). ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-09.jpg?height=903&width=1063&top_left_y=321&top_left_x=496)
-
-Often colloidal particles have a spherical shape, which allows for a relatively small surface-to-volume ratio, but they may also be ellipsoids (prolate or oblate), discs, rods, fibres, random coils etc.
-
-### Making measurements: Scattering experiments
-
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-09.jpg?height=456&width=1318&top_left_y=1710&top_left_x=238)
-
-The most commonly used experimental tool for studying soft matter systems is scattering. The experiment may utilize light, neutrons or X-rays as the scattering probe. Due to the random arrangement of particles, a random diffraction pattern is observed. This fluctuates as particles move in Brownian motion. The scattered intensity as measured under a certain scattering angle will thus also fluctuate with time (given the detector area is small enough).
+#### Arrested systems {.unnumbered}
