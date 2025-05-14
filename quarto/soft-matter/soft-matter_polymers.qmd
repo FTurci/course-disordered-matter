@@ -1,15 +1,74 @@
 ---
 title: "Polymers"
-
+bibliography: references.bib
 ---
 
-### Chemical structure
+## General molecular properties
 
-A polymer is a large molecule made up of many small, simple chemical units, joined together by chemical bonds. The basic unit of this sequence is called a 'monomer', and the number of units in the sequence is called the 'degree of polymerisation'. It is possible to have polymers containing over $10^{5}$ units and there are naturally occurring polymers with a degree of polymerisation exceeding $10^{9}$. For example, polystyrene with a degree of polymerisation of $10^{5}$ has a molecular weight of about $10^{7} \mathrm{~g} / \mathrm{mol}$ and, if fully stretched out, would be about 25 $\mu \mathrm{m}$ long.
-Polymers play a central role in many fields, ranging from technology to biology. This is reflected in a huge number of different chemical structures. Given this manifold and the complexity of polymer molecules, the theories are astonishingly simple. This is possible because of the characteristic feature of polymers: The molecule itself is very large and the macroscopic behaviour is dominated by this large-scale property of the molecule. A description of the 'fine structure' of the behaviour of real polymers, however, is not attempted by (most of) these theories.
-Polymers exist in very different architectures, such as linear, branched, star or cross-linked (see Chapter 1). Furthermore, a large variation in the chemical structure may be achieved by combining different monomers (copolymerisation). Then for the coupling of two monomeric units in the chain two limiting cases exist; statistical or block structure. We will focus on linear homopolymers, i.e. no branch points and all subunits are the same.
+A polymer is a **large molecule** made up of many small, simple chemical units, joined together by chemical bonds. The basic unit of this sequence is called a **monomer**, and the number of units in the sequence is called the **degree of polymerisation**. 
+
+It is possible to have polymers containing over $10^{5}$ units and there are naturally occurring polymers with a degree of polymerisation exceeding $10^{9}$. For example, polystyrene with a degree of polymerisation of $10^{5}$ has a molecular weight of about $10^{7} \mathrm{~g} / \mathrm{mol}$ and, if fully stretched out, would be about 25 $\mu \mathrm{m}$ long.
+
+
+Polymers play a central role in many fields, ranging from technology to biology. This is reflected in a huge number of different chemical structures. Given this manifold and the complexity of polymer molecules, the theories are astonishingly simple. This is possible because of the characteristic feature of polymers: The molecule itself is **very large** (compared to the individual units) and the macroscopic behaviour is dominated by this large-scale property of the molecule. Theories focus on such *large-scale* properties, whereas the small scale *fine structure* is typicaly resolved by computer simulations.
+
+Polymers exist in very different architectures, such as 
+
+- **linear**: straight chains of repeating units (e.g., polyethylene).
+
+- **branched**: polymers with a main chain and side chains (branches) attached. The branching affects properties like density and melting point (e.g., low-density polyethylene).
+
+- **star**: polymers with multiple linear chains (arms) radiating from a central core. These structures can have unique properties like lower viscosity.
+
+- **cross-linked**: polymers where chains are interconnected by covalent bonds, forming a network. This structure makes them rigid and heat-resistant (e.g., vulcanized rubber).
+
+Furthermore, a large variation in the chemical structure may be achieved by combining different monomers (**copolymerisation**). 
+
+Then for the coupling of two monomeric units in the chain two limiting cases exist; statistical or block structure [IMPROVE]. 
+
+We will focus on linear homopolymers, i.e. no branch points and all subunits are the same.
 
 ### Examples:
+
+
+```{=html}
+<script src="https://unpkg.com/kekule/dist/kekule.min.js"></script>
+
+<!-- Canvas to draw the structure -->
+<div id="pmma" style="width: 400px; height: 300px;"></div>
+
+<script>
+  // Corrected function to create a molecule from SMILES
+var mol = new Kekule.Molecule();
+
+// add atoms to molecule
+mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0, y: 0.80}));
+// explicit set mass number of an atom
+mol.appendNode(new Kekule.Atom().setSymbol('C').setMassNumber(13).setCoord2D({x: -0.69, y: 0.40}));
+mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: -0.69, y: -0.40}));
+// a pseudo atom
+mol.appendNode(new Kekule.Pseudoatom().setAtomType(Kekule.PseudoatomType.ANY).setCoord2D({x: 0, y: -0.80}));
+mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0.69, y: -0.40}));
+mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0.69, y: 0.40}));
+// a variable atom
+mol.appendNode(new Kekule.VariableAtom().setAllowedIsotopeIds(['F', 'Cl', 'Br']).setCoord2D({x: 1.39, y: 0.80}));
+
+// add bonds to molecule
+//   here a shortcut method appendBond(atomIndexes, bondOrder) is used
+mol.appendBond([0, 1], 1);
+mol.appendBond([1, 2], 2);
+mol.appendBond([2, 3], 1);
+mol.appendBond([3, 4], 2);
+mol.appendBond([4, 5], 1);
+mol.appendBond([5, 0], 2);
+mol.appendBond([5, 6], 1);
+var chemViewer = new Kekule.ChemWidget.Viewer(document);
+chemViewer.setDimension('500px', '400px');
+chemViewer.appendToElem(document.getElementById('parent')).setChemObj(mol);
+</script>
+```
+
+
 
 | Polyethylene (PE) | Poly(methyl methacrylate) <br> (PMMA) |
 | :---: | :---: |

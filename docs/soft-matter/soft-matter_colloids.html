@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -346,7 +366,7 @@ window.Quarto = {
   <li><a href="#kinds-of-colloids" id="toc-kinds-of-colloids" class="nav-link active" data-scroll-target="#kinds-of-colloids"><span class="header-section-number">16.1</span> Kinds of colloids</a></li>
   <li><a href="#interactions" id="toc-interactions" class="nav-link" data-scroll-target="#interactions"><span class="header-section-number">16.2</span> Interactions</a></li>
   <li><a href="#colloids-as-big-atoms" id="toc-colloids-as-big-atoms" class="nav-link" data-scroll-target="#colloids-as-big-atoms"><span class="header-section-number">16.3</span> Colloids as big atoms</a></li>
-  <li><a href="#the-prototype-hard-sphere-colloids" id="toc-the-prototype-hard-sphere-colloids" class="nav-link" data-scroll-target="#the-prototype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The prototype: hard-sphere colloids</a></li>
+  <li><a href="#the-archetype-hard-sphere-colloids" id="toc-the-archetype-hard-sphere-colloids" class="nav-link" data-scroll-target="#the-archetype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The archetype: hard-sphere colloids</a></li>
   <li><a href="#phase-coexistence" id="toc-phase-coexistence" class="nav-link" data-scroll-target="#phase-coexistence"><span class="header-section-number">16.5</span> Phase coexistence</a>
   <ul class="collapse">
   <li><a href="#characterising-the-fluid-phase" id="toc-characterising-the-fluid-phase" class="nav-link" data-scroll-target="#characterising-the-fluid-phase"><span class="header-section-number">16.5.1</span> Characterising the fluid phase</a></li>
@@ -490,22 +510,27 @@ Foam:<br>froths, soap foam,<br>fire-extinguisher foam
 </td>
 </tr>
 </tbody></table>
-<p>Clearly, collidal materials form an incredibly diverse class, and surround us in oure everyday lives. Here are some visual examples from the table above:</p>
+<p>Clearly, colloidal materials form an incredibly diverse class, and surround us in our everyday lives. Here are some visual examples from the table above:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/colloids.png" class="img-fluid figure-img"></p>
 <figcaption>First row: opal, paint, smoke. Middle row: ice-cream (<em>gelato</em>), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com</figcaption>
 </figure>
 </div>
+<p>The <a href="https://goldbook.iupac.org/terms/view/C01172">IUPAC definition of colloids</a> is based on the idea that the particles are dispersed in a medium, creating a <em>subdivision</em> at the <strong>colloidal scale</strong>: approximately 1nm to 1µm.</p>
+<p>The small sizes of colloids means that they are constantly subject to the collisions with the atom/molecules/particle of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html">Brownian motion</a>. For each particle, the amount of energy received from the medium is of the order of <span class="math inline">\(k_B T\)</span> (the reference energy scale of thermal soft matter). This energy can be compared with the the potential energy to produce a dimensionless number, the <strong>gravitational Péclet number</strong></p>
+<p><span class="math display">\[{\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the radius of the colloid respectively, <span class="math inline">\(g\)</span> is the acceleration due to gravity, and <span class="math inline">\(\Delta m\)</span> is the <em>buoyant mass</em>, which for a spherical colloid is expressed as <span class="math inline">\(\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3\)</span>, with <span class="math inline">\(\Delta \rho\)</span> being the density difference between the particle and the dispersion medium (the <em>solvent</em>). We have a colloidal suspension only when <span class="math inline">\({\rm Pe}_g \lesssim 1\)</span>, i.e.&nbsp;when Brownian motion is only marginally perturbed by the effects of gravity.</p>
 </section>
 <section id="interactions" class="level2" data-number="16.2">
 <h2 data-number="16.2" class="anchored" data-anchor-id="interactions"><span class="header-section-number">16.2</span> Interactions</h2>
+<p>See <span class="citation" data-cites="lekkerkerker2024colloids">(<a href="#ref-lekkerkerker2024colloids" role="doc-biblioref">Lekkerkerker, Tuinier, and Vis 2024</a>)</span></p>
 </section>
 <section id="colloids-as-big-atoms" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="colloids-as-big-atoms"><span class="header-section-number">16.3</span> Colloids as big atoms</h2>
 </section>
-<section id="the-prototype-hard-sphere-colloids" class="level2" data-number="16.4">
-<h2 data-number="16.4" class="anchored" data-anchor-id="the-prototype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The prototype: hard-sphere colloids</h2>
+<section id="the-archetype-hard-sphere-colloids" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="the-archetype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The archetype: hard-sphere colloids</h2>
 </section>
 <section id="phase-coexistence" class="level2" data-number="16.5">
 <h2 data-number="16.5" class="anchored" data-anchor-id="phase-coexistence"><span class="header-section-number">16.5</span> Phase coexistence</h2>
@@ -650,6 +675,11 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-lekkerkerker2024colloids" class="csl-entry" role="listitem">
+Lekkerkerker, Henk NW, Remco Tuinier, and Mark Vis. 2024. <em>Colloids and the Depletion Interaction</em>. Springer Nature.
+</div>
+</div>
 </section>
 </section>
 </section>

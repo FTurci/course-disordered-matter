@@ -1,6 +1,6 @@
 ---
 title: "Colloids"
-
+bibliography: references.bib
 ---
 
 ## Kinds of colloids
@@ -80,20 +80,32 @@ Colloids can be classified based on the state of the **dispersed phase** and the
 </table>
 
 
-Clearly, collidal materials form an incredibly diverse class, and surround us in oure everyday lives. Here are some visual examples from the table above:
+Clearly, colloidal materials form an incredibly diverse class, and surround us in our everyday lives. Here are some visual examples from the table above:
 
 ![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com ](figs/colloids.png)
 
 
+The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**: approximately 1nm to 1µm.
+
+The small sizes of colloids means that they are constantly subject to the collisions with the atom/molecules/particle of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $k_B T$ (the reference energy scale of thermal soft matter). This energy can be compared with the the potential energy to produce a dimensionless number, the **gravitational Péclet number**
+
+
+ $${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
+
+where $R$ is the radius of the colloid respectively,   $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with  $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only marginally perturbed by the effects of gravity.
 
 
 ## Interactions
 
 
+See [@lekkerkerker2024colloids]
+
 ## Colloids as big atoms
 
 
-## The prototype: hard-sphere colloids
+
+
+## The archetype: hard-sphere colloids
 
 ## Phase coexistence
 
