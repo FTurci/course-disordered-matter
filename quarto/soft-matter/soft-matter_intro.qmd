@@ -3,11 +3,13 @@ title: "Entropy matters"
 bibliography: references.bib
 ---
 
-Most of the matter around us does not simply fit within the idealised pictures of crystallines solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
+Most of the matter around us does not simply fit within the idealised pictures of crystalline solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
 
 This means that cellular **life itself** (the very constituents that make us) obeys to principles that go beyond the standard patters of conventional solid-state physics.
 
-This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**. Specifically, *sof matter* refers to an area of condensed matter focused on systems that can be *easily deformed*.
+This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**. Specifically, *sof matter* refers to an area of condensed matter focused on systems that can be *easily deformed*. 
+
+In this course, we will emphasize the fact that many such systems are not crystalline: thermal noise and disordered configurations play a key role in their phase behavior, and hence we think of them as **complex disordered systems**.
 
 While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
 
@@ -73,24 +75,211 @@ Nonetheless, coarse-graining can also be made mathematically rigorous. For examp
 
 ### Classes of systems
 
-In our exploration of soft matter we will focus on five main classes of systems which display different physics:
+In our exploration of soft matter we will focus on six main classes of systems which display different physics:
 
 - colloidal dispersions
 - polymeric systems
 - liquid crystals
 - surfactant aggregates
 - arrested systems
+- active matter
 
 #### Colloidal dispersions {.unnumbered}
+
 Colloidal dispersions are systems where small particles, typically in the nanometer to micrometer range, are dispersed in a continuous medium (a solvent). Prototypical colloids are **spherical** particles of various sizes (e.g. as those present in paint) but colloidal science has achieved a high degree of sophistication, with colloidal particles with various different shapes and interactions.
 
 Colloids are often thought as **big atoms**: they exhibit Brownian motion, can form ordered structures (colloidal crystals), and display phase transitions similar to atomic systems. However, their larger size and slower dynamics make them ideal for studying phenomena that are difficult to observe in atomic systems. 
 
 #### Polymeric systems {.unnumbered}
 
+Polymer physics is a field on its own. Polymers are macromolecules composed of repeating structural units (monomers) connected by covalent bonds. Their unique properties arise from their string-like structure and the interplay between entropic and energetic contributions.
+
+Polymers can be classified into two main categories:
+
+- **Synthetic polymers**, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.
+- **Biopolymers**, such as polymers like DNA, RNA, and proteins.
+
+
+```{python} 
+
+import py3Dmol
+
+pdb_id = "1XQ8"  # Human micelle-bound alpha-synuclein, an analog of long polymers 
+# Fetch the PDB structure from the RCSB PDB server
+view = py3Dmol.view(query='pdb:' + pdb_id)
+# Customize visualization (you can change the style or the color)
+view.setStyle({}, {'sphere': {'color': 'spectrum'}});
+view.setBackgroundColor('white')  # Set background color to white
+view.show()
+```
+*3D Rendering the bio-polymer synuclein as extracted from the [RCSB Protein Data Bank](https://www.rcsb.org) (click to rotate)*.
+
+Compared to colloids, polymers have distiunctive characteristics common to all chain-like molecules, such as their topological constraints due to teh fact that two polymers cannot cross each other (a phenomenon known as *polymer entanglement*).
+
 #### Liquid crystals {.unnumbered}
+
+When we take soft matter units that are highly anisotropic (e.g. elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states woth a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal. 
+
+Such states are referred to as **liquid crystal** and can be described successffully with continuum free energy theories that take into account the symmetries of the order parameters.
+
+Components that form liquid crystals are called **mesogens** and  include highly anisotropic organic macromolecules (as used in liquid crystal displays), rod-like molecules or polymeric aggregates, as well as disk-shaped molecules and particles(such as triphenylene and derivatives).
 
 #### Surfactant aggregates {.unnumbered}
 
+When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called **surfactants**.
+
+Hence, surfactants are molecules which contain chemical groups with different affinities (they are **amphiphilic**). A key example is the case of phospholipids, which posses both hydrophilic (water-preferring) heads and hyrdrophobic (water avoiding) tails. As surfactants sit at inetrface they are able to **self-assemble** and separate different fluid phases, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.
+
 
 #### Arrested systems {.unnumbered}
+
+We have stressed that the thermal energy is distinctive of soft matter systems. It would be then natural to assume that as we reduce the temperature, we should converge readily to the solid state physics of crystalline solids. In fact, on the way to low temperatures, the lack of long-range order of most soft-matter systems has important consequences: many such systems find themselves trapped in states that are not corresponding to the global energy minimum (i.e. the crystal) and instead display non trivial mechanisms of structural relaxation. These systems are disordered a bit like liquids, but share various mechanical properties, such as emergence rigidity, elasticity and plasticity. 
+
+Examples of arrested systems include:
+
+- **Glasses**, such as silica glass or metallic glasses, where the system is kinetically trapped in a disordered state.
+- **Gels**, which are networks of interconnected particles or polymers that span the entire system, providing rigidity despite being mostly liquid.
+
+These systems are arrested as their relaxation towards equilibrium is so slow that is longer than any observable timescales. This makes them fundamentally **out-of-equilibrium** systems, escaping from an ordinary description in terms of equilibrium statistical mechanics.
+
+
+#### Active matter {.unnumbered}
+
+Active matter refers to systems composed of units that consume energy to generate motion or mechanical stresses. Unlike passive systems, active matter is inherently out of equilibrium due to the continuous energy input at the microscopic level. Examples include:
+
+- **Biological systems**, such as bacterial colonies, cell tissues, and flocks of birds.
+- **Synthetic systems**, like self-propelled colloids or active gels.
+
+The study of active matter focuses on understanding how individual activity leads to emergent collective behaviors, such as swarming, clustering, or pattern formation, often described using hydrodynamic theories or agent-based models.
+
+<!--  Hard disks in observablejs
+
+```{ojs}
+//| echo: false
+viewof N = Inputs.range([8, 512], {
+  label: "Number of disks",
+  step: 1,
+  value: 64
+})
+```
+
+```{ojs}
+//| echo: false
+// Cell: MC steps
+viewof steps = Inputs.range([1, 100000], {
+  label: "MC steps",
+  step: 100,
+  value: 1000
+})
+```
+```{ojs}
+//| echo: false
+// Cell: Density
+viewof density = Inputs.range([0.02, 0.8], {
+  label: "Density",
+  step: 0.01,
+  value: 0.4
+})
+```
+```{ojs}
+//| echo: false
+// Cell: Disk radius (can be constant or adjustable)
+diskRadius = 0.5
+```
+
+
+```{ojs}
+//| echo: false
+// Cell 2: Initialize positions
+function initPositions(N, L, r) {
+  const positions = [];
+  let attempts = 0;
+  while (positions.length < N && attempts < 10000000) {
+    const x = Math.random() * L;
+    const y = Math.random() * L;
+    if (positions.every(p => {
+      const dx = x - p[0];
+      const dy = y - p[1];
+      return dx * dx + dy * dy > 4 * r * r;
+    })) {
+      positions.push([x, y]);
+    }
+    attempts++;
+  }
+  return positions;
+}
+```
+
+```{ojs}
+//| echo: false
+// Cell 3: MC step
+function mcStep(positions, L, r) {
+  const i = Math.floor(Math.random() * positions.length);
+  const dx = (Math.random() - 0.5);
+  const dy = (Math.random() - 0.5);
+  const [x, y] = positions[i];
+  const xNew = (x + dx + L) % L;
+  const yNew = (y + dy + L) % L;
+
+  for (let j = 0; j < positions.length; j++) {
+    if (j === i) continue;
+    const [xj, yj] = positions[j];
+    const dx = (xNew - xj + L/2) % L - L/2;
+    const dy = (yNew - yj + L/2) % L - L/2;
+    if (dx * dx + dy * dy < 4 * r * r) return positions; // reject move
+  }
+
+  positions[i] = [xNew, yNew]; // accept
+  return positions;
+}
+
+```
+
+```{ojs}
+//| echo: false
+// Cell: Run simulation on demand
+function runSimulation(N, steps, density, diskRadius) {
+  const L = Math.sqrt(N * Math.PI * diskRadius ** 2 / density);
+  let pos = initPositions(N, L, diskRadius);
+  for (let i = 0; i < steps; i++) mcStep(pos, L, diskRadius);
+  return {positions: pos, boxSize: L};
+}
+
+```
+```{ojs}
+sim = runSimulation(N,steps,density,diskRadius)
+```
+```{ojs}
+//| echo: false
+function plotter(width, height){
+
+let   scale = width / sim.boxSize;
+console.log("Done. Density:", density)
+return Plot.plot({
+  x: {domain: [0, sim.boxSize]},
+  y: {domain: [0, sim.boxSize]},
+
+  marks: [
+    Plot.dot(sim.positions.map(([x, y]) => ({
+      x,
+      y,
+    })),
+     {
+      x: "x",
+      y: "y",
+      r: diskRadius*scale,
+      stroke: null,
+      fill: "steelblue"
+    })
+  ],
+  width: width,
+  height: height
+})
+}
+
+```
+
+```{ojs}
+//| echo: false
+plotter(400,400)
+``` -->

@@ -56,8 +56,8 @@ book:
 
     - part: "Complex disordered systems"
       chapters:
-        - href: soft-matter/soft-matter_plan.qmd
-          text: "Plan"
+        # - href: soft-matter/soft-matter_plan.qmd
+        #   text: "Plan"
         - href: soft-matter/soft-matter_intro.qmd
           text: "Entropy matters"
         - href: soft-matter/soft-matter_colloids.qmd
