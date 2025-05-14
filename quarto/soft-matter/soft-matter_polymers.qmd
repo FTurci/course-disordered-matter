@@ -1,7 +1,11 @@
 ---
 title: "Polymers"
+format:
+  html:
+    code-copy: true
 bibliography: references.bib
 ---
+
 
 ## General molecular properties
 
@@ -11,6 +15,8 @@ It is possible to have polymers containing over $10^{5}$ units and there are nat
 
 
 Polymers play a central role in many fields, ranging from technology to biology. This is reflected in a huge number of different chemical structures. Given this manifold and the complexity of polymer molecules, the theories are astonishingly simple. This is possible because of the characteristic feature of polymers: The molecule itself is **very large** (compared to the individual units) and the macroscopic behaviour is dominated by this large-scale property of the molecule. Theories focus on such *large-scale* properties, whereas the small scale *fine structure* is typicaly resolved by computer simulations.
+
+
 
 Polymers exist in very different architectures, such as 
 
@@ -26,49 +32,35 @@ Furthermore, a large variation in the chemical structure may be achieved by comb
 
 Then for the coupling of two monomeric units in the chain two limiting cases exist; statistical or block structure [IMPROVE]. 
 
-We will focus on linear homopolymers, i.e. no branch points and all subunits are the same.
-
-### Examples:
+For simplicity, we will focus on **linear homopolymers**, i.e. with no branch points and with all identical subunits.
 
 
-```{=html}
-<script src="https://unpkg.com/kekule/dist/kekule.min.js"></script>
 
-<!-- Canvas to draw the structure -->
-<div id="pmma" style="width: 400px; height: 300px;"></div>
+### Example structures
 
-<script>
-  // Corrected function to create a molecule from SMILES
-var mol = new Kekule.Molecule();
-
-// add atoms to molecule
-mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0, y: 0.80}));
-// explicit set mass number of an atom
-mol.appendNode(new Kekule.Atom().setSymbol('C').setMassNumber(13).setCoord2D({x: -0.69, y: 0.40}));
-mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: -0.69, y: -0.40}));
-// a pseudo atom
-mol.appendNode(new Kekule.Pseudoatom().setAtomType(Kekule.PseudoatomType.ANY).setCoord2D({x: 0, y: -0.80}));
-mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0.69, y: -0.40}));
-mol.appendNode(new Kekule.Atom().setSymbol('C').setCoord2D({x: 0.69, y: 0.40}));
-// a variable atom
-mol.appendNode(new Kekule.VariableAtom().setAllowedIsotopeIds(['F', 'Cl', 'Br']).setCoord2D({x: 1.39, y: 0.80}));
-
-// add bonds to molecule
-//   here a shortcut method appendBond(atomIndexes, bondOrder) is used
-mol.appendBond([0, 1], 1);
-mol.appendBond([1, 2], 2);
-mol.appendBond([2, 3], 1);
-mol.appendBond([3, 4], 2);
-mol.appendBond([4, 5], 1);
-mol.appendBond([5, 0], 2);
-mol.appendBond([5, 6], 1);
-var chemViewer = new Kekule.ChemWidget.Viewer(document);
-chemViewer.setDimension('500px', '400px');
-chemViewer.appendToElem(document.getElementById('parent')).setChemObj(mol);
-</script>
-```
+Here below you can see the chemical structures of (sections) of a few common polymers. Hovering on the diagram should highlight the repeated units.
 
 
+::: {.callout-note collapse="true"}
+# How to use the visualisers
+Cick on the 🔧 symbol to change customise the visualisation:
+
+- you should see a **State Tree** to your left
+- click on the last item (highlighte din light blue, by default *Ball & Stick*)
+- click on *Update 3D representation* and select a suitable *Type*. For example the **Cartoon** mode will correspond to the kinnd of coarse graining we will have in mind when talking about polymer chains.
+:::
+
+#### Polystyrene  $\rm (C_8H_8)_n$ {.unnumbered}
+
+{{< mol-url ./figs/Polystyrene.pdb >}}
+
+
+#### Poly(methyl methacrylate) (PMMA) $\rm (C_5H_8O_2)_n$ {.unnumbered}
+
+This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very common material also to fabricate colloids (PMMA particles).
+
+{{< mol-url ./figs/polyEthylMethacrylate3.pdb >}}
+<!-- 
 
 | Polyethylene (PE) | Poly(methyl methacrylate) <br> (PMMA) |
 | :---: | :---: |
@@ -351,4 +343,4 @@ In this case the concentration is very close to the bulk density and the polymer
 
 #### Bulk polymers:
 
-Bulk polymers are divided into two main classes, characterised by whether they are cross-linked or not. There are elastomers or rubbers with a low degree of cross-linking and thermosets with a high degree of cross-linking. We will investigate the behaviour of rubbers in the next chapter. The second class are thermoplastics, which are not cross-linked. Most everyday plastic products are thermoplastics. We will briefly discuss their behaviour upon cooling, which shows similarities to the behaviour of colloids. At high temperature the free energy is dominated by the entropic terms. The melt resembles a random assembly of mobile, intertwined, flexible coils with a density similar to the density of the corresponding monomer liquid. Upon cooling the potential energy takes over and the bonds are restricted in their rotation leading to configurations which are more straightened out. Below the melting temperature $\mathrm{T}_{\mathrm{m}}$, a crystal is the lowest free energy state. Crystallisation, however, requires significant ordering of the initially random melt and is only possible if cooling occurs slow enough. If the melt is rapidly cooled below the glass transition temperature $T_{g}\left(<T_{m}\right)$, then instead of a crystal a glass is formed, which represents an amorphous metastable, but long-lived state. Although the polymers can still vibrate, they can no longer move. Solid thermoplastics are frequently a mixture of crystalline and amorphous structures.
+Bulk polymers are divided into two main classes, characterised by whether they are cross-linked or not. There are elastomers or rubbers with a low degree of cross-linking and thermosets with a high degree of cross-linking. We will investigate the behaviour of rubbers in the next chapter. The second class are thermoplastics, which are not cross-linked. Most everyday plastic products are thermoplastics. We will briefly discuss their behaviour upon cooling, which shows similarities to the behaviour of colloids. At high temperature the free energy is dominated by the entropic terms. The melt resembles a random assembly of mobile, intertwined, flexible coils with a density similar to the density of the corresponding monomer liquid. Upon cooling the potential energy takes over and the bonds are restricted in their rotation leading to configurations which are more straightened out. Below the melting temperature $\mathrm{T}_{\mathrm{m}}$, a crystal is the lowest free energy state. Crystallisation, however, requires significant ordering of the initially random melt and is only possible if cooling occurs slow enough. If the melt is rapidly cooled below the glass transition temperature $T_{g}\left(<T_{m}\right)$, then instead of a crystal a glass is formed, which represents an amorphous metastable, but long-lived state. Although the polymers can still vibrate, they can no longer move. Solid thermoplastics are frequently a mixture of crystalline and amorphous structures. --> 
