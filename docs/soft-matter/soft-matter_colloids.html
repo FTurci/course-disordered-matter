@@ -343,12 +343,21 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link active" data-scroll-target="#brownian-motion"><span class="header-section-number">16.0.1</span> Brownian Motion</a></li>
-  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history"><span class="header-section-number">16.0.2</span> Brief history:</a></li>
-  <li><a href="#diffusion" id="toc-diffusion" class="nav-link" data-scroll-target="#diffusion"><span class="header-section-number">16.0.3</span> Diffusion</a></li>
-  <li><a href="#stokes-einstein-relation" id="toc-stokes-einstein-relation" class="nav-link" data-scroll-target="#stokes-einstein-relation"><span class="header-section-number">16.0.4</span> Stokes-Einstein relation</a></li>
-  <li><a href="#interacting-colloidal-particles" id="toc-interacting-colloidal-particles" class="nav-link" data-scroll-target="#interacting-colloidal-particles"><span class="header-section-number">16.0.5</span> Interacting colloidal particles</a></li>
-  <li><a href="#particle-dynamics" id="toc-particle-dynamics" class="nav-link" data-scroll-target="#particle-dynamics"><span class="header-section-number">16.0.6</span> Particle dynamics</a></li>
+  <li><a href="#kinds-of-colloids" id="toc-kinds-of-colloids" class="nav-link active" data-scroll-target="#kinds-of-colloids"><span class="header-section-number">16.1</span> Kinds of colloids</a></li>
+  <li><a href="#interactions" id="toc-interactions" class="nav-link" data-scroll-target="#interactions"><span class="header-section-number">16.2</span> Interactions</a></li>
+  <li><a href="#colloids-as-big-atoms" id="toc-colloids-as-big-atoms" class="nav-link" data-scroll-target="#colloids-as-big-atoms"><span class="header-section-number">16.3</span> Colloids as big atoms</a></li>
+  <li><a href="#the-prototype-hard-sphere-colloids" id="toc-the-prototype-hard-sphere-colloids" class="nav-link" data-scroll-target="#the-prototype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The prototype: hard-sphere colloids</a></li>
+  <li><a href="#phase-coexistence" id="toc-phase-coexistence" class="nav-link" data-scroll-target="#phase-coexistence"><span class="header-section-number">16.5</span> Phase coexistence</a>
+  <ul class="collapse">
+  <li><a href="#characterising-the-fluid-phase" id="toc-characterising-the-fluid-phase" class="nav-link" data-scroll-target="#characterising-the-fluid-phase"><span class="header-section-number">16.5.1</span> Characterising the fluid phase</a></li>
+  <li><a href="#dynamics-collective-and-single-particle-displacements" id="toc-dynamics-collective-and-single-particle-displacements" class="nav-link" data-scroll-target="#dynamics-collective-and-single-particle-displacements"><span class="header-section-number">16.5.2</span> Dynamics: collective and single particle displacements</a></li>
+  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion"><span class="header-section-number">16.5.3</span> Brownian Motion</a></li>
+  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history"><span class="header-section-number">16.5.4</span> Brief history:</a></li>
+  <li><a href="#diffusion" id="toc-diffusion" class="nav-link" data-scroll-target="#diffusion"><span class="header-section-number">16.5.5</span> Diffusion</a></li>
+  <li><a href="#stokes-einstein-relation" id="toc-stokes-einstein-relation" class="nav-link" data-scroll-target="#stokes-einstein-relation"><span class="header-section-number">16.5.6</span> Stokes-Einstein relation</a></li>
+  <li><a href="#interacting-colloidal-particles" id="toc-interacting-colloidal-particles" class="nav-link" data-scroll-target="#interacting-colloidal-particles"><span class="header-section-number">16.5.7</span> Interacting colloidal particles</a></li>
+  <li><a href="#particle-dynamics" id="toc-particle-dynamics" class="nav-link" data-scroll-target="#particle-dynamics"><span class="header-section-number">16.5.8</span> Particle dynamics</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -374,15 +383,150 @@ window.Quarto = {
 </header>
 
 
-<section id="brownian-motion" class="level3" data-number="16.0.1">
-<h3 data-number="16.0.1" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">16.0.1</span> Brownian Motion</h3>
+<section id="kinds-of-colloids" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="kinds-of-colloids"><span class="header-section-number">16.1</span> Kinds of colloids</h2>
+<p>Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.</p>
+<p>Colloids can be classified based on the state of the <strong>dispersed phase</strong> and the <strong>dispersion medium</strong>. Depending on the particular mixture, one can obtain a wide variety of soft materials, with unique mechanical, optical, and thermal properties.</p>
+<style>
+.rotate-header {
+    writing-mode: vertical-rl;
+    transform: rotate(-90deg);
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 1px;
+    width: 0.5em;
+      font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.2;
+  }
+  .header {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 1px;
+    width: 0.5em;
+      font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.2;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 0px solid black;
+    padding: 2px;
+    vertical-align: top;
+  }
+</style>
+<table>
+<tbody><tr>
+<th rowspan="5" class="rotate-header">
+Dispersion Phase
+</th>
+<th>
+</th>
+<th colspan="3" class="header">
+Dispersion Medium
+</th>
+</tr>
+<tr>
+<th>
+</th>
+<th>
+Solid
+</th>
+<th>
+Liquid
+</th>
+<th>
+Gas
+</th>
+</tr>
+<tr>
+<th>
+Solid
+</th>
+<td>
+Solid suspension:<br>pigmented plastics,<br>stained glass,<br>ruby glass, opal, pearl
+</td>
+<td>
+Sol, colloidal suspension:<br>metal sol,<br>toothpaste, paint,<br>ink, clay slurries, mud
+</td>
+<td>
+Solid aerosol:<br>smoke, dust
+</td>
+</tr>
+<tr>
+<th>
+Liquid
+</th>
+<td>
+Solid emulsion:<br>bituminous road paving,<br>ice cream
+</td>
+<td>
+Emulsion:<br>milk, mayonnaise,<br>butter, pharmaceutical creams
+</td>
+<td>
+Liquid aerosol:<br>fog, mist, tobacco smoke,<br>hair spray
+</td>
+</tr>
+<tr>
+<th>
+Gas
+</th>
+<td>
+Solid foam:<br>zeolites, expanded polystyrene,<br>‘silica gel’
+</td>
+<td>
+Foam:<br>froths, soap foam,<br>fire-extinguisher foam
+</td>
+<td>
+—
+</td>
+</tr>
+</tbody></table>
+<p>Clearly, collidal materials form an incredibly diverse class, and surround us in oure everyday lives. Here are some visual examples from the table above:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/colloids.png" class="img-fluid figure-img"></p>
+<figcaption>First row: opal, paint, smoke. Middle row: ice-cream (<em>gelato</em>), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com</figcaption>
+</figure>
+</div>
 </section>
-<section id="brief-history" class="level3" data-number="16.0.2">
-<h3 data-number="16.0.2" class="anchored" data-anchor-id="brief-history"><span class="header-section-number">16.0.2</span> Brief history:</h3>
+<section id="interactions" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="interactions"><span class="header-section-number">16.2</span> Interactions</h2>
+</section>
+<section id="colloids-as-big-atoms" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="colloids-as-big-atoms"><span class="header-section-number">16.3</span> Colloids as big atoms</h2>
+</section>
+<section id="the-prototype-hard-sphere-colloids" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="the-prototype-hard-sphere-colloids"><span class="header-section-number">16.4</span> The prototype: hard-sphere colloids</h2>
+</section>
+<section id="phase-coexistence" class="level2" data-number="16.5">
+<h2 data-number="16.5" class="anchored" data-anchor-id="phase-coexistence"><span class="header-section-number">16.5</span> Phase coexistence</h2>
+<section id="characterising-the-fluid-phase" class="level3" data-number="16.5.1">
+<h3 data-number="16.5.1" class="anchored" data-anchor-id="characterising-the-fluid-phase"><span class="header-section-number">16.5.1</span> Characterising the fluid phase</h3>
+<section id="statics-the-radial-distribution-function" class="level4" data-number="16.5.1.1">
+<h4 data-number="16.5.1.1" class="anchored" data-anchor-id="statics-the-radial-distribution-function"><span class="header-section-number">16.5.1.1</span> Statics: the radial distribution function</h4>
+</section>
+</section>
+<section id="dynamics-collective-and-single-particle-displacements" class="level3" data-number="16.5.2">
+<h3 data-number="16.5.2" class="anchored" data-anchor-id="dynamics-collective-and-single-particle-displacements"><span class="header-section-number">16.5.2</span> Dynamics: collective and single particle displacements</h3>
+</section>
+<section id="brownian-motion" class="level3" data-number="16.5.3">
+<h3 data-number="16.5.3" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">16.5.3</span> Brownian Motion</h3>
+</section>
+<section id="brief-history" class="level3" data-number="16.5.4">
+<h3 data-number="16.5.4" class="anchored" data-anchor-id="brief-history"><span class="header-section-number">16.5.4</span> Brief history:</h3>
 <p>1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water. ~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory 1905 Brownian motion explained by Albert Einstein 1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro’s number which led to the acceptance of the ‘molecular hypothesis’.</p>
 </section>
-<section id="diffusion" class="level3" data-number="16.0.3">
-<h3 data-number="16.0.3" class="anchored" data-anchor-id="diffusion"><span class="header-section-number">16.0.3</span> Diffusion</h3>
+<section id="diffusion" class="level3" data-number="16.5.5">
+<h3 data-number="16.5.5" class="anchored" data-anchor-id="diffusion"><span class="header-section-number">16.5.5</span> Diffusion</h3>
 <p>Idea: So far we considered a single particle and calculated the probability for finding it after N steps in the volume element <span class="math inline">\(d \underline{r}\)</span> centred at <span class="math inline">\(\underline{r}\)</span>. We found that <span class="math inline">\(\left\langle r^{2}\right\rangle=N b^{2}\)</span>, which suggests <span class="math inline">\(\left\langle\underline{r}^{2}\right\rangle \propto t\)</span>.</p>
 <p>Now we are interested in many particles, where each undergoes a random walk and is not influenced by the others. We then ask: What fraction will be in a certain volume element after time <span class="math inline">\(t\)</span> ? This is the process of diffusion, e.g.&nbsp;spread of a drop of colour ink in water.</p>
 <p>Mathematics: Suppose that the distribution of particles <span class="math inline">\(n(x, t)\)</span> is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration. We are interested in the time-dependent concentration (number per unit volume) profile of particles <span class="math inline">\(n(x, t)\)</span>. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to <span class="math inline">\(x\)</span>. The mean number of particles crossing unit area of a plane (perpendicular to the <span class="math inline">\(x\)</span>-axis) per unit time (i.e.&nbsp;the ‘flux’), is denoted by <span class="math inline">\(J_{x}\)</span>. This flux is expected to be (to a good approximation) proportional to the concentration gradient:</p>
@@ -430,8 +574,8 @@ J=-D \nabla n(\underline{r}, t) &amp; \text { Fick's law } \\
 \]</span></p>
 <p>This last relation could constitute an alternative definition of the diffusion coefficient, instead of Fick’s law.</p>
 </section>
-<section id="stokes-einstein-relation" class="level3" data-number="16.0.4">
-<h3 data-number="16.0.4" class="anchored" data-anchor-id="stokes-einstein-relation"><span class="header-section-number">16.0.4</span> Stokes-Einstein relation</h3>
+<section id="stokes-einstein-relation" class="level3" data-number="16.5.6">
+<h3 data-number="16.5.6" class="anchored" data-anchor-id="stokes-einstein-relation"><span class="header-section-number">16.5.6</span> Stokes-Einstein relation</h3>
 <p>Suppose that the particles are subjected to an external force F in the x direction, e.g.&nbsp;gravity. In thermal equilibrium the Maxwell-Boltzmann distribution is valid, i.e.&nbsp;the particle density <span class="math inline">\(n(x)\)</span> is given by</p>
 <p><span class="math display">\[
 n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\right)
@@ -462,33 +606,33 @@ D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 <li>More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. ‘This depends upon where [the mirror] is getting its ’kicks’ from. If it is through the fibre, we cool it … if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.’ (Feynman, Chapter 41)</li>
 </ul>
 </section>
-<section id="interacting-colloidal-particles" class="level3" data-number="16.0.5">
-<h3 data-number="16.0.5" class="anchored" data-anchor-id="interacting-colloidal-particles"><span class="header-section-number">16.0.5</span> Interacting colloidal particles</h3>
+<section id="interacting-colloidal-particles" class="level3" data-number="16.5.7">
+<h3 data-number="16.5.7" class="anchored" data-anchor-id="interacting-colloidal-particles"><span class="header-section-number">16.5.7</span> Interacting colloidal particles</h3>
 <p>So far we have dealt with colloidal particles as independent spheres suspended in a medium. Now we will study concentrated suspensions in which interparticle interactions cannot be ignored.</p>
-<section id="samples-model-hard-sphere-colloids" class="level4" data-number="16.0.5.1">
-<h4 data-number="16.0.5.1" class="anchored" data-anchor-id="samples-model-hard-sphere-colloids"><span class="header-section-number">16.0.5.1</span> Samples: model hard-sphere colloids</h4>
+<section id="samples-model-hard-sphere-colloids" class="level4" data-number="16.5.7.1">
+<h4 data-number="16.5.7.1" class="anchored" data-anchor-id="samples-model-hard-sphere-colloids"><span class="header-section-number">16.5.7.1</span> Samples: model hard-sphere colloids</h4>
 <p>To be specific let us discuss a monodisperse colloid made up of polymethyl- methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&amp;width=684&amp;top_left_y=718&amp;top_left_x=1138" class="img-fluid"></p>
 <p>The radius of the colloid is typically <span class="math inline">\(R \leq 0.5 \mu m\)</span> with a very small polydispersity (size variation) of <span class="math inline">\(\Delta R / R&lt;0.05\)</span>. The usual way of referring to particle densities is the ‘volume fraction’ <span class="math inline">\(\phi\)</span>, defined to be the fraction of the suspension occupied by particles. If we have <span class="math inline">\(N\)</span> monodisperse spheres with radius <span class="math inline">\(R\)</span> in the total volume <span class="math inline">\(V\)</span>, then</p>
 <p><span class="math display">\[
 \phi=\frac{V_{\mathrm{part}}}{V}=\frac{N}{V} \frac{4}{3} \pi R^{3}
 \]</span></p>
 </section>
-<section id="phase-behaviour" class="level4" data-number="16.0.5.2">
-<h4 data-number="16.0.5.2" class="anchored" data-anchor-id="phase-behaviour"><span class="header-section-number">16.0.5.2</span> Phase Behaviour</h4>
+<section id="phase-behaviour" class="level4" data-number="16.5.7.2">
+<h4 data-number="16.5.7.2" class="anchored" data-anchor-id="phase-behaviour"><span class="header-section-number">16.5.7.2</span> Phase Behaviour</h4>
 <p>As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential <span class="math inline">\(U(r)\)</span> exhibits the infinite hard sphere repulsion as well as an attractive part of depth <span class="math inline">\(\varepsilon\)</span>. The <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&amp;width=893&amp;top_left_y=1971&amp;top_left_x=277" class="img-fluid"> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&amp;width=581&amp;top_left_y=1973&amp;top_left_x=1225" class="img-fluid"> corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature <span class="math inline">\(T_{C}\)</span> is given by <span class="math inline">\(k_{B} T_{C} \sim \varepsilon\)</span>. If <span class="math inline">\(\varepsilon \rightarrow 0\)</span>, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.</p>
 </section>
-<section id="phase-behaviour-of-hard-sphere-colloids" class="level4" data-number="16.0.5.3">
-<h4 data-number="16.0.5.3" class="anchored" data-anchor-id="phase-behaviour-of-hard-sphere-colloids"><span class="header-section-number">16.0.5.3</span> Phase behaviour of hard-sphere colloids:</h4>
+<section id="phase-behaviour-of-hard-sphere-colloids" class="level4" data-number="16.5.7.3">
+<h4 data-number="16.5.7.3" class="anchored" data-anchor-id="phase-behaviour-of-hard-sphere-colloids"><span class="header-section-number">16.5.7.3</span> Phase behaviour of hard-sphere colloids:</h4>
 <p>At very low densities, the structure of a hard-sphere suspension is like that of a perfect gas; the positions of the colloidal particles are practically uncorrelated and the chance of finding a particle in any particular vicinity is almost independent of the presence of all the other particles.</p>
 <p>Upon an increase in particle density, their positions begin to become correlated as the particles are mutually excluding. If we look inside a suspension of volume fraction <span class="math inline">\(\phi \geq 0.3\)</span>, then we will find that, at any one instant, each particle is surrounded by a `cage’ of neighbours (short-ranged order). The cage tightens as <span class="math inline">\(\phi\)</span> increases. The cage size <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&amp;width=354&amp;top_left_y=1082&amp;top_left_x=1273" class="img-fluid"> represents a dominant length scale in the system. Despite the appearance of correlations between particle positions, a hard-sphere suspension below <span class="math inline">\(\phi \lesssim 0.5\)</span> is still in what one might call a ‘colloid fluid’ phase, i.e.&nbsp;the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g.&nbsp;fluid argon) - on average the particle centres are more or <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&amp;width=825&amp;top_left_y=1966&amp;top_left_x=257" class="img-fluid"> less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function <span class="math inline">\(g(r)\)</span>. Given a particle centred at <span class="math inline">\(\underline{r}=0\)</span>, <span class="math inline">\((N / V) g(\underline{r}) d \underline{r}\)</span> is the number of particles in <span class="math inline">\(d \underline{r}\)</span> at a distance <span class="math inline">\(\underline{r}\)</span>.</p>
 <p>If we increase the volume fraction above <span class="math inline">\(\phi \approx 0.55\)</span>, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a ‘colloidal crystal’. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between <span class="math inline">\(\phi=0.5\)</span> and <span class="math inline">\(\phi=0.55\)</span>, we find coexistence between colloidal fluid and crystal. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&amp;width=1364&amp;top_left_y=680&amp;top_left_x=359" class="img-fluid"></p>
 <p>Note that no colloidal liquid is formed ( <span class="math inline">\(T_{\mathcal{C}}=0\)</span> ), as expected for an interaction potential without attraction. At the highest particle concentrations (above <span class="math inline">\(\phi \approx 0.58\)</span> ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.</p>
 </section>
 </section>
-<section id="particle-dynamics" class="level3" data-number="16.0.6">
-<h3 data-number="16.0.6" class="anchored" data-anchor-id="particle-dynamics"><span class="header-section-number">16.0.6</span> Particle dynamics</h3>
-<section id="hard-spheres" class="level4" data-number="16.0.6.1">
-<h4 data-number="16.0.6.1" class="anchored" data-anchor-id="hard-spheres"><span class="header-section-number">16.0.6.1</span> Hard-spheres</h4>
+<section id="particle-dynamics" class="level3" data-number="16.5.8">
+<h3 data-number="16.5.8" class="anchored" data-anchor-id="particle-dynamics"><span class="header-section-number">16.5.8</span> Particle dynamics</h3>
+<section id="hard-spheres" class="level4" data-number="16.5.8.1">
+<h4 data-number="16.5.8.1" class="anchored" data-anchor-id="hard-spheres"><span class="header-section-number">16.5.8.1</span> Hard-spheres</h4>
 <p>We are interested in the mean-square displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle\)</span> as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t\)</span> as already seen earlier. Above <span class="math inline">\(\phi \sim 0.3\)</span>, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&amp;width=432&amp;top_left_y=368&amp;top_left_x=1351" class="img-fluid"> with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math inline">\(\left\langle\underline{r}^{2}(t)&gt;\propto t\right.\)</span>, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&amp;width=1086&amp;top_left_y=868&amp;top_left_x=539" class="img-fluid"> short time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{S} t\)</span> short-time self diff. coeff. <span class="math inline">\(D_{S}&lt;D_{0}\)</span> purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{L} t\)</span> long-time self diff. coeff. <span class="math inline">\(D_{L}&lt;D_{S}\left(&lt;D_{0}\right)\)</span> because of hydrodyn. and direct interactions theory very complicated, but some predictions exist</p>
 
 
@@ -506,6 +650,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 </section>
 </section>
 

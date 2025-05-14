@@ -101,8 +101,9 @@ Polymers can be classified into two main categories:
 
 
 ```{python} 
+#| fig-cap: "*3D Rendering of the bio-polymer synuclein as extracted from the [RCSB Protein Data Bank](https://www.rcsb.org) (click to rotate)*"
 
-import py3Dmol
+import py3Dmol #install this with: pip install py3dmol
 
 pdb_id = "1XQ8"  # Human micelle-bound alpha-synuclein, an analog of long polymers 
 # Fetch the PDB structure from the RCSB PDB server
@@ -112,7 +113,7 @@ view.setStyle({}, {'sphere': {'color': 'spectrum'}});
 view.setBackgroundColor('white')  # Set background color to white
 view.show()
 ```
-*3D Rendering the bio-polymer synuclein as extracted from the [RCSB Protein Data Bank](https://www.rcsb.org) (click to rotate)*.
+
 
 Compared to colloids, polymers have distiunctive characteristics common to all chain-like molecules, such as their topological constraints due to teh fact that two polymers cannot cross each other (a phenomenon known as *polymer entanglement*).
 
