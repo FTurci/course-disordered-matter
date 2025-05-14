@@ -76,5 +76,11 @@
   },
   "phase-transitions/concepts_map.qmd": {
     "concepts_map.html": "c6db7967"
+  },
+  "soft-matter/soft-matter_liquidcrystals.qmd": {
+    "soft-matter_liquidcrystals.html": "2c68fab3"
+  },
+  "soft-matter/soft-matter_active.qmd": {
+    "soft-matter_active.html": "3e8a0282"
   }
 }
