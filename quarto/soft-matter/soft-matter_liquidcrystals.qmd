@@ -1,0 +1,30 @@
+---
+title: "Liquid crystals"
+bibliography: references.bib
+---
+
+
+
+## Anistropic particles
+
+
+## Liquid crystal phases
+
+
+
+## Orientational correlations and the isotropic/nematic transition
+
+
+### Archetype: ideal hard rods
+
+
+## Effective elastic free energy 
+
+
+### Splay, twist and bend 
+
+
+## Topological defects
+
+
+

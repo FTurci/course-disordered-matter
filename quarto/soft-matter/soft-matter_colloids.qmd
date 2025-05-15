@@ -1,7 +1,129 @@
 ---
 title: "Colloids"
-
+bibliography: references.bib
 ---
+
+## Kinds of colloids
+
+Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.
+
+Colloids can be classified based on the state of the **dispersed phase** and the **dispersion medium**. Depending on the particular mixture, one can obtain a wide variety of soft materials, with unique mechanical, optical, and thermal properties.
+
+
+<style>
+.rotate-header {
+    writing-mode: vertical-rl;
+    transform: rotate(-90deg);
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 1px;
+    width: 0.5em;
+      font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.2;
+  }
+  .header {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 1px;
+    width: 0.5em;
+      font-variant: small-caps;
+    letter-spacing: 2px;
+    font-size: 14px;
+    font-family: "Segoe UI", sans-serif;
+    line-height: 1.2;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  th, td {
+    border: 0px solid black;
+    padding: 2px;
+    vertical-align: top;
+  }
+</style>
+
+<table>
+  <tr>
+    <th rowspan="5" class="rotate-header">Dispersion Phase</th>
+    <th></th>
+    <th colspan="3" class="header">Dispersion Medium</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th>Solid</th>
+    <th>Liquid</th>
+    <th>Gas</th>
+  </tr>
+  <tr>
+    <th>Solid</th>
+    <td>Solid suspension:<br>pigmented plastics,<br>stained glass,<br>ruby glass, opal, pearl</td>
+    <td>Sol, colloidal suspension:<br>metal sol,<br>toothpaste, paint,<br>ink, clay slurries, mud</td>
+    <td>Solid aerosol:<br>smoke, dust</td>
+  </tr>
+  <tr>
+    <th>Liquid</th>
+    <td>Solid emulsion:<br>bituminous road paving,<br>ice cream</td>
+    <td>Emulsion:<br>milk, mayonnaise,<br>butter, pharmaceutical creams</td>
+    <td>Liquid aerosol:<br>fog, mist, tobacco smoke,<br>hair spray</td>
+  </tr>
+  <tr>
+    <th>Gas</th>
+    <td>Solid foam:<br>zeolites, expanded polystyrene,<br>‘silica gel’</td>
+    <td>Foam:<br>froths, soap foam,<br>fire-extinguisher foam</td>
+    <td>—</td>
+  </tr>
+</table>
+
+
+Clearly, colloidal materials form an incredibly diverse class, and surround us in our everyday lives. Here are some visual examples from the table above:
+
+![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com ](figs/colloids.png)
+
+
+The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**: approximately 1nm to 1µm.
+
+The small sizes of colloids means that they are constantly subject to the collisions with the atom/molecules/particle of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $k_B T$ (the reference energy scale of thermal soft matter). This energy can be compared with the the potential energy to produce a dimensionless number, the **gravitational Péclet number**
+
+
+ $${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
+
+where $R$ is the radius of the colloid respectively,   $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with  $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only marginally perturbed by the effects of gravity.
+
+
+## Interactions
+
+
+See [@lekkerkerker2024colloids]
+
+## Colloids as big atoms
+
+
+
+
+## The archetype: hard-sphere colloids
+
+## Phase coexistence
+
+### Characterising the fluid phase
+
+
+#### Statics: the radial distribution function
+
+### Dynamics: collective and single particle displacements
+
+
+
+
+
+
+
+
+
 ### Brownian Motion
 
 ### Brief history:

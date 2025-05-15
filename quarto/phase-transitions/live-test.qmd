@@ -1,5 +1,4 @@
 ---
-title: Ising model example 
 format: live-html
 pyodide:
     packages:
@@ -10,6 +9,8 @@ resources:
     - ising.py
 
 ---
+
+# Coding {#coding .unnumbered}
 
 ```{pyodide}
 #| echo: false

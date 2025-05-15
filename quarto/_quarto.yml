@@ -3,6 +3,8 @@ project:
   output-dir: ../docs  # Uncomment if you want to specify output directory
   # render:
     # - "Week*/*"
+resources:
+  - "**/*.pdb"
 
 book:
   page-navigation: true
@@ -56,18 +58,22 @@ book:
 
     - part: "Complex disordered systems"
       chapters:
-        - href: soft-matter/soft-matter_plan.qmd
-          text: "Plan"
+        # - href: soft-matter/soft-matter_plan.qmd
+        #   text: "Plan"
         - href: soft-matter/soft-matter_intro.qmd
           text: "Entropy matters"
         - href: soft-matter/soft-matter_colloids.qmd
           text: "Colloids"
         - href: soft-matter/soft-matter_polymers.qmd
           text: "Polymers"
+        - href: soft-matter/soft-matter_liquidcrystals.qmd
+          text: "Liquid crystals"
         - href: soft-matter/soft-matter_surfactants.qmd
           text: "Surfactants"
         - href: soft-matter/soft-matter_glasses.qmd
-          text: "Glasses"
+          text: "Arrested states"
+        - href: soft-matter/soft-matter_active.qmd
+          text: "Active matter"
         - href: soft-matter/soft-matter_readings.qmd
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd

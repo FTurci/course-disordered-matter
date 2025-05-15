@@ -1,147 +1,86 @@
 {
-  "welcome.qmd": {
-    "welcome.html": "78589c1a"
-  },
-  "soft-matter/soft-matter.qmd": {
-    "soft-matter.tex": "05c41547",
-    "sm.html": "409b59bf",
-    "sm-slide.html": "52709bab",
-    "soft-matter.html": "ef4c4118"
-  },
-  "soft-matter/soft-matter_part_4.md": {
-    "soft-matter_part_4.html": "7539ae8e"
-  },
-  "soft-matter/soft-matter_part_5.md": {
-    "soft-matter_part_5.html": "8b38d21a"
-  },
-  "soft-matter/soft-matter_part_1.md": {
-    "sm.html": "69f8a01f",
-    "sm-slide.html": "ed80976a"
-  },
-  "soft-matter/soft-matter_part_8.md": {
-    "soft-matter_part_8.html": "94021a83"
-  },
-  "soft-matter/soft-matter_part_6.md": {
-    "soft-matter_part_6.html": "a732c5bc"
-  },
-  "soft-matter/soft-matter_part_2.md": {
-    "soft-matter_part_2.html": "8bdb3200"
-  },
-  "soft-matter/soft-matter_part_3.md": {
-    "soft-matter_part_3.html": "d4f41586"
-  },
-  "soft-matter/soft-matter_part_7.md": {
-    "soft-matter_part_7.html": "204eb1ae"
-  },
-  "soft-matter/soft-matter_part_8.qmd": {
-    "soft-matter_part_8.html": "511c9c87"
-  },
-  "soft-matter/soft-matter_part_1.qmd": {
-    "soft-matter_part_1.html": "b949312e"
-  },
-  "soft-matter/soft-matter_part_3.qmd": {
-    "soft-matter_part_3.html": "fff2ec99"
-  },
-  "soft-matter/soft-matter_part_2.qmd": {
-    "soft-matter_part_2.html": "da3e7402"
-  },
-  "soft-matter/soft-matter_part_6.qmd": {
-    "soft-matter_part_6.html": "54a3878e"
-  },
-  "soft-matter/soft-matter_part_7.qmd": {
-    "soft-matter_part_7.html": "e7fd479b"
-  },
-  "soft-matter/soft-matter_part_5.qmd": {
-    "soft-matter_part_5.html": "d215a7ed"
-  },
-  "soft-matter/soft-matter_part_4.qmd": {
-    "soft-matter_part_4.html": "27e6e13c"
-  },
-  "soft-matter/soft-matter_plan.qmd": {
-    "soft-matter_plan.html": "0d7d9407"
-  },
   "soft-matter/soft-matter_intro.qmd": {
-    "soft-matter_intro.html": "a24d046d"
-  },
-  "soft-matter/soft-matter_glasses.qmd": {
-    "soft-matter_glasses.html": "4b6bf2fa"
-  },
-  "soft-matter/soft-matter_problems.qmd": {
-    "soft-matter_problems.html": "5a191189"
-  },
-  "soft-matter/soft-matter_polymers.qmd": {
-    "soft-matter_polymers.html": "d7418512"
-  },
-  "soft-matter/soft-matter_colloids.qmd": {
-    "soft-matter_colloids.html": "d7dd1b9c"
-  },
-  "soft-matter/soft-matter_readings.qmd": {
-    "soft-matter_readings.html": "775d1405"
-  },
-  "soft-matter/soft-matter_surfactants.qmd": {
-    "soft-matter_surfactants.html": "cf5c39e1"
+    "soft-matter_intro.html": "0342dd9a"
   },
   "index.qmd": {
-    "index.html": "fa71c37c"
-  },
-  "phase-transitions/rg.qmd": {
-    "rg.html": "4b124417"
-  },
-  "phase-transitions/background.qmd": {
-    "background.html": "1994acb3"
-  },
-  "phase-transitions/index.qmd": {
-    "index.html": "2edc39f6"
-  },
-  "phase-transitions/master-equation-and-diffusion.qmd": {
-    "master-equation-and-diffusion.html": "a31fb6b1"
-  },
-  "phase-transitions/Brownian-and-Langevin-dynamics.qmd": {
-    "Brownian-and-Langevin-dynamics.html": "36e1bea4"
-  },
-  "phase-transitions/problems.qmd": {
-    "problems.html": "38e42ef7"
-  },
-  "phase-transitions/approach-to-criticality.qmd": {
-    "approach-to-criticality.html": "ab270b57"
-  },
-  "phase-transitions/introduction.qmd": {
-    "introduction.html": "0145d772"
-  },
-  "phase-transitions/Ising-model.qmd": {
-    "Ising-model.html": "a4bc53c5"
-  },
-  "phase-transitions/dynamics-of-fluctuations.qmd": {
-    "dynamics-of-fluctuations.html": "54f8374a"
-  },
-  "phase-transitions/mean-field-theory.qmd": {
-    "mean-field-theory.html": "bc5c5fb9"
-  },
-  "phase-transitions/scaling.qmd": {
-    "scaling.html": "4a3de53c"
-  },
-  "phase-transitions/rg-effective-coupling.qmd": {
-    "rg-effective-coupling.html": "90275a34"
-  },
-  "phase-transitions/lattice-gas.qmd": {
-    "lattice-gas.html": "afd873f4"
+    "index.html": "4fa4c3c1"
   },
   "phase-transitions/literature.qmd": {
-    "literature.html": "c5659552"
-  },
-  "phase-transitions/nucleation-and-growth.qmd": {
-    "nucleation-and-growth.html": "ea1b1d92"
-  },
-  "revision_guide.qmd": {
-    "revision_guide.html": "ad40266f"
-  },
-  "phase-transitions/concepts_map.qmd": {
-    "concepts_map.html": "81918925"
-  },
-  "phase-transitions/live-test.qmd": {
-    "live-test.html": "39eb5f76"
+    "literature.html": "45a9a86e"
   },
   "phase-transitions/precourse-reading.qmd": {
-    "precourse-reading.html": "24fcf5ef"
+    "precourse-reading.html": "6039d759"
+  },
+  "phase-transitions/introduction.qmd": {
+    "introduction.html": "e8a235ab"
+  },
+  "phase-transitions/background.qmd": {
+    "background.html": "d9eac469"
+  },
+  "phase-transitions/approach-to-criticality.qmd": {
+    "approach-to-criticality.html": "ce2e99d5"
+  },
+  "phase-transitions/Ising-model.qmd": {
+    "Ising-model.html": "f6b8da60"
+  },
+  "phase-transitions/mean-field-theory.qmd": {
+    "mean-field-theory.html": "6902a522"
+  },
+  "phase-transitions/lattice-gas.qmd": {
+    "lattice-gas.html": "dd0bc4ee"
+  },
+  "phase-transitions/scaling.qmd": {
+    "scaling.html": "5b90faac"
+  },
+  "phase-transitions/rg.qmd": {
+    "rg.html": "348d1c94"
+  },
+  "phase-transitions/nucleation-and-growth.qmd": {
+    "nucleation-and-growth.html": "eb3550ce"
+  },
+  "phase-transitions/master-equation-and-diffusion.qmd": {
+    "master-equation-and-diffusion.html": "b5f67518"
+  },
+  "phase-transitions/Brownian-and-Langevin-dynamics.qmd": {
+    "Brownian-and-Langevin-dynamics.html": "17e6ed2d"
+  },
+  "phase-transitions/dynamics-of-fluctuations.qmd": {
+    "dynamics-of-fluctuations.html": "23593f66"
+  },
+  "phase-transitions/problems.qmd": {
+    "problems.html": "9564adc3"
+  },
+  "phase-transitions/live-test.qmd": {
+    "live-test.html": "4de8162f"
+  },
+  "soft-matter/soft-matter_colloids.qmd": {
+    "soft-matter_colloids.html": "fed2b70b"
+  },
+  "soft-matter/soft-matter_polymers.qmd": {
+    "soft-matter_polymers.html": "5cd93c99"
+  },
+  "soft-matter/soft-matter_surfactants.qmd": {
+    "soft-matter_surfactants.html": "c8435b69"
+  },
+  "soft-matter/soft-matter_glasses.qmd": {
+    "soft-matter_glasses.html": "adc77085"
+  },
+  "soft-matter/soft-matter_readings.qmd": {
+    "soft-matter_readings.html": "534cf0b0"
+  },
+  "soft-matter/soft-matter_problems.qmd": {
+    "soft-matter_problems.html": "38453202"
+  },
+  "revision_guide.qmd": {
+    "revision_guide.html": "f054f202"
+  },
+  "phase-transitions/concepts_map.qmd": {
+    "concepts_map.html": "c6db7967"
+  },
+  "soft-matter/soft-matter_liquidcrystals.qmd": {
+    "soft-matter_liquidcrystals.html": "2c68fab3"
+  },
+  "soft-matter/soft-matter_active.qmd": {
+    "soft-matter_active.html": "3e8a0282"
   }
 }
