@@ -3,8 +3,7 @@ project:
   output-dir: ../docs  # Uncomment if you want to specify output directory
   # render:
     # - "Week*/*"
-resources:
-  - "**/*.pdb"
+
 
 book:
   page-navigation: true

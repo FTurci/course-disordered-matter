@@ -3,6 +3,8 @@ title: "Polymers"
 format:
   html:
     code-copy: true
+resources:
+  - "**/*.pdb"
 bibliography: references.bib
 ---
 
@@ -43,7 +45,7 @@ Here below you can see the chemical structures of (sections) of a few common pol
 
 ::: {.callout-note collapse="true"}
 # How to use the visualisers
-Cick on the 🔧 symbol to change customise the visualisation:
+Cick on the 🔧 symbol to customise the visualisation:
 
 - you should see a **State Tree** to your left
 - click on the last item (highlighte din light blue, by default *Ball & Stick*)

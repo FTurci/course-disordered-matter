@@ -13,12 +13,11 @@ In this course, we will emphasize the fact that many such systems are not crysta
 
 While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
 
-::: {.column-margin}
+::: {.column-margin} 
 
-![Pierre-Gilles de Gennes](https://upload.wikimedia.org/wikipedia/commons/f/f6/Pierre-Gilles_crop.jpg)
-
-1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).
+![Pierre-Gilles de Gennes (1932-2007), 1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).](https://upload.wikimedia.org/wikipedia/commons/f/f6/Pierre-Gilles_crop.jpg){fig-align="left"}
 :::
+
 This is because soft matter systems are typically composed of **many microscopic constituents** in contact with an **environment**. The appropriate description of the **macroscopic state** of such systems is therefore **statistical** and uses the language of **statistical mechanics**. The relevant **energy**, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy
 
 $$F = U-TS$$
