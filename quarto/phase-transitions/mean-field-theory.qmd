@@ -310,35 +310,31 @@ The table below lists examples of order parameters for various physical systems.
 
 **Notes:**
 
-i) In **superfluid** $^4He$ the order parameter is 
+* In **superfluid** $^4He$ the order parameter is 
 $$
 \Psi = |\Psi| e^{i\theta},
 $$
-the *complex wavefunction* of the macroscopic condensate.
-
-Both the amplitude $|\Psi|$ and phase $\theta$ must be specified, so this corresponds to $n = 2$.  
+the *complex wavefunction* of the macroscopic condensate. Both the amplitude $|\Psi|$ and phase $\theta$ must be specified, so this corresponds to $n = 2$.  
 **Superconductors** also correspond to $n = 2$.
 
-ii) In a **nematic** liquid crystal, the *orientational* order parameter is
+* In a **nematic** liquid crystal, the *orientational* order parameter is
 $$
 \langle P_2(\cos \theta) \rangle \equiv \frac{1}{2}\langle 3\cos^2 \theta - 1\rangle,
 $$
 where $\theta$ is the angle a molecule makes with the average direction of the long axes of the molecules (known as the *director* $\hat{n}$).
 Rotational symmetry is broken. For the case of an $n$ component vector, the free energy should be a function of:
-
 $$
 \phi^2 \equiv |\boldsymbol{\phi}|^2 = \phi_1^2 + \phi_2^2 + \dots + \phi_n^2 = \sum_{i=1}^n \phi_i^2
 $$
-
 in the absence of a symmetry breaking field. Rotational symmetry is incorporated into the theory.
 
 
 ::: {#fig-mfsum layout-ncol=2}
 
- ![Schematic of the isotropic liquid phase of a system of elongated molcules](Figs/isotropic-LC.png){width=50% fig-align="center" #fig-isotropic}
+ ![Schematic of the isotropic liquid phase of a system of elongated molcules.](Figs/isotropic-LC.png){width=50% fig-align="center" #fig-isotropic}
 
 
- ![Schematic of the nematic liquid phase of a system elongated molcules. This phase has uniaxial ordering](Figs/nematic-LC.png){width=50% fig-align="center" #fig-isotropic}
+ ![Schematic of the nematic liquid phase of a system elongated molcules. This phase has uniaxial ordering.](Figs/nematic-LC.png){width=50% fig-align="center" #fig-isotropic}
 
 Isotropic and uniaxially ordered (nematic) phases of liquid crystal molecules.  
 

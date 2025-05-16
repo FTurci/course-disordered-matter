@@ -42,7 +42,7 @@ book:
            href:  phase-transitions/rg.qmd
         #  - text: "RG- the effective coupling viewpoint"
         #    href: phase-transitions/rg-effective-coupling.qmd
-         - text: "Nucleation and domain growth"
+         - text: "Nucleation, growth and spinoidal decomposition"
            href: phase-transitions/nucleation-and-growth.qmd  
          - text: "Introduction to stochastic processes"  
            href: phase-transitions/master-equation-and-diffusion.qmd

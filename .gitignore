@@ -3,5 +3,5 @@
 .ipynb_checkpoints/
 docs
 quarto/.python-version
-
+.quarto
 
