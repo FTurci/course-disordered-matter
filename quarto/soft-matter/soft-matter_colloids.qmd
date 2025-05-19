@@ -9,6 +9,15 @@ resources:
     - src/plotting.py
 bibliography: references.bib
 ---
+
+```{pyodide}
+#| echo: false
+#| autorun: true
+# modifying the path to add the code folder
+import sys
+sys.path.insert(0, 'src')
+```
+
 ## Kinds of colloids
 
 Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.
