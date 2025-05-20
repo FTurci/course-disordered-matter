@@ -380,8 +380,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#fundamental-and-effective-forces" id="toc-fundamental-and-effective-forces" class="nav-link" data-scroll-target="#fundamental-and-effective-forces"><span class="header-section-number">15.2.1</span> Fundamental and effective forces</a></li>
   <li><a href="#van-der-waals-interaction" id="toc-van-der-waals-interaction" class="nav-link" data-scroll-target="#van-der-waals-interaction"><span class="header-section-number">15.2.2</span> Van der Waals interaction</a></li>
-  <li><a href="#double-layer-interaction" id="toc-double-layer-interaction" class="nav-link" data-scroll-target="#double-layer-interaction"><span class="header-section-number">15.2.3</span> Double Layer interaction</a></li>
-  <li><a href="#depletion-interaction" id="toc-depletion-interaction" class="nav-link" data-scroll-target="#depletion-interaction"><span class="header-section-number">15.2.4</span> Depletion interaction</a></li>
+  <li><a href="#double-layer-interaction" id="toc-double-layer-interaction" class="nav-link" data-scroll-target="#double-layer-interaction"><span class="header-section-number">15.2.3</span> Double-layer interaction</a></li>
+  <li><a href="#steric-interactions-and-depletion-interactions" id="toc-steric-interactions-and-depletion-interactions" class="nav-link" data-scroll-target="#steric-interactions-and-depletion-interactions"><span class="header-section-number">15.2.4</span> Steric interactions and depletion interactions</a></li>
   </ul></li>
   <li><a href="#colloids-as-big-atoms" id="toc-colloids-as-big-atoms" class="nav-link" data-scroll-target="#colloids-as-big-atoms"><span class="header-section-number">15.3</span> Colloids as big atoms</a></li>
   <li><a href="#the-archetype-hard-sphere-colloids" id="toc-the-archetype-hard-sphere-colloids" class="nav-link" data-scroll-target="#the-archetype-hard-sphere-colloids"><span class="header-section-number">15.4</span> The archetype: hard-sphere colloids</a></li>
@@ -469,73 +469,56 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1
     vertical-align: top;
   }
 </style>
-<table>
-<tbody><tr>
-<th rowspan="5" class="rotate-header">
-Dispersion Phase
-</th>
-<th>
-</th>
-<th colspan="3" class="header">
-Dispersion Medium
-</th>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 40%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dispersion Phase</th>
+<th></th>
+<th>Dispersion Medium</th>
 </tr>
-<tr>
-<th>
-</th>
-<th>
-Solid
-</th>
-<th>
-Liquid
-</th>
-<th>
-Gas
-</th>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>Solid</td>
+<td>Liquid</td>
 </tr>
-<tr>
-<th>
-Solid
-</th>
-<td>
-<i>Solid suspension:</i><br>pigmented plastics,<br>stained glass,<br>ruby glass, opal, pearl
-</td>
-<td>
-<i>Sol, colloidal suspension:</i><br>metal sol,<br>toothpaste, paint,<br>ink, clay slurries, mud
-</td>
-<td>
-<i>Solid aerosol:</i><br>smoke, dust
-</td>
+<tr class="even">
+<td>Solid</td>
+<td><em>Solid suspension:</em><br>
+pigmented plastics,<br>
+stained glass,<br>
+ruby glass, opal, pearl</td>
+<td><em>Sol, colloidal suspension:</em><br>
+metal sol,<br>
+toothpaste, paint,<br>
+ink, clay slurries, mud</td>
 </tr>
-<tr>
-<th>
-Liquid
-</th>
-<td>
-<i>Solid emulsion:</i><br>bituminous road paving,<br>ice cream
-</td>
-<td>
-<i>Emulsion:</i><br>milk, mayonnaise,<br>butter, pharmaceutical creams
-</td>
-<td>
-<i>Liquid aerosol:</i><br>fog, mist, tobacco smoke,<br>hair spray
-</td>
+<tr class="odd">
+<td>Liquid</td>
+<td><em>Solid emulsion:</em><br>
+bituminous road paving,<br>
+ice cream</td>
+<td><em>Emulsion:</em><br>
+milk, mayonnaise,<br>
+butter, pharmaceutical creams</td>
 </tr>
-<tr>
-<th>
-Gas
-</th>
-<td>
-<i>Solid foam:</i><br>zeolites, expanded polystyrene,<br>‘silica gel’
-</td>
-<td>
-<i>Foam:</i><br>froths, soap foam,<br>fire-extinguisher foam
-</td>
-<td>
-—
-</td>
+<tr class="even">
+<td>Gas</td>
+<td><em>Solid foam:</em><br>
+zeolites, expanded polystyrene,<br>
+‘silica gel’</td>
+<td><em>Foam:</em><br>
+froths, soap foam,<br>
+fire-extinguisher foam</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Clearly, colloidal materials form an incredibly diverse class, and surround us in our everyday lives. Here are some visual examples from the table above:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -563,11 +546,13 @@ Gas
 <h3 data-number="15.2.1" class="anchored" data-anchor-id="fundamental-and-effective-forces"><span class="header-section-number">15.2.1</span> Fundamental and effective forces</h3>
 <p>At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro (and occasionally magneto) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect for a non magnetic colloid (which is the vast majority of colloidal systems) only electrostatic forces are fundamentally important.</p>
 <p>However, colloidal dispersions consist of large particles carrying many charges both in the dispersed phase and the surrounding medium, arranged disorderly at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is the one of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the <strong>microscopic</strong> atomistic scale take place and we can think of taking averages to extract <strong>macroscopic</strong>, <strong>effective</strong> interactions at the colloidal scale <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<p>There are amny examples of such effective forces <span class="citation" data-cites="lekkerkerker2024colloids">(<a href="#ref-lekkerkerker2024colloids" role="doc-biblioref">Lekkerkerker, Tuinier, and Vis 2024</a>)</span>. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.</p>
+<p>This is especially important due to** quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.</p>
+<p>There are many examples of such effective forces <span class="citation" data-cites="lekkerkerker2024colloids">(<a href="#ref-lekkerkerker2024colloids" role="doc-biblioref">Lekkerkerker, Tuinier, and Vis 2024</a>)</span>. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.</p>
 </section>
 <section id="van-der-waals-interaction" class="level3 page-columns page-full" data-number="15.2.2">
 <h3 data-number="15.2.2" class="anchored" data-anchor-id="van-der-waals-interaction"><span class="header-section-number">15.2.2</span> Van der Waals interaction</h3>
-<p>The London-van der Waals <strong>dispersion forces</strong> arise from the interaction between <strong>instantaneous dipoles</strong> in overall neutral atoms or molecules. In simple terms, the idea is that At any given moment, the electrons in an atom or molecule are not symmetrically distributed, creating a temporary dipole. Such instantaneous dipole induces a dipole in a neighboring atom or molecule by distorting its electron cloud.</p>
+<p>The London-van der Waals <strong>dispersion forces</strong> arise from the interaction between <strong>instantaneous dipoles</strong> in overall neutral atoms or molecules. We know fro, classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like <span class="math inline">\(1/r^3\)</span>, where <span class="math inline">\(r\)</span> is the separation between two dipoles.</p>
+<p>More in general, neutral atom or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a <strong>temporary dipole</strong>. Such instantaneous dipole <strong>induces</strong> a dipole in a neighboring atom or molecule by distorting its electron cloud.</p>
 <p>The interaction energy between two dipoles <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> separated by a distance <span class="math inline">\(r\)</span> is proportional to: <span class="math display">\[
 U \propto -\frac{\mu_1 \mu_2}{r^3}
 \]</span></p>
@@ -576,7 +561,7 @@ U \propto -\frac{\mu_1 \mu_2}{r^3}
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Johannes_Diderik_van_der_Waals.jpg/960px-Johannes_Diderik_van_der_Waals.jpg" class="img-fluid figure-img" width="150"></p>
-<figcaption>Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases</figcaption>
+<figcaption>Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-left">
@@ -585,13 +570,18 @@ U \propto -\frac{\mu_1 \mu_2}{r^3}
 <figcaption>Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the disperison force.</figcaption>
 </figure>
 </div>
-</div></div><p>The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> of the two particles: <span class="math display">\[
+</div></div><p>The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> of the two particles:</p>
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+<p><span class="math display">\[
     U(r) = -\frac{C}{r^6}
 \]</span></p>
+</div>
 <p>where <span class="math inline">\(C \propto \alpha_1 \alpha_2\)</span> depends on the polarisabilities and ionization energies of the particles.</p>
-<p>The resulting <span class="math inline">\(r^{-6}\)</span> dependence is also referred to as the <strong>London dispersion force</strong>.</p>
+<p>The resulting <span class="math inline">\(r^{-6}\)</span> dependence is also referred to as the <strong>London dispersion force</strong>, which can be derived within quantum-mechanical perturbation theory <span class="citation" data-cites="london1937general">(<a href="#ref-london1937general" role="doc-biblioref">London 1937</a>)</span>.</p>
 <p>We can then assume to take two identical spherical colloids of radius <span class="math inline">\(R\)</span> at distance <span class="math inline">\(h\)</span> and that every volume element of such spheres interacts with the London disperison force (see the semi-classical approach of Hamaker <span class="citation" data-cites="hamaker1937london">Hamaker (<a href="#ref-hamaker1937london" role="doc-biblioref">1937</a>)</span> for illustration). Integrating over all volume elements yields the collodial spheres <strong>Van der Waals attractive potential</strong> in the form</p>
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 <p><span class="math display">\[W_{wdW}(h)=-\dfrac{A-H}{g}f(h/R)\]</span></p>
+</div>
 <p>where <span class="math inline">\(A_H\)</span> is the <strong>Hamaker constant</strong> and <span class="math inline">\(f(h/R)\)</span> is</p>
 <p><span class="math display">\[f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -651,17 +641,83 @@ U(h) = -\frac{A_H}{6} \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\le
 eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1wb3J0IG51bXB5IGFzIG5wXG5pbXBvcnQgcGxvdHRpbmdcbiMgcGFyYW1ldGVyczogY2hhbmdlIHRoZW0gdG8gZXhwbG9yZSB0aGUgaW50ZXJhY3Rpb24hXG5SID0gNS4wICAjIFJhZGl1cyBvZiB0aGUgY29sbG9pZFxuQV9IID0gMWUtMjAgICMgSGFtYWtlciBjb25zdGFudCAoaW4gSm91bGVzKVxuaCA9IG5wLmxpbnNwYWNlKDIuMDEgKiBSLCAxMCtSKjIsIDEwMDApICAjIFNlcGFyYXRpb24gZGlzdGFuY2UgKGggPiAyUilcbiMgVmFuIGRlciBXYWFscyBwb3RlbnRpYWxcbmRlZiB2YW5fZGVyX3dhYWxzX3BvdGVudGlhbChoLCBSLCBBX0gpOlxuICAgIGZfaF9SID0gKDIgKiBSKioyIC8gKGgqKjIgLSA0ICogUioqMikpICsgKDIgKiBSKioyIC8gaCoqMikgKyBucC5sb2coKGgqKjIgLSA0ICogUioqMikgLyBoKioyKVxuICAgIHJldHVybiAtQV9IICogZl9oX1JcblxuIyBjb21wdXRlIHBvdGVudGlhbFxuV192ZFcgPSB2YW5fZGVyX3dhYWxzX3BvdGVudGlhbChoLCBSLCBBX0gpXG4jIGNvbnZlbmllbmNlIHBsb3R0aW5nIGZ1bmN0aW9uLCB5b3UgY2FuIHVzZSBtYXRwbG90bGliIGlmIHlvdSBwcmVmZXJcbnBsb3R0aW5nLnNpbXBsZV9wbG90KGgsV192ZFcpIn0=
 </script>
 </div>
+<p>Van der Waals interactions are considered to be <strong>short-range</strong> forces in the sense that their decay rate(e.g.&nbsp;London’s <span class="math inline">\(1/r^6\)</span>) is much faster than Coulombic interactions (<span class="math inline">\(1/r\)</span>). Importantly, since their origin resides in the fluctuation of charges on the colloids, their strength is <em>not additive</em>: simply summing all the pairwise interactions does not fully accurately account for man-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.</p>
 </section>
 <section id="double-layer-interaction" class="level3" data-number="15.2.3">
-<h3 data-number="15.2.3" class="anchored" data-anchor-id="double-layer-interaction"><span class="header-section-number">15.2.3</span> Double Layer interaction</h3>
+<h3 data-number="15.2.3" class="anchored" data-anchor-id="double-layer-interaction"><span class="header-section-number">15.2.3</span> Double-layer interaction</h3>
+<p>Colloids are often charged. The solution they are immersed also has an <strong>inhomogeneous</strong> distribution of ions: there will be</p>
+<ul>
+<li><p><strong>co-ions</strong> (same charge as the colloid) that will be pushed away from the colloid surface, while</p></li>
+<li><p><strong>counter-ions</strong> (opposite charge) will accumulate at the surface.</p></li>
+</ul>
+<p>These two different concentrations of oppositely charged ions form what is called a <strong>double layer</strong> and its property (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.</p>
+<p>Suppose we now have two colloids of the same size and charges in the solvent. Th charges in their double layers will interact giving rise to a <strong>repulsive interaction</strong>. This interaction is referred to as <strong>screened-Coulomb</strong> (as teh electrostatic interaction is <em>screened by the presence of the ions</em> or <strong>double layer repulsion.</strong> We are not going to derive it, but it can be shown that, for a colloid of radius <span class="math inline">\(R\)</span> in solvent with salt density <span class="math inline">\(n_s\)</span> it can approximated by an exponential decay</p>
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+<p><span class="math display">\[
+W_{DR}(h) = B\dfrac{R}{\lambda_B}\exp{(-h/\lambda_D)}
+\]</span></p>
+</div>
+<p>where <span class="math inline">\(\lambda_D\)</span> is called the <strong>Debye length</strong></p>
+<p><span class="math display">\[
+\lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
+\]</span></p>
+<p>while <span class="math inline">\(\lambda_B\)</span> is the <strong>Bjerrum length</strong>, which is itself derived from the characteristic distance at which two elementary charges have energy <span class="math inline">\(k_B T\)</span> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p><span class="math display">\[
+\lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
+\]</span></p>
+<p>The coefficient <span class="math inline">\(B\)</span> is a material properties that depend on the surface potential. We are not going more into the details of these features, which are important for the design of colloidal experiments.</p>
+<hr>
+<p>From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign</p>
+<ul>
+<li><p>a van der Waals components, typically attractive and emergent from induced dipole -dipole ineractions emerging from quantum fluctuations of the electronic clouds</p></li>
+<li><p>a double layer component, repulsive in nature, and resulting from the electrostatic repulsions induced by ions and counterions</p></li>
+</ul>
+<p>The <strong>sum</strong> of the two gives rise to the <strong>DLVO</strong> (Derjaguin–Landau–Verwey–Overbeek) <strong>interaction</strong> which is an elementary model for colloid stability and aggregation.</p>
+<div>
+<div id="pyodide-3" class="exercise-cell">
+
+</div>
+<script type="pyodide-3-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5pbXBvcnQgbnVtcHkgYXMgbnBcbmltcG9ydCBtYXRwbG90bGliLnB5cGxvdCBhcyBwbHRcblxuUiA9IDEuMCAgIyBSYWRpdXMgb2YgdGhlIGNvbGxvaWQgKG1pY3JvbikgXG5oID0gbnAubGluc3BhY2UoMi4wMSAqIFIsIDIrUioyLCAxMDAwKSAgIyBTZXBhcmF0aW9uIGRpc3RhbmNlIChoID4gMlIpXG4jIFZhbiBkZXIgV2FhbHMgYXR0cmFjdGl2ZSBwb3RlbnRpYWxcbmRlZiB2YW5fZGVyX3dhYWxzX3BvdGVudGlhbChoLCBSLCBBX0gpOlxuICAgIGZfaF9SID0gKDIgKiBSKioyIC8gKGgqKjIgLSA0ICogUioqMikpICsgKDIgKiBSKioyIC8gaCoqMikgKyBucC5sb2coKGgqKjIgLSA0ICogUioqMikgLyBoKioyKVxuICAgIHJldHVybiAtQV9IICogZl9oX1JcbiMgZG91YmxlIGxheWVyIHJlcHVsc2l2ZSBwb3RlbnRpYWxcbmRlZiBkb3VibGVfbGF5ZXIoaCwgUixCLG5zICk6XG4gICAgbGFtYmRhQiA9IDAuMDAwNyAjIGZpeGVkIEJqZXJydW0gbGVuZ3RoIChtaWNyb24pXG4gICAgbGFtYmRhRCA9IG5wLnNxcnQoMS8oOCpucC5waSpsYW1iZGFCKm5zKSlcbiAgICBwcmludChcIkRlYnllIGxlbmd0aCBvZlwiLCBsYW1iZGFEKVxuICAgIHJldHVybiAgQipSL2xhbWJkYUIqbnAuZXhwKC1oL2xhbWJkYUQpXG4ifQ==
+</script>
+</div>
+<div>
+<div id="pyodide-4" class="exercise-cell">
+
+</div>
+<script type="pyodide-4-contents">
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImNhcHRpb24iOiJETFZPIHBvdGVudGlhbCBbcHJlc3MgY3RybC9jb21tYW5kIFtFTlRFUl0gdG8gcnVuXSIsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiIyBwYXJhbWV0ZXJzOiBDSEFOR0UgdGhlbSB0byBleHBsb3JlIHRoZSBpbnRlcmFjdGlvbiFcblxuQV9IID0gMS4wICAjIEhhbWFrZXIgY29uc3RhbnQgKGtCVClcbkIgPSA1MC4wICMgZG91YmxlIGxheWVyIGVuZXJneSBzY2FsZSBcbnNhbHRfbnMgPSAyMDAwICMgc2FsdCBjb25jZW50cmF0aW9uIChwYXJ0aWNsZXMvbWljcm9uXjMpXG5cbiMgY29tcHV0ZSBwb3RlbnRpYWxzXG5XX3ZkVyA9IHZhbl9kZXJfd2FhbHNfcG90ZW50aWFsKGgsIFIsIEFfSClcbldfRFIgPSBkb3VibGVfbGF5ZXIoaCwgUiwgQixzYWx0X25zKVxuRExWTyA9IFdfdmRXK1dfRFJcblxuXG5pbXBvcnQgcGxvdHRpbmdcbnBsb3R0aW5nLm11bHRpX3Bsb3QoaCwgV192ZFcsIFdfRFIsRExWTyxcbiAgICB4bGFiZWw9XCJoXCIsIHlsYWJlbD1cIkludGVyYWN0aW9uIHN0cmVuZ3RoXCIpXG4jIG5pY2VyIGNsaXBpbmdcbnlsaW0gID0gbWF4KERMVk8ubWF4KCksMC41KVxucGx0LnlsaW0oLXlsaW0qMS4xLCB5bGltKjEuMSlcbnBsdC5zaG93KCkifQ==
+</script>
+</div>
+<div class="callout callout-style-simple callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Activity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Modiify the script above and test graphically that</p>
+<ol type="1">
+<li>when the salt concentration is low, the double layer repulsion dominates the DVLO interaction</li>
+<li>there are salt concentrations where two minima occur in the DLVO potential: on at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to <span class="math inline">\(2(R+\lambda_D)\)</span> . This minimum can lead to weak aggregation of colloids</li>
+<li>Large concentration of salt depress the DVLO maximum altogether and eventually the Van der Waals interaction dominates.</li>
+</ol>
+</div>
+</div>
 </section>
-<section id="depletion-interaction" class="level3" data-number="15.2.4">
-<h3 data-number="15.2.4" class="anchored" data-anchor-id="depletion-interaction"><span class="header-section-number">15.2.4</span> Depletion interaction</h3>
+<section id="steric-interactions-and-depletion-interactions" class="level3" data-number="15.2.4">
+<h3 data-number="15.2.4" class="anchored" data-anchor-id="steric-interactions-and-depletion-interactions"><span class="header-section-number">15.2.4</span> Steric interactions and depletion interactions</h3>
+<p>We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle – Paulis’s <strong>exclusion principle</strong> – is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together.</p>
+<p>This simply means that as we take a pair of atoms, below a certain distance they <strong>repel</strong> each other with very strong forces, even in the absence of double layer interactions. These <strong>repulsive interactions</strong> can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions <strong>steric interactions</strong><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>.</p>
+<p>These fundamentally repulsive interaction mean that that, in a system with <span class="math inline">\(N\)</span> colloids, an additional <span class="math inline">\(N+1\)</span> colloid does not have acces to the entire configuration space: there is a large <strong>excluded volume</strong> due to the presence of the other colloids. These <em>excluded volume interactions</em> clearly have an <strong>entropic effect:</strong> they modify the number of accessible configurations.</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 49%">
-<col style="width: 40%">
+<col style="width: 13%">
+<col style="width: 69%">
+<col style="width: 16%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -693,7 +749,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 </tr>
 </tbody>
 </table>
-<p>See <span class="citation" data-cites="lekkerkerker2024colloids">(<a href="#ref-lekkerkerker2024colloids" role="doc-biblioref">Lekkerkerker, Tuinier, and Vis 2024</a>)</span></p>
+<!-- See [@lekkerkerker2024colloids] -->
 </section>
 </section>
 <section id="colloids-as-big-atoms" class="level2" data-number="15.3">
@@ -835,7 +891,7 @@ D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 eyJvcHRpb25zIjp7ImVudiI6eyJQTE9UTFlfUkVOREVSRVIiOiJwbG90bHlfbWltZXR5cGUifSwiaW5kZXhVUkwiOiJodHRwczovL2Nkbi5qc2RlbGl2ci5uZXQvcHlvZGlkZS92MC4yNy4wL2Z1bGwvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsicHlvZGlkZV9odHRwIiwibWljcm9waXAiLCJpcHl0aG9uIiwibnVtcHkiLCJtYXRwbG90bGliIl19fQ==
 </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoiX3B5b2RpZGVfdmFsdWVfMSA9IHtcbiAgY29uc3QgeyBoaWdobGlnaHRQeXRob24sIGI2NERlY29kZX0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBldmFsdWF0aW9uIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oe1xuICAgIGlkOiBcInB5b2RpZGUtMS1jb250ZW50c1wiLFxuICAgIGVjaG86IHRydWUsXG4gICAgb3V0cHV0OiB0cnVlXG4gIH0sIGJsb2NrLmF0dHIpO1xuXG4gIC8vIEV2YWx1YXRlIHRoZSBwcm92aWRlZCBQeXRob24gY29kZVxuICBjb25zdCByZXN1bHQgPSBweW9kaWRlT2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiBweW9kaWRlT2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgcHl0aG9uXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFB5dGhvbihibG9jay5jb2RlKSk7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ncm93IHNwaW5uZXItZ3Jvdy1zbSBtLTIgcG9zaXRpb24tYWJzb2x1dGUgdG9wLTAgZW5kLTBcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQocHJlRWxlbSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWJvcmRlciBzcGlubmVyLWJvcmRlci1zbVwiO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgIH1cblxuICAgIHlpZWxkIGNvbnRhaW5lcjtcbiAgfVxuXG4gIHB5b2RpZGVPanMucmVuZGVyZWRPanNbXCIxXCJdID0gdHJ1ZTtcbiAgeWllbGQgYXdhaXQgcmVzdWx0O1xufVxuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InB5b2RpZGVPanMgPSB7XG4gIGNvbnN0IHtcbiAgICBQeW9kaWRlRXZhbHVhdG9yLFxuICAgIFB5b2RpZGVFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBQeXRob24sXG4gICAgc3RhcnRQeW9kaWRlV29ya2VyLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGgsXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyBQeW9kaWRlIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIGxldCBweW9kaWRlUHJvbWlzZSA9IChhc3luYyAoKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBQeW9kaWRlYDtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgc3RhcnRQeW9kaWRlV29ya2VyKGRhdGEub3B0aW9ucyk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6IG1pY3JvcGlwYDtcbiAgICBhd2FpdCBweW9kaWRlLmxvYWRQYWNrYWdlKFwibWljcm9waXBcIik7XG4gICAgY29uc3QgbWljcm9waXAgPSBhd2FpdCBweW9kaWRlLnB5aW1wb3J0KFwibWljcm9waXBcIik7XG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gbWljcm9waXAuaW5zdGFsbChwa2cpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuICAgIGF3YWl0IG1pY3JvcGlwLmRlc3Ryb3koKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHB5b2RpZGUuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgICBpZiAoZS5lcnJubyAhPT0gMjApIHtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgdHJ5IHtcbiAgICAgICAgcmV0dXJuIGF3YWl0IHB5b2RpZGUuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgUHlvZGlkZSBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBQeXRob24ocHlvZGlkZSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gcHlvZGlkZTtcbiAgfSkoKS5jYXRjaCgoZXJyKSA9PiB7XG4gICAgc3RhdHVzVGV4dC5zdHlsZS5jb2xvciA9IFwidmFyKC0tZXhlcmNpc2UtZWRpdG9yLWhsLWVyLCAjQUQwMDAwKVwiO1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBlcnIubWVzc2FnZTtcbiAgICAvL2luZGljYXRvckNvbnRhaW5lci5xdWVyeVNlbGVjdG9yKFwiLnNwaW5uZXItZ3Jvd1wiKS5jbGFzc0xpc3QuYWRkKFwiZC1ub25lXCIpO1xuICAgIHRocm93IGVycjtcbiAgfSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBweW9kaWRlUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgUHlvZGlkZUV2YWx1YXRvcihweW9kaWRlLCBjb250ZXh0KTtcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBweW9kaWRlUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgICBwcm9jZXNzLFxuICB9O1xufVxuIn1dfQ==
+eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTQiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl80ID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS00LWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtNC1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzQgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzQsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8zID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0zLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMy1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzMgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzMsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoidmlld29mIF9weW9kaWRlX2VkaXRvcl8yID0ge1xuICBjb25zdCB7IFB5b2RpZGVFeGVyY2lzZUVkaXRvciwgYjY0RGVjb2RlIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0yLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oeyBpZDogYHB5b2RpZGUtMi1jb250ZW50c2AgfSwgYmxvY2suYXR0cik7XG4gIGNvbnN0IGVkaXRvciA9IG5ldyBQeW9kaWRlRXhlcmNpc2VFZGl0b3IoXG4gICAgcHlvZGlkZU9qcy5weW9kaWRlUHJvbWlzZSxcbiAgICBibG9jay5jb2RlLFxuICAgIG9wdGlvbnNcbiAgKTtcblxuICByZXR1cm4gZWRpdG9yLmNvbnRhaW5lcjtcbn1cbl9weW9kaWRlX3ZhbHVlXzIgPSBweW9kaWRlT2pzLnByb2Nlc3MoX3B5b2RpZGVfZWRpdG9yXzIsIHt9KTtcbiJ9LHsiY2VsbE5hbWUiOiJweW9kaWRlLTEiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2ROYW1lIjoiaW50ZXJwcmV0Iiwic291cmNlIjoiX3B5b2RpZGVfdmFsdWVfMSA9IHtcbiAgY29uc3QgeyBoaWdobGlnaHRQeXRob24sIGI2NERlY29kZX0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHNjcmlwdENvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwicHlvZGlkZS0xLWNvbnRlbnRzXFxcIl1gKS50ZXh0Q29udGVudDtcbiAgY29uc3QgYmxvY2sgPSBKU09OLnBhcnNlKGI2NERlY29kZShzY3JpcHRDb250ZW50KSk7XG5cbiAgLy8gRGVmYXVsdCBldmFsdWF0aW9uIGNvbmZpZ3VyYXRpb25cbiAgY29uc3Qgb3B0aW9ucyA9IE9iamVjdC5hc3NpZ24oe1xuICAgIGlkOiBcInB5b2RpZGUtMS1jb250ZW50c1wiLFxuICAgIGVjaG86IHRydWUsXG4gICAgb3V0cHV0OiB0cnVlXG4gIH0sIGJsb2NrLmF0dHIpO1xuXG4gIC8vIEV2YWx1YXRlIHRoZSBwcm92aWRlZCBQeXRob24gY29kZVxuICBjb25zdCByZXN1bHQgPSBweW9kaWRlT2pzLnByb2Nlc3Moe2NvZGU6IGJsb2NrLmNvZGUsIG9wdGlvbnN9LCB7fSk7XG5cbiAgLy8gRWFybHkgeWllbGQgd2hpbGUgd2Ugd2FpdCBmb3IgdGhlIGZpcnN0IGV2YWx1YXRpb24gYW5kIHJlbmRlclxuICBpZiAob3B0aW9ucy5vdXRwdXQgJiYgIShcIjFcIiBpbiBweW9kaWRlT2pzLnJlbmRlcmVkT2pzKSkge1xuICAgIGNvbnN0IGNvbnRhaW5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG4gICAgY29uc3Qgc3Bpbm5lciA9IGRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoXCJkaXZcIik7XG5cbiAgICBpZiAob3B0aW9ucy5lY2hvKSB7XG4gICAgICAvLyBTaG93IG91dHB1dCBhcyBoaWdobGlnaHRlZCBzb3VyY2VcbiAgICAgIGNvbnN0IHByZUVsZW0gPSBkb2N1bWVudC5jcmVhdGVFbGVtZW50KFwicHJlXCIpO1xuICAgICAgY29udGFpbmVyLmNsYXNzTmFtZSA9IFwic291cmNlQ29kZVwiO1xuICAgICAgcHJlRWxlbS5jbGFzc05hbWUgPSBcInNvdXJjZUNvZGUgcHl0aG9uXCI7XG4gICAgICBwcmVFbGVtLmFwcGVuZENoaWxkKGhpZ2hsaWdodFB5dGhvbihibG9jay5jb2RlKSk7XG4gICAgICBzcGlubmVyLmNsYXNzTmFtZSA9IFwic3Bpbm5lci1ncm93IHNwaW5uZXItZ3Jvdy1zbSBtLTIgcG9zaXRpb24tYWJzb2x1dGUgdG9wLTAgZW5kLTBcIjtcbiAgICAgIHByZUVsZW0uYXBwZW5kQ2hpbGQoc3Bpbm5lcik7XG4gICAgICBjb250YWluZXIuYXBwZW5kQ2hpbGQocHJlRWxlbSk7XG4gICAgfSBlbHNlIHtcbiAgICAgIHNwaW5uZXIuY2xhc3NOYW1lID0gXCJzcGlubmVyLWJvcmRlciBzcGlubmVyLWJvcmRlci1zbVwiO1xuICAgICAgY29udGFpbmVyLmFwcGVuZENoaWxkKHNwaW5uZXIpO1xuICAgIH1cblxuICAgIHlpZWxkIGNvbnRhaW5lcjtcbiAgfVxuXG4gIHB5b2RpZGVPanMucmVuZGVyZWRPanNbXCIxXCJdID0gdHJ1ZTtcbiAgeWllbGQgYXdhaXQgcmVzdWx0O1xufVxuIn0seyJjZWxsTmFtZSI6InB5b2RpZGUtcHJlbHVkZSIsImlubGluZSI6ZmFsc2UsIm1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InB5b2RpZGVPanMgPSB7XG4gIGNvbnN0IHtcbiAgICBQeW9kaWRlRXZhbHVhdG9yLFxuICAgIFB5b2RpZGVFbnZpcm9ubWVudE1hbmFnZXIsXG4gICAgc2V0dXBQeXRob24sXG4gICAgc3RhcnRQeW9kaWRlV29ya2VyLFxuICAgIGI2NERlY29kZSxcbiAgICBjb2xsYXBzZVBhdGgsXG4gIH0gPSB3aW5kb3cuX2V4ZXJjaXNlX29qc19ydW50aW1lO1xuXG4gIGNvbnN0IHN0YXR1c0NvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1zdGF0dXNcIik7XG4gIGNvbnN0IGluZGljYXRvckNvbnRhaW5lciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwiZXhlcmNpc2UtbG9hZGluZy1pbmRpY2F0b3JcIik7XG4gIGluZGljYXRvckNvbnRhaW5lci5jbGFzc0xpc3QucmVtb3ZlKFwiZC1ub25lXCIpO1xuXG4gIGxldCBzdGF0dXNUZXh0ID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudChcImRpdlwiKVxuICBzdGF0dXNUZXh0LmNsYXNzTGlzdCA9IFwiZXhlcmNpc2UtbG9hZGluZy1kZXRhaWxzXCI7XG4gIHN0YXR1c1RleHQgPSBzdGF0dXNDb250YWluZXIuYXBwZW5kQ2hpbGQoc3RhdHVzVGV4dCk7XG4gIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgSW5pdGlhbGlzZWA7XG5cbiAgLy8gSG9pc3QgaW5kaWNhdG9yIG91dCBmcm9tIGZpbmFsIHNsaWRlIHdoZW4gcnVubmluZyB1bmRlciByZXZlYWxcbiAgY29uc3QgcmV2ZWFsU3RhdHVzID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcihcIi5yZXZlYWwgLmV4ZXJjaXNlLWxvYWRpbmctaW5kaWNhdG9yXCIpO1xuICBpZiAocmV2ZWFsU3RhdHVzKSB7XG4gICAgcmV2ZWFsU3RhdHVzLnJlbW92ZSgpO1xuICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmV2ZWFsID4gLnNsaWRlc1wiKS5hcHBlbmRDaGlsZChyZXZlYWxTdGF0dXMpO1xuICB9XG5cbiAgLy8gTWFrZSBhbnkgcmV2ZWFsIHNsaWRlcyB3aXRoIGxpdmUgY2VsbHMgc2Nyb2xsYWJsZVxuICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKFwiLnJldmVhbCAuZXhlcmNpc2UtY2VsbFwiKS5mb3JFYWNoKChlbCkgPT4ge1xuICAgIGVsLmNsb3Nlc3QoJ3NlY3Rpb24uc2xpZGUnKS5jbGFzc0xpc3QuYWRkKFwic2Nyb2xsYWJsZVwiKTtcbiAgfSlcblxuICAvLyBQeW9kaWRlIHN1cHBsZW1lbnRhbCBkYXRhIGFuZCBvcHRpb25zXG4gIGNvbnN0IGRhdGFDb250ZW50ID0gZG9jdW1lbnQucXVlcnlTZWxlY3Rvcihgc2NyaXB0W3R5cGU9XFxcInB5b2RpZGUtZGF0YVxcXCJdYCkudGV4dENvbnRlbnQ7XG4gIGNvbnN0IGRhdGEgPSBKU09OLnBhcnNlKGI2NERlY29kZShkYXRhQ29udGVudCkpO1xuXG4gIC8vIEdyYWIgbGlzdCBvZiByZXNvdXJjZXMgdG8gYmUgZG93bmxvYWRlZFxuICBjb25zdCBmaWxlc0NvbnRlbnQgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKGBzY3JpcHRbdHlwZT1cXFwidmZzLWZpbGVcXFwiXWApLnRleHRDb250ZW50O1xuICBjb25zdCBmaWxlcyA9IEpTT04ucGFyc2UoYjY0RGVjb2RlKGZpbGVzQ29udGVudCkpO1xuXG4gIGxldCBweW9kaWRlUHJvbWlzZSA9IChhc3luYyAoKSA9PiB7XG4gICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyBQeW9kaWRlYDtcbiAgICBjb25zdCBweW9kaWRlID0gYXdhaXQgc3RhcnRQeW9kaWRlV29ya2VyKGRhdGEub3B0aW9ucyk7XG5cbiAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6IG1pY3JvcGlwYDtcbiAgICBhd2FpdCBweW9kaWRlLmxvYWRQYWNrYWdlKFwibWljcm9waXBcIik7XG4gICAgY29uc3QgbWljcm9waXAgPSBhd2FpdCBweW9kaWRlLnB5aW1wb3J0KFwibWljcm9waXBcIik7XG4gICAgYXdhaXQgZGF0YS5wYWNrYWdlcy5wa2dzLm1hcCgocGtnKSA9PiAoKSA9PiB7XG4gICAgICBzdGF0dXNUZXh0LnRleHRDb250ZW50ID0gYERvd25sb2FkaW5nIHBhY2thZ2U6ICR7cGtnfWA7XG4gICAgICByZXR1cm4gbWljcm9waXAuaW5zdGFsbChwa2cpO1xuICAgIH0pLnJlZHVjZSgoY3VyLCBuZXh0KSA9PiBjdXIudGhlbihuZXh0KSwgUHJvbWlzZS5yZXNvbHZlKCkpO1xuICAgIGF3YWl0IG1pY3JvcGlwLmRlc3Ryb3koKTtcblxuICAgIC8vIERvd25sb2FkIGFuZCBpbnN0YWxsIHJlc291cmNlc1xuICAgIGF3YWl0IGZpbGVzLm1hcCgoZmlsZSkgPT4gYXN5bmMgKCkgPT4ge1xuICAgICAgY29uc3QgbmFtZSA9IGZpbGUuc3Vic3RyaW5nKGZpbGUubGFzdEluZGV4T2YoJy8nKSArIDEpO1xuICAgICAgc3RhdHVzVGV4dC50ZXh0Q29udGVudCA9IGBEb3dubG9hZGluZyByZXNvdXJjZTogJHtuYW1lfWA7XG4gICAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKGZpbGUpO1xuICAgICAgaWYgKCFyZXNwb25zZS5vaykge1xuICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYENhbid0IGRvd25sb2FkIFxcYCR7ZmlsZX1cXGAuIEVycm9yICR7cmVzcG9uc2Uuc3RhdHVzfTogXCIke3Jlc3BvbnNlLnN0YXR1c1RleHR9XCIuYCk7XG4gICAgICB9XG4gICAgICBjb25zdCBkYXRhID0gYXdhaXQgcmVzcG9uc2UuYXJyYXlCdWZmZXIoKTtcblxuICAgICAgLy8gU3RvcmUgVVJMcyBpbiB0aGUgY3dkIHdpdGhvdXQgYW55IHN1YmRpcmVjdG9yeSBzdHJ1Y3R1cmVcbiAgICAgIGlmIChmaWxlLmluY2x1ZGVzKFwiOi8vXCIpKSB7XG4gICAgICAgIGZpbGUgPSBuYW1lO1xuICAgICAgfVxuXG4gICAgICAvLyBDb2xsYXBzZSBoaWdoZXIgZGlyZWN0b3J5IHN0cnVjdHVyZVxuICAgICAgZmlsZSA9IGNvbGxhcHNlUGF0aChmaWxlKTtcblxuICAgICAgLy8gQ3JlYXRlIGRpcmVjdG9yeSB0cmVlLCBpZ25vcmluZyBcImRpcmVjdG9yeSBleGlzdHNcIiBWRlMgZXJyb3JzXG4gICAgICBjb25zdCBwYXJ0cyA9IGZpbGUuc3BsaXQoJy8nKS5zbGljZSgwLCAtMSk7XG4gICAgICBsZXQgcGF0aCA9ICcnO1xuICAgICAgd2hpbGUgKHBhcnRzLmxlbmd0aCA+IDApIHtcbiAgICAgICAgcGF0aCArPSBwYXJ0cy5zaGlmdCgpICsgJy8nO1xuICAgICAgICB0cnkge1xuICAgICAgICAgIGF3YWl0IHB5b2RpZGUuRlMubWtkaXIocGF0aCk7XG4gICAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgICBpZiAoZS5uYW1lICE9PSBcIkVycm5vRXJyb3JcIikgdGhyb3cgZTtcbiAgICAgICAgICBpZiAoZS5lcnJubyAhPT0gMjApIHtcbiAgICAgICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgICAgICBjb25zdCBlcnJvclRleHQgPSBhd2FpdCBweW9kaWRlLl9tb2R1bGUuVVRGOFRvU3RyaW5nKGVycm9yVGV4dFB0cik7XG4gICAgICAgICAgICB0aHJvdyBuZXcgRXJyb3IoYEZpbGVzeXN0ZW0gRXJyb3IgJHtlLmVycm5vfSBcIiR7ZXJyb3JUZXh0fVwiLmApO1xuICAgICAgICAgIH1cbiAgICAgICAgfVxuICAgICAgfVxuXG4gICAgICAvLyBXcml0ZSB0aGlzIGZpbGUgdG8gdGhlIFZGU1xuICAgICAgdHJ5IHtcbiAgICAgICAgcmV0dXJuIGF3YWl0IHB5b2RpZGUuRlMud3JpdGVGaWxlKGZpbGUsIG5ldyBVaW50OEFycmF5KGRhdGEpKTtcbiAgICAgIH0gY2F0Y2ggKGUpIHtcbiAgICAgICAgaWYgKGUubmFtZSAhPT0gXCJFcnJub0Vycm9yXCIpIHRocm93IGU7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dFB0ciA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5fc3RyZXJyb3IoZS5lcnJubyk7XG4gICAgICAgIGNvbnN0IGVycm9yVGV4dCA9IGF3YWl0IHB5b2RpZGUuX21vZHVsZS5VVEY4VG9TdHJpbmcoZXJyb3JUZXh0UHRyKTtcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKGBGaWxlc3lzdGVtIEVycm9yICR7ZS5lcnJub30gXCIke2Vycm9yVGV4dH1cIi5gKTtcbiAgICAgIH1cbiAgICB9KS5yZWR1Y2UoKGN1ciwgbmV4dCkgPT4gY3VyLnRoZW4obmV4dCksIFByb21pc2UucmVzb2x2ZSgpKTtcblxuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBgUHlvZGlkZSBlbnZpcm9ubWVudCBzZXR1cGA7XG4gICAgYXdhaXQgc2V0dXBQeXRob24ocHlvZGlkZSk7XG5cbiAgICBzdGF0dXNUZXh0LnJlbW92ZSgpO1xuICAgIGlmIChzdGF0dXNDb250YWluZXIuY2hpbGRyZW4ubGVuZ3RoID09IDApIHtcbiAgICAgIHN0YXR1c0NvbnRhaW5lci5wYXJlbnROb2RlLnJlbW92ZSgpO1xuICAgIH1cbiAgICByZXR1cm4gcHlvZGlkZTtcbiAgfSkoKS5jYXRjaCgoZXJyKSA9PiB7XG4gICAgc3RhdHVzVGV4dC5zdHlsZS5jb2xvciA9IFwidmFyKC0tZXhlcmNpc2UtZWRpdG9yLWhsLWVyLCAjQUQwMDAwKVwiO1xuICAgIHN0YXR1c1RleHQudGV4dENvbnRlbnQgPSBlcnIubWVzc2FnZTtcbiAgICAvL2luZGljYXRvckNvbnRhaW5lci5xdWVyeVNlbGVjdG9yKFwiLnNwaW5uZXItZ3Jvd1wiKS5jbGFzc0xpc3QuYWRkKFwiZC1ub25lXCIpO1xuICAgIHRocm93IGVycjtcbiAgfSk7XG5cbiAgLy8gS2VlcCB0cmFjayBvZiBpbml0aWFsIE9KUyBibG9jayByZW5kZXJcbiAgY29uc3QgcmVuZGVyZWRPanMgPSB7fTtcblxuICBjb25zdCBwcm9jZXNzID0gYXN5bmMgKGNvbnRleHQsIGlucHV0cykgPT4ge1xuICAgIGNvbnN0IHB5b2RpZGUgPSBhd2FpdCBweW9kaWRlUHJvbWlzZTtcbiAgICBjb25zdCBldmFsdWF0b3IgPSBuZXcgUHlvZGlkZUV2YWx1YXRvcihweW9kaWRlLCBjb250ZXh0KTtcbiAgICBhd2FpdCBldmFsdWF0b3IucHJvY2VzcyhpbnB1dHMpO1xuICAgIHJldHVybiBldmFsdWF0b3IuY29udGFpbmVyO1xuICB9XG5cbiAgcmV0dXJuIHtcbiAgICBweW9kaWRlUHJvbWlzZSxcbiAgICByZW5kZXJlZE9qcyxcbiAgICBwcm9jZXNzLFxuICB9O1xufVxuIn1dfQ==
 </script>
 <div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
 <div id="exercise-loading-status" class="d-flex gap-2">
@@ -855,6 +911,9 @@ Hamaker, Hugo C. 1937. <span>“The London—van Der Waals Attraction Between Sp
 <div id="ref-lekkerkerker2024colloids" class="csl-entry" role="listitem">
 Lekkerkerker, Henk NW, Remco Tuinier, and Mark Vis. 2024. <em>Colloids and the Depletion Interaction</em>. Springer Nature.
 </div>
+<div id="ref-london1937general" class="csl-entry" role="listitem">
+London, Fritz. 1937. <span>“The General Theory of Molecular Forces.”</span> <em>Transactions of the Faraday Society</em> 33: 8b–26.
+</div>
 </div>
 </section>
 </section>
@@ -862,7 +921,9 @@ Lekkerkerker, Henk NW, Remco Tuinier, and Mark Vis. 2024. <em>Colloids and the D
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>This is clearly an instance of the idea of <strong>coarse graining </strong>that we have introduced <a href="../soft-matter/soft-matter_intro.html">earlier</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>This is clearly an instance of the idea of <strong>coarse graining</strong> that we have introduced <a href="../soft-matter/soft-matter_intro.html">earlier</a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>As you see, scaling by <span class="math inline">\(k_B T\)</span> is a recurrent feature of soft matter.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>From the Greek στερεός, “solid, three-dimensional”.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

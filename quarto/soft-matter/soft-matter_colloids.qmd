@@ -5,6 +5,7 @@ pyodide:
     packages:
         - numpy
         - matplotlib
+        # - plotly
 resources:
     - src/plotting.py
 bibliography: references.bib
@@ -24,7 +25,7 @@ Colloids are mixtures where one substance is dispersed throughout another. They 
 
 Colloids can be classified based on the state of the **dispersed phase** and the **dispersion medium**. Depending on the particular mixture, one can obtain a wide variety of soft materials, with unique mechanical, optical, and thermal properties.
 
-
+```{=html}
 <style>
 .rotate-header {
     writing-mode: vertical-rl;
@@ -61,59 +62,40 @@ Colloids can be classified based on the state of the **dispersed phase** and the
     vertical-align: top;
   }
 </style>
+```
 
-<table>
-  <tr>
-    <th rowspan="5" class="rotate-header">Dispersion Phase</th>
-    <th></th>
-    <th colspan="3" class="header">Dispersion Medium</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th>Solid</th>
-    <th>Liquid</th>
-    <th>Gas</th>
-  </tr>
-  <tr>
-    <th>Solid</th>
-    <td><i>Solid suspension:</i><br>pigmented plastics,<br>stained glass,<br>ruby glass, opal, pearl</td>
-    <td><i>Sol, colloidal suspension:</i><br>metal sol,<br>toothpaste, paint,<br>ink, clay slurries, mud</td>
-    <td><i>Solid aerosol:</i><br>smoke, dust</td>
-  </tr>
-  <tr>
-    <th>Liquid</th>
-    <td><i>Solid emulsion:</i><br>bituminous road paving,<br>ice cream</td>
-    <td><i>Emulsion:</i><br>milk, mayonnaise,<br>butter, pharmaceutical creams</td>
-    <td><i>Liquid aerosol:</i><br>fog, mist, tobacco smoke,<br>hair spray</td>
-  </tr>
-  <tr>
-    <th>Gas</th>
-    <td><i>Solid foam:</i><br>zeolites, expanded polystyrene,<br>‘silica gel’</td>
-    <td><i>Foam:</i><br>froths, soap foam,<br>fire-extinguisher foam</td>
-    <td>—</td>
-  </tr>
-</table>
-
++------------------+----------------------------------+-------------------------------+
+| Dispersion Phase |                                  | Dispersion Medium             |
++==================+==================================+===============================+
+|                  | Solid                            | Liquid                        |
++------------------+----------------------------------+-------------------------------+
+| Solid            | *Solid suspension:*\             | *Sol, colloidal suspension:*\ |
+|                  | pigmented plastics,\             | metal sol,\                   |
+|                  | stained glass,\                  | toothpaste, paint,\           |
+|                  | ruby glass, opal, pearl          | ink, clay slurries, mud       |
++------------------+----------------------------------+-------------------------------+
+| Liquid           | *Solid emulsion:*\               | *Emulsion:*\                  |
+|                  | bituminous road paving,\         | milk, mayonnaise,\            |
+|                  | ice cream                        | butter, pharmaceutical creams |
++------------------+----------------------------------+-------------------------------+
+| Gas              | *Solid foam:*\                   | *Foam:*\                      |
+|                  | zeolites, expanded polystyrene,\ | froths, soap foam,\           |
+|                  | ‘silica gel’                     | fire-extinguisher foam        |
++------------------+----------------------------------+-------------------------------+
 
 Clearly, colloidal materials form an incredibly diverse class, and surround us in our everyday lives. Here are some visual examples from the table above:
 
-![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com ](figs/colloids.png)
+![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com](figs/colloids.png)
 
-
-The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**: approximately 1nm to 1µm. 
-
-
+The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**: approximately 1nm to 1µm.
 
 The small sizes of colloids means that they are constantly subject to the collisions with the atom/molecules/particle of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $k_B T$ (the reference energy scale of thermal soft matter). This energy can be compared with the the potential energy to produce a dimensionless number, the **gravitational Péclet number**
 
+$${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
 
- $${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
-
-where $R$ is the radius of the colloid respectively,   $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with  $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only marginally perturbed by the effects of gravity.
-
+where $R$ is the radius of the colloid respectively, $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only marginally perturbed by the effects of gravity.
 
 ## Stability of colloids and colloid-colloid interactions
-
 
 A colloidal dispersion is said to be **stable** if it is able to remain dispersed and Brownian for a long time (typically, significantly longer than the experimental observation time). Unstable colloids undergo aggregation or sedimentation due to the dominance of attractive forces or gravity.
 
@@ -127,50 +109,54 @@ It is clear from this example that the nature of the dispersed phase and the dis
 
 At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro (and occasionally magneto) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect for a non magnetic colloid (which is the vast majority of colloidal systems) only electrostatic forces are fundamentally important.
 
-However, colloidal dispersions consist of large particles carrying many charges both in the dispersed phase and the surrounding medium, arranged disorderly at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is the one of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale take place and we can think of taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^1]. 
+However, colloidal dispersions consist of large particles carrying many charges both in the dispersed phase and the surrounding medium, arranged disorderly at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is the one of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale take place and we can think of taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-1].
 
-[^1]: This is clearly an instance of the idea of **coarse graining **that we have introduced [earlier](soft-matter_intro.qmd).
+[^soft-matter_colloids-1]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
 
+This is especially important due to\*\* quantum fluctuations\*\*: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
-There are amny examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.
+There are many examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.
 
 ### Van der Waals interaction
 
-The London-van der Waals **dispersion forces** arise from the interaction between **instantaneous dipoles** in overall neutral atoms or molecules. In simple terms, the idea is that 
-At any given moment, the electrons in an atom or molecule are not symmetrically distributed, creating a temporary dipole. Such instantaneous dipole induces a dipole in a neighboring atom or molecule by distorting its electron cloud.
+The London-van der Waals **dispersion forces** arise from the interaction between **instantaneous dipoles** in overall neutral atoms or molecules. We know fro, classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like $1/r^3$, where $r$ is the separation between two dipoles.
 
-The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to:
-$$
+More in general, neutral atom or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a **temporary dipole**. Such instantaneous dipole **induces** a dipole in a neighboring atom or molecule by distorting its electron cloud.
+
+The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to: $$
 U \propto -\frac{\mu_1 \mu_2}{r^3}
 $$
 
+::: column-margin
+![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Johannes_Diderik_van_der_Waals.jpg/960px-Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
 
-::: {.column-margin}
-![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Johannes_Diderik_van_der_Waals.jpg/960px-Johannes_Diderik_van_der_Waals.jpg){width=150 fig-align="left"}
-
-![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the disperison force.](figs/hamaker-london.png){width=300 fig-align="left"}
+![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the disperison force.](figs/hamaker-london.png){width="300" fig-align="left"}
 :::
 
 The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities $\alpha_1$ and $\alpha_2$ of the two particles:
+
+::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
     U(r) = -\frac{C}{r^6}
 $$
+:::
 
 where $C \propto \alpha_1 \alpha_2$ depends on the polarisabilities and ionization energies of the particles.
 
-The resulting $r^{-6}$ dependence is also referred to as the **London dispersion force**. 
+The resulting $r^{-6}$ dependence is also referred to as the **London dispersion force**, which can be derived within quantum-mechanical perturbation theory [@london1937general].
 
 We can then assume to take two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London disperison force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the collodial spheres **Van der Waals attractive potential** in the form
 
+::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$W_{wdW}(h)=-\dfrac{A-H}{g}f(h/R)$$
+:::
 
-where $A_H$ is the **Hamaker constant** and $f(h/R)$ is 
+where $A_H$ is the **Hamaker constant** and $f(h/R)$ is
 
 $$f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]$$
 
-
 ::: {.callout-note collapse="true"}
-# Sketch of a derivation of colloid-coilloid Van der Waals potential 
+# Sketch of a derivation of colloid-coilloid Van der Waals potential
 
 Each volume element in one sphere interacts with each in the other sphere via:
 
@@ -186,17 +172,15 @@ $$
 
 Let:
 
-* Sphere 1 be centered at $(0, 0, 0)$,
-* Sphere 2 be centered at $(0, 0, h)$,
-* $\mathbf{r}_1 = \mathbf{r}$, $\mathbf{r}_2 = \mathbf{r}'$
+-   Sphere 1 be centered at $(0, 0, 0)$,
+-   Sphere 2 be centered at $(0, 0, h)$,
+-   $\mathbf{r}_1 = \mathbf{r}$, $\mathbf{r}_2 = \mathbf{r}'$
 
 Then $|\mathbf{r}_1 - \mathbf{r}_2| = |\mathbf{r} - \mathbf{r}'|$, and the integral becomes:
 
 $$
 U(h) = -C \iiint_{|\mathbf{r}| \leq R} \iiint_{|\mathbf{r}' - h\hat{z}| \leq R} \frac{1}{|\mathbf{r} - \mathbf{r}'|^6} \, d^3\mathbf{r} \, d^3\mathbf{r}'
 $$
-
-
 
 Hamaker evaluated this by integrating over the **densities of interacting atoms** with number density $\rho$ in both spheres. The result:
 
@@ -221,10 +205,7 @@ This six-dimensional integral can be evaluated analytically for spheres, yieldin
 $$
 U(h) = -\frac{A_H}{6} \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]
 $$
-
 :::
-
-
 
 ```{pyodide}
 #| autorun: true
@@ -245,30 +226,133 @@ W_vdW = van_der_waals_potential(h, R, A_H)
 plotting.simple_plot(h,W_vdW)
 ```
 
-### Double Layer interaction
+Van der Waals interactions are considered to be **short-range** forces in the sense that their decay rate(e.g. London's $1/r^6$) is much faster than Coulombic interactions ($1/r$). Importantly, since their origin resides in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully accurately account for man-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
+
+### Double-layer interaction
+
+Colloids are often charged. The solution they are immersed also has an **inhomogeneous** distribution of ions: there will be
+
+-   **co-ions** (same charge as the colloid) that will be pushed away from the colloid surface, while
+
+-   **counter-ions** (opposite charge) will accumulate at the surface.
+
+These two different concentrations of oppositely charged ions form what is called a **double layer** and its property (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
+
+Suppose we now have two colloids of the same size and charges in the solvent. Th charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as teh electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
+
+::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
+$$
+W_{DR}(h) = B\dfrac{R}{\lambda_B}\exp{(-h/\lambda_D)}
+$$
+:::
+
+where $\lambda_D$ is called the **Debye length**
+
+$$
+\lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
+$$
+
+while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the characteristic distance at which two elementary charges have energy $k_B T$ [^soft-matter_colloids-2]
+
+[^soft-matter_colloids-2]: As you see, scaling by $k_B T$ is a recurrent feature of soft matter.
+
+$$
+\lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
+$$
+
+The coefficient $B$ is a material properties that depend on the surface potential. We are not going more into the details of these features, which are important for the design of colloidal experiments.
+
+------------------------------------------------------------------------
+
+From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign
+
+-   a van der Waals components, typically attractive and emergent from induced dipole -dipole ineractions emerging from quantum fluctuations of the electronic clouds
+
+-   a double layer component, repulsive in nature, and resulting from the electrostatic repulsions induced by ions and counterions
+
+The **sum** of the two gives rise to the **DLVO** (Derjaguin–Landau–Verwey–Overbeek) **interaction** which is an elementary model for colloid stability and aggregation.
+
+```{pyodide}
+#| autorun: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+R = 1.0  # Radius of the colloid (micron) 
+h = np.linspace(2.01 * R, 2+R*2, 1000)  # Separation distance (h > 2R)
+# Van der Waals attractive potential
+def van_der_waals_potential(h, R, A_H):
+    f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
+    return -A_H * f_h_R
+# double layer repulsive potential
+def double_layer(h, R,B,ns ):
+    lambdaB = 0.0007 # fixed Bjerrum length (micron)
+    lambdaD = np.sqrt(1/(8*np.pi*lambdaB*ns))
+    print("Debye length of", lambdaD)
+    return  B*R/lambdaB*np.exp(-h/lambdaD)
 
 
-### Depletion interaction
+```
+
+```{pyodide}
+#| caption: "DLVO potential [press ctrl/command [ENTER] to run]"
+#| autorun: true
+# parameters: CHANGE them to explore the interaction!
+
+A_H = 1.0  # Hamaker constant (kBT)
+B = 50.0 # double layer energy scale 
+salt_ns = 2000 # salt concentration (particles/micron^3)
+
+# compute potentials
+W_vdW = van_der_waals_potential(h, R, A_H)
+W_DR = double_layer(h, R, B,salt_ns)
+DLVO = W_vdW+W_DR
 
 
+import plotting
+plotting.multi_plot(h, W_vdW, W_DR,DLVO,
+    xlabel="h", ylabel="Interaction strength")
+# nicer cliping
+ylim  = max(DLVO.max(),0.5)
+plt.ylim(-ylim*1.1, ylim*1.1)
+plt.show()
+```
 
+::: {.callout-important appearance="simple"}
+## Activity
 
+Modiify the script above and test graphically that
 
-| Interaction Type   | Description                                                                                     | Range
-|--------------------|-------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| Van der Waals      | Attractive forces arising from induced dipoles between particles.                              | Short-range     |
-| Double Layer       | Electrostatic repulsion due to overlapping electrical double layers around charged particles.  | Long-range      |
-| DLVO               | Combination of van der Waals attraction and double layer repulsion.                           | Short and long range    |
-Depletion |  Typically attractive interactions emerging from purely entropic interactions | Short range |
+1.  when the salt concentration is low, the double layer repulsion dominates the DVLO interaction
+2.  there are salt concentrations where two minima occur in the DLVO potential: on at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$ . This minimum can lead to weak aggregation of colloids
+3.  Large concentration of salt depress the DVLO maximum altogether and eventually the Van der Waals interaction dominates.
+:::
 
+### Steric interactions and depletion interactions
 
+We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle -- Paulis's **exclusion principle** -- is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together.
 
-See [@lekkerkerker2024colloids]
+This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^soft-matter_colloids-3].
+
+[^soft-matter_colloids-3]: From the Greek στερεός, "solid, three-dimensional".
+
+These fundamentally repulsive interaction mean that that, in a system with $N$ colloids, an additional $N+1$ colloid does not have acces to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids. These *excluded volume interactions* clearly have an **entropic effect:** they modify the number of accessible configurations.
+
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Interaction Type | Description                                                                                   | Range                |
++==================+===============================================================================================+======================+
+| Van der Waals    | Attractive forces arising from induced dipoles between particles.                             | Short-range          |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Double Layer     | Electrostatic repulsion due to overlapping electrical double layers around charged particles. | Long-range           |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| DLVO             | Combination of van der Waals attraction and double layer repulsion.                           | Short and long range |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+| Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
++------------------+-----------------------------------------------------------------------------------------------+----------------------+
+
+<!-- See [@lekkerkerker2024colloids] -->
 
 ## Colloids as big atoms
-
-
-
 
 ## The archetype: hard-sphere colloids
 
@@ -276,27 +360,15 @@ See [@lekkerkerker2024colloids]
 
 ### Characterising the fluid phase
 
-
 #### Statics: the radial distribution function
 
 ### Dynamics: collective and single particle displacements
-
-
-
-
-
-
-
-
 
 ### Brownian Motion
 
 ### Brief history:
 
-1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water.
-~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory
-1905 Brownian motion explained by Albert Einstein
-1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro's number which led to the acceptance of the 'molecular hypothesis'.
+1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water. \~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory 1905 Brownian motion explained by Albert Einstein 1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro's number which led to the acceptance of the 'molecular hypothesis'.
 
 ### Diffusion
 
@@ -304,9 +376,7 @@ Idea: So far we considered a single particle and calculated the probability for 
 
 Now we are interested in many particles, where each undergoes a random walk and is not influenced by the others. We then ask: What fraction will be in a certain volume element after time $t$ ? This is the process of diffusion, e.g. spread of a drop of colour ink in water.
 
-Mathematics: Suppose that the distribution of particles $n(x, t)$ is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration.
-We are interested in the time-dependent concentration (number per unit volume) profile of particles $n(x, t)$. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to $x$.
-The mean number of particles crossing unit area of a plane (perpendicular to the $x$-axis) per unit time (i.e. the 'flux'), is denoted by $J_{x}$. This flux is expected to be (to a good approximation) proportional to the concentration gradient:
+Mathematics: Suppose that the distribution of particles $n(x, t)$ is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration. We are interested in the time-dependent concentration (number per unit volume) profile of particles $n(x, t)$. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to $x$. The mean number of particles crossing unit area of a plane (perpendicular to the $x$-axis) per unit time (i.e. the 'flux'), is denoted by $J_{x}$. This flux is expected to be (to a good approximation) proportional to the concentration gradient:
 
 $$
 J(x, t)=-D \frac{\partial n(x, t)}{\partial x} \quad \text { Fick's law }
@@ -348,8 +418,7 @@ $$
 p(x, t) d x=\frac{A d x n(x, t)}{N_{\text {tot }}}=\frac{1}{\sqrt{4 \pi D t}} \exp \left(-x^{2} / 4 D t\right) d x
 $$
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=972&width=722&top_left_y=327&top_left_x=271)
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=1004&width=762&top_left_y=338&top_left_x=1034)
+![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=972&width=722&top_left_y=327&top_left_x=271) ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=1004&width=762&top_left_y=338&top_left_x=1034)
 
 But the spreading of the particle distribution with time is due to the random walk of individual particles, for which we already have an equation (1-D):
 
@@ -357,10 +426,7 @@ $$
 p_{N}(x)=\frac{1}{\sqrt{2 \pi<(\Delta x)^{2}>}} \exp \left(-\frac{(x-<x>)^{2}}{2<(\Delta x)^{2}>}\right)
 $$
 
-Comparing the result from the two points of view and setting $\langle x\rangle=0$, we get
-$<\Delta x^{2}>=2 D t$
-As expected the mean square displacement increases linearly with time, but we have now found the constant of proportionality: $2 D$.
-Generalisation to three dimensions yields:
+Comparing the result from the two points of view and setting $\langle x\rangle=0$, we get $<\Delta x^{2}>=2 D t$ As expected the mean square displacement increases linearly with time, but we have now found the constant of proportionality: $2 D$. Generalisation to three dimensions yields:
 
 $$
 \begin{array}{ll}
@@ -381,11 +447,9 @@ $$
 n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\right)
 $$
 
-where we assumed a constant force $F$ in the last equation. In the case of gravity $F=m_{B} g$ with $m_{B}$ the buoyant mass. $n(x)$ results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick's law.
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466)
+where we assumed a constant force $F$ in the last equation. In the case of gravity $F=m_{B} g$ with $m_{B}$ the buoyant mass. $n(x)$ results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick's law. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466)
 
-In the case of gravity, this leads to a sedimentation equilibrium.
-(a) Flux due to external force, $J_{F}$
+In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, $J_{F}$
 
 The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=$ $F / \xi$ which defines the friction coefficient $\xi$. Hence
 
@@ -393,8 +457,7 @@ $$
 J_{F}=n(x) v=\frac{n(x) F}{\xi}
 $$
 
-(b) Diffusive flux, $J_{D}$
-$J_{D}$ is given by Fick's Law (see above):
+(b) Diffusive flux, $J_{D}$ $J_{D}$ is given by Fick's Law (see above):
 
 $$
 J_{D}(x)=-D \frac{\partial n(x)}{\partial x}
@@ -414,22 +477,18 @@ $$
 
 The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\xi=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein relation.
 
-- The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the 'fluctuation' part. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
-- More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where [the mirror] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.' (Feynman, Chapter 41)
-
+-   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the 'fluctuation' part. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
+-   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where \[the mirror\] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.' (Feynman, Chapter 41)
 
 ### Interacting colloidal particles
 
 So far we have dealt with colloidal particles as independent spheres suspended in a medium. Now we will study concentrated suspensions in which interparticle interactions cannot be ignored.
 
-####  Samples: model hard-sphere colloids
+#### Samples: model hard-sphere colloids
 
-To be specific let us discuss a monodisperse colloid made up of polymethyl-
-methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour.
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&width=684&top_left_y=718&top_left_x=1138)
+To be specific let us discuss a monodisperse colloid made up of polymethyl- methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&width=684&top_left_y=718&top_left_x=1138)
 
-The radius of the colloid is typically $R \leq 0.5 \mu m$ with a very small polydispersity (size variation) of $\Delta R / R<0.05$.
-The usual way of referring to particle densities is the 'volume fraction' $\phi$, defined to be the fraction of the suspension occupied by particles. If we have $N$ monodisperse spheres with radius $R$ in the total volume $V$, then
+The radius of the colloid is typically $R \leq 0.5 \mu m$ with a very small polydispersity (size variation) of $\Delta R / R<0.05$. The usual way of referring to particle densities is the 'volume fraction' $\phi$, defined to be the fraction of the suspension occupied by particles. If we have $N$ monodisperse spheres with radius $R$ in the total volume $V$, then
 
 $$
 \phi=\frac{V_{\mathrm{part}}}{V}=\frac{N}{V} \frac{4}{3} \pi R^{3}
@@ -437,47 +496,20 @@ $$
 
 #### Phase Behaviour
 
-As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential $U(r)$ exhibits the infinite hard sphere repulsion as well as an attractive part of depth $\varepsilon$. The
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&width=893&top_left_y=1971&top_left_x=277)
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&width=581&top_left_y=1973&top_left_x=1225)
-corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature $T_{C}$ is given by $k_{B} T_{C} \sim \varepsilon$. If $\varepsilon \rightarrow 0$, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.
+As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential $U(r)$ exhibits the infinite hard sphere repulsion as well as an attractive part of depth $\varepsilon$. The ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&width=893&top_left_y=1971&top_left_x=277) ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&width=581&top_left_y=1973&top_left_x=1225) corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature $T_{C}$ is given by $k_{B} T_{C} \sim \varepsilon$. If $\varepsilon \rightarrow 0$, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.
 
 #### Phase behaviour of hard-sphere colloids:
 
 At very low densities, the structure of a hard-sphere suspension is like that of a perfect gas; the positions of the colloidal particles are practically uncorrelated and the chance of finding a particle in any particular vicinity is almost independent of the presence of all the other particles.
 
-Upon an increase in particle density, their positions begin to become correlated as the
-particles are mutually excluding. If we look inside a suspension of volume fraction $\phi \geq 0.3$, then we will find that, at any one instant, each particle is surrounded by a `cage' of neighbours (short-ranged order). The cage tightens as $\phi$ increases. The cage size
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&width=354&top_left_y=1082&top_left_x=1273) represents a dominant length scale in the system.
-Despite the appearance of correlations between particle positions, a hard-sphere suspension below $\phi \lesssim 0.5$ is still in what one might call a 'colloid fluid' phase, i.e. the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g. fluid argon) - on average the particle centres are more or
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&width=825&top_left_y=1966&top_left_x=257)
-less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function $g(r)$. Given a particle centred at $\underline{r}=0$, $(N / V) g(\underline{r}) d \underline{r}$ is the number of particles in $d \underline{r}$ at a distance $\underline{r}$.
+Upon an increase in particle density, their positions begin to become correlated as the particles are mutually excluding. If we look inside a suspension of volume fraction $\phi \geq 0.3$, then we will find that, at any one instant, each particle is surrounded by a \`cage' of neighbours (short-ranged order). The cage tightens as $\phi$ increases. The cage size ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&width=354&top_left_y=1082&top_left_x=1273) represents a dominant length scale in the system. Despite the appearance of correlations between particle positions, a hard-sphere suspension below $\phi \lesssim 0.5$ is still in what one might call a 'colloid fluid' phase, i.e. the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g. fluid argon) - on average the particle centres are more or ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&width=825&top_left_y=1966&top_left_x=257) less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function $g(r)$. Given a particle centred at $\underline{r}=0$, $(N / V) g(\underline{r}) d \underline{r}$ is the number of particles in $d \underline{r}$ at a distance $\underline{r}$.
 
-If we increase the volume fraction above $\phi \approx 0.55$, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a 'colloidal crystal'. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between $\phi=0.5$ and $\phi=0.55$, we find coexistence between colloidal fluid and crystal.
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&width=1364&top_left_y=680&top_left_x=359)
+If we increase the volume fraction above $\phi \approx 0.55$, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a 'colloidal crystal'. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between $\phi=0.5$ and $\phi=0.55$, we find coexistence between colloidal fluid and crystal. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&width=1364&top_left_y=680&top_left_x=359)
 
-Note that no colloidal liquid is formed ( $T_{\mathcal{C}}=0$ ), as expected for an interaction potential without attraction.
-At the highest particle concentrations (above $\phi \approx 0.58$ ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.
+Note that no colloidal liquid is formed ( $T_{\mathcal{C}}=0$ ), as expected for an interaction potential without attraction. At the highest particle concentrations (above $\phi \approx 0.58$ ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.
 
 ### Particle dynamics
 
 #### Hard-spheres
 
-We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier.
-Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the
-short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351)
-with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$.
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539)
-short time:
-$<r^{2}(t)>=6 D_{S} t$
-short-time self diff. coeff.
-$D_{S}<D_{0}$ purely because of hydrodyn. interactions
-theoretical predictions exist
-intermediate time:
-some theory
-long time:
-$<r^{2}(t)>=6 D_{L} t$
-long-time self diff. coeff.
-$D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions
-theory very complicated, but some predictions exist
+We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist
