@@ -61,7 +61,7 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
 
     plt.xlabel(xlabel)
     plt.ylabel(ylabel)
-    plt.plot(x,np.zeros_like(x),':')
+    plt.plot(x,np.zeros_like(x),':k')
     plt.legend()
     plt.tight_layout()
     plt.show()

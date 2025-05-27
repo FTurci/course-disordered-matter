@@ -48,7 +48,7 @@ Here below you can see the chemical structures of (sections) of a few common pol
 Cick on the 🔧 symbol to customise the visualisation:
 
 - you should see a **State Tree** to your left
-- click on the last item (highlighte din light blue, by default *Ball & Stick*)
+- click on the last item (highlighted in light blue, by default *Ball & Stick*)
 - click on *Update 3D representation* and select a suitable *Type*. For example the **Cartoon** mode will correspond to the kinnd of coarse graining we will have in mind when talking about polymer chains.
 :::
 
