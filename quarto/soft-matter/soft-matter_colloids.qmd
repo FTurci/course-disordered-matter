@@ -414,6 +414,49 @@ Reflect on this point. In the complete absence of any attractive interactions, w
 
 Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idiealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called **depletion interactions**.
 
+
+#### Asakura-Oosawa depletion potential
+
+
+![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
+
+The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important atthistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids.
+
+Consider two hard-sphere colloids of radius $R$ in a solution of non-adsorbing polymers, each with an effective radius $\delta$. The polymers are excluded from a shell of thickness $\delta$ around each colloid, forming a **depletion layer** of radius $R+\delta$.
+
+Let $r$ be the distance between the centres of the two colooirs. The two depletion zones of the colloids start to overlap when $$r\leq 2R+2\delta=2(R+\delta)= 2R_d,$$ where we defined the **depletion radius** $R_d$.
+
+When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to an *uniform* distribution of polymers which results in an pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called **osmotic**.
+
+The lens-shaped overlap region between the two colloids consists of two identical spherical caps, each subtending an angle $\theta_0$ at the center of the colloid. From the given geometry, the angle is such that $$\cos\theta_0 = \dfrac{r}{2R_d}$$. The uncompensated pressure acts on such surface.
+
+For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $'theta$ the components is $P\cos\theta$ where the pressure exerted by the ideal gas of polymers is simply $$\eta_b kT$ where $\eta_b$ is the polymer concentration.
+
+
+
+When the two colloids approach so that their center-to-center distance $h < 2(R+\delta)$, the depletion layers overlap. The overlap region is inaccessible to the polymers, reducing the total excluded volume. This increases the free volume available to the polymers, raising their entropy and lowering the system's free energy.
+
+The resulting **depletion potential** between the colloids is:
+
+$$
+W_{\text{dep}}(h) = 
+\begin{cases}
+- \Pi V_{\text{overlap}}(h), & 2R < h < 2(R+\delta) \\
+0, & h \geq 2(R+\delta)
+\end{cases}
+$$
+
+where $\Pi$ is the osmotic pressure of the polymer solution, and $V_{\text{overlap}}(h)$ is the volume of overlap between the depletion layers.
+
+For $h$ just less than $2(R+\delta)$, the overlap volume is approximately:
+
+$$
+V_{\text{overlap}}(h) \approx \frac{\pi}{12} (h - 2R)^2 [4(R+\delta) - (h - 2R)]
+$$
+
+Thus, the depletion interaction is **attractive**, short-ranged (range $\sim \delta$), and its strength is set by the polymer osmotic pressure and the geometry of the overlap.
+
+
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | Interaction Type | Description                                                                                   | Range                |
 +==================+===============================================================================================+======================+

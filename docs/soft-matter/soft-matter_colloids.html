@@ -753,6 +753,36 @@ eyJhdHRyIjp7ImNhcHRpb24iOiIxRCBoYXJkIHBhcnRpY2xlcyBbcHJlc3MgY3RybC9jbWQgW0VOVEVS
 <p>The code should produce a final probability distribution along the <span class="math inline">\(x\)</span> axis. The main control parameter here is the <strong>packing fraction</strong>, i.e.&nbsp;<span class="math inline">\(\phi = \dfrac{dN}{L}\)</span>, the coverage of the line. If you take high values for the packing fraction you will obserbve an interesting effect: the distribution <span class="math inline">\(\rho(x)\)</span> displays distinctive modulations. Surely, these reflect the layering of the particles along the line, due to their hard-core interactions. However, the oscillations are even more interesting as we observe that the particles are morelikely to be found near the walls than away from them.</p>
 <p>Reflect on this point. In the complete absence of any attractive interactions, we find that the hard particles are <em>preferentially</em> located close to the walls. It is <em>as if</em> the walls exerted an <em>attractive force</em> capable of pulling the particles close to them. In reality, the force is purely statistical in nature. It ismerely the result of the <strong>entropic</strong> advantage that the <strong>entire</strong> system acquire when the particles are closer to the walls: simply put,if the first (and last) particles are close to the walls, there is more space for the particles in the middle, hence a larger number of configurations and hence larger <strong>configurational entropy</strong>.</p>
 <p>Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idiealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called <strong>depletion interactions</strong>.</p>
+</section>
+<section id="asakura-oosawa-depletion-potential" class="level4" data-number="15.2.4.2">
+<h4 data-number="15.2.4.2" class="anchored" data-anchor-id="asakura-oosawa-depletion-potential"><span class="header-section-number">15.2.4.2</span> Asakura-Oosawa depletion potential</h4>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figs/depletion.svg" class="img-fluid figure-img"></p>
+<figcaption>Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.</figcaption>
+</figure>
+</div>
+<p>The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g.&nbsp;coiled polymers) are also dispersed. It is not important atthistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction <em>between</em> the colloids.</p>
+<p>Consider two hard-sphere colloids of radius <span class="math inline">\(R\)</span> in a solution of non-adsorbing polymers, each with an effective radius <span class="math inline">\(\delta\)</span>. The polymers are excluded from a shell of thickness <span class="math inline">\(\delta\)</span> around each colloid, forming a <strong>depletion layer</strong> of radius <span class="math inline">\(R+\delta\)</span>.</p>
+<p>Let <span class="math inline">\(r\)</span> be the distance between the centres of the two colooirs. The two depletion zones of the colloids start to overlap when <span class="math display">\[r\leq 2R+2\delta=2(R+\delta)= 2R_d,\]</span> where we defined the <strong>depletion radius</strong> <span class="math inline">\(R_d\)</span>.</p>
+<p>When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to an <em>uniform</em> distribution of polymers which results in an pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called <strong>osmotic</strong>.</p>
+<p>The lens-shaped overlap region between the two colloids consists of two identical spherical caps, each subtending an angle <span class="math inline">\(\theta_0\)</span> at the center of the colloid. From the given geometry, the angle is such that <span class="math display">\[\cos\theta_0 = \dfrac{r}{2R_d}\]</span>. The uncompensated pressure acts on such surface.</p>
+<p>For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle <span class="math inline">\('theta\)</span> the components is <span class="math inline">\(P\cos\theta\)</span> where the pressure exerted by the ideal gas of polymers is simply $<span class="math inline">\(\eta_b kT\)</span> where <span class="math inline">\(\eta_b\)</span> is the polymer concentration.</p>
+<p>When the two colloids approach so that their center-to-center distance <span class="math inline">\(h &lt; 2(R+\delta)\)</span>, the depletion layers overlap. The overlap region is inaccessible to the polymers, reducing the total excluded volume. This increases the free volume available to the polymers, raising their entropy and lowering the system’s free energy.</p>
+<p>The resulting <strong>depletion potential</strong> between the colloids is:</p>
+<p><span class="math display">\[
+W_{\text{dep}}(h) =
+\begin{cases}
+- \Pi V_{\text{overlap}}(h), &amp; 2R &lt; h &lt; 2(R+\delta) \\
+0, &amp; h \geq 2(R+\delta)
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(\Pi\)</span> is the osmotic pressure of the polymer solution, and <span class="math inline">\(V_{\text{overlap}}(h)\)</span> is the volume of overlap between the depletion layers.</p>
+<p>For <span class="math inline">\(h\)</span> just less than <span class="math inline">\(2(R+\delta)\)</span>, the overlap volume is approximately:</p>
+<p><span class="math display">\[
+V_{\text{overlap}}(h) \approx \frac{\pi}{12} (h - 2R)^2 [4(R+\delta) - (h - 2R)]
+\]</span></p>
+<p>Thus, the depletion interaction is <strong>attractive</strong>, short-ranged (range <span class="math inline">\(\sim \delta\)</span>), and its strength is set by the polymer osmotic pressure and the geometry of the overlap.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 13%">
