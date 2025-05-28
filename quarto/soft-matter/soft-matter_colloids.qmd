@@ -428,9 +428,22 @@ Let $r$ be the distance between the centres of the two colooirs. The two depleti
 
 When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to an *uniform* distribution of polymers which results in an pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called **osmotic**.
 
-The lens-shaped overlap region between the two colloids consists of two identical spherical caps, each subtending an angle $\theta_0$ at the center of the colloid. From the given geometry, the angle is such that $$\cos\theta_0 = \dfrac{r}{2R_d}$$. The uncompensated pressure acts on such surface.
+The lens-shaped overlap region between the two colloids consists of two identical spherical caps, each subtending an angle $\theta_0$ at the center of the colloid. From the given geometry, the angle is such that $$\cos\theta_0 = \dfrac{r}{2R_d}.$$ 
 
-For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $'theta$ the components is $P\cos\theta$ where the pressure exerted by the ideal gas of polymers is simply $$\eta_b kT$ where $\eta_b$ is the polymer concentration.
+The uncompensated pressure acts on such surface.
+
+For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $\theta$ the components is proportional to $P\cos\theta$ where $P$ is the pressure exerted by the ideal gas of polymers is simply $P=\eta_b kT$ where $\eta_b$ is the polymer concentration. The surface element on which this pressure acts for a small increment $d\theta$ is $$dS = 2\pi R_d^2\sin\theta d\theta$$. Integrating over the range $[0,\theta_0]$  yields the total force $F_d$ 
+
+$$
+\begin{aligned}
+F_d(r) &= -2\pi \eta_b k_B T R_d^2 \int_0^{\theta_0} \sin\theta \cos\theta \, d\theta \\
+&= -\pi R_d^2 \eta_b k_B T \left[1 - \left(\frac{r}{2R_d}\right)^2\right]
+\end{aligned}
+$$
+
+Notice the negative sign, chosen to reflect the fact that the force is attarctive.
+
+Integrating the force yields the interaction potential.
 
 
 
