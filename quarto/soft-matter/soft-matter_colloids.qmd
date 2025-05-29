@@ -462,7 +462,7 @@ We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu a
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
-W_{\rm AO} (r) = - \dfrac{4 \pi \eta_b k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+d\delta
+W_{\rm AO} (r) = - \dfrac{4 \pi \eta_b k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
 $$ 
 </div>
 
@@ -524,10 +524,14 @@ Notice the negative sign, chosen to reflect the fact that the force is attarctiv
 Integrating the force yields the interaction potential. 
 :::
 
+![Animation of two dimensional colloids in a sea of ideal polymers. Notice how the initially separated colloids ultimately come close to each other](figs/aoanimation.gif)
 
 ::: column-margin
 ![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
 :::
+
+```{pyodide}
+```
 
 ::: {.callout-note}
 # Summary of main colloid-colloid interactions
@@ -555,14 +559,56 @@ Here we focus on the most elementary model of a colloid. The simplest such examm
 
 
 
+### The archetype: hard-spheres
 
-### The archetype: hard-sphere colloids
 
-### Phase coexistence
+A **hard-sphere** is an idealized particle model in which each particle is represented as a perfectly rigid sphere of fixed radius $R$ and diameter $\sigma=2R$. Hard spheres interact only through excluded volume: they cannot overlap, but otherwise experience no attraction or repulsion. The interaction potential $U(r)$ between two hard spheres separated by a center-to-center distance $r$ is:
+
+$$
+U(r) = \begin{cases}
+\infty & \text{if } r < \sigma \\
+0 & \text{if } r \geq \sigma
+\end{cases}
+$$
+
+This model captures the essential physics of **excluded volume** which, as we said earlier, fundamentally emerges from Pauli's exclusion principle (electrons cannot occupy the same quantum state so electronic clouds of different atoms *exclude* each other).
+
+<svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+    <!-- Axes -->
+    <line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/>
+    <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/>
+    <!-- x axis label -->
+    <text x="360" y="195" font-size="16" font-family="sans-serif">r</text>
+    <!-- y axis label -->
+    <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text>
+    <!-- Hard sphere potential: vertical line at r=2R, infinite wall -->
+    <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/>
+    <!-- Dashed line for r < 2R (forbidden region) -->
+    <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/>
+    <!-- Label for r=2R -->
+    <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text>
+    <!-- Flat line for r > 2R (U=0) -->
+    <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/>
+    <!-- Dotted line at U=infty -->
+    <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text>
+    <!-- Label for U=0 -->
+    <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text>
+    <!-- Bracket for forbidden region -->
+    <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text>
+    <!-- Title -->
+    <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
+</svg>
+
+#### Phase behaviour
+
+Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is **always zero**. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they always are at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any $T>0$, **entropic** contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are *the only* contribution to the free energy.
+
+In this sense, hard-spheres are completely **entropy-driven** system. For a collection of identical (**monodisperse**) hard spheres the entropy is solely **configurational** and correspods to the number of possible arrangements. This constraine only by the accessible volume, of which we have seen an instance when considering the depletion interactions.
+
 
 #### Statics: the radial distribution function
 
-### Dynamics: single and collective displacements
+#### Dynamics: single and collective displacements
 
 
 ### Brownian Motion
