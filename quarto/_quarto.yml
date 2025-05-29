@@ -87,8 +87,10 @@ book:
 format:
   live-html:
     theme: cosmo
+    page-layout: full
     grid:
-      sidebar-width: 305px
+      sidebar-width: 305px  
+      body-width: 1000px
     toc: true
     mainfont: sans-serif
     fontsize: 15px

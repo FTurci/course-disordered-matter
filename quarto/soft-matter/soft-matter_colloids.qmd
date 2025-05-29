@@ -130,7 +130,7 @@ $$
 ::: column-margin
 ![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Johannes_Diderik_van_der_Waals.jpg/960px-Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
 
-![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the disperison force.](figs/hamaker-london.png){width="300" fig-align="left"}
+![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the dispersion force.](figs/hamaker-london.png){width="300" fig-align="left"}
 :::
 
 The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities $\alpha_1$ and $\alpha_2$ of the two particles:
@@ -145,7 +145,7 @@ where $C \propto \alpha_1 \alpha_2$ depends on the polarisabilities and ionizati
 
 The resulting $r^{-6}$ dependence is also referred to as the **London dispersion force**, which can be derived within quantum-mechanical perturbation theory [@london1937general].
 
-We can then assume to take two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London disperison force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the collodial spheres **Van der Waals attractive potential** in the form
+We can then assume to take two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the collodial spheres **Van der Waals attractive potential** in the form
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$W_{wdW}(h)=-\dfrac{A-H}{g}f(h/R)$$
@@ -405,7 +405,6 @@ plt.xlabel("Position [d]")
 plt.ylabel("Probability density")
 plt.title("Histogram of particle positions")
 plt.show()
-
 ```
 
 The code should produce a final probability distribution along the $x$ axis. The main control parameter here is the **packing fraction**, i.e. $\phi = \dfrac{dN}{L}$, the coverage of the line. If you take high values for the packing fraction you will obserbve an interesting effect: the distribution $\rho(x)$ displays distinctive modulations. Surely, these reflect the layering of the particles along the line, due to their hard-core interactions. However, the oscillations are even more interesting as we observe that the particles are morelikely to be found near the walls than away from them. 
@@ -420,11 +419,90 @@ Even if the force is statistical, it is not less real: in this simplified case, 
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
 
-The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important atthistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids.
+The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important atthistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
 
-Consider two hard-sphere colloids of radius $R$ in a solution of non-adsorbing polymers, each with an effective radius $\delta$. The polymers are excluded from a shell of thickness $\delta$ around each colloid, forming a **depletion layer** of radius $R+\delta$.
+This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by 
 
-Let $r$ be the distance between the centres of the two colooirs. The two depletion zones of the colloids start to overlap when $$r\leq 2R+2\delta=2(R+\delta)= 2R_d,$$ where we defined the **depletion radius** $R_d$.
+$$\mu = k_BT \ln \eta_b$${#eq-ideal-mu}
+
+We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
+
+The grand potential for such ideal polymers is given by 
+
+$$\Omega = -k_BT e^{\mu/k_B T}V_{\rm accessible}$$
+
+where $V_{\rm accessible}$ is the accessible volume. In the absence of the colloids, the entire volume $V$ is accessible. 
+
+Let's image to intrudce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $$V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid:
+
+$$\begin{aligned}
+V_{\rm exclusion}& = V_{\rm outer}-V_{\rm inner}\\
+&= \dfrac{4\pi}{3}\left((R+\delta)^3-R^3\right)
+\end{aligned}
+$$
+
+Changing the separation between the two colloids but maintaining $r>2R_d$ does not change the grand potential: there is no free energy advantage and hence no effective interaction.
+
+Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of tha figur above). Its volume can be calculated simply from geometrical considerations and it is
+$$
+V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
+$${#eq-voverlap}
+
+Th new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as 
+
+$$
+\begin{aligned}
+W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{m/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
+& = -k_BT e^{m/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
+& = -k_BT e^{m/k_B T} V_{\mathrm{overlap}(r)}
+\end{aligned}
+$$
+
+We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu and the gemoetrical expression for $V_{\mathrm{overlap}}$ in @eq-voverlap to finally write the **Asakura-Oosawa** potential
+
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+$$
+W_{\rm AO} (r) = - \dfrac{4 \pi \eta_b k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+d\delta
+$$ 
+</div>
+
+```{pyodide}
+#| caption: "Asakura-Oosawa potential [press ctrl/cmd [ENTER] to run]"
+#| autorun: true
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters (change to explore)
+R = 1.0           # Colloid radius
+delta = 0.2       # Polymer radius
+eta_b = 0.1       # Polymer concentration (dimensionless)
+kBT = 1.0         # Set kBT=1 for reduced units
+
+# Depletion radius
+Rd = R + delta
+
+# r values: from contact (2R) up to 3(R+delta)
+r = np.linspace(2*R, 3*Rd, 500)
+
+def AO_potential(r, R, delta, eta_b, kBT):
+    Rd = R + delta
+    # Only defined for 2R <= r < 2Rd
+    W = np.zeros_like(r)
+    mask = (r >= 2*R) & (r < 2*Rd)
+    x = r[mask] / Rd
+    W[mask] = - (4 * np.pi * eta_b * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
+    return W
+
+W_AO = AO_potential(r, R, delta, eta_b, kBT)
+
+plt.plot(r, W_AO)
+plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$", title="Asakura-Oosawa Depletion Potential")
+plt.show()
+```
+
+::: {.callout-note collapse="true"}
+# Force-based derivation of the AO interaction
 
 When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to an *uniform* distribution of polymers which results in an pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called **osmotic**.
 
@@ -443,33 +521,16 @@ $$
 
 Notice the negative sign, chosen to reflect the fact that the force is attarctive.
 
-Integrating the force yields the interaction potential.
+Integrating the force yields the interaction potential. 
+:::
 
 
+::: column-margin
+![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
+:::
 
-When the two colloids approach so that their center-to-center distance $h < 2(R+\delta)$, the depletion layers overlap. The overlap region is inaccessible to the polymers, reducing the total excluded volume. This increases the free volume available to the polymers, raising their entropy and lowering the system's free energy.
-
-The resulting **depletion potential** between the colloids is:
-
-$$
-W_{\text{dep}}(h) = 
-\begin{cases}
-- \Pi V_{\text{overlap}}(h), & 2R < h < 2(R+\delta) \\
-0, & h \geq 2(R+\delta)
-\end{cases}
-$$
-
-where $\Pi$ is the osmotic pressure of the polymer solution, and $V_{\text{overlap}}(h)$ is the volume of overlap between the depletion layers.
-
-For $h$ just less than $2(R+\delta)$, the overlap volume is approximately:
-
-$$
-V_{\text{overlap}}(h) \approx \frac{\pi}{12} (h - 2R)^2 [4(R+\delta) - (h - 2R)]
-$$
-
-Thus, the depletion interaction is **attractive**, short-ranged (range $\sim \delta$), and its strength is set by the polymer osmotic pressure and the geometry of the overlap.
-
-
+::: {.callout-note}
+# Summary of main colloid-colloid interactions
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | Interaction Type | Description                                                                                   | Range                |
 +==================+===============================================================================================+======================+
@@ -481,20 +542,28 @@ Thus, the depletion interaction is **attractive**, short-ranged (range $\sim \de
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
-
+:::
 <!-- See [@lekkerkerker2024colloids] -->
 
 ## Colloids as big atoms
 
-## The archetype: hard-sphere colloids
+Colloids can be viewed as "big atoms": they are large particles suspended in a medium, exhibiting thermal motion and interactions in various ways analogous to atoms, but at much larger length and time scales. As we have seen above, the interactionsa can have statistical or even quanto-mechanical origina, but are ultimately cast in a classical form that is amenable to a classical treatment. At the same time, the large scales of colloids mean that via dedicatated microscopy techniques one is able to identify individual colloids, study theiur arrangements in detail, and follow their dynamics.
 
-## Phase coexistence
+As mentionedearlier, there is a huge variety of colloids and a vast literature characterising their properties but also producing theoritical and computational models.
 
-### Characterising the fluid phase
+Here we focus on the most elementary model of a colloid. The simplest such exammple is the purely repulsive hard-sphere colloid. While an idealisation, quasi-hard-sphere colloids can be prepared in the laboratory by various techniques (see @royall2024colloidal ). This includes by synthesizing a spheres of bundled polymers (you will learn about polymers in the next chapter) such as polymethyl methacrylate (PMMA), but also simply silica (small sphere of non-crystalline $\rm Si O_2$) micron-sized beads carefully treated to screen and minimize the electrostatic interactions that would lead to DLVO-like contributions.
+
+
+
+
+### The archetype: hard-sphere colloids
+
+### Phase coexistence
 
 #### Statics: the radial distribution function
 
-### Dynamics: collective and single particle displacements
+### Dynamics: single and collective displacements
+
 
 ### Brownian Motion
 
