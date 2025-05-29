@@ -386,12 +386,14 @@ window.Quarto = {
   <li><a href="#colloids-as-big-atoms" id="toc-colloids-as-big-atoms" class="nav-link" data-scroll-target="#colloids-as-big-atoms"><span class="header-section-number">15.3</span> Colloids as big atoms</a>
   <ul class="collapse">
   <li><a href="#the-archetype-hard-spheres" id="toc-the-archetype-hard-spheres" class="nav-link" data-scroll-target="#the-archetype-hard-spheres"><span class="header-section-number">15.3.1</span> The archetype: hard-spheres</a></li>
-  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion"><span class="header-section-number">15.3.2</span> Brownian Motion</a></li>
-  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history"><span class="header-section-number">15.3.3</span> Brief history:</a></li>
-  <li><a href="#diffusion" id="toc-diffusion" class="nav-link" data-scroll-target="#diffusion"><span class="header-section-number">15.3.4</span> Diffusion</a></li>
-  <li><a href="#stokes-einstein-relation" id="toc-stokes-einstein-relation" class="nav-link" data-scroll-target="#stokes-einstein-relation"><span class="header-section-number">15.3.5</span> Stokes-Einstein relation</a></li>
-  <li><a href="#interacting-colloidal-particles" id="toc-interacting-colloidal-particles" class="nav-link" data-scroll-target="#interacting-colloidal-particles"><span class="header-section-number">15.3.6</span> Interacting colloidal particles</a></li>
-  <li><a href="#particle-dynamics" id="toc-particle-dynamics" class="nav-link" data-scroll-target="#particle-dynamics"><span class="header-section-number">15.3.7</span> Particle dynamics</a></li>
+  <li><a href="#statics-the-radial-distribution-function" id="toc-statics-the-radial-distribution-function" class="nav-link" data-scroll-target="#statics-the-radial-distribution-function"><span class="header-section-number">15.3.2</span> Statics: the radial distribution function</a></li>
+  <li><a href="#dynamics-single-and-collective-displacements" id="toc-dynamics-single-and-collective-displacements" class="nav-link" data-scroll-target="#dynamics-single-and-collective-displacements"><span class="header-section-number">15.3.3</span> Dynamics: single and collective displacements</a></li>
+  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion"><span class="header-section-number">15.3.4</span> Brownian Motion</a></li>
+  <li><a href="#brief-history" id="toc-brief-history" class="nav-link" data-scroll-target="#brief-history"><span class="header-section-number">15.3.5</span> Brief history:</a></li>
+  <li><a href="#diffusion" id="toc-diffusion" class="nav-link" data-scroll-target="#diffusion"><span class="header-section-number">15.3.6</span> Diffusion</a></li>
+  <li><a href="#stokes-einstein-relation" id="toc-stokes-einstein-relation" class="nav-link" data-scroll-target="#stokes-einstein-relation"><span class="header-section-number">15.3.7</span> Stokes-Einstein relation</a></li>
+  <li><a href="#interacting-colloidal-particles" id="toc-interacting-colloidal-particles" class="nav-link" data-scroll-target="#interacting-colloidal-particles"><span class="header-section-number">15.3.8</span> Interacting colloidal particles</a></li>
+  <li><a href="#particle-dynamics" id="toc-particle-dynamics" class="nav-link" data-scroll-target="#particle-dynamics"><span class="header-section-number">15.3.9</span> Particle dynamics</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -899,12 +901,12 @@ Summary of main colloid-colloid interactions
 </section>
 </section>
 </section>
-<section id="colloids-as-big-atoms" class="level2" data-number="15.3">
+<section id="colloids-as-big-atoms" class="level2 page-columns page-full" data-number="15.3">
 <h2 data-number="15.3" class="anchored" data-anchor-id="colloids-as-big-atoms"><span class="header-section-number">15.3</span> Colloids as big atoms</h2>
 <p>Colloids can be viewed as “big atoms”: they are large particles suspended in a medium, exhibiting thermal motion and interactions in various ways analogous to atoms, but at much larger length and time scales. As we have seen above, the interactionsa can have statistical or even quanto-mechanical origina, but are ultimately cast in a classical form that is amenable to a classical treatment. At the same time, the large scales of colloids mean that via dedicatated microscopy techniques one is able to identify individual colloids, study theiur arrangements in detail, and follow their dynamics.</p>
 <p>As mentionedearlier, there is a huge variety of colloids and a vast literature characterising their properties but also producing theoritical and computational models.</p>
 <p>Here we focus on the most elementary model of a colloid. The simplest such exammple is the purely repulsive hard-sphere colloid. While an idealisation, quasi-hard-sphere colloids can be prepared in the laboratory by various techniques (see <span class="citation" data-cites="royall2024colloidal">Royall et al. (<a href="#ref-royall2024colloidal" role="doc-biblioref">2024</a>)</span> ). This includes by synthesizing a spheres of bundled polymers (you will learn about polymers in the next chapter) such as polymethyl methacrylate (PMMA), but also simply silica (small sphere of non-crystalline <span class="math inline">\(\rm Si O_2\)</span>) micron-sized beads carefully treated to screen and minimize the electrostatic interactions that would lead to DLVO-like contributions.</p>
-<section id="the-archetype-hard-spheres" class="level3" data-number="15.3.1">
+<section id="the-archetype-hard-spheres" class="level3 page-columns page-full" data-number="15.3.1">
 <h3 data-number="15.3.1" class="anchored" data-anchor-id="the-archetype-hard-spheres"><span class="header-section-number">15.3.1</span> The archetype: hard-spheres</h3>
 <p>A <strong>hard-sphere</strong> is an idealized particle model in which each particle is represented as a perfectly rigid sphere of fixed radius <span class="math inline">\(R\)</span> and diameter <span class="math inline">\(\sigma=2R\)</span>. Hard spheres interact only through excluded volume: they cannot overlap, but otherwise experience no attraction or repulsion. The interaction potential <span class="math inline">\(U(r)\)</span> between two hard spheres separated by a center-to-center distance <span class="math inline">\(r\)</span> is:</p>
 <p><span class="math display">\[
@@ -918,27 +920,89 @@ U(r) = \begin{cases}
 <!-- Axes -->
 <line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"></line> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"></line> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"></line> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"></rect> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"></line> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
 </svg>
-<section id="phase-behaviour" class="level4" data-number="15.3.1.1">
+<section id="phase-behaviour" class="level4 page-columns page-full" data-number="15.3.1.1">
 <h4 data-number="15.3.1.1" class="anchored" data-anchor-id="phase-behaviour"><span class="header-section-number">15.3.1.1</span> Phase behaviour</h4>
 <p>Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is <strong>always zero</strong>. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they always are at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any <span class="math inline">\(T&gt;0\)</span>, <strong>entropic</strong> contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are <em>the only</em> contribution to the free energy.</p>
-<p>In this sense, hard-spheres are completely <strong>entropy-driven</strong> system. For a collection of identical (<strong>monodisperse</strong>) hard spheres the entropy is solely <strong>configurational</strong> and correspods to the number of possible arrangements. This constraine only by the accessible volume, of which we have seen an instance when considering the depletion interactions.</p>
+<p>In this sense, hard-spheres are completely <strong>entropy-driven</strong> system. For a collection of identical (<strong>monodisperse</strong>) hard spheres the entropy is solely <strong>configurational</strong> and correspods to the number of possible arrangements. This constrained only by the accessible volume, of which we have seen an instance when considering the depletion interactions. Notice that changing the temperature does not really affect the statistics of the configurations: the Boltzmann factor <span class="math inline">\(e^{U(\mathbf{r}^N)/k_BT}\)</span> is always <span class="math inline">\(1\)</span> for all valid configurations. The only way we can change the state of the system is by varying the accessible volume. For a system of <span class="math inline">\(N\)</span> identical hard spheres in a volume <span class="math inline">\(V\)</span> this can only be done in two ways</p>
+<ul>
+<li>by adding more spheres (of the same kind)</li>
+<li>by varying the volume V</li>
+</ul>
+<p>The two routes essentially amount to varying one single parameter, which is the <strong>packing fraction</strong> (also called, <em>volume fraction</em>) of the system, defined as</p>
+<p><span class="math display">\[\phi = N\dfrac{v_{\rm sphere}}{V} = \dfrac{\pi \sigma^6 N}{6V}\]</span></p>
+<p>which can also be expressed in terms of the <strong>number density</strong> <span class="math inline">\(\rho=N/V\)</span> as <span class="math inline">\(\phi=\pi\sigma^3\rho/6\)</span>.</p>
+<p>To change the phase behaviour of hard spheres we have a <strong>single control parameter</strong>, <span class="math inline">\(\phi\)</span> meaning that (differently from fluids like water) we are bound to have <strong>one-dimensional</strong> phase diagram.</p>
+<p>We explore the phase behaviour of hard spheres by considering different regimes of packing fraction.</p>
+<section id="low-packing-fractions" class="level6 unnumbered page-columns page-full">
+<h6 class="unnumbered anchored" data-anchor-id="low-packing-fractions">Low packing fractions</h6>
+<p>The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is <span class="math inline">\(\sigma\)</span> such <strong>excluded volume</strong> per particle is simply <span class="math inline">\(v_{\rm ex} =4\pi\sigma^3/3\)</span> and it is much larger than the volume pert particle <span class="math inline">\(v= V/N\)</span>. A collection of <span class="math inline">\(N\)</span> hard spheres has a total excluded volume <span class="math inline">\(V_{\rm ex}\neq N v_{\rm ex}\)</span> simply because the excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.</p>
+<p>At very low densities, most hard spheres isolated. So, in this case, we can approximate the roral excluded volume as <span class="math inline">\(V_{\rm ex} \rm N v_{\rm ex}\)</span> so that the accessible volume (the volume not occupied by the spheres) is</p>
+<p><span class="math display">\[V_{\rm accessible} = V-Nv_{\rm ex}\]</span></p>
+<p>We use this to perform an appropriate statistical mechanical calculation for the Helmholtz free energy of system <span class="math inline">\(F\)</span>, which we know is purely entropic <span class="math inline">\(F=-TS\)</span>. The partition function <span class="math inline">\(\mathcal{Z}\)</span> is</p>
+<p><span class="math display">\[
+\mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N
+\]</span></p>
+<p>where <span class="math inline">\(\Lambda\)</span> is the thermal de Broglie wavelength</p>
+<p><span class="math display">\[\Lambda = h/\sqrt{2\pi mk_B T},\]</span> and originates from the integration over the Maxwell-Boltzmann disribution of momenta for particles of mass <span class="math inline">\(m\)</span>, while <span class="math inline">\(h\)</span> is Planck’s constant.</p>
+<p>For hard spheres, the integral is over all configurations where no two spheres overlap (i.e., <span class="math inline">\(|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma\)</span> for all <span class="math inline">\(i \neq j\)</span>), and <span class="math inline">\(V_{\rm accessible}\)</span> is the total accessible volume. The results is that</p>
+<p><span class="math display">\[\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},\]</span></p>
+<p>with the <span class="math inline">\(1/2\)</span> factor coming from the fact that we avoid double counting the excluded volume of pairs. The entropy is <span class="math display">\[
+S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]
+\]</span></p>
+<p>From the partition function, we use Stirling’s formula <span class="math inline">\(\ln N! = N\ln N -N\)</span> and obtain</p>
+<p><span class="math display">\[
+S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]
+\]</span></p>
+<p>which reads <span class="math display">\[
+S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]
+\]</span></p>
+<p>The phase behaviour is encoded in the <strong>equation of state</strong> (the equation that links the three thermodynamics variables <span class="math inline">\(P,T\)</span> and <span class="math inline">\(\phi\)</span>). To obtain it, we calculate the pressure</p>
+<p><span class="math display">\[P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}\]</span></p>
+<p>This expression can be simplified (do it as an exercise) to obtain the quation of state</p>
+<p><span class="math display">\[Z_{\rm comp}= \dfrac{PV}{Nk_BT}=\dfrac{1}{1-4\phi} \quad (\phi\ll 1)\]</span></p>
+<p>also known as the <strong>compressibility factor</strong> <span class="math inline">\(Z_{\rm comp}\)</span>. Since <span class="math inline">\(\phi\)</span> is very small the expression is in fact</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The choice of the letter “Z” is unfortunate. Do not confuse the compressibility factor with the partition function!</p>
+</div></div><p><span class="math display">\[Z_{\rm comp} = 1+4\phi+O(\phi^2)\]</span></p>
+<p>This expression makes it apparent that the first term linear in <span class="math inline">\(\phi\)</span> is a <em>correction</em> to the ideal gas law. This is example (to very low order) of what is called the <strong>virial expansion</strong>. This, in general takes the form</p>
+<p><span class="math display">\[Z_{\rm comp}= 1 + B_2 \rho + B_3 \rho^2+ \dots\]</span></p>
+<p>where <span class="math inline">\(B_2, B_3, \dots\)</span> are the <strong>virial coefficients</strong> and for systems that are not hard spheres they depend also on the temperature, <span class="math inline">\(B_2(T), B_3(T),\dots\)</span>. They are important as they encode the effects of <strong>correlations</strong>:</p>
+<ul>
+<li><span class="math inline">\(B_2\)</span> accounts for pairwise correlations (how the presence of one particle affects the probability of finding another nearby),</li>
+<li><span class="math inline">\(B_3\)</span> for three-body correlations, and so on.</li>
+</ul>
+<p>Given an interaction potential the second virial coefficient <span class="math inline">\(B_2\)</span> can be calculated independently from the equation state</p>
+<p><span class="math display">\[
+B_2(T)=-\frac{1}{2} \int\left(\exp \left(-\frac{U(\mathbf{r})}{k_B T}\right)-1\right) 4 \pi r^2 d r
+\]</span></p>
+<p>For hard spheres this results in</p>
+<p><span class="math display">\[
+B_2 =  \frac{2\pi}{3} \sigma^3
+\]</span></p>
+<p>which is exactly what is predicted by the equation of state above, once you recognise that <span class="math inline">\(\phi = \frac{\pi\sigma^3}{6}\rho\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>Exercise: check this calculation.</p>
+</div></div><p>Higher-order coefficients become increasingly complex to compute and reflect more intricate many-body corelations that can be established even if the interaction potential is purely twobody (as in the case of hard spheres). The higher order coefficients become mor eand more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.</p>
 </section>
-<section id="statics-the-radial-distribution-function" class="level4" data-number="15.3.1.2">
-<h4 data-number="15.3.1.2" class="anchored" data-anchor-id="statics-the-radial-distribution-function"><span class="header-section-number">15.3.1.2</span> Statics: the radial distribution function</h4>
-</section>
-<section id="dynamics-single-and-collective-displacements" class="level4" data-number="15.3.1.3">
-<h4 data-number="15.3.1.3" class="anchored" data-anchor-id="dynamics-single-and-collective-displacements"><span class="header-section-number">15.3.1.3</span> Dynamics: single and collective displacements</h4>
 </section>
 </section>
-<section id="brownian-motion" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">15.3.2</span> Brownian Motion</h3>
+<section id="statics-the-radial-distribution-function" class="level3" data-number="15.3.2">
+<h3 data-number="15.3.2" class="anchored" data-anchor-id="statics-the-radial-distribution-function"><span class="header-section-number">15.3.2</span> Statics: the radial distribution function</h3>
 </section>
-<section id="brief-history" class="level3" data-number="15.3.3">
-<h3 data-number="15.3.3" class="anchored" data-anchor-id="brief-history"><span class="header-section-number">15.3.3</span> Brief history:</h3>
+<section id="dynamics-single-and-collective-displacements" class="level3" data-number="15.3.3">
+<h3 data-number="15.3.3" class="anchored" data-anchor-id="dynamics-single-and-collective-displacements"><span class="header-section-number">15.3.3</span> Dynamics: single and collective displacements</h3>
+</section>
+<section id="brownian-motion" class="level3" data-number="15.3.4">
+<h3 data-number="15.3.4" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">15.3.4</span> Brownian Motion</h3>
+</section>
+<section id="brief-history" class="level3" data-number="15.3.5">
+<h3 data-number="15.3.5" class="anchored" data-anchor-id="brief-history"><span class="header-section-number">15.3.5</span> Brief history:</h3>
 <p>1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water. ~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory 1905 Brownian motion explained by Albert Einstein 1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro’s number which led to the acceptance of the ‘molecular hypothesis’.</p>
 </section>
-<section id="diffusion" class="level3" data-number="15.3.4">
-<h3 data-number="15.3.4" class="anchored" data-anchor-id="diffusion"><span class="header-section-number">15.3.4</span> Diffusion</h3>
+<section id="diffusion" class="level3" data-number="15.3.6">
+<h3 data-number="15.3.6" class="anchored" data-anchor-id="diffusion"><span class="header-section-number">15.3.6</span> Diffusion</h3>
 <p>Idea: So far we considered a single particle and calculated the probability for finding it after N steps in the volume element <span class="math inline">\(d \underline{r}\)</span> centred at <span class="math inline">\(\underline{r}\)</span>. We found that <span class="math inline">\(\left\langle r^{2}\right\rangle=N b^{2}\)</span>, which suggests <span class="math inline">\(\left\langle\underline{r}^{2}\right\rangle \propto t\)</span>.</p>
 <p>Now we are interested in many particles, where each undergoes a random walk and is not influenced by the others. We then ask: What fraction will be in a certain volume element after time <span class="math inline">\(t\)</span> ? This is the process of diffusion, e.g.&nbsp;spread of a drop of colour ink in water.</p>
 <p>Mathematics: Suppose that the distribution of particles <span class="math inline">\(n(x, t)\)</span> is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration. We are interested in the time-dependent concentration (number per unit volume) profile of particles <span class="math inline">\(n(x, t)\)</span>. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to <span class="math inline">\(x\)</span>. The mean number of particles crossing unit area of a plane (perpendicular to the <span class="math inline">\(x\)</span>-axis) per unit time (i.e.&nbsp;the ‘flux’), is denoted by <span class="math inline">\(J_{x}\)</span>. This flux is expected to be (to a good approximation) proportional to the concentration gradient:</p>
@@ -986,8 +1050,8 @@ J=-D \nabla n(\underline{r}, t) &amp; \text { Fick's law } \\
 \]</span></p>
 <p>This last relation could constitute an alternative definition of the diffusion coefficient, instead of Fick’s law.</p>
 </section>
-<section id="stokes-einstein-relation" class="level3" data-number="15.3.5">
-<h3 data-number="15.3.5" class="anchored" data-anchor-id="stokes-einstein-relation"><span class="header-section-number">15.3.5</span> Stokes-Einstein relation</h3>
+<section id="stokes-einstein-relation" class="level3" data-number="15.3.7">
+<h3 data-number="15.3.7" class="anchored" data-anchor-id="stokes-einstein-relation"><span class="header-section-number">15.3.7</span> Stokes-Einstein relation</h3>
 <p>Suppose that the particles are subjected to an external force F in the x direction, e.g.&nbsp;gravity. In thermal equilibrium the Maxwell-Boltzmann distribution is valid, i.e.&nbsp;the particle density <span class="math inline">\(n(x)\)</span> is given by</p>
 <p><span class="math display">\[
 n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\right)
@@ -1018,33 +1082,33 @@ D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 <li>More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. ‘This depends upon where [the mirror] is getting its ’kicks’ from. If it is through the fibre, we cool it … if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.’ (Feynman, Chapter 41)</li>
 </ul>
 </section>
-<section id="interacting-colloidal-particles" class="level3" data-number="15.3.6">
-<h3 data-number="15.3.6" class="anchored" data-anchor-id="interacting-colloidal-particles"><span class="header-section-number">15.3.6</span> Interacting colloidal particles</h3>
+<section id="interacting-colloidal-particles" class="level3" data-number="15.3.8">
+<h3 data-number="15.3.8" class="anchored" data-anchor-id="interacting-colloidal-particles"><span class="header-section-number">15.3.8</span> Interacting colloidal particles</h3>
 <p>So far we have dealt with colloidal particles as independent spheres suspended in a medium. Now we will study concentrated suspensions in which interparticle interactions cannot be ignored.</p>
-<section id="samples-model-hard-sphere-colloids" class="level4" data-number="15.3.6.1">
-<h4 data-number="15.3.6.1" class="anchored" data-anchor-id="samples-model-hard-sphere-colloids"><span class="header-section-number">15.3.6.1</span> Samples: model hard-sphere colloids</h4>
+<section id="samples-model-hard-sphere-colloids" class="level4" data-number="15.3.8.1">
+<h4 data-number="15.3.8.1" class="anchored" data-anchor-id="samples-model-hard-sphere-colloids"><span class="header-section-number">15.3.8.1</span> Samples: model hard-sphere colloids</h4>
 <p>To be specific let us discuss a monodisperse colloid made up of polymethyl- methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&amp;width=684&amp;top_left_y=718&amp;top_left_x=1138" class="img-fluid"></p>
 <p>The radius of the colloid is typically <span class="math inline">\(R \leq 0.5 \mu m\)</span> with a very small polydispersity (size variation) of <span class="math inline">\(\Delta R / R&lt;0.05\)</span>. The usual way of referring to particle densities is the ‘volume fraction’ <span class="math inline">\(\phi\)</span>, defined to be the fraction of the suspension occupied by particles. If we have <span class="math inline">\(N\)</span> monodisperse spheres with radius <span class="math inline">\(R\)</span> in the total volume <span class="math inline">\(V\)</span>, then</p>
 <p><span class="math display">\[
 \phi=\frac{V_{\mathrm{part}}}{V}=\frac{N}{V} \frac{4}{3} \pi R^{3}
 \]</span></p>
 </section>
-<section id="phase-behaviour-1" class="level4" data-number="15.3.6.2">
-<h4 data-number="15.3.6.2" class="anchored" data-anchor-id="phase-behaviour-1"><span class="header-section-number">15.3.6.2</span> Phase Behaviour</h4>
+<section id="phase-behaviour-1" class="level4" data-number="15.3.8.2">
+<h4 data-number="15.3.8.2" class="anchored" data-anchor-id="phase-behaviour-1"><span class="header-section-number">15.3.8.2</span> Phase Behaviour</h4>
 <p>As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential <span class="math inline">\(U(r)\)</span> exhibits the infinite hard sphere repulsion as well as an attractive part of depth <span class="math inline">\(\varepsilon\)</span>. The <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&amp;width=893&amp;top_left_y=1971&amp;top_left_x=277" class="img-fluid"> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&amp;width=581&amp;top_left_y=1973&amp;top_left_x=1225" class="img-fluid"> corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature <span class="math inline">\(T_{C}\)</span> is given by <span class="math inline">\(k_{B} T_{C} \sim \varepsilon\)</span>. If <span class="math inline">\(\varepsilon \rightarrow 0\)</span>, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.</p>
 </section>
-<section id="phase-behaviour-of-hard-sphere-colloids" class="level4" data-number="15.3.6.3">
-<h4 data-number="15.3.6.3" class="anchored" data-anchor-id="phase-behaviour-of-hard-sphere-colloids"><span class="header-section-number">15.3.6.3</span> Phase behaviour of hard-sphere colloids:</h4>
+<section id="phase-behaviour-of-hard-sphere-colloids" class="level4" data-number="15.3.8.3">
+<h4 data-number="15.3.8.3" class="anchored" data-anchor-id="phase-behaviour-of-hard-sphere-colloids"><span class="header-section-number">15.3.8.3</span> Phase behaviour of hard-sphere colloids:</h4>
 <p>At very low densities, the structure of a hard-sphere suspension is like that of a perfect gas; the positions of the colloidal particles are practically uncorrelated and the chance of finding a particle in any particular vicinity is almost independent of the presence of all the other particles.</p>
 <p>Upon an increase in particle density, their positions begin to become correlated as the particles are mutually excluding. If we look inside a suspension of volume fraction <span class="math inline">\(\phi \geq 0.3\)</span>, then we will find that, at any one instant, each particle is surrounded by a `cage’ of neighbours (short-ranged order). The cage tightens as <span class="math inline">\(\phi\)</span> increases. The cage size <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&amp;width=354&amp;top_left_y=1082&amp;top_left_x=1273" class="img-fluid"> represents a dominant length scale in the system. Despite the appearance of correlations between particle positions, a hard-sphere suspension below <span class="math inline">\(\phi \lesssim 0.5\)</span> is still in what one might call a ‘colloid fluid’ phase, i.e.&nbsp;the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g.&nbsp;fluid argon) - on average the particle centres are more or <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&amp;width=825&amp;top_left_y=1966&amp;top_left_x=257" class="img-fluid"> less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function <span class="math inline">\(g(r)\)</span>. Given a particle centred at <span class="math inline">\(\underline{r}=0\)</span>, <span class="math inline">\((N / V) g(\underline{r}) d \underline{r}\)</span> is the number of particles in <span class="math inline">\(d \underline{r}\)</span> at a distance <span class="math inline">\(\underline{r}\)</span>.</p>
 <p>If we increase the volume fraction above <span class="math inline">\(\phi \approx 0.55\)</span>, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a ‘colloidal crystal’. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between <span class="math inline">\(\phi=0.5\)</span> and <span class="math inline">\(\phi=0.55\)</span>, we find coexistence between colloidal fluid and crystal. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&amp;width=1364&amp;top_left_y=680&amp;top_left_x=359" class="img-fluid"></p>
 <p>Note that no colloidal liquid is formed ( <span class="math inline">\(T_{\mathcal{C}}=0\)</span> ), as expected for an interaction potential without attraction. At the highest particle concentrations (above <span class="math inline">\(\phi \approx 0.58\)</span> ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.</p>
 </section>
 </section>
-<section id="particle-dynamics" class="level3" data-number="15.3.7">
-<h3 data-number="15.3.7" class="anchored" data-anchor-id="particle-dynamics"><span class="header-section-number">15.3.7</span> Particle dynamics</h3>
-<section id="hard-spheres" class="level4" data-number="15.3.7.1">
-<h4 data-number="15.3.7.1" class="anchored" data-anchor-id="hard-spheres"><span class="header-section-number">15.3.7.1</span> Hard-spheres</h4>
+<section id="particle-dynamics" class="level3" data-number="15.3.9">
+<h3 data-number="15.3.9" class="anchored" data-anchor-id="particle-dynamics"><span class="header-section-number">15.3.9</span> Particle dynamics</h3>
+<section id="hard-spheres" class="level4" data-number="15.3.9.1">
+<h4 data-number="15.3.9.1" class="anchored" data-anchor-id="hard-spheres"><span class="header-section-number">15.3.9.1</span> Hard-spheres</h4>
 <p>We are interested in the mean-square displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle\)</span> as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement <span class="math inline">\(\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t\)</span> as already seen earlier. Above <span class="math inline">\(\phi \sim 0.3\)</span>, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&amp;width=432&amp;top_left_y=368&amp;top_left_x=1351" class="img-fluid"> with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math inline">\(\left\langle\underline{r}^{2}(t)&gt;\propto t\right.\)</span>, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>. <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&amp;width=1086&amp;top_left_y=868&amp;top_left_x=539" class="img-fluid"> short time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{S} t\)</span> short-time self diff. coeff. <span class="math inline">\(D_{S}&lt;D_{0}\)</span> purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: <span class="math inline">\(&lt;r^{2}(t)&gt;=6 D_{L} t\)</span> long-time self diff. coeff. <span class="math inline">\(D_{L}&lt;D_{S}\left(&lt;D_{0}\right)\)</span> because of hydrodyn. and direct interactions theory very complicated, but some predictions exist</p>
 
 

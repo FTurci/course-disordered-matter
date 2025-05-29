@@ -603,12 +603,116 @@ This model captures the essential physics of **excluded volume** which, as we sa
 
 Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is **always zero**. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they always are at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any $T>0$, **entropic** contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are *the only* contribution to the free energy.
 
-In this sense, hard-spheres are completely **entropy-driven** system. For a collection of identical (**monodisperse**) hard spheres the entropy is solely **configurational** and correspods to the number of possible arrangements. This constraine only by the accessible volume, of which we have seen an instance when considering the depletion interactions.
+In this sense, hard-spheres are completely **entropy-driven** system. For a collection of identical (**monodisperse**) hard spheres the entropy is solely **configurational** and correspods to the number of possible arrangements. This constrained only by the accessible volume, of which we have seen an instance when considering the depletion interactions. Notice that changing the temperature does not really affect the statistics of the configurations: the Boltzmann factor $e^{U(\mathbf{r}^N)/k_BT}$ is always $1$ for all valid configurations. The only way we can change the state of the system is by varying the accessible volume. For a system of $N$ identical hard spheres in a volume $V$ this can only be done in two ways
+
+- by adding more spheres (of the same kind)
+- by varying the volume V
+
+The two routes essentially amount to varying one single parameter, which is the **packing fraction** (also called, *volume fraction*) of the system, defined as 
+
+$$\phi = N\dfrac{v_{\rm sphere}}{V} = \dfrac{\pi \sigma^6 N}{6V}$$
+
+which can also be expressed in terms of the **number density** $\rho=N/V$ as $\phi=\pi\sigma^3\rho/6$. 
+
+To change the phase behaviour of hard spheres we have a **single control parameter**, $\phi$ meaning that (differently from fluids like water) we are bound to have **one-dimensional** phase diagram. 
+
+We explore the phase behaviour of hard spheres by considering different regimes of packing fraction.
+
+###### Low packing fractions {.unnumbered}
+
+The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is $\sigma$ such **excluded volume** per particle is simply $v_{\rm ex} =4\pi\sigma^3/3$ and it is much larger than the volume pert particle $v= V/N$. A collection of $N$ hard spheres has a total excluded volume $V_{\rm ex}\neq N v_{\rm ex}$ simply because the  excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.
+
+At very low densities, most hard spheres isolated. So, in this case, we can approximate the roral excluded volume as $V_{\rm ex} \rm N v_{\rm ex}$ so that the accessible volume (the volume not occupied by the spheres) is
+
+$$V_{\rm accessible} = V-Nv_{\rm ex}$$
+
+We use this to perform an appropriate statistical mechanical calculation for the  Helmholtz free energy of system $F$, which we know is purely entropic $F=-TS$. The partition function $\mathcal{Z}$ is 
+
+$$
+\mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N
+$$
+
+where $\Lambda$ is the  thermal de Broglie wavelength 
+
+$$\Lambda = h/\sqrt{2\pi mk_B T},$$
+and originates from the integration over the Maxwell-Boltzmann disribution of momenta for particles of mass $m$, while $h$ is Planck's constant.
 
 
-#### Statics: the radial distribution function
+For hard spheres, the integral is over all configurations where no two spheres overlap (i.e., $|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma$ for all $i \neq j$), and $V_{\rm accessible}$ is the total accessible volume. The results is that 
 
-#### Dynamics: single and collective displacements
+$$\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},$$
+
+
+with the $1/2$ factor coming from the fact that we avoid double counting the excluded volume of pairs.  The entropy is
+$$
+S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]
+$$
+
+From the partition function, we use Stirling's formula $\ln N! = N\ln N -N$ and obtain
+
+$$
+S = k_B \left[ N \ln(V - N v_{\rm ex}/2) - (N \ln N - N) - 3N \ln \Lambda \right]
+$$
+
+which reads
+$$
+S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]
+$$
+
+
+The phase behaviour is encoded in the **equation of state** (the equation that links the three thermodynamics variables $P,T$ and $\phi$). To obtain it, we calculate the pressure
+
+$$P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}$$ 
+
+This expression can be simplified (do it as an exercise) to obtain the quation of state
+
+$$Z_{\rm comp}= \dfrac{PV}{Nk_BT}=\dfrac{1}{1-4\phi} \quad (\phi\ll 1)$$
+
+also known as the **compressibility factor** $Z_{\rm comp}$. Since $\phi$ is very small the expression is in fact
+
+
+::: column-margin
+The choice of the letter "Z" is unfortunate. Do not confuse the compressibility factor with the partition function! 
+:::
+
+$$Z_{\rm comp} = 1+4\phi+O(\phi^2)$$
+
+This expression makes it apparent that the first term linear in $\phi$ is a *correction* to the ideal gas law. This is example (to very low order) of what is called the **virial expansion**. This, in general takes the form 
+
+$$Z_{\rm comp}= 1 + B_2 \rho + B_3 \rho^2+ \dots$$
+
+where $B_2, B_3, \dots$ are the **virial coefficients** and for systems that are not hard spheres they depend also on the temperature, $B_2(T), B_3(T),\dots$. They are important as they encode the effects of **correlations**:
+
+- $B_2$ accounts for pairwise correlations (how the presence of one particle affects the probability of finding another nearby),
+- $B_3$ for three-body correlations, and so on.
+
+Given an interaction potential the second virial coefficient $B_2$ can be calculated  independently from the equation state 
+
+$$
+B_2(T)=-\frac{1}{2} \int\left(\exp \left(-\frac{U(\mathbf{r})}{k_B T}\right)-1\right) 4 \pi r^2 d r 
+$$
+
+For hard spheres this results in
+
+$$
+B_2 =  \frac{2\pi}{3} \sigma^3
+$$
+
+
+which is exactly what is predicted by the equation of state above, once you recognise that $\phi = \frac{\pi\sigma^3}{6}\rho$. 
+
+
+::: column-margin
+Exercise: check this calculation.
+:::
+
+Higher-order coefficients become increasingly complex to compute and reflect more intricate many-body corelations that can be established even if the interaction potential is purely twobody (as in the case of hard spheres). The higher order coefficients become mor eand more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.
+
+
+
+### Statics: the radial distribution function
+
+### Dynamics: single and collective displacements
 
 
 ### Brownian Motion
