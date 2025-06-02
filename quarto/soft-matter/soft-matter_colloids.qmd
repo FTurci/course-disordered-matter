@@ -5,7 +5,8 @@ pyodide:
     packages:
         - numpy
         - matplotlib
-        # - plotly
+        - plotly
+        - nbformat
 resources:
     - src/plotting.py
 bibliography: references.bib
@@ -24,45 +25,6 @@ sys.path.insert(0, 'src')
 Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.
 
 Colloids can be classified based on the state of the **dispersed phase** and the **dispersion medium**. Depending on the particular mixture, one can obtain a wide variety of soft materials, with unique mechanical, optical, and thermal properties.
-
-```{=html}
-<style>
-.rotate-header {
-    writing-mode: vertical-rl;
-    transform: rotate(-90deg);
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    padding: 1px;
-    width: 0.5em;
-      font-variant: small-caps;
-    letter-spacing: 2px;
-    font-size: 14px;
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.2;
-  }
-  .header {
-    text-align: center;
-    vertical-align: middle;
-    white-space: nowrap;
-    padding: 1px;
-    width: 0.5em;
-      font-variant: small-caps;
-    letter-spacing: 2px;
-    font-size: 14px;
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.2;
-  }
-  table {
-    border-collapse: collapse;
-  }
-  th, td {
-    border: 0px solid black;
-    padding: 4px;
-    vertical-align: top;
-  }
-</style>
-```
 
 +------------------+----------------------------------+-------------------------------+
 | Dispersion Phase |                                  | Dispersion Medium             |
@@ -689,7 +651,7 @@ where $B_2, B_3, \dots$ are the **virial coefficients** and for systems that are
 Given an interaction potential the second virial coefficient $B_2$ can be calculated  independently from the equation state 
 
 $$
-B_2(T)=-\frac{1}{2} \int\left(\exp \left(-\frac{U(\mathbf{r})}{k_B T}\right)-1\right) 4 \pi r^2 d r 
+B_2(T)=-\frac{1}{2} \int_0^{\infty}\left(\exp \left(-\frac{U(r)}{k_B T}\right)-1\right) 4 \pi r^2 d r 
 $$
 
 For hard spheres this results in
@@ -707,6 +669,11 @@ Exercise: check this calculation.
 :::
 
 Higher-order coefficients become increasingly complex to compute and reflect more complex many-body corelations that can be established even if the interaction potential is purely twobody (as in the case of hard spheres). The higher order coefficients become mor eand more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.
+
+###### Dense packing: metastability and crystalisation {.unnumbered}
+
+As we increase the packing fraction, the accessible (free) volume reduces rapidly. At some point, disordered packing of spheres are so tightly packed that thermal motion becomes extremely inefficient or even impossible. Such disordered (**random**) packing of spheres are described as **jammed**: they are so densely packed that they are no longer behaving like a fluid but they instead display some of the rigidity that we typically associate with solids. Such jammed configurations are indeed examples of **amorphous solids**. We will explore them more in detail in the chapter dedicated to arrested systems.
+
 
 
 
