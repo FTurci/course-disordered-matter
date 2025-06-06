@@ -492,8 +492,6 @@ Integrating the force yields the interaction potential.
 ![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
 :::
 
-```{pyodide}
-```
 
 ::: {.callout-note}
 # Summary of main colloid-colloid interactions
@@ -674,6 +672,63 @@ Higher-order coefficients become increasingly complex to compute and reflect mor
 
 As we increase the packing fraction, the accessible (free) volume reduces rapidly. At some point, disordered packing of spheres are so tightly packed that thermal motion becomes extremely inefficient or even impossible. Such disordered (**random**) packing of spheres are described as **jammed**: they are so densely packed that they are no longer behaving like a fluid but they instead display some of the rigidity that we typically associate with solids. Such jammed configurations are indeed examples of **amorphous solids**. We will explore them more in detail in the chapter dedicated to arrested systems.
 
+It is important to note, however, that the disordered packing at high volume fractions are not minima of the free energy. There are various ways to see this.
+
+show that the densest possible packing of hard spheres is achieved by arranging them in a crystalline lattice. In three dimensions, the densest packings are the face-centered cubic (FCC) and hexagonal close-packed (HCP) structures, both of which have a maximum packing fraction of
+
+$$
+\phi_{\text{max}} = \frac{\pi}{3\sqrt{2}} \approx 0.74
+$$
+
+
+This means that, at most, about 74% of the available volume can be filled by the spheres, with the remainder being empty space. This result was conjectured by Kepler in 1611 and proved rigorously only in 1998 (the [Kepler conjecture](https://en.wikipedia.org/wiki/Kepler_conjecture)).
+
+In contrast, **random close packing** (the densest disordered arrangement of spheres) yields a lower packing fraction, typically around $\phi_{\text{rcp}} \approx 0.64$. Notice that this value is approximate and variations can be observed (due to randomness and, more importantky, to the method by which such packing are reached, i.e. the *compression protocol*). This means that the only way to compress spheres at very high packing has to lead (*spontaneously*) to the formation of crystals. We can indeed imagine to perform the following experiment: 
+
+ - prepare a disordered assembly of colloidal hard spheres
+ - compress them gradually to high and higher packing fraction, taking care to monitor the systems so that time correlations decay and the system is at thermal equilibrium
+ - measure the resulting packing fraction
+
+ Experiments of this sort have been performed historically, leveraging for example the **slow sedimentation** of colloids, which on long time scales leads to the accumulation of dense packings of spheres. Such experiments reveal that beyond the so-called **freezing packing fraction** $\phi_{f} 0.494$ the system spontaneously forms small regions of crystals mixed with the fluid. At a the high **melting packing fraction** $\phi_{m}=0.545$ the entirety of the system is then crystalline and its optical properties consequently change. 
+
+
+ ![Phase behaviour of hard-sphere colloids from @pusey2009hard ](figs/rsta20090181f01.jpg)
+
+ A simple **cell model** can help us rationalise what is taking place. When the spheres are packed within their FCC cell, they can move very little beyond their own diameter $\sigma$. Assume that the volume per particle again is $v$ and the (geometrically consrained) close packed volume is $v_{cp}$.
+
+ The maximum dispalcement is 
+ $$
+\delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
+$$
+The corresponding free volume is then $
+v_f=\frac{4 \pi}{3} \delta^3 
+$ from which we can calculate the entropy
+
+$$
+S = -N k_B T \ln \left(v_f / \Lambda^3\right)
+$$
+
+and the resulting pressure 
+
+$$
+P=\frac{N k_B T}{v_{c p}} \frac{\left(v / v_{c p}\right)^{-2 / 3}}{\left(v / v_{c p}\right)^{1 / 3}-1}
+$$
+
+Rearranging and expressing everything in terms  of packing fraction $\phi = \dfrac{\pi\sigma^3}{6v}$ yields 
+
+$$
+Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
+$$
+
+What is noteable here is that the expression we have obtained is a completely different functional form compared to the low density fluid regime. Thisis indicative of a **discontinuous**, **first-order** phase transition between the fluid and the crystalline phases. First order phase transitions are characterised by coexisting regions where the system can be found in partial fluid and partial crystaline state, as illustrated in teh experiments above.
+
+The video below shows instead the results of a Monte-Carlo simulation at packing $\phi=0.493$ for a small system of 32 particles. Smal systems have enhanced fluctuations, and since the overal packing fraction is very close to the freezing line, we see spontaneous freezing and unfreezing of the small system.
+
+{{< video figs/melt_freeze.mp4 >}}
+
+In conclusion, colloidal hard spheres have a one-dimensional pahse diagram, that depends only on the packing fraction but with various distinct phases
+
+![Hard-spheres phase diagram](figs/hard-sphere-diag.svg)
 
 
 
