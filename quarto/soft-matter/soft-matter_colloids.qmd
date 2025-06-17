@@ -9,7 +9,11 @@ pyodide:
         - nbformat
 resources:
     - src/plotting.py
+    - src/algorithms.py
+    - src/hardspheres.py
 bibliography: references.bib
+
+toc-depth: 4
 ---
 
 ```{pyodide}
@@ -118,7 +122,7 @@ where $A_H$ is the **Hamaker constant** and $f(h/R)$ is
 $$f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]$$
 
 ::: {.callout-note collapse="true"}
-# Sketch of a derivation of colloid-coilloid Van der Waals potential
+# Sketch of a derivation of colloid-colloid Van der Waals potential
 
 Each volume element in one sphere interacts with each in the other sphere via:
 
@@ -200,7 +204,7 @@ Colloids are often charged. The solution they are immersed also has an **inhomog
 
 These two different concentrations of oppositely charged ions form what is called a **double layer** and its property (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
 
-Suppose we now have two colloids of the same size and charges in the solvent. Th charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as teh electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
+Suppose we now have two colloids of the same size and charges in the solvent. Th charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -283,7 +287,7 @@ plt.show()
 ::: {.callout-important appearance="simple"}
 ## Activity
 
-Modiify the script above and test graphically that:
+Modify the script above and test graphically that:
 
 1.  When the salt concentration is low, the double layer repulsion dominates the DVLO interaction
 2.  There are salt concentrations where two minima occur in the DLVO potential: on at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$ . This minimum can lead to weak aggregation of colloids
@@ -313,6 +317,7 @@ Here we take a more algorithmic approach, and directly sample the probability de
 To do so, we do the following:
 
 ::: {.callout-note appearance="simple"}
+
 # Algorithm
 
 1. position the particles in a valid configuration (no overlaps with other particles or the walls)
@@ -321,6 +326,7 @@ To do so, we do the following:
 4. test the if the new position is valid (no overlaps)
 5. if valid, accept the move otherwise, reject 
 6. go back to (2)
+
 :::
 
 
@@ -376,7 +382,7 @@ Reflect on this point. In the complete absence of any attractive interactions, w
 Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idiealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called **depletion interactions**.
 
 
-#### Asakura-Oosawa depletion potential
+### Asakura-Oosawa depletion potential
 
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
@@ -559,7 +565,7 @@ This model captures the essential physics of **excluded volume** which, as we sa
     <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
 </svg>
 
-#### Phase behaviour
+#### Phase behaviour of hard spheres {.unnumbered}
 
 Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is **always zero**. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they always are at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any $T>0$, **entropic** contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are *the only* contribution to the free energy.
 
@@ -578,7 +584,7 @@ To change the phase behaviour of hard spheres we have a **single control paramet
 
 We explore the phase behaviour of hard spheres by considering different regimes of packing fraction.
 
-###### Low packing fractions {.unnumbered}
+#### Low packing fractions {.unnumbered}
 
 The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is $\sigma$ such **excluded volume** per particle is simply $v_{\rm ex} =4\pi\sigma^3/3$ and it is much larger than the volume pert particle $v= V/N$. A collection of $N$ hard spheres has a total excluded volume $V_{\rm ex}\neq N v_{\rm ex}$ simply because the  excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.
 
@@ -668,13 +674,11 @@ Exercise: check this calculation.
 
 Higher-order coefficients become increasingly complex to compute and reflect more complex many-body corelations that can be established even if the interaction potential is purely twobody (as in the case of hard spheres). The higher order coefficients become mor eand more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.
 
-###### Dense packing: metastability and crystalisation {.unnumbered}
+#### Dense packing: metastability and crystalisation {.unnumbered}
 
 As we increase the packing fraction, the accessible (free) volume reduces rapidly. At some point, disordered packing of spheres are so tightly packed that thermal motion becomes extremely inefficient or even impossible. Such disordered (**random**) packing of spheres are described as **jammed**: they are so densely packed that they are no longer behaving like a fluid but they instead display some of the rigidity that we typically associate with solids. Such jammed configurations are indeed examples of **amorphous solids**. We will explore them more in detail in the chapter dedicated to arrested systems.
 
-It is important to note, however, that the disordered packing at high volume fractions are not minima of the free energy. There are various ways to see this.
-
-show that the densest possible packing of hard spheres is achieved by arranging them in a crystalline lattice. In three dimensions, the densest packings are the face-centered cubic (FCC) and hexagonal close-packed (HCP) structures, both of which have a maximum packing fraction of
+It is important to note, however, that the disordered packing at high volume fractions are not minima of the free energy. The densest possible packing of hard spheres is achieved by arranging them in a crystalline lattice. In three dimensions, the densest packings are the face-centered cubic (FCC) and hexagonal close-packed (HCP) structures, both of which have a maximum packing fraction of
 
 $$
 \phi_{\text{max}} = \frac{\pi}{3\sqrt{2}} \approx 0.74
@@ -720,30 +724,311 @@ $$
 Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
 $$
 
-What is noteable here is that the expression we have obtained is a completely different functional form compared to the low density fluid regime. Thisis indicative of a **discontinuous**, **first-order** phase transition between the fluid and the crystalline phases. First order phase transitions are characterised by coexisting regions where the system can be found in partial fluid and partial crystaline state, as illustrated in teh experiments above.
+What is noteable here is that the expression we have obtained is a completely different functional form compared to the low density fluid regime. Thisis indicative of a **discontinuous**, **first-order** phase transition between the fluid and the crystalline phases. First order phase transitions are characterised by coexisting regions where the system can be found in partial fluid and partial crystaline state, as illustrated in the experiments above. This also means that we can prepare a disordered packing at very high density: this will not be its equilibrium state (global minimum of the free energy), but will still be stable for some (finite) time. This *local equilibrium state* is called a ***metastable state**.
 
-The video below shows instead the results of a Monte-Carlo simulation at packing $\phi=0.493$ for a small system of 32 particles. Smal systems have enhanced fluctuations, and since the overal packing fraction is very close to the freezing line, we see spontaneous freezing and unfreezing of the small system.
+
+![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free enrgy minimum is located in the crystal phase](figs/metastable.png)
+
+But where does the free energy advantage of the crystal over the disrodered fluid come from? From the discussion above the answer is obvious: crystals can accommodate higher packings, meaning that they use the availale volume more efficiently. This in fact means that (on average) every hard sphere has more available volume if it arranged in the crystalline state compared to the fluid phase: the increased volume (available for thermal fluctuations and random particle displacements) is translated into an **increased entropy**. So, in fact the ordered, crystalline state has overall a higher entropy than the disordered fluid. This is important instance in which the conventional storytelling, where entropy is just **disorder**, simply does not hold. As we have seen with depletion forces earlier, entropy can lead to structure: in the case of hard spheres, it si the only mechanism leading to structure, and such structure is the most orderly one can think of: long-range, crystalline order.
+
+The video below shows instead the results of a Monte-Carlo simulation at packing $\phi=0.493$ for a small system of 32 particles. Small systems have enhanced fluctuations, and since the overal packing fraction is very close to the freezing line, we see spontaneous freezing and unfreezing of the small system.
 
 {{< video figs/melt_freeze.mp4 >}}
 
-In conclusion, colloidal hard spheres have a one-dimensional pahse diagram, that depends only on the packing fraction but with various distinct phases
+In conclusion, colloidal hard spheres have a one-dimensional phase diagram, that depends only on the packing fraction but with various distinct phases
 
 ![Hard-spheres phase diagram](figs/hard-sphere-diag.svg)
 
 
 
-### Statics: the radial distribution function
+### Beyond hard-spheres: simple liquids
 
-### Dynamics: single and collective displacements
+A **simple liquid** is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials. The most common model is the **Lennard-Jones (LJ) potential**, which captures both the short-range repulsion (due to Pauli exclusion) and longer-range van der Waals attraction:
+
+$$
+U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
+$$
+
+where $\epsilon$ sets the depth of the potential well (interaction strength) and $\sigma$ is the particle diameter (distance at which $U=0$). The $r^{-12}$ term models steep repulsion, while $r^{-6}$ describes the attractive tail.
+
+The Lennard-Jones fluid exhibits rich phase behavior: at low temperatures and densities, it forms a gas; at intermediate conditions, a liquid; and at high densities, a solid. The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.
+
+In the phase diagram below these different phases have been highlighted. It is clear that, compared to hard spheres which only display a fluid and a crystalline solid phase, systems like the Lennard-Jones fluid display an additional phase, the **liquid**. This phase emerges from the presence of the attractive well in the interaction potential. This allows for short-range attractive interactions that case a region of teh phase diagram in the save class of universality of the [**Ising model**](../phase-transitions/Ising-model.qmd) and the [**lattice gas**](../phase-transitions/lattice-gas.qmd).
 
 
-### Brownian Motion
+![Phase diagram of the Lennard-Jones Fluid](figs/LJPhaseDiagram.png)
 
-### Brief history:
+The Lennard-Jones interaction has already been designed to model noble gases (e.g. Argon) but has over time been used to model many other systems due to its simplicity and computational convenince: in particular it is used tor construct coarse-grained models of macromolecules, as well as colloids and nanoparticles. It belongs to a wider class of, classical, effective **pair-wise** interaction models actensively used to claculate properties and phase diagrams of a variety of condensed matter systems. This are useful because they allow one to, for example, long molecular simulations that are normally unreachable when considering atomistics and electronic density calculations. 
 
-1828 Scottish botanist Robert Brown observed irregular motion of pollen grains suspended in water. \~1880 Many accepted that Brownian motion was associated with the nature of heat, but no quantitative theory 1905 Brownian motion explained by Albert Einstein 1926 Nobel Prize in Physics: Jean Baptist Perrin for investigations on Brownian motion (sedimentation equilibrium and mean square displacement) in connection with reality of molecules, linking Gas constant and Avogadro's number which led to the acceptance of the 'molecular hypothesis'.
+The following table provides you with a few example potentials and their functional forms:
 
-### Diffusion
+| Potential Name      | Mathematical Form                                                                 | Typical Systems/Features                        |
+|---------------------|-----------------------------------------------------------------------------------|-------------------------------------------------|
+| Lennard-Jones (LJ)  | $U(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$ | Simple atomic fluids, coarse-grained molecular interactions               |
+| Hard Sphere         | $U(r) = \begin{cases} \infty & r < \sigma \\ 0 & r \geq \sigma \end{cases}$       | Colloids, granular materials, excluded volume   |
+| Yukawa (Screened Coulomb) | $U(r) = \epsilon \frac{e^{-\kappa r}}{r}$                                   | Charged colloids, plasmas, electrolytes         |
+| Buckingham (Exp-6)  | $U(r) = A e^{-Br} - \frac{C}{r^6}$                                               | Rare gases, molecular crystals                  |
+| Morse               | $U(r) = D_e \left( e^{-2\alpha(r - r_e)} - 2e^{-\alpha(r - r_e)} \right)$         | Diatomic molecules, chemical bonds              |
+| Square Well         | $U(r) = \begin{cases} \infty & r < \sigma \\ -\epsilon & \sigma \leq r < \lambda\sigma \\ 0 & r \geq \lambda\sigma \end{cases}$ | Model fluids, colloids with short-range attraction |
+| Soft Sphere         | $U(r) = \epsilon \left( \frac{\sigma}{r} \right)^n$                              | Polymer colloids, soft repulsive systems        |
+| Dipolar             | $U(r) = \frac{\mu_0}{4\pi} \frac{\mu_1 \mu_2}{r^3} (1 - 3\cos^2\theta)$           | Magnetic colloids, polar molecules              |
+
+
+
+## Characterisation of colloidal systems
+
+When looking at colloidal systems, we typically focus on two main aspects of their physics:
+
+- their **structural features**, chracterised by the **spatial** correlations between their constituents
+- their **dynamical features**, characterised by the mobility of single particles or groups of particles.
+
+Here below, we briefly account of some main approaches to characterise these two dimensions.
+
+### Structural properties: the radial distribution function
+
+Structural features of disordered (and ordered) systems are described in terms of **correlation functions**. The underlying idea is that we are provided with an ensemble of stochastic variables (the positions of the colloids) which have a characteristic spatial distribution. for $N$ particles we have an N-body probability distribution function $\rho_N(\mathbf{r}^N)$ which contains all the necessary statistical mechanical information to describe the thermodyanmics of the system. However, this is very difficult to access directly. In experiments or theoretical calculations we typically only have access to some lower order *marginalisation* of the distribution, in terms of few-body distributions.
+
+One of the simplest assumptions we can make when we describe a system is that its potential energy is expressed in terms of purely pairwise additive potential, meaning that 
+
+$$ U_N (\mathbf{r}^N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^N V(r_ij) = \dfrac{1}{2}\sum_{i\neq j}V(r_{ij})$$
+
+where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = \mathbf{r}_i-\mathbf{r}_j$.
+
+For system with pariwise interactions, the natural spatial correlation function is a twobody correlation $g(\mathbf{r}_i, \mathbf{r}_j)$, where $\mathbf{r}_i$ and $\mathbf{r}_j$ are two randomly chosen particles. In the case of non-crystalline, disordered systems the corrlation function has to be
+
+- translationally invariant , so that it only depends on the difference $\mathbf{r}_i-\mathbf{r}_j$
+- rotationally invariant, so that there is no angular component and hence only the distance $r_{ij} =| \mathbf{r}_i-\mathbf{r}_j|$ matters
+
+This function $g(r)$ is called the **radial distribution function** and plays a crucial role in the characterisation of fluids, crystals, glasses and much more. For system with twobody interactions only, it contains in principle all the thermodynamic information necessary to reconstruct the free energy, as one can write 
+
+$$
+\frac{F_{\mathrm{ex}}}{k_B T}=2 \pi \rho N \int_0^{\infty}[g(r) \ln g(r)-g(r)+1] r^2 d r+\frac{\rho N}{2 k_B T} \int V(r) g(r) d^3 r
+$$
+where the first term represent the entropic contributions and the second term represents the energetic contribution.
+
+But how is it calculated? very simply. You can think of constructing a histogram of the distances between all of the particles and suitably normalising such histogram by the density of the system. Mathematically this reads as
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+$$
+g(r) = \frac{1}{\rho N} \left\langle \sum_{i=1}^N \sum_{j \neq i} \delta(|\mathbf{r}_i - \mathbf{r}_j| - r) \right\rangle
+$$
+</div>
+
+where $\rho = N/V$ is the number density, and the angle brackets denote an ensemble average and $\delta$ is a Dirac delta function.
+
+- For an **ideal gas**, $g(r) = 1$ everywhere (no correlations).
+- For **hard spheres**, $g(r) = 0$ for $r < \sigma$ (no overlap), and $g(r)$ shows oscillations at higher $r$ due to packing effects.
+
+Experimentally, $g(r)$ can be measured using scattering techniques or direct imaging in colloidal systems. It provides insight into short-range order, local structure, and phase transitions in soft matter.
+
+::: {.callout-important appearance="simple"}
+The radial distribution function $g(r)$ has two possible interpretations
+
+- It represents the probability density of finding a particle at distance $r$ away from a reference particle *relative* to the probability density of an idela gas at the same number density.
+- If a given refernce particle is taken at the origin, then the local average density at distance $r$ is $\rho g(r)$.
+
+:::
+
+Here below we show two codes to calculate the radial distribution fucntion for an ideal gas (which is trivial) and then for an assembly of hard spheres
+```{pyodide}
+#| caption: "Radial distribution function of an ideal gas [press ctrl/cmd [ENTER] to run]"
+#| autorun: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+N = 500      # number of points, change this to check convergence
+L = 10.0     # box size
+bins = 50    # number of bins
+
+# Generate random points (ideal gas)
+positions = np.random.uniform(0, L, size=(N, 3))
+
+def radial_distr(positions, L):
+    N = len(positions)
+    
+    # Compute all pairwise distances with PBC
+    diff = positions[:, np.newaxis, :] - positions[np.newaxis, :, :]
+    diff = diff - L * np.round(diff / L)
+    dists_matrix = np.sqrt(np.sum(diff**2, axis=-1))
+    
+    # Get upper triangular distances (each pair counted once)
+    i, j = np.triu_indices(N, k=1)
+    dists = dists_matrix[i, j]
+    
+    # Create histogram
+    r_max = L/2
+    r_edges = np.linspace(0, r_max, bins+1)
+    hist, _ = np.histogram(dists, bins=r_edges)
+    r_centers = 0.5 * (r_edges[:-1] + r_edges[1:])
+    
+    # Calculate g(r) with correct normalization
+    rho = N / L**3  # number density
+    dr = r_edges[1:] - r_edges[:-1]  # bin widths
+    
+    # Volume of spherical shell
+    shell_volumes = 4 * np.pi * r_centers**2 * dr
+    
+    # For each particle, expected number of neighbors in shell = rho * shell_volume
+    # Total expected pairs in shell = N * rho * shell_volume / 2 
+    # (divide by 2 because we count each pair once)
+    expected_pairs = N * rho * shell_volumes / 2
+    
+    # g(r) = actual_pairs / expected_pairs
+    g_r = hist / expected_pairs
+    
+    return r_centers, g_r
+
+r, g = radial_distr(positions, L)
+plt.plot(r, g, 'b-', drawstyle="steps-mid")
+plt.axhline(y=1, color='r', linestyle='--', alpha=0.7, label='Ideal gas (g(r)=1)')
+plt.xlabel("r")
+plt.ylabel("g(r)")
+plt.gca().set(xlim=(0, L/2),ylim=(0,2))
+plt.legend()
+plt.show()
+```
+
+We can compare this with arrangements of hard spheres
+```{pyodide}
+#| caption: "Radial distribution function for a hard sphere configuration [press ctrl/cmd [ENTER] to run]"
+# now try with hard spheres, using a custom libarry you will find in the course pages
+from src import hardspheres
+
+sigma = 1.0
+L = 5.*sigma #take a small value
+phi = 0.2 # packing fraction
+N = int(phi/(np.pi/6*sigma**3)*L**3)
+
+#  we run Monte-Carlo simulations of hard-spheres on the fly 
+freq = 5
+nsteps = 100*N
+trajectory, acceptance = hardspheres.Monte_Carlo_traj(N,L, sigma, nsteps,freq)
+gs = []
+for positions in trajectory:
+    _r, _g = radial_distr(positions, L)
+    gs.append(_g)
+plt.plot(r, np.mean(gs,axis=0), 'b-', label=rf"Hard spheres, rf$\phi={phi}$")
+plt.set(xlabel="r", ylabel="g(r)", ylim= (0,2))
+plt.legend()
+plt.show()
+
+```
+
+The radial distribution function is the central object of much of **liquid state theory**, which aims to predict the shape of the correlation functions (such as $g(r)$) from the sole knowledge of the interaction potential between the elementary particles (see @santos2016concise for a gentle introduction to the topic). In particular, one can imagine the correlations between two particles $1$ and $2$ in a fluid to have two possible origins
+
+- a **direct** correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2. 
+- an **indirect correlation**, mediated by other particle sin the fluid 
+
+The $g(r)$ contains both direct and indirect correlations. We can assume that a suitable function $c(r)$ exists to express the direct correlations. In such case, for twobody interactions, we cna write a hierarchy of equations via a central result of liquid state theory, the **Ornestein-Zernicke** (OZ) equation
+
+$$
+h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
+$${#eq-oz}
+
+where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes and algebraic equation
+$$
+\tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
+$$
+Since both $h(r)$ and $c(r)$ an additional relationship is known called a **closure**. These constructed through phsyical arguments. A common one is the so-caled Percus-Yevick closure
+
+$$
+c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
+$$
+where the pairwise interaction enters explicitly.
+
+Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+import numpy as np
+from numpy import pi
+
+# Percus-Yevick Terms  (see for instance D. Henderson Condensed Matter Physics 2009, Vol. 12, No 2, pp. 127-135)
+def c0(eta):
+    return -(1.+2.*eta)**2/(1.-eta)**4
+def c1(eta):
+    return 6.*eta*(1.+eta*0.5)**2/(1.-eta)**4
+def c3(eta):
+    return eta*0.5*c0(eta)
+def cc(r,eta):
+    if r>1:
+        return 0
+    else:
+        return c0(eta)+c1(eta)*r+c3(eta)*r**3
+# Spherical Fourier Transforms (using the liquid isotropicity)
+def spherical_FT(f,k,r,dr):
+    ft=np.zeros(len(k))
+    for i in range(len(k)):
+        ft[i]=4.*pi*np.sum(r*np.sin(k[i]*r)*f*dr)/k[i]
+    return ft
+
+def inverse_spherical_FT(ff,k,r,dk):
+    ift=np.zeros(len(r))
+    for i in range(len(r)):
+        ift[i]=np.sum(k*np.sin(k*r[i])*ff*dk)/r[i]/(2*pi**2)
+    return ift
+
+def PercusYevickHS(phi,plot=True,filename=None):
+    # number density
+    rho=6./pi*phi
+    # getting the direct correlation function c(r) from the analytic Percus-Yevick solution
+    # vectorizing the function
+    c=np.vectorize(cc)
+    # space discretization
+    dr=0.001
+    r=np.arange(1,5*1024+1,1 )*dr
+    # reciprocal space discretization (highest available frequency)
+    dk=1/r[-1]
+    k=np.arange(1,1024+1,1 )*dk
+    # direct correlation function c(r)
+    c_direct=c(r,phi)
+    # getting the Fourier transform
+    ft_c_direct=spherical_FT(c_direct, k,r,dr)
+    # using the Ornstein-Zernike equation, getting the structure factor
+    ft_h=ft_c_direct/(1.-rho*ft_c_direct)
+    # inverse Fourier transform
+    h=inverse_spherical_FT(ft_h, k,r,dk)
+    # print h
+    # # radial distribution function
+    gg=h+1
+    # clean the r<1 region
+    g=np.zeros(len(gg))
+    g[r>=1]=gg[r>=1]
+    # save the cleaned version
+    if filename is not None:
+        np.savetxt(filename, list(zip(r,g)))
+    # plots
+    if plot:
+        plt.plot(r,g, label=f"$\phi = ${phi}")
+        plt.ylabel("g(r)")
+        plt.xlabel("$r / \sigma$")
+
+# call the function
+PercusYevickHS(0.2)
+PercusYevickHS(0.3)
+PercusYevickHS(0.4)
+PercusYevickHS(0.5)
+plt.title("Hard-spheres radial distribution fucntion from liquid state theory")
+plt.legend(frameon=False)
+plt.show()
+```
+
+### Dynamics: single vs collective displacements
+
+We have seen [earlier](../phase-transitions/Brownian-and-Langevin-dynamics.qmd) in the Unifying concepts section that if we are given a number of particles evolving microscopically according to the Langevin equation
+
+$$
+m \frac{d \vec{v}}{d t}=-\gamma\vec{v}+\vec{\eta}(t)
+$$
+
+then an *ensemble* of independent particles will follow the **diffusion equation**:
+
+$$\frac{\partial \rho(\mathbf{r}, t)}{\partial t} = D \nabla^2 \rho(\mathbf{r}, t) $$
+
+where $\rho(\mathbf{r})$ is the proability of finding 
+
+#### Diffusion
 
 Idea: So far we considered a single particle and calculated the probability for finding it after N steps in the volume element $d \underline{r}$ centred at $\underline{r}$. We found that $\left\langle r^{2}\right\rangle=N b^{2}$, which suggests $\left\langle\underline{r}^{2}\right\rangle \propto t$.
 
@@ -885,4 +1170,4 @@ Note that no colloidal liquid is formed ( $T_{\mathcal{C}}=0$ ), as expected for
 
 #### Hard-spheres
 
-We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist
+We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist.

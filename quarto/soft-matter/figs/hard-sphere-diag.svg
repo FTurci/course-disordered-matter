@@ -27,7 +27,7 @@
   <text x="340" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#060">Crystal</text>
   <text x="430" y="125" font-size="15" font-family="sans-serif" text-anchor="middle" fill="#666">Glass</text>
 
-  <!-- Transition labels with subscript -->
+  <!-- Transition labels with subscript -->1d
   <text x="170" y="85" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#333">
     ϕ<tspan baseline-shift="sub" font-size="10">f</tspan> ≈ 0.494
   </text>

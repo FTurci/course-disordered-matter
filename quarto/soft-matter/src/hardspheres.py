@@ -3,8 +3,6 @@ import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from mpl_toolkits.mplot3d.art3d import Line3DCollection
 
-import numba
-
 def generate_fcc_lattice(n_cells, lattice_const):
     basis = np.array([[0,0,0],[0.5,0.5,0],[0.5,0,0.5],[0,0.5,0.5]])
     pos = []
@@ -24,119 +22,63 @@ def sphere(center, radius, resolution=10):
     z = center[2] + radius * np.outer(np.ones(np.size(u)), np.cos(v))
     return x, y, z
 
-@numba.njit
-def has_overlap(positions, radius):
-    N = len(positions)
-    for i in range(N):
-        for j in range(i+1, N):
-            delta = positions[i] - positions[j]
-            delta -= np.round(delta / box_length) * box_length  # PBC
-            dist = np.linalg.norm(delta)
-            if dist < 2 * radius:
-                return True
-    return False
+def has_overlap(positions, radius, box_length):
+    # Compute all pairwise differences
+    delta = positions[:, np.newaxis, :] - positions[np.newaxis, :, :]
+    
+    # Apply minimum image convention for PBC
+    delta -= np.round(delta / box_length) * box_length
 
-@numba.njit
-def monte_carlo_step(positions, radius, delta=0.1, fixed_idx=0):
+    # Compute pairwise distances
+    dist_squared = np.sum(delta**2, axis=-1)
 
+    # Mask out self-comparisons
+    np.fill_diagonal(dist_squared, np.inf)
+
+    # Check for any overlaps
+    return np.any(dist_squared < (2 * radius)**2)
+
+def monte_carlo_step(positions, radius, box_length, delta=0.1, fixed_idx=0):
     N = len(positions)
     idx = np.random.randint(N)
     if idx == fixed_idx:
-        return  # skip moving the fixed particle
+        return  0 # skip moving the fixed particle
     move = (2 * np.random.rand(3) - 1) * delta
-
     old_pos = positions[idx].copy()
     positions[idx] = (positions[idx] + move) % box_length
-
-    if has_overlap(positions, radius):
+    if has_overlap(positions, radius, box_length):
         positions[idx] = old_pos
+        return 0
+    else:
+        return 1
 
-def draw_box(ax, box_length):
-    r = [0, box_length]
-    points = np.array([[x,y,z] for x in r for y in r for z in r])
-    # Edges between cube corners
-    edges = [
-        [points[0], points[1]], [points[0], points[2]], [points[0], points[4]],
-        [points[1], points[3]], [points[1], points[5]],
-        [points[2], points[3]], [points[2], points[6]],
-        [points[3], points[7]],
-        [points[4], points[5]], [points[4], points[6]],
-        [points[5], points[7]],
-        [points[6], points[7]]
-    ]
-    lc = Line3DCollection(edges, colors='black', linewidths=1, linestyles='dashed', alpha=0.7)
-    ax.add_collection(lc)
+def Monte_Carlo_traj(packing_fraction, box_length,sigma=1.0,  nsteps=100, freq = 10):
+    vp = np.pi/6*sigma**3
+    N = int(packing_fraction/vp*box_length**3)
+    # number of cells needed to get enough fcc lattice points
+    n_cells = int(np.ceil((N/4)**(1/3)))
+    eps = 0.05
+    positions = generate_fcc_lattice(n_cells, lattice_const=sigma*np.sqrt(2)+eps)
+    positions = positions[:N]
+    assert len(positions) == N, f"positions {positions.shape}, {N}, {n_cells}"
 
+    vol_box = box_length ** 3
+    vol_spheres_total = packing_fraction * vol_box
+    vol_sphere = vol_spheres_total / N
+    radius = sigma*0.5
 
-class Plotter3D:
-    def __init__(self, positions, radius):
-        self.positions = positions
-        self.radius = radius
-        self.fig = plt.figure(figsize=(8, 8))
-        self.ax = self.fig.add_subplot(111, projection='3d')
-        self.ax.set_box_aspect([1, 1, 1])
-        self.ax.set_xlim(0, box_length)
-        self.ax.set_ylim(0, box_length)
-        self.ax.set_zlim(0, box_length)
-        self.ax.axis('off')
+    # Recalculate actual packing fraction for verification
+    actual_pf = N * (4/3) * np.pi * radius**3 / vol_box
+    if not np.isclose(actual_pf, packing_fraction, rtol=1e-1):
+        raise ValueError(f"Packing fraction mismatch: requested {packing_fraction}, got {actual_pf}")
 
-        draw_box(self.ax, box_length)  # Draw the box once
-        self.resolution = 10
-        self.alpha = 1.0
-        self.color = 'orange'
-        self.sphere_surfaces = []
+    trajectory = []
+    accepted  = 0
+    for _ in range(nsteps):
+        # print(_)
+        trial = monte_carlo_step(positions, radius, box_length, delta=0.1)
+        accepted += trial 
+        if _ %freq ==0:
+            trajectory.append(positions.copy())
 
-        for pos in self.positions:
-            x, y, z = sphere(pos, radius, resolution=self.resolution)
-            surf = self.ax.plot_surface(x, y, z, color=self.color, alpha=self.alpha, linewidth=0)
-            self.sphere_surfaces.append(surf)
-
-    def create_animation(self,html=True):
-        def update(frame):
-            for _ in range(self.positions.shape[0]*20):
-                monte_carlo_step(self.positions, radius, delta=0.1)
-
-            for surf in self.sphere_surfaces:
-                surf.remove()
-            self.sphere_surfaces.clear()
-
-            for pos in positions:
-                x, y, z = sphere(pos, radius, resolution=self.resolution)
-                self.sphere_surfaces.append(self.ax.plot_surface(x, y, z,  color=self.color, alpha=self.alpha, linewidth=0))
-
-            return self.sphere_surfaces
-
-        ani = FuncAnimation(self.fig, update, frames=200, interval=100, blit=False)
-        if html == True:
-            from IPython.display import HTML
-            return HTML(ani.to_jshtml())
-        else:   
-            return ani
-        
-    def create_trajectory(self,filename="output.xyz", n_steps=1000, delta=0.1):
-        import tqdm
-        with open(filename, 'w') as f:
-          
-            for _ in tqdm.tqdm(range(n_steps)): 
-                for p in range(self.positions.shape[0]):
-                    monte_carlo_step(self.positions, self.radius, delta=delta)
-                f.write(f"{positions.shape[0]}\nAtoms\n")
-                for pos in self.positions:    
-                    f.write(f"A {pos[0]/(2*self.radius)} {pos[1]/(2*self.radius)} {pos[2]/(2*self.radius)}\n")
-    
-n_cells = 2
-box_length = n_cells
-N = 4 * n_cells**3
-packing_fraction = 0.4922
-
-vol_box = box_length ** 3
-vol_spheres_total = packing_fraction * vol_box
-vol_sphere = vol_spheres_total / N
-radius = (3 * vol_sphere / (4 * np.pi)) ** (1/3)
-
-positions = generate_fcc_lattice(n_cells, lattice_const=box_length / n_cells)
-
-plotter = Plotter3D(positions, radius)
-# ani = plotter.create_animation(html=False)
-# plt.show(
-plotter.create_trajectory(filename="output.xyz", n_steps=10000, delta=0.1)
+    return trajectory, accepted/nsteps
