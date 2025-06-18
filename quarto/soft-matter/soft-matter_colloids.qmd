@@ -786,7 +786,7 @@ Here below, we briefly account of some main approaches to characterise these two
 
 ### Structural properties: the radial distribution function
 
-Structural features of disordered (and ordered) systems are described in terms of **correlation functions**. The underlying idea is that we are provided with an ensemble of stochastic variables (the positions of the colloids) which have a characteristic spatial distribution. for $N$ particles we have an N-body probability distribution function $\rho_N(\mathbf{r}^N)$ which contains all the necessary statistical mechanical information to describe the thermodyanmics of the system. However, this is very difficult to access directly. In experiments or theoretical calculations we typically only have access to some lower order *marginalisation* of the distribution, in terms of few-body distributions.
+Structural features of disordered (but also ordered) systems are described in terms of **correlation functions**. The underlying idea is that we are provided with an ensemble of stochastic variables (the positions of the colloids) which have a characteristic spatial distribution. for $N$ particles we have an N-body probability distribution function $\rho_N(\mathbf{r}^N)$ which contains all the necessary statistical mechanical information to describe the thermodyanmics of the system. However, this is very difficult to access directly. In experiments or theoretical calculations we typically only have access to some lower order *marginalisation* of the distribution, in terms of few-body distributions.
 
 One of the simplest assumptions we can make when we describe a system is that its potential energy is expressed in terms of purely pairwise additive potential, meaning that 
 
@@ -969,7 +969,7 @@ def inverse_spherical_FT(ff,k,r,dk):
         ift[i]=np.sum(k*np.sin(k*r[i])*ff*dk)/r[i]/(2*pi**2)
     return ift
 
-def PercusYevickHS(phi,plot=True,filename=None):
+def PercusYevickHS(phi):
     # number density
     rho=6./pi*phi
     # getting the direct correlation function c(r) from the analytic Percus-Yevick solution
@@ -995,28 +995,28 @@ def PercusYevickHS(phi,plot=True,filename=None):
     # clean the r<1 region
     g=np.zeros(len(gg))
     g[r>=1]=gg[r>=1]
-    # save the cleaned version
-    if filename is not None:
-        np.savetxt(filename, list(zip(r,g)))
+    plt.plot(r,g, label=f"$\phi = ${phi}")
+
     # plots
-    if plot:
-        plt.plot(r,g, label=f"$\phi = ${phi}")
-        plt.ylabel("g(r)")
-        plt.xlabel("$r / \sigma$")
 
 # call the function
 PercusYevickHS(0.2)
 PercusYevickHS(0.3)
 PercusYevickHS(0.4)
 PercusYevickHS(0.5)
-plt.title("Hard-spheres radial distribution fucntion from liquid state theory")
+plt.title("Hard-spheres radial distribution function from liquid state theory")
+plt.ylabel("g(r)")
+plt.xlabel(r"$r / \sigma$")
 plt.legend(frameon=False)
+import matplotlib
+
+# print(matplotlib.matplotlib_fname())
 plt.show()
 ```
 
 ### Dynamics: single vs collective displacements
 
-We have seen [earlier](../phase-transitions/Brownian-and-Langevin-dynamics.qmd) in the Unifying concepts section that if we are given a number of particles evolving microscopically according to the Langevin equation
+We have seen [earlier](../phase-transitions/Brownian-and-Langevin-dynamics.qmd) that if we are given a number of particles evolving microscopically according to the Langevin equation of drag $\gamma$ and zero-mean noise $\eta$
 
 $$
 m \frac{d \vec{v}}{d t}=-\gamma\vec{v}+\vec{\eta}(t)
@@ -1026,76 +1026,170 @@ then an *ensemble* of independent particles will follow the **diffusion equation
 
 $$\frac{\partial \rho(\mathbf{r}, t)}{\partial t} = D \nabla^2 \rho(\mathbf{r}, t) $$
 
-where $\rho(\mathbf{r})$ is the proability of finding 
+where $\rho(\mathbf{r},t)$ is the probability of finding a particle at position $\mathbf{r}$ at time $t$ with diffusivity $D$. The diffusivity $D$ is related to the microscopic Langevin equation parameters via the fluctuation-dissipation relation (or Einstein relation)
+$$
+D = \frac{k_B T}{\gamma}
+$$
+where $k_B$ is Boltzmann's constant, $T$ is temperature, and $\gamma$ is the friction (drag) coefficient.
 
-#### Diffusion
-
-Idea: So far we considered a single particle and calculated the probability for finding it after N steps in the volume element $d \underline{r}$ centred at $\underline{r}$. We found that $\left\langle r^{2}\right\rangle=N b^{2}$, which suggests $\left\langle\underline{r}^{2}\right\rangle \propto t$.
-
-Now we are interested in many particles, where each undergoes a random walk and is not influenced by the others. We then ask: What fraction will be in a certain volume element after time $t$ ? This is the process of diffusion, e.g. spread of a drop of colour ink in water.
-
-Mathematics: Suppose that the distribution of particles $n(x, t)$ is not uniform. This nonequilibrium situation will lead to a motion of particles (diffusion) tending to increase entropy and restore a homogeneous concentration. We are interested in the time-dependent concentration (number per unit volume) profile of particles $n(x, t)$. In the case of an initially very narrow spatial distribution of particles this will correspond to the probability of any particle having moved to $x$. The mean number of particles crossing unit area of a plane (perpendicular to the $x$-axis) per unit time (i.e. the 'flux'), is denoted by $J_{x}$. This flux is expected to be (to a good approximation) proportional to the concentration gradient:
+It is easy to show (see below) that in 1 dimension the general solution is
 
 $$
-J(x, t)=-D \frac{\partial n(x, t)}{\partial x} \quad \text { Fick's law }
+\rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)
 $$
 
-where the diffusion constant (or coefficient) $D$ has been defined as the constant of proportionality
 
-Now, conservation of particle number demands
+::: {.callout-note collapse="true"}
+# Solution of the diffusion equation using Laplace transform
 
+The 1D diffusion equation is:
 $$
-\begin{aligned}
-& \frac{\partial}{\partial t}(n(x, t) A d x)=A J_{x}(x, t)-A J_{x}(x+d x, t) \\
-& \text { Flux in ................. Flux out } \\
-& =A\left(J_{x}(x, t)-\left(J_{x}(x, t)+\frac{\partial J_{x}(x, t)}{\partial x} d x\right)\right)
-\end{aligned}
+\frac{\partial \rho(x, t)}{\partial t} = D \frac{\partial^2 \rho(x, t)}{\partial x^2}
 $$
 
-and thus
-
+Suppose the initial condition is a delta function at the origin:
 $$
-\frac{\partial n(x, t)}{\partial t}=-\frac{\partial J_{x}(x, t)}{\partial x} \quad \text { Particle conservation }
-$$
-
-Fick's law and particle conservation together give (assuming $D \neq D(x)$ ):
-
-$$
-\frac{\partial n(x, t)}{\partial t}=D \frac{\partial^{2} n(x, t)}{\partial x^{2}} \quad \text { Diffusion equation }
+\rho(x, 0) = \delta(x)
 $$
 
-The solution, up to a constant $C$, which satisfies the initial condition $(\mathrm{t}=0)$ of having all the particles close together at $x=0$ is
-
+Take the Laplace transform in time:
 $$
-n(x, t)=C \frac{1}{\sqrt{4 \pi D t}} \exp \left(-x^{2} / 4 D t\right) \quad \text { Gaussian Distribution }
-$$
-
-The constant $C$ can be determined by $N_{\text {total }}=\int n d V=A \int n d x=A C$. Hence
-
-$$
-p(x, t) d x=\frac{A d x n(x, t)}{N_{\text {tot }}}=\frac{1}{\sqrt{4 \pi D t}} \exp \left(-x^{2} / 4 D t\right) d x
+\tilde{\rho}(x, s) = \int_0^\infty \rho(x, t) e^{-st} dt
 $$
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=972&width=722&top_left_y=327&top_left_x=271) ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-12.jpg?height=1004&width=762&top_left_y=338&top_left_x=1034)
-
-But the spreading of the particle distribution with time is due to the random walk of individual particles, for which we already have an equation (1-D):
-
+The Laplace transform of the time derivative:
 $$
-p_{N}(x)=\frac{1}{\sqrt{2 \pi<(\Delta x)^{2}>}} \exp \left(-\frac{(x-<x>)^{2}}{2<(\Delta x)^{2}>}\right)
+\mathcal{L}\left[\frac{\partial n}{\partial t}\right] = s\tilde{\rho}(x, s) - \rho(x, 0)
 $$
 
-Comparing the result from the two points of view and setting $\langle x\rangle=0$, we get $<\Delta x^{2}>=2 D t$ As expected the mean square displacement increases linearly with time, but we have now found the constant of proportionality: $2 D$. Generalisation to three dimensions yields:
-
+So the transformed equation is:
 $$
-\begin{array}{ll}
-J=-D \nabla n(\underline{r}, t) & \text { Fick's law } \\
-\frac{\partial n}{\partial t}=-\nabla \cdot \underline{J} & \text { Particle conservation } \\
-\frac{\partial n}{\partial t}=D \nabla^{2} n & \text { Diffusion equation } \\
-\left\langle\underline{r}^{2}\right\rangle=6 D t & \text { Mean square displacement }
-\end{array}
+s\tilde{\rho}(x, s) - \delta(x) = D \frac{\partial^2 \tilde{\rho}(x, s)}{\partial x^2}
 $$
 
-This last relation could constitute an alternative definition of the diffusion coefficient, instead of Fick's law.
+Rearrange:
+$$
+D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = -\delta(x)
+$$
+
+For $x \neq 0$, the homogeneous equation:
+$$
+D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = 0
+$$
+
+General solution:
+$$
+\tilde{\rho}(x, s) = A e^{-\lambda |x|}, \quad \lambda = \sqrt{\frac{s}{D}}
+$$
+
+The delta function at $x=0$ gives a discontinuity in the derivative:
+$$
+\left.\frac{\partial \tilde{\rho}}{\partial x}\right|_{x=0^+} - \left.\frac{\partial \tilde{\rho}}{\partial x}\right|_{x=0^-} = -\frac{1}{D}
+$$
+
+Compute derivatives:
+$$
+\frac{\partial \tilde{\rho}}{\partial x} = -A \lambda \, \text{sgn}(x) e^{-\lambda |x|}
+$$
+
+So at $x=0^+$: $-A\lambda$, at $x=0^-$: $A\lambda$. The jump is $-2A\lambda$.
+
+Set equal to $-1/D$:
+$$
+-2A\lambda = -\frac{1}{D} \implies A = \frac{1}{2D\lambda}
+$$
+
+So:
+$$
+\tilde{\rho}(x, s) = \frac{1}{2D\lambda} e^{-\lambda |x|} = \frac{1}{2\sqrt{Ds}} e^{-|x|\sqrt{\frac{s}{D}}}
+$$
+
+Invert the Laplace transform (using tables or convolution theorem):
+$$
+\rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)
+$$
+
+This is the fundamental solution (Green's function) of the diffusion equation.
+:::
+
+The diffusion equation can also be read as a simple consequence of two requirements:
+
+- continuity of the distribution of mass (no mass is lost during the transport), as expressed in the **continuity equation**
+$$
+\frac{\partial \rho(\mathbf{r}, t)}{\partial t} + \nabla \cdot \mathbf{J}(\mathbf{r}, t) = 0
+$$
+where the divergence $\nabla \cdot \mathbf{J}(\mathbf{r}, t)$ represents the net outflow of particles from a given region due to the flux $\mathbf{J}$.
+
+- the flux of particles is assumed to be proportional to the gradient in the density (or concnetration of the particles). This can be taken as an empirical assumption, a reasonable approximation (i.e. a perturbative approach) or a consequence of underlying Brownian dynamics. It is known as Fick's law:
+
+$$
+\mathbf{J}(\mathbf{r}, t) = -D \nabla \rho(\mathbf{r}, t)
+$$
+
+The diffusivity constant $D$ is therefore central for the diffusion. It is possible to link the microscopic motion of the particles to the collective behaviour of the density distribution $\rho(x,t)$ by exploting the connection provided bt the **mean squared displacement**, which is simply the variance of the distributione $\rho(x,t)$ at time $t$.
+
+As discussed earlier, in $d$ dimensions this is equal to 
+$$\langle r(t)^2\rangle-\langle r(t)\rangle^2 = 2d D t$$
+
+Hence, measuring the average squared displacements is sufficient to recover the diffusivity and to reconstruct the distribution.
+
+#### Diffusion and interactions
+
+We have up to now considered the dilute (or non-nteracting) limit, where collisions between the colloids are ignored. Let's now consider instead simple colloids (again, hard spheres) and their dynamics.
+
+We are interested in the mean squared displacement $\left\langle r^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The mean squared displacement (in three dimensions) is $$\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$$ 
+where the meaning of the subscript 0 will be apparent shortly.
+
+ For sufficiently dense hard spheres (e.g. above $\phi \sim 0.3$), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. 
+ 
+ While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $$\langle r^{2}(t)\rangle \propto t$$ when the particles undergo large-scale random-walk diffusion through many cages. 
+ 
+ However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. 
+ 
+```{python}
+#| echo: false
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.linspace(0, 10, 200)
+D0 = 2
+Ds = 1
+DL = 0.1
+msd1 = D0 * t
+turning_point = 2
+# Use a smooth transition at the turning point using a sigmoid function
+plt.figure(figsize=(8,5))
+def smooth_transition(t, turning_point, width=0.2):
+    # width controls how sharp the transition is
+    s = 1 / (1 + np.exp(-(t - turning_point) / width))
+    # Ensure continuity and avoid overshoot by matching slopes at the transition
+    msd_before = Ds * t
+    msd_after = Ds * turning_point + DL * (t - turning_point)
+    return msd_before * (1 - s) + msd_after * s
+
+msd2 = smooth_transition(t, turning_point)
+plt.plot(t, msd1, label="Dilute")
+plt.plot(t, msd2, label="Dense")
+plt.xlabel("time ")
+plt.ylabel("Mean squared displacement ")
+plt.ylim(0,10)
+plt.xlim(0,10)
+plt.legend(frameon=False)
+plt.gca().text(3,9,"$6D_0 t$",fontsize="x-large")
+plt.gca().text(1.4,1,"$6D_s t$",fontsize="x-large")
+plt.gca().text(8.5,3,"$6D_L t$",fontsize="x-large")
+plt.gca().set_xticks([])
+plt.gca().set_yticks([])
+plt.show()
+
+
+```
+
+ The slowing down due to collisions eventually dominates the ohysics of hard spheres at high densities. This is more broadly true also for generic dense colloidal suspensions, where the short range interactions dominate on other mechanisms of motion (including the hydrodynamics). Eventually, for very dense packings one observes the emergence of a new physical regime where relaxation becomes anomalous and non-diffusive: this is the glassy regime, which we will revisit in a following chapter.
+
+
+ <!-- short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist.  -->
 
 ### Stokes-Einstein relation
 
@@ -1105,7 +1199,9 @@ $$
 n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\right)
 $$
 
-where we assumed a constant force $F$ in the last equation. In the case of gravity $F=m_{B} g$ with $m_{B}$ the buoyant mass. $n(x)$ results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick's law. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466)
+where we assumed a constant force $F$ in the last equation. In the case of gravity $F=m_{B} g$ with $m_{B}$ the buoyant mass. $n(x)$ results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick's law. 
+
+![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466)
 
 In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, $J_{F}$
 
@@ -1138,36 +1234,9 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 -   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the 'fluctuation' part. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
 -   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where \[the mirror\] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.' (Feynman, Chapter 41)
 
-### Interacting colloidal particles
 
-So far we have dealt with colloidal particles as independent spheres suspended in a medium. Now we will study concentrated suspensions in which interparticle interactions cannot be ignored.
-
-#### Samples: model hard-sphere colloids
-
-To be specific let us discuss a monodisperse colloid made up of polymethyl- methacrylate (PMMA; perspex in bulk form) spheres, which are covered with polymeric hairs (Poly-hydroxystearic acid) to stop them sticking to each other. They show to a very good approximation hard sphere behaviour. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=315&width=684&top_left_y=718&top_left_x=1138)
-
-The radius of the colloid is typically $R \leq 0.5 \mu m$ with a very small polydispersity (size variation) of $\Delta R / R<0.05$. The usual way of referring to particle densities is the 'volume fraction' $\phi$, defined to be the fraction of the suspension occupied by particles. If we have $N$ monodisperse spheres with radius $R$ in the total volume $V$, then
-
-$$
-\phi=\frac{V_{\mathrm{part}}}{V}=\frac{N}{V} \frac{4}{3} \pi R^{3}
-$$
-
-#### Phase Behaviour
-
-As a reminder we first look at the interaction potential and phase behaviour of a simple atomic substance, such as argon. A generic inter-particle potential $U(r)$ exhibits the infinite hard sphere repulsion as well as an attractive part of depth $\varepsilon$. The ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=562&width=893&top_left_y=1971&top_left_x=277) ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-15.jpg?height=570&width=581&top_left_y=1973&top_left_x=1225) corresponding generic phase diagram in the temperature-density plane shows the regions where gas, liquid, fluid and crystal exist. A rough estimate of the critical temperature $T_{C}$ is given by $k_{B} T_{C} \sim \varepsilon$. If $\varepsilon \rightarrow 0$, as in the case of hard spheres, we expect that there will be no critical point and therefore no liquid phase. This is indeed the case.
-
-#### Phase behaviour of hard-sphere colloids:
-
-At very low densities, the structure of a hard-sphere suspension is like that of a perfect gas; the positions of the colloidal particles are practically uncorrelated and the chance of finding a particle in any particular vicinity is almost independent of the presence of all the other particles.
-
-Upon an increase in particle density, their positions begin to become correlated as the particles are mutually excluding. If we look inside a suspension of volume fraction $\phi \geq 0.3$, then we will find that, at any one instant, each particle is surrounded by a \`cage' of neighbours (short-ranged order). The cage tightens as $\phi$ increases. The cage size ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=394&width=354&top_left_y=1082&top_left_x=1273) represents a dominant length scale in the system. Despite the appearance of correlations between particle positions, a hard-sphere suspension below $\phi \lesssim 0.5$ is still in what one might call a 'colloid fluid' phase, i.e. the arrangement of particles in such a suspension is analogous to the arrangement of atoms in an atomic fluid (e.g. fluid argon) - on average the particle centres are more or ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-16.jpg?height=492&width=825&top_left_y=1966&top_left_x=257) less randomly arranged, and each particle can, given time, wander through the available volume. The structure is described by the radial distribution function $g(r)$. Given a particle centred at $\underline{r}=0$, $(N / V) g(\underline{r}) d \underline{r}$ is the number of particles in $d \underline{r}$ at a distance $\underline{r}$.
-
-If we increase the volume fraction above $\phi \approx 0.55$, however, a phase transition occurs. The particles will spontaneously pack into a crystalline arrangement. Particles now can only move round about their average lattice site, but will not wander throughout the available volume. This phase is called a 'colloidal crystal'. Due to more local freedom the crystal has a higher (!) entropy than the metastable fluid from which it grows. It is an entropically-driven phase transition. Between $\phi=0.5$ and $\phi=0.55$, we find coexistence between colloidal fluid and crystal. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-17.jpg?height=624&width=1364&top_left_y=680&top_left_x=359)
-
-Note that no colloidal liquid is formed ( $T_{\mathcal{C}}=0$ ), as expected for an interaction potential without attraction. At the highest particle concentrations (above $\phi \approx 0.58$ ) crystallization may be avoided if the temperature is quenched very rapidly, and a colloidal glass is formed. We will return to study the behaviour of glasses in Part 4.
-
-### Particle dynamics
+<!-- ### Particle dynamics
 
 #### Hard-spheres
 
-We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist.
+We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist. -->
