@@ -65,3 +65,23 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
     plt.legend()
     plt.tight_layout()
     plt.show()
+
+import plotly.graph_objects as go
+
+# Plotly 3D line plot
+fig = go.Figure(data=[go.Scatter3d(
+    x=x, y=y, z=z,
+    mode='lines+markers',
+    marker=dict(size=3, color=np.arange(N+1), colorscale='Viridis'),
+    line=dict(color='blue', width=4)
+)])
+fig.update_layout(
+    title="3D Random Walk (Freely-Jointed Chain)",
+    scene=dict(
+        xaxis_title='X',
+        yaxis_title='Y',
+        zaxis_title='Z'
+    ),
+    margin=dict(l=0, r=0, b=0, t=30)
+)
+fig.show()

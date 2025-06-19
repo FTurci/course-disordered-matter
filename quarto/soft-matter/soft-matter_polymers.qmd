@@ -1,13 +1,22 @@
 ---
 title: "Polymers"
-format:
-  html:
-    code-copy: true
-resources:
-  - "**/*.pdb"
+format: live-html
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
+        - plotly
+        - nbformat
 bibliography: references.bib
 ---
 
+```{pyodide}
+#| echo: false
+#| autorun: true
+# modifying the path to add the code folder
+import sys
+sys.path.insert(0, 'src')
+```
 
 ## General molecular properties
 
@@ -63,7 +72,7 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 
 {{< mol-url ./figs/polyEthylMethacrylate3.pdb >}}
 
-#### Natural rubber {.unnumbered} $\rm (C_5H_8)_n$ {.unnumbered}
+#### Natural rubber $\rm (C_5H_8)_n$ {.unnumbered}
 
 {{< mol-url ./figs/naturalrubber.pdb >}}
 
@@ -72,14 +81,50 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 
 #### Models for the conformation of polymers
 
-In order to understand the properties of most substances, we must consider a large assembly of molecules. In the case of polymers, however, the molecules themselves are very large and due to their flexibility they can take up an enormous number of configurations by rotation of chemical bonds. The shape of the polymer can therefore only be usefully described statistically and one need to use statistical mechanics to calculate the characteristics of even an isolated polymer. To be able to investigate the properties of a single polymer and to neglect interactions between polymers, the polymer is placed in a very dilute solution. In this chapter, we will theoretically investigate the properties of an isolated, single polymer chain in solution (which in addition is linear and consists of only one kind of monomers).
+In order to understand the properties of most substances, we must consider a large assembly of molecules. In the case of polymers, however, the molecules themselves are very large and due to their flexibility they can take up an enormous number of configurations by rotation of chemical bonds. The shape of the polymer can therefore only be usefully described **statistically** and one need to use statistical mechanics to calculate the characteristics of even an isolated polymer. 
+
+
+To be able to investigate the properties of a **single polymer** and to neglect interactions between polymers, the polymer is placed in a very **dilute solution**. In this chapter, we will theoretically investigate the properties of an isolated, single polymer chain in solution (which in addition is linear and consists of only one kind of monomers).
+
 
 #### Freely-jointed chain
 
-Many polymers are highly flexible and are coiled up in solution. In a simple model we thus describe a polymer as consisting of a large number of segments freely joined up, where all angles between segments are assumed to be equally likely.
+Many polymers are highly flexible and are coiled up in solution. In a simple model we thus describe a polymer with two assumptions :
+
+- it is composed of a **large number of segments** freely joined up
+- all angles between segments are assumed to be **equally likely**.
 
 The momomers are located at positions $\underline{R}_{\mathrm{j}}$ and connected by bonds $\underline{r}_{j}=\underline{R}_{j}-\underline{R}_{j-1}$ of length $\left|\underline{r}_{j}\right|=b_{0}$. The end-to-end vector is $\left|\underline{R}_{N}-\underline{R}_{0}\right|=\sum_{j=1}^{N} r_{j}$.
-At any instant, the configuration (arrangement) of the polymer is one realisation of an N -step random walk in three dimensions. In time, the various segments undergo Brownian motion and the
+
+At any instant, the configuration (arrangement) of the polymer is one realisation of an N -step random walk in three dimensions.
+
+```{pyodide}
+#| autorun: true
+import numpy as np
+
+# Parameters
+N = 100  # number of steps
+b = 1    # step length
+
+# Generate random walk in 3D
+theta = np.arccos(2 * np.random.rand(N) - 1)  # polar angle
+phi = 2 * np.pi * np.random.rand(N)           # azimuthal angle
+
+dx = b * np.sin(theta) * np.cos(phi)
+dy = b * np.sin(theta) * np.sin(phi)
+dz = b * np.cos(theta)
+
+x = np.concatenate([[0], np.cumsum(dx)])
+y = np.concatenate([[0], np.cumsum(dy)])
+z = np.concatenate([[0], np.cumsum(dz)])
+```
+
+
+
+
+
+
+ In time, the various segments undergo Brownian motion and the
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-21.jpg?height=509&width=643&top_left_y=1499&top_left_x=1209) polymer fluctuates between all possible configurations of the random walk
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-21.jpg?height=221&width=1592&top_left_y=2197&top_left_x=312)
 

@@ -756,7 +756,7 @@ The Lennard-Jones fluid exhibits rich phase behavior: at low temperatures and de
 In the phase diagram below these different phases have been highlighted. It is clear that, compared to hard spheres which only display a fluid and a crystalline solid phase, systems like the Lennard-Jones fluid display an additional phase, the **liquid**. This phase emerges from the presence of the attractive well in the interaction potential. This allows for short-range attractive interactions that case a region of teh phase diagram in the save class of universality of the [**Ising model**](../phase-transitions/Ising-model.qmd) and the [**lattice gas**](../phase-transitions/lattice-gas.qmd).
 
 
-![Phase diagram of the Lennard-Jones Fluid](figs/LJPhaseDiagram.png)
+![Phase diagram of the Lennard-Jones Fluid, adapted from Wikimedia.](figs/LJPhaseDiagram.png)
 
 The Lennard-Jones interaction has already been designed to model noble gases (e.g. Argon) but has over time been used to model many other systems due to its simplicity and computational convenince: in particular it is used tor construct coarse-grained models of macromolecules, as well as colloids and nanoparticles. It belongs to a wider class of, classical, effective **pair-wise** interaction models actensively used to claculate properties and phase diagrams of a variety of condensed matter systems. This are useful because they allow one to, for example, long molecular simulations that are normally unreachable when considering atomistics and electronic density calculations. 
 
