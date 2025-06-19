@@ -79,13 +79,13 @@ However, colloidal dispersions consist of large particles carrying many charges 
 
 [^soft-matter_colloids-1]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
 
-This is especially important due to\*\* quantum fluctuations\*\*: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
+This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
 There are many examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.
 
 ### Van der Waals interaction
 
-The London-van der Waals **dispersion forces** arise from the interaction between **instantaneous dipoles** in overall neutral atoms or molecules. We know fro, classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like $1/r^3$, where $r$ is the separation between two dipoles.
+The London-van der Waals **dispersion forces** arise from the interaction between **instantaneous dipoles** in overall neutral atoms or molecules. We know from classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like $1/r^3$, where $r$ is the separation between two dipoles.
 
 More in general, neutral atom or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a **temporary dipole**. Such instantaneous dipole **induces** a dipole in a neighboring atom or molecule by distorting its electron cloud.
 
@@ -1201,7 +1201,260 @@ $$
 
 where we assumed a constant force $F$ in the last equation. In the case of gravity $F=m_{B} g$ with $m_{B}$ the buoyant mass. $n(x)$ results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick's law. 
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466)
+```{ojs}
+// | echo: false
+{
+  const width = 600;
+const height = 400;
+const numCircles = 300;
+
+let temperature = 300;    // Arbitrary scale
+let viscosity = 0.02;     // Arbitrary scale
+const particleRadius = 5; // pixels
+let timeStep = 1;
+
+const kB = 1; // reduced units
+let gravityFactor = 0.1;
+let gravity = 10 * gravityFactor;
+
+// Compute damping as velocity decay per timestep (Langevin friction)
+function computeDamping(viscosity, radius, dt) {
+  const gamma = 6 * Math.PI * viscosity * radius; // friction coeff
+  return Math.exp(-gamma * dt);
+}
+
+let damping = computeDamping(viscosity, particleRadius, timeStep);
+
+// Create SVG
+const svg = d3.create("svg")
+  .attr("width", width)
+  .attr("height", height)
+  .style("border", "1px solid #ccc")
+  .style("background", "#f9f9f9");
+
+// Initialize circles
+const circles = Array.from({ length: numCircles }, (_, i) => ({
+  id: i,
+  x: Math.random() * width,
+  y: Math.random() * height * 0.3,
+  vx: (Math.random() - 0.5) * 2,
+  vy: (Math.random() - 0.5) * 2,
+  radius: particleRadius,
+  color: d3.interpolateYlOrBr(Math.random() * 0.5 + 0.25)
+}));
+
+// Create circles in SVG
+const circleElements = svg.selectAll("circle")
+  .data(circles)
+  .enter()
+  .append("circle")
+  .attr("r", d => d.radius)
+  .attr("fill", d => d.color)
+  .attr("opacity", 0.8)
+  .attr("stroke", "#333")
+  .attr("stroke-width", 1);
+
+// Collision detection & response
+function handleCollisions() {
+  for (let i = 0; i < circles.length; i++) {
+    for (let j = i + 1; j < circles.length; j++) {
+      const c1 = circles[i];
+      const c2 = circles[j];
+      const dx = c2.x - c1.x;
+      const dy = c2.y - c1.y;
+      const dist = Math.hypot(dx, dy);
+      const minDist = c1.radius + c2.radius;
+
+      if (dist < minDist && dist > 0) {
+        const overlap = minDist - dist;
+        const nx = dx / dist;
+        const ny = dy / dist;
+
+        c1.x -= nx * overlap / 2;
+        c1.y -= ny * overlap / 2;
+        c2.x += nx * overlap / 2;
+        c2.y += ny * overlap / 2;
+
+        const dvx = c2.vx - c1.vx;
+        const dvy = c2.vy - c1.vy;
+        const vn = dvx * nx + dvy * ny;
+
+        if (vn > 0) continue;
+
+        const restitution = 1.0;
+        const impulse = (-(1 + restitution) * vn) / 2;
+
+        c1.vx -= impulse * nx;
+        c1.vy -= impulse * ny;
+        c2.vx += impulse * nx;
+        c2.vy += impulse * ny;
+      }
+    }
+  }
+}
+
+// Update damping when viscosity or timestep changes
+function updateDamping() {
+  damping = computeDamping(viscosity, particleRadius, timeStep);
+}
+
+// Animate function
+function animate() {
+  const diffusion = (kB * temperature) / (6 * Math.PI * viscosity * particleRadius);
+
+  circles.forEach(c => {
+    // Apply gravity
+    c.vy += gravity * timeStep;
+
+    // Diffusion random kick scaled by sqrt(2*D/dt)
+    const diffusionForce = Math.sqrt(2 * diffusion / timeStep);
+    c.vx += (Math.random() - 0.5) * diffusionForce;
+    c.vy += (Math.random() - 0.5) * diffusionForce;
+
+    // Apply damping
+    c.vx *= damping;
+    c.vy *= damping;
+
+    // Update position
+    c.x += c.vx * timeStep;
+    c.y += c.vy * timeStep;
+
+    // Boundary collision
+    if (c.x - c.radius < 0) {
+      c.x = c.radius;
+      c.vx *= -1;
+    }
+    if (c.x + c.radius > width) {
+      c.x = width - c.radius;
+      c.vx *= -1;
+    }
+    if (c.y - c.radius < 0) {
+      c.y = c.radius;
+      c.vy *= -1;
+    }
+    if (c.y + c.radius > height) {
+      c.y = height - c.radius;
+      c.vy *= -1;
+    }
+  });
+
+  handleCollisions();
+
+  circleElements
+    .attr("cx", d => d.x)
+    .attr("cy", d => d.y);
+
+  diffusionDisplay.text(`Diffusion: ${diffusion.toFixed(4)}`);
+}
+
+// Start timer
+const timer = d3.timer(animate);
+
+// Controls container
+const controls = d3.create("div")
+  .style("margin-top", "10px")
+  .style("padding", "10px")
+  .style("background", "#f0f0f0")
+  .style("border-radius", "8px")
+  .style("width", `${width}px`);
+
+// Slider factory
+function createSlider(labelText, min, max, initial, step, onChange) {
+  const container = controls.append("div")
+    .style("margin-bottom", "10px")
+    .style("display", "flex")
+    .style("align-items", "center")
+    .style("gap", "10px");
+
+  container.append("label")
+    .text(labelText)
+    .style("min-width", "120px")
+    .style("font-weight", "bold");
+
+  const slider = container.append("input")
+    .attr("type", "range")
+    .attr("min", min)
+    .attr("max", max)
+    .attr("step", step)
+    .attr("value", initial)
+    .style("flex", "1");
+
+  const valueDisplay = container.append("span")
+    .text(initial.toFixed(step < 1 ? 4 : 0))
+    .style("width", "50px")
+    .style("text-align", "right")
+    .style("font-family", "monospace");
+
+  slider.on("input", function () {
+    const val = +this.value;
+    onChange(val);
+    valueDisplay.text(val.toFixed(step < 1 ? 4 : 0));
+  });
+
+  return slider;
+}
+
+// Create sliders
+createSlider("Gravity", -100, 100, gravity / gravityFactor, 10, v => gravity = v * gravityFactor);
+
+createSlider("Temperature", 0, 1000, temperature, 10, v => temperature = v);
+
+createSlider("Viscosity", 0.001, 0.1, viscosity, 0.001, v => {
+  viscosity = v;
+  updateDamping();
+});
+
+// createSlider("Time Step", 0.1, 5, timeStep, 0.1, v => {
+//   timeStep = v;
+//   updateDamping();
+// });
+
+// Diffusion display
+const diffusionDisplay = controls.append("div")
+  .style("margin-top", "10px")
+  .style("font-family", "monospace")
+  .style("font-weight", "bold")
+  .text("");
+
+// Reset button
+controls.append("button")
+  .text("Reset Positions")
+  .style("margin-top", "10px")
+  .style("padding", "6px 12px")
+  .on("click", () => {
+    circles.forEach(c => {
+      c.x = Math.random() * width;
+      c.y = Math.random() * height * 0.3;
+      c.vx = (Math.random() - 0.5) * 2;
+      c.vy = (Math.random() - 0.5) * 2;
+    });
+  });
+
+// Start/Stop toggle
+const startStopBtn = controls.append("button")
+  .text("Stop")
+  .style("margin-left", "10px")
+  .style("padding", "6px 12px")
+  .on("click", function () {
+    if (timer._call) {
+      timer.stop();
+      this.textContent = "Start";
+    } else {
+      timer.restart(animate);
+      this.textContent = "Stop";
+    }
+  });
+
+// Container div
+const container = d3.create("div");
+container.node().appendChild(svg.node());
+container.node().appendChild(controls.node());
+
+return container.node();
+}
+```
+
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466) -->
 
 In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, $J_{F}$
 
@@ -1229,10 +1482,16 @@ $$
 D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 $$
 
-The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\xi=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein relation.
+The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\xi=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein (and Sutherland) relation.
 
 -   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the 'fluctuation' part. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
--   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example: A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where \[the mirror\] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations.' (Feynman, Chapter 41)
+-   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example from the [Feynman Lectures](https://www.feynmanlectures.caltech.edu/I_41.html):
+
+    > A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where \[the mirror\] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations. (Adapted from Feynman, Chapter 41)
+
+
+
+    <!-- ![Feynamnn schematic of a sensitive light-beam galvanometer.](https://www.feynmanlectures.caltech.edu/img/FLP_I/f41-01/f41-01_tc_big_a.svg) -->
 
 
 <!-- ### Particle dynamics
@@ -1240,3 +1499,5 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 #### Hard-spheres
 
 We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist. -->
+
+## References {.unnumbered}
