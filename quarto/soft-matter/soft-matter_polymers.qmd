@@ -87,8 +87,6 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 
 In order to understand the properties of most substances, we must consider a large assembly of molecules. In the case of polymers, however, the molecules themselves are very large and due to their flexibility they can take up an enormous number of configurations by rotation of chemical bonds. The shape of the polymer can therefore only be usefully described **statistically** and one need to use statistical mechanics to calculate the characteristics of even an isolated polymer. 
 
-{{< mol-url ./figs/nbutane.pdb >}}
-
 To be able to investigate the properties of a **single polymer** and to neglect interactions between polymers, the polymer is placed in a very **dilute solution**. In this chapter, we will theoretically investigate the properties of an isolated, single polymer chain in solution (which in addition is linear and consists of only one kind of monomers).
 
 
@@ -272,32 +270,48 @@ $$
 $$
 
 
-##### N-butane 
+##### N-butane {.unnumbered}
 
-
-While the $\mathrm{C}-\mathrm{C}$ bond angle is fixed at about $120^{\circ}$, rotation about the bond is possible.
-
+{{< mol-url ./figs/nbutane.pdb >}}
 
 
 
-Nevertheless, the potential energy of a configuration depends on the valence angle:
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-23.jpg?height=715&width=1420&top_left_y=1416&top_left_x=289)
+The **valence angle** (also called the bond angle) is the angle formed between two adjacent chemical bonds originating from the same atom. In the context of polymers, it is the angle between two consecutive bonds along the polymer backbone. The value of the valence angle is determined by the chemical structure of the monomer and affects the flexibility and overall conformation of the polymer chain. For example, in $n$-butane, the C–C–C bond angle is about $112^\circ$. Still rotations about the C-C bond are possible.
 
-At low temperatures ( $k_{B} T$ <config. energy) the configuration will thus be predominantly trans. As the temperature is increased ( $k_{B} T \sim$ config. energy), there will also be gauche configurations and at high temperatures ( $k_{B} T \gg$ config. energy), any angle will be possible. This suggests that a model should be based on fixed angles between bonds, but free rotation about the bonds. This model is called the freely-rotating chain.
+![Four conformers of butane, from [LibreText Chemistry](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Chirality/Stereoisomers/Butane_Conformers)](https://chem.libretexts.org/@api/deki/files/8119/butconf.gif?revision=1)
 
-We start with a fixed configuration of $\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ and then add the next segment $\mathbf{r}_{j}$. While the bond angle $\Theta$ is given by the chemistry of the molecule, the segment can still freely rotate about the axis defined by $r_{j-1}$, i.e. $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. If we average $\mathbf{r}_{j}$ over $\varphi$, while keeping $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed, only the component in $\mathbf{r}_{j}$ direction remains:
-$\left.<\mathbf{r}_{j}\right\rangle_{\mathbf{r}}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed $=\cos \Theta \mathbf{r}_{j-1}$
+
+
+Indeed, the potential energy of a polymer configuration depends on the valence (dihedral) angle.
+
+![Potential energy of the above conformers](https://chem.libretexts.org/@api/deki/files/8120/butdihed.gif?revision=10)
+
+At low temperatures ( $k_{B} T < {\mathrm {\text{configurational energy}}}$) the configuration will thus be predominantly of type **A** (an anti conformation). As the temperature is increased ( $k_{B} T \sim$ config. energy), there will also be **C** (gauche) configurations and at high temperatures ( $k_{B} T \gg$ config. energy), any angle will be possible. 
+
+This suggests that a good model of polymeric conformation can take fixed angles between bonds, but needs to include **free rotation** *about* the bonds. This model is called the **freely-rotating chain**.
+
+
+::: {style="float: right; margin: 10px;"}
+![](figs/freelyrotating.svg){width=250px}
+:::
+
+We start with a fixed configuration of $\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ and then add the next segment $\mathbf{r}_{j}$. While the bond angle $\theta$ is given by the chemistry of the molecule, the segment can still freely rotate about the axis defined by $r_{j-1}$, i.e. $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. If we average $\mathbf{r}_{j}$ over $\varphi$, while keeping $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed, only the component in $\mathbf{r}_{j}$ direction remains:
+
+$$\langle \mathbf{r}_{j} \rangle_{\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}\quad {\rm fixed}}=\cos \theta \mathbf{r}_{j-1}$$
+
+
 
 For the calculation of $\left\langle R^{2}\right\rangle$ we also need $\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle$,
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-24.jpg?height=552&width=343&top_left_y=609&top_left_x=1302)
-which we obtain by multiplying both sides with $\mathbf{r}_{k}$ and taking the average: $\left\langle r_{j} \mathbf{x}_{k}\right\rangle=\cos \Theta\left\langle r_{j-1} \mathbf{x}_{k}\right\rangle=\cos ^{2} \Theta\left\langle r_{j-2} \mathbf{\Sigma}_{k}\right\rangle=\ldots=\left(\cos ^{|j-k|} \Theta\right)\left\langle r_{k}{\mathbf{x_{k}}}\right\rangle=\left(\cos ^{|j-k|} \Theta\right) b_{0}^{2}$
-Since $\cos \Theta<1$, correlations between $\mathbf{r}_{j}$ and $\mathbf{r}_{k}$ decrease with increasing distance $|j-k|$ between the links and the orientations of distant links become uncorrelated.
-The end-to-end distance $\left\langle R^{2}\right\rangle$ of a freely-rotating chain is hence
+which we obtain by multiplying both sides with $\mathbf{r}_{k}$ and taking the average: 
+$\left\langle r_{j} \mathbf{x}_{k}\right\rangle=\cos \theta\left\langle r_{j-1} \mathbf{x}_{k}\right\rangle=\cos ^{2} \theta\left\langle r_{j-2} \mathbf{\Sigma}_{k}\right\rangle=\ldots=\left(\cos ^{|j-k|} \theta\right)\left\langle r_{k}{\mathbf{x_{k}}}\right\rangle=\left(\cos ^{|j-k|} \theta\right) b_{0}^{2}$$
 
+Since $\cos \theta<1$, correlations between $\mathbf{r}_{j}$ and $\mathbf{r}_{k}$ decrease with increasing distance $|j-k|$ between the links and the orientations of distant links become uncorrelated.
+
+The end-to-end distance $\left\langle R^{2}\right\rangle$ of a freely-rotating chain is hence
 $$
 \begin{aligned}
-\left\langle R^{2}\right\rangle & =\sum_{j=1}^{N} \sum_{k=1}^{N}\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle=b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\cos ^{(j-k \mid} \Theta\right)=N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{j-1} \cos ^{(j-k)} \Theta \\
-& =N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \cos ^{j} \Theta \sum_{k=1}^{j-1} \cos ^{-k} \Theta
+\left\langle R^{2}\right\rangle & =\sum_{j=1}^{N} \sum_{k=1}^{N}\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle=b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\cos ^{(j-k \mid} \theta\right)=N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{j-1} \cos ^{(j-k)} \theta \\
+& =N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \cos ^{j} \theta \sum_{k=1}^{j-1} \cos ^{-k} \theta
 \end{aligned}
 $$
 
@@ -314,48 +328,146 @@ With the help of this formula we get
 
 $$
 \begin{aligned}
-\left\langle R^{2}\right\rangle & =N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \cos ^{j} \Theta \frac{\frac{1}{\cos \Theta}-\frac{1}{\cos ^{j} \Theta}}{1-\frac{1}{\cos \Theta}}=N b_{0}^{2}+\frac{2 b_{0}^{2}}{\cos \Theta-1}\left(\sum_{j=1}^{N} \cos ^{j} \Theta-\sum_{j=1}^{N} \cos \Theta\right) \\
-& =N b_{0}^{2}+\frac{2 b_{0}^{2}}{\cos \Theta-1}\left(\frac{\cos \Theta-\cos ^{N+1} \Theta}{1-\cos \Theta}-N \cos \Theta\right)
+\left\langle R^{2}\right\rangle & =N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \cos ^{j} \theta \frac{\frac{1}{\cos \theta}-\frac{1}{\cos ^{j} \theta}}{1-\frac{1}{\cos \theta}}=N b_{0}^{2}+\frac{2 b_{0}^{2}}{\cos \theta-1}\left(\sum_{j=1}^{N} \cos ^{j} \theta-\sum_{j=1}^{N} \cos \theta\right) \\
+& =N b_{0}^{2}+\frac{2 b_{0}^{2}}{\cos \theta-1}\left(\frac{\cos \theta-\cos ^{N+1} \theta}{1-\cos \theta}-N \cos \theta\right)
 \end{aligned}
 $$
 
 For large N this can be simplified
-$\left\langle R^{2}\right\rangle \approx N b_{0}^{2}+\frac{2 b_{0}^{2}}{1-\cos \Theta} N \cos \Theta=N b_{0}^{2}\left(\frac{1+\cos \Theta}{1-\cos \Theta}\right)=C N b_{0}^{2}$
-with $C=(1+\cos \Theta) /(1-\cos \Theta)$. To get a better idea of the effect of a fixed angle $\Theta$, i.e. going from a freely-jointed to a freely-rotating chain, we look at a few special (but not necessarily very realistic) cases:
-(1) $\Theta \rightarrow 0 \Rightarrow \cos \Theta \rightarrow 1-\frac{\Theta^{2}}{2} \Rightarrow C=\frac{2-\Theta^{2} / 2}{\Theta^{2} / 2} \approx \frac{4}{\Theta^{2}} \quad\left(\mathrm{C} \approx 500\right.$ for $\left.\Theta=5^{0}\right)$
+
+$$\left\langle R^{2}\right\rangle \approx N b_{0}^{2}+\frac{2 b_{0}^{2}}{1-\cos \theta} N \cos \theta=N b_{0}^{2}\left(\frac{1+\cos \theta}{1-\cos \theta}\right)=C N b_{0}^{2}$$
+
+with $C=(1+\cos \theta) /(1-\cos \theta)$.
+
+
+ To get a better idea of the effect of a fixed angle $\theta$, i.e. going from a freely-jointed to a freely-rotating chain, we look at a few special (but not necessarily very realistic) cases:
+
+1. $\theta \rightarrow 0 \Rightarrow \cos \theta \rightarrow 1-\frac{\theta^{2}}{2} \Rightarrow C=\frac{2-\theta^{2} / 2}{\theta^{2} / 2} \approx \frac{4}{\theta^{2}} \quad\left(\mathrm{C} \approx 500\right.$ for $\left.\theta=5^{0}\right)$
+
+<div style="border: 2px solid blue; padding: 1em; border-radius: 8px; background-color: transparent;">
 
 $$
 \therefore\left\langle R^{2}\right\rangle \gg N b_{0}^{2}
 $$
+</div> 
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=141&width=832&top_left_y=895&top_left_x=601)
-(2)
+This corresponds to a nearly straight chain, i.e., a rigid rod. The end-to-end distance is much larger than that of a flexible chain with the same number of segments.
 
+<svg width="400" height="80" viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="80" fill="white"/>
+    <!-- Main backbone: a gently undulating line -->
+    <polyline
+        fill="none"
+        stroke="#2b6cb0"
+        stroke-width="4"
+        points="
+            10,40
+            50,35
+            90,45
+            130,38
+            170,42
+            210,37
+            250,43
+            290,39
+            330,41
+            370,38
+        "
+    />
+    <!-- Small random oscillations: overlay with thinner, lighter line -->
+    <polyline
+        fill="none"
+        stroke="#90cdf4"
+        stroke-width="2"
+        points="
+            10,40
+            30,38
+            50,35
+            70,37
+            90,45
+            110,43
+            130,38
+            150,40
+            170,42
+            190,39
+            210,37
+            230,41
+            250,43
+            270,40
+            290,39
+            310,42
+            330,41
+            350,39
+            370,38
+        "
+    />
+    <!-- Monomer dots -->
+    <circle cx="10" cy="40" r="4" fill="#2b6cb0"/>
+    <circle cx="90" cy="45" r="4" fill="#2b6cb0"/>
+    <circle cx="170" cy="42" r="4" fill="#2b6cb0"/>
+    <circle cx="250" cy="43" r="4" fill="#2b6cb0"/>
+    <circle cx="330" cy="41" r="4" fill="#2b6cb0"/>
+    <circle cx="370" cy="38" r="4" fill="#2b6cb0"/>
+    <!-- Optional: label -->
+    <text x="200" y="75" text-anchor="middle" font-size="16" fill="#2b6cb0" font-family="sans-serif">
+        Nearly straight polymer chain (random walk)
+    </text>
+</svg>
+
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=141&width=832&top_left_y=895&top_left_x=601) -->
+2. 
 $$
 \begin{aligned}
-\Theta \rightarrow \pi-\delta \quad & \Rightarrow \cos \Theta \rightarrow-1-\frac{\delta^{2}}{2} \Rightarrow C=\frac{\delta^{2} / 2}{2-\delta^{2} / 2} \approx \frac{\delta^{2}}{4} \quad\left(\mathrm{C} \approx 2 \times 10^{-3} \text { for } \Theta=175^{0}\right) \\
-& \therefore\left\langle R^{2}\right\rangle \ll N b_{0}^{2}
+\theta \rightarrow \pi-\delta \quad & \Rightarrow \cos \theta \rightarrow-1-\frac{\delta^{2}}{2} \Rightarrow C=\frac{\delta^{2} / 2}{2-\delta^{2} / 2} \approx \frac{\delta^{2}}{4} \quad\left(\mathrm{C} \approx 2 \times 10^{-3} \text { for } \theta=175^{0}\right) \\
 \end{aligned}
 $$
+<div style="border: 2px solid blue; padding: 1em; border-radius: 8px; background-color: transparent;">
+$$\therefore\left\langle R^{2}\right\rangle \ll N b_{0}^{2}$$
+</div>
+This corresponds to the opposite limit, where the chain is compact and forms a globular, collapsed assembly. Examples include:
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=158&width=184&top_left_y=1303&top_left_x=1007)
-(3) $\Theta \rightarrow \pi / 2 \Rightarrow \cos \Theta \rightarrow 0 \Rightarrow C=1$
+    - polypeptides (the co  nstituents of amino acids) with strong hydrophobic interactions (e.g. alanine, leucine, methionine)
+    - polystyrene in water
+    - chromatin (the genetic information *condensed* in the nucleus of cells)
 
-$$
-\therefore\left\langle R^{2}\right\rangle=N b_{0}^{2}
-$$
+
+
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=158&width=184&top_left_y=1303&top_left_x=1007) -->
+3.  $\theta \rightarrow \pi / 2 \Rightarrow \cos \theta \rightarrow 0 \Rightarrow C=1$
+<div style="border: 2px solid blue; padding: 1em; border-radius: 8px; background-color: transparent;">$$
+\therefore\left\langle R^{2}\right\rangle=N b_{0}^{2}$$</div>
+
+These are ideal conditions, where the random walk model of the free-jointed chain works exactly.
 
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=247&width=289&top_left_y=1533&top_left_x=1420)
 
-Again, we get $\left\langle R^{2}\right\rangle \propto N$, which suggests that a long freely-rotating chain can be represented by an equivalent freely-jointed chain with $N$ 'segments of length $b$. Real and effective chain must have the same actual length ( $N b_{0}=N^{\prime} b$ ) and the same end-to-end distance $<R^{2}>$ i.e. $\left(C N b_{0}^{2}=C N^{\prime} b^{2}\right)$. These constraints result in $b=C b_{0}$ and $N^{\prime}=N / C$. This has important consequences:
+Again, we get $\left\langle R^{2}\right\rangle \propto N$, which suggests that a long freely-rotating chain can be represented by an *effective* freely-jointed chain with $N$ 'segments of length $b$. Real and effective chain must have the same actual length 
 
-- All sufficiently long flexible chains have identical • $b$ is the so called "Kuhn" behaviour as regards their dimensions: the chemical details are hidden in $N^{\prime}$ and $b$.
-- While individual monomer pairs are not totally statistical segment length (and twice the "persistence length" $l_{p}$ ) flexible, groups of monomers are
+$$N b_{0}=N^{\prime} b$$
+
+and the same end-to-end distance $<R^{2}>$ i.e. $$C N b_{0}^{2}=C N^{\prime} b^{2}.$$ 
+
+These constraints result in $b=C b_{0}$ and $N^{\prime}=N / C$. This has important consequences:
+
+- All sufficiently long flexible chains have identical  behaviour as regards their dimensions: the chemical details are hidden in $N^{\prime}$ and $b$. 
+- While individual monomer pairs are not totally flexible, groups of monomers are
 - $C$ represents the number of monomers over which the orientational correlation is lost
+- $b$ is the so called **"Kuhn" statistical segment length** and defines a related characteristic known as the "persistence length" $l_{p}=b/2$, also calculated directly via the correlation of bond vectors along the chain:
+$$
+\langle \mathbf{r}_i \cdot \mathbf{r}_{i+n} \rangle = b_0^2 \, \langle \cos \theta \rangle^n = b_0^2 \, e^{-n b_0 / l_p}
+$$
+where $b_0$ is the bond length, $\theta$ is the angle between consecutive bonds, and $n$ is the number of bonds separating the two segments.
+
+For the freely-rotating chain,
+$$
+l_p = -\frac{b_0}{\ln \langle \cos \theta \rangle}
+$$
+
+For small angles, this simplifies to $l_p \approx \frac{b_0}{1 - \langle \cos \theta \rangle}$.
+
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-26.jpg?height=487&width=441&top_left_y=239&top_left_x=405)
 
 
-#### Excluded volume effects
+### Excluded volume effects
 
 The fact that two monomers cannot occupy the same space has consequences on different length scales. On a local length scale this prevents neighbouring monomers from coming too close together. This effect is taken into account in terms of a restricted bond-angles, which prevents them from overlaping. Non-overlap, i.e. excluded volume, of distant monomers along the chain has also to be taken into account and can have surprisingly large effects.
 
@@ -414,7 +526,7 @@ $$
 Simulations give a very similar scaling, $\mathrm{R} \sim N^{0.588}$. The chain can no longer be modelled by a random walk, but has to be described by a self-avoiding random walk. The distribution of end-to-end distances is also not Gaussian.
 Although the difference between an exponent of 0.5 (as is characteristic for the freelyjointed and freely-rotating chains, i.e. a random walk) and 0.6 (excluded volume chain, i.e. self-avoiding random walk) seems small, it has a large effect at large N . For example, for $N=10^{4}, R=N^{0.5} b=100 b$, while $R=N^{0.6} b=251 b$, which corresponds to a swelling of the chain by a factor of 2.5 .
 
-### Good, poor and theta solvents
+## Good, poor and theta solvents
 
 So far we only considered monomer-monomer interactions, which we assumed are purely repulsive, and neglected the influence of the solvent. However, the type of solvent has a great effect on the polymer size. If there is a high affinity with the solvent ('good solvent') the polymer swells, while it will shrink in a 'poor solvent'. We consider a lattice model, where each lattice site has $z$ nearest neighbours and there are $N_{s}$ solvent molecules, $N_{p}$ monomers energies of interaction are $\varepsilon_{s s}$ for and $\mathrm{N}_{\mathrm{sp}}$ solvent-monomer contacts. The solvent-solvent, $\varepsilon_{\mathrm{pp}}$ for monomer-
 monomer and $\varepsilon_{s p}$ for solvent-monomer interactions.
@@ -444,7 +556,7 @@ This is the case of a 'good solvent', because the monomers prefer to be near the
 - $\varepsilon_{s p}>\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}>0$
 
 This is the case of a 'poor solvent', because the monomers prefer to be near to each other (and similarly for the solvent molecules). The attraction between the different monomers offset the excluded volume effect.
-The importance of the attractions generally depends on temperature. At very high temperatures the coil is expanded and the solvent quality is good. In contrast, at very low temperatures, the solvent quality is poor, attraction dominates, the coil collapses and phase separation is observed. In between these two limits, there is a temperature, the so-called theta temperature $\Theta$, where the coil has ideal dimensions and the effects of excluded volume and attraction cancel each other. The solvent at $T=\Theta$ is called a 'theta solvent'. The stronger the attractions the higher $\Theta$ will be, while for weak attractions $\Theta$ is low.
+The importance of the attractions generally depends on temperature. At very high temperatures the coil is expanded and the solvent quality is good. In contrast, at very low temperatures, the solvent quality is poor, attraction dominates, the coil collapses and phase separation is observed. In between these two limits, there is a temperature, the so-called theta temperature $\theta$, where the coil has ideal dimensions and the effects of excluded volume and attraction cancel each other. The solvent at $T=\theta$ is called a 'theta solvent'. The stronger the attractions the higher $\theta$ will be, while for weak attractions $\theta$ is low.
 A full treatment of the coil expansion is rather involved and has to take into account excluded volume, attractions, configurational entropy and entropy of mixing.
 
 
@@ -460,7 +572,7 @@ On a smaller length scale the behaviour will be dominated by the finite flexibil
 Finally, the local cross-sectional structure will be observed on an even smaller length scale.
 :::
 
-### Concentrated polymer solutions
+## Concentrated polymer solutions
 
 Previously we considered a single polymer in a very dilute solution. Now we increase the concentration in steps until we reach bulk polymers. A special aspect of bulk polymers will then be discussed in more detail in the following chapter. The most important regimes of concentration are:
 (A) Dilute:

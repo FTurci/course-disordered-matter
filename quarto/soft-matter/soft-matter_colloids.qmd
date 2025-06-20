@@ -925,7 +925,7 @@ $$
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
 $${#eq-oz}
 
-where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes and algebraic equation
+where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes an algebraic equation
 $$
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
 $$
