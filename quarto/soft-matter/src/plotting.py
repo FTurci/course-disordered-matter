@@ -66,22 +66,31 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
     plt.tight_layout()
     plt.show()
 
-import plotly.graph_objects as go
 
-# Plotly 3D line plot
-fig = go.Figure(data=[go.Scatter3d(
-    x=x, y=y, z=z,
-    mode='lines+markers',
-    marker=dict(size=3, color=np.arange(N+1), colorscale='Viridis'),
-    line=dict(color='blue', width=4)
-)])
-fig.update_layout(
-    title="3D Random Walk (Freely-Jointed Chain)",
-    scene=dict(
-        xaxis_title='X',
-        yaxis_title='Y',
-        zaxis_title='Z'
-    ),
-    margin=dict(l=0, r=0, b=0, t=30)
-)
-fig.show()
+
+
+def plotly_3d(x, y, z, title="3D Plot", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Viridis'):
+    
+    """
+    Generic 3D plotter for data in x, y, z arrays.
+    """
+    import plotly.graph_objects as go
+
+    if marker_color is None:
+        marker_color = np.arange(len(x))
+    fig = go.Figure(data=[go.Scatter3d(
+        x=x, y=y, z=z,
+        mode='lines+markers',
+        marker=dict(size=marker_size, color=marker_color, colorscale=colorscale),
+        line=dict(color=line_color, width=line_width)
+    )])
+    fig.update_layout(
+        title=title,
+        scene=dict(
+            xaxis_title='X',
+            yaxis_title='Y',
+            zaxis_title='Z'
+        ),
+        margin=dict(l=0, r=0, b=0, t=30)
+    )
+    fig.show()

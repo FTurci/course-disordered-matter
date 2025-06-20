@@ -7,6 +7,8 @@ pyodide:
         - matplotlib
         - plotly
         - nbformat
+resources:
+    - src/plotting.py
 bibliography: references.bib
 ---
 
@@ -100,6 +102,7 @@ At any instant, the configuration (arrangement) of the polymer is one realisatio
 
 ```{pyodide}
 #| autorun: true
+
 import numpy as np
 
 # Parameters
@@ -117,6 +120,10 @@ dz = b * np.cos(theta)
 x = np.concatenate([[0], np.cumsum(dx)])
 y = np.concatenate([[0], np.cumsum(dy)])
 z = np.concatenate([[0], np.cumsum(dz)])
+
+# custom plotting
+import plotting
+plotting.plotly_3d(x,y,z)
 ```
 
 
