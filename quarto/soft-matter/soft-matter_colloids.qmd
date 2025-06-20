@@ -767,10 +767,6 @@ The following table provides you with a few example potentials and their functio
 | Lennard-Jones (LJ)  | $U(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$ | Simple atomic fluids, coarse-grained molecular interactions               |
 | Hard Sphere         | $U(r) = \begin{cases} \infty & r < \sigma \\ 0 & r \geq \sigma \end{cases}$       | Colloids, granular materials, excluded volume   |
 | Yukawa (Screened Coulomb) | $U(r) = \epsilon \frac{e^{-\kappa r}}{r}$                                   | Charged colloids, plasmas, electrolytes         |
-| Buckingham (Exp-6)  | $U(r) = A e^{-Br} - \frac{C}{r^6}$                                               | Rare gases, molecular crystals                  |
-| Morse               | $U(r) = D_e \left( e^{-2\alpha(r - r_e)} - 2e^{-\alpha(r - r_e)} \right)$         | Diatomic molecules, chemical bonds              |
-| Square Well         | $U(r) = \begin{cases} \infty & r < \sigma \\ -\epsilon & \sigma \leq r < \lambda\sigma \\ 0 & r \geq \lambda\sigma \end{cases}$ | Model fluids, colloids with short-range attraction |
-| Soft Sphere         | $U(r) = \epsilon \left( \frac{\sigma}{r} \right)^n$                              | Polymer colloids, soft repulsive systems        |
 | Dipolar             | $U(r) = \frac{\mu_0}{4\pi} \frac{\mu_1 \mu_2}{r^3} (1 - 3\cos^2\theta)$           | Magnetic colloids, polar molecules              |
 
 
