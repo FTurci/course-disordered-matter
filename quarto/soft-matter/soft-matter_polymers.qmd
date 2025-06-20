@@ -7,9 +7,9 @@ pyodide:
         - matplotlib
         - plotly
         - nbformat
+        - pandas
 resources:
     - src/plotting.py
-    - figs/*pdb
 bibliography: references.bib
 
 toc-depth: 4
@@ -28,6 +28,7 @@ sys.path.insert(0, 'src')
 A polymer is a **large molecule** made up of many small, simple chemical units, joined together by chemical bonds. The basic unit of this sequence is called a **monomer**, and the number of units in the sequence is called the **degree of polymerisation**. 
 
 It is possible to have polymers containing over $10^{5}$ units and there are naturally occurring polymers with a degree of polymerisation exceeding $10^{9}$. For example, polystyrene with a degree of polymerisation of $10^{5}$ has a molecular weight of about $10^{7} \mathrm{~g} / \mathrm{mol}$ and, if fully stretched out, would be about 25 $\mu \mathrm{m}$ long.
+
 
 
 Polymers play a central role in many fields, ranging from technology to biology. This is reflected in a huge number of different chemical structures. Given this manifold and the complexity of polymer molecules, the theories are astonishingly simple. This is possible because of the characteristic feature of polymers: The molecule itself is **very large** (compared to the individual units) and the macroscopic behaviour is dominated by this large-scale property of the molecule. Theories focus on such *large-scale* properties, whereas the small scale *fine structure* is typicaly resolved by computer simulations.
@@ -128,6 +129,9 @@ def generate_free_polymer(N=100, b=1):
     return x,y,z
 
 # custom plotting
+import sys
+
+sys.path.append("./src")
 import plotting
 N, b = 100, 1
 # Plot the end-to-end vector as a red arrow

@@ -3,7 +3,8 @@ project:
   output-dir: ../docs  # Uncomment if you want to specify output directory
   # render:
     # - "Week*/*"
-
+resources:
+  - soft-matter/figs/*.pdb
 
 book:
   page-navigation: true
