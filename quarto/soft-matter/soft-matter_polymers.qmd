@@ -9,6 +9,7 @@ pyodide:
         - nbformat
 resources:
     - src/plotting.py
+    - figs/*pdb
 bibliography: references.bib
 
 toc-depth: 4
@@ -78,7 +79,7 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 
 #### Natural rubber $\rm (C_5H_8)_n$ {.unnumbered}
 
-{{< mol-url ./figs/naturalrubber.pdb >}}
+{{< mol-url ./figs/naturalrubberr.pdb >}}
 
 
 ## Models for the conformation of polymers
