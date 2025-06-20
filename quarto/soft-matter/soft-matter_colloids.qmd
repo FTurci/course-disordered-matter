@@ -9,7 +9,6 @@ pyodide:
         - nbformat
 resources:
     - src/plotting.py
-    - src/algorithms.py
     - src/hardspheres.py
 bibliography: references.bib
 
