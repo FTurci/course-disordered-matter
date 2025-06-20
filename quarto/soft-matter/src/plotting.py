@@ -97,7 +97,7 @@ def plotly_3d(x, y, z, title="",name ="", marker_size=3, line_color='blue', line
     
     return fig
 
-def plot_vector(x,y,z,fig, name=""):
+def plot_vector(x,y,z,fig, name="",arrowsize=1.0):
 
     import plotly.graph_objects as go
         # End-to-end vector components
@@ -120,7 +120,7 @@ def plot_vector(x,y,z,fig, name=""):
         x=[x[-1]], y=[y[-1]], z=[z[-1]],
         u=[u], v=[v], w=[w],
         sizemode="absolute",
-        sizeref=1.0,  # adjust to control size of the arrowhead
+        sizeref=arrowsize,  # adjust to control size of the arrowhead
         anchor="tip",
         colorscale=[[0, 'red'], [1, 'red']],
         showscale=False,
