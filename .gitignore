@@ -1,7 +1,7 @@
 .DS_Store
 .vscode
 .ipynb_checkpoints/
-docs
+docs/
 quarto/.python-version
 quarto/.quarto
 

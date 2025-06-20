@@ -463,7 +463,7 @@ fig.show()
 
 These are ideal conditions, where the random walk model of the free-jointed chain works exactly.
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=247&width=289&top_left_y=1533&top_left_x=1420)
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=247&width=289&top_left_y=1533&top_left_x=1420) -->
 
 Again, we get $\left\langle R^{2}\right\rangle \propto N$, which suggests that a long freely-rotating chain can be represented by an *effective* freely-jointed chain with $N$ 'segments of length $b$. Real and effective chain must have the same actual length 
 
