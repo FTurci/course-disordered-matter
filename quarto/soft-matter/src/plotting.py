@@ -97,7 +97,7 @@ def plotly_3d(x, y, z, title="",name ="", marker_size=3, line_color='blue', line
     
     return fig
 
-def plot_vector(x,y,z,fig, name):
+def plot_vector(x,y,z,fig, name=""):
 
     import plotly.graph_objects as go
         # End-to-end vector components

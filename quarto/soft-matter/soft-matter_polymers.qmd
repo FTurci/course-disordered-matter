@@ -10,6 +10,8 @@ pyodide:
 resources:
     - src/plotting.py
 bibliography: references.bib
+
+toc-depth: 4
 ---
 
 ```{pyodide}
@@ -79,17 +81,18 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 {{< mol-url ./figs/naturalrubber.pdb >}}
 
 
-###  Polymer conformations
+##  Polymer conformations
 
-#### Models for the conformation of polymers
+## Models for the conformation of polymers
 
 In order to understand the properties of most substances, we must consider a large assembly of molecules. In the case of polymers, however, the molecules themselves are very large and due to their flexibility they can take up an enormous number of configurations by rotation of chemical bonds. The shape of the polymer can therefore only be usefully described **statistically** and one need to use statistical mechanics to calculate the characteristics of even an isolated polymer. 
 
+{{< mol-url ./figs/nbutane.pdb >}}
 
 To be able to investigate the properties of a **single polymer** and to neglect interactions between polymers, the polymer is placed in a very **dilute solution**. In this chapter, we will theoretically investigate the properties of an isolated, single polymer chain in solution (which in addition is linear and consists of only one kind of monomers).
 
 
-#### Freely-jointed chain
+### Freely-jointed chain
 
 Many polymers are highly flexible and are coiled up in solution. In a simple model we thus describe a polymer with two assumptions :
 
@@ -101,6 +104,8 @@ The momomers are located at positions $\mathbf{R}_{\mathrm{j}}$ and connected by
 The **end-to-end vector** $\mathbf{R}$ is then simply the vector linking the head to the tail fo the chain:
 
 $$\mathbf{R} = \mathbf{r}_1+\mathbf{r}_2+\dots+\mathbf{r}_N = \sum_{j=1}^N \mathbf{r}_j$$.
+
+
 
 At any instant, the configuration (arrangement) of the polymer is one realisation of an N-step random walk in three dimensions.
 
@@ -132,10 +137,12 @@ N, b = 100, 1
 
 x, y, z = generate_free_polymer(N, b)
 fig = plotting.plotly_3d(x, y, z, name=f"{N}-step polymer")
-fig = plotting.plot_vector([x[0],x[-1]],[y[0],y[-1]],[z[0],z[-1]],fig, "end-to-end vector")
+fig = plotting.plot_vector([x[0],x[-1]],[y[0],y[-1]],[z[0],z[-1]],fig, name="end-to-end vector")
 fig.show()
 ```
 
+
+#### End-to-end vector {.unnumbered}
 
  In time, the various segments undergo Brownian motion and the polymer fluctuates between all possible configurations of the random walk. Rememebr however that it does this with fixed inter-monomer distance.
 
@@ -171,25 +178,91 @@ $$
 P(\mathbf{R}) = \left( \frac{3}{2\pi N b_0^2} \right)^{3/2} \exp\left( -\frac{3 \mathbf{R}^2}{2 N b_0^2} \right)
 $$
 
-This means that, for long chains, the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to $N$.
+This means that, for long chains, the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to $N$. Also, we can
+
+#### Radius of gyration {.unnumbered}
+
+While the end-to-end distance represents a well-defined quantity for a linear chain, we need a more versatile measure of the size for more complicated architectures, such as branched or star-shaped polymers. This is provided by the so called **radius of gyration**, a measure of the (average) extent of the polymer chain.
+
+The radius of gyration is a generic quantity that can be measured from any point cloud. It is closely linked to the (co)-variance of the set of points.
+
+We define the **center of mass** as the average position
+
+$$\mathbf{R}_{\rm CM}=\frac{1}{N} \sum_{j=1}^{N} \mathbf{R}_{j}$$
 
 
-While the end-to-end distance represents a well-defined quantity for a linear chain, we need a more versatile measure of the size for more complicated architectures, such as branched or star-shaped polymers. This is provided by the mean square distance from the centre of mass $\mathbf{R}_{\mathrm{G}}$, the so-called radius of gyration $R_{g}$, which is also a measure of the extension of a (random) chain:
+A general way to describe the spatial extent and shape of the polymer is to construct the **gyration tensor** (also called the configuration tensor):
 
 $$
-\begin{aligned}
-& \mathbf{R}_{G}=\frac{1}{N} \sum_{j=1}^{N} \mathbf{R}_{j} \\
-& R_{g}^{2}=\frac{1}{N} \sum_{j=1}^{N}\left(\mathbf{R}_{j}-\mathbf{R}_{G}\right)^{2}=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\mathbf{R}_{j}-\mathbf{R}_{k}\right)^{2} \quad \quad \text { (see problem) } \\
-& \therefore\left\langle R_{g}^{2}\right\rangle=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}<\left(\mathbf{R}_{j}-\mathbf{R}_{k}\right)^{2}>=\frac{b_{0^{2}}}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}|j-k|
-\end{aligned}
+\mathbf{S} = \frac{1}{N} \sum_{j=1}^N (\mathbf{R}_j - \mathbf{R}_{\rm CM}) \otimes (\mathbf{R}_j - \mathbf{R}_{\rm CM})
 $$
 
-Now transform to continuous variables
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-22.jpg?height=386&width=381&top_left_y=1646&top_left_x=1463)
+where $\otimes$ denotes the outer product, and $\mathbf{S}$ is a $3 \times 3$ symmetric matrix. The elements of $\mathbf{S}$ are given by
 
-Thus we find the simple result that the mean squared gyration radius is proportional to the mean squared end-to-end distance.
+$$
+S_{\alpha\beta} = \frac{1}{N} \sum_{j=1}^N (R_{j,\alpha} - R_{{\rm CM},\alpha})(R_{j,\beta} - R_{{\rm CM},\beta})
+$$
 
-#### Freely-rotating chain
+where $\alpha, \beta \in \{x, y, z\}$.
+
+The **radius of gyration squared** is then simply the trace of this tensor:
+
+$$
+R_g^2 = \mathrm{Tr}(\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}
+$$
+
+The eigenvalues and eigenvectors of $\mathbf{S}$ provide information about the principal axes and shape anisotropy of the polymer coil. The **tensor of gyration** correspondss to the **covariance matrix** of the positions $\mathbf{R}_j$.
+
+The radius of gyration is direcly proportional to the end-to-end vector.
+
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+$$
+\langle R_g^2 \rangle = \frac{1}{6} \langle R^2 \rangle
+$$
+</div>
+
+
+::: {.callout-note collapse="true"}
+# Proof
+
+The radius of gyrations is $$
+R_g^2=\frac{1}{N} \sum_{j=1}^N\left(\mathbf{R}_j-\mathbf{R}_G\right)^2
+$$
+
+We can rewrite it as 
+$$
+R_g^2 = \frac{1}{2N^2} \sum_{j=1}^N \sum_{k=1}^N (\mathbf{R}_j - \mathbf{R}_k)^2
+$$
+
+and note that, from our previous result on the end-to-end distance, the mean squared distance between monomers $j$ and $k$ in a free jointed chain is
+$$
+\langle (\mathbf{R}_j - \mathbf{R}_k)^2 \rangle = |j - k| b_0^2
+$$
+
+So,
+$$
+\langle R_g^2 \rangle = \frac{b_0^2}{2N^2} \sum_{j=1}^N \sum_{k=1}^N |j - k|
+$$
+
+Evaluating the double sum gives:
+$$
+\sum_{j=1}^N \sum_{k=1}^N |j - k| = \frac{N^3 - N}{3}
+$$
+
+Thus,
+$$
+\langle R_g^2 \rangle = \frac{b_0^2}{2N^2} \cdot \frac{N^3 - N}{3} = \frac{b_0^2}{6} (N - \frac{1}{N})
+$$
+
+For large $N \gg 1$:
+$$
+\langle R_g^2 \rangle \approx \frac{1}{6} N b_0^2
+$$
+:::
+
+
+
+### Freely-rotating chain
 
 In a polymer molecule the bond angles are usually restricted, which leads to a limited flexibility of the molecule.
 Let us consider the case of $n$-butane:
@@ -198,8 +271,14 @@ $$
 \mathrm{H}_{3} \mathrm{C}-\mathrm{CH}_{2}-\mathrm{CH}_{2}-\mathrm{CH}_{3}
 $$
 
+
+##### N-butane 
+
+
 While the $\mathrm{C}-\mathrm{C}$ bond angle is fixed at about $120^{\circ}$, rotation about the bond is possible.
-<img class="imgSvg" id = "m6ez9ughny1swwq5oo" src="data:image/svg+xml;base64,PHN2ZyBpZD0ic21pbGVzLW02ZXo5dWdobnkxc3d3cTVvbyIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgMzAyIDEwNS4wMDAxODM2NDg5Njc3NSIgc3R5bGU9IndpZHRoOiAzMDIuMjM4NDAxNzUzNTQxMTVweDsgaGVpZ2h0OiAxMDUuMDAwMTgzNjQ4OTY3NzVweDsgb3ZlcmZsb3c6IHZpc2libGU7Ij48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjMyLjk1ODU4Mzg2MjcxNDUzIiB5MT0iODQuMDAwMTgzNjQ4OTY3NzUiIHgyPSIyNjAuMjM4NDAxNzUzNTQxMTUiIHkyPSI2OC4yNTAyMTQyNTcxNDU1OSI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTMiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMjA1LjY3ODgwMTMxNTE1NTg1IiB5MT0iNjguMjUwMTUzMDQwODA5NzgiIHgyPSIyMzIuOTU4NTgzODYyNzE0NTMiIHkyPSI4NC4wMDAxODM2NDg5Njc3NSI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTc4LjM5ODk4MzQyNDMyOTIzIiB5MT0iODQuMDAwMTIyNDMyNjMxOTQiIHgyPSIyMDUuNjc4ODAxMzE1MTU1ODUiIHkyPSI2OC4yNTAxNTMwNDA4MDk3OCI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTciIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTUxLjExOTIwMDg3Njc3MDU1IiB5MT0iNjguMjUwMDkxODI0NDczOTciIHgyPSIxNzguMzk4OTgzNDI0MzI5MjMiIHkyPSI4NC4wMDAxMjI0MzI2MzE5NCI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTkiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMTIzLjgzOTM4Mjk4NTk0Mzk0IiB5MT0iODQuMDAwMDYxMjE2Mjk2MTMiIHgyPSIxNTEuMTE5MjAwODc2NzcwNTUiIHkyPSI2OC4yNTAwOTE4MjQ0NzM5NyI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTExIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9Ijk2LjU1OTYwMDQzODM4NTI5IiB5MT0iNjguMjUwMDMwNjA4MTM4MTUiIHgyPSIxMjMuODM5MzgyOTg1OTQzOTQiIHkyPSI4NC4wMDAwNjEyMTYyOTYxMyI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTEzIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjY5LjI3OTc4MjU0NzU1ODY4IiB5MT0iODMuOTk5OTk5OTk5OTYwMzUiIHgyPSI5Ni41NTk2MDA0MzgzODUyOSIgeTI9IjY4LjI1MDAzMDYwODEzODE1Ij48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMjAlIj48L3N0b3A+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjEwMCUiPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZS1tNmV6OXVnaG55MXN3d3E1b28tMTUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iOTYuNTU5NjAwNDM4Mzg1MjkiIHkxPSI2OC4yNTAwMzA2MDgxMzgxNSIgeDI9Ijk2LjU1OTYzNTc4MTY1MzIiIHkyPSIzNi43NTAwMzA2MDgxNTc5NCI+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjIwJSI+PC9zdG9wPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+PC9saW5lYXJHcmFkaWVudD48bGluZWFyR3JhZGllbnQgaWQ9ImxpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTE3IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjQyIiB5MT0iNjguMjQ5OTY5MzkxODAyNCIgeDI9IjY5LjI3OTc4MjU0NzU1ODY4IiB5Mj0iODMuOTk5OTk5OTk5OTYwMzUiPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIyMCUiPjwvc3RvcD48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMTAwJSI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lLW02ZXo5dWdobnkxc3d3cTVvby0xOSIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI2OS4yNzk4NTMyMzQwOTQ1MiIgeTE9IjIxIiB4Mj0iOTYuNTU5NjM1NzgxNjUzMiIgeTI9IjM2Ljc1MDAzMDYwODE1Nzk0Ij48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMjAlIj48L3N0b3A+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjEwMCUiPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZS1tNmV6OXVnaG55MXN3d3E1b28tMjEiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iOTYuNTU5NjM1NzgxNjUzMiIgeTE9IjM2Ljc1MDAzMDYwODE1Nzk0IiB4Mj0iMTIzLjgzOTQ1MzY3MjQ3OTc2IiB5Mj0iMjEuMDAwMDYxMjE2MzM1NjgiPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIyMCUiPjwvc3RvcD48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMTAwJSI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJsaW5lLW02ZXo5dWdobnkxc3d3cTVvby0yMyIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiIHgxPSI0MiIgeTE9IjY4LjI0OTk2OTM5MTgwMjQiIHgyPSI0Mi4wMDAwMzUzNDMyNjc5MSIgeTI9IjM2Ljc0OTk2OTM5MTgyMjIyIj48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMjAlIj48L3N0b3A+PHN0b3Agc3RvcC1jb2xvcj0iY3VycmVudENvbG9yIiBvZmZzZXQ9IjEwMCUiPjwvc3RvcD48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0ibGluZS1tNmV6OXVnaG55MXN3d3E1b28tMjUiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iNDIuMDAwMDM1MzQzMjY3OTEiIHkxPSIzNi43NDk5NjkzOTE4MjIyMiIgeDI9IjY5LjI3OTg1MzIzNDA5NDUyIiB5Mj0iMjEiPjxzdG9wIHN0b3AtY29sb3I9ImN1cnJlbnRDb2xvciIgb2Zmc2V0PSIyMCUiPjwvc3RvcD48c3RvcCBzdG9wLWNvbG9yPSJjdXJyZW50Q29sb3IiIG9mZnNldD0iMTAwJSI+PC9zdG9wPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxtYXNrIGlkPSJ0ZXh0LW1hc2stbTZlejl1Z2hueTFzd3dxNW9vIj48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ3aGl0ZSI+PC9yZWN0PjwvbWFzaz48c3R5bGU+CiAgICAgICAgICAgICAgICAuZWxlbWVudC1tNmV6OXVnaG55MXN3d3E1b28gewogICAgICAgICAgICAgICAgICAgIGZvbnQ6IDE0cHggSGVsdmV0aWNhLCBBcmlhbCwgc2Fucy1zZXJpZjsKICAgICAgICAgICAgICAgICAgICBhbGlnbm1lbnQtYmFzZWxpbmU6ICdtaWRkbGUnOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgLnN1Yi1tNmV6OXVnaG55MXN3d3E1b28gewogICAgICAgICAgICAgICAgICAgIGZvbnQ6IDguNHB4IEhlbHZldGljYSwgQXJpYWwsIHNhbnMtc2VyaWY7CiAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgIDwvc3R5bGU+PGcgbWFzaz0idXJsKCN0ZXh0LW1hc2stbTZlejl1Z2hueTFzd3dxNW9vKSI+PGxpbmUgeDE9IjIzMi45NTg1ODM4NjI3MTQ1MyIgeTE9Ijg0LjAwMDE4MzY0ODk2Nzc1IiB4Mj0iMjYwLjIzODQwMTc1MzU0MTE1IiB5Mj0iNjguMjUwMjE0MjU3MTQ1NTkiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tMScpIj48L2xpbmU+PGxpbmUgeDE9IjIwNS42Nzg4MDEzMTUxNTU4NSIgeTE9IjY4LjI1MDE1MzA0MDgwOTc4IiB4Mj0iMjMyLjk1ODU4Mzg2MjcxNDUzIiB5Mj0iODQuMDAwMTgzNjQ4OTY3NzUiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tMycpIj48L2xpbmU+PGxpbmUgeDE9IjE3OC4zOTg5ODM0MjQzMjkyMyIgeTE9Ijg0LjAwMDEyMjQzMjYzMTk0IiB4Mj0iMjA1LjY3ODgwMTMxNTE1NTg1IiB5Mj0iNjguMjUwMTUzMDQwODA5NzgiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tNScpIj48L2xpbmU+PGxpbmUgeDE9IjE1MS4xMTkyMDA4NzY3NzA1NSIgeTE9IjY4LjI1MDA5MTgyNDQ3Mzk3IiB4Mj0iMTc4LjM5ODk4MzQyNDMyOTIzIiB5Mj0iODQuMDAwMTIyNDMyNjMxOTQiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tNycpIj48L2xpbmU+PGxpbmUgeDE9IjEyMy44MzkzODI5ODU5NDM5NCIgeTE9Ijg0LjAwMDA2MTIxNjI5NjEzIiB4Mj0iMTUxLjExOTIwMDg3Njc3MDU1IiB5Mj0iNjguMjUwMDkxODI0NDczOTciIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tOScpIj48L2xpbmU+PGxpbmUgeDE9Ijk2LjU1OTYwMDQzODM4NTI5IiB5MT0iNjguMjUwMDMwNjA4MTM4MTUiIHgyPSIxMjMuODM5MzgyOTg1OTQzOTQiIHkyPSI4NC4wMDAwNjEyMTYyOTYxMyIgc3R5bGU9InN0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utd2lkdGg6MS4yNiIgc3Ryb2tlPSJ1cmwoJyNsaW5lLW02ZXo5dWdobnkxc3d3cTVvby0xMScpIj48L2xpbmU+PGxpbmUgeDE9IjY5LjI3OTc4MjU0NzU1ODY4IiB5MT0iODMuOTk5OTk5OTk5OTYwMzUiIHgyPSI5Ni41NTk2MDA0MzgzODUyOSIgeTI9IjY4LjI1MDAzMDYwODEzODE1IiBzdHlsZT0ic3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS13aWR0aDoxLjI2IiBzdHJva2U9InVybCgnI2xpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTEzJykiPjwvbGluZT48bGluZSB4MT0iOTYuNTU5NjAwNDM4Mzg1MjkiIHkxPSI2OC4yNTAwMzA2MDgxMzgxNSIgeDI9Ijk2LjU1OTYzNTc4MTY1MzIiIHkyPSIzNi43NTAwMzA2MDgxNTc5NCIgc3R5bGU9InN0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1kYXNoYXJyYXk6bm9uZTtzdHJva2Utd2lkdGg6MS4yNiIgc3Ryb2tlPSJ1cmwoJyNsaW5lLW02ZXo5dWdobnkxc3d3cTVvby0xNScpIj48L2xpbmU+PGxpbmUgeDE9IjQyIiB5MT0iNjguMjQ5OTY5MzkxODAyNCIgeDI9IjY5LjI3OTc4MjU0NzU1ODY4IiB5Mj0iODMuOTk5OTk5OTk5OTYwMzUiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tMTcnKSI+PC9saW5lPjxsaW5lIHgxPSI2OS4yNzk4NTMyMzQwOTQ1MiIgeTE9IjIxIiB4Mj0iOTYuNTU5NjM1NzgxNjUzMiIgeTI9IjM2Ljc1MDAzMDYwODE1Nzk0IiBzdHlsZT0ic3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS13aWR0aDoxLjI2IiBzdHJva2U9InVybCgnI2xpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTE5JykiPjwvbGluZT48bGluZSB4MT0iOTYuNTU5NjM1NzgxNjUzMiIgeTE9IjM2Ljc1MDAzMDYwODE1Nzk0IiB4Mj0iMTIzLjgzOTQ1MzY3MjQ3OTc2IiB5Mj0iMjEuMDAwMDYxMjE2MzM1NjgiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tMjEnKSI+PC9saW5lPjxsaW5lIHgxPSI0MiIgeTE9IjY4LjI0OTk2OTM5MTgwMjQiIHgyPSI0Mi4wMDAwMzUzNDMyNjc5MSIgeTI9IjM2Ljc0OTk2OTM5MTgyMjIyIiBzdHlsZT0ic3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWRhc2hhcnJheTpub25lO3N0cm9rZS13aWR0aDoxLjI2IiBzdHJva2U9InVybCgnI2xpbmUtbTZlejl1Z2hueTFzd3dxNW9vLTIzJykiPjwvbGluZT48bGluZSB4MT0iNDIuMDAwMDM1MzQzMjY3OTEiIHkxPSIzNi43NDk5NjkzOTE4MjIyMiIgeDI9IjY5LjI3OTg1MzIzNDA5NDUyIiB5Mj0iMjEiIHN0eWxlPSJzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtZGFzaGFycmF5Om5vbmU7c3Ryb2tlLXdpZHRoOjEuMjYiIHN0cm9rZT0idXJsKCcjbGluZS1tNmV6OXVnaG55MXN3d3E1b28tMjUnKSI+PC9saW5lPjwvZz48Zz48dGV4dCB4PSIyNjAuMjM4NDAxNzUzNTQxMTUiIHk9IjY4LjI1MDIxNDI1NzE0NTU5IiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSIyMzIuOTU4NTgzODYyNzE0NTMiIHk9Ijg0LjAwMDE4MzY0ODk2Nzc1IiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSIyMDUuNjc4ODAxMzE1MTU1ODUiIHk9IjY4LjI1MDE1MzA0MDgwOTc4IiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSIxNzguMzk4OTgzNDI0MzI5MjMiIHk9Ijg0LjAwMDEyMjQzMjYzMTk0IiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSIxNTEuMTE5MjAwODc2NzcwNTUiIHk9IjY4LjI1MDA5MTgyNDQ3Mzk3IiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSIxMjMuODM5MzgyOTg1OTQzOTQiIHk9Ijg0LjAwMDA2MTIxNjI5NjEzIiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSI5Ni41NTk2MDA0MzgzODUyOSIgeT0iNjguMjUwMDMwNjA4MTM4MTUiIGNsYXNzPSJkZWJ1ZyIgZmlsbD0iI2ZmMDAwMCIgc3R5bGU9IgogICAgICAgICAgICAgICAgZm9udDogNXB4IERyb2lkIFNhbnMsIHNhbnMtc2VyaWY7CiAgICAgICAgICAgICI+PC90ZXh0Pjx0ZXh0IHg9IjY5LjI3OTc4MjU0NzU1ODY4IiB5PSI4My45OTk5OTk5OTk5NjAzNSIgY2xhc3M9ImRlYnVnIiBmaWxsPSIjZmYwMDAwIiBzdHlsZT0iCiAgICAgICAgICAgICAgICBmb250OiA1cHggRHJvaWQgU2Fucywgc2Fucy1zZXJpZjsKICAgICAgICAgICAgIj48L3RleHQ+PHRleHQgeD0iNDIiIHk9IjY4LjI0OTk2OTM5MTgwMjQiIGNsYXNzPSJkZWJ1ZyIgZmlsbD0iI2ZmMDAwMCIgc3R5bGU9IgogICAgICAgICAgICAgICAgZm9udDogNXB4IERyb2lkIFNhbnMsIHNhbnMtc2VyaWY7CiAgICAgICAgICAgICI+PC90ZXh0Pjx0ZXh0IHg9IjQyLjAwMDAzNTM0MzI2NzkxIiB5PSIzNi43NDk5NjkzOTE4MjIyMiIgY2xhc3M9ImRlYnVnIiBmaWxsPSIjZmYwMDAwIiBzdHlsZT0iCiAgICAgICAgICAgICAgICBmb250OiA1cHggRHJvaWQgU2Fucywgc2Fucy1zZXJpZjsKICAgICAgICAgICAgIj48L3RleHQ+PHRleHQgeD0iNjkuMjc5ODUzMjM0MDk0NTIiIHk9IjIxIiBjbGFzcz0iZGVidWciIGZpbGw9IiNmZjAwMDAiIHN0eWxlPSIKICAgICAgICAgICAgICAgIGZvbnQ6IDVweCBEcm9pZCBTYW5zLCBzYW5zLXNlcmlmOwogICAgICAgICAgICAiPjwvdGV4dD48dGV4dCB4PSI5Ni41NTk2MzU3ODE2NTMyIiB5PSIzNi43NTAwMzA2MDgxNTc5NCIgY2xhc3M9ImRlYnVnIiBmaWxsPSIjZmYwMDAwIiBzdHlsZT0iCiAgICAgICAgICAgICAgICBmb250OiA1cHggRHJvaWQgU2Fucywgc2Fucy1zZXJpZjsKICAgICAgICAgICAgIj48L3RleHQ+PHRleHQgeD0iMTIzLjgzOTQ1MzY3MjQ3OTc2IiB5PSIyMS4wMDAwNjEyMTYzMzU2OCIgY2xhc3M9ImRlYnVnIiBmaWxsPSIjZmYwMDAwIiBzdHlsZT0iCiAgICAgICAgICAgICAgICBmb250OiA1cHggRHJvaWQgU2Fucywgc2Fucy1zZXJpZjsKICAgICAgICAgICAgIj48L3RleHQ+PC9nPjwvc3ZnPg=="/>
+
+
+
 
 Nevertheless, the potential energy of a configuration depends on the valence angle:
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-23.jpg?height=715&width=1420&top_left_y=1416&top_left_x=289)
