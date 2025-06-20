@@ -96,63 +96,91 @@ Many polymers are highly flexible and are coiled up in solution. In a simple mod
 - it is composed of a **large number of segments** freely joined up
 - all angles between segments are assumed to be **equally likely**.
 
-The momomers are located at positions $\underline{R}_{\mathrm{j}}$ and connected by bonds $\underline{r}_{j}=\underline{R}_{j}-\underline{R}_{j-1}$ of length $\left|\underline{r}_{j}\right|=b_{0}$. The end-to-end vector is $\left|\underline{R}_{N}-\underline{R}_{0}\right|=\sum_{j=1}^{N} r_{j}$.
+The momomers are located at positions $\mathbf{R}_{\mathrm{j}}$ and connected by bonds $\mathbf{r}_{j}=\mathbf{R}_{j}-\mathbf{R}_{j-1}$ of length $\left|\mathbf{r}_{j}\right|=b_{0}$.
 
-At any instant, the configuration (arrangement) of the polymer is one realisation of an N -step random walk in three dimensions.
+The **end-to-end vector** $\mathbf{R}$ is then simply the vector linking the head to the tail fo the chain:
+
+$$\mathbf{R} = \mathbf{r}_1+\mathbf{r}_2+\dots+\mathbf{r}_N = \sum_{j=1}^N \mathbf{r}_j$$.
+
+At any instant, the configuration (arrangement) of the polymer is one realisation of an N-step random walk in three dimensions.
 
 ```{pyodide}
 #| autorun: true
-
+#| caption: "Example of freely-jointed chain as a random walk in 3d"
 import numpy as np
 
-# Parameters
-N = 100  # number of steps
-b = 1    # step length
+# Play with the parameters (e.g. large and small N) and explore different conformations in 3D
+# The color coding only maps the index of the monomer in the chain
+def generate_free_polymer(N=100, b=1):
+    # Generate random walk in 3D
+    theta = np.arccos(2 * np.random.rand(N) - 1)  # polar angle
+    phi = 2 * np.pi * np.random.rand(N)           # azimuthal angle
 
-# Generate random walk in 3D
-theta = np.arccos(2 * np.random.rand(N) - 1)  # polar angle
-phi = 2 * np.pi * np.random.rand(N)           # azimuthal angle
+    dx = b * np.sin(theta) * np.cos(phi)
+    dy = b * np.sin(theta) * np.sin(phi)
+    dz = b * np.cos(theta)
 
-dx = b * np.sin(theta) * np.cos(phi)
-dy = b * np.sin(theta) * np.sin(phi)
-dz = b * np.cos(theta)
-
-x = np.concatenate([[0], np.cumsum(dx)])
-y = np.concatenate([[0], np.cumsum(dy)])
-z = np.concatenate([[0], np.cumsum(dz)])
+    x = np.concatenate([[0], np.cumsum(dx)])
+    y = np.concatenate([[0], np.cumsum(dy)])
+    z = np.concatenate([[0], np.cumsum(dz)])
+    return x,y,z
 
 # custom plotting
 import plotting
-plotting.plotly_3d(x,y,z)
+N, b = 100, 1
+# Plot the end-to-end vector as a red arrow
+
+x, y, z = generate_free_polymer(N, b)
+fig = plotting.plotly_3d(x, y, z, name=f"{N}-step polymer")
+fig = plotting.plot_vector([x[0],x[-1]],[y[0],y[-1]],[z[0],z[-1]],fig, "end-to-end vector")
+fig.show()
 ```
 
 
+ In time, the various segments undergo Brownian motion and the polymer fluctuates between all possible configurations of the random walk. Rememebr however that it does this with fixed inter-monomer distance.
+
+The mean squared end-to-end distance is then simply 
+$$\begin{aligned}\langle\mathbf{R}^2\rangle &= \left\langle \left( \sum_{i=1}^N \mathbf{r}_i\right) \cdot  \left( \sum_{j=1}^N \mathbf{r}_j\right) \right\rangle\\
+&= \left\langle \sum_{i=1}^N \sum_{j=1}^N  \mathbf{r}_i \mathbf{r}_j \right\rangle\\
+\end{aligned}$$
+We can split the sum into the terms where $i=j$ and the rest. This yields in general
 
 
+$$\langle \mathbf{R}^2\rangle = Nb_0^2+\langle \mathbf{r}_i \mathbf{r}_j  \rangle$$
+
+where the second term simply encodes the covariances between the (random) variables $\mathbf{r}_i,\mathbf{r}_j$. Since we assumed (in this simplistic case) that they are independent, only the first term remains for the free-jointed chain
 
 
- In time, the various segments undergo Brownian motion and the
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-21.jpg?height=509&width=643&top_left_y=1499&top_left_x=1209) polymer fluctuates between all possible configurations of the random walk
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-21.jpg?height=221&width=1592&top_left_y=2197&top_left_x=312)
+$$\langle \mathbf{R}^2\rangle = Nb_0^2$$
 
-Size and shape of a freely-jointed chain:
-Based on the end-to-end vector $\underline{R}$, the size and shape of the chain can thus be described probabilistically:
+This is essentially the same result as for the mean squared displacement of a random walk, provided that we recognise that the number of monomers has taken the role played by time inbthe case of the wal. We had ${\rm MSD}\propto t$ and here we have
+
+$$\langle \mathbf{R}^2\rangle\propto N$$
+
+Since we formally inherit all the results holding for a random walk, we can also predict what happens to the distribution of possible end-to-end distances in the limit of long polymers, i.e. large $N$. 
+
+The mean squaerd end to end distance can be decomposed as 
+
+$$
+\left\langle\mathbf{R}^2\right\rangle=\left\langle R_x^2\right\rangle+\left\langle R_y^2\right\rangle+\left\langle R_z^2\right\rangle=3 \sigma^2=N b_0^2 \Rightarrow \sigma^2=\frac{N b_0^2}{3}
+$$
+where $\sigma$ is the variance per component.
+
+We know that the random walk converges to a Gaussian distribution in 3d with each component having variance $\sigma$. Thus, for large $N$, the probability distribution for the end-to-end vector $\mathbf{R}$ is
+$$
+P(\mathbf{R}) = \left( \frac{3}{2\pi N b_0^2} \right)^{3/2} \exp\left( -\frac{3 \mathbf{R}^2}{2 N b_0^2} \right)
+$$
+
+This means that, for long chains, the end-to-end distance is distributed as a 3D Gaussian, centered at zero, with variance proportional to $N$.
+
+
+While the end-to-end distance represents a well-defined quantity for a linear chain, we need a more versatile measure of the size for more complicated architectures, such as branched or star-shaped polymers. This is provided by the mean square distance from the centre of mass $\mathbf{R}_{\mathrm{G}}$, the so-called radius of gyration $R_{g}$, which is also a measure of the extension of a (random) chain:
 
 $$
 \begin{aligned}
-& <\underline{R}>=\sum_{j=1}^{N}\left\langle\underline{r}_{j}\right\rangle \\
-& <\underline{R}^{2}>=\sum_{j=1}^{N} \sum_{k=1}^{N}<\underline{r}_{j} \underline{\underline{L}}_{k}>=N b_{0}^{2} \\
-& P(\underline{R}) d \underline{R}=\left(\frac{3}{2 \pi<\underline{R}^{2}>}\right)^{3 / 2} e^{-\frac{3 \underline{R}^{2}}{2<\underline{R}^{2}>}} d R \quad \text { for large } \mathrm{N} \text { (Gaussian distribution) }
-\end{aligned}
-$$
-
-While the end-to-end distance represents a well-defined quantity for a linear chain, we need a more versatile measure of the size for more complicated architectures, such as branched or star-shaped polymers. This is provided by the mean square distance from the centre of mass $\underline{R}_{\mathrm{G}}$, the so-called radius of gyration $R_{g}$, which is also a measure of the extension of a (random) chain:
-
-$$
-\begin{aligned}
-& \underline{R}_{G}=\frac{1}{N} \sum_{j=1}^{N} \underline{R}_{j} \\
-& R_{g}^{2}=\frac{1}{N} \sum_{j=1}^{N}\left(\underline{R}_{j}-\underline{R}_{G}\right)^{2}=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\underline{R}_{j}-\underline{R}_{k}\right)^{2} \quad \quad \text { (see problem) } \\
-& \therefore\left\langle R_{g}^{2}\right\rangle=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}<\left(\underline{R}_{j}-\underline{R}_{k}\right)^{2}>=\frac{b_{0^{2}}}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}|j-k|
+& \mathbf{R}_{G}=\frac{1}{N} \sum_{j=1}^{N} \mathbf{R}_{j} \\
+& R_{g}^{2}=\frac{1}{N} \sum_{j=1}^{N}\left(\mathbf{R}_{j}-\mathbf{R}_{G}\right)^{2}=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\mathbf{R}_{j}-\mathbf{R}_{k}\right)^{2} \quad \quad \text { (see problem) } \\
+& \therefore\left\langle R_{g}^{2}\right\rangle=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}<\left(\mathbf{R}_{j}-\mathbf{R}_{k}\right)^{2}>=\frac{b_{0^{2}}}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}|j-k|
 \end{aligned}
 $$
 
@@ -178,18 +206,18 @@ Nevertheless, the potential energy of a configuration depends on the valence ang
 
 At low temperatures ( $k_{B} T$ <config. energy) the configuration will thus be predominantly trans. As the temperature is increased ( $k_{B} T \sim$ config. energy), there will also be gauche configurations and at high temperatures ( $k_{B} T \gg$ config. energy), any angle will be possible. This suggests that a model should be based on fixed angles between bonds, but free rotation about the bonds. This model is called the freely-rotating chain.
 
-We start with a fixed configuration of $\underline{r}_{l}$, $\underline{r}_{2}, \ldots, \underline{r}_{j-1}$ and then add the next segment $\underline{r}_{j}$. While the bond angle $\Theta$ is given by the chemistry of the molecule, the segment can still freely rotate about the axis defined by $r_{j-1}$, i.e. $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. If we average $\underline{r}_{j}$ over $\varphi$, while keeping $\underline{r}_{1}, \underline{r}_{2}, \ldots, \underline{r}_{j-1}$ fixed, only the component in $\underline{r}_{j}$ direction remains:
-$\left.<\underline{r}_{j}\right\rangle_{\underline{r}}, \underline{r}_{2}, \ldots, \underline{r}_{j-1}$ fixed $=\cos \Theta \underline{r}_{j-1}$
+We start with a fixed configuration of $\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ and then add the next segment $\mathbf{r}_{j}$. While the bond angle $\Theta$ is given by the chemistry of the molecule, the segment can still freely rotate about the axis defined by $r_{j-1}$, i.e. $\varphi$ can take any value $0 \leq \varphi \leq 2 \pi$. If we average $\mathbf{r}_{j}$ over $\varphi$, while keeping $\mathbf{r}_{1}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed, only the component in $\mathbf{r}_{j}$ direction remains:
+$\left.<\mathbf{r}_{j}\right\rangle_{\mathbf{r}}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}$ fixed $=\cos \Theta \mathbf{r}_{j-1}$
 
-For the calculation of $\left\langle R^{2}\right\rangle$ we also need $\left\langle\underline{r}_{j} \cdot \underline{r}_{k}\right\rangle$,
+For the calculation of $\left\langle R^{2}\right\rangle$ we also need $\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle$,
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-24.jpg?height=552&width=343&top_left_y=609&top_left_x=1302)
-which we obtain by multiplying both sides with $\underline{r}_{k}$ and taking the average: $\left\langle r_{j} \underline{x}_{k}\right\rangle=\cos \Theta\left\langle r_{j-1} \underline{x}_{k}\right\rangle=\cos ^{2} \Theta\left\langle r_{j-2} \underline{\Sigma}_{k}\right\rangle=\ldots=\left(\cos ^{|j-k|} \Theta\right)\left\langle r_{k}{\underline{x_{k}}}\right\rangle=\left(\cos ^{|j-k|} \Theta\right) b_{0}^{2}$
-Since $\cos \Theta<1$, correlations between $\underline{r}_{j}$ and $\underline{r}_{k}$ decrease with increasing distance $|j-k|$ between the links and the orientations of distant links become uncorrelated.
+which we obtain by multiplying both sides with $\mathbf{r}_{k}$ and taking the average: $\left\langle r_{j} \mathbf{x}_{k}\right\rangle=\cos \Theta\left\langle r_{j-1} \mathbf{x}_{k}\right\rangle=\cos ^{2} \Theta\left\langle r_{j-2} \mathbf{\Sigma}_{k}\right\rangle=\ldots=\left(\cos ^{|j-k|} \Theta\right)\left\langle r_{k}{\mathbf{x_{k}}}\right\rangle=\left(\cos ^{|j-k|} \Theta\right) b_{0}^{2}$
+Since $\cos \Theta<1$, correlations between $\mathbf{r}_{j}$ and $\mathbf{r}_{k}$ decrease with increasing distance $|j-k|$ between the links and the orientations of distant links become uncorrelated.
 The end-to-end distance $\left\langle R^{2}\right\rangle$ of a freely-rotating chain is hence
 
 $$
 \begin{aligned}
-\left\langle R^{2}\right\rangle & =\sum_{j=1}^{N} \sum_{k=1}^{N}\left\langle\underline{r}_{j} \cdot \underline{r}_{k}\right\rangle=b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\cos ^{(j-k \mid} \Theta\right)=N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{j-1} \cos ^{(j-k)} \Theta \\
+\left\langle R^{2}\right\rangle & =\sum_{j=1}^{N} \sum_{k=1}^{N}\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle=b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\cos ^{(j-k \mid} \Theta\right)=N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \sum_{k=1}^{j-1} \cos ^{(j-k)} \Theta \\
 & =N b_{0}^{2}+2 b_{0}^{2} \sum_{j=1}^{N} \cos ^{j} \Theta \sum_{k=1}^{j-1} \cos ^{-k} \Theta
 \end{aligned}
 $$
@@ -277,10 +305,10 @@ $$
 S=k_{B} \ln (\mathrm{no} \text {. of configurations })
 $$
 
-where for a given $\underline{R}$ the number of configurations is expected to be proportional to
+where for a given $\mathbf{R}$ the number of configurations is expected to be proportional to
 
 $$
-P(\underline{R})=\left(\frac{3}{2 \pi<R^{2}>}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2<R^{2}>}}
+P(\mathbf{R})=\left(\frac{3}{2 \pi<R^{2}>}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2<R^{2}>}}
 $$
 
 and hence
@@ -289,7 +317,7 @@ $$
 S \sim \frac{-3 k_{B} R^{2}}{2 N b^{2}}+\text { terms indep. of } \mathrm{R}
 $$
 
-The internal energy $U$ includes the kinetic and potential energy. However, the kinetic energy is independent of the configuration and thus of $\underline{R}$ and we only have to consider the potential energy. To estimate the potential energy, we disregard the connectivity of the chain and calculate the interaction energy of a 'segment gas' confined in a volume $R^{3}$. The probability of a monomer to lie in this volume is given by the fraction of total coil volume occupied by monomers, which we estimated above to be $N V_{1} / R^{3}$
+The internal energy $U$ includes the kinetic and potential energy. However, the kinetic energy is independent of the configuration and thus of $\mathbf{R}$ and we only have to consider the potential energy. To estimate the potential energy, we disregard the connectivity of the chain and calculate the interaction energy of a 'segment gas' confined in a volume $R^{3}$. The probability of a monomer to lie in this volume is given by the fraction of total coil volume occupied by monomers, which we estimated above to be $N V_{1} / R^{3}$
 
 Thus the probability of monomer-monomer contacts is $N^{2} V_{1} / R^{3} \sim N^{1 / 2}$. With an energy $\varepsilon$ of a monomer-monomer contact, the potential energy $U \sim \varepsilon N^{2} V_{1} / R^{3}$.
 We thus obtain

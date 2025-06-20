@@ -69,7 +69,7 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
 
 
 
-def plotly_3d(x, y, z, title="3D Plot", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Viridis'):
+def plotly_3d(x, y, z, title="",name ="", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Peach'):
     
     """
     Generic 3D plotter for data in x, y, z arrays.
@@ -82,7 +82,8 @@ def plotly_3d(x, y, z, title="3D Plot", marker_size=3, line_color='blue', line_w
         x=x, y=y, z=z,
         mode='lines+markers',
         marker=dict(size=marker_size, color=marker_color, colorscale=colorscale),
-        line=dict(color=line_color, width=line_width)
+        line=dict(color=line_color, width=line_width),
+        name=name
     )])
     fig.update_layout(
         title=title,
@@ -93,4 +94,35 @@ def plotly_3d(x, y, z, title="3D Plot", marker_size=3, line_color='blue', line_w
         ),
         margin=dict(l=0, r=0, b=0, t=30)
     )
-    fig.show()
+    
+    return fig
+
+def plot_vector(x,y,z,fig, name):
+
+    import plotly.graph_objects as go
+        # End-to-end vector components
+    u = x[-1] - x[0]
+    v = y[-1] - y[0]
+    w = z[-1] - z[0]
+
+    # Add the line segment (shaft of the vector)
+    fig.add_trace(go.Scatter3d(
+        x=[x[0], x[-1]],
+        y=[y[0], y[-1]],
+        z=[z[0], z[-1]],
+        mode='lines',
+        line=dict(color='red', width=6),
+        name=name
+    ))
+
+    # Add the arrowhead using a cone
+    fig.add_trace(go.Cone(
+        x=[x[-1]], y=[y[-1]], z=[z[-1]],
+        u=[u], v=[v], w=[w],
+        sizemode="absolute",
+        sizeref=1.0,  # adjust to control size of the arrowhead
+        anchor="tip",
+        colorscale=[[0, 'red'], [1, 'red']],
+        showscale=False,
+    ))
+    return fig
