@@ -81,8 +81,6 @@ This polymer is also known as acrylic, acrylic glass, or plexiglass. This a very
 {{< mol-url ./figs/naturalrubber.pdb >}}
 
 
-##  Polymer conformations
-
 ## Models for the conformation of polymers
 
 In order to understand the properties of most substances, we must consider a large assembly of molecules. In the case of polymers, however, the molecules themselves are very large and due to their flexibility they can take up an enormous number of configurations by rotation of chemical bonds. The shape of the polymer can therefore only be usefully described **statistically** and one need to use statistical mechanics to calculate the characteristics of even an isolated polymer. 
