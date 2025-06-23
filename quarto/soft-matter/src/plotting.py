@@ -69,32 +69,41 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
 
 
 
-def plotly_3d(x, y, z, title="",name ="", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Peach'):
-    
+def plotly_3d(x, y, z, title="", name="", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Peach', fig=None):
     """
     Generic 3D plotter for data in x, y, z arrays.
+    If fig is provided, adds a new line to the existing figure.
     """
     import plotly.graph_objects as go
 
     if marker_color is None:
         marker_color = np.arange(len(x))
-    fig = go.Figure(data=[go.Scatter3d(
+
+    trace = go.Scatter3d(
         x=x, y=y, z=z,
         mode='lines+markers',
         marker=dict(size=marker_size, color=marker_color, colorscale=colorscale),
         line=dict(color=line_color, width=line_width),
         name=name
-    )])
-    fig.update_layout(
-        title=title,
-        scene=dict(
-            xaxis_title='X',
-            yaxis_title='Y',
-            zaxis_title='Z'
-        ),
-        margin=dict(l=0, r=0, b=0, t=30)
     )
-    
+
+    if fig is None:
+        fig = go.Figure(data=[trace])
+        fig.update_layout(
+            title=title,
+            scene=dict(
+                xaxis_title='X',
+                yaxis_title='Y',
+                zaxis_title='Z'
+            ),
+            margin=dict(l=0, r=0, b=0, t=30)
+        )
+    else:
+        fig.add_trace(trace)
+        # Optionally update title if provided
+        if title:
+            fig.update_layout(title=title)
+
     return fig
 
 def plot_vector(x,y,z,fig, name="",arrowsize=1.0):

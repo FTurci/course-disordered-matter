@@ -30,9 +30,7 @@ A polymer is a **large molecule** made up of many small, simple chemical units, 
 It is possible to have polymers containing over $10^{5}$ units and there are naturally occurring polymers with a degree of polymerisation exceeding $10^{9}$. For example, polystyrene with a degree of polymerisation of $10^{5}$ has a molecular weight of about $10^{7} \mathrm{~g} / \mathrm{mol}$ and, if fully stretched out, would be about 25 $\mu \mathrm{m}$ long.
 
 
-
 Polymers play a central role in many fields, ranging from technology to biology. This is reflected in a huge number of different chemical structures. Given this manifold and the complexity of polymer molecules, the theories are astonishingly simple. This is possible because of the characteristic feature of polymers: The molecule itself is **very large** (compared to the individual units) and the macroscopic behaviour is dominated by this large-scale property of the molecule. Theories focus on such *large-scale* properties, whereas the small scale *fine structure* is typicaly resolved by computer simulations.
-
 
 
 Polymers exist in very different architectures, such as 
@@ -492,7 +490,68 @@ $$
 
 For small angles, this simplifies to $l_p \approx \frac{b_0}{1 - \langle \cos \theta \rangle}$.
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-26.jpg?height=487&width=441&top_left_y=239&top_left_x=405)
+```{python}
+#| echo: false
+import numpy as np
+import sys
+
+sys.path.append("./src")
+import plotting
+
+# Parameters for real chain
+N = 200
+b0 = 1.0
+theta_deg = 24  
+theta = np.deg2rad(theta_deg)
+
+# Generate a freely-rotating chain
+x = [0]
+y = [0]
+z = [0]
+direction = np.array([1, 0, 0])
+dirs = [direction.copy()]
+for i in range(N):
+    # Random rotation about previous bond
+    phi = np.random.uniform(0, 2 * np.pi)
+    # Build orthonormal basis
+    if np.allclose(direction, [0, 0, 1]):
+        perp = np.array([1, 0, 0])
+    else:
+        perp = np.cross(direction, [0, 0, 1]).astype(float)
+        perp /= np.linalg.norm(perp)
+    # Rodrigues' rotation formula for theta about perp
+    dir_theta = (direction * np.cos(theta) +
+                 np.cross(perp, direction) * np.sin(theta) +
+                 perp * np.dot(perp, direction) * (1 - np.cos(theta)))
+    # Now rotate dir_theta by phi about direction
+    k = direction / np.linalg.norm(direction)  # rotation axis
+    v = dir_theta  # vector to rotate
+    dir_new = (v * np.cos(phi) +
+            np.cross(k, v) * np.sin(phi) +
+            k * np.dot(k, v) * (1 - np.cos(phi)))
+    dir_new /= np.linalg.norm(dir_new)
+    new_point = np.array([x[-1], y[-1], z[-1]]) + b0 * dir_new
+    x.append(new_point[0])
+    y.append(new_point[1])
+    z.append(new_point[2])
+    direction = dir_new
+    dirs.append(direction.copy())
+
+# Calculate effective Kuhn segment length and number of segments
+C = (1 + np.cos(theta)) / (1 - np.cos(theta))
+b_kuhn = C * b0
+N_kuhn = int(N / C)
+
+# Interpolate the original chain to get the effective Kuhn chain
+idxs = np.linspace(0, N, N_kuhn + 1, dtype=int)
+xk = x[::N_kuhn]
+yk =  y[::N_kuhn]
+zk = z[::N_kuhn]
+fig = plotting.plotly_3d(x, y, z, name="Freely-rotating chain", line_color='blue')
+fig = plotting.plotly_3d(xk, yk, zk, name="Effective freely-jointed chain", line_color='orange',fig=fig)
+fig.show()
+```
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-26.jpg?height=487&width=441&top_left_y=239&top_left_x=405) -->
 
 
 ### Excluded volume effects
