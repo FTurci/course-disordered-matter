@@ -726,7 +726,7 @@ which can be either positive or negative:
 
 - **Good solvent**: $\varepsilon_{s p}<\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right) \quad \therefore \Delta \mathrm{U}_{\text {mix }}<0$
 
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-28.jpg?height=304&width=458&top_left_y=913&top_left_x=1279)
+<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-28.jpg?height=304&width=458&top_left_y=913&top_left_x=1279) -->
 
 This is the case of a 'good solvent', because the monomers prefer to be near the solvent molecules. Excluded volume effects then expand the chain.
 
@@ -739,21 +739,26 @@ A full treatment of the coil expansion is rather involved and has to take into a
 
 
 ::: {.callout-important}
-# Key take-home messages
 
-A polymer has characteristics on different length scales. 
+# Check your understanding
 
-On a very global length scale, it has a molar mass $M$ and an overall size which can be characterised by the root mean square end-to-end distance $<R^{2}>1 / 2$ or radius of gyration $<R g^{2}>1 / 2 \propto N^{v} \propto M^{v}$, where $v=1 / 2$ for a freely-jointed or freely-rotating chain (random walk) and $v=3 / 5$ for an excluded volume chain (self-avoiding random walk). 
+- A polymer has characteristic features on different length scales. 
 
-On a smaller length scale the behaviour will be dominated by the finite flexibility or 'persistence' of the chain, which is characterised by the Kuhn length b. The chain will essentially behave like a stiff rod on this length scale. This rod typically has a constant mass per length, $M / L$, and thus $M \alpha L$. 
+- On a very global length scale, it has a molar mass $M$ and an overall size which can be characterised by the root mean square end-to-end distance $\langle R^{2}\rangle^{1 / 2}$ or radius of gyration $\langle R g^{2}\rangle^{1 / 2 }\propto N^{\nu} \propto M^{\nu}$, where $\nu=1 / 2$ for a freely-jointed or freely-rotating chain (random walk) and $\nu=3 / 5$ for an excluded volume chain (self-avoiding random walk). 
 
-Finally, the local cross-sectional structure will be observed on an even smaller length scale.
+- On a smaller length scale the behaviour will be dominated by the finite flexibility or *persistence* of the chain, which is characterised by the Kuhn length b. The chain will essentially behave like a stiff rod on this length scale. This rod typically has a constant mass per length, $M / L$, and thus $M \alpha L$. 
+
+- Finally, the local cross-sectional structure will be observed on an even smaller length scale.
+
 :::
 
 ## Concentrated polymer solutions
 
-Previously we considered a single polymer in a very dilute solution. Now we increase the concentration in steps until we reach bulk polymers. A special aspect of bulk polymers will then be discussed in more detail in the following chapter. The most important regimes of concentration are:
+Up to now we considered a single polymer in a very dilute solution. Now we increase the concentration in steps until we reach bulk polymers. 
+
+The most important regimes of concentration are:
 (A) Dilute:
+
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=375&width=366&top_left_y=1206&top_left_x=288)
 
 The polymer coils are well-separated on average. 'Dilute' means:
