@@ -512,7 +512,7 @@ Integrating the force yields the interaction potential.
 | Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 :::
-<!-- See [@lekkerkerker2024colloids] -->
+
 
 ## Colloids as big atoms
 
@@ -1484,6 +1484,24 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 
     > A mirror suspended on a torsion fibre reflects a spot of light onto a scale. The spot will jiggle due to the random impact of air molecules and the random motion of atoms in the quartz fibre. To reduce the jiggle, the apparatus has to be cooled. The relation between fluctuation and dissipation tells us where to cool. 'This depends upon where \[the mirror\] is getting its 'kicks' from. If it is through the fibre, we cool it ... if the mirror is surrounded by a gas and is getting hit mostly by collisions in the gas, it is better to cool the gas. As a matter of fact, if we know where the damping of the oscillations comes from, it turns out that that is always the source of the fluctuations. (Adapted from Feynman, Chapter 41)
 
+
+
+::: {.callout-important}
+
+# Check your understanding
+
+- Colloids are mixtures with dispersed particles (1 nm – 1 μm) that remain suspended due to Brownian motion.
+- Stability of colloids depends on the balance between attractive (van der Waals) and repulsive (double layer) interactions.
+- The DLVO theory combines van der Waals attraction and double layer repulsion to explain colloidal stability and aggregation.
+- Entropic effects (e.g., depletion interactions) can induce effective attractions even in purely repulsive systems.
+- Hard-sphere colloids are a fundamental model: their phase behavior is controlled by packing fraction, leading to fluid, crystalline, and metastable (jammed) states.
+- The radial distribution function $g(r)$ characterizes spatial correlations and structure in colloidal systems.
+- Dynamics of colloids are governed by Brownian motion, with diffusion slowed at higher densities due to interactions.
+- The Stokes-Einstein relation links diffusion to temperature, viscosity, and particle size.
+- Entropy can drive ordering (e.g., crystallization of hard spheres), showing that entropy is not always associated with disorder.
+- Colloidal systems serve as accessible models for studying fundamental concepts in soft matter and statistical mechanics.
+
+:::
 
 
     <!-- ![Feynamnn schematic of a sensitive light-beam galvanometer.](https://www.feynmanlectures.caltech.edu/img/FLP_I/f41-01/f41-01_tc_big_a.svg) -->
