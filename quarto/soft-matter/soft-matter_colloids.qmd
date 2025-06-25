@@ -1504,7 +1504,7 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 :::
 
 
-    <!-- ![Feynamnn schematic of a sensitive light-beam galvanometer.](https://www.feynmanlectures.caltech.edu/img/FLP_I/f41-01/f41-01_tc_big_a.svg) -->
+<!-- ![Feynamnn schematic of a sensitive light-beam galvanometer.](https://www.feynmanlectures.caltech.edu/img/FLP_I/f41-01/f41-01_tc_big_a.svg) -->
 
 
 <!-- ### Particle dynamics

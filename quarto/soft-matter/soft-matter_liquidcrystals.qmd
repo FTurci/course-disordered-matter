@@ -1,11 +1,39 @@
 ---
 title: "Liquid crystals"
+format: live-html
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
+resources:
+    - src/plotting.py
 bibliography: references.bib
+
+toc-depth: 4
 ---
 
+Ordered phases of matter are typically characterised by spatial correlations, which can be **positional** or **orientational** in nature. 
 
+Positional order is the regular arrangement of particle positions in space, often forming a repeating lattice structure. Orientational order refers to the angular alignment of the neighbours of a particle, influenced for example by the anisotropy of the particle itself (e.g. rods tending to align with other rods).
+
+In crystalline phases, both positional and orientational order are long-ranged, meaning that the arrangement and orientation of particles are correlated over macroscopic distances. In contrast, simple liquids exhibit only very short-range (positional and orientational) correlations. 
+
+Liquid crystals represent an intermediate case, where orientational order can persist over long distances while positional order remains short-ranged or absent.
 
 ## Anistropic particles
+
+To favour a decoupling between orientational and positional degrees of freedom it is useful to work with anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. This anisotropy leads to rich phase behaviour, as we will see below.
+
+| **Particle Shape** | **Description**                              | **Example Materials**            | **Typical Applications**                   |
+| ------------------ | -------------------------------------------- | -------------------------------- | ------------------------------------------ |
+| Rods               | Cylindrical, length > width                  | Gold nanorods, CdSe nanorods     | Photothermal therapy, plasmonics           |
+| Ellipsoids         | Elongated or flattened spheroids             | Hematite ellipsoids              | Anisotropic optics, directed self-assembly |
+| Plates/Discs       | Flat, disk-like shapes                       | Graphene oxide, clay platelets   | Barrier materials, viscosity control       |
+| Dumbbells          | Two lobes joined by a neck                   | Polystyrene dumbbells            | Colloidal self-assembly                    |
+| Polyhedra          | Multi-faceted, highly symmetric shapes       | Gold nanocubes, silica polyhedra | Photonic crystals, catalysis               |
+
+
+
 
 
 ## Liquid crystal phases
@@ -15,7 +43,96 @@ bibliography: references.bib
 ## Orientational correlations and the isotropic/nematic transition
 
 
-### Archetype: ideal hard rods
+### Lattice model: the Lebwohl-Lasher model
+
+The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
+
+The Hamiltonian of the Lebwohl-Lasher model is given by:
+
+$$
+H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} (\mathbf{n}_i \cdot \mathbf{n}_j)^2 - \frac{1}{2} \right]
+$$
+
+where:
+- $\epsilon > 0$ is the coupling constant favoring alignment,
+- the sum $\langle i, j \rangle$ runs over all pairs of nearest-neighbor sites,
+- $(\mathbf{n}_i \cdot \mathbf{n}_j)^2$ measures the degree of alignment between neighboring directors.
+
+This Hamiltonian favors parallel (or antiparallel) alignment of neighboring directors, capturing the essential physics of the isotropic-nematic transition in liquid crystals.
+
+In two dimensions, the Lebwohl-Lasher model is similarly defined, but the directors $\mathbf{n}_i$ are restricted to lie in the plane. Each director can be represented by a unit vector $\mathbf{n}_i = (\cos\theta_i, \sin\theta_i)$, where $\theta_i$ is the orientation angle at site $i$.
+
+The Hamiltonian in 2D becomes:
+
+$$
+H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} \cos^2(\theta_i - \theta_j) - \frac{1}{2} \right]
+$$
+
+where the sum is over nearest-neighbor pairs on a 2D lattice. This model captures the essential features of orientational ordering and the isotropic-nematic transition in two-dimensional systems.
+
+
+```{pyodide}
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def p2(x):
+    return 0.5 * (3 * x * x - 1)
+
+def delta_energy(theta, i, j, new_angle, epsilon):
+    L = theta.shape[0]
+    old_angle = theta[i, j]
+    dE = 0.0
+    neighbors = [((i+1) % L, j), ((i-1) % L, j), (i, (j+1) % L), (i, (j-1) % L)]
+    for k in range(4):
+        ni, nj = neighbors[k]
+        cos_old = np.cos(old_angle - theta[ni, nj])
+        cos_new = np.cos(new_angle - theta[ni, nj])
+        dE += -epsilon * (p2(cos_new) - p2(cos_old))
+    return dE
+
+L = 64  # lattice size
+epsilon = 1.0  # coupling
+T = 1.0  # CHANGE THIS VALUE TO EXPLORE DIFFERENT REGIMES 
+steps = 20*L*L #MC sweeps
+
+# Initialize lattice with random angles [0, pi) (nematic symmetry)
+theta = np.random.uniform(0, np.pi, size=(L, L))
+# preassign random numbers for efficiency
+rands = np.random.randint(0, L, (steps,2))
+new_angles = np.random.uniform(0, np.pi,steps)
+rs = np.random.uniform(0,1,size=steps)
+for step in range(steps):
+    i, j = rands[step]
+    new_angle = new_angles[step]
+    dE = delta_energy(theta, i, j, new_angle,epsilon)
+    if dE < 0 or rs[step] < np.exp(-dE / T):
+        theta[i, j] = new_angle
+
+
+plt.matshow(theta, cmap='hsv', vmin=0,vmax = np.pi)
+plt.colorbar()
+plt.show()
+
+
+```
+::: {.callout-important appearance="simple"}
+## Activity
+
+Modify the script above to check the following 
+
+1.  The high temperature regime ($T\gg 0.5$$) is mostly disordered (isotropic)
+2.  The low temperature regime forms larger and larger patches with coherent orientations
+3. Define and plot a global nematic order parameter. Τhe global nematic order parameter S is defined as:
+
+$$ S = \langle \cos(2(\theta - \psi))\rangle$$ where $\psi$ is the director (average orientation), which in 2D is
+
+$$\psi = \dfrac{1}{2} {\rm atan2}(\langle \sin(2\theta)\rangle, \langle \cos(2\theta)\rangle)$$
+
+
+:::
+
+### Particle model: ideal hard rods
 
 
 ## Effective elastic free energy 
