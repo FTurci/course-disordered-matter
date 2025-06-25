@@ -45,7 +45,7 @@ To favour a decoupling between orientational and positional degrees of freedom i
 
 ### Lattice model: the Lebwohl-Lasher model
 
-The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
+The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals and is a lattice version of the Maier-Saupe mean field model. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
 
 The Hamiltonian of the Lebwohl-Lasher model is given by:
 
