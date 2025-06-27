@@ -52,7 +52,9 @@ book:
          - text: "Dynamics of fluctuations"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
-           text: "Problems"   
+           text: "Problems" 
+         - href: phase-transitions/assignment_October2025.qmd
+           text: "Coursework"              
          - href: phase-transitions/live-test.qmd
            text: "Coding"  
 
