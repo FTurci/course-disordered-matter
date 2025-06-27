@@ -99,7 +99,7 @@ fig. @fig-thermo
  ![Relationships between the partition function and thermodynamic observables](Figs/thermo.png){width=80% fig-align="center" #fig-thermo}
 
 
-## Correlations
+## Correlations {#sec-correlations}
 
 The two-point correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field $\phi(\vec{R})$, which could represent eg. the local magnetisation $m$ in a magnet at position vector $\vec{R}$, or the local particle number density $\rho$ in a fluid, it is defined as:
 
