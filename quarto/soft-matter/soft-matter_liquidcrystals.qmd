@@ -22,19 +22,19 @@ Liquid crystals represent an intermediate case, where orientational order can pe
 
 ## Anistropic particles
 
-The decoupling between orientational and trnslational degrees of freedom is favoured by individual microscopic units (particles) that already have preferntial axis of symmetry, i.e. anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. 
+The decoupling between orientational and translational degrees of freedom is favoured by individual microscopic units (particles) that already have preferntial axis of symmetry, i.e. anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. 
 
 There are many kinds of anisotropic particles. The table below contains a non-exhaustive list.
 
 | **Particle Shape** | **Description**                              | **Example Materials**            | **Typical Applications**                   |
 | ------------------ | -------------------------------------------- | -------------------------------- | ------------------------------------------ |
-| Rods               | Cylindrical, length > width                  | Gold nanorods, CdSe nanorods     | Photothermal therapy, plasmonics           |
+| Rods               | Cylindrical, length > width                  | Gold nanorods, Tobacco virus     | Photothermal therapy, plasmonics           |
 | Ellipsoids         | Elongated or flattened spheroids             | Hematite ellipsoids              | Anisotropic optics, directed self-assembly |
 | Plates/Discs       | Flat, disk-like shapes                       | Graphene oxide, clay platelets   | Barrier materials, viscosity control       |
-| Dumbbells          | Two lobes joined by a neck                   | Polystyrene dumbbells            | Colloidal self-assembly                    |
 | Polyhedra          | Multi-faceted, highly symmetric shapes       | Gold nanocubes, silica polyhedra | Photonic crystals, catalysis               |
 
 
+![Various assemblies of anisotropic particles. Left to right: Golden nanorods (from [Stanford Advanced Materials](https://www.samaterials.com/micro-nano-materials/2022-gold-nanorods.html)), tobacco virus rods (adapted from @knapp2001tobacco), ellipsoidal silica-coated hematite particles (adapted from @sanchez2010inorganic) and an arrangement of octhahedra simulated using hard particle Monte Carlo with [hoomdblue](https://hoomd-blue.readthedocs.io/en/latest/tutorial/00-Introducing-HOOMD-blue/02-Performing-Hard-Particle-Monte-Carlo-Simulations.html) ](figs/liqcrystl.png)
 
 ## Liquid crystal phases
 
@@ -57,6 +57,10 @@ The additional orientational degrees of freedom makes opens up the possibilities
 | Crystal             | Yes (3D: lattice)        | Yes (long-range)         |
 
 ## Orientational correlations and the isotropic/nematic transition
+
+While for the spherical colloids we focused on positional correlation functions like the radial distribution function, for anistropic particle we need to quantify orientational correlations.
+
+Let us focus on the simpler case of rod-like or elongated ellipsoidal particles
 
 
 ### Lattice model: the Lebwohl-Lasher model
