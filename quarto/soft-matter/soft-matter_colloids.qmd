@@ -813,7 +813,19 @@ where $\rho = N/V$ is the number density, and the angle brackets denote an ensem
 - For an **ideal gas**, $g(r) = 1$ everywhere (no correlations).
 - For **hard spheres**, $g(r) = 0$ for $r < \sigma$ (no overlap), and $g(r)$ shows oscillations at higher $r$ due to packing effects.
 
-Experimentally, $g(r)$ can be measured using scattering techniques or direct imaging in colloidal systems. It provides insight into short-range order, local structure, and phase transitions in soft matter.
+Notice that the radial distribution function is an instance of the more general class of pair-wise correlations that have been introduced earlier, see @sec-correlations and it is paired with its reciprocal space Fourier transform, the **structure factor**:
+
+$$
+S(k) = 1 + \rho \int \left[ g(r) - 1 \right] e^{-i \mathbf{k} \cdot \mathbf{r}} d\mathbf{r}
+$$
+
+For isotropic systems, this reduces to:
+
+$$
+S(k) = 1 + 4\pi \rho \int_0^\infty r^2 [g(r) - 1] \frac{\sin(kr)}{kr} dr
+$$
+
+Experimentally, on can measure $S(k)$ can be measured using scattering techniques or $g(r)$ via direct imaging in colloidal systems. They provide insight into short-range order, local structure, and phase transitions in soft matter.
 
 ::: {.callout-important appearance="simple"}
 The radial distribution function $g(r)$ has two possible interpretations
