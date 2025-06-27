@@ -1,10 +1,5 @@
----
-title: "Preparatory reading and setup for coursework assignment: Investigating correlations and phase behaviour in the 2d lattice-gas model"
-format: html
----
 
-
-# 1 Introduction
+# 1. Introduction {#coursework .unnumbered}
 
 In this coursework assignment, you will explore the phenomena of spatial correlations and their relationship to phase behaviour in a simple lattice gas model. This model is a crude representation of a fluid in
 which particles can occupy the sites of a hypercubic lattice. The occupancy of a site $i$ is specified by the variable $c_i=1$ (occupied) or $c_i=0$
@@ -26,7 +21,7 @@ assumed to fluctuate around a mean value controlled by the prescribed
 chemical potential. This representation of the model in which the
 overall density fluctuates is known as the *Grand Canonical ensemble.*
 
-## Mapping between Ising model and lattice gas
+## 1.1 Mapping between Ising model and lattice gas
 
 The lattice gas model is interesting because whilst being a plausible
 model for a fluid, it maps onto the Ising model. This extends the
@@ -52,7 +47,7 @@ constant in the free energy; and since all observables feature as
 derivatives of the free energy, the constant has no physical
 implications.
 
-## Phase diagram
+## 1.2 Phase diagram
 
 Using these translation rules we can plot the phase diagram of the
 lattice gas in the number density-temperature plane.
@@ -71,7 +66,7 @@ These values merge at $T_c$, the gas-liquid critical point. At higher
 temperatures, the distinction between the phases disappears.
 
 ::: {.callout-caution collapse="true"}
-## Aside on Real Fluids
+## 1.3 Aside on Real Fluids
 
 You may wish to compare the phase diagram of the lattice gas mode with the results of (say) van der Waals
 equation (see recommended textbooks for the required phase diagram). The
@@ -84,7 +79,7 @@ picture as shown in @fig-realfluid. See [here](https://journals.aps.org/prl/pdf/
 
 :::
 
-## 2.2 Monte Carlo Simulation
+# 2. Monte Carlo Simulation
 
 Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For example, integrals can be approximated using Monte Carlo techniques by generating ${\cal N}$ random samples from the domain of integration $A$ and evaluating the function at these points. For a 1D integral, the result is approximated as:
 
@@ -104,7 +99,7 @@ $$
 
 where $E(C)$ is the energy of configuration $C$, $N(C)$ is the number of particles in that configuration, $\mu$ is the chemical potential, and $\beta = 1/kT$. To generate such configurations efficiently, one can use the **Metropolis algorithm** adapted for grand canonical sampling:
 
-### Grand Canonical Monte Carlo (GCMC)
+## 2.1 Grand Canonical Monte Carlo (GCMC)
 
 1. Select a random lattice site $(i,j)$.
 
@@ -128,7 +123,7 @@ This allows the system to explore states with varying particle numbers according
 
 ---
 
-### Fixed-Particle-Number Case (Canonical Ensemble)
+## 2.2 Fixed-Particle-Number Case (Canonical Ensemble)
 
 In contrast, we may for simplicity want to simulate with the **total number of particles $N$ fixed**, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use **Kawasaki dynamics**, which conserves particle number by moving particles between lattice sites:
 
@@ -162,7 +157,7 @@ $$
 
 where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations generated.
 
-Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calcululated as a variance. The formula for the specific heat (see problem sheets) is 
+Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (see problem sheets) is 
 
 $$
 C=\frac{1}{kT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
@@ -170,9 +165,7 @@ $$
 
 
 
-
-
-# 3. The assignment
+# 3. The assignment {#assignment .unnumbered}
 
 You should investigate certain properties of the 2d square lattice gas model applying insight and knowledge from lectures and making use of a prewritten Python Monte Carlo code. 
 
@@ -185,12 +178,12 @@ This should be completed in the week prior to the release of the assignment to m
 * Select the Jupyter Notebook (Legacy) notebook server option
 * When the notebook has opened click the +Gitrepo button
 * Under enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework
-* Press the "clone" button. This will download a notebook called Ising.ipynb into Jupyter
+* Press the "clone" button. This will download a notebook called lattice-gas.ipynb into Jupyter
 * Check that the program runs
 * Familiarise yourself with the main features of the program. Pay attention to how to change the temperature and number of lattice sites $N=L^2$. 
 Be aware that the program can take several minutes to run depending on the system size.
 
-**The assignment itself will be released on Monday 13th October on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October at 09:30.**
+**The assignment itself will be released on Monday 13th October 2025 on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October 2025 at 09:30.**
 
 **Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.** 
 
@@ -214,7 +207,7 @@ $$
 
 *Given that the critical temperature of the 2d Ising model is $T_c\approx 2.269\: J/k_B$, use the above mapping to find the value of the critical temperature of the 2d lattice gas model in units of $\epsilon/k_B$*. **[2 marks]**
 
-## 3.4 Code Modification Tasks
+## 3.3 Code Modification Tasks
 
 The provided program simulates the 2D lattice gas model in the canonical ensemble (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 3 for details).
 
@@ -230,8 +223,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
   **[5 marks]**
 
 
-
-## 3.3 Computational investigations of correlations on the approach to criticality
+## 3.4 Computational investigations of correlations on the approach to criticality
 
 - *Perform simulations at various temperatures within the range $T_c \le T \le 1.0$, keeping the particle density fixed at $\rho = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
@@ -242,7 +234,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 * *The full width at half maximum (FWHM) of the structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its variation with $T$*. **[4 marks]**
 
 
-## 3.4 Temperature and system size dependence of the specific heat
+## 3.5 Temperature and system size dependence of the specific heat
 
 *Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e. $T<T_c$) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range. . How does the specific heat vary across the whole temperature range?* **[4 marks]**
 
