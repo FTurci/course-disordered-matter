@@ -1,17 +1,14 @@
----
-title: "Preparatory reading and setup for coursework assignment: Investigating correlations and phase behaviour in the 2d lattice-gas model"
-format: html
----
 
-
-# 1 Introduction
+# 1. Introduction and background {#coursework .unnumbered}
 
 In this coursework assignment, you will explore the phenomena of spatial correlations and their relationship to phase behaviour in a simple lattice gas model. This model is a crude representation of a fluid in
 which particles can occupy the sites of a hypercubic lattice. The occupancy of a site $i$ is specified by the variable $c_i=1$ (occupied) or $c_i=0$
-vacant. The complete list of these occupancies $\{c\}$ specifies a microstate. The average particle number density (fraction of occupied
+vacant. The complete list of these occupancies $\{c\}$ specifies a microstate. The instantaneous particle number density (fraction of occupied
 sites) is given by
 
-$$c=L^{-d}\sum_i c_i $$ 
+$$
+\rho=L^{-d}\sum_i c_i 
+$$ 
 
 where $L$ is the linear extent of the lattice and $d$ its dimensionality.
 
@@ -26,10 +23,10 @@ assumed to fluctuate around a mean value controlled by the prescribed
 chemical potential. This representation of the model in which the
 overall density fluctuates is known as the *Grand Canonical ensemble.*
 
-## Mapping between Ising model and lattice gas
+## 1.1 Mapping between Ising model and lattice gas
 
 The lattice gas model is interesting because whilst being a plausible
-model for a fluid, it maps onto the Ising model. This extends the
+model for a fluid, it maps onto the Ising model. We say that they are *isomorphic* to one another. This isomorphism extends the
 applicability of the Ising model. To expose the mapping we write the
 grand partition function of the lattice gas:
 
@@ -52,26 +49,26 @@ constant in the free energy; and since all observables feature as
 derivatives of the free energy, the constant has no physical
 implications.
 
-## Phase diagram
+## 1.2 Phase diagram
 
 Using these translation rules we can plot the phase diagram of the
-lattice gas in the number density-temperature plane.
+lattice gas in the plane of average number density and temperature.
 
- ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=60% fig-align="center" #fig-lattgas}
+ ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=45% fig-align="center" #fig-lattgas}
 
 In the $\mu-T$ plane there is a line of first order phase transitions terminating at a
 critical point. The first order line means that if $T<T_c$ we smoothly
 increase the chemical potential through the coexistence value of $\mu$,
-the density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a
+the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a
 low to a high value.
 
-$$\rho_\textrm{ gas}=\frac{1-m^\star}{2} \to \rho_\textrm{ liquid}=\frac{1+m^\star}{2}
+$$\rho_\textrm{gas}=\frac{1-m^\star}{2} \to \rho_\textrm{liquid}=\frac{1+m^\star}{2}
 $$
 These values merge at $T_c$, the gas-liquid critical point. At higher
 temperatures, the distinction between the phases disappears.
 
 ::: {.callout-caution collapse="true"}
-## Aside on Real Fluids
+## 1.3 Aside on Real Fluids
 
 You may wish to compare the phase diagram of the lattice gas mode with the results of (say) van der Waals
 equation (see recommended textbooks for the required phase diagram). The
@@ -80,11 +77,11 @@ $\rho\to 1-\rho$ (inherited from the up-down symmetry of the Ising model) which 
 phase diagram in a real fluid looks like a lopsided version of the above
 picture as shown in @fig-realfluid. See [here](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.55.2160) for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.
 
-![Schematic of the liquid-gas phase diagram in the $\rho-T$ plane for a realistic fluid .](Figs/real_fluid_pd_schem.png){width=60% fig-align="center" #fig-realfluid}
+![Schematic of the liquid-gas phase diagram in the $\rho-T$ plane for a realistic fluid .](Figs/real_fluid_pd_schem.png){width=50% fig-align="center" #fig-realfluid}
 
 :::
 
-## 2.2 Monte Carlo Simulation
+# 2. Monte Carlo Simulation
 
 Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For example, integrals can be approximated using Monte Carlo techniques by generating ${\cal N}$ random samples from the domain of integration $A$ and evaluating the function at these points. For a 1D integral, the result is approximated as:
 
@@ -102,9 +99,9 @@ $$
 P(C) \propto e^{-\beta [E(C) - \mu N(C)]},
 $$
 
-where $E(C)$ is the energy of configuration $C$, $N(C)$ is the number of particles in that configuration, $\mu$ is the chemical potential, and $\beta = 1/kT$. To generate such configurations efficiently, one can use the **Metropolis algorithm** adapted for grand canonical sampling:
+where $E(C)$ is the energy of particle configuration $C$, $N(C)$ is the number of particles in that configuration, $\mu$ is the chemical potential, and $\beta = 1/k_BT$. To generate such configurations efficiently, one can use the **Metropolis algorithm** adapted for grand canonical sampling:
 
-### Grand Canonical Monte Carlo (GCMC)
+## 2.1 Grand Canonical Monte Carlo (GCMC)
 
 1. Select a random lattice site $(i,j)$.
 
@@ -128,7 +125,7 @@ This allows the system to explore states with varying particle numbers according
 
 ---
 
-### Fixed-Particle-Number Case (Canonical Ensemble)
+## 2.2 Fixed-Particle-Number Case (Canonical Ensemble)
 
 In contrast, we may for simplicity want to simulate with the **total number of particles $N$ fixed**, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use **Kawasaki dynamics**, which conserves particle number by moving particles between lattice sites:
 
@@ -162,17 +159,14 @@ $$
 
 where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations generated.
 
-Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calcululated as a variance. The formula for the specific heat (see problem sheets) is 
+Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (see problem sheets) is 
 
 $$
 C=\frac{1}{kT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
 $$
 
 
-
-
-
-# 3. The assignment
+# 3. The assignment {#assignment .unnumbered}
 
 You should investigate certain properties of the 2d square lattice gas model applying insight and knowledge from lectures and making use of a prewritten Python Monte Carlo code. 
 
@@ -180,17 +174,17 @@ You should investigate certain properties of the 2d square lattice gas model app
 
 This should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.
 
-* On the PHYSM0071 Blackboard page open the Resources and Tools tab 
+* On the PHYSM0071 Blackboard page open the Unit Information and Resources tab 
 * Scroll down to Notable and open it (if off campus make sure you have the [UoB VPN](https://uob.sharepoint.com/sites/itservices/SitePages/vpn.aspx) enabled)
 * Select the Jupyter Notebook (Legacy) notebook server option
 * When the notebook has opened click the +Gitrepo button
 * Under enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework
-* Press the "clone" button. This will download a notebook called Ising.ipynb into Jupyter
+* Press the "clone" button. This will download a notebook called lattice-gas.ipynb into Jupyter
 * Check that the program runs
 * Familiarise yourself with the main features of the program. Pay attention to how to change the temperature and number of lattice sites $N=L^2$. 
 Be aware that the program can take several minutes to run depending on the system size.
 
-**The assignment itself will be released on Monday 13th October on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October at 09:30.**
+**The assignment itself will be released on Monday 13th October 2025 on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October 2025 at 09:30.**
 
 **Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.** 
 
@@ -198,7 +192,7 @@ The various elements of the assignment are set out below. Instructions are given
 
 ## 3.2 Isomorphism of the lattice gas and Ising model
 
-*Show that the Hamiltonian of the Lattice Gas model in the grand canonical ensemble*
+*By referring to section 1.1 above, show that the Hamiltonian of the Lattice Gas model in the grand canonical ensemble*
 
 $$
     {\cal H}_{LG}=-\epsilon\sum_{<i,j>}c_ic_j -\mu\sum_ic_i
@@ -214,9 +208,9 @@ $$
 
 *Given that the critical temperature of the 2d Ising model is $T_c\approx 2.269\: J/k_B$, use the above mapping to find the value of the critical temperature of the 2d lattice gas model in units of $\epsilon/k_B$*. **[2 marks]**
 
-## 3.4 Code Modification Tasks
+## 3.3 Code modification tasks
 
-The provided program simulates the 2D lattice gas model in the canonical ensemble (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 3 for details).
+The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 3 for details).
 
 In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, $T_c \le T \le 1.0$. For convenience, the program uses dimensionless units by setting $\epsilon = k_B = 1$.
 
@@ -226,12 +220,11 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 (Hint: When averaging, ensure proper normalization by accounting for the area of each radial bin.) 
   **[6 marks]**
 
-- *Add a function to calculate and print the dimensionless total energy and specific heat of the system.* 
+- *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.2, above.*  
   **[5 marks]**
 
 
-
-## 3.3 Computational investigations of correlations on the approach to criticality
+## 3.4 Computational investigations of correlations on the approach to criticality
 
 - *Perform simulations at various temperatures within the range $T_c \le T \le 1.0$, keeping the particle density fixed at $\rho = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
@@ -239,10 +232,10 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 * *Interpret the peak structure in the structure factor and discuss signs of clustering or ordering in these quantities*. **[3 marks]**
 
-* *The full width at half maximum (FWHM) of the structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its variation with $T$*. **[4 marks]**
+* *The full width at half maximum (FWHM) of the structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
 
 
-## 3.4 Temperature and system size dependence of the specific heat
+## 3.5 Temperature and system size dependence of the specific heat
 
 *Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e. $T<T_c$) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range. . How does the specific heat vary across the whole temperature range?* **[4 marks]**
 
@@ -254,10 +247,10 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 *As well as a title and your name, the report should be laid out using the headings above:*
 
-* *Isomorphism of the lattice gas and Ising model* 
-* *Code modifications*. Include snippets of your modified code, highlighting the modifications in yellow. Do not include the whole code, just enough to see what you changed and where you did it.   
-* *Computational investigations of correlations on the approach to criticality* 
-* *Temperature and system size dependence of the specific heat*
+* Isomorphism of the lattice gas and Ising model 
+* Code modifications. *Include snippets of your modified code, highlighting the modifications in yellow. Do not include the whole code, just enough to see what you changed and where you did it.*   
+* Computational investigations of correlations on the approach to criticality 
+* Temperature and system size dependence of the specific heat
 
 There is no need for any other section headings ie. you don't need abstract, introduction, references etc. Marks will be deducted for reports that exceed four sides (faces) of A4.
 

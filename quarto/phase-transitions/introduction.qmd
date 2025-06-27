@@ -38,7 +38,7 @@ In the vicinity of a critical point, a system displays a host of remarkable beha
    Note the appearence of a liquid-vapour interface (meniscus) as the system enters the two-phase region. 
 
 
-{{< video Movies/critical_point_1.mov start="4" title="Critical opalesence in Co2">}}
+{{< video Movies/critical_point_1.mp4 start="4" title="Critical opalesence in Co2">}}
 
 The recalcitrant problem posed by the critical region is how best to
 incorporate such collective effects within the framework of a rigorous
