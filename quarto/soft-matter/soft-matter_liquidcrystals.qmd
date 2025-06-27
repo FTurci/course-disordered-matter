@@ -22,7 +22,9 @@ Liquid crystals represent an intermediate case, where orientational order can pe
 
 ## Anistropic particles
 
-To favour a decoupling between orientational and positional degrees of freedom it is useful to work with anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. This anisotropy leads to rich phase behaviour, as we will see below.
+The decoupling between orientational and trnslational degrees of freedom is favoured by individual microscopic units (particles) that already have preferntial axis of symmetry, i.e. anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. 
+
+There are many kinds of anisotropic particles. The table below contains a non-exhaustive list.
 
 | **Particle Shape** | **Description**                              | **Example Materials**            | **Typical Applications**                   |
 | ------------------ | -------------------------------------------- | -------------------------------- | ------------------------------------------ |
@@ -34,11 +36,25 @@ To favour a decoupling between orientational and positional degrees of freedom i
 
 
 
-
-
 ## Liquid crystal phases
 
+The additional orientational degrees of freedom makes opens up the possibilities of phases that do not normally exist for spherical, isotropic particles.  We progress from the most disordered to the most ordered phase:
 
+- **Isotropic fluid**: this phase is not very different from the ordinary fluid phase of spherical particles. There is no long-range positional or orientational order and all correlations decay rapidly and on short lengthscales.
+- **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of te molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
+- **smectic phase**: in this phase, particles not only align along a common direction (as in the nematic phase) but also exhibit partial translational order. The centers of mass of the particles tend to form well-defined layers, with orientational order within each layer. However, within a layer, the positions of the particles remain disordered, similar to a liquid. Smectic phases can be further classified (e.g., smectic A, smectic C) depending on the relative orientation of the director with respect to the layer normal.
+- **Columnar phase**: here, anisotropic particles (often disc-like) stack into columns, which then arrange themselves into a two-dimensional lattice. There is long-range positional order in two directions (within the plane perpendicular to the columns) and orientational order along the column axis.
+- **Crystal**: the most ordered phase, where both positional and orientational order are long-ranged in all directions, forming a true three-dimensional periodic lattice.
+
+
+| **Phase**           | **Positional Order**      | **Orientational Order**      |
+|---------------------|--------------------------|------------------------------|
+| Isotropic fluid     | No                       | No                           |
+| Nematic             | No                       | Yes (long-range)         |
+| Chiral nematic      | No                       | Yes (helical)            |
+| Smectic             | Yes (1D: layered)        | Yes (within layers)      |
+| Columnar            | Yes (2D: columns)        | Yes (along columns)      |
+| Crystal             | Yes (3D: lattice)        | Yes (long-range)         |
 
 ## Orientational correlations and the isotropic/nematic transition
 
@@ -72,6 +88,7 @@ where the sum is over nearest-neighbor pairs on a 2D lattice. This model capture
 
 
 ```{pyodide}
+#| autorun: true
 
 import numpy as np
 import matplotlib.pyplot as plt
