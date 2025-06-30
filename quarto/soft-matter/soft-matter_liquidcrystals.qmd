@@ -5,7 +5,6 @@ pyodide:
     packages:
         - numpy
         - matplotlib
-        - ipywidgets
 resources:
     - src/plotting.py
 bibliography: references.bib
@@ -303,27 +302,45 @@ where the $4\pi$ term assumes that $p(\theta)$ is correctly normalised on the sp
 - an energetic contribution that is a simple quadratic function of the order paremeter (more order, lower energy, with the isotropic phase paying the highest cost). Near the isotropic phase the free energy needs to be even due to the head-tail symmetry. 
 - a generic entropic contribution of the form $k_B\int p(\theta)\ln p(\theta) d\theta$ using the [Gibbs entropy formula](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula){target="_blank"}.
 
-Given the free energy above, we want to find $p(\theta)$ that minimises it under the normalisation constraint $\int p(\theta) \sin \theta d \theta=1$. This is solve via Lagrange multipliers to obtain
+The minimization of the free energy with respect to $p(\theta)$, under the normalization constraint $\int_0^\pi p(\theta) \sin\theta d\theta = 1$, is performed using a Lagrange multiplier $\lambda$. The variational problem is:
 
 $$
-p(\theta)=\frac{1}{Z} \exp \left(\frac{u S}{k_B T} P_2(\cos \theta)\right),
+\delta \left[ f + \lambda \left( \int_0^\pi p(\theta) \sin\theta d\theta - 1 \right) \right] = 0
 $$
-with partition function
+
+Taking the functional derivative with respect to $p(\theta)$ and setting it to zero yields:
+
 $$
-Z=\int_0^\pi \exp \left(\frac{U S}{k_B T} P_2(\cos \theta)\right) \sin \theta d \theta
+\frac{\delta f}{\delta p(\theta)} + \lambda \sin\theta = 0
 $$
+
+Plugging in the expression for $f$ and simplifying, we obtain the self-consistent solution:
+
+$$
+p(\theta) = p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
+$$
+
+where $\mathcal{S}$ is the nematic order parameter to be determined self-consistently, and $Z$ is the normalization constant (partition function):
+
+$$
+Z = \int_0^\pi \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right) \sin\theta d\theta
+$$
+
+This is the Maier-Saupe self-consistent equation for the orientational distribution in the mean-field theory of nematic liquid crystals. In the code below, we can see how this leads to a non trivial energy profile which corresponds to the emergence of a ordered state (a minimum at high $\mathcal{S}$) corresponding to the nematic phase.
 
 
 
 ```{pyodide}
 #| autorun: true
+#| caption: "Free energy profile of the Maier-Saupe model for various values of the coupling parameter u"
+
 import numpy as np
 import matplotlib.pyplot as plt
 
 for u in np.linspace(1,10,10):
     λ = np.linspace(0.1, 100.0, 1000)
     thetas = np.linspace(0, np.pi, 100)
-    T = 1.0
+    T = 1.0 ## CHANGE T TO SEE WHAT HAPPENS: CAN YOU EXPLAIN WHY?
     legendre_weight = (1.5 * np.cos(thetas)**2 - 0.5) * np.sin(thetas)
     S = []
     F = []
@@ -341,7 +358,6 @@ plt.legend(frameon=False,title="u")
 plt.gca().set(xlabel="Order parameter S", ylabel="free energy density / kBT" )
 plt.show()
 ```
-
 
 ### Lattice model: the Lebwohl-Lasher model
 
@@ -591,7 +607,91 @@ Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2
 
 When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engendre a complete loss of orientational order at the singularity point, which costs energy by itslef.
 
-Disclinations play a crucial role in the physics of liquid crystals, influencing their mechanical, optical, and dynamic properties. They can be visualized as points (in 2D) or lines (in 3D) where the orientational order breaks down.
+In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 
+
+The classification of disclination in 3D involves the rotation group **SO(3)*** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**/ 
+
+
+```{python}
+#| echo: false
+import numpy as np
+import plotly.graph_objects as go
+
+# 3D grid
+x = np.linspace(-1, 1, 10)
+y = np.linspace(-1, 1, 10)
+z = np.linspace(-1, 1, 10)
+X, Y, Z = np.meshgrid(x, y, z, indexing='ij')
+
+# Twist rate along z
+k = 4 * np.pi  # 2 full twists from z=-1 to z=1
+
+# Twisting director field
+phi = np.arctan2(Y, X) + k * Z
+U = np.cos(phi / 2)
+V = np.sin(phi / 2)
+W = np.zeros_like(U)  # Still planar vectors, but twisting
+
+# Mask to avoid core
+mask = np.sqrt(X**2 + Y**2) > 0.2
+x0 = X[mask].flatten()
+y0 = Y[mask].flatten()
+z0 = Z[mask].flatten()
+u = U[mask].flatten()
+v = V[mask].flatten()
+w = W[mask].flatten()
+
+# Director line segment
+L = 0.2
+x1 = x0 - L * u / 2
+x2 = x0 + L * u / 2
+y1 = y0 - L * v / 2
+y2 = y0 + L * v / 2
+z1 = z0 - L * w / 2
+z2 = z0 + L * w / 2
+
+# Plot
+fig = go.Figure()
+
+# Add symmetric director lines
+for i in range(len(x0)):
+    fig.add_trace(go.Scatter3d(
+        x=[x1[i], x2[i]], y=[y1[i], y2[i]], z=[z1[i], z2[i]],
+        mode='lines',
+        line=dict(color='green', width=4),
+        showlegend=False
+    ))
+
+# Helical disclination core: x = r cos(kz), y = r sin(kz)
+r_core = 0.05
+z_core = np.linspace(z.min(), z.max(), 200)
+x_core = r_core * np.cos(k * z_core)
+y_core = r_core * np.sin(k * z_core)
+
+fig.add_trace(go.Scatter3d(
+    x=x_core, y=y_core, z=z_core,
+    mode='lines',
+    line=dict(color='orange', width=6),
+    name='Helical Disclination Core'
+))
+
+# Layout
+fig.update_layout(
+    scene=dict(
+        xaxis=dict(visible=False),
+        yaxis=dict(visible=False),
+        zaxis=dict(visible=False),
+        aspectmode='cube'
+    ),
+    margin=dict(l=0, r=0, b=0, t=30),
+    title="3D Twisting Nematic Disclination Line"
+)
+
+fig.show()
+
+
+
+```
 
 ## References {.unnumbered}
