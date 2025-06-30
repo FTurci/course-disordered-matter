@@ -255,7 +255,7 @@ are shown in @fig-mfsum (a) and (b)
 
 :::
 
-## Landau theory
+## Landau theory {#sec-landau-theory}
 
 Landau theory is a slightly more general type of mean field theory than
 that discussed in the previous subsection because it is not based on a

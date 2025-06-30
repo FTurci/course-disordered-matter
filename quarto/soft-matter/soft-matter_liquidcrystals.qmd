@@ -5,6 +5,7 @@ pyodide:
     packages:
         - numpy
         - matplotlib
+        - ipywidgets
 resources:
     - src/plotting.py
 bibliography: references.bib
@@ -34,7 +35,7 @@ There are many kinds of anisotropic particles. The table below contains a non-ex
 | Polyhedra          | Multi-faceted, highly symmetric shapes       | Gold nanocubes, silica polyhedra | Photonic crystals, catalysis               |
 
 
-![Various assemblies of anisotropic particles. Left to right: Golden nanorods (from [Stanford Advanced Materials](https://www.samaterials.com/micro-nano-materials/2022-gold-nanorods.html)), tobacco virus rods (adapted from @knapp2001tobacco), ellipsoidal silica-coated hematite particles (adapted from @sanchez2010inorganic), hard platelets in teh isotropic phase (from @PhysRevE.101.032706), and an arrangement of octahedra simulated using hard particle Monte Carlo with [hoomdblue](https://hoomd-blue.readthedocs.io/en/latest/tutorial/00-Introducing-HOOMD-blue/02-Performing-Hard-Particle-Monte-Carlo-Simulations.html) ](figs/liqcrystl.png)
+![Various assemblies of anisotropic particles. Left to right: Golden nanorods (from [Stanford Advanced Materials](https://www.samaterials.com/micro-nano-materials/2022-gold-nanorods.html)), tobacco virus rods (adapted from @knapp2001tobacco), ellipsoidal silica-coated hematite particles (adapted from @sanchez2010inorganic), hard platelets in the isotropic phase (from @PhysRevE.101.032706), and an arrangement of octahedra simulated using hard particle Monte Carlo with [hoomdblue](https://hoomd-blue.readthedocs.io/en/latest/tutorial/00-Introducing-HOOMD-blue/02-Performing-Hard-Particle-Monte-Carlo-Simulations.html) ](figs/liqcrystl.png)
 
 ## Liquid crystal phases
 
@@ -71,8 +72,8 @@ $$
 $$
 where $d$ is the dimensionality. The removed $\dfrac{1}{d}\mathbf{I}$ term ensures that the tensor is traceless and does not include istropic components.
 
-The analysis of the tensor yield the main characteristics of the orientation of teh system:
-- the largest eigenvalue of $\mathbf{Q}$ is the **scalar nematic order parameter** $S$
+The analysis of the tensor yield the main characteristics of the orientation of the system:
+- the largest eigenvalue of $\mathbf{Q}$ is the **scalar nematic order parameter** $\mathcal{S}$
 - the eigenvector corresponding to the largest eigenvalues is called the **director** $\mathbf{n}$ and corresponds to the main collective orientation of the system.
 
 In two dimensions, the director is simply characterised by the angle $\psi$  expressed as 
@@ -82,12 +83,16 @@ $$
 and the nematic order parameter is simply
 
 $$
-S=\sqrt{\left\langle\cos 2 \theta_i\right\rangle^2+\left\langle\sin 2 \theta_i\right\rangle^2}
+\mathcal{S}=\sqrt{\left\langle\cos 2 \theta_i\right\rangle^2+\left\langle\sin 2 \theta_i\right\rangle^2}
 $$
+
+::: column-margin
+Notice that $\mathcal{S}$ is not the entropy $S$! These commonly used symbols should not be confused.
+:::
 
 while in three dimensions this gives 
 $$
-S=\dfrac{1}{2} \left\langle\cos ^2 \theta_i-1\right\rangle
+\mathcal{S}=\dfrac{1}{2} \left\langle 3\cos ^2 \theta_i-1\right\rangle
 $$
 (the expression for the director in 3d requires explicit diagonalisation).
 
@@ -146,10 +151,10 @@ $$
 with the scalar nematic order parameter
 
 $$
-S = \sqrt{C^2 + D^2}.
+\mathcal{S} = \sqrt{C^2 + D^2}.
 $$
 
-Where $S \to 1$ indicates strong alignment and $S \to 0$ indicates isotropic order.
+Where $\mathcal{S} \to 1$ indicates strong alignment and $\mathcal{S} \to 0$ indicates isotropic order.
 
 The director $\mathbf{n}$ is the eigenvector corresponding to $\lambda_{\max}$, satisfying
 
@@ -193,9 +198,149 @@ $$
 \psi = \frac{1}{2} \operatorname{atan2}(D, C).
 $$
 
-This $\psi$ represents the director’s orientation modulo $\pi$.
+The angle $\psi$ represents the director’s orientation modulo $\pi$.
 :::
 
+
+
+## Landau-de Gennes mean field theory
+
+Let us consider the uniaxial 3D case, which is the most commonly discussed case (this focuses on nematic order, excluding cholesteric and smectic order) and attempt to construct a Landau theory centred on the order parameter in the spirit of what we saw in @sec-landau-theory. If the system is uniaxial, then the order is characterized by a single director  and the $\mathbf{Q}$ must be symmetric and traceless with a preferred axis $\mathbf{n}$.
+
+The tensorial order parameter can be rewritten levaraging that the scalar order parameter is an eigenvalue of the director. i.e. $\mathbf{Qn} = S\mathbf{n}$. The result is that 
+
+
+$$
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{d} \mathbf{I}\right)
+$$
+
+for some scalar value $\mathcal{S}$ (the order parameter between 0 for the isotropic and 1 for the nematic). If we choose now the $z$ axis along $\mathbf{n}$ we can write this explicitly as 
+
+$$
+\mathbf{Q}=\mathcal{S}\left(\begin{array}{ccc}
+-\frac{1}{3} & 0 & 0 \\
+0 & -\frac{1}{3} & 0 \\
+0 & 0 & \frac{2}{3}
+\end{array}\right)
+$$
+
+with $\mathcal{S}=\frac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle$ as defined earlier.
+
+We can now make an extra step by considering how to express the scalar order parameter in terms of the **probability distribution** $p(\Omega)$ of finding a rod with pair of polar angles $\Omega=(\theta,\phi)$ in a coordinates system with polar axis along $\mathbf{n}$ (which is the reference frame we have just chosen). The infinitesimal probability is $p(\Omega)d\Omega$.
+
+As often in physics, we need to make a symmetry observation, and remark that the nematic phase has full **cylindrical symmetry** around the director. This means that, for us $p(\Omega)=p(\theta, \phi)$ is in fact independent of The azimuthal angle $\phi$ and only depends on the deviation from the director $\theta$. 
+
+We also note that the expression for the nematic order parameter satisfies head-tail symmetry bt emnploying the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
+
+$$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle$$
+
+In terms of the probability distribution this is 
+
+
+$$\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
+
+
+The Landau free energy density for the isotropic-nematic transition is constructed by scalar combinations of the tensor $\mathbf{Q}$.
+The idea is to expand the **free energy density** $f$ around the transition and write it as
+
+$$
+f=f_0+\frac{A}{2} Q_{i j} Q_{j i}-\frac{B}{3} Q_{i j} Q_{j k} Q_{k i}+\frac{C}{4}\left(Q_{i j} Q_{i j}\right)^2
+$$
+
+or in more compact form
+
+$$
+f=f_0+\frac{A}{2} \operatorname{tr} \mathbf{Q}^2-\frac{B}{3} \operatorname{tr} \mathbf{Q}^3+\frac{C}{4}\left(\operatorname{tr} \mathbf{Q}^2\right)^2
+$$
+where we stop the construction to terms of **fourth order** in $\mathbf{Q}$ and $A,B,C$ are temperature dependent coefficients.
+
+
+We note that given our definitions above the following identities hold
+$$
+\operatorname{Tr}\left(\mathbf{Q}^2\right)=\frac{2}{3} S^2 \quad,\quad
+\operatorname{Tr}\left(\mathbf{Q}^3\right)=\frac{2}{9} S^3
+$$
+
+so that 
+
+$$
+f=f_0+\frac{A}{3}S^2-\frac{2B}{27}S^3+\frac{C}{9}S^4
+$$
+
+::: column-margin
+We can expand $A,B,C$ around the refernce temperature $T^\ast$ as $$ A(T)=a\left(T-T_*\right)+\cdots $$ and at zeroth order for both $B$ and $C$  as $B(T)= b+\dots$ , $C(T)=c+\dots$, with $a,b,c>0$ to preserve the most relevant terms.
+:::
+
+We can follow the scheme used for Landau phase transitions and obtain the so-called **Landau-de Gennes theory** result 
+
+$$
+f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 .
+$$
+
+This has the form of standard Landau free energy (combinations of power of S up to the power of 4 with real coefficients that depend on the temperature).
+<!-- possible problem -->
+It can be shown that this corresonds to a first order phase transition without critical point (because the isotropic and nematic phase have different symmetry) with transition temperature 
+
+$$
+T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
+$$
+where $T^{\ast}$ is a material dependent temperature, identifying where the quadratic term of the free energy vanishes, and where the isotropic phase becomes unstable (spinodal).
+
+## Maier-Saupe theory
+
+The Landau-de Gennes theory illustrates how the simple existence of a suitably defined nematic order is compatible with the construction of a theory that predicts a first order phase transition.
+A complementary approach is to consider the minimal physical ingredients that lead to the transition itself. As in the case of the colloids, we have essentially two classes
+
+1. attractive interactions that can favour the new symmetries (e.g. the nematic order)
+2. entropic contributions that make it easier to pack the rods in the new symmetry (i.e. when they are aligned)
+
+Phenomenologically, we can put these two together assuming a form for the energetic and entropic contributions to write down a free energy of the following form
+
+$$f = f_0 - u\dfrac{S^2}{2}+k_BT \int_0^\pi p(\theta) \ln (4\pi p(\theta)) \sin\theta d\theta$$
+
+where the $4\pi$ term assumes that $p(\theta)$ is correctly normalised on the sphere and $\sin\theta d\theta$ is the usual Jacobian. The two terms above identify two simple contributions:
+
+- an energetic contribution that is a simple quadratic function of the order paremeter (more order, lower energy, with the isotropic phase paying the highest cost). Near the isotropic phase the free energy needs to be even due to the head-tail symmetry. 
+- a generic entropic contribution of the form $k_B\int p(\theta)\ln p(\theta) d\theta$ using the [Gibbs entropy formula](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula){target="_blank"}.
+
+Given the free energy above, we want to find $p(\theta)$ that minimises it under the normalisation constraint $\int p(\theta) \sin \theta d \theta=1$. This is solve via Lagrange multipliers to obtain
+
+$$
+p(\theta)=\frac{1}{Z} \exp \left(\frac{u S}{k_B T} P_2(\cos \theta)\right),
+$$
+with partition function
+$$
+Z=\int_0^\pi \exp \left(\frac{U S}{k_B T} P_2(\cos \theta)\right) \sin \theta d \theta
+$$
+
+
+
+```{pyodide}
+#| autorun: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+for u in np.linspace(1,10,10):
+    λ = np.linspace(0.1, 100.0, 1000)
+    thetas = np.linspace(0, np.pi, 100)
+    T = 1.0
+    legendre_weight = (1.5 * np.cos(thetas)**2 - 0.5) * np.sin(thetas)
+    S = []
+    F = []
+    for l in λ:
+        p_theta = np.exp(l *legendre_weight)  # p(θ; λ)
+        p_theta /= np.trapezoid(p_theta * np.sin(thetas), thetas)  # Normalize p(θ)
+        S_l = np.trapezoid(p_theta * legendre_weight, thetas)
+        f = -0.5*u*S_l**2+T*np.trapezoid(p_theta * np.log(4*np.pi*p_theta)*np.sin(thetas), thetas)
+        S.append(S_l)
+        F.append(f)
+    S = np.array(S)
+    F = np.array(F)
+    plt.plot(S,F-F[0], label=str(u))
+plt.legend(frameon=False,title="u")
+plt.gca().set(xlabel="Order parameter S", ylabel="free energy density / kBT" )
+plt.show()
+```
 
 
 ### Lattice model: the Lebwohl-Lasher model
@@ -281,23 +426,172 @@ Modify the script above to check the following
 2.  The low temperature regime forms larger and larger patches with coherent orientations
 3. Define and plot a global nematic order parameter. Τhe global nematic order parameter S is defined as:
 
-$$ S = \langle \cos(2(\theta - \psi))\rangle$$ where $\psi$ is the director (average orientation), which in 2D is
+$$ S = \langle \cos(2(\theta - \psi))\rangle$$ 
+
+where $\psi$ is the director (average orientation), which in 2D is
 
 $$\psi = \dfrac{1}{2} {\rm atan2}(\langle \sin(2\theta)\rangle, \langle \cos(2\theta)\rangle)$$
 
 
 :::
 
-### Particle model: ideal hard rods
+
+<!-- maybe add this in the future -->
+<!-- ### Particle model: ideal hard rods -->
+
+<!-- ## Effective elastic free energy  -->
 
 
-## Effective elastic free energy 
+## Splay, twist and bend 
+
+In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from teh average over a large number of particlesion a single volume).
 
 
-### Splay, twist and bend 
+The Frank free energy density for distortions of the director field is
 
+$$
+f = \frac{1}{2} K_1 (\nabla \cdot \mathbf{n})^2
+    + \frac{1}{2} K_2 [\mathbf{n} \cdot (\nabla \times \mathbf{n})]^2
+    + \frac{1}{2} K_3 [\mathbf{n} \times (\nabla \times \mathbf{n})]^2
+$$
+
+where:
+- $K_1$ is the splay elastic constant,
+- $K_2$ is the twist elastic constant,
+- $K_3$ is the bend elastic constant.
+
+Each term in the Frank free energy penalizes a specific type of distortion: splay, twist, or bend. The total elastic free energy is found by integrating $f$ over the entire sample volume. This formulation is named after Charles Frank, a pioneer in the study of crystal dislocations (which are defects in crystalline solids) and what we call today soft matter at the University of Bristol, for whom the Frank lecture theatre is named.
+
+::: column-margin
+![Sir Charles Frank (1911-1998)](https://upload.wikimedia.org/wikipedia/en/a/ac/Frederick_Charles_Frank_Bristol.jpeg)
+:::
+
+The formulation allows one to model the behaviour of liquid crystals with finite element methods on much larger scales than the typical size of the elementary constituents. It also allows to phenomenologically add more deformation modes, to include for example the description of chirality.
 
 ## Topological defects
 
+The continuum limit description of liqudi crystals allows us to anhance their description with the notion of **topological defectes**.
+
+Topological defects are singularities in the director field that can not be removed by a continuous deformation of the director field: they are **topolgically protected**. We can see this with a few examples in 2d by drawing lines of the director (remember that the head-tail symmetry means that the lines do not have any preferential direction but indicate local orientation):
+
+```{python}
+#| code-fold: true
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+def plot_defect(ax, charge, title):
+    # Grid
+    x = np.linspace(-1, 1, 10)
+    y = np.linspace(-1, 1, 10)
+    X, Y = np.meshgrid(x, y)
+    # Polar coordinates
+    theta = np.arctan2(Y, X)
+    # Director angle: n = [cos(q*theta/2), sin(q*theta/2)]
+    phi = charge * theta / 2
+    U = np.cos(phi)
+    V = np.sin(phi)
+    # Normalize for nematic symmetry (director, not vector)
+    U2 = np.where(U < 0, -U, U)
+    V2 = np.where(U < 0, -V, V)
+    # Plot director field as dashed lineså
+    ax.quiver(X, Y, U2, V2, pivot='middle', color='k', scale=11, headwidth=0, headlength=0, headaxislength=0, linewidth=0.85, linestyle='dashed')
+    # Defect core
+    ax.plot(0, 0, 'o', color='orange', markersize=14)
+    ax.set_title(title, fontsize=11)
+    ax.set_aspect('equal')
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_xlim(-1.1, 1.1)
+    ax.set_ylim(-1.1, 1.1)
+    ax.axis('off')
+
+fig, axs = plt.subplots(1, 4, figsize=(8, 8))
+charges = [1, -1, 0.5, -0.5]
+titles = [r"Topological charge $+1$", r"Topological charge $-1$", r"Topological charge $+\frac{1}{2}$", r"Topological charge $-\frac{1}{2}$"]
+
+for ax, charge, title in zip(axs.flat, charges, titles):
+    plot_defect(ax, charge, title)
+
+plt.tight_layout()
+plt.show()
+```
+
+These topological defects are places where the orientation changes discontinuously and are also called **disclinations**.
+
+In two dimensions, the disclinations are characterized by a topological charge (or strength) $s$, defined by the total rotation of the director around a closed loop enclosing the defect:
+
+$$
+\Delta \theta = 2\pi s
+$$
+
+```{python}
+#| echo: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+def plot_charge_steps(ax, charge, step_frac, title=None):
+    # Grid
+    x = np.linspace(-1, 1, 20)
+    y = np.linspace(-1, 1, 20)
+    X, Y = np.meshgrid(x, y)
+    theta = np.arctan2(Y, X)
+    phi = charge * theta / 2
+    U = np.cos(phi)
+    V = np.sin(phi)
+    # Nematic symmetry
+    U2 = np.where(U < 0, -U, U)
+    V2 = np.where(U < 0, -V, V)
+    ax.quiver(X, Y, U2, V2, pivot='middle', color='k', scale=30, headwidth=0, headlength=0, headaxislength=0, linewidth=0.7, linestyle='dashed')
+    # Defect core
+    ax.plot(0, 0, 'o', color='orange', markersize=10)
+    # Draw circle and arc
+    circle_r = 0.7
+    t = np.linspace(0, 2*np.pi, 200)
+    ax.plot(circle_r*np.cos(t), circle_r*np.sin(t), color='gray', lw=1, alpha=0.5)
+    # Arc for winding
+    arc_t = np.linspace(0, 2*np.pi*step_frac, 100)
+    ax.plot(circle_r*np.cos(arc_t), circle_r*np.sin(arc_t), color='crimson', lw=5)
+    # Arrowhead to show progress
+    if step_frac > 0:
+        arrow_theta = 2*np.pi*step_frac
+        ax.arrow(circle_r*np.cos(arrow_theta), circle_r*np.sin(arrow_theta),
+                 -0.08*np.sin(arrow_theta), 0.08*np.cos(arrow_theta),
+                 head_width=0.06, head_length=0.12, fc='crimson', ec='crimson')
+    # Director rotation calculation
+    total_angle = charge * 2*np.pi * step_frac
+    # Format for display
+    angle_deg = np.rad2deg(total_angle)
+    if title is None:
+        title = f"Progress: $0 \\to {step_frac:.2f}\\times 2\\pi$\nDirector rotates: {total_angle:.2f} rad ({angle_deg:.1f}°)"
+    else:
+        title = f"{title}\nDirector rotates: {total_angle:.2f} rad ({angle_deg:.1f}°)"
+    ax.set_title(title, fontsize=10)
+    ax.set_aspect('equal')
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_xlim(-1.1, 1.1)
+    ax.set_ylim(-1.1, 1.1)
+    ax.axis('off')
+
+fig, axs = plt.subplots(1, 3, figsize=(11, 3.5))
+steps = [1/6, 0.5, 1.0]
+titles = [
+    "Start winding: $0 \\to \\pi/3$",
+    "Halfway: $0 \\to \\pi$",
+    "Full loop: $0 \\to 2\\pi$"
+]
+for ax, frac, title in zip(axs, steps, titles):
+    plot_charge_steps(ax, 0.5, frac, title)
+plt.tight_layout()
+plt.show()
+```
+
+Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2}$ and $s = \pm 1$. For example, a $+1/2$ disclination corresponds to a director field that rotates by $+\pi$ as one encircles the defect, while a $-1/2$ disclination rotates by $-\pi$.
+
+When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engendre a complete loss of orientational order at the singularity point, which costs energy by itslef.
+
+Disclinations play a crucial role in the physics of liquid crystals, influencing their mechanical, optical, and dynamic properties. They can be visualized as points (in 2D) or lines (in 3D) where the orientational order breaks down.
 
 
+## References {.unnumbered}

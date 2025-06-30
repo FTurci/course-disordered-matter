@@ -620,7 +620,7 @@ where $\mathrm{V}_{1}$ is the volume of a monomer.
 The overall volume occupied by the whole coil is
 
 $$
-V_{\text {coil }}=\frac{4 \pi}{3}\langleR_{g}^{2}\rangle^{3 / 2} \sim \frac{4 \pi}{3} N^{3 / 2} b^{3}
+V_{\text {coil }}=\frac{4 \pi}{3}\langle R_{g}^{2}\rangle^{3 / 2} \sim \frac{4 \pi}{3} N^{3 / 2} b^{3}
 $$
 
 $$\therefore \frac{V_{N}}{V_{\text {coil }}}=\frac{N b^{3}}{(4 \pi / 3) N^{3 / 2} b^{3}} \sim N^{-1 / 2}$$
