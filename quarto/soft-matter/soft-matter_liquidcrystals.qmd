@@ -538,7 +538,7 @@ where:
 Each term in the Frank free energy penalizes a specific type of distortion: splay, twist, or bend. The total elastic free energy is found by integrating $f$ over the entire sample volume. This formulation is named after Charles Frank, a pioneer in the study of crystal dislocations (which are defects in crystalline solids) and what we call today soft matter at the University of Bristol, for whom the Frank lecture theatre is named.
 
 ::: column-margin
-![Sir Charles Frank (1911-1998)](https://upload.wikimedia.org/wikipedia/en/a/ac/Frederick_Charles_Frank_Bristol.jpeg)
+![Sir Charles Frank (1911-1998)](https://upload.wikimedia.org/wikipedia/en/a/ac/Frederick_Charles_Frank_Bristol.jpeg){fig-align="left"}
 :::
 
 The formulation allows one to model the behaviour of liquid crystals with finite element methods on much larger scales than the typical size of the elementary constituents. It also allows to phenomenologically add more deformation modes, to include for example the description of chirality.
