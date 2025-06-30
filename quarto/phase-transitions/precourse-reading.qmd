@@ -20,7 +20,7 @@ $$
 
 where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for defining the entropy, but is little used in practice.
 
-## Canonical ensemble 
+## Canonical ensemble {#sec-canonical}
 
 Applies to a system of $N$ particles in a fixed volume $V$ and coupled to a heat bath at temperature $T$. Denoted as constant-$NVT$. 
 A central quantity is the *partition function*
@@ -46,10 +46,9 @@ F_{NVT}=E-TS\:,
 $$
 where $E$ is the average internal energy. In minimising the free energy, the system strikes a compromise between low energy and high entropy. 
 The temperature plays the role of arbiter, favouring high entropy at high $T$, and low energy at low $T$. 
-The canonical ensemble is usually used to describe systems such as magnets, or a fluid held at constant volume. 
-It is the ensemble we shall use most in this course. 
+The canonical ensemble is usually used to describe systems such as magnets, or a fluid held at constant volume.  It is the ensemble we shall use most in this course. 
 
-## Grand canonical ensemble
+## Grand canonical ensemble {#sec-grandcanonical}
 
  Applies to a system with a variable number of particle in a fixed volume $V$ coupled to both a heat bath at temperature $T$ and a particle reservoir with chemical potential $\mu$ (which is the field conjugate to $N$). Denoted as constant-$\mu VT$.
 
@@ -73,8 +72,9 @@ $$
 $F_{\mu VT}$ is known as the grand potential. It can also be derived from thermodynamics, from which one finds
 
 $$
-F_{\mu VT}=E-TS-\mu N=-pV
+F_{\mu VT}=E-TS-\mu N=-pV,
 $$
+where $p$ is the pressure.
 
 The grand canonical ensemble is usually used to describe systems such as fluid connected to a particle reservoir. Sometimes for a magnet we consider the effects of an applied magnetic field, which is analogous to working in the grand canonical ensemble:  the magnetic field (which is conjugate to the magnetisation) plays a similar role to the chemical potential in a fluid.
 

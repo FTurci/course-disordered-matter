@@ -1,4 +1,0 @@
-# Heat capacity per site
-C_per_site = 0.807338
-# Average Energy = -1967.225000
-# Average Energy^2 = 3870700.805000
