@@ -101,7 +101,7 @@ fig. @fig-thermo
 
 ## Correlations {#sec-correlations}
 
-The two-point correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field $\phi(\vec{R})$, which could represent eg. the local magnetisation $m$ in a magnet at position vector $\vec{R}$, or the local particle number density $\rho$ in a fluid, it is defined as:
+The two-point connected correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field $\phi(\vec{R})$, which could represent eg. the local magnetisation $m$ in a magnet at position vector $\vec{R}$, or the local particle number density $\rho$ in a fluid, it is defined as:
 
 $$
 C(r) = \langle \phi(\vec{R}) \phi(\vec{R} + \vec{r}) \rangle - \langle \phi(\vec{R}) \rangle^2,
@@ -116,7 +116,7 @@ If $C(r)$ decays quickly, we say that correlations are short-ranged. Typically t
   $$
   C(r) \sim e^{-r/\xi}
   $$
-where correlation length $\xi$ is the characteristic scale over which correlations decay.
+where the correlation length $\xi$ is the characteristic scale over which correlations decay.
 
 
 Near a critical point $C(r)$ decays more slowly - in a power-law fashion - and correlations are long-ranged.
@@ -125,6 +125,19 @@ Near a critical point $C(r)$ decays more slowly - in a power-law fashion - and c
   C(r) \sim r^{-(d - 2 + \eta)}
   $$
   where $d$ is the spatial dimension and $\eta$ is a critical exponent.
+
+  
+In isotropic fluids and particle systems, a closely related and more directly measurable quantity (particularly in simulations) 
+is the **radial distribution function** $g(r)$, which describes how particle density varies as a function of distance from a reference 
+particle. For such systems, the two-point correlation function of the number density field $\rho(\vec{r})$ is related to $g(r)$ as follows:
+
+$$
+g(r) = 1+\frac{C(r)}{\rho^2},
+$$
+where $\rho$ is the average number density. This relation shows that $g(r)$ encodes the same spatial correlations as $C(r)$, 
+but in a form that is more natural for discrete particle systems. Note that by definition $g(r)\to 1$ in the absence of correlations ie. when $C(r)=0$. 
+This is typically the case for $r\gg\xi$. 
+
 
 Experimentally one doesn't typically have direct access to $C(r)$, but rather its Fourier transform known as the **structure factor**
 

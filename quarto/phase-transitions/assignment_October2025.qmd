@@ -1,5 +1,7 @@
+# PHYSM0071: First coursework assignment {#coursework .unnumbered}
 
-# 1. Introduction and background {#coursework .unnumbered}
+
+# 1. Introduction and background 
 
 In this coursework assignment, you will explore the phenomena of spatial correlations and their relationship to phase behaviour in a simple lattice gas model. This model is a crude representation of a fluid in
 which particles can occupy the sites of a hypercubic lattice. The occupancy of a site $i$ is specified by the variable $c_i=1$ (occupied) or $c_i=0$
@@ -12,7 +14,7 @@ $$
 
 where $L$ is the linear extent of the lattice and $d$ its dimensionality.
 
-The Hamiltonian of the lattice gas model is
+Within the Grand Canonical ensemble (see @sec-grandcanonical) the Hamiltonian of the lattice gas model is
 
 $${\cal H}_{LG}=-\epsilon\sum_{<i,j>}c_ic_j - \mu\sum_ic_i$$
 
@@ -20,14 +22,12 @@ where $\epsilon$ is an attraction energy between a pair of particles on
 adjacent (nearest neighbouring) sites and $\mu$ is a field known as the
 chemical potential, which couples to the particle density which is
 assumed to fluctuate around a mean value controlled by the prescribed
-chemical potential. This representation of the model in which the
-overall density fluctuates is known as the *Grand Canonical ensemble.*
+chemical potential. One can also fix the particle number to some prescribed value- the correspponding set of microstates then define the canonical ensemble (see @sec-canonical) of the lattice gas at that density. 
 
-## 1.1 Mapping between Ising model and lattice gas
+## 1.1 Mapping between lattice gas and Ising model
 
 The lattice gas model is interesting because whilst being a plausible
-model for a fluid, it maps onto the Ising model. We say that they are *isomorphic* to one another. This isomorphism extends the
-applicability of the Ising model. To expose the mapping we write the
+model for a fluid, it maps onto the Ising model. We say that they are *isomorphic* to one another. This isomorphism extends the applicability of the Ising model. To expose the mapping we write the
 grand partition function of the lattice gas:
 
 $$ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{<i,j>}c_ic_j +\beta\mu\sum_ic_i\right] $$
@@ -41,7 +41,7 @@ h=\frac{\epsilon q+2\mu}{4},
 $$ 
 where $q$ is the lattice coordination number.
 
-Hence one finds,
+One finds (see assignment below),
 
 $${\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}$$ Since the last term
 does not depend on the configuration, it feeds through as an additive
@@ -57,15 +57,9 @@ lattice gas in the plane of average number density and temperature.
  ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=45% fig-align="center" #fig-lattgas}
 
 In the $\mu-T$ plane there is a line of first order phase transitions terminating at a
-critical point. The first order line means that if $T<T_c$ we smoothly
+critical point which has density $\rho_c=0.5$. The first order line means that if $T<T_c$ and starting from the gas phase we smoothly
 increase the chemical potential through the coexistence value of $\mu$,
-the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a
-low to a high value.
-
-$$\rho_\textrm{gas}=\frac{1-m^\star}{2} \to \rho_\textrm{liquid}=\frac{1+m^\star}{2}
-$$
-These values merge at $T_c$, the gas-liquid critical point. At higher
-temperatures, the distinction between the phases disappears.
+the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a low value \$rho_\textrm{gas}$ to a high value $\rho_\textrm{liquid}$. This is the gas-liquid phase transition. The values of $\rho_\textrm{gas}$ and $\rho_\textrm{liquid}$ merge at $T_c$, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.
 
 ::: {.callout-caution collapse="true"}
 ## 1.3 Aside on Real Fluids
@@ -93,7 +87,7 @@ where $x_i$ are random points uniformly distributed in $A$. In practice, while w
 
 This idea also applies to sums over microstates, such as those appearing in the partition function of the **lattice gas model**. However, the space of all configurations is typically vast, and most configurations contribute negligibly to thermodynamic averages. Therefore, rather than sampling configurations uniformly, we use *importance sampling*, preferentially sampling microstates that contribute significantly to the ensemble.
 
-In the **grand canonical ensemble**, the number of particles $N$ is allowed to fluctuate, and configurations are sampled with a probability proportional to the Boltzmann weight:
+In the **grand canonical ensemble**, the number of particles $N$ is allowed to fluctuate, and importance sampling means that configurations are sampled with a probability proportional to the Boltzmann weight:
 
 $$
 P(C) \propto e^{-\beta [E(C) - \mu N(C)]},
@@ -147,7 +141,7 @@ $$
 
 This approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations at fixed $N$. 
 
----
+## 2.3 Observables and measurement
 
 A **Monte Carlo sweep** in either ensemble involves performing $L^2$ update attempts on a lattice of size $L \times L$.
 
@@ -190,7 +184,7 @@ Be aware that the program can take several minutes to run depending on the syste
 
 The various elements of the assignment are set out below. Instructions are given in *italics*.
 
-## 3.2 Isomorphism of the lattice gas and Ising model
+## 3.2 Isomorphism of the lattice gas and Ising model {#sec-isomorph}
 
 *By referring to section 1.1 above, show that the Hamiltonian of the Lattice Gas model in the grand canonical ensemble*
 
@@ -226,13 +220,13 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.4 Computational investigations of correlations on the approach to criticality
 
-- *Perform simulations at various temperatures within the range $T_c \le T \le 1.0$, keeping the particle density fixed at $\rho = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
+- *Perform simulations at various temperatures within the super range $T_c \le T \le 1.0$, keeping the particle density fixed at $\rho = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
 * *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(k)$, and its radially averaged form, at each temperature*. **[4 marks]**
 
 * *Interpret the peak structure in the structure factor and discuss signs of clustering or ordering in these quantities*. **[3 marks]**
 
-* *The full width at half maximum (FWHM) of the structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
+* *The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
 
 
 ## 3.5 Temperature and system size dependence of the specific heat
