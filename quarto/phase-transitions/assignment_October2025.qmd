@@ -24,7 +24,7 @@ chemical potential, which couples to the particle density which is
 assumed to fluctuate around a mean value controlled by the prescribed
 chemical potential. One can also fix the particle number to some prescribed value- the correspponding set of microstates then define the canonical ensemble (see @sec-canonical) of the lattice gas at that density. 
 
-## 1.1 Mapping between Ising model and lattice gas
+## 1.1 Mapping between lattice gas and Ising model
 
 The lattice gas model is interesting because whilst being a plausible
 model for a fluid, it maps onto the Ising model. We say that they are *isomorphic* to one another. This isomorphism extends the applicability of the Ising model. To expose the mapping we write the
@@ -41,7 +41,7 @@ h=\frac{\epsilon q+2\mu}{4},
 $$ 
 where $q$ is the lattice coordination number.
 
-One finds (see assignment in @sec-isomorph below),
+One finds (see assignment below),
 
 $${\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}$$ Since the last term
 does not depend on the configuration, it feeds through as an additive
@@ -57,9 +57,9 @@ lattice gas in the plane of average number density and temperature.
  ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=45% fig-align="center" #fig-lattgas}
 
 In the $\mu-T$ plane there is a line of first order phase transitions terminating at a
-critical point. The first order line means that if $T<T_c$ and starting from the gas phase we smoothly
+critical point which has density $\rho_c=0.5$. The first order line means that if $T<T_c$ and starting from the gas phase we smoothly
 increase the chemical potential through the coexistence value of $\mu$,
-the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a low value \$rho_\textrm{gas}$ to a high value $\rho_\textrm{liquid}$. This is the gas-liquid phase transition. The values of $\rho_\textrm{gas}$ and $\rho_\textrm{liquid}$ merge at $T_c$, the gas-liquid critical point. At higher temperatures, the distinction between the phases disappears.
+the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a low value \$rho_\textrm{gas}$ to a high value $\rho_\textrm{liquid}$. This is the gas-liquid phase transition. The values of $\rho_\textrm{gas}$ and $\rho_\textrm{liquid}$ merge at $T_c$, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.
 
 ::: {.callout-caution collapse="true"}
 ## 1.3 Aside on Real Fluids
@@ -87,7 +87,7 @@ where $x_i$ are random points uniformly distributed in $A$. In practice, while w
 
 This idea also applies to sums over microstates, such as those appearing in the partition function of the **lattice gas model**. However, the space of all configurations is typically vast, and most configurations contribute negligibly to thermodynamic averages. Therefore, rather than sampling configurations uniformly, we use *importance sampling*, preferentially sampling microstates that contribute significantly to the ensemble.
 
-In the **grand canonical ensemble**, the number of particles $N$ is allowed to fluctuate, and configurations are sampled with a probability proportional to the Boltzmann weight:
+In the **grand canonical ensemble**, the number of particles $N$ is allowed to fluctuate, and importance sampling means that configurations are sampled with a probability proportional to the Boltzmann weight:
 
 $$
 P(C) \propto e^{-\beta [E(C) - \mu N(C)]},

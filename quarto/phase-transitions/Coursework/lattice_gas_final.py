@@ -146,6 +146,8 @@ if __name__ == "__main__":
     print("Initial energy=",compute_total_energy(lattice, L))
     total_accept = 0
     total_attempt = 0
+    accum_energy = 0.0
+    accum_energy_sq = 0.0
 
     accum_g = None
     accum_S = None
