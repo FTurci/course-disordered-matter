@@ -20,9 +20,9 @@ In crystalline phases, both positional and orientational order are long-ranged, 
 
 Liquid crystals represent an intermediate case, where orientational order can persist over long distances while positional order remains short-ranged or absent.
 
-## Anistropic particles
+## Anisotropic particles
 
-The decoupling between orientational and translational degrees of freedom is favoured by individual microscopic units (particles) that already have preferntial axis of symmetry, i.e. anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. 
+The decoupling between orientational and translational degrees of freedom is favoured by individual microscopic units (particles) that already have preferential axis of symmetry, i.e. anisotropic particles. Anisotropic particles have shapes that are not spherically symmetric, such as rods, ellipsoids, or plates. Their interactions depend not only on the distance between particles but also on their relative orientations. 
 
 There are many kinds of anisotropic particles. The table below contains a non-exhaustive list.
 
