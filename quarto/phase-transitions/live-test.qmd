@@ -6,9 +6,13 @@ pyodide:
         - matplotlib
         - tqdm
 resources:
-    - ising.py
+    - ./code/ising.py
 
 ---
+
+
+
+
 
 # Coding {#coding .unnumbered}
 
@@ -17,7 +21,7 @@ resources:
 #| autorun: true
 # modifying the path to add the code folder
 import sys
-sys.path.insert(0, '../code')
+sys.path.insert(0, './code')
 ```
 
 We provide you with a simple package able to run an Ising model simulation.

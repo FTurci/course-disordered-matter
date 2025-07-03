@@ -125,10 +125,13 @@ The rods are head-tail symmetric, so, we cannot truly distinguish which one is t
 
 Instead, we construct a second moment tensor called the **alignment tensor**
 
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
 \mathbf{Q}=\dfrac{d}{2}\left\langle\mathbf{u}_i \otimes \mathbf{n}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
 $$
-where $d$ is the dimensionality. The removed $\dfrac{1}{d}\mathbf{I}$ term ensures that the tensor is traceless and does not include istropic components.
+</div>
+
+where $d$ is the dimensionality. The removed $\dfrac{1}{d}\mathbf{I}$ term ensures that the tensor is traceless and does not include isotropic components.
 
 The analysis of the tensor yield the main characteristics of the orientation of the system:
 - the largest eigenvalue of $\mathbf{Q}$ is the **scalar nematic order parameter** $\mathcal{S}$
@@ -149,14 +152,20 @@ Notice that $\mathcal{S}$ is not the entropy $S$! These commonly used symbols sh
 :::
 
 while in three dimensions this gives 
+
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
 \mathcal{S}=\dfrac{1}{2} \left\langle 3\cos ^2 \theta_i-1\right\rangle
 $$
+</div>
+
 (the expression for the director in 3d requires explicit diagonalisation).
 
 
 ::: {.callout-note collapse="true"}
 # Derivation of 2D director
+
+For the purpose of illustrating how the calculations for the director are carried out, we provide a detailed example in two-dimensions.
 
 In two dimensions, each particle has an orientation unit vector
 
@@ -448,7 +457,8 @@ where the sum is over nearest-neighbor pairs on a 2D lattice. This model capture
 
 ```{pyodide}
 #| autorun: true
-
+#| define:
+#|   - snapshots
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -470,7 +480,7 @@ def delta_energy(theta, i, j, new_angle, epsilon):
 L = 64  # lattice size
 epsilon = 1.0  # coupling
 T = 1.0  # CHANGE THIS VALUE TO EXPLORE DIFFERENT REGIMES 
-steps = 20*L*L #MC sweeps
+steps = 2*L*L #MC sweeps
 
 # Initialize lattice with random angles [0, pi) (nematic symmetry)
 theta = np.random.uniform(0, np.pi, size=(L, L))
@@ -478,6 +488,8 @@ theta = np.random.uniform(0, np.pi, size=(L, L))
 rands = np.random.randint(0, L, (steps,2))
 new_angles = np.random.uniform(0, np.pi,steps)
 rs = np.random.uniform(0,1,size=steps)
+snapshots= []
+
 for step in range(steps):
     i, j = rands[step]
     new_angle = new_angles[step]
@@ -485,13 +497,21 @@ for step in range(steps):
     if dE < 0 or rs[step] < np.exp(-dE / T):
         theta[i, j] = new_angle
 
+    if step%100==0:
+        snapshots.append(theta.copy())
+
 
 plt.matshow(theta, cmap='hsv', vmin=0,vmax = np.pi)
-plt.colorbar()
+plt.colorbar(label="angle $\\theta$")
 plt.show()
 
-
 ```
+
+<!-- # for conversion to javascript
+snapshots = [arr.tolist() for arr in snapshots]
+from pyodide.ffi import to_js
+snapshots = to_js(snapshots) -->
+
 ::: {.callout-important appearance="simple"}
 ## Activity
 

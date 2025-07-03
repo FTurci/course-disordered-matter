@@ -108,6 +108,7 @@ At any instant, the configuration (arrangement) of the polymer is one realisatio
 ```{pyodide}
 #| autorun: true
 #| caption: "Example of freely-jointed chain as a random walk in 3d"
+
 import numpy as np
 
 # Play with the parameters (e.g. large and small N) and explore different conformations in 3D
@@ -137,7 +138,9 @@ N, b = 100, 1
 x, y, z = generate_free_polymer(N, b)
 fig = plotting.plotly_3d(x, y, z, name=f"{N}-step polymer")
 fig = plotting.plot_vector([x[0],x[-1]],[y[0],y[-1]],[z[0],z[-1]],fig, name="end-to-end vector")
-fig.show()
+# ensure plotting works by encapsulating it in HTML
+from IPython.display import HTML
+HTML(fig.to_html(include_plotlyjs="cdn"))
 ```
 
 
