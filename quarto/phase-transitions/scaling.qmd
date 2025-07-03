@@ -54,7 +54,7 @@ Then $$F(t,h)=t^{1/a}F(1,t^{-b/a}h)$$ where our choice of $\lambda$
 ensures that $F$ on the rhs is now a function of a single variable
 $t^{-b/a}h$.
 
-Now, as stated in @sec:background, the free energy provides the route to all
+Now, as stated in @sec-background, the free energy provides the route to all
 thermodynamic functions of interest. An expression for the magnetisation
 can be obtained simply by taking the field derivative of $F$ (cf. @fig-thermo)
 

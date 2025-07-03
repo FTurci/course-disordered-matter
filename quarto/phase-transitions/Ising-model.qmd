@@ -1,4 +1,5 @@
 
+
 # The Ising model: the prototype model for a phase transition {#sec:models}
 
 In order to probe the properties of the critical region, it is common to
@@ -132,6 +133,134 @@ leading to a zero average magnetisation, the 1D system is paramagnetic
 for all finite temperatures. *Exercise*: Explain why this argument works
 only in 1D.
 
+
+The animation below lets you explore qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitaviely, a python code is available.
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-fold: true
+#| code-summary: "Show python code"
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+from matplotlib.widgets import Slider
+
+# Number of spins
+N = 20  # updated from 15 to 20
+
+# Initialize spins (+1 or -1)
+spins = np.random.choice([-1, 1], size=N)
+
+# Initial temperature
+T = 2.0
+
+# Set up figure and axis for the spins
+fig, ax = plt.subplots(figsize=(10, 2))
+plt.subplots_adjust(bottom=0.25)  # make room for slider
+ax.set_xlim(-0.5, N - 0.5)
+ax.set_ylim(-1, 1)
+ax.axis('off')
+
+# Create text objects for each spin
+texts = []
+for i in range(N):
+    arrow = '↑' if spins[i] == 1 else '↓'
+    t = ax.text(i, 0, arrow, fontsize=24, ha='center', va='center')
+    texts.append(t)
+
+def update(frame):
+    """Perform Metropolis updates over all spins, then refresh display."""
+    global spins, T
+    for _ in range(N):
+        i = np.random.randint(N)
+        left = spins[(i - 1) % N]
+        right = spins[(i + 1) % N]
+        deltaE = 2 * spins[i] * (left + right)
+        # Metropolis criterion
+        if deltaE < 0 or np.random.rand() < np.exp(-deltaE / T):
+            spins[i] *= -1
+    # Update arrows on screen
+    for idx, t in enumerate(texts):
+        t.set_text('↑' if spins[idx] == 1 else '↓')
+    return texts
+
+# Create the animation with caching disabled and blit turned off
+ani = FuncAnimation(
+    fig,
+    update,
+    interval=200,
+    blit=False,
+    cache_frame_data=False
+)
+
+# Add a temperature slider
+ax_T = plt.axes([0.2, 0.1, 0.6, 0.03], facecolor='lightgray')
+slider_T = Slider(ax_T, 'Temperature T', 0.1, 5.0, valinit=T)
+
+def on_T_change(val):
+    """Callback to update T when the slider changes."""
+    global T
+    T = val
+
+slider_T.on_changed(on_T_change)
+
+# Show the plot (ani is kept in scope so it won't be deleted)
+plt.show()
+```
+
+
+
+<div id="ising" style="font-family: monospace; font-size:48px; letter-spacing:16px; margin-bottom:16px;"></div>
+<label>
+  Temperature T = <output id="Tval">2.0</output>
+  <input id="temp" type="range" min="0.1" max="5.0" step="0.1" value="2.0" style="vertical-align:middle;">
+</label>
+
+<script>
+(() => {
+  const N = 20;
+  let T = parseFloat(document.getElementById('temp').value);
+  let spins = Array.from({length: N}, () => Math.random() < 0.5 ? 1 : -1);
+  const container = document.getElementById('ising');
+  const outT = document.getElementById('Tval');
+  const slider = document.getElementById('temp');
+
+  // draw current configuration
+  function draw() {
+    container.textContent = spins.map(s => s > 0 ? '↑' : '↓').join('');
+  }
+
+  // one Metropolis sweep of N random flips
+  function step() {
+    for (let k = 0; k < N; k++) {
+      let i = Math.floor(Math.random() * N);
+      let left = spins[(i - 1 + N) % N],
+          right = spins[(i + 1) % N];
+      let dE = 2 * spins[i] * (left + right);
+      if (dE < 0 || Math.random() < Math.exp(-dE / T)) {
+        spins[i] *= -1;
+      }
+    }
+  }
+
+  // handle slider moves
+  slider.addEventListener('input', e => {
+    T = parseFloat(e.target.value);
+    outT.value = T.toFixed(1);
+  });
+
+  // kick off the animation loop
+  draw();
+  setInterval(() => {
+    step();
+    draw();
+  }, 400);
+})();
+</script>
+
+
+
 ### More general 1D spins systems: transfer matrix method
 
 Generally speaking one-dimensional systems lend themselves to a degree
@@ -202,3 +331,5 @@ The Ising model in 2D can also be solved exactly, as was done by Lars
 Onsager in 1940. The solution is extremely complicated and is regarded
 as one of the pinnacles of statistical mechanics. In 3D no exact
 solution is known.
+
+T

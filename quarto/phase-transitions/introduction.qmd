@@ -1,4 +1,4 @@
-# 1. Introduction to phase behaviour
+# Introduction to phase behaviour
 
 
 A wide variety of physical systems undergo rearrangements of their
@@ -18,9 +18,9 @@ reflecting the large number density difference between the states either side
 of the transition. However the abruptness of this transition can be
 reduced by applying pressure. At one particular pressure and temperature
 the discontinuity in the density difference between the two states
-vanishes. These conditions of pressure and temperature serve to locate
+vanishes and the two phases coalesce. These conditions of pressure and temperature serve to locate
 the critical point for the fluid. We define the density difference $\rho_{liq}-\rho_{vap}$ 
-to be the order parameter for the liquid-gas phase transition.
+to be the order parameter for the liquid-gas phase transition. We shall meet order parameters for other, more complex, systems in @sec-landau-theory,
 
  ![Phase diagram of a simple fluid (schematic)](Figs/ljpd1.png){width=80% fig-align="center" #fig-isingpd}
 
