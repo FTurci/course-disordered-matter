@@ -3,14 +3,12 @@
 
 ## Observables and expectation values 
 
-In seeking to describe near-critical phenomena, it is useful to have a
-quantitative measure of the difference between the phases coalescing at
-the critical point: this is the role of the *order parameter*, $Q$. In
+In seeking to describe phase transition and critical phenomena, it is useful to have a quantitative measure of the difference between the phases: this is the role of the *order parameter*, $Q$. In
 the case of the fluid, the order parameter is taken as the difference
 between the densities of the liquid and vapour phases. In the
 ferromagnet it is taken as the magnetisation. As its name suggest, the
 order parameter serves as a measure of the kind of orderliness that sets
-in when the temperature is cooled below a critical temperature.
+in when the temperature is cooled below a critical temperature. 
 
 Our first task is to give some feeling for the principles which underlie
 the ordering process. The probability $p_a$ that a physical system at
@@ -55,8 +53,7 @@ arrangements having magnetisation $+1$, or $-1$.
 
 Now consider the high temperature limit. The enhanced weight that the
 fully ordered arrangement carries in the sum of
-@eq-op by
-virtue of its low energy, is now no longer sufficient to offset the fact
+@eq-op by virtue of its low energy, is now no longer sufficient to offset the fact
 that arrangements in which $Q_a$ has some intermediate value, though
 each carry a smaller weight, are vastly greater in number. A little
 thought shows that the arrangements which have essentially zero
