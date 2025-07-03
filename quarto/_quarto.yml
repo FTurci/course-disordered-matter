@@ -3,8 +3,8 @@ project:
   output-dir: ../docs  # Uncomment if you want to specify output directory
   # render:
     # - "Week*/*"
-resources:
-  - soft-matter/figs/*.pdb
+# resources:
+#   - soft-matter/figs/*.pdb
 
 book:
   page-navigation: true
@@ -100,3 +100,4 @@ format:
     pyodide:
         cell-options:
           autorun: true
+    

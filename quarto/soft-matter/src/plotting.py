@@ -135,3 +135,5 @@ def plot_vector(x,y,z,fig, name="",arrowsize=1.0):
         showscale=False,
     ))
     return fig
+
+

@@ -1,5 +1,4 @@
 import numpy as np
-import tqdm
 from numpy.random import rand
 import matplotlib.pyplot as plt
 
@@ -126,7 +125,7 @@ class IsingModel:
         beginning = config.copy()
         # Equilibration phase
         print("equilibration")
-        for i in tqdm.tqdm(range(self.equilibration)):
+        for i in range(self.equilibration):
             self.numpy_mcmove( config, iT)
 
         
