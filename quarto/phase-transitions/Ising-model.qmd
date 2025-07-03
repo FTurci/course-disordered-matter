@@ -133,13 +133,15 @@ leading to a zero average magnetisation, the 1D system is paramagnetic
 for all finite temperatures. *Exercise*: Explain why this argument works
 only in 1D.
 
-The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitatively, a python code is available.
+The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available.
 
 ```{python}
 #| echo: true
 #| eval: false
 #| code-fold: true
 #| code-summary: "Show python code"
+
+#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
@@ -176,7 +178,7 @@ def update(frame):
         left = spins[(i - 1) % N]
         right = spins[(i + 1) % N]
         deltaE = 2 * spins[i] * (left + right)
-        # Metropolis criterion
+        # Metropolis criterion ensures configurations appear with the correct Boltzmann probability
         if deltaE < 0 or np.random.rand() < np.exp(-deltaE / T):
             spins[i] *= -1
     # Update arrows on screen
@@ -331,4 +333,3 @@ Onsager in 1940. The solution is extremely complicated and is regarded
 as one of the pinnacles of statistical mechanics. In 3D no exact
 solution is known.
 
-T
