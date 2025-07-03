@@ -138,15 +138,13 @@ Mathematically, this means that the distribution $X_N$ of aggregates as a functi
 
 This behavior underlies the concept of the **critical micelle concentration (CMC)**: below the CMC, almost all surfactant molecules are present as monomers; above the CMC, additional surfactant molecules predominantly form micelles of size $N^*$, while the monomer concentration remains nearly constant.
 
-
-Above a so-called critical micellar concentration (cmc) surfactants self-assemble in solution spontaneously into larger structures. (In the following we will consider aqueous solutions, although the arguments also apply to other polar or non-polar (organic) solvents.) This allows the hydrophobic parts to crowd together while being 'shielded' by the hydrophilic heads. The density of the hydrophobic cores is very similar to the density of fluid hydro-carbons and the random arrangements of the chains resemble closely a fluid structure.
+Above the critical micellar concentration surfactants self-assemble in solution spontaneously into larger structures. (In the following we will consider aqueous solutions, although the arguments also apply to other polar or non-polar (organic) solvents.) This allows the hydrophobic parts to crowd together while being 'shielded' by the hydrophilic heads. The density of the hydrophobic cores is very similar to the density of fluid hydro-carbons and the random arrangements of the chains resemble closely a fluid structure.
 
 The surfactant assemblies are not held together by chemical bonds, but only by weak interactions ( $\lesssim k B T$ ). Their existence and properties are thus determined by a delicate balance between different effects, such as the transfer of hydrophobic chains into the core, interactions between the head group and the entropy of mixing. Small changes in control parameters, for example temperature, salt concentration or pH , thus have large effects on the characteristics of the surfactant aggregates. Nevertheless, for given conditions, they have very well-defined properties (shape, size etc.).
 
 ### Shape of surfactant assemblies
 
 Surfactants spontaneously self-assemble into a variety of different structures. We use packing considerations to understand and predict the shape of surfactant aggregates, leveraging what we have learned on colloids, polymers and liquid crystals.
-
 
 We construct a geometric model where a surfactant molecule is described using the following parameters:
 
