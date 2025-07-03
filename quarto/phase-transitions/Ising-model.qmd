@@ -133,7 +133,7 @@ leading to a zero average magnetisation, the 1D system is paramagnetic
 for all finite temperatures. *Exercise*: Explain why this argument works
 only in 1D.
 
-The animation below lets you explore qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitaviely, a python code is available.
+The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitatively, a python code is available.
 
 ```{python}
 #| echo: true
@@ -146,7 +146,7 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.widgets import Slider
 
 # Number of spins
-N = 20  # updated from 15 to 20
+N = 20 
 
 # Initialize spins (+1 or -1)
 spins = np.random.choice([-1, 1], size=N)
