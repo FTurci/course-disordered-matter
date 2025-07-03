@@ -8,8 +8,6 @@ format: html
         # - plotly
         # - nbformat
         # - pandas
-resources:
-    - src/plotting.py
 bibliography: references.bib
 ---
 
@@ -375,4 +373,8 @@ viewof simulation = {
 }
 
 ```
+
+
+
+
 ## References {.unnumbered}
