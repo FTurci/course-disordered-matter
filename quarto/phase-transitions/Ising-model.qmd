@@ -66,7 +66,7 @@ island size is a measure of the correlation length $\xi$: the excess of black ov
 
 
 
-[An interactive Monte Carlo simulation of the Ising model](https://physics.weber.edu/schroeder/software/demos/isingmodel.html) demonstrates the phenonomenology,  By altering the temperature you will be able to observe
+[An interactive Monte Carlo simulation of the Ising model](https://physics.weber.edu/schroeder/software/demos/isingmodel.html) demonstrates the phenomenology,  By altering the temperature you will be able to observe
 for yourself how the spin arrangements change as one traverses the
 critical region. Pay particular attention to the configurations near the
 critical point. They have very interesting properties. We will return to
@@ -141,7 +141,7 @@ The animation below lets you see qualitatively how the typical number of domain 
 #| code-fold: true
 #| code-summary: "Show python code"
 
-#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions
+#Monte Carlo simulation of the 1d Ising chain with periodic boundary conditions
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation

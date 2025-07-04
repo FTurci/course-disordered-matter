@@ -3,7 +3,7 @@ title: "Arrested states"
 
 ---
 
-In most of these (web) pages we have been considering systems implicitly (or explicitily)  in thermal equilibrium with a surronding environemnt. This is typically some kind of dispersion medium (a solvent). But we halso also been more demanding: we have required that the dispersed phase (the colloids, the polymers the anisotropic particles of liquid crystals) have explored exaustively their free energy options and that they are truly in some macrostate corresponding to a global, stable thermal equilibrium state.
+In most of these (web) pages we have been considering systems implicitly (or explicitly)  in thermal equilibrium with a surrounding environemnt. This is typically some kind of dispersion medium (a solvent). But we also also been more demanding: we have required that the dispersed phase (the colloids, the polymers the anisotropic particles of liquid crystals) have explored exhaustively their free energy options and that they are truly in some macrostate corresponding to a global, stable thermal equilibrium state.
 
 Equilibrium signifies time reversibility.
 
@@ -13,13 +13,13 @@ At equilibrium, the entropy change $\Delta S$ of a system between two times $t_1
 
 
 
-Many fluids, whether simple liquids like argon or complex liquids such as colloids and polymers, can be quenched to temperatures well below their equilibrium freezing point without crystallization occurring on experimental timescales. In thermodynamic terms this is interpreted as a failure of the system to reach its true equilibrium (minimum free energy) state, namely the ordered crystalline phase. Such out-ofequilibrium systems are known as glasses. In terms of their structure (eg as measured by a radial distribution function, $g(r)$, they are practically indistinguishable from a liquids, i.e. they exhibit some short ranged order, but no long ranged order. However, their dynamic behaviour is quite different from that of liquids; glasses exhibit very slow relaxation because molecules cannot easily diffuse. As a result, glasses do not flow (on experimental timescales) and therefore their mechanical properties, i.e. their response to stress and shearing, is more akin to that of solids.
+Many fluids, whether simple liquids like argon or complex liquids such as colloids and polymers, can be quenched to temperatures well below their equilibrium freezing point without crystallization occurring on experimental timescales. In thermodynamic terms this is interpreted as a failure of the system to reach its true equilibrium (minimum free energy) state, namely the ordered crystalline phase. Such out-of-equilibrium systems are known as glasses. In terms of their structure (eg as measured by a radial distribution function, $g(r)$, they are practically indistinguishable from a liquids, i.e. they exhibit some short ranged order, but no long ranged order. However, their dynamic behaviour is quite different from that of liquids; glasses exhibit very slow relaxation because molecules cannot easily diffuse. As a result, glasses do not flow (on experimental timescales) and therefore their mechanical properties, i.e. their response to stress and shearing, is more akin to that of solids.
 
 ### Glass forming systems
 
 Glasses may be formed if the cooling rate is so fast that the liquid does not have time to crystallize , or alternatively because the molecules have some feature to their structure or bonding that inhibits the formation of a crystalline phase. Many glass forming materials are found in nature. Below we describe just a few.
 
-Elements: Sulphur, Selenium and Phosporous readily form glasses.
+Elements: Sulphur, Selenium and Phosphorous readily form glasses.
 Metallic alloys: liquid metals can form glasses if quenched very rapidly ( $10^{6} \mathrm{~K} \mathrm{~s}^{-1}$ ). Such glasses find applications in recording heads and electrical transformers.
 Polymer glasses: Due to entanglement effects, polymers form glasses very easily. Examples from everyday life are polycarbonates (eyeglasses, shatterproof windows) and polymethacrylate (plastic pipes and tubes).
 Oxide glasses: Familiar examples are $\mathrm{SiO}_{2}, \mathrm{Na}_{2} \mathrm{O}$ and CaO (all components of window glass).
@@ -61,7 +61,7 @@ At the glass transition temperature, the curve exhibits a well defined discontin
 
 ### A simple picture of the glass transition
 
-Theories of the glass transition are a matter of intense current research and it is probably fair to say that the detailed physics is still not well understood in a comprehensive fashion. Nevertheless simple models offer some insight, in qualitative if not quantitative agreement with experiment. One such theory is based on the idea of cooperativity. In a liquid at high temperatures, a molecule can diffuse simply by moving to occupy the space made available by the random local motions of its neighbours. At low temperatures and high volume fractions, the local motion of neighbours is insufficent to allow diffusion. Instead a number of neighbours must move cooperatively in order to make space for a molecule to move. The minimum number of molecules that have to move in unison in order for diffusion of a molecule to take place gives rise to the concept of a cooperative rearranging region. As the temperature is lowered the size of this region increases, diverging (with the viscosity) at the Vogel-Fulcher temperature $T_{0}$
+Theories of the glass transition are a matter of intense current research and it is probably fair to say that the detailed physics is still not well understood in a comprehensive fashion. Nevertheless simple models offer some insight, in qualitative if not quantitative agreement with experiment. One such theory is based on the idea of cooperativity. In a liquid at high temperatures, a molecule can diffuse simply by moving to occupy the space made available by the random local motions of its neighbours. At low temperatures and high volume fractions, the local motion of neighbours is insufficient to allow diffusion. Instead a number of neighbours must move cooperatively in order to make space for a molecule to move. The minimum number of molecules that have to move in unison in order for diffusion of a molecule to take place gives rise to the concept of a cooperative rearranging region. As the temperature is lowered the size of this region increases, diverging (with the viscosity) at the Vogel-Fulcher temperature $T_{0}$
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=597&width=621&top_left_y=1152&top_left_x=295)
 ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=577&width=604&top_left_y=1162&top_left_x=1086)
 
