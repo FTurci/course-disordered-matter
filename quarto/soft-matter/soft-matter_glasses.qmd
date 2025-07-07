@@ -47,6 +47,7 @@ Analytically, percolation is tractable and exhibits universal critical exponents
 You can play with percolation on a squared lattice with the code below.
 
 ```{pyodide}
+#| autorun: true
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import label
@@ -89,6 +90,8 @@ plt.show()
 
 
 ```{pyodide}
+#| autorun: true 
+
 ps = np.linspace(0.1, 1.0, 50)
 L = 500
 largest_sizes = []
@@ -108,6 +111,36 @@ plt.title('Percolation transition in 2D')
 plt.show()
 ```
 
+The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical $p_c$, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparitively smaller fraction of the system is require in order to find a percolating path.
+
+| Lattice Type    | Dimension | Coordination $z$ | $p_c^{site}$ | $p_c^{bond}$ |
+| --------------- | --------- | ---------------- | ------------ | ------------ |
+| Square          | 2         | 4                | 0.592746     | **0.5**      |
+| Triangular      | 2         | 6                | **0.5**      | 0.347296     |
+| Honeycomb       | 2         | 3                | 0.697043     | **0.652703** |
+| Kagome          | 2         | 4                | 0.6527       | 0.5244       |
+| Union Jack      | 2         | 8                | 0.379        | 0.429        |
+| Cubic           | 3         | 6                | 0.3116       | 0.2488       |
+| FCC             | 3         | 12               | 0.199        | 0.120        |
+| BCC             | 3         | 8                | 0.245        | 0.180        |
+| Diamond         | 3         | 4                | 0.43         | 0.389        |
+| Hypercubic (4D) | 4         | 8                | 0.197        | 0.160        |
+| Hypercubic (5D) | 5         | 10               | 0.141        | 0.118        |
+| Hypercubic (6D) | 6         | 12               | 0.109        | 0.094        |
+| Hypercubic (7D) | 7         | 14               | 0.091        | 0.079        |
+| Hypercubic (8D) | 8         | 16               | 0.078        | 0.069        |
+
+
+Instead, othe rproperties of percolation are **universal**: these are the critical exponents of observables on the lattice,and do not depend on the lattice detail, such as the probability to find a site in a percolating cluster $P_{\infty}(p)\propto (p-p_c)^{\beta}$
+
+| Dimension $d$   | $\beta$ (Percolation) |
+| --------------- | --------------------- |
+| 2               | **5/36 ≈ 0.1389**     |
+| 3               | ≈ 0.41                |
+| 4               | ≈ 0.65                |
+| 5               | ≈ 0.81                |
+| 6               | ≈ 0.96                |
+| ≥6 (Mean-field) | **1**                 |
 
 
 In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity.
@@ -122,9 +155,42 @@ In the case of physical gels, percolation is a required ingredient for mechanica
 A way to realise robust physical gels in experiments is to use colloid-polymer mixtures, which we have seen previously when we talked about depletion. When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called **sticky** interaction, ideally suited to form sobust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.
 
 The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.
+```{mermaid}
+mindmap
+  root((Phase Transitions))
+    TYPES
+      First order transitions
+        e.g., melting, boiling
+      Second-order transitions
+        e.g., ferromagnetic transition
+      Continuous vs. discontinuous
+      Order parameters
+      Symmetry breaking
+    CRITICALITY
+      Critical points
+        Divergence of correlation length
+      Universality classes
+      Scaling laws
+      Critical exponents
+    PHASE TRANSITION DYNAMICS
+      Nucleation and growth
+      Spinodal decomposition
+      Quenching and coarsening
+    MODELS
+      Ising model
+      Potts model
+      XY model
+      Percolation theory
+      Mean-field theory
+    METHODS
+      Renormalization group (RG)
+      Monte Carlo simulations
+      Molecular dynamics
+
+```
 
 
-![Phase diagrams of colloid-polymer mixtures, from @anderson2002insights ](./figs/natureGels.png)
+![Phase diagrams of colloid-polymer mixtures, from @anderson2002insights.b]
 
 Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the **square-well** model,
 
@@ -211,7 +277,7 @@ plt.ylim(-2,5)
 plt.show()
 ```
 
-#### Pair correlations
+#### Pair correlations {.unnumbered}
 
 In many situation, pair-wise correlation functions are sufficient to capture gel formation. Both the radial distribution function and the structure factor are able to describe gel formation, but they focus (and are accurate) in different regimes:
 
@@ -234,6 +300,83 @@ The exponent $D_f$ is related to the spatial scaling of mass with size in the fr
 
 Thus, by analyzing the low-$q$ behavior of $S(q)$, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.
 
+::: {.callout-note collapse="true"}
+
+# Measuring fractal dimensions: the box-counting algorithm
+
+Fractal dimensions are in practice quite tricky to measure. 
+A common method is the **box-counting algorithm**:
+
+1. Overlay a grid of boxes of size $\ell$ over the structure (e.g., a cluster or network).
+2. Count the number $N(\ell)$ of boxes that contain any part of the structure.
+3. Repeat for different box sizes $\ell$.
+4. Plot $\log N(\ell)$ versus $\log(1/\ell)$. For a fractal, this plot is linear over some range, and the slope gives the fractal dimension $D_f$:
+$$
+N(\ell) \sim \ell^{-D_f}
+$$
+
+This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.
+
+
+Below, illustrate this using a known fractal, the [Sierpinski carpet](https://en.wikipedia.org/wiki/Sierpiński_carpet){target="_blank"}, whose fractal dimensions is exactly $D_f = \log{8}/\log{3}\approx 1.8929$
+
+```{python}
+# Example: Box-counting fractal dimension for the Sierpinski carpet
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+def sierpinski_carpet(n):
+    """Generate a Sierpinski carpet of order n as a 2D boolean array."""
+    size = 3**n
+    carpet = np.ones((size, size), dtype=bool)
+    for i in range(n):
+        step = 3**i
+        for x in range(0, size, 3*step):
+            for y in range(0, size, 3*step):
+                carpet[x+step:x+2*step, y+step:y+2*step] = False
+    return carpet
+
+def box_count(img, box_sizes):
+    """Count number of boxes containing any part of the structure for each box size using histogramdd."""
+    N = []
+    coords = np.argwhere(img)
+    for box in box_sizes:
+        bins = [img.shape[0] // box, img.shape[1] // box]
+        # Assign each coordinate to a box
+        hist, _ = np.histogramdd(coords, bins=bins, range=[[0, img.shape[0]], [0, img.shape[1]]])
+        N.append(np.count_nonzero(hist))
+    return np.array(N)
+
+# Generate Sierpinski carpet
+order = 5
+carpet = sierpinski_carpet(order)
+
+# Box sizes (powers of 3)
+box_sizes = [3**i for i in range(order, 0, -1)]
+N_boxes = box_count(carpet, box_sizes)
+
+# Plot Sierpinski carpet
+plt.figure(figsize=(4,4))
+plt.imshow(carpet, cmap='binary')
+plt.title('Sierpinski carpet (order %d)' % order)
+plt.axis('off')
+plt.show()
+
+# Box-counting plot
+plt.figure(figsize=(5,4))
+plt.plot(np.log(1/np.array(box_sizes)), np.log(N_boxes), 'o-', label='Box counting')
+# Linear fit for slope (fractal dimension)
+slope, intercept = np.polyfit(np.log(1/np.array(box_sizes)), np.log(N_boxes), 1)
+plt.plot(np.log(1/np.array(box_sizes)), slope*np.log(1/np.array(box_sizes))+intercept, '--', label=f'Fit: $D_f$={slope:.4f}')
+plt.xlabel(r'$\log(1/\ell)$')
+plt.ylabel(r'$\log N(\ell)$')
+plt.title('Box-counting for Sierpinski carpet')
+plt.legend(frameon=False)
+plt.show()
+```
+
+:::
 
 
 {{< video https://www.youtube.com/watch?v=QOa2qhDdywc >}}
