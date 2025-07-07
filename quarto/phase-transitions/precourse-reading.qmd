@@ -1,6 +1,5 @@
 
-# Introduction
-
+# Why we need statistical mechanics
 
 Complex disordered systems consist of vast numbers of interacting components — on the order of $\sim 10^{23}$. While these interactions can give rise to intriguing emergent behaviour, they also make such systems difficult to study by exact analytical means - one can't write down and solve Newton's equation for very large numbers of particles. To tackle this challenge, we rely on the tools of Statistical Mechanics, which you were introduced to in your second year. Statistical Mechanics provides a framework for linking the microscopic properties of individual components to the macroscopic thermodynamic and dynamical behaviour of the system as a whole. In this section, we will review and introduce key concepts relevant to our study, with a particular focus on the free energy—an essential quantity that determines the equilibrium state of a system.
 

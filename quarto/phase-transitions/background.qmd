@@ -1,5 +1,5 @@
 
-# Background concepts {#sec-background}
+# Key concepts for phase transitions {#sec-background}
 
 ## Observables and expectation values 
 
@@ -14,6 +14,40 @@ Our first task is to give some feeling for the principles which underlie
 the ordering process. The probability $p_a$ that a physical system at
 temperature $T$ will have a particular microscopic arrangement
 (configuration), labelled $a$, of energy $E_a$ is
+
+```{mermaid}
+mindmap
+  root((Phase Transitions))
+    TYPES
+      First-order transitions
+        e.g., melting, boiling
+      Second-order transitions
+        e.g., ferromagnetic transition
+      Continuous vs. discontinuous
+      Order parameters
+      Symmetry breaking
+    CRITICALITY
+      Critical points
+        Divergence of correlation length
+      Universality classes
+      Scaling laws
+      Critical exponents
+    PHASE TRANSITION DYNAMICS
+      Nucleation and growth
+      Spinodal decomposition
+      Quenching and coarsening
+    MODELS
+      Ising model
+      Potts model
+      XY model
+      Percolation theory
+      Mean-field theory
+    METHODS
+      Renormalization group (RG)
+      Monte Carlo simulations
+      Molecular dynamics
+
+```
 
 $$
 p_a=\frac{1}{Z}e^{-E_a/k_BT}

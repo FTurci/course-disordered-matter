@@ -100,4 +100,3 @@ format:
     pyodide:
         cell-options:
           autorun: true
-    
