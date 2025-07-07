@@ -80,6 +80,8 @@ book:
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
+        - href: soft-matter/Solutions_to_problems.qmd
+          text: "Solutions"
     - part: "Experimental techniques"
 
   appendices:
