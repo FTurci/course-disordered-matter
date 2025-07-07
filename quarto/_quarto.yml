@@ -52,7 +52,9 @@ book:
          - text: "Dynamics of fluctuations"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
-           text: "Problems"   
+           text: "Problems" 
+         - href: phase-transitions/Solutions_to_problems.qmd
+           text: "Solutions"             
          - href: phase-transitions/assignment_October2025.qmd
            text: "First coursework assignment"                      
          - href: phase-transitions/live-test.qmd
@@ -80,8 +82,6 @@ book:
           text: "Readings"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
-        - href: soft-matter/Solutions_to_problems.qmd
-          text: "Solutions"
     - part: "Experimental techniques"
 
   appendices:
