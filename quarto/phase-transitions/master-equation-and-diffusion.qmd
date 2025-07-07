@@ -302,3 +302,71 @@ $$
 where $\nu_0$ is a constant.
 
 *Exercise:* Show that this gives the canonical distribution in steady state.
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+To show that this jump rate rule gives the canonical distribution in steady state, we assume the system reaches a steady-state probability distribution $P_A$ for state $A$ and apply the condition of detailed balance.
+
+Detailed balance requires:
+$$
+P_A \nu_{AB} = P_B \nu_{BA}
+$$
+
+Assume the canonical distribution:
+$$
+P_A = \frac{1}{Z} e^{-\beta E_A}, \quad P_B = \frac{1}{Z} e^{-\beta E_B}
+$$
+
+Now consider two cases for $\nu_{AB}$ and $\nu_{BA}$:
+
+**Case 1:** $E_B \leq E_A$
+
+Then:
+$$
+\nu_{AB} = \nu_0, \quad \nu_{BA} = \nu_0 e^{-\beta (E_A - E_B)}
+$$
+
+Substitute into the detailed balance condition:
+$$
+P_A \nu_0 = P_B \nu_0 e^{-\beta (E_A - E_B)}
+$$
+
+Cancel $\nu_0$:
+$$
+P_A = P_B e^{-\beta (E_A - E_B)}
+$$
+
+Use canonical form:
+$$
+\frac{1}{Z} e^{-\beta E_A} = \frac{1}{Z} e^{-\beta E_B} e^{-\beta (E_A - E_B)} = \frac{1}{Z} e^{-\beta E_A}
+$$
+
+Verified.
+
+**Case 2:** $E_B > E_A$
+
+Then:
+$$
+\nu_{AB} = \nu_0 e^{-\beta (E_B - E_A)}, \quad \nu_{BA} = \nu_0
+$$
+
+Substitute:
+$$
+P_A \nu_0 e^{-\beta (E_B - E_A)} = P_B \nu_0
+$$
+
+Cancel $\nu_0$:
+$$
+P_A e^{-\beta (E_B - E_A)} = P_B
+$$
+
+Again using canonical form:
+$$
+\frac{1}{Z} e^{-\beta E_A} e^{-\beta (E_B - E_A)} = \frac{1}{Z} e^{-\beta E_B} = P_B
+$$
+
+Verified.
+
+Hence, in both cases the detailed balance condition is satisfied with the canonical distribution, and the steady state is indeed the canonical distribution.
+:::

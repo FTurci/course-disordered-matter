@@ -133,7 +133,7 @@ leading to a zero average magnetisation, the 1D system is paramagnetic
 for all finite temperatures. *Exercise*: Explain why this argument works
 only in 1D.
 
-The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available.
+The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you'd lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available. You will learn about Monte Carlo simulation in the coursework and in later parts of the course. 
 
 ```{python}
 #| echo: true
@@ -141,7 +141,7 @@ The animation below lets you see qualitatively how the typical number of domain 
 #| code-fold: true
 #| code-summary: "Show python code"
 
-#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions
+# Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
