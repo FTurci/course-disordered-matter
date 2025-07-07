@@ -35,8 +35,8 @@ Physical gels differ from chemical gels, where the network is formed by irrevers
 
 The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from **percolation theory**. The mechanical rigidity of the gel arises when this cluster forms, leading to a dramatic increase in viscosity and the emergence of an elastic response.
 
-
-### Percolation
+::: {.callout-note collapse="true"}
+## Percolation
 
 Percolation is the study of an apparently innocent mathematical problem: take a square grid if $L\times L$ sites and randomly label $N$ of them; how does the likelihood of forming a cluster that spans across the grid (i.e. *percolates*) depend on the probability $p=N/L^2$ of having a labelled square?
 
@@ -131,7 +131,7 @@ The following table illustrates that various values of the critical percolation 
 | Hypercubic (8D) | 8         | 16               | 0.078        | 0.069        |
 
 
-Instead, othe rproperties of percolation are **universal**: these are the critical exponents of observables on the lattice,and do not depend on the lattice detail, such as the probability to find a site in a percolating cluster $P_{\infty}(p)\propto (p-p_c)^{\beta}$
+Instead, other properties of percolation are **universal**: these are the critical exponents of observables on the lattice,and do not depend on the lattice detail, such as the probability to find a site in a percolating cluster $P_{\infty}(p)\propto (p-p_c)^{\beta}$
 
 | Dimension $d$   | $\beta$ (Percolation) |
 | --------------- | --------------------- |
@@ -142,6 +142,8 @@ Instead, othe rproperties of percolation are **universal**: these are the critic
 | 6               | ≈ 0.96                |
 | ≥6 (Mean-field) | **1**                 |
 
+
+:::
 
 In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity.
 
@@ -248,7 +250,9 @@ plt.show()
 
 In many situation, pair-wise correlation functions are sufficient to capture gel formation. Both the radial distribution function and the structure factor are able to describe gel formation, but they focus (and are accurate) in different regimes:
 
-The radial distribution function $g(r)$ has best statistics at short distances, capturing the features of the clusters that form the branched network
+The radial distribution function $g(r)$ has best statistics at short distances, capturing the features of the clusters that form the branched network.
+
+![The changes in the radial distribution fucntion $g(r)$ as time evolves and the frozen structure of a simulated colloidal gel emerges. The systems is at an overall dilute concetration, so clusters appear as very sharp peaks at short distances, and their structure in terms of nearest and second-nearest neighbour shells are reflected in the first few peaks. From @griffiths2017local ](./figs/grtime.svg){width=60%}
 
 
 In gels near the percolation threshold, the structure factor $S(q)$ exhibits **scale-free (power-law) behavior** at low $q$:
@@ -262,6 +266,8 @@ where $D_f$ is the **fractal dimension** of the gel network. This power-law regi
 - For $q$ much smaller than the inverse cluster size, $S(q)$ flattens (finite-size effects).
 - For intermediate $q$, $S(q) \sim q^{-D_f}$, indicating fractal geometry.
 - For large $q$, $S(q)$ reflects local (non-fractal) structure.
+
+![The same changes of the previous figures as seen in changes in the structure factor $S(q)$ as time evolves and the frozen structure of a colloidal gel emerges. At small q, a chracteristic power law behaviour emerges, while at higher q the mistructure changes are subtly capture by the reorganisation or splitting of the peaks.  ](./figs/sq_time.svg){width=60%}
 
 The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. Typical values for percolation clusters in 3D are $D_f \approx 2.5$.
 
@@ -350,11 +356,11 @@ plt.show()
 
 ### Arrested spinodal scenario
 
-Another important route to gelation in soft matter systems is the so-called **arrested spinodal decomposition** scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via spinodal decomposition. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
+But how do physical gels come about? A viable scenario is the so-called **arrested spinodal decomposition** scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via spinodal decomposition. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
 
 This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, "frozen in" by the arrest of particle motion.
 
-Key features:
+For the arested spinodal scenario to hold, the system evolves following these steps:
 - The system is quenched inside the spinodal region, where spontaneous fluctuations grow.
 - Domains of different densities form, but the dense domains become dynamically arrested before macroscopic phase separation completes.
 - The final structure is a bicontinuous, percolating network with solid-like mechanical properties.
