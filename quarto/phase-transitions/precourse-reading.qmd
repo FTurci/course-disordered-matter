@@ -1,10 +1,15 @@
 
+# Introduction
+
+
+Complex disordered systems consist of vast numbers of interacting components — on the order of $\sim 10^{23}$. While these interactions can give rise to intriguing emergent behaviour, they also make such systems difficult to study by exact analytical means - one can't write down and solve Newton's equation for very large numbers of particles. To tackle this challenge, we rely on the tools of Statistical Mechanics, which you were introduced to in your second year. Statistical Mechanics provides a framework for linking the microscopic properties of individual components to the macroscopic thermodynamic and dynamical behaviour of the system as a whole. In this section, we will review and introduce key concepts relevant to our study, with a particular focus on the free energy—an essential quantity that determines the equilibrium state of a system.
+
 ## Ensembles and free energies
 
 Statistical mechanics can be formulated in a variety of ensembles reflecting the relationship between the system and its environment. In what follows we summarise the formalism, focussing on the case of a particle fluid. Analogous equations apply to lattice spin models (see lectures and the book by Yeomans).  Key ensembles are:
 
 
-## Microcanonical ensemble 
+### Microcanonical ensemble 
 
 Applies to a system of $N$ particles (or spins) in a fixed volume $V$ having adiabatic walls so that the internal energy $E$ is constant. Denoted as constant-$NVE$.  Let $\Omega$ be the number of (micro)states having the prescribed energy: 
 
@@ -20,7 +25,7 @@ $$
 
 where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for defining the entropy, but is little used in practice.
 
-## Canonical ensemble {#sec-canonical}
+### Canonical ensemble {#sec-canonical}
 
 Applies to a system of $N$ particles in a fixed volume $V$ and coupled to a heat bath at temperature $T$. Denoted as constant-$NVT$. 
 A central quantity is the *partition function*
@@ -48,7 +53,7 @@ where $E$ is the average internal energy. In minimising the free energy, the sys
 The temperature plays the role of arbiter, favouring high entropy at high $T$, and low energy at low $T$. 
 The canonical ensemble is usually used to describe systems such as magnets, or a fluid held at constant volume.  It is the ensemble we shall use most in this course. 
 
-## Grand canonical ensemble {#sec-grandcanonical}
+### Grand canonical ensemble {#sec-grandcanonical}
 
  Applies to a system with a variable number of particle in a fixed volume $V$ coupled to both a heat bath at temperature $T$ and a particle reservoir with chemical potential $\mu$ (which is the field conjugate to $N$). Denoted as constant-$\mu VT$.
 
@@ -60,7 +65,7 @@ $$
 and a state probability analogous to @eq-Pi holds. One can recast this in a form similar to @eq-ZNVT:
 
 $$
-Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm i}e^{-\beta {\cal H}_i},
+Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm all~states~i}e^{-\beta {\cal H}_i},
 $${#eq-ZmuVT}
 where ${\cal H}_i=E_i-\mu N$ is the form of the Hamiltonian in the grand canonical ensemble.
 
@@ -78,7 +83,7 @@ where $p$ is the pressure.
 
 The grand canonical ensemble is usually used to describe systems such as fluid connected to a particle reservoir. Sometimes for a magnet we consider the effects of an applied magnetic field, which is analogous to working in the grand canonical ensemble:  the magnetic field (which is conjugate to the magnetisation) plays a similar role to the chemical potential in a fluid.
 
-## Isothermal-isobaric ensemble
+### Isothermal-isobaric ensemble
 
 Applies to a system with a fixed number of particles $N$ that is coupled to a heat bath at temperature $T$ and a reservoir that exerts a constant pressure $p$ which allows the sample volume to fluctuate. Denoted as constant-$NpT$.
 
@@ -136,14 +141,83 @@ $$
 We can now show that this result is consistent with the definition of $F_{NpT}$ in terms of the partition function. Write
 
 $$
-Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_{all~states}e^{-\beta (p V_i+E_i)}
+Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_0^\infty dV\sum_{all~states~i}e^{-\beta (p V_i+E_i)}
 $$
 
 Then 
 \begin{eqnarray}
 \left(\frac{\partial F}{\partial p}\right)_T&=&-\frac{1}{\beta}\left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T\nonumber \\
 \:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}}\frac{\partial Z_{NpT}}{\partial p}\right)_T\nonumber\\
-\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}} \int_{all~states}(-\beta V)e^{-\beta (p V_i+E_i)}  \right)_T\nonumber\\
+\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}} \int_0^\infty dV\int_{all~states}(-\beta V)e^{-\beta (p V_i+E_i)}  \right)_T\nonumber\\
 \:&=&\langle V\rangle_T\nonumber\:.
 \end{eqnarray}
 where in the last step we have used the fact that the probability of a state is defined to be $e^{-\beta (p V_i+E_i)}/Z_{NpT}$.
+
+*Exercise*. Repeat these manipulations to find an expression for the mean particle number $N$ in the grand canonical ensemble 
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+In the grand canonical ensemble (GCE), the relevant free energy is 
+
+$$
+F_{\mu VT} = E - TS - \mu N
+$$
+
+
+From the first law of thermodynamics changes in the internal energy are given by:
+
+$$
+dE = TdS - PdV + \mu dN=TdS+\mu dN
+$$
+where we have used the fact that $V$ is fixed in the GCE, so $dV=0$.
+
+Differentiating $F_{\mu VT}$:
+
+$$
+dF_{\mu VT} = dE - TdS - SdT - \mu dN - N d\mu
+= -S dT - N d\mu
+$$
+where for the last equality we have substitued for $dE$ from above. 
+
+Thus
+$$
+\left( \frac{\partial F_{\mu VT}}{\partial \mu} \right)_{T, V} = -N
+\quad \Rightarrow \quad
+\langle N \rangle = -\left( \frac{\partial F_{\mu VT}}{\partial \mu} \right)_{T, V}
+$$
+
+---
+Now consider the statistical mechanics route to calculate $\langle N\rangle$: 
+
+$$
+Z_{\mu V T} = \sum_{N=0}^{\infty} \sum_{\text{states}} e^{-\beta (E_{N,i} - \mu N)}
+$$
+
+The grand potential (now written as $F_{\mu VT}$) is:
+
+$$
+F_{\mu VT} = -k_B T \ln Z_{\mu V T}
+$$
+
+We now differentiate:
+
+$$
+\left( \frac{\partial F_{\mu VT}}{\partial \mu} \right)_T = -k_B T \left( \frac{1}{Z} \frac{\partial Z_{\mu V T}}{\partial \mu} \right)
+$$
+
+From the partition function
+
+$$
+\frac{\partial Z_{\mu V T}}{\partial \mu} = \sum_{N=0}^\infty \sum_{\text{states}} \left( \beta N \right) e^{-\beta (E_{N,i} - \mu N)} 
+$$
+
+Substitute:
+
+$$
+\left( \frac{\partial F_{\mu VT}}{\partial \mu} \right)_T = -k_B T \cdot \beta \cdot \frac{1}{Z_{\mu V T}} \sum_{N=0}^\infty \sum_{\text{states}} N\, e^{-\beta (E_{N,i} - \mu N)} = - \langle N \rangle
+$$
+
+where in the last step we have used the fact that in the GCE the Boltzmann probability of a microstate is defined to be $e^{-\beta (E_{N,i}-\mu N)}/Z_{\mu VT}$.
+
+:::
