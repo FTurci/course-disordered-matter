@@ -212,7 +212,7 @@ Aggregation of surfactants has been studied in various ways, including numerical
 
 Here below you can find a Javascript implementation of a lattice-gas-like model where surfactants are representes by chains of 3 sites on a lattice, with one site for the solvophilic head and two for the solvophobic tail.  Each lattice site is occupied by either an amphiphile segment or a solvent molecule.
 
-There are only nearest-meighbor interactions and the hamiltonian is simply
+There are only nearest-neighbor interactions and the hamiltonian is simply
 
 $$
 H=n_{\mathrm{HH}} E_{\mathrm{HH}}+n_{\mathrm{TS}} E_{\mathrm{TS}}+n_{\mathrm{HS}} E_{\mathrm{HS}}+\sum_{\mathrm{i}} E_{\mathrm{c}}

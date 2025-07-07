@@ -9,7 +9,7 @@ Spherical colloidal particles of radius 30 nm and density $1.35 \mathrm{~g} \mat
 
 ### Equipartition
 
-The equipartitioning theorem states that in thermal equilibrium each generalised co-ordinate which occurs in the total system energy only as a quadratic term contributes $(1 / 2) \mathrm{k}_{\mathrm{B}} \mathrm{T}$ to the mean energy of the system. Use the theorem to estimate the typical time it rakes atoms (or small molecules) in an atomic liquid to move distances of the order of their own size, i.e. estimate the relaxation time.
+The equipartition theorem states that in thermal equilibrium each generalised co-ordinate which occurs in the total system energy only as a quadratic term contributes $(1 / 2) \mathrm{k}_{\mathrm{B}} \mathrm{T}$ to the mean energy of the system. Use the theorem to estimate the typical time it rakes atoms (or small molecules) in an atomic liquid to move distances of the order of their own size, i.e. estimate the relaxation time.
 
 ### Gravitational length
 
