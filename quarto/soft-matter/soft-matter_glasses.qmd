@@ -155,42 +155,9 @@ In the case of physical gels, percolation is a required ingredient for mechanica
 A way to realise robust physical gels in experiments is to use colloid-polymer mixtures, which we have seen previously when we talked about depletion. When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called **sticky** interaction, ideally suited to form sobust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.
 
 The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.
-```{mermaid}
-mindmap
-  root((Phase Transitions))
-    TYPES
-      First order transitions
-        e.g., melting, boiling
-      Second-order transitions
-        e.g., ferromagnetic transition
-      Continuous vs. discontinuous
-      Order parameters
-      Symmetry breaking
-    CRITICALITY
-      Critical points
-        Divergence of correlation length
-      Universality classes
-      Scaling laws
-      Critical exponents
-    PHASE TRANSITION DYNAMICS
-      Nucleation and growth
-      Spinodal decomposition
-      Quenching and coarsening
-    MODELS
-      Ising model
-      Potts model
-      XY model
-      Percolation theory
-      Mean-field theory
-    METHODS
-      Renormalization group (RG)
-      Monte Carlo simulations
-      Molecular dynamics
-
-```
 
 
-![Phase diagrams of colloid-polymer mixtures, from @anderson2002insights.b]
+![Phase diagrams of colloid-polymer mixtures, from @anderson2002insights]
 
 Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the **square-well** model,
 
