@@ -1,0 +1,6 @@
+# Heat capacity per site
+# Temperature = 0.6499999999999999
+# L = 50
+C_per_site = 0.675603
+# Average Energy = -1864.433500
+# Average Energy^2 = 3476825.881500

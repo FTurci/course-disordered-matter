@@ -1,5 +1,37 @@
 ---
-title: "Untitled"
-format: html
+title: "Mindmaps"
 ---
 
+```{mermaid}
+mindmap
+  root((Phase Transitions))
+    TYPES
+      First-order transitions
+        e.g., melting, boiling
+      Second-order transitions
+        e.g., ferromagnetic transition
+      Continuous vs. discontinuous
+      Order parameters
+      Symmetry breaking
+    CRITICALITY
+      Critical points
+        Divergence of correlation length
+      Universality classes
+      Scaling laws
+      Critical exponents
+    PHASE TRANSITION DYNAMICS
+      Nucleation and growth
+      Spinodal decomposition
+      Quenching and coarsening
+    MODELS
+      Ising model
+      Potts model
+      XY model
+      Percolation theory
+      Mean-field theory
+    METHODS
+      Renormalization group (RG)
+      Monte Carlo simulations
+      Molecular dynamics
+
+```
