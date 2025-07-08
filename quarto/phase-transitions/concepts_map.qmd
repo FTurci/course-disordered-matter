@@ -1,37 +1,75 @@
 ---
-title: "Mindmaps"
+title: "Mindmaps: Linking concept and methods"
 ---
 
 ```{mermaid}
 mindmap
-  root((Phase Transitions))
+  root((Phase 
+  Transitions))
     TYPES
-      First-order transitions
-        e.g., melting, boiling
-      Second-order transitions
-        e.g., ferromagnetic transition
-      Continuous vs. discontinuous
       Order parameters
-      Symmetry breaking
+        Continuous vs. discontinuous
+          First-order transitions            
+            eg., colloidal freezing
+            eg., boiling,melting
+            eg., Isotropic-nematic transitions
+          Second-order transitions
+            eg., ferromagnetic transition
+            eg., Vapor-liquid criticality
+            eg., Demixing of binary colloids
     CRITICALITY
-      Critical points
-        Divergence of correlation length
-      Universality classes
-      Scaling laws
-      Critical exponents
+      Singularities
+        Diverging correlation length
+        Diverging response functions
+        Critical exponents
+          Scaling laws
+          Universality classes   
     PHASE TRANSITION DYNAMICS
-      Nucleation and growth
-      Spinodal decomposition
       Quenching and coarsening
+        Nucleation and growth
+        Spinodal decomposition
+        Simulation
+        Scattering experiments
     MODELS
       Ising model
-      Potts model
+      Lattice gas model
       XY model
-      Percolation theory
-      Mean-field theory
     METHODS
-      Renormalization group (RG)
+      Mean-field theory
+      Renormalization group
       Monte Carlo simulations
+      Finite-size scaling
       Molecular dynamics
+      Experiments
+        X-ray and neutron scattering
+        Microscopy
+        Rheology
+
+```
+
+
+```{mermaid}
+mindmap
+  root((Stochastic
+   processes))
+    Master equation
+      Diffusion equation
+        Mean squared displacement
+        Colloidal motion
+          Microscopy
+        Arrested states
+      Detailed Balance
+        Monte Carlo simulation
+    Langevin equation
+      Random walks
+        Brownian motion
+        Polymer configurations
+          Scaling of polymer dimensions
+      Driven Systems
+        Active Matter
+    Fluctuation dynamics
+      Temporal correlations
+      Response to perturbation
+        Fluctuation dissipation
 
 ```
