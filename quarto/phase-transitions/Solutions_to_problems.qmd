@@ -9,7 +9,7 @@ Consider the simplest elementary excitation that will destroy long range
 order in the 2d system: a domain wall of $N$ segments which divides an Ising system of $L\times L$ spins into a spin up and a spin down part. 
 
 
-![An $N$-step domain wall in an Ising lattice.](Figs/domainwall.001.png){width=40% #fig-domainwall}
+![An $N$-step domain wall in an Ising lattice.](Figs/domainwall.001.png){width=30% #fig-domainwall}
 
 The associated energy cost is $2JN \equiv \Delta E$. 
 
@@ -425,7 +425,7 @@ so $\gamma=1$.
 
 ### 9. Scaling equation of state
 
-**(a)** The equilibrium state corresponds to the minimum of the free energy $\partial F/\partial M=0$.
+The equilibrium state corresponds to the minimum of the free energy $\partial F/\partial M=0$.
 This gives the equation of state
 
 $$
@@ -433,7 +433,7 @@ H=2\tilde{a_2}tm+4a_4m^3
 $$
 (Note that we ignore the solution $H=m=0$ which corresponds to a maximum of the free energy.)
 
-**(b)** The near critical power law scaling of the magnetisation is $m\propto t^\beta$ and $m\propto H^{1/\delta}$.  To find a
+The near critical power law scaling of the magnetisation is $m\propto t^\beta$ and $m\propto H^{1/\delta}$.  To find a
 scaling form for the equation of state we need to transform to scaled variables $H/m^\delta$ and $t/m^{1/\beta}$. We can get 
 a scaling equation in terms of these variables by dividing through the equation of state by $m^3$, so that
 
@@ -443,7 +443,7 @@ $$
 
 Hence $\delta=3$ and $\beta=1/2$. 
 
-**(c)** The choice of scale $a_4=1/4$ and $\tilde{a_2}=1/2$ yields the given form of the scaling function.
+The choice of scale $a_4=1/4$ and $\tilde{a_2}=1/2$ yields the given form of the scaling function.
 
 ---
 
@@ -512,7 +512,56 @@ into the 4th scaling relation gives the first scaling law.
 
 ---
 
-### 11. Colloidal diffusion
+### 11. Classical Nucleation and Growth
+
+**(a)** To find the critical radius $r^*$, we differentiate $\Delta G(r)$ with respect to $r$ and set the derivative equal to zero:
+
+$$
+\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \gamma = 0
+$$
+
+This gives 
+
+$$
+r^* = -\frac{2\gamma}{\Delta G_v}
+$$
+
+Since $\Delta G_v < 0$, $r^*$ is positive, as expected.
+
+**(b)** To obtain the critical barrier height: 
+
+Substitute $r^*$ into the expression for $\Delta G(r)$:
+
+
+$$
+\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\gamma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\gamma^2}{\Delta G_v^2}\right) \gamma
+$$
+
+which simplifies to 
+
+$$
+\Delta G^* = -\frac{32\pi \gamma^3}{3 \Delta G_v^2} + \frac{16\pi \gamma^3}{\Delta G_v^2} = \frac{16\pi \gamma^3}{3 \Delta G_v^2}
+$$
+
+**(c)** The free energy change per unit volume is approximately proportional to the undercooling:
+
+$$
+\Delta G_v \propto \Delta T
+$$
+
+From part (b), the nucleation barrier is:
+
+$$
+\Delta G^* \propto \frac{\gamma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
+$$
+
+Thus, as $\Delta T$ increases, $\Delta G^*$ decreases rapidly. A smaller energy barrier means nucleation becomes more probable. 
+Therefore, the nucleation rate increases sharply with undercooling.
+
+However, at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.
+
+
+### 12. Colloidal diffusion
 
 We start from the given formal solution of the Langevin equation for the velocity:
 
@@ -581,7 +630,9 @@ $$
 }
 $$
 
-## 12.  Einstein’s expression for the diffusion coefficient
+--- 
+
+## 13.  Einstein’s expression for the diffusion coefficient
 
 We have
 
@@ -619,7 +670,7 @@ where we renamed $\tau \to t$ and assume that $\langle u u \rangle$ will fall of
 
 ---
 
-### 13. Life in one dimension
+### 14. Life in one dimension
 
 In the interval between $t$ and $t + \delta t$,
 
@@ -693,7 +744,7 @@ $$
 
 ---
 
-### 14. Master equation
+### 15. Master equation
 
 The rates of change of $n_+$ and $n_-$ are clearly given by the master equations:
 
@@ -765,7 +816,7 @@ You should note the behaviour of this solution as $t \to 0$ and $t \to \infty$.
 
 ---
 
-### 15. Detailed balance
+### 16. Detailed balance
 
 **(a)** For individual states, the rates of transition are:
 
@@ -871,7 +922,7 @@ This result has important implications for Monte Carlo simulation
 
 ---
 
-### 16. Jump processes
+### 17. Jump processes
 
 **(a)** Let $E_1 = E_2 = E_3$;  then $p_1 = p_2 = p_3$ in equilibrium.
 
