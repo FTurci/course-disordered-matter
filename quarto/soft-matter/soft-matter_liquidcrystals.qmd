@@ -427,6 +427,8 @@ plt.gca().set(xlabel="Order parameter S", ylabel="free energy density / kBT" )
 plt.show()
 ```
 
+These profiles are example of simple **free energy landscapes**. We will see more about this later on in @sec-energy-landscapes.
+
 ### Lattice model: the Lebwohl-Lasher model
 
 The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals and is a lattice version of the Maier-Saupe mean field model. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
@@ -480,7 +482,7 @@ def delta_energy(theta, i, j, new_angle, epsilon):
 L = 64  # lattice size
 epsilon = 1.0  # coupling
 T = 1.0  # CHANGE THIS VALUE TO EXPLORE DIFFERENT REGIMES 
-steps = 2*L*L #MC sweeps
+steps = 20*L*L #MC sweeps
 
 # Initialize lattice with random angles [0, pi) (nematic symmetry)
 theta = np.random.uniform(0, np.pi, size=(L, L))

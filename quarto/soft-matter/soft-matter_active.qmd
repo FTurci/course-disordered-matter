@@ -6,9 +6,129 @@ bibliography: references.bib
 ## Beyond thermal systems
 
 
+
+
 ## Life-inspired motion: *run and tumble*
 The run-and-tumble model describes the motion of active particles, such as bacteria, that alternate between two types of movement: "runs" (straight-line motion) and "tumbles" (random reorientation). This model captures the behavior of microorganisms like *E. coli*.
 
+```{ojs}
+//| code-fold: true
+//| fig-cap: "Non-interacting run and tumble particles."
+viewof simulation = {
+    const n = 100, W = 1000, H = 300, dt = 0.5, v0 = 1.5;
+
+    const tumbleSlider = Inputs.range([0.01, 1.0
+    ], {step:0.01, value:0.1, label:"Tumble rate λ"});
+    const button = html`<button>Pause</button>`;
+    let running = true;
+    button.onclick = () => {
+        running = !running;
+        button.textContent = running ? "Pause" : "Resume";
+    };
+
+    let state = Array.from({length: n}, () => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        theta: Math.random() * 2 * Math.PI
+    }));
+
+    // Each particle gets a trace array
+    let traces = Array.from({length: n}, () => []);
+
+    // Reset traces when tumble rate changes
+    let lastLambda = tumbleSlider.value;
+    tumbleSlider.addEventListener("input", () => {
+        traces = Array.from({length: n}, () => []);
+        lastLambda = tumbleSlider.value;
+    });
+
+    function step(state, λ) {
+        return state.map((p, i) => {
+            if (Math.random() < λ * dt) p.theta = Math.random() * 2 * Math.PI;
+
+            // Predict next position
+            let nx = p.x + v0 * Math.cos(p.theta) * dt;
+            let ny = p.y + v0 * Math.sin(p.theta) * dt;
+
+            // Bounce at left/right walls
+            if (nx < 0) {
+                p.x = 0;
+                p.theta = Math.PI - Math.random() * Math.PI; // random angle pointing right
+            } else if (nx > W) {
+                p.x = W;
+                p.theta = Math.PI + Math.random() * Math.PI; // random angle pointing left
+            } else {
+                p.x = nx;
+            }
+
+            // Bounce at top/bottom walls
+            if (ny < 0) {
+                p.y = 0;
+                p.theta = (Math.random() * Math.PI); // random angle pointing down
+            } else if (ny > H) {
+                p.y = H;
+                p.theta = Math.PI + (Math.random() * Math.PI); // random angle pointing up
+            } else {
+                p.y = ny;
+            }
+
+            // Add current position to trace
+            traces[i].push([p.x, p.y]);
+            // Limit trace length for performance
+            if (traces[i].length > 200) traces[i].shift();
+            return p;
+        });
+    }
+
+    const container = html`<div></div>`;
+    container.append(tumbleSlider, button);
+    const svg = d3.select(container).append("svg")
+        .attr("width", W)
+        .attr("height", H)
+        .style("background", "#f8f8f8");
+
+    while (true) {
+        const λ = tumbleSlider.value;
+        if (running) state = step(state, λ);
+
+        svg.selectAll("*").remove();
+
+        // Draw traces
+        traces.forEach(trace => {
+            if (trace.length > 1) {
+                svg.append("path")
+                    .attr("d", d3.line()(trace))
+                    .attr("stroke", "#90caf9")
+                    .attr("stroke-width", 1)
+                    .attr("fill", "none");
+            }
+        });
+
+        // Draw particles
+        svg.selectAll("circle")
+            .data(state)
+            .enter().append("circle")
+            .attr("cx", d => d.x)
+            .attr("cy", d => d.y)
+            .attr("r", 3)
+            .attr("fill", "#1976d2");
+
+        svg.selectAll("line")
+            .data(state)
+            .enter().append("line")
+            .attr("x1", d => d.x)
+            .attr("y1", d => d.y)
+            .attr("x2", d => d.x + 10 * Math.cos(d.theta))
+            .attr("y2", d => d.y + 10 * Math.sin(d.theta))
+            .attr("stroke", "#1976d2")
+            .attr("stroke-width", 1.2);
+
+        yield container;
+        await Promises.delay(16);
+    }
+}
+
+```
 ### Dynamical rules
 
 1. **Run Phase**:
