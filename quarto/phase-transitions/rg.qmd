@@ -309,7 +309,7 @@ components $n$ of the order parameter. Up to now, we have only
 considered order parameters which are scalar (for a fluid the density,
 for a magnet the magnetisation), for which $n=1$. In some ferromagnets,
 the order parameter may have components along two axes, or three axes,
-implying a vector order parameter, with $n=2$ or $n=3$, respectively. It
+implying a vector order parameter, with $n=2$ (the solcalled XY model) or $n=3$ (Heisenberg model), respectively. It
 is clear that the order-parameter $n$-value will be reflected in the
 nature of the coarse-grained configurations, and thus in the universal
 observables they imply.
