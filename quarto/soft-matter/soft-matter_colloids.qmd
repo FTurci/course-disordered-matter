@@ -381,7 +381,7 @@ Reflect on this point. In the complete absence of any attractive interactions, w
 Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idiealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called **depletion interactions**.
 
 
-### Asakura-Oosawa depletion potential
+### Asakura-Oosawa depletion potential {#sec-ao-potential}
 
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
@@ -400,7 +400,7 @@ $$\Omega = -k_BT e^{\mu/k_B T}V_{\rm accessible}$$
 
 where $V_{\rm accessible}$ is the accessible volume. In the absence of the colloids, the entire volume $V$ is accessible. 
 
-Let's image to intrudce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $$V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid:
+Let's image to intrudce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid:
 
 $$\begin{aligned}
 V_{\rm exclusion}& = V_{\rm outer}-V_{\rm inner}\\
@@ -432,6 +432,12 @@ $$
 W_{\rm AO} (r) = - \dfrac{4 \pi \eta_b k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
 $$ 
 </div>
+
+taking $q = \delta / R$ (the polymer-to-colloid size ratio), so $R+\delta = R(1+q)$ and $r/(R+\delta) = r/[R(1+q)]$ the AO potential can also be rewritten as:
+
+$$
+W_{\rm AO}(r) = -\frac{4\pi \eta_b k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
+$$
 
 ```{pyodide}
 #| caption: "Asakura-Oosawa potential [press ctrl/cmd [ENTER] to run]"
