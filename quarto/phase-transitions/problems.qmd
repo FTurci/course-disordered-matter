@@ -162,7 +162,6 @@ $\cosh^2x-\sinh^2x=1$, $\cosh(2x)=2\cosh^2x-1$.*)
 
 ---
 
-
 ### 8.  Landau theory
 
 Check and complete the Landau theory calculations, given in
@@ -179,7 +178,34 @@ a term $-Hm$ to the Hamiltonian.*)
 
 ---
 
-### 9. Scaling laws
+### 9. Scaling equation of state
+
+Consider a Landau expression for the free energy of a magnetic system having magnetisation $m$:
+
+$$
+F=F_0+\tilde{a}_2tm^2+a_4m^4-Hm\:,
+$$
+where $t=T-T_c$ and $H$ is an applied magnetic field; $\tilde{a}_2$ and $a_4$ are positive constants and $F_0$
+is a constant background term. 
+
+**(a)** Show that the equation of state for the model is
+
+$$
+H=2\tilde{a}_2tm+4a_4m^3\:.
+$$
+
+**(b)** Use the near-critical power law behaviour of $m$ to show that the equation of state may be written in the scaling form
+
+$$
+\frac{H}{m^\delta}=g\left(\frac{t}{m^{1/\beta}}\right)\:,
+$$
+and find the (mean field) values of the critical exponents $\delta$ and $\beta$.  
+
+**(c)** Deduce that $g(x)=x+1$ up to a choice of scale for $\tilde{a}_2$ and $a_4$.
+
+---
+
+### 10. Scaling laws
 
 (Straightforward.)Using the generalised homogeneous form for the
 free energy given in lectures, take appropriate derivatives to find
@@ -199,7 +225,7 @@ $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
 
 ---
 
-### 10. Colloidal diffusion
+### 11. Colloidal diffusion
 
 A large colloidal particle of mass $M$ moves in a fluid under the influence of a random force $F(t)$ and a coefficient of Stokes friction drag $\gamma$, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by
 
@@ -219,7 +245,7 @@ State clearly any assumptions that you make.
 
 ---
 
-11.  **Einstein's expression for the diffusion coefficient**
+### 12.  Einstein's expression for the diffusion coefficient
 
 In 1905, Einstein showed that the friction coefficient $\gamma$ (per unit mass) of a colloidal particle must be related to the diffusion coefficient $D$ of the particle by
 
@@ -245,7 +271,7 @@ where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitraril
 
 ---
 
-### 12. Life in one dimension
+### 13. Life in one dimension
 
 A particle lives on the sites of a one-dimensional lattice. At any instant it has probability $\alpha$ per unit time that
 it will hop to the site on its right and probability $\alpha$ per unit time of hopping to the site on its left. 
@@ -264,7 +290,7 @@ $$
 
 ---
 
-### 13. Master equation
+### 14. Master equation
 
 A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at 
 temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have 
@@ -279,7 +305,7 @@ of the system to equilibrium.
 
 ---
 
-### 14. Detailed balance
+### 15. Detailed balance
 
 **(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states
  within it, $A$ and $B$, the overall rate of transitions from group $A$ to group $B$ is balanced, in equilibrium, 
@@ -298,7 +324,7 @@ $$
 
 ---
 
-### 15. Jump processes
+### 16. Jump processes
 
 An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from
  state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability $\lambda_0$ that the 

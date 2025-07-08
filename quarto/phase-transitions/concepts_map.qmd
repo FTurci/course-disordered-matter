@@ -33,6 +33,7 @@ mindmap
     MODELS
       Ising model
       Lattice gas model
+      Lennard-Jones fluid
       XY model
     METHODS
       Mean-field theory

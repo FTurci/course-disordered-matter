@@ -423,7 +423,31 @@ so $\gamma=1$.
 
 ---
 
-### 9. Scaling laws
+### 9. Scaling equation of state
+
+**(a)** The equilibrium state corresponds to the minimum of the free energy $\partial F/\partial M=0$.
+This gives the equation of state
+
+$$
+H=2\tilde{a_2}tm+4a_4m^3
+$$
+(Note that we ignore the solution $H=m=0$ which corresponds to a maximum of the free energy.)
+
+**(b)** The near critical power law scaling of the magnetisation is $m\propto t^\beta$ and $m\propto H^{1/\delta}$.  To find a
+scaling form for the equation of state we need to transform to scaled variables $H/m^\delta$ and $t/m^{1/\beta}$. We can get 
+a scaling equation in terms of these variables by dividing through the equation of state by $m^3$, so that
+
+$$
+\frac{H}{m^{3}}=g\left(\frac{2\tilde{a_2}t}{m^2}\right)+4a_4
+$$
+
+Hence $\delta=3$ and $\beta=1/2$. 
+
+**(c)** The choice of scale $a_4=1/4$ and $\tilde{a_2}=1/2$ yields the given form of the scaling function.
+
+---
+
+### 10. Scaling laws
 
 First of all recall the definition of the critical exponents: 
 \begin{eqnarray*}
@@ -488,7 +512,7 @@ into the 4th scaling relation gives the first scaling law.
 
 ---
 
-### 10. Colloidal diffusion
+### 11. Colloidal diffusion
 
 We start from the given formal solution of the Langevin equation for the velocity:
 
@@ -557,7 +581,7 @@ $$
 }
 $$
 
-## 11.  Einstein’s expression for the diffusion coefficient
+## 12.  Einstein’s expression for the diffusion coefficient
 
 We have
 
@@ -595,7 +619,7 @@ where we renamed $\tau \to t$ and assume that $\langle u u \rangle$ will fall of
 
 ---
 
-### 12. Life in one dimension
+### 13. Life in one dimension
 
 In the interval between $t$ and $t + \delta t$,
 
@@ -669,7 +693,7 @@ $$
 
 ---
 
-### 13. Master equation
+### 14. Master equation
 
 The rates of change of $n_+$ and $n_-$ are clearly given by the master equations:
 
@@ -741,7 +765,7 @@ You should note the behaviour of this solution as $t \to 0$ and $t \to \infty$.
 
 ---
 
-### 14. Detailed balance
+### 15. Detailed balance
 
 **(a)** For individual states, the rates of transition are:
 
@@ -847,7 +871,7 @@ This result has important implications for Monte Carlo simulation
 
 ---
 
-### 15. Jump processes
+### 16. Jump processes
 
 **(a)** Let $E_1 = E_2 = E_3$;  then $p_1 = p_2 = p_3$ in equilibrium.
 
