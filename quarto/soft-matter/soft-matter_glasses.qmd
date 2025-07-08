@@ -26,6 +26,14 @@ In this chapter we are going to consider two paradigmatic cases of such nonequil
 - **physical gels**, where the system forms a disordered, arrested state due to the formation of a percolating network of reversible bonds (e.g., hydrogen bonds or van der Waals interactions) between particles or polymers,
 - **glasses**, where the system falls out of equilibrium due to a dramatic slowing down of dynamics as temperature decreases or density increases, leading to a rigid but disordered structure.
 
+What is distinctive of both gels and glasses is that they are both examples of amorphous materials that behave like solids: they lack long-range atomic order yet resist deformation like crystalline solids. Indeed one can calculate properties that are distinctive of solids for both gels and glasses, including:
+
+- **Elastic moduli** (such as the shear modulus $G$ and bulk modulus $K$): Both gels and glasses exhibit a finite shear modulus, meaning they can sustain a static shear stress without flowing, unlike liquids.
+- **Yield stress**: They can support a certain amount of stress before yielding or flowing, a property absent in equilibrium fluids.
+- **Vibrational density of states**: Amorphous solids display a characteristic "boson peak" in their vibrational spectrum, distinct from the phonon modes of crystals.
+
+These features highlight that rigidity and solidity do not require crystalline order; amorphous materials like gels and glasses can be mechanically solid while remaining structurally disordered. Indeed, the border between solidity and fluidity has been questioned in recent research work, emphasizing how this depends on observational timescales and thenotion of metastability, see @sausset2010solids.
+
 
 ## Physical gels
 
@@ -159,9 +167,9 @@ A way to realise robust physical gels in experiments is to use colloid-polymer m
 The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.
 
 
-![Phase diagrams of colloid-polymer mixtures, from @anderson2002insights]
+![Phase diagrams of colloid-polymer mixtures for different values of the size ratio parameter $q=\sigma_{\rm polymer}/\sigma_{\rm colloid}$. Left: very small size ratio make the gas liquid binodal (enclosing the yellow fluid-fluid region) metastable to gas-solid phase separation. Centre: as we increase the size ratio, the liquid pocket at high density starts developing. Right: for almost equal sizes the phase diagram is reminiscent of the one of simple fluids (e.g. Lennard-Jones) after noticing that the polymer reservoir packing fraction plays a role inverse to the temeprature. Adapted from @dijkstra1999phase.)](./figs/colloid-polymers.svg)
 
-Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the **square-well** model,
+Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential (see @sec-ao-potential) using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the **square-well** model,
 
 The square-well potential $U(r)$ is defined as:
 
@@ -361,14 +369,15 @@ But how do physical gels come about? A viable scenario is the so-called **arrest
 This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, "frozen in" by the arrest of particle motion.
 
 For the arested spinodal scenario to hold, the system evolves following these steps:
+
 - The system is quenched inside the spinodal region, where spontaneous fluctuations grow.
 - Domains of different densities form, but the dense domains become dynamically arrested before macroscopic phase separation completes.
-- The final structure is a bicontinuous, percolating network with solid-like mechanical properties.
+- The final structure is a bicontinuous, percolating network with solid-like mechanical properties. 
 
 
 
 
-![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids).](./figs/arrestedSpinodal.svg){ width=70%}
+![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids), adapted from  @Zaccarelli2007. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (where phase separation is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conbentional threshold, e.g. 100 seconds). If a system is cooled rapidly down from the fluid to the coexistence region, two scenari are possible: the fluid spontneusly phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, the cooling is so rapid that proper quilibrium phases cannot be formed and the systems separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenariocorresponds to physical gel formation via spinodal decomposition.](./figs/arrestedSpinodal.svg){ width=70%}
 
 For more details, see @Zaccarelli2007.
 
