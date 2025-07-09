@@ -23,7 +23,7 @@ from broken bonds but also an entropic contribution due to the configurational d
 The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size $n_c$ will grow; smaller droplets will shrink. This framework is formalized in *classical nucleation theory*, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.
 
 
-## Classical Nucleation Theory: Homogeneous Nucleation
+## Classical Nucleation Theory: Homogeneous Nucleation {#sec-cnt}
 
 We now present the framework of **classical nucleation theory** (CNT) for the case of *homogeneous nucleation*, in which the nucleation 
 of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, 
