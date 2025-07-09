@@ -19,10 +19,10 @@ book:
   chapters:
     - href: index.qmd
       text: Overview  
+    - href: reading.qmd
+      text: "Recommended texts"
     - part: "Unifying concepts"
       chapters:
-         - href: phase-transitions/literature.qmd
-           text: "Recommended texts"
          - href: phase-transitions/precourse-reading.qmd
            text: "Precourse reading and revision"
          - text: "Introduction to phase behaviour"
