@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinoidal decomposition</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinoidal decomposition</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,12 +155,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
@@ -356,7 +350,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">9.1</span> Introduction to nucleation</a></li>
-  <li><a href="#classical-nucleation-theory-homogeneous-nucleation" id="toc-classical-nucleation-theory-homogeneous-nucleation" class="nav-link" data-scroll-target="#classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">9.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
+  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">9.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
   <ul class="collapse">
   <li><a href="#interpretation-and-scaling-behavior" id="toc-interpretation-and-scaling-behavior" class="nav-link" data-scroll-target="#interpretation-and-scaling-behavior"><span class="header-section-number">9.2.1</span> Interpretation and Scaling Behavior</a></li>
   </ul></li>
@@ -375,7 +369,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinoidal decomposition</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinoidal decomposition</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition</span></h1>
 </div>
@@ -402,8 +396,8 @@ window.Quarto = {
 <p>The nucleation of a droplet of the stable phase of size <span class="math inline">\(n\)</span> spins entails a competition between bulk and interfacial contributions to the free energy. The bulk free energy gain is linear in <span class="math inline">\(n\)</span>, given by <span class="math inline">\(-nH\)</span>, due to the alignment of spins with the external field. However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, each broken bond contributes an energy cost of <span class="math inline">\(+2J\)</span>, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. This interfacial contribution is referred to as the <em>surface tension</em>, and constitutes a true free energy cost: it includes not only the energetic penalty from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.</p>
 <p>The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size <span class="math inline">\(n_c\)</span> will grow; smaller droplets will shrink. This framework is formalized in <em>classical nucleation theory</em>, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.</p>
 </section>
-<section id="classical-nucleation-theory-homogeneous-nucleation" class="level2" data-number="9.2">
-<h2 data-number="9.2" class="anchored" data-anchor-id="classical-nucleation-theory-homogeneous-nucleation"><span class="header-section-number">9.2</span> Classical Nucleation Theory: Homogeneous Nucleation</h2>
+<section id="sec-cnt" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="sec-cnt"><span class="header-section-number">9.2</span> Classical Nucleation Theory: Homogeneous Nucleation</h2>
 <p>We now present the framework of <strong>classical nucleation theory</strong> (CNT) for the case of <em>homogeneous nucleation</em>, in which the nucleation of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, defects, or surfaces.</p>
 <p>Let us consider a droplet of the stable (spin-down) phase of radius <span class="math inline">\(R\)</span> embedded within the metastable (spin-up) background. The total change in free energy <span class="math inline">\(\Delta F(R)\)</span> associated with forming such a droplet consists of two competing contributions:</p>
 <ol type="1">

@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Solutions_to_problems.html">Solutions</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Solutions_to_problems.html">Solutions</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,12 +155,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
@@ -365,13 +359,14 @@ window.Quarto = {
   <li><a href="#landau-theory" id="toc-landau-theory" class="nav-link" data-scroll-target="#landau-theory">8. Landau theory</a></li>
   <li><a href="#scaling-equation-of-state" id="toc-scaling-equation-of-state" class="nav-link" data-scroll-target="#scaling-equation-of-state">9. Scaling equation of state</a></li>
   <li><a href="#scaling-laws" id="toc-scaling-laws" class="nav-link" data-scroll-target="#scaling-laws">10. Scaling laws</a></li>
-  <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">11. Colloidal diffusion</a></li>
-  <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">12. Einstein’s expression for the diffusion coefficient</a>
+  <li><a href="#classical-nucleation-and-growth" id="toc-classical-nucleation-and-growth" class="nav-link" data-scroll-target="#classical-nucleation-and-growth">11. Classical Nucleation and Growth</a></li>
+  <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">12. Colloidal diffusion</a></li>
+  <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</a>
   <ul class="collapse">
-  <li><a href="#life-in-one-dimension" id="toc-life-in-one-dimension" class="nav-link" data-scroll-target="#life-in-one-dimension">13. Life in one dimension</a></li>
-  <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">14. Master equation</a></li>
-  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">15. Detailed balance</a></li>
-  <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">16. Jump processes</a></li>
+  <li><a href="#life-in-one-dimension" id="toc-life-in-one-dimension" class="nav-link" data-scroll-target="#life-in-one-dimension">14. Life in one dimension</a></li>
+  <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">15. Master equation</a></li>
+  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">16. Detailed balance</a></li>
+  <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">17. Jump processes</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -379,7 +374,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Solutions_to_problems.html">Solutions</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Solutions_to_problems.html">Solutions</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="solutions" class="quarto-section-identifier">Unifying concepts: outline solutions to problems</span></h1>
 </div>
@@ -405,7 +400,7 @@ window.Quarto = {
 <div id="fig-domainwall" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-domainwall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/domainwall.001.png" class="img-fluid figure-img" style="width:40.0%">
+<img src="Figs/domainwall.001.png" class="img-fluid figure-img" style="width:30.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-domainwall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: An <span class="math inline">\(N\)</span>-step domain wall in an Ising lattice.
@@ -676,16 +671,16 @@ F(m)=F_0+a_2m^2+a_4m^4-Hm
 </section>
 <section id="scaling-equation-of-state" class="level3">
 <h3 class="anchored" data-anchor-id="scaling-equation-of-state">9. Scaling equation of state</h3>
-<p><strong>(a)</strong> The equilibrium state corresponds to the minimum of the free energy <span class="math inline">\(\partial F/\partial M=0\)</span>. This gives the equation of state</p>
+<p>The equilibrium state corresponds to the minimum of the free energy <span class="math inline">\(\partial F/\partial M=0\)</span>. This gives the equation of state</p>
 <p><span class="math display">\[
 H=2\tilde{a_2}tm+4a_4m^3
 \]</span> (Note that we ignore the solution <span class="math inline">\(H=m=0\)</span> which corresponds to a maximum of the free energy.)</p>
-<p><strong>(b)</strong> The near critical power law scaling of the magnetisation is <span class="math inline">\(m\propto t^\beta\)</span> and <span class="math inline">\(m\propto H^{1/\delta}\)</span>. To find a scaling form for the equation of state we need to transform to scaled variables <span class="math inline">\(H/m^\delta\)</span> and <span class="math inline">\(t/m^{1/\beta}\)</span>. We can get a scaling equation in terms of these variables by dividing through the equation of state by <span class="math inline">\(m^3\)</span>, so that</p>
+<p>The near critical power law scaling of the magnetisation is <span class="math inline">\(m\propto t^\beta\)</span> and <span class="math inline">\(m\propto H^{1/\delta}\)</span>. To find a scaling form for the equation of state we need to transform to scaled variables <span class="math inline">\(H/m^\delta\)</span> and <span class="math inline">\(t/m^{1/\beta}\)</span>. We can get a scaling equation in terms of these variables by dividing through the equation of state by <span class="math inline">\(m^3\)</span>, so that</p>
 <p><span class="math display">\[
 \frac{H}{m^{3}}=g\left(\frac{2\tilde{a_2}t}{m^2}\right)+4a_4
 \]</span></p>
 <p>Hence <span class="math inline">\(\delta=3\)</span> and <span class="math inline">\(\beta=1/2\)</span>.</p>
-<p><strong>(c)</strong> The choice of scale <span class="math inline">\(a_4=1/4\)</span> and <span class="math inline">\(\tilde{a_2}=1/2\)</span> yields the given form of the scaling function.</p>
+<p>The choice of scale <span class="math inline">\(a_4=1/4\)</span> and <span class="math inline">\(\tilde{a_2}=1/2\)</span> yields the given form of the scaling function.</p>
 <hr>
 </section>
 <section id="scaling-laws" class="level3">
@@ -726,8 +721,39 @@ F(t,h)&amp;=&amp;h^{1/b}F(h^{-a/b}t,1)\\
 <p>To derive the relationships (``scaling laws’’) among the critical exponents, we eliminate <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the boxed scaling relations. Setting <span class="math inline">\(a=(2-\alpha)^{-1}\)</span> in the first scaling relation, we find <span class="math inline">\(b=1-\beta/(2-\alpha)\)</span>. Substituting this into the second scaling relation gives the second of the two scaling laws quoted in the notes. Substituting into the 4th scaling relation gives the first scaling law.</p>
 <hr>
 </section>
+<section id="classical-nucleation-and-growth" class="level3">
+<h3 class="anchored" data-anchor-id="classical-nucleation-and-growth">11. Classical Nucleation and Growth</h3>
+<p><strong>(a)</strong> To find the critical radius <span class="math inline">\(r^*\)</span>, we differentiate <span class="math inline">\(\Delta G(r)\)</span> with respect to <span class="math inline">\(r\)</span> and set the derivative equal to zero:</p>
+<p><span class="math display">\[
+\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \gamma = 0
+\]</span></p>
+<p>This gives</p>
+<p><span class="math display">\[
+r^* = -\frac{2\gamma}{\Delta G_v}
+\]</span></p>
+<p>Since <span class="math inline">\(\Delta G_v &lt; 0\)</span>, <span class="math inline">\(r^*\)</span> is positive, as expected.</p>
+<p><strong>(b)</strong> To obtain the critical barrier height:</p>
+<p>Substitute <span class="math inline">\(r^*\)</span> into the expression for <span class="math inline">\(\Delta G(r)\)</span>:</p>
+<p><span class="math display">\[
+\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\gamma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\gamma^2}{\Delta G_v^2}\right) \gamma
+\]</span></p>
+<p>which simplifies to</p>
+<p><span class="math display">\[
+\Delta G^* = -\frac{32\pi \gamma^3}{3 \Delta G_v^2} + \frac{16\pi \gamma^3}{\Delta G_v^2} = \frac{16\pi \gamma^3}{3 \Delta G_v^2}
+\]</span></p>
+<p><strong>(c)</strong> The free energy change per unit volume is approximately proportional to the undercooling:</p>
+<p><span class="math display">\[
+\Delta G_v \propto \Delta T
+\]</span></p>
+<p>From part (b), the nucleation barrier is:</p>
+<p><span class="math display">\[
+\Delta G^* \propto \frac{\gamma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
+\]</span></p>
+<p>Thus, as <span class="math inline">\(\Delta T\)</span> increases, <span class="math inline">\(\Delta G^*\)</span> decreases rapidly. A smaller energy barrier means nucleation becomes more probable. Therefore, the nucleation rate increases sharply with undercooling.</p>
+<p>However, at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.</p>
+</section>
 <section id="colloidal-diffusion" class="level3">
-<h3 class="anchored" data-anchor-id="colloidal-diffusion">11. Colloidal diffusion</h3>
+<h3 class="anchored" data-anchor-id="colloidal-diffusion">12. Colloidal diffusion</h3>
 <p>We start from the given formal solution of the Langevin equation for the velocity:</p>
 <p><span class="math display">\[
 u(t) = u_0 e^{-\gamma t} + e^{-\gamma t} \int_{0}^{t} e^{\gamma t'} F(t') \, dt'.
@@ -783,9 +809,10 @@ q = 2\gamma\,\frac{kT}{M}.
 \;+\;\Bigl(u_0^2 - \frac{kT}{M}\Bigr)\,e^{-2\gamma t}.
 }
 \]</span></p>
+<hr>
 </section>
 <section id="einsteins-expression-for-the-diffusion-coefficient" class="level2">
-<h2 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">12. Einstein’s expression for the diffusion coefficient</h2>
+<h2 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</h2>
 <p>We have</p>
 <p><span class="math display">\[
 X(t) - X(0) = \int_0^t u(t') dt'
@@ -810,7 +837,7 @@ D = \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle dt,
 <p>where we renamed <span class="math inline">\(\tau \to t\)</span> and assume that <span class="math inline">\(\langle u u \rangle\)</span> will fall off so fast that the upper limit doesn’t matter.</p>
 <hr>
 <section id="life-in-one-dimension" class="level3">
-<h3 class="anchored" data-anchor-id="life-in-one-dimension">13. Life in one dimension</h3>
+<h3 class="anchored" data-anchor-id="life-in-one-dimension">14. Life in one dimension</h3>
 <p>In the interval between <span class="math inline">\(t\)</span> and <span class="math inline">\(t + \delta t\)</span>,</p>
 <p><span class="math display">\[
 p_{n-1}(t) \alpha \delta t : \quad n - 1 \rightarrow n;
@@ -860,7 +887,7 @@ p_n(t) = e^{-(\alpha + \beta)t} (\beta t)^{-n} \sum_{k=0}^\infty \frac{(\alpha \
 <hr>
 </section>
 <section id="master-equation" class="level3">
-<h3 class="anchored" data-anchor-id="master-equation">14. Master equation</h3>
+<h3 class="anchored" data-anchor-id="master-equation">15. Master equation</h3>
 <p>The rates of change of <span class="math inline">\(n_+\)</span> and <span class="math inline">\(n_-\)</span> are clearly given by the master equations:</p>
 <p><span class="math display">\[
 \frac{dn_+}{dt} = -n_+ v_{+-} + n_- v_{-+};
@@ -909,7 +936,7 @@ n(t) = n_{\text{eq}} + e^{-t/\tau} [n(0) - n_{\text{eq}}].
 <hr>
 </section>
 <section id="detailed-balance" class="level3">
-<h3 class="anchored" data-anchor-id="detailed-balance">15. Detailed balance</h3>
+<h3 class="anchored" data-anchor-id="detailed-balance">16. Detailed balance</h3>
 <p><strong>(a)</strong> For individual states, the rates of transition are:</p>
 <p><span class="math display">\[
 1 \rightarrow 2 \quad = \quad v_{12} p_1
@@ -979,7 +1006,7 @@ p_i \ne p_j \quad \text{and} \quad v_{ij} \ne v_{ji}.
 <hr>
 </section>
 <section id="jump-processes" class="level3">
-<h3 class="anchored" data-anchor-id="jump-processes">16. Jump processes</h3>
+<h3 class="anchored" data-anchor-id="jump-processes">17. Jump processes</h3>
 <p><strong>(a)</strong> Let <span class="math inline">\(E_1 = E_2 = E_3\)</span>; then <span class="math inline">\(p_1 = p_2 = p_3\)</span> in equilibrium.</p>
 <p><span class="math display">\[
 v_{12} = v_{21} = v_0 \\

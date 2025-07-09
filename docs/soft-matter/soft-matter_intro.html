@@ -215,12 +215,6 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Precourse reading and revision</span></span></a>
   </div>
@@ -546,7 +540,7 @@ Coarse graining
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="81d64f96" class="cell" data-execution_count="1">
+<div id="8a23db7e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -557,8 +551,8 @@ Coarse graining
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_175199043329404" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_175199043329404" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_1752079037516801" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_1752079037516801" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -589,18 +583,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_175199043329404 = null;
-var warn = document.getElementById("3dmolwarning_175199043329404");
+var viewer_1752079037516801 = null;
+var warn = document.getElementById("3dmolwarning_1752079037516801");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_175199043329404 = $3Dmol.createViewer(document.getElementById("3dmolviewer_175199043329404"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_175199043329404, {}, function() {
-viewer_175199043329404.zoomTo();
-    viewer_175199043329404.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_175199043329404.setBackgroundColor("white");
-viewer_175199043329404.render();
+viewer_1752079037516801 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1752079037516801"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_1752079037516801, {}, function() {
+viewer_1752079037516801.zoomTo();
+    viewer_1752079037516801.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_1752079037516801.setBackgroundColor("white");
+viewer_1752079037516801.render();
 })
 });
 </script>

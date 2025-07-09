@@ -212,12 +212,6 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Precourse reading and revision</span></span></a>
   </div>
@@ -413,15 +407,17 @@ window.Quarto = {
   <li><a href="#sec-energy-landscapes" id="toc-sec-energy-landscapes" class="nav-link active" data-scroll-target="#sec-energy-landscapes"><span class="header-section-number">18.1</span> Energy landscapes</a></li>
   <li><a href="#glasses" id="toc-glasses" class="nav-link" data-scroll-target="#glasses"><span class="header-section-number">18.2</span> Glasses</a>
   <ul class="collapse">
-  <li><a href="#glass-forming-systems" id="toc-glass-forming-systems" class="nav-link" data-scroll-target="#glass-forming-systems"><span class="header-section-number">18.2.1</span> Glass forming systems</a></li>
-  <li><a href="#relaxation-time-and-viscosity" id="toc-relaxation-time-and-viscosity" class="nav-link" data-scroll-target="#relaxation-time-and-viscosity"><span class="header-section-number">18.2.2</span> Relaxation time and viscosity</a></li>
-  <li><a href="#characterising-the-glass-transition" id="toc-characterising-the-glass-transition" class="nav-link" data-scroll-target="#characterising-the-glass-transition"><span class="header-section-number">18.2.3</span> Characterising the glass transition</a></li>
-  <li><a href="#a-simple-picture-of-the-glass-transition" id="toc-a-simple-picture-of-the-glass-transition" class="nav-link" data-scroll-target="#a-simple-picture-of-the-glass-transition"><span class="header-section-number">18.2.4</span> A simple picture of the glass transition</a></li>
+  <li><a href="#glass-formation" id="toc-glass-formation" class="nav-link" data-scroll-target="#glass-formation"><span class="header-section-number">18.2.1</span> Glass formation</a></li>
   </ul></li>
-  <li><a href="#physical-gels" id="toc-physical-gels" class="nav-link" data-scroll-target="#physical-gels"><span class="header-section-number">18.3</span> Physical gels</a>
+  <li><a href="#viscosity-and-relaxation-times" id="toc-viscosity-and-relaxation-times" class="nav-link" data-scroll-target="#viscosity-and-relaxation-times"><span class="header-section-number">18.3</span> Viscosity and relaxation times</a>
   <ul class="collapse">
-  <li><a href="#colloid-polymer-mixtures-as-an-example" id="toc-colloid-polymer-mixtures-as-an-example" class="nav-link" data-scroll-target="#colloid-polymer-mixtures-as-an-example"><span class="header-section-number">18.3.1</span> Colloid-polymer mixtures as an example</a></li>
-  <li><a href="#arrested-spinodal-scenario" id="toc-arrested-spinodal-scenario" class="nav-link" data-scroll-target="#arrested-spinodal-scenario"><span class="header-section-number">18.3.2</span> Arrested spinodal scenario</a></li>
+  <li><a href="#connection-between-vft-and-configurational-entropy-the-adam-gibbs-model" id="toc-connection-between-vft-and-configurational-entropy-the-adam-gibbs-model" class="nav-link" data-scroll-target="#connection-between-vft-and-configurational-entropy-the-adam-gibbs-model"><span class="header-section-number">18.3.1</span> Connection between VFT and configurational entropy: the Adam-Gibbs model</a></li>
+  <li><a href="#alternative-perspective-dynamical-facilitation-and-the-parabolic-law" id="toc-alternative-perspective-dynamical-facilitation-and-the-parabolic-law" class="nav-link" data-scroll-target="#alternative-perspective-dynamical-facilitation-and-the-parabolic-law"><span class="header-section-number">18.3.2</span> Alternative perspective: Dynamical facilitation and the parabolic law</a></li>
+  </ul></li>
+  <li><a href="#physical-gels" id="toc-physical-gels" class="nav-link" data-scroll-target="#physical-gels"><span class="header-section-number">18.4</span> Physical gels</a>
+  <ul class="collapse">
+  <li><a href="#colloid-polymer-mixtures-as-an-example" id="toc-colloid-polymer-mixtures-as-an-example" class="nav-link" data-scroll-target="#colloid-polymer-mixtures-as-an-example"><span class="header-section-number">18.4.1</span> Colloid-polymer mixtures as an example</a></li>
+  <li><a href="#arrested-spinodal-scenario" id="toc-arrested-spinodal-scenario" class="nav-link" data-scroll-target="#arrested-spinodal-scenario"><span class="header-section-number">18.4.2</span> Arrested spinodal scenario</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -495,63 +491,134 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <p>where <span class="math inline">\(C_V\)</span> is the heat capacity at constant volume and <span class="math inline">\(T_0\)</span> is a reference temperature. For a fluid like a gas, only the total entropy is well defined. Even for a liquid at high temperature this is the case, because there are no meaningful metabasins in the free energy profile.</p>
 <p>It is only as we decrease the temperature further that the metabasins can be defined (via <em>coarse-graining</em>). These reference conformations can be used to split the total entropy into two contributions</p>
 <p><span class="math display">\[S = S_{\rm conf}+S_{\rm vib}\]</span></p>
-<p>where <span class="math inline">\(S_{\rm vib}\)</span> is the vibrational entorpy around the reference confromations, and is mainly due to thermal fluctuatiosn. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the refernce conformations are provided by the crustalline packings (e.g.&nbsp;FCC, HCP, BCC etc.).</p>
-<p>What is interesting is</p>
+<p>where <span class="math inline">\(S_{\rm vib}\)</span> is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuatiosn. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g.&nbsp;FCC, HCP, BCC etc.).</p>
 </section>
-<section id="glasses" class="level2" data-number="18.2">
+<section id="glasses" class="level2 page-columns page-full" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="glasses"><span class="header-section-number">18.2</span> Glasses</h2>
-<p>In terms of their structure (e.g.&nbsp;as measured by a radial distribution function, <span class="math inline">\(g(r)\)</span>) they are practically indistinguishable from liquids, i.e.&nbsp;they exhibit some short ranged order, but no long ranged order. However, their dynamic behaviour is quite different from that of liquids; glasses exhibit very slow relaxation because molecules cannot easily diffuse. As a result, glasses do not flow (on experimental timescales) and therefore their mechanical properties, i.e.&nbsp;their response to stress and shearing, is more akin to that of solids.</p>
-<section id="glass-forming-systems" class="level3" data-number="18.2.1">
-<h3 data-number="18.2.1" class="anchored" data-anchor-id="glass-forming-systems"><span class="header-section-number">18.2.1</span> Glass forming systems</h3>
-<p>Glasses may be formed if the cooling rate is so fast that the liquid does not have time to crystallize , or alternatively because the molecules have some feature to their structure or bonding that inhibits the formation of a crystalline phase. Many glass forming materials are found in nature. Below we describe just a few.</p>
-<p>Elements: Sulphur, Selenium and Phosphorous readily form glasses. Metallic alloys: liquid metals can form glasses if quenched very rapidly ( <span class="math inline">\(10^{6} \mathrm{~K} \mathrm{~s}^{-1}\)</span> ). Such glasses find applications in recording heads and electrical transformers. Polymer glasses: Due to entanglement effects, polymers form glasses very easily. Examples from everyday life are polycarbonates (eyeglasses, shatterproof windows) and polymethacrylate (plastic pipes and tubes). Oxide glasses: Familiar examples are <span class="math inline">\(\mathrm{SiO}_{2}, \mathrm{Na}_{2} \mathrm{O}\)</span> and CaO (all components of window glass). Organic glasses: Sucrose solution forms a glass used in boiled sweets. Toluene and methanol also readily form glasses.</p>
-</section>
-<section id="relaxation-time-and-viscosity" class="level3" data-number="18.2.2">
-<h3 data-number="18.2.2" class="anchored" data-anchor-id="relaxation-time-and-viscosity"><span class="header-section-number">18.2.2</span> Relaxation time and viscosity</h3>
-<p>Let us first consider relaxation in liquids. We have already seen that at high volume fractions a particle is effectively trapped by its nearest neighbours, within a ‘cage’. To escape the cage, a particle must jump. Let us now consider the characteristic time <span class="math inline">\(\tau\)</span> between such jumps and its dependence on temperature. Empirically, one finds that</p>
-<p><span class="math display">\[
-\tau^{-1} \sim v \exp \left(-\frac{\varepsilon}{k_{B} T}\right)
-\]</span></p>
-<p>Here <span class="math inline">\(v\)</span> is the typical vibration frequency for a particle rattling around in its cage. This can also be regarded as the frequency with which the particle attempts to escape its cage. The probability of an escape attempt succeeding depends on a Boltzmann factor, i.e.&nbsp;the exponential of the ratio of the energy cost associated with climbing the cage “walls”, <span class="math inline">\(\varepsilon\)</span>, to the typical thermal energy <span class="math inline">\(k_{B} T\)</span>.</p>
-<p>It can be shown (cf.&nbsp;PH10002), that the relaxation time <span class="math inline">\(\tau\)</span> is proportional to another quantity, the viscosity <span class="math inline">\(\eta\)</span>, which is a measure of the response of a material to a shear stress, or more loosely speaking a measure of the ability of a liquid to flow. Thus <span class="math inline">\(\tau \propto \eta\)</span> and it follows that</p>
-<p><span class="math display">\[
-\eta=\frac{G_{0}}{v} \exp \left(\frac{\varepsilon}{k_{B} T}\right)
-\]</span></p>
-<p>where <span class="math inline">\(G_{0}\)</span> is a proportionality constant. This characteristic exponential temperature dependence is known as Arrhenius behaviour. Loosely speaking the viscosity provides a measure of the ability of a liquid to flow.</p>
-<p>While Arrhenius behaviour is observed for the viscosity of liquids at high temperature, things are very different at low temperature. The experimentally measured viscosity and the associated configurational relaxation time exhibits a temperature dependence that strongly departs from that implied by the characteristic frequency of vibrations <span class="math inline">\(v\)</span></p>
-<p><span class="math display">\[
-\eta=\eta_{0} \exp \left(\frac{B}{T-T_{0}}\right)
-\]</span></p>
-<p>The empirical finding, known as the Vogel-Fulcher law implies that the viscosity diverges exponentially at the finite temperature <span class="math inline">\(T_{0}\)</span>. In practical terms, this means that as <span class="math inline">\(T_{0}\)</span> is approached from above, one reaches some temperature <span class="math inline">\(T_{g}\)</span> (the glass transition temperature) at which the time for a configuration to relax becomes comparable to the timescale of the experiment itself <span class="math inline">\(\tau_{\exp }\)</span>. At this point, the system falls out of equilibrium with respect to rearrangements of the particle configurations.</p>
-</section>
-<section id="characterising-the-glass-transition" class="level3" data-number="18.2.3">
-<h3 data-number="18.2.3" class="anchored" data-anchor-id="characterising-the-glass-transition"><span class="header-section-number">18.2.3</span> Characterising the glass transition</h3>
-<p>The glass transition temperature <span class="math inline">\(T_{g}\)</span> is that temperature at which the system falls out of equilibrium on the experimental timescale <span class="math inline">\(\tau_{\text {exp. }}\)</span>. Clearly therefore, if one does a long experiment, in which the temperature is lowered slowly, the system will have a greater time to relax at each successive temperature and will stay in equilibrium to a lower temperature. Thus the experimental glass transition temperature depends on the rate at which we do the experiment. To illustrate this consider a measurement of some structural quantity (such as the sample volume) as a function of temperature. Various scenarios for the behaviour of the volume as the temperature are shown in the following figure</p>
+<section id="glass-formation" class="level3 page-columns page-full" data-number="18.2.1">
+<h3 data-number="18.2.1" class="anchored" data-anchor-id="glass-formation"><span class="header-section-number">18.2.1</span> Glass formation</h3>
+<p>How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is <strong>hindred</strong> (or in other words, <strong>frustrated</strong>): this can be because of the overall composition (silicate glasses, i.e.e window glasses, have many components) ore because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).</p>
+<p>Then, for a chosen composition, one cools down the liquid across the temperature where in principle (if given enough time) the system would crystallise (dubbed <span class="math inline">\(T_m\)</span>). The liquid becomes a so-called <strong>supercooled liquid</strong> which is a state of local equilibrium that has access to many disordered basins, but not the crystaline one (see energy landscape picture above).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./figs/glass.svg" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Standard picture of glass formation: a (local) equilibrium state (the supercoooled liquid) is cooled at a certain cooling rate <span class="math inline">\(R\)</span>. The cooling rate is fast enough to avoid crystallization (freezing) at <span class="math inline">\(T_m\)</span>. At the glass transition temperature <span class="math inline">\(T_g\)</span> the structural relaxation time of the system exceeeds the observation timescale and the system falls off equilibrium. The experimental glass transition temeprature is not unique and depends on the protocol: fast cooling rate lead to higher glass transition temperatures.</figcaption>
+<figcaption>Standard picture of glass formation: a (local) equilibrium state (the supercooled liquid) is cooled at a certain cooling rate <span class="math inline">\(R\)</span>. The cooling rate is fast enough to avoid crystallization (freezing) at <span class="math inline">\(T_m\)</span>. At the glass transition temperature <span class="math inline">\(T_g\)</span> the structural relaxation time of the system exceeds the observation timescale and the system falls off equilibrium. The experimental glass transition temperature is not unique and depends on the protocol: fast cooling rate lead to higher glass transition temperatures.</figcaption>
 </figure>
 </div>
-<p>At the glass transition temperature, the curve exhibits a well defined discontinuity in it slope, rather like what happens at an equilibrium phase transition such as freezing or boiling. The reason why the glass transition is not a true thermodynamic phase transition is that the temperature at which the discontinuity occurs depends on the history of the sample, i.e.&nbsp;how rapidly it is cooled. We say that the glass transition is a kinetic phase transition brought on by the divergence of the structural relaxation time.</p>
-</section>
-<section id="a-simple-picture-of-the-glass-transition" class="level3" data-number="18.2.4">
-<h3 data-number="18.2.4" class="anchored" data-anchor-id="a-simple-picture-of-the-glass-transition"><span class="header-section-number">18.2.4</span> A simple picture of the glass transition</h3>
-<p>Theories of the glass transition are a matter of intense current research and it is probably fair to say that the detailed physics is still not well understood in a comprehensive fashion. Nevertheless simple models offer some insight, in qualitative if not quantitative agreement with experiment. One such theory is based on the idea of cooperativity. In a liquid at high temperatures, a molecule can diffuse simply by moving to occupy the space made available by the random local motions of its neighbours. At low temperatures and high volume fractions, the local motion of neighbours is insufficient to allow diffusion. Instead a number of neighbours must move cooperatively in order to make space for a molecule to move. The minimum number of molecules that have to move in unison in order for diffusion of a molecule to take place gives rise to the concept of a cooperative rearranging region. As the temperature is lowered the size of this region increases, diverging (with the viscosity) at the Vogel-Fulcher temperature <span class="math inline">\(T_{0}\)</span> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=597&amp;width=621&amp;top_left_y=1152&amp;top_left_x=295" class="img-fluid"> <img src="https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=577&amp;width=604&amp;top_left_y=1162&amp;top_left_x=1086" class="img-fluid"></p>
-<p>If we suppose that the energy barrier for a single molecule to move is <span class="math inline">\(\mu\)</span> and there are <span class="math inline">\(z\)</span> molecules in the cooperatively rearranging region, then the thermal activation barrier for motion is</p>
+<p>As we keep on cooling the supercooled liquid to lower and lower temperature, the molecules or constituents move more and more slowly, so that the diffusivity is progressively reduced. This slowing down is typically characterized in terms of autocorrelation functions of the density.</p>
+<p>A common way to quantify this is through the (self-part) <strong>intermediate scattering function</strong> <span class="math inline">\(F_s(q, t)\)</span>, which measures how density fluctuations at a given wavevector <span class="math inline">\(q\)</span> decay over time:</p>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>The intermediate scattering function <span class="math inline">\(F_s(q, t)\)</span> can be decomposed into two contributions:</p>
+<ul>
+<li><strong>Self part</strong> <span class="math inline">\(F_s^{\text{self}}(q, t)\)</span>: Measures the correlation of each particle with its own initial position. It captures single-particle dynamics (how far a particle moves from where it started).</li>
+<li><strong>Collective part</strong> <span class="math inline">\(F_s^{\text{coll}}(q, t)\)</span>: Measures correlations between different particles, reflecting how density fluctuations evolve collectively. The collective part is given by <span class="math display">\[
+  F_s^{\text{coll}}(q, t) = \frac{1}{N} \left\langle \sum_{j,k=1}^N e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_k(0)]} \right\rangle
+  \]</span> In glassy systems, the self part is sensitive to particle mobility (e.g., caging and hopping), while the collective part describes how groups of particles rearrange together. Both are important for understanding relaxation and dynamical arrest.</li>
+</ul>
+</div></div><div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 <p><span class="math display">\[
-\tau^{-1} \sim v \exp \left(-\frac{z \mu}{k_{B} T}\right)
+F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle
 \]</span></p>
-<p>with <span class="math inline">\(v\)</span> the microscopic vibration frequency. Within this model, the non Arrhenius behaviour of the relaxation time (see above) derives from the increase in the number of molecules that have to move cooperatively as temperature decreases, i.e.&nbsp;the <span class="math inline">\(T\)</span> dependence of <span class="math inline">\(z\)</span>.</p>
+</div>
+<p>At high temperatures, <span class="math inline">\(F_s(q, t)\)</span> decays rapidly, indicating fast relaxation. As temperature decreases, the decay becomes much slower, often exhibiting a two-step relaxation: a rapid initial drop (the “<span class="math inline">\(\beta\)</span>-relaxation”) followed by a long plateau and then a slow final decay (the “<span class="math inline">\(\alpha\)</span>-relaxation”). The time at which <span class="math inline">\(F_s(q, t)\)</span> decays to a certain fraction (e.g., <span class="math inline">\(1/e\)</span>) defines the <strong>structural relaxation time</strong> <span class="math inline">\(\tau_\alpha\)</span>, which represents the typical time for a particle to move over a lengthscale <span class="math inline">\(\sim 2\pi/q\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/fskt.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Intermediate scattering functions for molecular dynamics simulations of a standard glassformer (a coarse grained metallic binary mixture) for various reduced temperatures. From <span class="citation" data-cites="coslovich2018dynamic">Coslovich, Ozawa, and Kob (<a href="#ref-coslovich2018dynamic" role="doc-biblioref">2018</a>)</span>. One can identify the initial relaxation (<span class="math inline">\(\beta\)</span>) followed by a long plateau which is itself followed by the complete relaxation (<span class="math inline">\(\alpha\)</span>). Notice the logarithmic scale of the horizontal axis (in reduced time units).</figcaption>
+</figure>
+</div>
+<p>As the supercooled liquid gets colder and colder, the relaxation time increases rapidly, eventually of many orders of magnitude. At some <em>experimentally determined</em> temperature the relaxation time is larger than the observation time, i.e.</p>
+<p><span class="math display">\[\tau_{\alpha}&gt;t_{\rm obs}\]</span></p>
+<p>This means that it is impossible to take time averages to estimate thermodynamic properties of the system, because the system does not satisfy any longer the minimal requirement of the ergodic hypothesis. This <strong>failure of ergodicity</strong> means that the system effectively falls <strong>out of equilibrium</strong>, because it does not explore all relevant microstates within the available time. The system has become a <strong>glass</strong>. The temperature at which this clearly non-ordinary (and non-thermodynamic!) transition occurs is called the <strong>experimental glass transition temperature</strong> <span class="math inline">\(T_g\)</span>.</p>
+<p>A key feature of the glass transition is that there is no unique glass transition temperature <span class="math inline">\(T_g\)</span>: the transition temperature itself depends on how fast we are cooling the liquid down. It is a <strong>protocol dependent</strong> property. We can understand this by referring back to the energy landscape: at high temperatures, the system has enough thermal energy to explore many minima in the landscape, hopping over barriers with ease. As the temperature decreases, the barriers become increasingly difficult to cross within the available observation time. If the cooling is slow, the system can equilibrate and find deeper minima, resulting in a lower <span class="math inline">\(T_g\)</span>. If the cooling is fast, the system becomes trapped in higher-energy, shallower minima, and <span class="math inline">\(T_g\)</span> is higher. Therefore, the glass transition is not a sharp thermodynamic phase transition, but a kinetic phenomenon determined by the interplay between the system’s relaxation time and the timescale of the experimental protocol.</p>
 </section>
 </section>
-<section id="physical-gels" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="physical-gels"><span class="header-section-number">18.3</span> Physical gels</h2>
+<section id="viscosity-and-relaxation-times" class="level2" data-number="18.3">
+<h2 data-number="18.3" class="anchored" data-anchor-id="viscosity-and-relaxation-times"><span class="header-section-number">18.3</span> Viscosity and relaxation times</h2>
+<p>The structural relaxation time extracted from correlation functions such as the intermediate scattering function is proportional to a macroscopic property, the <strong>viscosity</strong></p>
+<p><span class="math display">\[\tau_\alpha \propto \eta\]</span></p>
+<p>and hence the viscosity at the glass transition increases rapidly (diverges) like <span class="math inline">\(\tau_\alpha\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Relationship between viscosity and structural relaxation time
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The proportionality between viscosity <span class="math inline">\(\eta\)</span> and the structural relaxation time <span class="math inline">\(\tau_\alpha\)</span> can be understood using linear response theory and the Green-Kubo relations.</p>
+<p>The viscosity is given by the Green-Kubo formula as an integral of the stress autocorrelation function: <span class="math display">\[
+\eta = \frac{1}{k_B T V} \int_0^\infty \langle \sigma_{xy}(0) \sigma_{xy}(t) \rangle dt
+\]</span> where <span class="math inline">\(\sigma_{xy}\)</span> is the off-diagonal component of the stress tensor.</p>
+<p>In supercooled liquids and glasses, the decay of the stress autocorrelation function is governed by the same slow structural relaxation processes that control <span class="math inline">\(\tau_\alpha\)</span>. Thus, the integral is dominated by timescales of order <span class="math inline">\(\tau_\alpha\)</span>, leading to: <span class="math display">\[
+\eta \sim G_\infty \tau_\alpha
+\]</span> where <span class="math inline">\(G_\infty\)</span> is the instantaneous (high-frequency) shear modulus.</p>
+<p>This proportionality holds in the regime where the relaxation is dominated by structural rearrangements (i.e., near the glass transition), and is supported by both experiments and simulations. Therefore, the dramatic increase in viscosity as the glass transition is approached directly reflects the growth of the structural relaxation time.</p>
+</div>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/figangell.svg" class="img-fluid figure-img" style="width:60.0%"></p>
+<figcaption>Viscosity as a function of the inverse temperature scaled by the experimental glass transition temperature (Angell plot). One observes an increase of several orders of magnitude between the high temperature and the low temperature regime. Also one can distinguish different classes of glassformers, conventionally termed as <em>strong</em> and <em>fragile</em>. Adapted from <span class="citation" data-cites="debenedetti2001supercooled">Debenedetti and Stillinger (<a href="#ref-debenedetti2001supercooled" role="doc-biblioref">2001</a>)</span>.</figcaption>
+</figure>
+</div>
+<p>This dramatic increase in relaxation time is a hallmark of glassy dynamics and underlies the kinetic arrest observed in glasses.</p>
+<p>Presently, we do not have a single unified theory of the glass transition: there is no universal law capable to predict the viscosity (or the relaxation times) of glassy systems from specific micrscopic parameters. To date, the origin of the glass transition remains one of the <a href="https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics#Condensed_matter_physics">major unsolved problems condensed matter physics</a>.</p>
+<p>First steps are typically phenomenological: glasses are classified as <strong>strong</strong> or <strong>fragile</strong> based on how their viscosity (or relaxation time) increases as temperature decreases toward the glass transition temperature <span class="math inline">\(T_g\)</span>. We have seen earlier in <a href="../phase-transitions/nucleation-and-growth.html#sec-cnt" class="quarto-xref"><span>Section 9.2</span></a> that activated process are often governed by what are called Arrhenius laws, with a rate <span class="math inline">\(R\propto \exp\left[-\Delta E/k_B T\right]\)</span> where <span class="math inline">\(\Delta E\)</span> is an energy barrier. Viscosity curves can be fitted by empirical models inspired the activated picture:</p>
+<ul>
+<li><p><strong>Strong glasses</strong> (e.g., silica, SiO<span class="math inline">\(_2\)</span>) follow an Arrhenius law : <span class="math display">\[
+  \eta(T) = \eta_0 \exp\left(\frac{E_A}{k_B T}\right)
+  \]</span> where <span class="math inline">\(E_A\)</span> is an activation energy. The plot of <span class="math inline">\(\log \eta\)</span> vs <span class="math inline">\(1/T\)</span> is a straight line.</p></li>
+<li><p><strong>Fragile glasses</strong> (e.g., o-terphenyl, many polymers) show super-Arrhenius behavior, often described by the Vogel-Fulcher-Tammann (VFT) equation: <span class="math display">\[
+  \eta(T) = \eta_0 \exp\left(\frac{B}{T - T_0}\right)
+  \]</span> where <span class="math inline">\(B\)</span> and <span class="math inline">\(T_0\)</span> are empirical parameters. The plot of <span class="math inline">\(\log \eta\)</span> vs <span class="math inline">\(1/T\)</span> is highly curved.</p></li>
+</ul>
+<p>The distinction is visualized in the so-called <strong>Angell plot</strong>, where strong glasses show nearly linear behavior, while fragile glasses show a dramatic upturn as <span class="math inline">\(T \to T_g\)</span>.</p>
+<p>These models are suggestive of a <strong>thermodynamic</strong> origin of the glass transition. Indeed, it is possible to thinkto think of the emerging barrier <span class="math inline">\(E_A\)</span> and <span class="math inline">\(B\)</span> as the result of some free energy expression from the sampling of the energy landscapes in various basins.</p>
+<section id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model" class="level3" data-number="18.3.1">
+<h3 data-number="18.3.1" class="anchored" data-anchor-id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model"><span class="header-section-number">18.3.1</span> Connection between VFT and configurational entropy: the Adam-Gibbs model</h3>
+<p>A key theoretical link between the dramatic slowdown of dynamics (as described by the VFT law) and the underlying thermodynamics is provided by the <strong>Adam-Gibbs model</strong>, details in <span class="citation" data-cites="bouchaud2004adam">Bouchaud and Biroli (<a href="#ref-bouchaud2004adam" role="doc-biblioref">2004</a>)</span>.</p>
+<p>This model proposes that the structural relaxation time <span class="math inline">\(\tau_\alpha\)</span> is controlled by the <strong>configurational entropy</strong> <span class="math inline">\(S_{\rm conf}\)</span>, which counts the number of distinct amorphous basins available to the system.</p>
+<p>The Adam-Gibbs relation reads: <span class="math display">\[
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+\]</span> where <span class="math inline">\(A\)</span> is a constant. As temperature decreases, <span class="math inline">\(S_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>. If <span class="math inline">\(S_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form: <span class="math display">\[
+\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
+\]</span> with <span class="math inline">\(T_0 \approx T_K\)</span>. Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached.</p>
+</section>
+<section id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law" class="level3" data-number="18.3.2">
+<h3 data-number="18.3.2" class="anchored" data-anchor-id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law"><span class="header-section-number">18.3.2</span> Alternative perspective: Dynamical facilitation and the parabolic law</h3>
+<p>While thermodynamic models like Adam-Gibbs relate the glass transition to configurational entropy, a radical alternative approach is the <strong>dynamical facilitation theory</strong>, see <span class="citation" data-cites="chandler2010dynamics">Chandler and Garrahan (<a href="#ref-chandler2010dynamics" role="doc-biblioref">2010</a>)</span> for more details. This framework emphasizes that glassy slowdown arises from the dynamics themselves, rather than underlying thermodynamic changes.</p>
+<p>In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility “facilitates” further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.</p>
+<p>A schematic illustration:</p>
+<ul>
+<li>At high <span class="math inline">\(T\)</span>, mobile regions are abundant and relaxation is fast.</li>
+<li>As <span class="math inline">\(T\)</span> decreases, mobile regions become rare, and relaxation requires the creation and propagation of mobility, which is a rare event.</li>
+<li>The relaxation time grows rapidly due to the need for cooperative rearrangements.</li>
+</ul>
+<p>This scenario predicts a <strong>parabolic law</strong> for the relaxation time:</p>
+<p><span class="math display">\[
+\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2
+\]</span></p>
+<p>where <span class="math inline">\(J\)</span> is an energy scale and <span class="math inline">\(T_0\)</span> is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
+<p>Interestingly, both the two perspective fit the viscosity data wall within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).</p>
+<p>Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see <span class="citation" data-cites="hasyim2024emergent">Hasyim and Mandadapu (<a href="#ref-hasyim2024emergent" role="doc-biblioref">2024</a>)</span> for more details.</p>
+<iframe src="https://iframe.videodelivery.net/eyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA?poster=https%3A%2F%2Fvideodelivery.net%2FeyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D10.0s" width="100%" height="500" frameborder="0" allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="">
+</iframe>
+</section>
+</section>
+<section id="physical-gels" class="level2" data-number="18.4">
+<h2 data-number="18.4" class="anchored" data-anchor-id="physical-gels"><span class="header-section-number">18.4</span> Physical gels</h2>
 <p>The word <em>gel</em> signifies many different things to different scientific communities. In the context of soft matter physics, a physical gel is typically understood as a system in which the constituent particles or polymers are connected via reversible, non-covalent bonds to form a percolating network that spans the entire sample. This network imparts solid-like mechanical properties to the material, even though the underlying structure remains disordered and fluid-like on a microscopic scale.</p>
 <p>Physical gels differ from chemical gels, where the network is formed by irreversible covalent bonds. In physical gels, the bonds can break and reform dynamically, have an energy of oder <span class="math inline">\(1 k_BT\)</span>, allowing the system to respond to external stresses and sometimes to self-heal. Examples include gelatin desserts, agarose gels, and certain colloidal suspensions where attractive interactions lead to network formation, see <span class="citation" data-cites="Zaccarelli2007">Zaccarelli (<a href="#ref-Zaccarelli2007" role="doc-biblioref">2007</a>)</span> for a comprehensive review.</p>
 <p>The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from <strong>percolation theory</strong>. The mechanical rigidity of the gel arises when this cluster forms, leading to a dramatic increase in viscosity and the emergence of an elastic response.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -560,7 +627,7 @@ Percolation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Percolation is the study of an apparently innocent mathematical problem: take a square grid if <span class="math inline">\(L\times L\)</span> sites and randomly label <span class="math inline">\(N\)</span> of them; how does the likelihood of forming a cluster that spans across the grid (i.e.&nbsp;<em>percolates</em>) depend on the probability <span class="math inline">\(p=N/L^2\)</span> of having a labelled square?</p>
 <p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiologu and ecology. It is a meaneable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transitions is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
@@ -746,8 +813,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <figcaption>Molecular dynamics simulation of the gradual formation of a very dilute colloidal gel by the growth of a system spanning (percolating) cluster (the largest cluster is highlighted in red).</figcaption>
 </figure>
 </div>
-<section id="colloid-polymer-mixtures-as-an-example" class="level3" data-number="18.3.1">
-<h3 data-number="18.3.1" class="anchored" data-anchor-id="colloid-polymer-mixtures-as-an-example"><span class="header-section-number">18.3.1</span> Colloid-polymer mixtures as an example</h3>
+<section id="colloid-polymer-mixtures-as-an-example" class="level3" data-number="18.4.1">
+<h3 data-number="18.4.1" class="anchored" data-anchor-id="colloid-polymer-mixtures-as-an-example"><span class="header-section-number">18.4.1</span> Colloid-polymer mixtures as an example</h3>
 <p>A way to realise robust physical gels in experiments is to use colloid-polymer mixtures, which we have seen previously when we talked about depletion. When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called <strong>sticky</strong> interaction, ideally suited to form sobust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.</p>
 <p>The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -767,7 +834,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="73dadd9b" class="cell" data-execution_count="1">
+<div id="f35e6a28" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -781,7 +848,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="8721556f" class="cell" data-execution_count="2">
+<div id="11ec0d05" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -819,7 +886,7 @@ S(q) \sim q^{-D_f}
 <p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. Typical values for percolation clusters in 3D are <span class="math inline">\(D_f \approx 2.5\)</span>.</p>
 <p>Thus, by analyzing the low-<span class="math inline">\(q\)</span> behavior of <span class="math inline">\(S(q)\)</span>, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -828,7 +895,7 @@ Measuring fractal dimensions: the box-counting algorithm
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Fractal dimensions are in practice quite tricky to measure. A common method is the <strong>box-counting algorithm</strong>:</p>
 <ol type="1">
@@ -841,7 +908,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="518b3a96" class="cell" data-execution_count="3">
+<div id="7553a44e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -916,8 +983,8 @@ N(\ell) \sim \ell^{-D_f}
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QOa2qhDdywc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
-<section id="arrested-spinodal-scenario" class="level3" data-number="18.3.2">
-<h3 data-number="18.3.2" class="anchored" data-anchor-id="arrested-spinodal-scenario"><span class="header-section-number">18.3.2</span> Arrested spinodal scenario</h3>
+<section id="arrested-spinodal-scenario" class="level3" data-number="18.4.2">
+<h3 data-number="18.4.2" class="anchored" data-anchor-id="arrested-spinodal-scenario"><span class="header-section-number">18.4.2</span> Arrested spinodal scenario</h3>
 <p>But how do physical gels come about? A viable scenario is the so-called <strong>arrested spinodal decomposition</strong> scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via spinodal decomposition. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.</p>
 <p>This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, “frozen in” by the arrest of particle motion.</p>
 <p>For the arested spinodal scenario to hold, the system evolves following these steps:</p>
@@ -957,11 +1024,26 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 W10=
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bouchaud2004adam" class="csl-entry" role="listitem">
+Bouchaud, Jean-Philippe, and Giulio Biroli. 2004. <span>“On the Adam-Gibbs-Kirkpatrick-Thirumalai-Wolynes Scenario for the Viscosity Increase in Glasses.”</span> <em>The Journal of Chemical Physics</em> 121 (15): 7347–54. <a href="https://bris.on.worldcat.org/oclc/110636005">https://bris.on.worldcat.org/oclc/110636005</a>.
+</div>
+<div id="ref-chandler2010dynamics" class="csl-entry" role="listitem">
+Chandler, David, and Juan P Garrahan. 2010. <span>“Dynamics on the Way to Forming Glass: Bubbles in Space-Time.”</span> <em>Annual Review of Physical Chemistry</em> 61 (1): 191–217. <a href="https://bris.on.worldcat.org/oclc/4761088692">https://bris.on.worldcat.org/oclc/4761088692</a>.
+</div>
+<div id="ref-coslovich2018dynamic" class="csl-entry" role="listitem">
+Coslovich, Daniele, Misaki Ozawa, and Walter Kob. 2018. <span>“Dynamic and Thermodynamic Crossover Scenarios in the Kob-Andersen Mixture: Insights from Multi-CPU and Multi-GPU Simulations.”</span> <em>The European Physical Journal E</em> 41: 1–11. <a href="https://bris.on.worldcat.org/oclc/7634416384">https://bris.on.worldcat.org/oclc/7634416384</a>.
+</div>
+<div id="ref-debenedetti2001supercooled" class="csl-entry" role="listitem">
+Debenedetti, Pablo G, and Frank H Stillinger. 2001. <span>“Supercooled Liquids and the Glass Transition.”</span> <em>Nature</em> 410 (6825): 259–67. <a href="https://www.nature.com/articles/35065704">https://www.nature.com/articles/35065704</a>.
+</div>
 <div id="ref-dijkstra1999phase" class="csl-entry" role="listitem">
 Dijkstra, Marjolein, Joseph M Brader, and Robert Evans. 1999. <span>“Phase Behaviour and Structure of Model Colloid-Polymer Mixtures.”</span> <em>Journal of Physics: Condensed Matter</em> 11 (50): 10079. <a href="https://bris.on.worldcat.org/oclc/4843512718">https://bris.on.worldcat.org/oclc/4843512718</a>.
 </div>
 <div id="ref-griffiths2017local" class="csl-entry" role="listitem">
 Griffiths, Samuel, Francesco Turci, and C Patrick Royall. 2017. <span>“Local Structure of Percolating Gels at Very Low Volume Fractions.”</span> <em>The Journal of Chemical Physics</em> 146 (1). <a href="https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low">https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low</a>.
+</div>
+<div id="ref-hasyim2024emergent" class="csl-entry" role="listitem">
+Hasyim, Muhammad R, and Kranthi K Mandadapu. 2024. <span>“Emergent Facilitation and Glassy Dynamics in Supercooled Liquids.”</span> <em>Proceedings of the National Academy of Sciences</em> 121 (23): e2322592121. <a href="https://www.pnas.org/doi/abs/10.1073/pnas.2322592121">https://www.pnas.org/doi/abs/10.1073/pnas.2322592121</a>.
 </div>
 <div id="ref-royall2018race" class="csl-entry" role="listitem">
 Royall, C Patrick, Francesco Turci, Soichi Tatsumi, John Russo, and Joshua Robinson. 2018. <span>“The Race to the Bottom: Approaching the Ideal Glass?”</span> <em>Journal of Physics: Condensed Matter</em> 30 (36): 363001. <a href="https://bris.on.worldcat.org/oclc/1098708850">https://bris.on.worldcat.org/oclc/1098708850</a>.

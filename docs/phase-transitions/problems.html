@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/problems.html">Problems</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/problems.html">Problems</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -155,12 +155,6 @@ window.Quarto = {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/literature.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended texts</span></a>
-  </div>
-</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
@@ -365,19 +359,20 @@ window.Quarto = {
   <li><a href="#landau-theory" id="toc-landau-theory" class="nav-link" data-scroll-target="#landau-theory">8. Landau theory</a></li>
   <li><a href="#scaling-equation-of-state" id="toc-scaling-equation-of-state" class="nav-link" data-scroll-target="#scaling-equation-of-state">9. Scaling equation of state</a></li>
   <li><a href="#scaling-laws" id="toc-scaling-laws" class="nav-link" data-scroll-target="#scaling-laws">10. Scaling laws</a></li>
-  <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">11. Colloidal diffusion</a></li>
-  <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">12. Einstein’s expression for the diffusion coefficient</a></li>
-  <li><a href="#life-in-one-dimension" id="toc-life-in-one-dimension" class="nav-link" data-scroll-target="#life-in-one-dimension">13. Life in one dimension</a></li>
-  <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">14. Master equation</a></li>
-  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">15. Detailed balance</a></li>
-  <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">16. Jump processes</a></li>
+  <li><a href="#classical-nucleation-and-growth" id="toc-classical-nucleation-and-growth" class="nav-link" data-scroll-target="#classical-nucleation-and-growth">11. Classical Nucleation and Growth</a></li>
+  <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">12. Colloidal diffusion</a></li>
+  <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</a></li>
+  <li><a href="#life-in-one-dimension" id="toc-life-in-one-dimension" class="nav-link" data-scroll-target="#life-in-one-dimension">14. Life in one dimension</a></li>
+  <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">15. Master equation</a></li>
+  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">16. Detailed balance</a></li>
+  <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">17. Jump processes</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/literature.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/problems.html">Problems</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/precourse-reading.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/problems.html">Problems</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="problems" class="quarto-section-identifier">Unifying concepts: Problems</span></h1>
 </div>
@@ -482,15 +477,15 @@ C_H=&amp; 3Nk_B/2 ~~~~ T\le T_c
 <p><span class="math display">\[
 F=F_0+\tilde{a}_2tm^2+a_4m^4-Hm\:,
 \]</span> where <span class="math inline">\(t=T-T_c\)</span> and <span class="math inline">\(H\)</span> is an applied magnetic field; <span class="math inline">\(\tilde{a}_2\)</span> and <span class="math inline">\(a_4\)</span> are positive constants and <span class="math inline">\(F_0\)</span> is a constant background term.</p>
-<p><strong>(a)</strong> Show that the equation of state for the model is</p>
+<p>Show that the equation of state for the model is</p>
 <p><span class="math display">\[
 H=2\tilde{a}_2tm+4a_4m^3\:.
 \]</span></p>
-<p><strong>(b)</strong> Use the near-critical power law behaviour of <span class="math inline">\(m\)</span> to show that the equation of state may be written in the scaling form</p>
+<p>Use the near-critical power law behaviour of <span class="math inline">\(m\)</span> to show that the equation of state may be written in the scaling form</p>
 <p><span class="math display">\[
 \frac{H}{m^\delta}=g\left(\frac{t}{m^{1/\beta}}\right)\:,
 \]</span> and find the (mean field) values of the critical exponents <span class="math inline">\(\delta\)</span> and <span class="math inline">\(\beta\)</span>.</p>
-<p><strong>(c)</strong> Deduce that <span class="math inline">\(g(x)=x+1\)</span> up to a choice of scale for <span class="math inline">\(\tilde{a}_2\)</span> and <span class="math inline">\(a_4\)</span>.</p>
+<p>Deduce that <span class="math inline">\(g(x)=x+1\)</span> up to a choice of scale for <span class="math inline">\(\tilde{a}_2\)</span> and <span class="math inline">\(a_4\)</span>.</p>
 <hr>
 </section>
 <section id="scaling-laws" class="level3">
@@ -506,8 +501,23 @@ H=2\tilde{a}_2tm+4a_4m^3\:.
 <p>(<em>Hint: For the heat capacity exponent <span class="math inline">\(\alpha\)</span> use the result from problem 9: <span class="math inline">\(C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\)</span></em>)</p>
 <hr>
 </section>
+<section id="classical-nucleation-and-growth" class="level3">
+<h3 class="anchored" data-anchor-id="classical-nucleation-and-growth">11. Classical Nucleation and Growth</h3>
+<p>A supercooled liquid metal is undergoing solidification. According to classical nucleation theory, the Gibbs free energy change <span class="math inline">\(\Delta G\)</span> for forming a spherical solid nucleus of radius <span class="math inline">\(r\)</span> in the liquid is given by:</p>
+<p><span class="math display">\[
+\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \gamma
+\]</span></p>
+<p>where: - <span class="math inline">\(\Delta G_v &lt; 0\)</span> is the free energy change per unit volume due to the phase change, - <span class="math inline">\(\gamma &gt; 0\)</span> is the interfacial energy between the solid and liquid phases.</p>
+<p><strong>(a)</strong> Derive the expression for the critical radius <span class="math inline">\(r^*\)</span> at which the nucleus becomes stable and begins to grow.</p>
+<p><strong>(b)</strong> Show that the critical energy barrier for nucleation <span class="math inline">\(\Delta G^*\)</span> is given by:</p>
+<p><span class="math display">\[
+\Delta G^* = \frac{16\pi \gamma^3}{3 (\Delta G_v)^2}
+\]</span></p>
+<p><strong>(c)</strong> Explain qualitatively how the degree of undercooling <span class="math inline">\(\Delta T\)</span> affects the rate of nucleation. Use the fact that <span class="math inline">\(\Delta G_v \propto \Delta T\)</span> to support your answer.</p>
+<hr>
+</section>
 <section id="colloidal-diffusion" class="level3">
-<h3 class="anchored" data-anchor-id="colloidal-diffusion">11. Colloidal diffusion</h3>
+<h3 class="anchored" data-anchor-id="colloidal-diffusion">12. Colloidal diffusion</h3>
 <p>A large colloidal particle of mass <span class="math inline">\(M\)</span> moves in a fluid under the influence of a random force <span class="math inline">\(F(t)\)</span> and a coefficient of Stokes friction drag <span class="math inline">\(\gamma\)</span>, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by</p>
 <p><span class="math display">\[
 u = u_0 e^{-\gamma t} + e^{-\gamma t} \int_0^t dt' \, e^{\gamma t'} F(t'),
@@ -521,7 +531,7 @@ u = u_0 e^{-\gamma t} + e^{-\gamma t} \int_0^t dt' \, e^{\gamma t'} F(t'),
 <hr>
 </section>
 <section id="einsteins-expression-for-the-diffusion-coefficient" class="level3">
-<h3 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">12. Einstein’s expression for the diffusion coefficient</h3>
+<h3 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</h3>
 <p>In 1905, Einstein showed that the friction coefficient <span class="math inline">\(\gamma\)</span> (per unit mass) of a colloidal particle must be related to the diffusion coefficient <span class="math inline">\(D\)</span> of the particle by</p>
 <p><span class="math display">\[
 D = \frac{kT}{\gamma}.
@@ -539,7 +549,7 @@ D = \lim_{t \to \infty} \frac{1}{2t} \langle \{ X(t) - X(0) \}^2 \rangle,
 <hr>
 </section>
 <section id="life-in-one-dimension" class="level3">
-<h3 class="anchored" data-anchor-id="life-in-one-dimension">13. Life in one dimension</h3>
+<h3 class="anchored" data-anchor-id="life-in-one-dimension">14. Life in one dimension</h3>
 <p>A particle lives on the sites of a one-dimensional lattice. At any instant it has probability <span class="math inline">\(\alpha\)</span> per unit time that it will hop to the site on its right and probability <span class="math inline">\(\alpha\)</span> per unit time of hopping to the site on its left.</p>
 <p>Write down the master equation for the set of probabilities <span class="math inline">\(p_n(t)\)</span> of finding the particle at the <span class="math inline">\(n^{\text{th}}\)</span> site, where <span class="math inline">\(-\infty &lt; n &lt; \infty\)</span>.</p>
 <p>Solve the master equation for the <span class="math inline">\(p_n\)</span>, subject to the initial condition that the particle was at the site <span class="math inline">\(n = 0\)</span> at time <span class="math inline">\(t = 0\)</span>. Hence obtain the mean position <span class="math inline">\(\langle n \rangle\)</span> and root mean square deviation from the mean, both as functions of time.</p>
@@ -550,14 +560,14 @@ F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
 <hr>
 </section>
 <section id="master-equation" class="level3">
-<h3 class="anchored" data-anchor-id="master-equation">14. Master equation</h3>
+<h3 class="anchored" data-anchor-id="master-equation">15. Master equation</h3>
 <p>A system of <span class="math inline">\(N\)</span> atoms, each having two energy levels <span class="math inline">\(E = \pm \epsilon\)</span>, is brought into contact with a heat bath at temperature <span class="math inline">\(T\)</span>. The atoms do not interact with each other, but each atom interacts with the heat bath to have a probability <span class="math inline">\(\lambda_{-\to+}(T)\)</span> per unit time of transition from lower to higher level, and a probability <span class="math inline">\(\lambda_{+\to-}(T)\)</span> per unit time of the reverse transition.</p>
 <p>If at any time <span class="math inline">\(t\)</span> there are <span class="math inline">\(n_+(t)\)</span> atoms at the higher level and <span class="math inline">\(n_-(t)\)</span> at the lower level, then <span class="math inline">\(n(t) = n_-(t) - n_+(t)\)</span> is a convenient measure of the non-equilibrium state.</p>
 <p>Obtain the master equation for <span class="math inline">\(n(t)\)</span> and hence the relaxation time <span class="math inline">\(\tau\)</span> which characterizes the exponential approach of the system to equilibrium.</p>
 <hr>
 </section>
 <section id="detailed-balance" class="level3">
-<h3 class="anchored" data-anchor-id="detailed-balance">15. Detailed balance</h3>
+<h3 class="anchored" data-anchor-id="detailed-balance">16. Detailed balance</h3>
 <p><strong>(a)</strong> Starting from the principle of detailed balance for an isolated system, show that for two groups of states within it, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the overall rate of transitions from group <span class="math inline">\(A\)</span> to group <span class="math inline">\(B\)</span> is balanced, in equilibrium, by those from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span>:</p>
 <p><span class="math display">\[
 \lambda_{A \to B} p^{\text{eq}}_A = \lambda_{B \to A} p^{\text{eq}}_B
@@ -569,7 +579,7 @@ F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
 <hr>
 </section>
 <section id="jump-processes" class="level3">
-<h3 class="anchored" data-anchor-id="jump-processes">16. Jump processes</h3>
+<h3 class="anchored" data-anchor-id="jump-processes">17. Jump processes</h3>
 <p>An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability <span class="math inline">\(\lambda_0\)</span> that the system makes a jump, from the state it is in, into (each of) the other state(s) it can reach.</p>
 <p><strong>(a)</strong> Show that the occupancy probabilities <span class="math inline">\(p = (p_1, p_2, p_3)\)</span> of the three states obey the master equation</p>
 <p><span class="math display">\[
