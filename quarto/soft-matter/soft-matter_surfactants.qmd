@@ -1,14 +1,19 @@
 ---
 title: "Surfactants"
-format: html
-# pyodide:
-    # packages:
-        # - numpy
-        # - matplotlib
-        # - plotly
-        # - nbformat
-        # - pandas
+format: live-html
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
+        - plotly
+        - nbformat
+        - pandas
+resources:
+    - ./figs/SDS.pdb
+    - ./figs/cholesterol.pdb
 bibliography: references.bib
+
+toc-depth: 4
 ---
 
 ```{pyodide}
@@ -46,7 +51,9 @@ A few chemical structures are shown below. They illustrates that the hydrophobic
 
 In SDS (sodium dodecyl sulfate) the head is the hydrophilic sulfate group (${\rm –OSO_3}$), which is negatively charged and water-attracting whil the tail is  the long hydrophobic 12-carbon alkyl chain (dodecyl group), which is water-repelling.
 
+
 {{< mol-url ./figs/SDS.pdb >}}
+<!-- {{< mol-url ./figs/SDS.pdb >}} -->
 
 
 #### Cholesterol{.unnumbered}
@@ -94,7 +101,7 @@ Suppose we have a system where solvent particles are dispersed in a solvent and 
 
 Call $\mu_1 $ and $\mu_N$ the chemical potential of isolated particles and aggregates of size $N$ respectively. In equilibrium, they must be equal, with value $\mu$.
 
-Let's focus on an aggregate of size $N$. We can express $\mu $ in terms of 
+Let's focus on an aggregate of size $N$. We can express $\mu$ in terms of 
 
 - the interaction energy from being in the aggregate ($\epsilon_N$)
 - the (translational) entropy of the aggregate as a whole ($\propto {\rm number of aggregates}\times \ln {\rm number fo aggregates}$)

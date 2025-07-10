@@ -10,6 +10,9 @@ pyodide:
         - pandas
 resources:
     - src/plotting.py
+    - ./figs/Polystyrene.pdb
+    - ./figs/polyEthylMethacrylate3.pdb
+    - ./figs/naturalrubberr.pdb
 bibliography: references.bib
 
 toc-depth: 4
