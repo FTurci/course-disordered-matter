@@ -512,7 +512,7 @@ into the 4th scaling relation gives the first scaling law.
 
 ---
 
-### 11. Classical Nucleation and Growth
+### 11. Classical nucleation theory
 
 **(a)** To find the critical radius $r^*$, we differentiate $\Delta G(r)$ with respect to $r$ and set the derivative equal to zero:
 
@@ -558,7 +558,7 @@ $$
 Thus, as $\Delta T$ increases, $\Delta G^*$ decreases rapidly. A smaller energy barrier means nucleation becomes more probable. 
 Therefore, the nucleation rate increases sharply with undercooling.
 
-However, at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.
+Note, however, that at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.
 
 
 ### 12. Colloidal diffusion
@@ -652,12 +652,11 @@ $$
 D = \lim_{t \to \infty} \frac{1}{t} \int_0^t dt_1 \int_0^{t - t_1} d\tau \langle u(t_1) u(t_1 + \tau) \rangle
 $$
 
-For a stationary process,
+In thermal equilibrium the process is stationary, so the two‐time correlation depends only on the time‐difference:
 
 $$
 \langle u(t_1) u(t_1 + \tau) \rangle = \langle u(t_0) u(t_0 + \tau) \rangle
 $$
-
 for any arbitrary $t_0$.
 
 Doing the integral with respect to $t_1$ we find:
@@ -924,63 +923,83 @@ This result has important implications for Monte Carlo simulation
 
 ### 17. Jump processes
 
-**(a)** Let $E_1 = E_2 = E_3$;  then $p_1 = p_2 = p_3$ in equilibrium.
 
 
+ **(a)** Label by $p_i(t)$ the probability to be in state $i$ at time $t$.  From the question:
+
+- From state 1 one can only jump to 2 with rate $\lambda_0$.
+- From state 2 one can jump to 1 or to 3, each with rate $\lambda_0$.
+- From state 3 one can only jump to 2 with rate $\lambda_0$.
+
+Hence the gain–loss equations are
 $$
-v_{12} = v_{21} = v_0 \\
-v_{23} = v_{32} = v_0 \\
-v_{13} = v_{31} = 0
+\begin{aligned}
+\dot p_1 &= -\lambda_0\,p_1 + \lambda_0\,p_2,\\
+\dot p_2 &= \lambda_0\,p_1 - 2\lambda_0\,p_2 + \lambda_0\,p_3,\\
+\dot p_3 &= \lambda_0\,p_2 - \lambda_0\,p_3.
+\end{aligned}
 $$
 
+Writing $\mathbf p=(p_1,p_2,p_3)^{\!T}$, one checks immediately that
 $$
-\dot{p}_i = \sum_j v_{ij} (p_j - p_i)
+\dot{\mathbf p}
+\;=\;
+\lambda_0
+\begin{pmatrix}
+-1 & 1 & 0\\
+1 & -2 & 1\\
+0 & 1 & -1
+\end{pmatrix}
+\mathbf p
+\;=\;M\,\mathbf p,
+$$
+as claimed. Note that the columns of $M$ sum to zero, ensuring $\sum_i\dot p_i=0$ (probability conservation).
+
+ **(b)**  An equilibrium state $\mathbf p^{\rm eq}$ satisfies
+$$
+M\,\mathbf p^{\rm eq}=0,
+\quad
+\sum_{i=1}^3 p^{\rm eq}_i=1.
+$$
+From the first row of $M\,\mathbf p=0$ we get
+$$
+-\,p^{\rm eq}_1 + p^{\rm eq}_2 =0
+\;\Longrightarrow\;
+p^{\rm eq}_1 = p^{\rm eq}_2.
+$$
+From the third row,
+$$
+p^{\rm eq}_2 - p^{\rm eq}_3=0
+\;\Longrightarrow\;
+p^{\rm eq}_2 = p^{\rm eq}_3.
+$$
+Hence all three components are equal.  Normalizing,
+$$
+p^{\rm eq}_1 = p^{\rm eq}_2 = p^{\rm eq}_3 = \tfrac13,
+$$
+i.e.\ 
+$$
+\mathbf p^{\rm eq} = \bigl(\tfrac13,\tfrac13,\tfrac13\bigr).
 $$
 
-i.e. $\dot{p}_1 = -v_0 p_1 + v_0 p_2$ etc.
-
-Or $\dot{p}_i \equiv M_{ij} p_j$,  
-where
-
+**(c)** The matrix
 $$
-M_{ij} = v_0 \begin{pmatrix}
--1 & 1 & 0 \\
-1 & -2 & 1 \\
+M = \lambda_0
+\begin{pmatrix}
+-1 & 1 & 0\\
+1 & -2 & 1\\
 0 & 1 & -1
 \end{pmatrix}
 $$
-
-
-**(b)** Equilibrium $\dot{p} = 0 \Rightarrow M \cdot p = 0$  
-Verify:
-
+is (up to $\lambda_0$) the negative of the graph-Laplace operator of the path $1\!-\!2\!-\!3$.  Its characteristic polynomial is
 $$
-M \cdot 
-\begin{pmatrix}
-1 \\
-1 \\
-1
-\end{pmatrix}
-= (0, 0, 0)
+\det(M -\mu I)
+=-\mu(\mu+\lambda_0)(\mu+3\lambda_0),
 $$
-
-Hence $(1, 1, 1)/3$ is a steady-state solution.
-
-
-**(c)** Uniqueness: $\dot{p} = 0$ requires $p$ to be an eigenvector with zero eigenvalue.  
-The eigenvalues $v_0 \lambda$ obey:
-
+so the eigenvalues are
 $$
-\begin{vmatrix}
--1 - \lambda & 1 & 0 \\
-1 & -2 - \lambda & 1 \\
-0 & 1 & -1 - \lambda
-\end{vmatrix} = 0
+\mu_1=0,\quad \mu_2=-\lambda_0,\quad \mu_3=-3\lambda_0.
 $$
+Since the zero‐eigenvalue has multiplicity one, the null space of $M$ is one-dimensional.  Imposing $\sum_i p_i=1$ picks out a unique vector in that null space.  Hence the equilibrium $(\tfrac13,\tfrac13,\tfrac13)$ is the only steady-state probability vector.
 
-$$
-\Rightarrow \lambda(\lambda + 3)(\lambda + 1) = 0.
-$$
-
-So $\lambda = 0$ corresponds to only one eigenvector;  
-the other two have $\lambda = -1$ and $\lambda = -3$.
+---
