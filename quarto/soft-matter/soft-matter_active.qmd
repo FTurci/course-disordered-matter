@@ -9,7 +9,16 @@ bibliography: references.bib
 
 
 ## Life-inspired motion: *run and tumble*
+
+
 The run-and-tumble model describes the motion of active particles, such as bacteria, that alternate between two types of movement: "runs" (straight-line motion) and "tumbles" (random reorientation). This model captures the behavior of microorganisms like *E. coli*.
+
+::: {#fig-escherichia}
+{{< video https://www.youtube.com/watch?v=b9P8uPkeKmc >}}
+
+Swimming Escherichia coli bacteria with fluorescently-labeled flagellar filaments, showing individual run-and-tumble events with flagellar filaments unbundling, cells turning, and flagellar filaments rejoining the bundle. The details of the experimental procedure are given in @turner2000real.
+
+:::
 
 ```{ojs}
 //| code-fold: true
@@ -129,6 +138,7 @@ viewof simulation = {
 }
 
 ```
+
 ### Dynamical rules
 
 1. **Run Phase**:
@@ -138,7 +148,7 @@ viewof simulation = {
     $$
 
     where:
-    - $\mathbf{r}(t)$ is the position of the particle at time $ t$,
+    - $\mathbf{r}(t)$ is the position of the particle at time $t$,
     - $v_0$ is the constant speed,
     - $\hat{\mathbf{n}}(t)$ is the unit vector indicating the direction of motion.
 
@@ -162,7 +172,9 @@ In the context of active matter, coloured noise can be used to describe the dyna
 $$
 \frac{d\boldsymbol{\eta}(t)}{dt} = -\frac{\boldsymbol{\eta}(t)}{\tau_c} + \sqrt{\frac{2D_c}{\tau_c}} \boldsymbol{\xi}(t),
 $$
+
 where:
+
 - $\tau_c$ is the correlation time of the noise,
 - $D_c$ is the noise strength,
 - $\boldsymbol{\xi}(t)$ is a Gaussian white noise term with zero mean and unit variance.

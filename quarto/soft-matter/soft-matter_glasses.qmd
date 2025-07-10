@@ -72,74 +72,161 @@ It is only as we decrease the temperature further that the metabasins can be def
 
 $$S = S_{\rm conf}+S_{\rm vib}$$
 
-where $S_{\rm vib}$ is the vibrational entorpy around the reference confromations, and is mainly due to thermal fluctuatiosn. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the refernce conformations are provided by the crustalline packings (e.g. FCC, HCP, BCC etc.).
-
-What is interesting is 
+where $S_{\rm vib}$ is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuatiosn. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g. FCC, HCP, BCC etc.).
 
 
 ## Glasses
 
-In terms of their structure (e.g. as measured by a radial distribution function, $g(r)$) they are practically indistinguishable from liquids, i.e. they exhibit some short ranged order, but no long ranged order. However, their dynamic behaviour is quite different from that of liquids; glasses exhibit very slow relaxation because molecules cannot easily diffuse. As a result, glasses do not flow (on experimental timescales) and therefore their mechanical properties, i.e. their response to stress and shearing, is more akin to that of solids.
+### Glass formation
+
+How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is **hindred** (or in other words, **frustrated**): this can be because of  the overall composition (silicate glasses, i.e.e window glasses, have many components) ore because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).
+
+Then, for a chosen composition, one cools down the liquid across the temperature where in principle (if given enough time) the system would crystallise (dubbed $T_m$). The liquid becomes a so-called **supercooled liquid** which is a state of local equilibrium that has access to many disordered basins, but not the crystaline one (see energy landscape picture above).
 
 
-### Glass forming systems
+![Standard picture of glass formation: a (local) equilibrium state (the supercooled liquid) is cooled at a certain cooling rate $R$. The cooling rate is fast enough to avoid crystallization (freezing) at $T_m$. At the glass transition temperature $T_g$ the structural relaxation time of the system exceeds the observation timescale and the system falls off equilibrium. The experimental glass transition temperature is not unique and depends on the protocol: fast cooling rate lead to higher glass transition temperatures.](./figs/glass.svg){width=80%}
 
-Glasses may be formed if the cooling rate is so fast that the liquid does not have time to crystallize , or alternatively because the molecules have some feature to their structure or bonding that inhibits the formation of a crystalline phase. Many glass forming materials are found in nature. Below we describe just a few.
+As we keep on cooling the supercooled liquid to lower and lower temperature, the molecules or constituents move more and more slowly, so that the diffusivity is progressively reduced. This slowing down is typically characterized in terms of autocorrelation functions of the density.
 
-Elements: Sulphur, Selenium and Phosphorous readily form glasses.
-Metallic alloys: liquid metals can form glasses if quenched very rapidly ( $10^{6} \mathrm{~K} \mathrm{~s}^{-1}$ ). Such glasses find applications in recording heads and electrical transformers.
-Polymer glasses: Due to entanglement effects, polymers form glasses very easily. Examples from everyday life are polycarbonates (eyeglasses, shatterproof windows) and polymethacrylate (plastic pipes and tubes).
-Oxide glasses: Familiar examples are $\mathrm{SiO}_{2}, \mathrm{Na}_{2} \mathrm{O}$ and CaO (all components of window glass).
-Organic glasses: Sucrose solution forms a glass used in boiled sweets. Toluene and methanol also readily form glasses.
+A common way to quantify this is through the (self-part) **intermediate scattering function** $F_s(q, t)$, which measures how density fluctuations at a given wavevector $q$ decay over time:
 
-### Relaxation time and viscosity
+::: column-margin
+The intermediate scattering function $F_s(q, t)$ can be decomposed into two contributions:
 
-Let us first consider relaxation in liquids. We have already seen that at high volume fractions a particle is effectively trapped by its nearest neighbours, within a 'cage'. To escape the cage, a particle must jump. Let us now consider the characteristic time $\tau$ between such jumps and its dependence on temperature. Empirically, one finds that
+- **Self part** $F_s^{\text{self}}(q, t)$: Measures the correlation of each particle with its own initial position. It captures single-particle dynamics (how far a particle moves from where it started).
+- **Collective part** $F_s^{\text{coll}}(q, t)$: Measures correlations between different particles, reflecting how density fluctuations evolve collectively. The collective part is given by
+    $$
+    F_s^{\text{coll}}(q, t) = \frac{1}{N} \left\langle \sum_{j,k=1}^N e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_k(0)]} \right\rangle
+    $$
+In glassy systems, the self part is sensitive to particle mobility (e.g., caging and hopping), while the collective part describes how groups of particles rearrange together. Both are important for understanding relaxation and dynamical arrest.
+:::
+
+
+<div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
+$$
+F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} \cdot [\mathbf{r}_j(t) - \mathbf{r}_j(0)]} \right\rangle
+$$
+</div>
+
+
+At high temperatures, $F_s(q, t)$ decays rapidly, indicating fast relaxation. As temperature decreases, the decay becomes much slower, often exhibiting a two-step relaxation: a rapid initial drop (the "$\beta$-relaxation") followed by a long plateau and then a slow final decay (the "$\alpha$-relaxation"). The time at which $F_s(q, t)$ decays to a certain fraction (e.g., $1/e$) defines the **structural relaxation time** $\tau_\alpha$, which represents the typical time for a particle to move over a lengthscale $\sim 2\pi/q$. 
+
+![Intermediate scattering functions for molecular dynamics simulations of a standard glassformer (a coarse grained metallic binary mixture) for various reduced temperatures. From @coslovich2018dynamic. One can identify the initial relaxation ($\beta$) followed by a long plateau which is itself followed by the complete relaxation ($\alpha$). Notice the logarithmic scale of the horizontal axis (in reduced time units).](./figs/fskt.png){width=80%}
+
+As the supercooled liquid gets colder and colder, the relaxation time increases rapidly, eventually of many orders of magnitude. At some *experimentally determined* temperature the relaxation time is larger than the observation time, i.e.
+
+$$\tau_{\alpha}>t_{\rm obs}$$
+
+This means that it is impossible to take time averages to estimate thermodynamic properties of the system, because the system does not satisfy any longer the minimal requirement of the ergodic hypothesis. This **failure of ergodicity** means that the system effectively falls **out of equilibrium**, because it does not explore all relevant microstates within the available time. The system has become a **glass**. The temperature at which this clearly non-ordinary (and non-thermodynamic!) transition occurs is called the **experimental glass transition temperature** $T_g$.
+
+A key feature of the glass transition is that there is no unique glass transition temperature $T_g$: the transition temperature itself depends on how fast we are cooling the liquid down. It is a **protocol dependent** property. We can understand this by referring back to the energy landscape: at high temperatures, the system has enough thermal energy to explore many minima in the landscape, hopping over barriers with ease. As the temperature decreases, the barriers become increasingly difficult to cross within the available observation time. If the cooling is slow, the system can equilibrate and find deeper minima, resulting in a lower $T_g$. If the cooling is fast, the system becomes trapped in higher-energy, shallower minima, and $T_g$ is higher. Therefore, the glass transition is not a sharp thermodynamic phase transition, but a kinetic phenomenon determined by the interplay between the system's relaxation time and the timescale of the experimental protocol.
+
+## Viscosity and relaxation times
+
+The structural relaxation time extracted from correlation functions such as the intermediate scattering function is proportional to a macroscopic property, the **viscosity**
+
+$$\tau_\alpha \propto \eta$$
+
+and hence the viscosity at the glass transition increases rapidly (diverges) like $\tau_\alpha$. 
+
+::: {.callout-note collapse="true"}
+
+### Relationship between viscosity and structural relaxation time
+
+The proportionality between viscosity $\eta$ and the structural relaxation time $\tau_\alpha$ can be understood using linear response theory and the Green-Kubo relations.
+
+The viscosity is given by the Green-Kubo formula as an integral of the stress autocorrelation function:
+$$
+\eta = \frac{1}{k_B T V} \int_0^\infty \langle \sigma_{xy}(0) \sigma_{xy}(t) \rangle dt
+$$
+where $\sigma_{xy}$ is the off-diagonal component of the stress tensor.
+
+In supercooled liquids and glasses, the decay of the stress autocorrelation function is governed by the same slow structural relaxation processes that control $\tau_\alpha$. Thus, the integral is dominated by timescales of order $\tau_\alpha$, leading to:
+$$
+\eta \sim G_\infty \tau_\alpha
+$$
+where $G_\infty$ is the instantaneous (high-frequency) shear modulus.
+
+This proportionality holds in the regime where the relaxation is dominated by structural rearrangements (i.e., near the glass transition), and is supported by both experiments and simulations. Therefore, the dramatic increase in viscosity as the glass transition is approached directly reflects the growth of the structural relaxation time.
+
+:::
+
+
+![Viscosity as a function of the inverse temperature scaled by the experimental glass transition temperature (Angell plot). One observes an increase of several orders of magnitude between the high temperature and the low temperature regime. Also one can distinguish different classes of glassformers, conventionally termed as *strong* and *fragile*. Adapted from @debenedetti2001supercooled.](./figs/figangell.svg){ width=60% }
+
+This dramatic increase in relaxation time is a hallmark of glassy dynamics and underlies the kinetic arrest observed in glasses.
+
+Presently, we do not have a single unified theory of the glass transition: there is no universal law capable to predict the viscosity (or the relaxation times) of glassy systems from specific micrscopic parameters. To date, the origin of the glass transition remains one of the [major unsolved problems condensed matter physics](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics#Condensed_matter_physics).
+
+First steps are typically phenomenological: glasses are classified as **strong** or **fragile** based on how their viscosity (or relaxation time) increases as temperature decreases toward the glass transition temperature $T_g$. We have seen earlier in @sec-cnt that activated process are often governed by what are called Arrhenius laws, with a rate $R\propto \exp\left[-\Delta E/k_B T\right]$ where $\Delta E$ is an energy barrier. Viscosity curves can be fitted by empirical models inspired the activated picture:
+
+
+- **Strong glasses** (e.g., silica, SiO$_2$) follow an Arrhenius law :
+    $$
+    \eta(T) = \eta_0 \exp\left(\frac{E_A}{k_B T}\right)
+    $$
+    where $E_A$ is an activation energy. The plot of $\log \eta$ vs $1/T$ is a straight line.
+
+- **Fragile glasses** (e.g., o-terphenyl, many polymers) show super-Arrhenius behavior, often described by the Vogel-Fulcher-Tammann (VFT) equation:
+    $$
+    \eta(T) = \eta_0 \exp\left(\frac{B}{T - T_0}\right)
+    $$
+    where $B$ and $T_0$ are empirical parameters. The plot of $\log \eta$ vs $1/T$ is highly curved.
+
+The distinction is visualized in the so-called **Angell plot**, where strong glasses show nearly linear behavior, while fragile glasses show a dramatic upturn as $T \to T_g$.
+
+These models are suggestive of a **thermodynamic** origin of the glass transition. Indeed, it is possible to thinkto think of the emerging barrier $E_A$ and $B$ as the result of some free energy expression from the sampling of the energy landscapes in various basins. 
+
+
+### Connection between VFT and configurational entropy: the Adam-Gibbs model
+
+A key theoretical link between the dramatic slowdown of dynamics (as described by the VFT law) and the underlying thermodynamics is provided by the **Adam-Gibbs model**, details in @bouchaud2004adam. 
+
+This model proposes that the structural relaxation time $\tau_\alpha$ is controlled by the **configurational entropy** $S_{\rm conf}$, which counts the number of distinct amorphous basins available to the system.
+
+The Adam-Gibbs relation reads:
+$$
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+$$
+where $A$ is a constant. As temperature decreases, $S_{\rm conf}$ drops, leading to a rapid increase in $\tau_\alpha$. If $S_{\rm conf}$ vanishes at a finite temperature $T_K$ (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form:
+$$
+\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
+$$
+with $T_0 \approx T_K$. Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached.
+
+### Alternative perspective: Dynamical facilitation and the parabolic law
+
+While thermodynamic models like Adam-Gibbs relate the glass transition to configurational entropy, a radical alternative approach is the **dynamical facilitation theory**, see @chandler2010dynamics for more details. This framework emphasizes that glassy slowdown arises from the dynamics themselves, rather than underlying thermodynamic changes.
+
+In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility "facilitates" further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.
+
+A schematic illustration:
+
+- At high $T$, mobile regions are abundant and relaxation is fast.
+- As $T$ decreases, mobile regions become rare, and relaxation requires the creation and propagation of mobility, which is a rare event.
+- The relaxation time grows rapidly due to the need for cooperative rearrangements.
+
+This scenario predicts a **parabolic law** for the relaxation time:
 
 $$
-\tau^{-1} \sim v \exp \left(-\frac{\varepsilon}{k_{B} T}\right)
+\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2
 $$
 
-Here $v$ is the typical vibration frequency for a particle rattling around in its cage. This can also be regarded as the frequency with which the particle attempts to escape its cage. The probability of an escape attempt succeeding depends on a Boltzmann factor, i.e. the exponential of the ratio of the energy cost associated with climbing the cage "walls", $\varepsilon$, to the typical thermal energy $k_{B} T$.
+where $J$ is an energy scale and $T_0$ is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite $T$ but still captures the super-Arrhenius growth of relaxation times. 
 
-It can be shown (cf. PH10002), that the relaxation time $\tau$ is proportional to another quantity, the viscosity $\eta$, which is a measure of the response of a material to a shear stress, or more loosely speaking a measure of the ability of a liquid to flow. Thus $\tau \propto \eta$ and it follows that
+Interestingly, both the two perspective fit the viscosity data wall within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).
 
-$$
-\eta=\frac{G_{0}}{v} \exp \left(\frac{\varepsilon}{k_{B} T}\right)
-$$
 
-where $G_{0}$ is a proportionality constant. This characteristic exponential temperature dependence is known as Arrhenius behaviour. Loosely speaking the viscosity provides a measure of the ability of a liquid to flow.
+Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see @hasyim2024emergent for more details.
 
-While Arrhenius behaviour is observed for the viscosity of liquids at high temperature, things are very different at low temperature. The experimentally measured viscosity and the associated configurational relaxation time exhibits a temperature dependence that strongly departs from that implied by the characteristic frequency of vibrations $v$
-
-$$
-\eta=\eta_{0} \exp \left(\frac{B}{T-T_{0}}\right)
-$$
-
-The empirical finding, known as the Vogel-Fulcher law implies that the viscosity diverges exponentially at the finite temperature $T_{0}$. In practical terms, this means that as $T_{0}$ is approached from above, one reaches some temperature $T_{g}$ (the glass transition temperature) at which the time for a configuration to relax becomes
-comparable to the timescale of the experiment itself $\tau_{\exp }$. At this point, the system falls out of equilibrium with respect to rearrangements of the particle configurations.
-
-### Characterising the glass transition
-
-The glass transition temperature $T_{g}$ is that temperature at which the system falls out of equilibrium on the experimental timescale $\tau_{\text {exp. }}$. Clearly therefore, if one does a long experiment, in which the temperature is lowered slowly, the system will have a greater time to relax at each successive temperature and will stay in equilibrium to a lower temperature. Thus the experimental glass transition temperature depends on the rate at which we do the experiment. To illustrate this consider a measurement of some structural quantity (such as the sample volume) as a function of temperature. Various scenarios for the behaviour of the volume as the temperature are shown in the following figure
-
-![Standard picture of glass formation: a (local) equilibrium state (the supercoooled liquid) is cooled at a certain cooling rate $R$. The cooling rate is fast enough to avoid crystallization (freezing) at $T_m$. At the glass transition temperature $T_g$ the structural relaxation time of the system exceeeds the observation timescale and the system falls off equilibrium. The experimental glass transition temeprature is not unique and depends on the protocol: fast cooling rate lead to higher glass transition temperatures.](./figs/glass.svg){width=80%}
-
-At the glass transition temperature, the curve exhibits a well defined discontinuity in it slope, rather like what happens at an equilibrium phase transition such as freezing or boiling. The reason why the glass transition is not a true thermodynamic phase transition is that the temperature at which the discontinuity occurs depends on the history of the sample, i.e. how rapidly it is cooled. We say that the glass transition is a kinetic phase transition brought on by the divergence of the structural relaxation time.
-
-### A simple picture of the glass transition
-
-Theories of the glass transition are a matter of intense current research and it is probably fair to say that the detailed physics is still not well understood in a comprehensive fashion. Nevertheless simple models offer some insight, in qualitative if not quantitative agreement with experiment. One such theory is based on the idea of cooperativity. In a liquid at high temperatures, a molecule can diffuse simply by moving to occupy the space made available by the random local motions of its neighbours. At low temperatures and high volume fractions, the local motion of neighbours is insufficient to allow diffusion. Instead a number of neighbours must move cooperatively in order to make space for a molecule to move. The minimum number of molecules that have to move in unison in order for diffusion of a molecule to take place gives rise to the concept of a cooperative rearranging region. As the temperature is lowered the size of this region increases, diverging (with the viscosity) at the Vogel-Fulcher temperature $T_{0}$
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=597&width=621&top_left_y=1152&top_left_x=295)
-![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-38.jpg?height=577&width=604&top_left_y=1162&top_left_x=1086)
-
-If we suppose that the energy barrier for a single molecule to move is $\mu$ and there are $z$ molecules in the cooperatively rearranging region, then the thermal activation barrier for motion is
-
-$$
-\tau^{-1} \sim v \exp \left(-\frac{z \mu}{k_{B} T}\right)
-$$
-
-with $v$ the microscopic vibration frequency. Within this model, the non Arrhenius behaviour of the relaxation time (see above) derives from the increase in the number of molecules that have to move cooperatively as temperature decreases, i.e. the $T$ dependence of $z$.
+<iframe 
+  src="https://iframe.videodelivery.net/eyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA?poster=https%3A%2F%2Fvideodelivery.net%2FeyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D10.0s" 
+  width="100%" 
+  height="500" 
+  frameborder="0" 
+  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" 
+  allowfullscreen>
+</iframe>
 
 
 ## Physical gels
