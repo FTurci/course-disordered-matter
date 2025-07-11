@@ -219,14 +219,7 @@ Interestingly, both the two perspective fit the viscosity data wall within their
 
 Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see @hasyim2024emergent for more details.
 
-<iframe 
-  src="https://iframe.videodelivery.net/eyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA?poster=https%3A%2F%2Fvideodelivery.net%2FeyJraWQiOiI3YjgzNTg3NDZlNWJmNDM0MjY5YzEwZTYwMDg0ZjViYiIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhZjliY2U3NmEwOTVjYjU4NGRlN2ExNWU2ZGQwYTFkZSIsImV4cCI6MTc1MjA5OTQ5Mywia2lkIjoiN2I4MzU4NzQ2ZTViZjQzNDI2OWMxMGU2MDA4NGY1YmIifQ.pBdImRcfY5gXv8oDOmhbbw6SActPRFyvpHb51V-ODkTtiYnr59EoMz8Q25gFPkT7D30OWtFQpbAerTrA-MmnUZPAnTyBQj3I4XQzjyYRIIEdKMGRM2kT0KjCxov2gS91l5CB3EyG3QxLziecqPO59rv7erUa_Su4gDVZCnsuxkGiHp1jMed0QPesS2q5Jc8teiPDkmbkEchzIyzXQwPfjQr9ORw4LCNy7946Nawu93Nn07G8x69w_MXPfpffWzb4UCNs3TVyUFt4iNxIsvdsdnHEvfIFTfLzvitTQO4x_P0YkohWLr0y0PPU5_mXIXue06TwJkZ_0DBmLhEDF3u1QA%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D10.0s" 
-  width="100%" 
-  height="500" 
-  frameborder="0" 
-  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" 
-  allowfullscreen>
-</iframe>
+{{< video ./figs/pnas.2322592121.sm04.mp4 >}}
 
 
 ## Physical gels
