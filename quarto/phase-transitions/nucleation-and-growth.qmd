@@ -61,7 +61,7 @@ $$
 $$
 
 
- ![Free energy barrier $\Delta F(r)$ for nucleation of a spherical droplet as a function of radius $R$ (schematic)](Figs/cnt_schematic.png){width=80% fig-align="center" #fig-cnt-schem}
+ ![Free energy barrier $\Delta F(r)$ for nucleation of a spherical droplet as a function of radius $R$ (schematic)](Figs/cnt_schematic.png){width=50% fig-align="center" #fig-cnt-schem}
 
 
 
@@ -91,6 +91,7 @@ In summary, homogeneous nucleation in a first-order transition is governed by a 
 This sets an intrinsic timescale for the dynamics of phase transformation, which can become extremely long near coexistence due to the exponentially small nucleation rate.
 
 
+
 ## Domain growth
 Following successful nucleation of a supercritical droplet, the system enters a regime where the global transformation is driven by the deterministic growth of domains of the stable phase. Such *domain growth* involves more atoms or molecules attaching to these nuclei, causing them to expand into larger structures (e.g., growing crystals or droplets).
 
@@ -103,10 +104,14 @@ The shape and structure of the final phase often depend on how growth occurs (e.
 Previously we have considered a scenario in which we move our system to a statepoint just inside the coexistence region so that the original phase remains metastable. 
 We then wait for a fluctuation that yields a critical nucleus and subsequent growth. 
 
-Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region such that there is no metastable minimum in the free energy. 
-Then there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
+Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region (cf. @fig-spinodal) such that there is no metastable minimum in the free energy.  Then there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
+
+
+ ![Schematic phase doagram showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
 
 The nature of spinodal decomposition and late-time domain growth depends sensitively on whether the order parameter is conserved or not.
+
+
 
 ---
 
