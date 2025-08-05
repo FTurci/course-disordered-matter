@@ -1,11 +1,10 @@
 ---
-title: "Mindmaps: Linking concept and methods"
+title: "Mindmaps - Linking concept and methods"
 ---
 
 ```{mermaid}
 mindmap
-  root((Phase 
-  Transitions))
+  root((Phase Transitions))
     TYPES
       Order parameters
         Continuous vs. discontinuous
@@ -51,8 +50,7 @@ mindmap
 
 ```{mermaid}
 mindmap
-  root((Stochastic
-   processes))
+  root((Stochastic processes))
     Master equation
       Diffusion equation
         Mean squared displacement

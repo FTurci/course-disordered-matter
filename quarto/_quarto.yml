@@ -1,10 +1,6 @@
 project:
   type: book
   output-dir: ../docs  # Uncomment if you want to specify output directory
-  # render:
-    # - "Week*/*"
-# resources:
-#   - soft-matter/figs/*.pdb
 
 book:
   page-navigation: true
@@ -12,7 +8,7 @@ book:
   #title: "Complex Disordered Matter"
   sidebar:
     smooth-scroll: true
-    logo: phase-transitions/Figs/courselogo.png
+    logo: courselogo.png
     style: "docked"
     search: true
     collapse-level: 1

@@ -1,7 +1,7 @@
 # Welcome to the Complex Disordered Matter Course! {.unnumbered}
 
 
-![Place holder figure](placeholder_figure.png){fig-align="left" width=400}
+![](placeholder_figure_long.png){fig-align="left"}
 
 ## Overview
 
@@ -10,9 +10,9 @@ This course introduces your to the theoretical, computational and experimental a
 
 ::: {style="text-align: justify"}
 
-Complex disordered matter is a central theme in soft matter physics, encompassing systems such as polymers, colloids, glasses, gels, and emulsions that lack long-range order but display intricate and often tunable behavior. Colloids—suspensions of microscopic particles in a fluid—serve as versatile model systems for studying disordered structures and phase behavior because their particle-scale dynamics are directly observable. Similarly, polymer systems and colloidal suspensions can form amorphous solids, or glasses, when densely packed or cooled, exhibiting solid-like rigidity despite their disordered, liquid-like microscopic structure. These materials frequently undergo equilibrium and non-equilibrium phase transitions such as demixing, crystallisation, gelation, vitrification, or jamming, and near these transitions, they may show critical phenomena where fluctuations and correlations span many length scales.
+Complex disordered matter is the study of wide range of systems like **polymers**, **colloids**, **glasses**, **gels**, and **emulsions**, which lack long-range order but exhibit intricate behaviour. Colloids, suspensions of microscopic particles in a fluid, are useful for studying disordered structures due to their observable dynamics. Similarly, polymer systems can form amorphous solids or glasses when densely packed or cooled, showing solid-like rigidity despite their disordered structure. These materials often undergo phase transitions, such as demixing and crystallisation, and near these transitions, they can display critical phenomena with extensive fluctuations and correlations.
 
-In soft matter systems, the interplay between disorder, softness, and phase behavior leads to rich physical phenomena, particularly near critical points where even small changes in external conditions can trigger large-scale reorganizations and universal behaviour. Glasses, for instance, exhibit slow relaxation and memory effects, while colloidal systems may crystallize, phase separate, or become jammed depending on particle interactions and concentration. Understanding such behaviors involves studying how microscopic interactions and thermal fluctuations influence macroscopic properties, especially in non-equilibrium conditions. Through techniques like scattering, microscopy, rheology, and simulation, one can explore how disordered soft materials respond to stress, age, or undergo transitions—insights that are vital for applications in materials design, biotechnology, and beyond.
+These various are examples of **soft matter**. systems In soft matter systems, the interplay between disorder, softness, and phase behavior leads to rich physical phenomena, particularly near critical points where even small changes in external conditions can trigger large-scale reorganizations and universal behaviour. Glasses, for instance, exhibit slow relaxation and memory effects, while colloidal systems may crystallize, phase separate, or become jammed depending on particle interactions and concentration. Understanding such behaviors involves studying how microscopic interactions and thermal fluctuations influence macroscopic properties, especially in non-equilibrium conditions. Through techniques like scattering, microscopy, rheology, and simulation, one can explore how disordered soft materials respond to stress, age, or undergo transitions—insights that are vital for applications in materials design, biotechnology, and beyond.
 
 This course is organized into three interconnected parts, each offering a distinct perspective on the study of complex disordered matter.
 

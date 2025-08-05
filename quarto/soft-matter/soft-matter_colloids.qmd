@@ -530,7 +530,7 @@ Here we focus on the most elementary model of a colloid. The simplest such examm
 
 
 
-### The archetype: hard-spheres
+### The archetype: hard-spheres {#sec-hard-spheres}
 
 
 A **hard-sphere** is an idealized particle model in which each particle is represented as a perfectly rigid sphere of fixed radius $R$ and diameter $\sigma=2R$. Hard spheres interact only through excluded volume: they cannot overlap, but otherwise experience no attraction or repulsion. The interaction potential $U(r)$ between two hard spheres separated by a center-to-center distance $r$ is:

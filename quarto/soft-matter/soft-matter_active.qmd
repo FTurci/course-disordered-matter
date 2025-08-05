@@ -1,12 +1,34 @@
 ---
+format: live-html
 title: "Active matter"
+pyodide:
+    packages:
+        - numpy
+        - matplotlib
 bibliography: references.bib
 ---
 
 ## Beyond thermal systems
 
-### Something {.unnumbered}
+All the system we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.
 
+However, many systems in nature and technology are driven out of equilibrium by continuous energy consumption at the microscopic scale. These are known as **active matter** systems. Here, each constituent (such as a bacterium, a synthetic microswimmer, or a molecular motor) converts energy from its surroundings into a variety of mechanisms:
+
+- motion
+- sensing
+- processing
+- growth and deformation
+
+This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on of the most fundamental kins of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
+
+We could at this stage say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical interactions (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
+
+[^cavagna-footnote]: Andrea Cavagna, a complex system physicist, describes "biological surprise" as the extent to which observed behaviour cannot be explained by physical interactions alone.
+
+
+To do so we need to understand how systems that dissipate energy locally to produced self-propelled motionm can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g. colloidal fluids) or are slowwly relaxing towards it (e.g. glasses and gels). 
+
+The field of reserach that studies such systems is called physics of **active matter** and in this chapter we will describe some reference model systems and main results.
 
 
 ## Life-inspired motion: *run and tumble*
@@ -140,7 +162,9 @@ viewof simulation = {
 
 ```
 
-### Dynamical rules
+<!-- ### Dynamical rules -->
+
+The model is deisgned to encode a **minimal set of ingredients** that make the characteristic trajectories of the bacteria quite different fro an ordinary random walk. We can formulate this kind of model via a simple algorithm.
 
 1. **Run Phase**:
     During a run, the particle moves in a straight line with constant velocity $v_0$:
@@ -165,6 +189,76 @@ We can the imagine a schematic algorithm:
     - Repeat for the desired simulation duration.
 
 Here, $\lambda$ is the tumble rate, which determines the frequency of reorientation events.
+
+The mean squared displacement (MSD) of run-and-tumble particles exhibits a characteristic three-phase behavior:
+
+1. **Ballistic regime (short times):**  
+    At very short times, before the first tumble occurs, particles move in straight lines at constant speed. The MSD grows quadratically with time:
+    $$
+    \langle \Delta r^2(t) \rangle \sim v_0^2 t^2
+    $$
+
+2. **Diffusive regime (long times):**  
+    At times much longer than the average run time ($t \gg 1/\lambda$), the direction of motion has been randomized many times, and the motion becomes diffusive:
+    $$
+    \langle \Delta r^2(t) \rangle \sim 2 D_{\text{eff}} t
+    $$
+    where $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ in 2D.
+
+
+ At intermediate timescales, the MSD transitions smoothly from ballistic to diffusive behavior. This crossover is a hallmark of persistent random walks like run-and-tumble dynamics.
+
+
+```{pyodide}
+#| autorun: true
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+N = 300           # number of particles
+v0 = 1.0            # speed
+lambda_tumble = 0.1 # tumble rate
+dt = 0.01           # time step
+T = 1000             # total time
+steps = int(T/dt)
+
+# Arrays to store positions
+x = np.zeros((N, steps))
+y = np.zeros((N, steps))
+theta = np.random.uniform(0, 2*np.pi, N)
+
+# Simulate run-and-tumble
+for t in range(1, steps):
+    tumble = np.random.rand(N) < lambda_tumble * dt
+    theta[tumble] = np.random.uniform(0, 2*np.pi, tumble.sum())
+    x[:, t] = x[:, t-1] + v0 * np.cos(theta) * dt
+    y[:, t] = y[:, t-1] + v0 * np.sin(theta) * dt 
+
+# Compute MSD
+msd = np.mean((x - x[:, 0:1])**2 + (y - y[:, 0:1])**2, axis=0)
+time = np.arange(steps) * dt
+
+#Plotting
+plt.figure(figsize=(9,4))
+t_ballistic = 1 / (10 * lambda_tumble)
+t_crossover = 1 / lambda_tumble
+t_diffusive = 10 / lambda_tumble
+# Plot
+plt.loglog(time, msd, label="Simulated MSD")
+plt.loglog(time, (v0*time)**2, '--', label=r"Ballistic: $v_0^2 t^2$")
+plt.loglog(time, 2*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $2D_\mathrm{eff} t$")
+plt.xlim(1*dt,time.max())
+plt.tick_params(axis='both', labelsize=8, pad=15)
+plt.tight_layout()
+
+
+plt.xlabel("Time $t$")
+plt.ylabel(r"MSD $\langle \Delta r^2(t) \rangle$")
+plt.legend(frameon=False)
+
+plt.show()
+```
+
 
 ## Coloured noise
 Coloured noise introduces temporal correlations into the random forces acting on a particle, unlike white noise, which is uncorrelated. This is often modeled using an Ornstein-Uhlenbeck process for the noise term.
@@ -191,8 +285,9 @@ The coloured noise description of active matter is a generalisation of the run a
 
 ## Active Brownian particle and motility-induced phase separation
 
+Active Brownian particles (ABPs) are a minimal model for self-propelled colloids, such as Janus particles, which move due to chemical reactions at their surfaces. For example, a colloid half-coated with platinum can catalyze the decomposition of hydrogen peroxide in solution, generating local gradients that propel the particle forward.
 
-Active Brownian particles (ABPs) are a widely studied model in active matter physics. These particles exhibit self-propulsion and are subject to both thermal noise and rotational diffusion, which governs the evolution of their orientation.
+The ABP model captures the essential physics of these systems. Each particle moves with a constant speed in a direction that undergoes rotational diffusion. This leads to persistent motion at short times and diffusive behavior at long times, similar to the run-and-tumble model but with continuous reorientation.
 
 The dynamics of an ABP can be described by the following equations:
 
@@ -226,7 +321,189 @@ The dynamics of an ABP can be described by the following equations:
     $$
     where $\eta_\theta(t)$ is a scalar Gaussian white noise term.
 
+We can analyse this a little more in detail by considering the characteristic features of the displacements of (dilute or noninteracting) active Brrownian particles.
 
-ABPs can exhibit a phenomenon known as motility-induced phase separation (MIPS), where particles spontaneously separate into dense and dilute phases due to their self-propulsion. This occurs when the persistence of motion (determined by $v_0$ and $D_r$) and particle interactions lead to clustering.
 
-The key mechanism behind MIPS is the feedback between particle accumulation and reduced motility in dense regions. As particles slow down in crowded areas, they spend more time there, further increasing the local density and promoting phase separation.
+### Mean squared displacement of Active Brownian Particles
+
+Indeed, it can be shown. (see below) that teh mean squared displacement for active Browninan particles displays three regimes:
+$$
+\mathrm{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right).
+$$
+
+where:
+- $D_{\mathrm{eff}} = \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient,
+
+This clearly shows thhat there are three main regimes: 
+
+- a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
+- an intermediate regime around the reorientation time $\tau_R$ $\operatorname{MSD}(\tau)=4 D_{\mathrm{T}} \tau+2 v^2 \tau^2 $ leading to **super-diffusive** motion (ballistic)
+- a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
+
+::: {.callout-note collapse="true"}
+
+We derive the MSD expression for 2d Active Brownian particles.
+
+We first integrate the velocity
+
+$$
+\mathbf{r}(\tau) - \mathbf{r}(0) = v \int_0^\tau \hat{\mathbf{n}}(s) ds + \sqrt{2 D_T} \int_0^\tau \boldsymbol{\eta}(s) ds.
+$$
+
+Since $\boldsymbol{\eta}(t)$ is independent from $\hat{\mathbf{n}}(t)$,
+
+$$
+\langle \Delta r^2(\tau) \rangle = v^2 \left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle + 4 D_T \tau,
+$$
+
+using $\langle |\int \boldsymbol{\eta}(s) ds|^2 \rangle = 2 d D_T \tau$ with dimension $d=2$.
+
+We first need to evaluate the orientation correlation integral.
+
+Write the first term as a double integral:
+
+$$
+\left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle = \int_0^\tau ds \int_0^\tau ds' \langle \hat{\mathbf{n}}(s) \cdot \hat{\mathbf{n}}(s') \rangle.
+$$
+
+For 2D rotational diffusion, the orientation correlation is exponential:
+
+$$
+\langle \hat{\mathbf{n}}(s) \cdot \hat{\mathbf{n}}(s') \rangle = e^{-|s - s'|/\tau_R}.
+$$
+
+We calculate the following double integral
+
+$$
+I(\tau) = \int_0^\tau ds \int_0^\tau ds' e^{-|s - s'|/\tau_R}.
+$$
+
+Use symmetry: the integrand depends only on $|s - s'|$. Express as
+
+$$
+I(\tau) = 2 \int_0^\tau ds \int_0^s ds' e^{-(s - s')/\tau_R} = 2 \int_0^\tau ds \int_0^s du\, e^{-u/\tau_R},
+$$
+
+where we set $u = s - s'$.
+
+Integrate over $u$:
+
+$$
+\int_0^s e^{-u/\tau_R} du = \tau_R \left(1 - e^{-s/\tau_R}\right).
+$$
+
+So
+
+$$
+I(\tau) = 2 \tau_R \int_0^\tau \left(1 - e^{-s/\tau_R}\right) ds = 2 \tau_R \left[ \tau - \int_0^\tau e^{-s/\tau_R} ds \right].
+$$
+
+By integratingthe exponential we get
+
+$$
+\int_0^\tau e^{-s/\tau_R} ds = \tau_R \left(1 - e^{-\tau/\tau_R}\right).
+$$
+
+Hence
+
+$$
+I(\tau) = 2 \tau_R \left[ \tau - \tau_R \left(1 - e^{-\tau/\tau_R} \right) \right] = 2 \tau_R \tau - 2 \tau_R^2 \left(1 - e^{-\tau/\tau_R} \right).
+$$
+
+
+Putting it all together,
+
+$$
+\langle \Delta r^2(\tau) \rangle = v^2 I(\tau) + 4 D_T \tau = v^2 \left[ 2 \tau_R \tau - 2 \tau_R^2 (1 - e^{-\tau/\tau_R}) \right] + 4 D_T \tau,
+$$
+
+or equivalently
+
+$$
+\boxed{
+\langle \Delta r^2(\tau) \rangle = \left(4 D_T + 2 v^2 \tau_R \right) \tau + 2 v^2 \tau_R^2 \left( e^{-\tau/\tau_R} - 1 \right).
+}
+$$
+
+:::
+
+```{pyodide}
+#| autorun: true
+- $\tau_p = 1/D_r$ is the persistence time.
+
+**Short times ($t \ll \tau_p$):**  
+The motion is ballistic:
+$$
+\langle \Delta r^2(t) \rangle \approx v_0^2 t^2
+$$
+
+**Long times ($t \gg \tau_p$):**  
+The motion is diffusive:
+$$
+\langle \Delta r^2(t) \rangle \approx 4 D_{\mathrm{eff}} t
+$$
+
+This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs.
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters
+N = 300           # number of particles
+v0 = 1.0          # self-propulsion speed
+Dr = 0.1          # rotational diffusion coefficient
+Dt = 0.0          # translational diffusion coefficient (set to 0 for pure ABP)
+dt = 0.01         # time step
+T = 1000          # total time
+steps = int(T/dt)
+
+# Arrays to store positions
+x = np.zeros((N, steps))
+y = np.zeros((N, steps))
+theta = np.random.uniform(0, 2*np.pi, N)
+
+# Simulate ABP
+for t in range(1, steps):
+    # Rotational diffusion
+    theta += np.sqrt(2*Dr*dt) * np.random.randn(N)
+    # Translational motion
+    x[:, t] = x[:, t-1] + v0 * np.cos(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
+    y[:, t] = y[:, t-1] + v0 * np.sin(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
+
+# Compute MSD
+msd = np.mean((x - x[:, 0:1])**2 + (y - y[:, 0:1])**2, axis=0)
+time = np.arange(steps) * dt
+
+# Theoretical curves
+tau_p = 1 / Dr
+D_eff = v0**2 / (2*Dr)
+msd_ballistic = (v0*time)**2
+msd_diffusive = 4*D_eff*time
+
+plt.figure(figsize=(9,4))
+plt.loglog(time, msd, label="Simulated MSD")
+plt.loglog(time, msd_ballistic, '--', label=r"Ballistic: $v_0^2 t^2$")
+plt.loglog(time, msd_diffusive, '--', label=r"Diffusive: $4D_\mathrm{eff} t$")
+plt.xlim(1*dt, time.max())
+plt.tick_params(axis='both', labelsize=8, pad=15)
+plt.tight_layout()
+plt.xlabel("Time $t$")
+plt.ylabel(r"MSD $\langle \Delta r^2(t) \rangle$")
+plt.legend(frameon=False)
+plt.show()
+```
+
+
+### Interacting ABPs and motility induced phase separation
+
+When teh active Brownian particles are actually inetarcting with each other, they can give rise to an exceptional nnequilibrium phenomenon of self organisation called **motility-induced phase separation** (MIPS).
+
+The idea is to cosnider purely repulsive particles (i.e hard spheres) obeying the ABP dynamics. This means that, in equilibrium (i.e. in the absence of self-propulsion) no liquid-gas phase separation is possible (see @sec-hard-spheres). 
+
+However, as we reduce the rotational diffusion, the persistent motion becomes more important, the system becomes more out of equilibrium and new physics comes to play. 
+
+In particular, the colloision between particles are no longer leading to quick decorrelation: on teh contrary, head-to-head collisions between the particles mean that there is a finite residence time for a pair of particles to stay in each other neighborhoods. This effect is amplified by multiple collisions, leading to many-body caging effects that promote density heterogeneities in the fluid.
+
+The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of equilibrium systems. Before reaching this regime, the fluid also displays a critical like phenomenology, with enhcanced fluctuations terminating a critical point. 
+
+This has been examined in detail in coputer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situtation of colloid-polymer mixtures due to the very short range nature of the effective interactions between active particles).
+
