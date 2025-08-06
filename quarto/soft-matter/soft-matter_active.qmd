@@ -21,7 +21,7 @@ However, many systems in nature and technology are driven out of equilibrium by 
 
 This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on of the most fundamental kins of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
 
-We could at this stage say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical interactions (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
+We could, at this stage, say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
 
 [^cavagna-footnote]: Andrea Cavagna, a complex system physicist, describes "biological surprise" as the extent to which observed behaviour cannot be explained by physical interactions alone.
 
