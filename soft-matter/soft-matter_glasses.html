@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,10 +93,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5029e394316cdc76c5f7f9df27ea280d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
@@ -829,25 +829,11 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="b511e8bf" class="cell" data-execution_count="1">
-<div class="cell-output cell-output-stderr">
-<pre><code>&lt;&gt;:23: SyntaxWarning:
-
-invalid escape sequence '\s'
-
-&lt;&gt;:23: SyntaxWarning:
-
-invalid escape sequence '\s'
-
-/tmp/ipykernel_14806/1322232929.py:23: SyntaxWarning:
-
-invalid escape sequence '\s'
-</code></pre>
-</div>
+<div id="435968f3" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="soft-matter_glasses_files/figure-html/cell-2-output-2.png" class="img-fluid figure-img"></p>
+<p><img src="soft-matter_glasses_files/figure-html/cell-2-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
@@ -857,7 +843,7 @@ invalid escape sequence '\s'
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="16543f11" class="cell" data-execution_count="2">
+<div id="a7597531" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -917,60 +903,60 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="36c74b4e" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sierpinski_carpet(n):</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate a Sierpinski carpet of order n as a 2D boolean array."""</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>n</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    carpet <span class="op">=</span> np.ones((size, size), dtype<span class="op">=</span><span class="bu">bool</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>i</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                carpet[x<span class="op">+</span>step:x<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step, y<span class="op">+</span>step:y<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> carpet</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box_count(img, box_sizes):</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count number of boxes containing any part of the structure for each box size using histogramdd."""</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> []</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.argwhere(img)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> box <span class="kw">in</span> box_sizes:</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        bins <span class="op">=</span> [img.shape[<span class="dv">0</span>] <span class="op">//</span> box, img.shape[<span class="dv">1</span>] <span class="op">//</span> box]</span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assign each coordinate to a box</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        hist, _ <span class="op">=</span> np.histogramdd(coords, bins<span class="op">=</span>bins, <span class="bu">range</span><span class="op">=</span>[[<span class="dv">0</span>, img.shape[<span class="dv">0</span>]], [<span class="dv">0</span>, img.shape[<span class="dv">1</span>]]])</span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        N.append(np.count_nonzero(hist))</span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(N)</span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Sierpinski carpet</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>carpet <span class="op">=</span> sierpinski_carpet(order)</span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Box sizes (powers of 3)</span></span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>box_sizes <span class="op">=</span> [<span class="dv">3</span><span class="op">**</span>i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(order, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>)]</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>N_boxes <span class="op">=</span> box_count(carpet, box_sizes)</span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Sierpinski carpet</span></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.imshow(carpet, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sierpinski carpet (order </span><span class="sc">%d</span><span class="st">)'</span> <span class="op">%</span> order)</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Box-counting plot</span></span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">4</span>))</span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Box counting'</span>)</span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear fit for slope (fractal dimension)</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>slope, intercept <span class="op">=</span> np.polyfit(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="dv">1</span>)</span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), slope<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes))<span class="op">+</span>intercept, <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Fit: $D_f$=</span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log</span><span class="kw">(</span><span class="vs">1/</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log N</span><span class="kw">(</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box-counting for Sierpinski carpet'</span>)</span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>plt.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fe03eb21" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sierpinski_carpet(n):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate a Sierpinski carpet of order n as a 2D boolean array."""</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>n</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    carpet <span class="op">=</span> np.ones((size, size), dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>i</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                carpet[x<span class="op">+</span>step:x<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step, y<span class="op">+</span>step:y<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> carpet</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box_count(img, box_sizes):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count number of boxes containing any part of the structure for each box size using histogramdd."""</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> []</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.argwhere(img)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> box <span class="kw">in</span> box_sizes:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        bins <span class="op">=</span> [img.shape[<span class="dv">0</span>] <span class="op">//</span> box, img.shape[<span class="dv">1</span>] <span class="op">//</span> box]</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assign each coordinate to a box</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        hist, _ <span class="op">=</span> np.histogramdd(coords, bins<span class="op">=</span>bins, <span class="bu">range</span><span class="op">=</span>[[<span class="dv">0</span>, img.shape[<span class="dv">0</span>]], [<span class="dv">0</span>, img.shape[<span class="dv">1</span>]]])</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        N.append(np.count_nonzero(hist))</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(N)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Sierpinski carpet</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>carpet <span class="op">=</span> sierpinski_carpet(order)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Box sizes (powers of 3)</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>box_sizes <span class="op">=</span> [<span class="dv">3</span><span class="op">**</span>i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(order, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>)]</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>N_boxes <span class="op">=</span> box_count(carpet, box_sizes)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Sierpinski carpet</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.imshow(carpet, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sierpinski carpet (order </span><span class="sc">%d</span><span class="st">)'</span> <span class="op">%</span> order)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Box-counting plot</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">4</span>))</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Box counting'</span>)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear fit for slope (fractal dimension)</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>slope, intercept <span class="op">=</span> np.polyfit(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="dv">1</span>)</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), slope<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes))<span class="op">+</span>intercept, <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Fit: $D_f$=</span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log</span><span class="kw">(</span><span class="vs">1/</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log N</span><span class="kw">(</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box-counting for Sierpinski carpet'</span>)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>plt.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
