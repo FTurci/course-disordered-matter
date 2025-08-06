@@ -10,7 +10,7 @@ bibliography: references.bib
 
 ## Beyond thermal systems
 
-All the system we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.
+All the systems we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) thatfar are composed of naturally occurring or synthetic molecules (or atoms) thatso now are composed of naturally occurring or synthetic molecules (or atoms) thatfar are composed of naturally occurring or synthetic molecules (or atoms) that we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.
 
 However, many systems in nature and technology are driven out of equilibrium by continuous energy consumption at the microscopic scale. These are known as **active matter** systems. Here, each constituent (such as a bacterium, a synthetic microswimmer, or a molecular motor) converts energy from its surroundings into a variety of mechanisms:
 
@@ -21,7 +21,7 @@ However, many systems in nature and technology are driven out of equilibrium by 
 
 This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on of the most fundamental kins of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
 
-We could at this stage say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical interactions (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
+We could, at this stage, say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
 
 [^cavagna-footnote]: Andrea Cavagna, a complex system physicist, describes "biological surprise" as the extent to which observed behaviour cannot be explained by physical interactions alone.
 
