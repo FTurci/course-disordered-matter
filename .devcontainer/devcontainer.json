@@ -1,0 +1,19 @@
+{
+  "name": "My Workshop Setup",
+  "image": "ghcr.io/mcanouil/quarto-codespaces:latest",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "quarto.quarto",
+        "mcanouil.quarto-wizard"
+      ]
+    },
+    "codespaces": {
+      "openFiles": [
+        "exercises/intro-to-quarto.qmd",
+        "exercises/computation.qmd"
+      ]
+    }
+  }
+}
