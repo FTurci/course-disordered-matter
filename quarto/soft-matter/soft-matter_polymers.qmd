@@ -13,6 +13,7 @@ resources:
     - ./figs/Polystyrene.pdb
     - ./figs/polyEthylMethacrylate3.pdb
     - ./figs/naturalrubberr.pdb
+    - ./figs/nbutane.pdb
 bibliography: references.bib
 
 toc-depth: 4
