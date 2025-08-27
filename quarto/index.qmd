@@ -31,7 +31,7 @@ In addition to theory and experiment, computer simulation plays a central role i
 
 * Detailed e-notes (accessible via Blackboard) can be viewed on a variety of devices. Pdf is also available. 
 
-* We will give 'traditional' lectures (Tuesdays, Wednesdays Fridays) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
+* We will give 'traditional' lectures (Tuesdays, Wednesdays, Fridays) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
 
 * Try to read ahead in the notes, then come to lectures, listen to the explanations and then reread the notes.
 

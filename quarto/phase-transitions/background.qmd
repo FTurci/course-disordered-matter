@@ -11,9 +11,9 @@ order parameter serves as a measure of the kind of orderliness that sets
 in when the temperature is cooled below a critical temperature. 
 
 Our first task is to give some feeling for the principles which underlie
-the ordering process. The probability $p_a$ that a physical system at
+the ordering process. Referring back to @sec-canonical, the probability $p_a$ that a physical system at
 temperature $T$ will have a particular microscopic arrangement
-(configuration), labelled $a$, of energy $E_a$ is
+(alternatively referred to as a 'configuration' or 'state'), labelled $a$, of energy $E_a$ is
 
 $$
 p_a=\frac{1}{Z}e^{-E_a/k_BT}
@@ -34,7 +34,7 @@ sampling them with the probabilities @eq-probs the expectation value of any phy
 $O$ will thus be given by averaging $O$ over all the arrangements $a$,
 weighting each contribution by the appropriate probability:
 
-$$\bar {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
+$$\overline {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
 $${#eq-observable}
 
 Sums like @eq-observable are not easily evaluated. Nevertheless, some
@@ -85,7 +85,7 @@ instance, utilizing
 @eq-partition, one can readily verify (try it as an
 exercise!) that the average internal energy is given by
 
-$$\bar{E}=-\frac{\partial \ln Z}{\partial \beta},$$ 
+$$\overline{E}=-\frac{\partial \ln Z}{\partial \beta},$$ 
 
 where $\beta=(k_BT)^{-1}$.
 
@@ -106,7 +106,7 @@ $$
 
 where $\langle \cdot \rangle$ denotes an ensemble or spatial average over all $\vec{R}$, and $r = |\vec{r}|$ is the spatial separation between the two points.
 
-$C(r)$ quantifies the spatial extent over which field values are correlated and in homogeneous and isotropic systems,  it depends only on the separation $r$.
+$C(r)$ quantifies the spatial extent over which field values are correlated and in homogeneous and isotropic systems,  it depends only on the separation $r$. 
 
 If $C(r)$ decays quickly, we say that correlations are short-ranged. Typically this occurs well away from criticality and takes the form of exponential decay
 
