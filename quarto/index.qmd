@@ -47,8 +47,9 @@ In addition to theory and experiment, computer simulation plays a central role i
 The course will 
 
 - Introduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.
-- Provide you with elementary computational tools to model complex disordered systems and predict their properties
-- Allow you to apply your physics background to understand a variety of **inter-disciplinary** subjects
+- Introduce you to a range of model systems and theoretical techniques used to elucidate the physics of complex disordered matter. 
+- Provide you with elementary computational tools to model complex disordered systems numerically and predict their properties.
+- Allow you to apply your physics background to understand a variety of systems of inter-disciplinary relevance.
 - Connect with the most recent advances in the research on complex disordered matter.
 
 
