@@ -31,13 +31,13 @@ In addition to theory and experiment, computer simulation plays a central role i
 
 * Detailed e-notes (accessible via Blackboard) can be viewed on a variety of devices. Pdf is also available. 
 
-* We will give 'traditional' lectures (XXday, YYYday) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
+* We will give 'traditional' lectures (Tuesdays, Wednesdays Fridays) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
 
 * Try to read ahead in the notes, then come to lectures, listen to the explanations and then reread the notes.
 
 * Rewriting the notes or slides to express your own thoughts and understanding, or annotating a pdf copy can help wire the material into your own way of thinking.
 
-* There are problem classes (XXXday) where you can try problem sheets and seek help. Lecturers will go over some problems with the class.
+* There are problem classes (Thursdays) where you can try problem sheets and seek help. Lecturers may go over some problems with the class.
 
 * The navigation bar on the left will allow you to access the lecture notes and problem sets.
 
