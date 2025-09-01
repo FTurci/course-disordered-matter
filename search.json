@@ -60,6 +60,16 @@
     ]
   },
   {
+    "objectID": "reading.html",
+    "href": "reading.html",
+    "title": "Recommended texts and literature",
+    "section": "",
+    "text": "Needs to be tidied and unified.\nExperimental textbooks?\nOne motivation for supplying you with detailed notes for this course course is the absence of a wholly ideal text book. However, it should be stressed that while these notes approach (in places) the detail of a book, the notes are not fully comprehensive and should be regarded as the ‘bare bones’ of the course, to be fleshed out via your own reading and supplementary note taking. To this end perhaps the most appropriate textbooks are:\nA good book at the right level for the phase transitions and critical phenomena part of the course is\n\nJ.M. Yeomans: Statistical Mechanics of Phase Transitions\n\nA good book covering all aspects of this part of the course including non-equilibrium systems is\n\nD. Chandler: Introduction to Modern Statistical Mechanics\n\nYou might also wish to dip into the introductory chapters of the following more advanced texts\n\nN Goldenfeld: Lectures on Phase Transitions and the Renormalization Group\nJ.J. Binney, N.J. Dowrick, A.J.Fisher and M.E.J. Newman: The Theory of Critical Phenomena\n\nFor revision on thermodynamics and statistical mechanics\n\nF. Mandl: Statistical Physics.\n\nFor Stochastic dynamics\n\nN.G. van Kampen: Stochastic processess in Physics and Chemistry\n\nThe best overall text for part 2 of the course is: R.A.L Jones, Soft Condensed Matter, Oxford University Press.\nAdditionally, the following more specialised texts should also be useful. They can be found in the University Library under the stated shelfmark.\n\nColloids\n\nD.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet. VCH Publishers (1994).\nR.J.Hunter: Introduction to Modern Colloid Science. Oxford University Press (1993).\nW.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions Cambridge University Press (1989).\nD.H.Everett: Basic Principles of Colloid Science.\n\nRoyal Society of Chemistry Paperbacks (1988)\n\n\nPolymers and surfactants\n\nR.J. Young and P.A. Lovell: Introduction to polymers .\nM. Doi: Introduction to polymer physics\nJ.Israelachvili, Intermolecular and Surface Forces, Academic Press (1992), Chs. 16 and 17\n\n\n\nGlasses\n\nJ. Zarzycki; Glasses and the vitreous state. Cambridge University Press (1991).",
+    "crumbs": [
+      "Recommended texts"
+    ]
+  },
+  {
     "objectID": "phase-transitions/introduction.html",
     "href": "phase-transitions/introduction.html",
     "title": "1  Introduction to phase behaviour and strong fluctuations",
