@@ -245,6 +245,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 * Code modifications. *Include snippets of your modified code, highlighting the modifications in yellow. Do not include the whole code, just enough to see what you changed and where you did it.*   
 * Computational investigations of correlations on the approach to criticality 
 * Temperature and system size dependence of the specific heat
+* Include a line with following declaration at the end of the report: "I have not made use of Artificial Intelligence tools in completing this assessement."
 
 There is no need for any other section headings ie. you don't need abstract, introduction, references etc. Marks will be deducted for reports that exceed four sides (faces) of A4.
 
