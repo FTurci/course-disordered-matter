@@ -59,7 +59,7 @@ lattice gas in the plane of average number density and temperature.
 In the $\mu-T$ plane there is a line of first order phase transitions terminating at a
 critical point which has density $\rho_c=0.5$. The first order line means that if $T<T_c$ and starting from the gas phase we smoothly
 increase the chemical potential through the coexistence value of $\mu$,
-the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a low value \$rho_\textrm{gas}$ to a high value $\rho_\textrm{liquid}$. This is the gas-liquid phase transition. The values of $\rho_\textrm{gas}$ and $\rho_\textrm{liquid}$ merge at $T_c$, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.
+the average number density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a low value $\rho_\textrm{gas}$ to a high value $\rho_\textrm{liquid}$. This is the gas-liquid phase transition. The values of $\rho_\textrm{gas}$ and $\rho_\textrm{liquid}$ merge at $T_c$, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.
 
 ::: {.callout-caution collapse="true"}
 ## 1.3 Aside on Real Fluids

@@ -1,13 +1,15 @@
-# Introduction to phase behaviour
+# Introduction to phase behaviour and strong fluctuations
 
-A phase transition can be defined as a macroscopic rearrangment of the internal constituents of a system in response to a change in the thermodynamic conditions to
-which they are subject. A wide variety of physical systems undergo such transitions. Understanding the properties of phase transitions is fundamental to the study of soft and complex matter, as these systems often exhibit rich and subtle transformations between different states of organization. Whether in colloidal suspensions, polymer blends, liquid crystals, or biological materials, phase transitions underpin a wide range of physical behaviours, from self-assembly and pattern formation to critical phenomena and dynamical arrest. By analysing how macroscopic phases emerge from microscopic interactions and external conditions, one gains crucial insight into the principles that govern structure, stability, and functionality in these intricate systems. As such, an understanding of phase transitions not only enriches theoretical understanding but also informs practical applications across materials science, biophysics, and nanotechnology. For these reasons we will devote a large proportion of this course to the study of phase transitions. 
+A phase transition can be defined as a macroscopic rearrangment of the internal constituents of a system in response to a change in the thermodynamic conditions to which they are subject. A wide variety of physical systems undergo such transitions. Understanding the properties of phase transitions is fundamental to the study of soft and complex matter, as these systems often exhibit rich and subtle transformations between different states of organization. Whether in colloidal suspensions, polymer blends, liquid crystals, or biological materials, phase transitions underpin a wide range of physical behaviours, from self-assembly and pattern formation to critical phenomena and dynamical arrest. By analysing how macroscopic phases emerge from microscopic interactions and external conditions, one gains crucial insight into the principles that govern structure, stability, and functionality in these intricate systems. As such, an understanding of phase transitions not only enriches theoretical understanding but also informs practical applications across materials science, biophysics, and nanotechnology. For these reasons we will devote a large proportion of this course to the study of phase transitions. 
 
-Two classic examples of systems displaying phase transitions are the ferromagnet and fluid systems. As the
-temperature of a ferromagnet is increased, its magnetic moment is observed to decrease smoothly, until at a certain temperature known as
-the critical temperature, it vanishes altogether. We define the magnetisation to be the *order parameter* of this phase transition. 
+Two classic examples of systems displaying phase transitions are the ferromagnet and fluid systems. For the magnet, a key observable is the magnetisation defined as the net magnetic moment per spin, given by $m=M/N$, with $N$ the number of spins. $m$ can be positive or negative, dependent on whether the spins are aligned 'up' or 'down'. As the
+temperature of a ferromagnet is increased, its net magnetisation $|m|$ is observed to decrease smoothly, until at a certain temperature known as
+the critical temperature, $T_c$, it vanishes altogether (see left part of @fig-isingpd). We define the magnetisation to be the *order parameter* of this phase transition. 
 
- ![Phase diagram of a simple magnet (schematic)](Figs/isingpd_color.png){width=80% fig-align="center" #fig-isingpd}
+One can also envisage applying a magnetic field $H$ to the system which, depending on its sign (i.e. whether it is aligned (positive) or antialigned (negative) relative to the magnetisation axis), favours up or down spin states respectively, as shown schematically in @fig-isingpd (right part). Changing the sign of the magnetic field $H$ for $T<T_c$ leads to a phase transition chacterised by a discontinuous jump in $m$. We shall explore this behaviour in more detail in section 6. 
+
+ ![Phase diagram of a simple magnet (schematic). Left: magnetisation as a function of temperature for zero applied magnetic field, $H=0$. Right: Applying a magnetic field that is aligned or antialigned with the direction of the magnetisation leads to a phase transition. The $H=0$ axis at $T<T_c$ is the coexistence curve for which positive and negative magnetisations are equally likely.](Figs/isingpd_color.png){width=80% fig-align="center" #fig-isingpd}
+
 
 Similarly, a change of state from liquid to gas can be induced in a
 fluid system (though not in an ideal gas) simply by raising the
@@ -20,7 +22,7 @@ vanishes and the two phases coalesce. These conditions of pressure and temperatu
 the critical point for the fluid. We define the density difference $\rho_{liq}-\rho_{vap}$ 
 to be the order parameter for the liquid-gas phase transition. We shall meet order parameters for other, more complex, systems in @sec-landau-theory,
 
- ![Phase diagram of a simple fluid (schematic)](Figs/ljpd1.png){width=80% fig-align="center" #fig-isingpd}
+ ![Phase diagram of a simple fluid (schematic)](Figs/ljpd1.png){width=80% fig-align="center" #fig-fluidpd}
 
 
 In the vicinity of a critical point, a system displays a host of remarkable behaviors known as *critical phenomena*.
@@ -67,4 +69,5 @@ introduced and its implications for real and model systems will be
 explored. Finally, the utility of finite-size scaling methods for
 computer studies of critical phenomena will be discussed, culminating in
 the introduction of a specific technique suitable for exposing
-universality in model systems.
+universality in model systems. The wider applicability of these concept to complex disordered systems such as colloids, polymers, 
+liquid crystals and glasses will be covered in part 2 of the course.

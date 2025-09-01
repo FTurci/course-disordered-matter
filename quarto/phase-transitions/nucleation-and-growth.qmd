@@ -11,7 +11,7 @@ Consider again the Ising model at a temperature $T < T_c$, where the system is i
 
 Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. 
 This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, 
-as introduced in Chapter 5. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
+as introduced in @sec-breaking. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
 
 The nucleation of a droplet of the stable phase of size $n$ spins entails a competition between bulk and interfacial contributions 
 to the free energy. The bulk free energy gain is linear in $n$, given by $-nH$, due to the alignment of spins with the external field. 

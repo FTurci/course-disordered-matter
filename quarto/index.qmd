@@ -16,7 +16,7 @@ These various are examples of **soft matter**. systems In soft matter systems, t
 
 This course is organized into three interconnected parts, each offering a distinct perspective on the study of complex disordered matter.
 
-* **Part 1: Unifying theoretical concepts** (Nigel Wilding) introduces the theoretical framework for rationalising complex disordered matter which is grounded in statistical mechanics and thermodynamics. We emphasize the theory of phase transitions, critical phenomena, and stochastic dynamics—providing the essential tools needed to describe and predict the behavior of soft and disordered systems.  
+* **Part 1: Unifying concepts** (Nigel Wilding) introduces the theoretical framework for rationalising complex disordered matter which is grounded in statistical mechanics and thermodynamics. We emphasize the theory of phase transitions, thermal fluctuations, critical phenomena, and stochastic dynamics—providing the essential theoretical tools needed to describe and predict the behavior of soft and disordered systems.  
 * **Part 2: Complex disordered matter** (Francesco Turci) explores the phenomenology of key examples of complex disordered soft matter systems, including colloids, polymers, liquid crystals, glasses, gels, and active matter. These systems will be analyzed using the theoretical concepts introduced in Part 1, highlighting how disorder, interactions, and fluctuations shape their macroscopic behavior.  
 * **Part 3: Experimental techniques** (Adrian Barnes) focuses on the methods of microscopy, and scattering via x-rays, neutrons and light that are used to study  complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
 
@@ -31,13 +31,13 @@ In addition to theory and experiment, computer simulation plays a central role i
 
 * Detailed e-notes (accessible via Blackboard) can be viewed on a variety of devices. Pdf is also available. 
 
-* We will give 'traditional' lectures (XXday, YYYday) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
+* We will give 'traditional' lectures (Tuesdays, Wednesdays, Fridays) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
 
 * Try to read ahead in the notes, then come to lectures, listen to the explanations and then reread the notes.
 
 * Rewriting the notes or slides to express your own thoughts and understanding, or annotating a pdf copy can help wire the material into your own way of thinking.
 
-* There are problem classes (XXXday) where you can try problem sheets and seek help. Lecturers will go over some problems with the class.
+* There are problem classes (Thursdays) where you can try problem sheets and seek help. Lecturers may go over some problems with the class.
 
 * The navigation bar on the left will allow you to access the lecture notes and problem sets.
 
@@ -47,8 +47,9 @@ In addition to theory and experiment, computer simulation plays a central role i
 The course will 
 
 - Introduce you to the qualitative features of a range of complex and disordered systems and the experimental techniques used to study them.
-- Provide you with elementary computational tools to model complex disordered systems and predict their properties
-- Allow you to apply your physics background to understand a variety of **inter-disciplinary** subjects
+- Introduce you to a range of model systems and theoretical techniques used to elucidate the physics of complex disordered matter. 
+- Provide you with elementary computational tools to model complex disordered systems numerically and predict their properties.
+- Allow you to apply your physics background to understand a variety of systems of inter-disciplinary relevance.
 - Connect with the most recent advances in the research on complex disordered matter.
 
 
