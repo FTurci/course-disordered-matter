@@ -1,5 +1,5 @@
 
-# Tools for understanding complex disordered matter
+# Tools for understanding complex disordered matter {.unnumbered}
 
 
 Complex disordered systems are composed of an enormous number of interacting components—typically on the order of $\sim 10^{23}$.

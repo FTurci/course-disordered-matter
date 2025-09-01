@@ -109,7 +109,7 @@ is found that all isotherms (for $t$ close to zero) coincide to within
 experimental error. Reassuringly, similar results are found using the
 scaled equation of state of simple fluid systems such as He$^3$ or Xe.
 
-![Magnetisation of CrBr$_3$ in the critical region plotted in scaled form (see text). From [Ho and Lister (1969](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.22.603).](Figs/scaling.png){width=70% #fig-scalingexp }
+![Magnetisation of CrBr$_3$ in the critical region plotted in scaled form (see text). From [Ho and Lister (1969)](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.22.603).](Figs/scaling.png){width=70% #fig-scalingexp }
 
 In summary, the static scaling hypothesis is remarkably successful in
 providing a foundation for the observation of power laws and scaling

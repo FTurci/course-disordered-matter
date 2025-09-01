@@ -255,7 +255,7 @@ Like any lab report, the marking focus will be on:
 *	Do your results look physically plausible?
 *	Did you describe the pertinent features?
 *	Are your descriptions clear?
-*	Where appropriate, do you explain them correctly using appropriate concepts?
+*	Do you explain them correctly using appropriate concepts?
 
 
 

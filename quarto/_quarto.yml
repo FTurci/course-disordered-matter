@@ -19,8 +19,6 @@ book:
       text: "Recommended texts"
     - part: "Unifying concepts"
       chapters:
-         - href: phase-transitions/precourse-reading.qmd
-           text: "Precourse reading and revision"
          - text: "Introduction to phase behaviour"
            href:  phase-transitions/introduction.qmd
          - text: "Background concepts"
@@ -48,6 +46,8 @@ book:
          - text: "Dynamics of fluctuations"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
+           text: "Precourse reading and revision"
+         - href: phase-transitions/precourse-reading.qmd
            text: "Problems" 
          - href: phase-transitions/Solutions_to_problems.qmd
            text: "Solutions"             

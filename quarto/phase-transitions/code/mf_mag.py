@@ -25,7 +25,7 @@ plt.text(0.55, 0.7, r'$|m| \propto (-t)^{1/2}$', fontsize=16)
 
 # Axis labels with British spelling and larger font size
 plt.xlabel('Temperature $T$', fontsize=20)
-plt.ylabel('Magnetisation $|M|$', fontsize=20)
+plt.ylabel('Magnetisation $|m|$', fontsize=20)
 
 # Customising x-axis ticks
 plt.xticks([T_c], [])
