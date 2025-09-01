@@ -49,8 +49,6 @@ Polymers exist in very different architectures, such as
 
 Furthermore, a large variation in the chemical structure may be achieved by combining different monomers (**copolymerisation**). 
 
-Then for the coupling of two monomeric units in the chain two limiting cases exist; statistical or block structure [IMPROVE]. 
-
 For simplicity, we will focus on **linear homopolymers**, i.e. with no branch points and with all identical subunits.
 
 
@@ -690,7 +688,7 @@ Although the difference between an exponent of 0.5 (as is characteristic for the
  
 
 ::: column-margin
-This is am exampe of the importance of accurate scaling exponents and how they can impact our predictions.
+This is an example of the importance of accurate scaling exponents and how they can impact our predictions.
 :::
 
 ## Good, poor and theta solvents
