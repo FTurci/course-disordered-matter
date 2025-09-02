@@ -170,7 +170,7 @@ $$\langle \mathbf{R}^2\rangle\propto N$$
 
 Since we formally inherit all the results holding for a random walk, we can also predict what happens to the distribution of possible end-to-end distances in the limit of long polymers, i.e. large $N$. 
 
-The mean squaerd end to end distance can be decomposed as 
+The mean squared end-to-end distance can be decomposed as 
 
 $$
 \left\langle\mathbf{R}^2\right\rangle=\left\langle R_x^2\right\rangle+\left\langle R_y^2\right\rangle+\left\langle R_z^2\right\rangle=3 \sigma^2=N b_0^2 \Rightarrow \sigma^2=\frac{N b_0^2}{3}
@@ -681,7 +681,7 @@ $$R^{5}=\frac{\varepsilon V_{1} b^{2}}{k_{B} T} N^{3} \sim \frac{\varepsilon}{k_
 
 $$ \therefore R \sim N^{3 / 5} b$$
 
-Simulations give a very similar scaling, $\mathrm{R} \sim N^{0.588}$. The chain can no longer be modelled by a random walk, but has to be described by a **self-avoiding random walk**. The distribution of end-to-end distances is also not Gaussian.
+Simulations give a very similar scaling, $\mathrm{R} \sim N^{0.588}$. The chain can no longer be modelled by a random walk, but has to be described by a **self-avoiding random walk**. The distribution of end-to-end distances is also not Gaussian. Note that the exponent $3/5$ here is an example of a critical exponent (though not in exactly the same sense that you saw when studying magnets and fluids). Inclusion of excluded volume effects changes the universality class of the scaling of the chain length and radius of gyration with $N$ compared to the Gaussian chains that we looked at previously. 
 
 Although the difference between an exponent of 0.5 (as is characteristic for the freely jointed and freely-rotating chains, i.e. a random walk) and 0.6 (excluded volume chain, i.e. self-avoiding random walk) seems small, it has a large effect at large N . For example, for $N=10^{4}, R=N^{0.5} b=100 b$, while $R=N^{0.6} b=251 b$, which corresponds to a swelling of the chain by a factor of 2.5.
 
