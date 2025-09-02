@@ -300,6 +300,13 @@ as critical exponents. Thus, for instance, the critical exponents of the
 2D magnet, match those of the 2d fluid, but they are different to those
 of 3d magnets and fluids.
 
+|                          | $d=2$             | $d=3$             |
+|--------------------------|-------------------|-------------------|
+| Critical temperature     | 0.5673            | 0.75              |
+| Order parameter exponent $\beta$ | $\tfrac{1}{8}$      | $0.325 \pm 0.001$ |
+| Susceptibility exponent $\gamma$ | $\tfrac{7}{4}$      | $1.24 \pm 0.001$  |
+| Correlation length exponent $\nu$ | $1$               | $0.63 \pm 0.001$  |
+
 In fact the space dimension is one of a small set of qualitative
 features of a critical system which are sufficiently deep-seated to
 survive coarse graining and which together serve to define the system's
