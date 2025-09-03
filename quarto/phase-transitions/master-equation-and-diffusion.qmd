@@ -1,5 +1,5 @@
 
-# Introduction to Stochastic Processes
+# Introduction to stochastic processes
 
 Many natural phenomena are stochastic — they involve randomness in their evolution over time.
 
