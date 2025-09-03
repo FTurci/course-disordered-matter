@@ -15,8 +15,8 @@ book:
   chapters:
     - href: index.qmd
       text: Overview  
-    # - href: reading.qmd
-      # text: "Recommended texts"
+    - href: reading.qmd
+      text: "Recommended texts"
     - part: "Unifying concepts"
       chapters:
          - text: "Introduction to phase behaviour"

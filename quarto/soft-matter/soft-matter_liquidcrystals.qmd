@@ -382,10 +382,10 @@ $$
 \frac{\delta f}{\delta p(\theta)} + \lambda \sin\theta = 0
 $$
 
-Plugging in the expression for $f$ and simplifying, we obtain the self-consistent solution:
+Plugging in the expression for $f$ and simplifying, we obtain the solution:
 
 $$
-p(\theta) = p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
+p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
 $$
 
 where $\mathcal{S}$ is the nematic order parameter to be determined self-consistently, and $Z$ is the normalization constant (partition function):
