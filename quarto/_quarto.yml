@@ -43,8 +43,8 @@ book:
            href: phase-transitions/master-equation-and-diffusion.qmd
          - text: "Brownian and Langevin dynamics"
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
-         - text: "Dynamics of fluctuations"
-           href: phase-transitions/dynamics-of-fluctuations.qmd  
+#        - text: "Dynamics of fluctuations"
+#           href: phase-transitions/dynamics-of-fluctuations.qmd  
          - href: phase-transitions/problems.qmd
            text: "Precourse reading and revision"
          - href: phase-transitions/precourse-reading.qmd
