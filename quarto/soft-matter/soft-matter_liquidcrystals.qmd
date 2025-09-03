@@ -382,10 +382,10 @@ $$
 \frac{\delta f}{\delta p(\theta)} + \lambda \sin\theta = 0
 $$
 
-Plugging in the expression for $f$ and simplifying, we obtain the self-consistent solution:
+Plugging in the expression for $f$ and simplifying, we obtain the solution:
 
 $$
-p(\theta) = p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
+p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
 $$
 
 where $\mathcal{S}$ is the nematic order parameter to be determined self-consistently, and $Z$ is the normalization constant (partition function):
@@ -395,6 +395,8 @@ Z = \int_0^\pi \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right) \sin\theta d
 $$
 
 This is the Maier-Saupe self-consistent equation for the orientational distribution in the mean-field theory of nematic liquid crystals. In the code below, we can see how this leads to a non trivial energy profile which corresponds to the emergence of a ordered state (a minimum at high $\mathcal{S}$) corresponding to the nematic phase.
+
+The transition is **weakly-first** order, as two separate basins of stability (separated typicaly by a small barrier) are formed.
 
 
 
