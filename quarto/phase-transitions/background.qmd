@@ -98,6 +98,8 @@ fig. @fig-thermo
 
 ## Correlations {#sec-correlations}
 
+### Spatial correlations
+
 The two-point connected correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field $\phi(\vec{R})$, which could represent eg. the local magnetisation $m$ in a magnet at position vector $\vec{R}$, or the local particle number density $\rho$ in a fluid, it is defined as:
 
 $$
@@ -158,4 +160,42 @@ In equilibrium:
 This relation enables the extraction of $\xi$ from experimental or simulation data, especially via scattering techniques.
 
 
+### Temporal correlations
 
+Consider a thermodynamic variable $x$ with zero mean that fluctuates over time. Examples include the local magnetization in a magnetic system or the local density in a fluid. Here, $x$ represents a deviation from the average value — a fluctuation.
+
+We're interested in how such fluctuations are correlated over time when the system is in thermal equilibrium. For instance, if $x$ is positive at some time $t$, it's more likely to remain positive shortly after.
+
+These temporal correlations are characterized by the two-time correlation function (also known as an auto-correlation function):
+
+$$
+\langle x(\tau) x(\tau + t) \rangle
+$$
+
+In equilibrium, the correlation function must be independent of the starting time $\tau$. Therefore, we define:
+
+$$
+\langle x(\tau) x(\tau + t) \rangle = M_{xx}(t)
+$$
+
+That is, $M_{xx}(t)$ depends only on the time difference $t$.
+
+We typically expect $M_{xx}(t)$ to decay exponentially over a characteristic correlation time $t_c$:
+
+$$
+M_{xx}(t) \sim \exp(-t / t_c)
+$$
+
+
+![Sketch of $M_{xx}(t)$ against $t$](Figs/Mxx(t).png){#fig-Mxx
+width=60%} 
+
+This exponential decay reflects how the memory of fluctuations fades with time.
+
+Now consider two different fluctuating variables, $x$ and $y$ (e.g., local magnetizations at different positions). Their cross-correlation function is defined as:
+
+$$
+\langle x(\tau) y(\tau + t) \rangle = M_{xy}(t)
+$$
+
+This defines the elements of a dynamic correlation matrix, of which $M_{xx}(t)$ is the diagonal.
