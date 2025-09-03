@@ -396,6 +396,8 @@ $$
 
 This is the Maier-Saupe self-consistent equation for the orientational distribution in the mean-field theory of nematic liquid crystals. In the code below, we can see how this leads to a non trivial energy profile which corresponds to the emergence of a ordered state (a minimum at high $\mathcal{S}$) corresponding to the nematic phase.
 
+The transition is **weakly-first** order, as two separate basins of stability (separated typicaly by a small barrier) are formed.
+
 
 
 ```{pyodide}
