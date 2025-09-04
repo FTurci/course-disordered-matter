@@ -45,10 +45,10 @@ book:
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
          - text: "Dynamics of fluctuations (non-examinable)"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
-        #  - text: "Precourse reading and revision"
-        #    href: phase-transitions/precourse-reading.qmd
-        #  - text: "Problems" 
-        #    href: phase-transitions/problems.qmd
+         - text: "Precourse reading and revision"
+           href: phase-transitions/precourse-reading.qmd
+         - text: "Problems" 
+           href: phase-transitions/problems.qmd
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd
