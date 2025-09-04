@@ -14,7 +14,7 @@ $$
 
 where $L$ is the linear extent of the lattice and $d$ its dimensionality.
 
-Within the Grand Canonical ensemble (see @sec-grandcanonical) the Hamiltonian of the lattice gas model is
+Within the Grand Canonical ensemble (see precourse reading) the Hamiltonian of the lattice gas model is
 
 $${\cal H}_{LG}=-\epsilon\sum_{<i,j>}c_ic_j - \mu\sum_ic_i$$
 
@@ -22,7 +22,7 @@ where $\epsilon$ is an attraction energy between a pair of particles on
 adjacent (nearest neighbouring) sites and $\mu$ is a field known as the
 chemical potential, which couples to the particle density which is
 assumed to fluctuate around a mean value controlled by the prescribed
-chemical potential. One can also fix the particle number to some prescribed value- the correspponding set of microstates then define the canonical ensemble (see @sec-canonical) of the lattice gas at that density. 
+chemical potential. One can also fix the particle number to some prescribed value- the correspponding set of microstates then define the canonical ensemble (see precourse reading) of the lattice gas at that density. 
 
 ## 1.1 Mapping between lattice gas and Ising model
 
@@ -36,7 +36,7 @@ sites.
 
 We now change variables to
 
-$$c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4} ~~~~
+$$c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4}; ~~~~
 h=\frac{\epsilon q+2\mu}{4},
 $$ 
 where $q$ is the lattice coordination number.
@@ -51,7 +51,7 @@ implications.
 
 ## 1.2 Phase diagram
 
-Using these translation rules we can plot the phase diagram of the
+Using the isomorphism we can plot the phase diagram of the
 lattice gas in the plane of average number density and temperature.
 
  ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=45% fig-align="center" #fig-lattgas}
@@ -95,7 +95,9 @@ $$
 
 where $E(C)$ is the energy of particle configuration $C$, $N(C)$ is the number of particles in that configuration, $\mu$ is the chemical potential, and $\beta = 1/k_BT$. To generate such configurations efficiently, one can use the **Metropolis algorithm** adapted for grand canonical sampling:
 
-## 2.1 Grand Canonical Monte Carlo (GCMC)
+## 2.1 Grand Canonical Monte Carlo (GCMC) algorithm
+
+A suitable algorithm for this case is to repeatedly update the system via the following fours steps:
 
 1. Select a random lattice site $(i,j)$.
 
@@ -109,19 +111,18 @@ $$
 W(C \to C') = 
 \begin{cases}
 1 & \text{if } \Delta \Phi < 0, \\
-e^{-\beta \Delta \Phi} & \text{otherwise},
+e^{-\beta \Delta {\cal H}_{LG}} & \text{otherwise},
 \end{cases}
 $$
 
-where $\Delta \Phi = \Delta E - \mu \Delta N$ is the change in the grand potential.
+where $\Delta {\cal H}_LG = \Delta E - \mu \Delta N$ is the change in the GCE Hamiltonian.
 
 This allows the system to explore states with varying particle numbers according to grand canonical statistics.
 
----
 
 ## 2.2 Fixed-Particle-Number Case (Canonical Ensemble)
 
-In contrast, we may for simplicity want to simulate with the **total number of particles $N$ fixed**, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use **Kawasaki dynamics**, which conserves particle number by moving particles between lattice sites:
+In contrast, we may for simplicity want to simulate with the total number of particles $N$ fixed, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use **Kawasaki dynamics**, which conserves particle number by moving particles between lattice sites. An update consists of the following four steps. 
 
 1. Select two sites $(i,j)$ and $(i',j')$ at random.
 
@@ -151,7 +152,7 @@ $$
 \overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{\cal N} O_n,
 $$
 
-where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations generated.
+where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations use for sampling.
 
 Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (see problem sheets) is 
 
@@ -204,7 +205,7 @@ $$
 
 ## 3.3 Code modification tasks
 
-The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 3 for details).
+The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 2 of the notes for details).
 
 In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, $T_c \le T \le 1.0$. For convenience, the program uses dimensionless units by setting $\epsilon = k_B = 1$.
 
@@ -220,7 +221,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.4 Computational investigations of correlations on the approach to criticality
 
-- *Perform simulations at various temperatures within the super range $T_c \le T \le 1.0$, keeping the particle density fixed at $\rho = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
+- *Perform simulations at several (six or seven) temperatures within the super critical range $T_c \le T \le 1.0$, keeping the particle density fixed at the critical density $\rho_c = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
 * *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(k)$, and its radially averaged form, at each temperature*. **[4 marks]**
 
@@ -231,7 +232,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.5 Temperature and system size dependence of the specific heat
 
-*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e. $T<T_c$) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range. . How does the specific heat vary across the whole temperature range?* **[4 marks]**
+*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e. $T<T_c$) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form.* **[4 marks]**
 
 *Repeat the analysis for different system sizes. Compare the results and highlight any observed differences. Discuss possible explanations for these size-dependent effects.* **[4 marks]**
 
@@ -249,7 +250,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 There is no need for any other section headings ie. you don't need abstract, introduction, references etc. Marks will be deducted for reports that exceed four sides (faces) of A4.
 
-*Submit your report in pdf format for grading via blackboard*. The report will be marked out of 40, and will count for $25\%$ of the unit mark. 
+*Submit your report in pdf format for grading via blackboard*. The report will be marked out of 40, and will count for $30\%$ of the unit mark. 
 
 Like any lab report, the marking focus will be on:
 
