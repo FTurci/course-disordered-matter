@@ -1,4 +1,3 @@
-
 # Tools for understanding complex disordered matter {.unnumbered}
 
 
@@ -24,7 +23,7 @@ $$
 Thermodynamically, the states favored in the canonical ensemble are those that maximise the entropy:
 
 $$
-S=k_B\ln \Omega\:.
+S=k_B\ln \Omega\: .
 $$ 
 
 where $k_B$ is Boltzmann's constant The microcanonical ensemble is useful for defining the entropy, but is little used in practice.
@@ -48,6 +47,7 @@ The states favored in the canonical ensemble are those that minimise the free en
 $$
 F_{NVT}=-\beta^{-1}\ln Z_{NVT}\:.
 $$
+
 $F_{NVT}$ is known as the Helmholtz free energy.  Thermodynamics also supplies a relation for the Helmholtz free energy:
 
  $$
@@ -86,6 +86,7 @@ $$
 where $p$ is the pressure.
 
 The grand canonical ensemble is usually used to describe systems such as fluid connected to a particle reservoir. Sometimes for a magnet we consider the effects of an applied magnetic field, which is analogous to working in the grand canonical ensemble:  the magnetic field (which is conjugate to the magnetisation) plays a similar role to the chemical potential in a fluid.
+
 
 ### Isothermal-isobaric ensemble
 
@@ -149,15 +150,20 @@ Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_0^\infty dV\sum_{all~states
 $$
 
 Then 
+
+$$
 \begin{eqnarray}
 \left(\frac{\partial F}{\partial p}\right)_T&=&-\frac{1}{\beta}\left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T\nonumber \\
 \:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}}\frac{\partial Z_{NpT}}{\partial p}\right)_T\nonumber\\
 \:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}} \int_0^\infty dV\int_{all~states}(-\beta V)e^{-\beta (p V_i+E_i)}  \right)_T\nonumber\\
 \:&=&\langle V\rangle_T\nonumber\:.
 \end{eqnarray}
+$$
+
 where in the last step we have used the fact that the probability of a state is defined to be $e^{-\beta (p V_i+E_i)}/Z_{NpT}$.
 
 *Exercise*. Repeat these manipulations to find an expression for the mean particle number $N$ in the grand canonical ensemble 
+
 
 ::: {.callout-caution collapse="true"}
 ## Solution
@@ -191,7 +197,6 @@ $$
 \langle N \rangle = -\left( \frac{\partial F_{\mu VT}}{\partial \mu} \right)_{T, V}
 $$
 
----
 Now consider the statistical mechanics route to calculate $\langle N\rangle$: 
 
 $$
@@ -223,5 +228,4 @@ $$
 $$
 
 where in the last step we have used the fact that in the GCE the Boltzmann probability of a microstate is defined to be $e^{-\beta (E_{N,i}-\mu N)}/Z_{\mu VT}$.
-
 :::

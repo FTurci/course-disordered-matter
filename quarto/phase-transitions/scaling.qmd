@@ -76,11 +76,14 @@ b/(1-b)$,$\gamma = (2b-1)/a$, and $\alpha =(2a-1)/a$ . Relationships
 between the critical exponents themselves can be obtained trivially by
 eliminating the scaling parameters from these equations. The principal
 results (known as "scaling laws") are:-
-
+$$
 \begin{aligned}
 \alpha+\beta(\delta+1)=2 \\
 \alpha+2\beta+\gamma=2
-\end{aligned} Thus, provided all critical exponents can be expressed
+\end{aligned} 
+$$
+
+Thus, provided all critical exponents can be expressed
 in terms of the scaling parameters $a$ and $b$, then only two critical
 exponents need be specified, for all others to be deduced. Of course
 these scaling laws are also expected to hold for the appropriate

@@ -69,11 +69,13 @@ $\nu_{i, i+1} = \nu_{i, i-1} = \nu$,
 
 The master equation becomes a finite-difference equation:
 
+$$
 \begin{aligned}
 \frac{dp_i}{dt} =  &\sum_j\nu_{ij}(p_j-p_i)\\
 \frac{dp_i}{dt} =  &\nu(p_{i-1}-p_i) + \nu(p_{i+1} - p_i)\\
 \frac{dp_i}{dt} =  &\nu(p_{i+1} + p_{i-1} - 2p_i)
 \end{aligned}
+$$
 
 We now define a continuous variable $x = i a$, and a probability density $p(x, t)$ such that $p_i(t) \approx p(x, t)$.
 

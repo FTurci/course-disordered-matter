@@ -418,12 +418,15 @@ $$
 To integrate this we need to change the integration variable from $S(L)$
 to $b(L)S(L)$. We have $d(b(L)S(L))=b(L)dS(L)$ since $b(L)$ does not
 fluctuate. Thus
-
+$$
 \begin{aligned}
 Q(L,t)  & =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
         & =  b^{-1}(L)f(a(L)t)\nonumber\\
        & =  b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
-\end{aligned} where $f$ is a universal function (defined as the first
+\end{aligned}
+$$
+
+where $f$ is a universal function (defined as the first
 moment of $\tilde{p}(x,y)$ with respect to $y$).
 
 The above results provide a method for determining the critical exponent
@@ -676,10 +679,14 @@ transformation (@eq-rgdec) in terms of the deviation of the coupling from
 its fixed point value. A Taylor expansion of the function $K^\prime=K^2$
 yields
 
+$$
 \begin{aligned}
 K^\prime =& (K^*)^2 +(K-K^*)\left.\frac{\partial K^\prime}{\partial K}\right|_{K=K^*}+\frac{1}{2}(K-K^*)^2\left.\frac{\partial^2 K^\prime}{\partial K^2}\right|_{K=K^*}+\ldots\nonumber\\
 K^\prime - K^* =& 2 (K - K^*)+ (K - K^*)^2 
-\end{aligned} where in the second line we have used the fact that the
+\end{aligned}
+$$
+
+ where in the second line we have used the fact that the
 first derivative evaluates to $2K^*=2$ and $(K^*)^2=K^*$.
 
 For a system sufficiently close to its critical temperature the final

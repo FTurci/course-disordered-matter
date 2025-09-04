@@ -202,11 +202,14 @@ close to its critical point. In order to do so, we rewrite the
 transformation (@eq-rgdec) in terms of the deviation of the coupling from
 its fixed point value. A Taylor expansion of the function $K^\prime=K^2$
 yields
-
+$$
 \begin{aligned}
 K^\prime =& (K^*)^2 +(K-K^*)\left.\frac{\partial K^\prime}{\partial K}\right|_{K=K^*}+\frac{1}{2}(K-K^*)^2\left.\frac{\partial^2 K^\prime}{\partial K^2}\right|_{K=K^*}+\ldots\nonumber\\
 K^\prime - K^* =& 2 (K - K^*)+ (K - K^*)^2 
-\end{aligned} where in the second line we have used the fact that the
+\end{aligned}
+$$
+
+where in the second line we have used the fact that the
 first derivative evaluates to $2K^*=2$ and $(K^*)^2=K^*$.
 
 For a system sufficiently close to its critical temperature the final

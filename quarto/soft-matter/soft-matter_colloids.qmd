@@ -93,9 +93,11 @@ U \propto -\frac{\mu_1 \mu_2}{r^3}
 $$
 
 ::: column-margin
+::: {.content-visible when-format="live-html"}
 ![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](figs/Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
 
 ![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the dispersion force.](figs/hamaker-london.png){width="300" fig-align="left"}
+:::
 :::
 
 The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities $\alpha_1$ and $\alpha_2$ of the two particles:
@@ -511,9 +513,10 @@ Integrating the force yields the interaction potential.
 
 
 ::: column-margin
+::: {.content-visible when-format="live-html"}
 ![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
 :::
-
+:::
 
 ::: {.callout-note}
 # Summary of main colloid-colloid interactions
