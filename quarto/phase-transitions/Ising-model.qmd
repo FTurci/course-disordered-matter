@@ -271,13 +271,15 @@ matrix.
 
 Let us start by assuming that the assembly has cyclic boundary
 conditions, then the total energy of configuration $\{s\}$ is
-
+$$
 \begin{aligned}
-H(\{s\})=&-\sum_{i=1}^N (Js_is_{i+1}+Hs_i)\\
-\:=&-\sum_{i=1}^N (Js_is_{i+1}+H(s_i+s_{i+1})/2)\\
+H(\{s\})=&-\sum_{i=1}^N (J s_i s_{i+1}+Hs_i)\\
+\:=&-\sum_{i=1}^N (J s_i s_{i+1}+H(s_i+s_{i+1})/2)\\
 \:=&\sum_{i=1}^N E(s_i,s_{i+1})
 \end{aligned}
- where we have defined $E(s_i,s_{i+1})=-Js_is_{i+1}-H(s_i+s_{i+1})/2$.
+$$
+
+ where we have defined $E(s_i,s_{i+1})=-J s_i s_{i+1}-H(s_i+s_{i+1})/2$.
 
 Now the partition function may be written
 
