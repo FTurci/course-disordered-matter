@@ -1,4 +1,4 @@
-# The Approach to Criticality {#sec:approach}
+# The approach to criticality {#sec:approach}
 
 It is a matter of experimental fact that the approach to criticality in
 a given system is characterized by the divergence of various

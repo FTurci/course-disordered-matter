@@ -30,7 +30,7 @@ being we will set it equal to zero). The order parameter is simply the
 average magnetisation:
 
 $$m=\frac{1}{N} \langle \sum_i s_i \rangle\:,$$ where
-$\langle\cdot\rangle$ means an average over configurations.
+$\langle\cdot\rangle$ means an average over typical configurations corresponding to the prescribed value of $J/k_BT$.
 
 The fact that the Ising model displays a phase transition was argued in @sec-background. Thus at low temperatures for which there is
 little thermal disorder, there is a preponderance of aligned spins and
@@ -42,17 +42,14 @@ net magnetisation (ie. the system is paramagnetic). These trends are
 visible in configurational snapshots from computer simulations of the 2D
 Ising model (see @fig-snapshots). Although each spin interacts only with its
 nearest neighbours, the phase transition occurs due to cooperative
-effects among a large number of spins. In the neighbourhood of the
-transition temperature these cooperative effects engender fluctuations
-that can extend over all length-scales from the lattice spacing up to
-the correlation length.
+effects among a large number of spins. 
 
 ::: {#fig-snapshots layout-ncol=3}
-![$T=1.2T_c$](Figs/supercrit.png){}
+![$T=1.2T_c$](Figs/supercrit.png){#fig-ssa}
 
-![$T=T_c$](Figs/crit.png){}
+![$T=T_c$](Figs/crit.png){#fig-ssb}
 
-![$T=0.95T_c$](Figs/subcrit.png){}
+![$T=0.95T_c$](Figs/subcrit.png){#fig-ssc}
 
 Configurations of the 2d Ising model. The patterns depict
 typical arrangements of the spins (white=+1, black=−1) generated in a computer simulation of the
@@ -67,7 +64,7 @@ island size is a measure of the correlation length $\xi$: the excess of black ov
 
 
 [An interactive Monte Carlo simulation of the Ising model](https://physics.weber.edu/schroeder/software/demos/isingmodel.html) demonstrates the phenomenology,  By altering the temperature you will be able to observe
-for yourself how the spin arrangements change as one traverses the
+for yourself how the typical spin arrangements change as one traverses the
 critical region. Pay particular attention to the configurations near the
 critical point. They have very interesting properties. We will return to
 them later!

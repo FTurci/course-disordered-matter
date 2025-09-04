@@ -245,7 +245,7 @@ implies that (within the mean field approximation) the critical exponent
 $\gamma=1$.
 
 The schematic behaviour of the Ising order parameter and susceptibility
-are shown in @fig-mfsum (a) and (b)
+are shown in @fig-mfsum (a) and (b) respectively.
 
 ::: {#fig-mfsum layout-ncol=2}
 
@@ -352,7 +352,7 @@ F(m)=F_0+a_2m^2+a_4m^4
 $${#eq-landau}
 
 Here only the terms compatible with the order parameter symmetry are
-included in the expansion and we truncat the series at the 4th power because this is all that is necessary to yield the essential phenomenology.
+included in the expansion and we truncate the series at the 4th power because this is all that is necessary to yield the essential phenomenology.
 On symmetry grounds, the free energy of a ferromagnet should be invariant under a reversal of the sign of the
 magnetisation. Terms linear and cubic in $m$ are not invariant under
 $m\to -m$, and so do not feature.

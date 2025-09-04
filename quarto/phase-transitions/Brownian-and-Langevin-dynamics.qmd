@@ -2,7 +2,7 @@
 
 ## The Random Walk and the Langevin equation
 
-The concept of a random walk and its continuum limit — diffusion — introduced in the previous chapter, expresses the time evolution of the probability distribution $p(x, t)$ for a particle's position $x$ is described by the diffusion equation:
+The concept of a random walk and its continuum limit -- diffusion -- introduced in the previous chapter, expresses the time evolution of the probability distribution $p(x, t)$ for a particle's position $x$ by the diffusion equation:
 
 $$
 \frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2},
@@ -11,7 +11,7 @@ $$
 which is a standard example of a so called *Fokker-Planck* equation, which is second-order in space and first-order in time.
 
 In contrast, the *Langevin equation* provides a stochastic differential equation for the particle’s trajectory $x(t)$. 
-To understand it, consider the motion over a small time increment $\Delta t$:
+To understand it, consider the random hopping motion of a particle on a 1d lattice over a small time increment $\Delta t$:
 
 $$
 x(t + \Delta t) = x(t) + \Delta x(t)
@@ -28,7 +28,7 @@ $$
 \end{cases}
 $$
 
-This defines a discrete-time, discrete-space random walk. The average and variance of the step are:
+This defines a discrete-time, discrete-space random walk. The average and variance of the step are easily derived using binomial statistics:
 
 * Mean: $\langle \Delta x \rangle = 0$
 
@@ -48,7 +48,7 @@ $$
 \dot{x}(t) = \eta(t)
 $$
 
-where $\eta(t)$ is a stochastic force (noise) satisfying:
+where $\eta(t)\equiv\frac{\Delta x(t)}{\Delta t}$ is a stochastic noise satisfying:
 
 $$
 \langle \eta(t) \rangle = 0
@@ -58,7 +58,7 @@ $$
 \langle \eta(t) \eta(t') \rangle = \Gamma \delta(t - t')
 $$
 
-This $\eta(t)$ is known as white noise — it has zero mean and is uncorrelated at different times.
+This $\eta(t)$ is known as white noise — it has zero mean and is uncorrelated at different times. $\Gamma$ measures its amplitude.
 
 The Langevin equation tells us that the velocity $\dot{x}(t)$ is purely driven by noise. We can formally integrate it:
 
@@ -110,15 +110,15 @@ Here:
 
 ### Noise Properties
 
-In principle the random forces are \textit{correlated} in time since the molecular collisions which cause them are correlated and have some definite duration. 
+In principle the random forces are correlated in time since the molecular collisions which cause them are correlated and have some definite duration. 
 
 
-Let us assume that there is some correlation time $t_c$ over which $\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)$ decays rapidly as shown in the sketch:
+Let us assume that there is some correlation time $t_c$ over which $\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)$ decays rapidly as shown in the sketch below:
 
 ![Sketch of $g(t1−t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
 width=60%} 
 
-Then as long as we consider timescales $\gg t_c$ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus  we can approximate the noise by
+Then as long as we consider timescales $\gg t_c$ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus we can make the approximation of white noise
 
 $$
 \langle f(t) \rangle = 0
@@ -128,9 +128,9 @@ $$
 \langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
 $$
 
-Such uncorrelated noise is known as "white noise".
 
-### Solving the Langevin Equation (Velocity)
+
+### Solving the Langevin Equation (velocity)
 
 Let’s set $m = 1$ for simplicity and solve the equation:
 
@@ -162,7 +162,7 @@ Thus:
 * At long times: ($\gamma t \gg 1$): $\langle v \rangle \to 0$ ie. the system loses memory of the initial velocity.
 
 
-### Mean-Square Velocity
+### Mean-square velocity
 
 We now compute:
 
@@ -190,7 +190,7 @@ $$
 This important result relates the noise strength to the damping and temperature — they have the same microscopic origin (molecular collisions).
 
 
-### Mean-Square Displacement
+### Mean-square displacement
 
 We now integrate $v(t)$ again to get position $x(t)$ (with $m = 1$):
 
@@ -217,6 +217,11 @@ Limiting behaviours:
   $$
 
   (corresponding to *diffusive motion*)
+
+
+![Schematic plot of the crossover from ballistic to diffusive motion for a colloid in a fluid.](Figs/brownian_crossover.png){#fig-browniancross
+width=60%} 
+
 
 The effective diffusion constant is:
 
@@ -461,10 +466,10 @@ More about the scientists mentioned in this chapter:
 
 [Paul Langevin](https://en.wikipedia.org/wiki/Paul_Langevin)
 
-[Robert Brown] (https://en.wikipedia.org/wiki/Robert_Brown_(botanist,_born_1773))
+[Robert Brown](https://en.wikipedia.org/wiki/Robert_Brown_(botanist,_born_1773))
 
 [Albert Einstein](https://en.wikipedia.org/wiki/Albert_Einstein)
 
-[Walther Nernst](https://en.wikipedia.org/wiki/Walther_Nernst)[]
+[Walther Nernst](https://en.wikipedia.org/wiki/Walther_Nernst)
 
 [George Stokes](https://en.wikipedia.org/wiki/Sir_George_Stokes,_1st_Baronet)
