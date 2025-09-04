@@ -263,3 +263,6 @@ The domain growth exponents $1/z$ are robust under many conditions, but can be m
 
 
 
+More about the scientists mentioned in this chapter:
+
+[John Cahn](https://en.wikipedia.org/wiki/John_W._Cahn)

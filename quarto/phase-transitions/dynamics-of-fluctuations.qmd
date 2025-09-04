@@ -1,44 +1,16 @@
 # Dynamics of Fluctuations
 
-Consider a thermodynamic variable $x$ with zero mean that fluctuates over time. Examples include the local magnetization in a magnetic system or the local density in a fluid. Here, $x$ represents a deviation from the average value — a fluctuation.
+*This section is here for your interest but is not considered examinable.*
 
-We're interested in how such fluctuations are correlated over time when the system is in thermal equilibrium. For instance, if $x$ is positive at some time $t$, it's more likely to remain positive shortly after.
-
-These temporal correlations are characterized by the two-time correlation function:
-
-$$
-\langle x(\tau) x(\tau + t) \rangle
-$$
-
-In equilibrium, the correlation function must be independent of the starting time $\tau$. Therefore, we define:
-
-$$
-\langle x(\tau) x(\tau + t) \rangle = M_{xx}(t)
-$$
-
-That is, $M_{xx}(t)$ depends only on the time difference $t$.
-
-We typically expect $M_{xx}(t)$ to decay exponentially over a characteristic correlation time $t_c$:
-
-$$
-M_{xx}(t) \sim \exp(-t / t_c)
-$$
-
-
-![Sketch of $M_{xx}(t)$ against $t$](Figs/Mxx(t).png){#fig-Mxx
-width=60%} 
-
-This exponential decay reflects how the memory of fluctuations fades with time.
-
-Now consider two different fluctuating variables, $x$ and $y$ (e.g., local magnetizations at different positions). Their cross-correlation function is defined as:
-
+In equilibrium, the principle of **detailed balance** implies microscopic reversibility — there are no net probability currents. As a result, time evolution is symmetric: fluctuations are time-reversal invariant. 
+Recall the dynamic correlation matrix introduced in @sec-correlations
 $$
 \langle x(\tau) y(\tau + t) \rangle = M_{xy}(t)
 $$
 
-This defines the elements of a dynamic correlation matrix, of which $M_{xx}(t)$ is the diagonal.
+of which $M_{xx}(t)$ is the diagonal.
 
-In equilibrium, the principle of **detailed balance** implies microscopic reversibility — there are no net probability currents. As a result, time evolution is symmetric: fluctuations are time-reversal invariant. Therefore:
+Therefore:
 
 $$
 M_{xx}(t) = \langle x(\tau) x(\tau + t) \rangle = \langle x(\tau) x(\tau - t) \rangle = M_{xx}(-t)
@@ -108,7 +80,15 @@ $$
 This result is known as **Onsager's reciprocal relation**. It states that the response of variable $x$ to a force acting on $y$ is the same as the response of $y$ to a force acting on $x$ — provided the system is in equilibrium.
 
 This is a deep and subtle consequence of microscopic reversibility, and Onsager's real contribution was realizing such a connection could exist. 
-(Onsager also solved the 2D Ising model and won the Nobel Prize in Chemistry in 1968.)
+(Onsager also solved the 2D Ising model analytically and won the Nobel Prize in Chemistry in 1968.)
 
 
+::: {#fig-onsager layout-ncol=2}
+
+![Lars Onsager](Figs/onsager.jpg){#fig-onsager_pic width=70%}
+
+![Onsager's gravestone and one-up-man-ship with colleague John Kirkwood](Figs/onsager_grave.jpg){#fig-grave width=80%}
+
+Norwegian Physicist and Nobel Laureate, [Lars Onsager](https://en.wikipedia.org/wiki/Lars_Onsager)
+:::
 
