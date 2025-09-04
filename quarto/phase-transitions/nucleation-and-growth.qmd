@@ -54,7 +54,7 @@ $$
 \Delta F(R) = \sigma \, S_d \, R^{d-1} - |\Delta f| \, V_d \, R^d,
 $$
 
-where $V_d$ is another dimension-dependent constant. This expression exhibits a characteristic maximum at a critical droplet radius $R_c$, obtained by extremizing $\Delta F(R)$ with respect to $R$:
+where $V_d$ is another dimension-dependent constant. This expression (@fig-cnt-schem) exhibits a characteristic maximum at a critical droplet radius $R_c$, obtained by extremizing $\Delta F(R)$ with respect to $R$:
 
 $$
 \frac{d \Delta F}{dR} = 0 \quad \Rightarrow \quad R_c = \frac{(d-1)\sigma S_d}{d |\Delta f| V_d}.

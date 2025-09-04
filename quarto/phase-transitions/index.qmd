@@ -24,16 +24,14 @@ This course is organized into three interconnected parts, each offering a distin
 
 In addition to theory and experiment, computer simulation plays a central role in soft matter research. This course includes a substantial coursework component consisting of two computational projects. These exercises will allow you to apply state-of-the-art simulation techniques to investigate the complex behavior of disordered systems, bridging theory and observation through hands-on exploration.
 
-
 :::
-
 
 
 ### Delivery and format
 
-* Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is also available. 
+* Detailed e-notes (see Blackboard) can be viewed on a variety of devices. Pdf is available on request. 
 
-* We will give 'traditional' lectures (XXday, YYYday) in which we use slides to summarise and explain the lecture content. Questions are welcome (within reason...)
+* We will give 'traditional' lectures (XXday, YYYday) in which we use slides to summarise and explain the lecture content. Questions are welcome during lectures (within reason...)
 
 
 * Try to read ahead in the notes, then come to lectures, listen to the explanations and then reread the notes.

@@ -41,9 +41,7 @@ $$L_\textrm{ max} \gg \xi \gg L_\textrm{ min}$$
 The physics of this regime is hard to tackle by analytic theory because
 it is characterized by configurational structure on all scales between
 $L_\textrm{ min}$ and $\xi$ (in fact it turns out that the near critical
-configurational patterns are *fractal*-like, cf.
-fig. [5](#fig:snapshots){reference-type="ref"
-reference="fig:snapshots"}(b)). Moreover different length scales are
+configurational patterns are *fractal*-like, cf. @fig-ssb. Moreover different length scales are
 correlated with one another, giving rise to a profusion of coupled
 variables in any theoretical description. The window regime is also not
 easily accessed by computer simulation because it entails studying very
@@ -61,7 +59,7 @@ thought of as typifying the size of the smallest resolvable detail in a
 description of the system's microstructure.
 
 Consider the Ising model arrangements displayed in
-@fig-snapshots (a)-(c). These pictures contain *all* the
+@fig-snapshots. These pictures contain *all* the
 details of each configuration shown: the resolution length $L$ in this
 case has its smallest possible value, coinciding with the lattice
 spacing i.e. $L=L_{\min}$. In the present context, the most detailed
@@ -173,7 +171,7 @@ qualitatively quite different from the pattern of the local variables,
 the $L=4$ and $L=8$ patterns display qualitatively similar features.
 These similarities are more profound than is immediately apparent. A
 statistical analysis of the spectrum of $L=4$ configurations (generated
-as the local variables evolve in time) show that it is almost identical
+as the local variables evolve in time) shows (@fig-c2(iv)) that it is almost identical
 to that of the $L=8$ configurations (given the block variable scaling).
 The implication of this limiting behaviour is clear: the patterns formed
 by the ordering variable at criticality look the same (in a statistical
@@ -193,7 +191,7 @@ sense) when viewed on all sufficiently large length scales.
 
 ![(biii)](Figs/b3_3state.png){width=50%}
 
-![(iv)](Figs/scaled_block_variable.png){width=60%}
+![(iv)](Figs/scaled_block_variable.png){width=50%}
 
 See text for details
 :::

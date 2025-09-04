@@ -33,7 +33,7 @@ book:
  #          href: phase-transitions/lattice-gas.qmd
          - text: "The static scaling hypothesis"
            href: phase-transitions/scaling.qmd
-         - text: "Universality and renormalization group theory"
+         - text: "Universality and renormalisation group theory"
            href:  phase-transitions/rg.qmd
         #  - text: "RG- the effective coupling viewpoint"
         #    href: phase-transitions/rg-effective-coupling.qmd
