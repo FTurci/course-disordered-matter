@@ -29,8 +29,8 @@ book:
            href: phase-transitions/Ising-model.qmd            
          - text: "Mean field theory"
            href:  phase-transitions/mean-field-theory.qmd
-         - text: "The lattice gas"
-           href: phase-transitions/lattice-gas.qmd
+#        - text: "The lattice gas"
+#≈ß           href: phase-transitions/lattice-gas.qmd
          - text: "The static scaling hypothesis"
            href: phase-transitions/scaling.qmd
          - text: "Universality and renormalization group theory"
