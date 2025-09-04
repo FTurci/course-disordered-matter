@@ -48,8 +48,7 @@ This structure ensures probability conservation: the total probability $\sum_i p
 
 The master equation is first order in time and does not have time reversal symmetry so describes an irreversible process.
 This irreversibility arises from the coarse-graining process that throws away information about underlying microphysics which 
-is described by Newton's equations and which *are* time reversible. Only 
-by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. 
+is described by Newton's equations and which *are* time reversible. Only  by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. 
 Consequently the increase of entropy is linked to our knowledge about the system rather than anything it is doing internally 
 in a manner that may appear dubious. Can it be possible that macroscopic and reproducible phenomena such as heat flow depend
 on how we handle information? Perhaps yes since the division between work and heat is somewhat arbitrary. 
