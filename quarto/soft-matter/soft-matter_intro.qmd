@@ -14,8 +14,10 @@ In this course, we will emphasize the fact that many such systems are not crysta
 While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
 
 ::: {.column-margin} 
+::: {.content-visible when-format="live-html"}
 
-![Pierre-Gilles de Gennes (1932-2007), 1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).](https://upload.wikimedia.org/wikipedia/commons/f/f6/Pierre-Gilles_crop.jpg){fig-align="left"}
+![Pierre-Gilles de Gennes (1932-2007), 1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).](figs/Pierre-Gilles_crop.jpg){fig-align="left"}
+:::
 :::
 
 This is because soft matter systems are typically composed of **many microscopic constituents** in contact with an **environment**. The appropriate description of the **macroscopic state** of such systems is therefore **statistical** and uses the language of **statistical mechanics**. The relevant **energy**, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy
@@ -62,7 +64,7 @@ At the **microscopic** level, all these interactions have essentialy one source:
 
 Therefore, theories of soft matter leverage the concept of **coarse-graining**, rooted in the renormalisation group notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain the forms the backbone. An example of DNA coarse garining is provided by the succesful model [oxDNA](https://dna.physics.ox.ac.uk/index.php/Main_Page) (see picture below):
 
-![oxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand.](figs/500px-The_model_half)
+![oxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand.](figs/The_model_half.png)
 
 
 ::: {.callout-note collapse="true"}

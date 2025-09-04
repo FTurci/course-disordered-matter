@@ -93,7 +93,7 @@ U \propto -\frac{\mu_1 \mu_2}{r^3}
 $$
 
 ::: column-margin
-![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Johannes_Diderik_van_der_Waals.jpg/960px-Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
+![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](figs/Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
 
 ![Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the dispersion force.](figs/hamaker-london.png){width="300" fig-align="left"}
 :::
@@ -497,7 +497,18 @@ Notice the negative sign, chosen to reflect the fact that the force is attarctiv
 Integrating the force yields the interaction potential. 
 :::
 
-![Animation of two dimensional colloids in a sea of ideal polymers. Notice how the initially separated colloids ultimately come close to each other](figs/aoanimation.gif)
+::: {.cell}
+```{=live-html}
+![Animation of two dimensional colloids in a sea of ideal polymers. Notice how the initially separated colloids ultimately come close to each other](figs/aoanimation.gif){format: live-html}
+```
+:::
+
+::: {.cell}
+```{=latex}
+% Skip this GIF in PDF
+```
+:::
+
 
 ::: column-margin
 ![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
@@ -709,9 +720,7 @@ In contrast, **random close packing** (the densest disordered arrangement of sph
  $$
 \delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
 $$
-The corresponding free volume is then $
-v_f=\frac{4 \pi}{3} \delta^3 
-$ from which we can calculate the entropy
+The corresponding free volume is then $v_f=\frac{4 \pi}{3} \delta^3$ from which we can calculate the entropy
 
 $$
 S = -N k_B T \ln \left(v_f / \Lambda^3\right)
