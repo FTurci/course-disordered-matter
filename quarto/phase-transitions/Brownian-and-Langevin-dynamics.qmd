@@ -218,9 +218,9 @@ Limiting behaviours:
 
   (corresponding to *diffusive motion*)
 
-
+<!-- 
 ![Schematic plot of the crossover from ballistic to diffusive motion for a colloid in a fluid.](Figs/brownian_crossover.png){#fig-browniancross
-width=60%} 
+width=60%}  -->
 
 
 The effective diffusion constant is:

@@ -342,8 +342,9 @@ Instead, other properties of percolation are **universal**: these are the critic
 
 In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity.
 
+::: {.content-visible when-format="live-html"}
 ![Molecular dynamics simulation of the gradual formation of a very dilute colloidal gel by the growth of a system spanning (percolating) cluster (the largest cluster is highlighted in red). ](./figs/m.gif)
-
+:::
 
 
 
@@ -569,7 +570,9 @@ For the arested spinodal scenario to hold, the system evolves following these st
 For more details, see @Zaccarelli2007.
 
 
+::: {.content-visible when-format="live-html"} 
 ## References {.unnumbered}
+:::
 
 
 

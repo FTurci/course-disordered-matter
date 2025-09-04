@@ -152,12 +152,13 @@ $$
 Then 
 
 $$
-\begin{eqnarray}
-\left(\frac{\partial F}{\partial p}\right)_T&=&-\frac{1}{\beta}\left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T\nonumber \\
-\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}}\frac{\partial Z_{NpT}}{\partial p}\right)_T\nonumber\\
-\:&=&-\frac{1}{\beta}\left(\frac{1}{Z_{NPT}} \int_0^\infty dV\int_{all~states}(-\beta V)e^{-\beta (p V_i+E_i)}  \right)_T\nonumber\\
-\:&=&\langle V\rangle_T\nonumber\:.
-\end{eqnarray}
+\begin{align}
+\left(\frac{\partial F}{\partial p}\right)_T
+&= -\frac{1}{\beta} \left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T \\
+&= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \frac{\partial Z_{NpT}}{\partial p} \\
+&= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \int_0^\infty dV \int_{\text{all states}} (-\beta V) e^{-\beta (p V + E)} \\
+&= \langle V \rangle_T \,.
+\end{align}
 $$
 
 where in the last step we have used the fact that the probability of a state is defined to be $e^{-\beta (p V_i+E_i)}/Z_{NpT}$.

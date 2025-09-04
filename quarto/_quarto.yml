@@ -45,8 +45,8 @@ book:
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
          - text: "Dynamics of fluctuations (non-examinable)"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
-         - text: "Precourse reading and revision"
-           href: phase-transitions/precourse-reading.qmd
+        #  - text: "Precourse reading and revision"
+        #    href: phase-transitions/precourse-reading.qmd
         #  - text: "Problems" 
         #    href: phase-transitions/problems.qmd
         #  - text: "Solutions"
@@ -104,6 +104,8 @@ format:
     classoption: [enabledeprecatedfontcommands]
     # papersize: a4paper
     mainfont: "Helvetica" 
+    bibliography:
+      - soft-matter/references.bib
     geometry:
       - top=2cm
       - left=2cm

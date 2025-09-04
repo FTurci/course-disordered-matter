@@ -284,13 +284,13 @@ $$
 
 The **valence angle** (also called the bond angle) is the angle formed between two adjacent chemical bonds originating from the same atom. In the context of polymers, it is the angle between two consecutive bonds along the polymer backbone. The value of the valence angle is determined by the chemical structure of the monomer and affects the flexibility and overall conformation of the polymer chain. For example, in $n$-butane, the C–C–C bond angle is about $112^\circ$. Still rotations about the C-C bond are possible.
 
-![Four conformers of butane, from [LibreText Chemistry](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Chirality/Stereoisomers/Butane_Conformers)](https://chem.libretexts.org/@api/deki/files/8119/butconf.gif?revision=1)
+![Four conformers of butane, from [LibreText Chemistry](https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Supplemental_Modules_(Organic_Chemistry)/Chirality/Stereoisomers/Butane_Conformers)](figs/butconf.png)
 
 
 
 Indeed, the potential energy of a polymer configuration depends on the valence (dihedral) angle.
 
-![Potential energy of the above conformers](https://chem.libretexts.org/@api/deki/files/8120/butdihed.gif?revision=10)
+![Potential energy of the above conformers](figs/butdihed.png)
 
 At low temperatures ( $k_{B} T < {\mathrm {\text{configurational energy}}}$) the configuration will thus be predominantly of type **A** (an anti conformation). As the temperature is increased ( $k_{B} T \sim$ config. energy), there will also be **C** (gauche) configurations and at high temperatures ( $k_{B} T \gg$ config. energy), any angle will be possible. 
 

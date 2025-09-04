@@ -334,10 +334,10 @@ $$
 where:
 - $D_{\mathrm{eff}} = \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient,
 
-This clearly shows thhat there are three main regimes: 
+This clearly shows that there are three main regimes: 
 
 - a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
-- an intermediate regime around the reorientation time $\tau_R$ $\operatorname{MSD}(\tau)=4 D_{\mathrm{T}} \tau+2 v^2 \tau^2 $ leading to **super-diffusive** motion (ballistic)
+- an intermediate regime around the reorientation time $\tau_R$ where $\operatorname{MSD}(\tau)=4 D_{\mathrm{T}} \tau+2 v^2 \tau^2$ leading to **super-diffusive** motion (ballistic)
 - a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
 
 ::: {.callout-note collapse="true"}
@@ -506,4 +506,5 @@ In particular, the colloision between particles are no longer leading to quick d
 The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of equilibrium systems. Before reaching this regime, the fluid also displays a critical like phenomenology, with enhcanced fluctuations terminating a critical point. 
 
 This has been examined in detail in coputer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situtation of colloid-polymer mixtures due to the very short range nature of the effective interactions between active particles).
+
 
