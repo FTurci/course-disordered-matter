@@ -85,7 +85,7 @@ def compute_rdf(config, n_bins=50):
     g = hist / norm
     return r, g
 
-# Compute radial average of a 2D array (e.g., structure factor)
+# Compute radial average of a 2D array (e.g., structure factor) (to be added as exercise)
 def radial_average(S, n_bins=50):
     L = S.shape[0]
     y, x = np.indices((L, L))
@@ -103,7 +103,7 @@ def radial_average(S, n_bins=50):
     return r_centers, radial_S
 
 
-# Compute total energy of the lattice
+# Compute total energy of the lattice (to be added as exercise)
 @njit
 def compute_total_energy(lattice, L):
     energy = 0.0
@@ -191,6 +191,8 @@ if __name__ == "__main__":
     # Average observables over measurements
     g_avg = accum_g / n_meas
     S_avg = accum_S / n_meas
+
+    # The next lines to be added as exercise
     r_S, S_rad = radial_average(S_avg) # compute the radially averaged structure factor as well as full 2d version.
 
     E_avg = accum_energy / n_meas
@@ -200,7 +202,6 @@ if __name__ == "__main__":
     heat_capacity = (E2_avg - E_avg**2) / (T**2)
 
     print(f"Heat capacity per site: {heat_capacity / (L * L):.4f}")
-
 
     # Plot and save results
     root_dir="/Users/phxnw/Dropbox/course-disordered-matter/quarto/phase-transitions/Coursework/"
@@ -224,15 +225,17 @@ if __name__ == "__main__":
     plt.colorbar()
     plt.savefig(root_dir + f"figures/{prefix}_structure_factor_2d.pdf")
 
+# The next lines to be added as exercise
     plt.figure()
     plt.plot(r_S, S_rad)
     plt.xlabel("k")
     plt.ylabel("S(k)")
     plt.title(f"Radial Average of Structure Factor: T={T:.2f}, L={L:.0f}")
     plt.savefig(root_dir + f"figures/{prefix}_structure_factor_radial.pdf")
-# Write out structure factor for analysis.
     output_path = root_dir + f"data/{prefix}_structure_factor_radial.csv"
     np.savetxt(output_path, np.column_stack((r_S, S_rad)), delimiter=",", header="k,S(k)", comments='')
+
+
 
     plt.figure()
     plt.imshow(lattice, cmap="gray")
