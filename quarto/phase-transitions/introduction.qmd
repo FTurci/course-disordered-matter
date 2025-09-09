@@ -7,7 +7,7 @@ with $N$ the number of spins. $m$ can be positive or negative, dependent on whet
 temperature of a ferromagnet is increased, its net magnetisation $|m|$ is observed to decrease smoothly, until at a certain temperature known as
 the critical temperature, $T_c$, it vanishes altogether (see left part of @fig-isingpd). We define the magnetisation to be the *order parameter* of this phase transition. 
 
-One can also envisage applying a magnetic field $H$ to the system which, depending on its sign (i.e. whether it is aligned (positive) or anti-aligned (negative) relative to the magnetisation axis), favours up or down spin states respectively, as shown schematically in @fig-isingpd (right part). Changing the sign of the magnetic field $H$ for $T<T_c$ leads to a phase transition chacterised by a discontinuous jump in $m$. We shall explore this behaviour in more detail in section 6. 
+One can also envisage applying a magnetic field $H$ to the system which, depending on its sign (i.e. whether it is aligned (positive) or anti-aligned (negative) relative to the magnetisation axis), favours up or down spin states respectively, as shown schematically in @fig-isingpd (right part). Changing the sign of the magnetic field $H$ for $T<T_c$ leads to a phase transition chacterised by a discontinuous jump in $m$. We shall explore this behaviour in more detail in @sec-meanfield. 
 
  ![Phase diagram of a simple magnet (schematic). Left: magnetisation as a function of temperature for zero applied magnetic field, $H=0$. Right: Applying a magnetic field that is aligned or antialigned with the direction of the magnetisation leads to a phase transition. The $H=0$ axis at $T<T_c$ is the coexistence curve for which positive and negative magnetisations are equally likely.](Figs/isingpd_color.png){width=80% fig-align="center" #fig-isingpd}
 
@@ -70,7 +70,4 @@ introduced and its implications for real and model systems will be
 explored. Finally, the utility of finite-size scaling methods for
 computer studies of critical phenomena will be discussed, culminating in
 the introduction of a specific technique suitable for exposing
-universality in model systems. Thereafter we will consider some foundational concepts in the dynamics of complex disorderd matters. 
-We shall look at the processes by which one phase transform into another and introduce differential equations that allow us to deal with the inherent stochasticity of thermal systems.
-The wider applicability of these unifying concepts to complex disordered systems such as colloids, polymers, 
-liquid crystals and glasses will be covered in part 2 of the course.
+universality in model systems. Thereafter we will consider some foundational concepts in the dynamics of complex disordered matter. We shall look at the processes by which one phase transform into another and introduce differential equations that allow us to deal with the inherent stochasticity of thermal systems. The wider applicability of these unifying concepts to complex disordered systems such as colloids, polymers, liquid crystals and glasses will be covered in part 2 of the course.

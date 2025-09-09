@@ -1,6 +1,6 @@
 
 
-# The Ising model: the prototype model for a phase transition {#sec:models}
+# The Ising model: the prototype model for a phase transition {#sec-Isingmodel}
 
 In order to probe the properties of the critical region, it is common to
 appeal to simplified model systems whose behaviour parallels that of

@@ -1,7 +1,7 @@
 
 
 
-# Mean field theory and perturbation schemes
+# Mean field theory and perturbation schemes {#sec-meanfield}
 
 Of the wide variety of models of interest to the critical point
 theorist, the majority have shown themselves intractable to direct
@@ -20,7 +20,7 @@ The inability to solve many models exactly often means that one must
 resort to approximations. One such approximation scheme is mean field
 theory.
 
-## Mean field solution of the Ising model {#sec:mfising}
+## Mean field solution of the Ising model {#sec-mfising}
 
 Let us look for a mean field expression for the free energy of the Ising
 model whose Hamiltonian is given in @eq-ising .

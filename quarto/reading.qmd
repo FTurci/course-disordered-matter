@@ -3,59 +3,67 @@
 
 
 One motivation for supplying you with detailed notes for this course
-course is the absence of a wholly ideal text book. However, it should be
+course is the absence of a single wholly ideal text book. However, it should be
 stressed that while these notes approach (in places) the detail of a
 book, the notes are not fully comprehensive and should be regarded as
 the 'bare bones' of the course, to be fleshed out via your own reading
-and supplementary note taking. To this end perhaps the most appropriate
-textbooks are:
+and supplementary note taking. 
+
+### Revision on thermodynamics and statistical mechanics
+
+See your year two Thermal Physics notes. Also
+
+  + **[F. Mandl: Statistical Physics](https://bris.on.worldcat.org/search/detail/15487191?queryString=F.%20Mandl&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)** 
+
+
+### Phase transitions and critical phenomena
 
 A good book at the right level for the phase transitions and critical phenomena part of the course is
 
-+ **[J.M. Yeomans: Statistical Mechanics of Phase Transitions](https://bris.on.worldcat.org/search/detail/24699159?queryString=yeomans%20statistical&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[J.M. Yeomans: Statistical Mechanics of Phase Transitions](https://bris.on.worldcat.org/search/detail/24699159?queryString=yeomans%20statistical&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
 A good book covering all aspects of this part of the course including non-equilibrium systems is
 
-+ **[D. Chandler:  Introduction to Modern Statistical Mechanics](https://bris.on.worldcat.org/search/detail/941821555?queryString=chandler%20statistical&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[D. Chandler:  Introduction to Modern Statistical Mechanics](https://bris.on.worldcat.org/search/detail/941821555?queryString=chandler%20statistical&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
 You might also wish to dip into the introductory chapters of the
 following more advanced texts
 
 
-+ **[N Goldenfeld: Lectures on Phase Transitions and the Renormalization Group](https://bris.on.worldcat.org/search/detail/25914535?queryString=Lectures%20on%20Phase%20Transitions%20and%20the%20Renormalization%20Group&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+* **[N Goldenfeld: Lectures on Phase Transitions and the Renormalization Group](https://bris.on.worldcat.org/search/detail/25914535?queryString=Lectures%20on%20Phase%20Transitions%20and%20the%20Renormalization%20Group&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
 
 
-+ **[J.J. Binney, N.J. Dowrick, A.J.Fisher and M.E.J. Newman: The Theory of Critical Phenomena](https://bris.on.worldcat.org/search/detail/861559276?queryString=%20The%20Theory%20of%20Critical%20Phenomena&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[J.J. Binney, N.J. Dowrick, A.J.Fisher and M.E.J. Newman: The Theory of Critical Phenomena](https://bris.on.worldcat.org/search/detail/861559276?queryString=%20The%20Theory%20of%20Critical%20Phenomena&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
- For revision on thermodynamics and statistical mechanics
 
-  + **[F. Mandl: Statistical Physics](https://bris.on.worldcat.org/search/detail/15487191?queryString=F.%20Mandl&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false){.external target="_blank"}**. 
-
-  For Stochastic dynamics
+### Stochastic dynamics 
   
-  + **[N.G. van Kampen: Stochastic processess in Physics and Chemistry](https://bris.on.worldcat.org/search/detail/162131511?queryString=Stochastic%20Processes%20in%20Physics%20and%20Chemistry%20by%20N.G.%20van%20Kampen&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)**
+* **[N.G. van Kampen: Stochastic processess in Physics and Chemistry](https://bris.on.worldcat.org/search/detail/162131511?queryString=Stochastic%20Processes%20in%20Physics%20and%20Chemistry%20by%20N.G.%20van%20Kampen&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)**
+
+### Complex disordered matter
+
+The best overall text for part 2 of the course is:
+
+* **[R.A.L Jones, Soft Condensed Matter](https://bris.on.worldcat.org/search/detail/48753186?queryString=soft%20condensed%20matter&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)**.
+
+Additionally, the following more specialised texts (which include information on experimental techniques) might be useful. 
+
+#### Colloids
+
+* **[D.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet](https://bris.on.worldcat.org/search/detail/39129921?queryString=The%20Colloidal%20Domain&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+* **[R.J.Hunter: Introduction to Modern Colloid Science](https://bris.on.worldcat.org/search/detail/27810428?queryString=Introduction%20to%20Modern%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+* **[W.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions](https://bris.on.worldcat.org/search/detail/18869758?queryString=colloidal%20dispersions&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[D.H.Everett: Basic Principles of Colloid Science](https://bris.on.worldcat.org/search/detail/232632488?queryString=Basic%20Principles%20of%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
 
-The best overall text for part 2 of the course is: **[R.A.L Jones, Soft Condensed Matter](https://bris.on.worldcat.org/search/detail/48753186?queryString=soft%20condensed%20matter&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false).
+#### Polymers and surfactants
 
-Additionally, the following more specialised texts should also be useful. They can be found in the University Library .
+*  **[R.J. Young and P.A. Lovell: Introduction to polymers](https://bris.on.worldcat.org/search/detail/744914764?queryString=introduction%20to%20polymers&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
-### Colloids
+* **[M. Doi: Introduction to polymer physics](https://bris.on.worldcat.org/search/detail/32465842?queryString=introduction%20to%20polymer%20physics&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
 
-(1) **[D.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet](https://bris.on.worldcat.org/search/detail/39129921?queryString=The%20Colloidal%20Domain&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
-(2) **[R.J.Hunter: Introduction to Modern Colloid Science](https://bris.on.worldcat.org/search/detail/27810428?queryString=Introduction%20to%20Modern%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
-(3) **[W.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions](https://bris.on.worldcat.org/search/detail/18869758?queryString=colloidal%20dispersions&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
-(4) **[D.H.Everett: Basic Principles of Colloid Science](https://bris.on.worldcat.org/search/detail/232632488?queryString=Basic%20Principles%20of%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[J.Israelachvili, Intermolecular and Surface Forces](https://bris.on.worldcat.org/search/detail/961357167?queryString=%20Intermolecular%20and%20Surface%20Forces&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
+#### Glasses
 
-### Polymers and surfactants
-
- **[R.J. Young and P.A. Lovell: Introduction to polymers](https://bris.on.worldcat.org/search/detail/744914764?queryString=introduction%20to%20polymers&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
-
- **[M. Doi: Introduction to polymer physics](https://bris.on.worldcat.org/search/detail/32465842?queryString=introduction%20to%20polymer%20physics&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
-
-**[J.Israelachvili, Intermolecular and Surface Forces](https://bris.on.worldcat.org/search/detail/961357167?queryString=%20Intermolecular%20and%20Surface%20Forces&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
-
-### Glasses
-
-**[J. Zarzycki; Glasses and the vitreous state](https://bris.on.worldcat.org/search/detail/21975348?queryString=Glasses%20and%20the%20vitreous%20state&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+* **[J. Zarzycki; Glasses and the vitreous state](https://bris.on.worldcat.org/search/detail/21975348?queryString=Glasses%20and%20the%20vitreous%20state&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**

@@ -72,7 +72,7 @@ $$\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0$$
 
   $$\left(p+\frac{3}{v^2}\right)(v-\frac{1}{3})=\frac{8t}{3}$$
 
-- Use a graph-plotting program to plot a selection of isotherms close to the critical temperature (you will need to
+- Write a Python script to plot a selection of isotherms close to the critical temperature (you will need to
   choose suitable units for your axes). Plot also the gradient and second derivative of $P$ vs $V$ on the critical isotherm and confirm
   numerically that it exhibits a point of inflection at the critical pressure and temperature.
 
@@ -211,7 +211,7 @@ Hence derive the scaling laws among the critical exponents:
 \alpha+2\beta+\gamma=2\\
 %\gamma=\beta(\delta-1)
 \end{aligned} (*Hint: For the heat capacity exponent $\alpha$ use
-the result from problem 9:
+the result from problem 8:
 $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
 
 ---
