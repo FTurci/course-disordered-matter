@@ -110,14 +110,14 @@ A suitable algorithm for this case is to repeatedly update the system via the fo
 $$
 W(C \to C') = 
 \begin{cases}
-1 & \text{if } \Delta \Phi < 0, \\
+1 & \text{if } \Delta {\cal H}_{LG}< 0, \\
 e^{-\beta \Delta {\cal H}_{LG}} & \text{otherwise},
 \end{cases}
 $$
 
-where $\Delta {\cal H}_LG = \Delta E - \mu \Delta N$ is the change in the GCE Hamiltonian.
+where $\Delta {\cal H}_{LG} = \Delta E - \mu \Delta N$ is the change in the grand canonical Hamiltonian.
 
-This allows the system to explore states with varying particle numbers according to grand canonical statistics.
+This update scheme allows the system to explore states with varying particle numbers according to grand canonical statistics.
 
 
 ## 2.2 Fixed-Particle-Number Case (Canonical Ensemble)
@@ -140,7 +140,7 @@ e^{-\beta \Delta E} & \text{otherwise}.
 \end{cases}
 $$
 
-This approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations at fixed $N$. 
+This approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations of the canonical (ie. fixed $N$) ensemble. 
 
 ## 2.3 Observables and measurement
 
@@ -205,14 +205,13 @@ $$
 
 ## 3.3 Code modification tasks
 
-The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(k)$ (refer to Chapter 2 of the notes for details).
+The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S({\bf k})$ (refer to Chapter 2 of the notes for the definitions of these quantities).
 
-In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, $T_c \le T \le 1.0$. For convenience, the program uses dimensionless units by setting $\epsilon = k_B = 1$.
+In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, $T_c \le T \le 1.0$. For convenience, the program uses dimensionless units by setting $\epsilon = k_B = 1$. The linear system size is intially set to $L=50$.
 
 - *Review the program thoroughly and gain a clear understanding of its functionality.*
 
-- *Modify the program to compute and output the radially averaged structure factor $S(|k|)$.*
-(Hint: When averaging, ensure proper normalization by accounting for the area of each radial bin.) 
+- *The program calculates the average form of the 2d structure factor $S({\bf k})$. Using this, obtain and plot the radially averaged structure 1d factor $S(|k|)$. *
   **[6 marks]**
 
 - *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.2, above.*  
@@ -221,20 +220,20 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.4 Computational investigations of correlations on the approach to criticality
 
-- *Perform simulations at several (six or seven) temperatures within the super critical range $T_c \le T \le 1.0$, keeping the particle density fixed at the critical density $\rho_c = 0.5$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
+- *Perform simulations at several (six or seven) temperatures within the super critical range $T_c \le T \le 1.0$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
-* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(k)$, and its radially averaged form, at each temperature*. **[4 marks]**
+* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S({\bf k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[4 marks]**
 
 * *Interpret the peak structure in the structure factor and discuss signs of clustering or ordering in these quantities*. **[3 marks]**
 
-* *The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
+* *The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
 
 
 ## 3.5 Temperature and system size dependence of the specific heat
 
 *Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e. $T<T_c$) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form.* **[4 marks]**
 
-*Repeat the analysis for different system sizes. Compare the results and highlight any observed differences. Discuss possible explanations for these size-dependent effects.* **[4 marks]**
+*Repeat the analysis that you performed for the $L=50$ system, for system sizes $L=20$ and $L=35$. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.* **[4 marks]**
 
 ## 4.0 Your report
 

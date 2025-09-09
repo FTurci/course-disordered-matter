@@ -133,8 +133,8 @@ if __name__ == "__main__":
 
     # Simulation parameters
     L = 50  # Lattice size
-    density = 0.5  # Initial particle density
-    T = 0.8  # Temperature
+    density = 0.5  # Initial particle density. No need to alter this!
+    T = 0.8  # Dimensionless temperature 
     n_sweeps_eq = 100  # Number of sweeps to equilibrate
     n_sweeps_per_meas = 10  # Sweeps between measurements
     n_meas = 200  # Number of measurements

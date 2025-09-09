@@ -164,11 +164,48 @@ Thus:
 
 ### Mean-square velocity
 
-We now compute:
+We now compute (do it as an exercise):
 
 $$
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
 $$
+
+::: {.callout-caution collapse="true"}
+## Solution
+
+$$
+\begin{aligned}
+&\text{From the solution for }v(t)\text{ (with }m=1\text{):}\quad
+v(t)=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\[6pt]
+&\Rightarrow\;
+v(t)^2
+= v_0^2 e^{-2\gamma t}
++ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} f(t')\,dt'
++ \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')} f(t')f(t'')\,dt'\,dt''.
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+\langle v(t)^2\rangle
+&= v_0^2 e^{-2\gamma t}
++ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt'\\
+&\quad + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
+\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\[6pt]
+&= v_0^2 e^{-2\gamma t}
++ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\[6pt]
+&= v_0^2 e^{-2\gamma t}
++ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\[6pt]
+&= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
+\end{aligned}
+$$
+
+$$
+\boxed{\;\langle v(t)^2\rangle
+= v_0^2 e^{-2\gamma t} + \dfrac{\Gamma}{2\gamma}\left(1-e^{-2\gamma t}\right)\;}
+$$
+
+:::
 
 Implying that at
 

@@ -1,9 +1,6 @@
 
 # Recommended texts and literature {#literature .unnumbered}
 
-*Needs to be tidied and unified.*
-
-*Experimental textbooks?*
 
 One motivation for supplying you with detailed notes for this course
 course is the absence of a wholly ideal text book. However, it should be
@@ -39,25 +36,26 @@ following more advanced texts
   + **[N.G. van Kampen: Stochastic processess in Physics and Chemistry](https://bris.on.worldcat.org/search/detail/162131511?queryString=Stochastic%20Processes%20in%20Physics%20and%20Chemistry%20by%20N.G.%20van%20Kampen&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false)**
 
 
-The best overall text for part 2 of the course is: R.A.L Jones, Soft Condensed Matter, Oxford University Press.
+The best overall text for part 2 of the course is: **[R.A.L Jones, Soft Condensed Matter](https://bris.on.worldcat.org/search/detail/48753186?queryString=soft%20condensed%20matter&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false).
 
-Additionally, the following more specialised texts should also be useful. They can be found in the University Library under the stated shelfmark.
+Additionally, the following more specialised texts should also be useful. They can be found in the University Library .
 
 ### Colloids
 
-(1) D.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet. VCH Publishers (1994). 
-(2) R.J.Hunter: Introduction to Modern Colloid Science. Oxford University Press (1993). 
-(3) W.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions Cambridge University Press (1989).
-(4) D.H.Everett: Basic Principles of Colloid Science.
+(1) **[D.F.Evans, H.Wennerström: The Colloidal Domain - Where Physics, Chemistry, Biology, and Technology Meet](https://bris.on.worldcat.org/search/detail/39129921?queryString=The%20Colloidal%20Domain&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+(2) **[R.J.Hunter: Introduction to Modern Colloid Science](https://bris.on.worldcat.org/search/detail/27810428?queryString=Introduction%20to%20Modern%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+(3) **[W.B.Russel, D.A.Saville, W.R.Schowalter: Colloidal Dispersions](https://bris.on.worldcat.org/search/detail/18869758?queryString=colloidal%20dispersions&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+(4) **[D.H.Everett: Basic Principles of Colloid Science](https://bris.on.worldcat.org/search/detail/232632488?queryString=Basic%20Principles%20of%20Colloid%20Science&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
-Royal Society of Chemistry Paperbacks (1988)
 
 ### Polymers and surfactants
 
-(1) R.J. Young and P.A. Lovell: Introduction to polymers .
-(2) M. Doi: Introduction to polymer physics 
-(3) J.Israelachvili, Intermolecular and Surface Forces, Academic Press (1992), Chs. 16 and 17
+ **[R.J. Young and P.A. Lovell: Introduction to polymers](https://bris.on.worldcat.org/search/detail/744914764?queryString=introduction%20to%20polymers&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
+
+ **[M. Doi: Introduction to polymer physics](https://bris.on.worldcat.org/search/detail/32465842?queryString=introduction%20to%20polymer%20physics&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)** 
+
+**[J.Israelachvili, Intermolecular and Surface Forces](https://bris.on.worldcat.org/search/detail/961357167?queryString=%20Intermolecular%20and%20Surface%20Forces&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
 
 ### Glasses
 
-(1) J. Zarzycki; Glasses and the vitreous state. Cambridge University Press (1991).
+**[J. Zarzycki; Glasses and the vitreous state](https://bris.on.worldcat.org/search/detail/21975348?queryString=Glasses%20and%20the%20vitreous%20state&clusterResults=true&stickyFacetsChecked=true&groupVariantRecords=false&newsArticles=off&bookReviews=off)**
