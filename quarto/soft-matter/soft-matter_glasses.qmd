@@ -36,6 +36,8 @@ What is distinctive of both gels and glasses is that they are both examples of a
 
 These features highlight that rigidity and solidity do not require crystalline order; amorphous materials like gels and glasses can be mechanically solid while remaining structurally disordered. Indeed, the border between solidity and fluidity has been questioned in recent research work, emphasizing how this depends on observational timescales and the notion of metastability, see @sausset2010solids.
 
+
+
 ## Energy landscapes {#sec-energy-landscapes}
 
 The **free energy landscape** is a conceptual framework used to describe the multitude of possible configurations (microstates) of a system and their associated free energies. Each point in this high-dimensional landscape corresponds to a particular arrangement of all the particles in the system, and the height at that point represents the free energy of that configuration. In particular, the landscapes is characterised by the presence of free energy **minima** (valleys) which correspond to stable or metastable states—configurations where the system tends to reside and local maxima (barrier) between the valleys, representing the so-called **transition states**.
@@ -79,12 +81,33 @@ where $S_{\rm vib}$ is the vibrational entropy around the reference conformation
 
 ### Glass formation
 
-How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is **hindred** (or in other words, **frustrated**): this can be because of  the overall composition (silicate glasses, i.e.e window glasses, have many components) ore because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).
+There exist numerous types of glassformers: these include atomic glasses (such as silicate glasses and metallic glasses), molecular glasses (organic molecules, sugar glasses), polymer glasses (amorphous polymers), colloidal glasses (dense suspensions of colloidal particles). Each type is characterized by the nature and scale of its constituents, the interactions that frustrate crystallization, and its physical properties. The table below summarizes some representative examples:
+
+| Glassformer         | Scale of Constituents      | Properties                                      |
+|---------------------|---------------------------|-------------------------------------------------|
+| Silicate glass      | Atomic (Si, O atoms)      | Strong, transparent, high melting point         |
+| Metallic glass      | Atomic (metal atoms)      | High strength, corrosion resistant, ductile     |
+| Polymer glass       | Macromolecular (polymers) | Flexible, low density, tunable glass transition |
+| Colloidal glass     | Mesoscopic (colloids, ~nm–μm) | Opaque, tunable rheology, soft solid-like   |
+| Molecular glass     | Molecular (organic molecules) | Low melting point, fragile, optical uses   |
+| Sugar glass         | Molecular (sucrose, glucose)  | Brittle, water soluble, low thermal stability   |
+| Chalcogenide glass  | Atomic (S, Se, Te atoms)  | Infrared transparency, phase-change memory      |
+
+All of them are **amorphous**, in teh sense that they are disordered and do not posses long range positional or orientational order. all of them are different, but they are often formed following a similar protocol.
+
+How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is **hindred** (or in other words, **frustrated**): this can be because of  the overall composition (silicate glasses, i.e. window glasses, have many components) ore because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).
+
 
 Then, for a chosen composition, one cools down the liquid across the temperature where in principle (if given enough time) the system would crystallise (dubbed $T_m$). The liquid becomes a so-called **supercooled liquid** which is a state of local equilibrium that has access to many disordered basins, but not the crystaline one (see energy landscape picture above).
 
 
 ![Standard picture of glass formation: a (local) equilibrium state (the supercooled liquid) is cooled at a certain cooling rate $R$. The cooling rate is fast enough to avoid crystallization (freezing) at $T_m$. At the glass transition temperature $T_g$ the structural relaxation time of the system exceeds the observation timescale and the system falls off equilibrium. The experimental glass transition temperature is not unique and depends on the protocol: fast cooling rate lead to higher glass transition temperatures.](./figs/glass.svg){width=80%}
+
+
+
+
+
+
 
 As we keep on cooling the supercooled liquid to lower and lower temperature, the molecules or constituents move more and more slowly, so that the diffusivity is progressively reduced. This slowing down is typically characterized in terms of autocorrelation functions of the density.
 
@@ -226,7 +249,10 @@ Here below is a the visual representation of the time evolution of the magnitude
 
 The word *gel* signifies many different things to different scientific communities. In the context of soft matter physics, a physical gel is typically understood as a system in which the constituent particles or polymers are connected via reversible, non-covalent bonds to form a percolating network that spans the entire sample. This network imparts solid-like mechanical properties to the material, even though the underlying structure remains disordered and fluid-like on a microscopic scale. 
 
-Physical gels differ from chemical gels, where the network is formed by irreversible covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of oder $1 k_BT$, allowing the system to respond to external stresses and sometimes to self-heal. Examples include gelatin desserts, agarose gels, and certain colloidal suspensions where attractive interactions lead to network formation, see @Zaccarelli2007 for a comprehensive review.
+Physical gels differ from chemical gels, where the network is formed by *irreversible* covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of oder $1 k_BT$, allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are **reversible** systems and often are known as thermoreversible gels. reversible linking is typically achieved by the formation of dense local regions (e.g. microscystalline or glassy) that act as *cross-links* to form a spanning network. 
+
+Examples include gelatin desserts, agarose gels, and  colloidal suspensions such as yoghurt, paint, inks where attractive interactions lead to network formation, see @Zaccarelli2007 for a comprehensive review.
+
 
 The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from **percolation theory**. The mechanical rigidity of the gel arises when this cluster forms, leading to a dramatic increase in viscosity and the emergence of an elastic response.
 
@@ -350,7 +376,8 @@ In the case of physical gels, percolation is a required ingredient for mechanica
 
 ### Colloid-polymer mixtures as an example 
 
-A way to realise robust physical gels in experiments is to use colloid-polymer mixtures, which we have seen previously when we talked about depletion. When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called **sticky** interaction, ideally suited to form sobust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.
+
+When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called **sticky** interaction, ideally suited to form robust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.
 
 The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.
 
@@ -550,9 +577,9 @@ plt.show()
 
 {{< video https://www.youtube.com/watch?v=QOa2qhDdywc >}}
 
-### Arrested spinodal scenario
+### Arrested spinodal scenario for colloidal gels
 
-But how do physical gels come about? A viable scenario is the so-called **arrested spinodal decomposition** scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via spinodal decomposition. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
+But how do colloidal gels come about? A viable scenario is the so-called **arrested spinodal decomposition** scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via spinodal decomposition. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
 
 This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, "frozen in" by the arrest of particle motion.
 

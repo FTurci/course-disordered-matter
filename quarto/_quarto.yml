@@ -23,28 +23,31 @@ book:
            href:  phase-transitions/introduction.qmd
          - text: "Background concepts"
            href: phase-transitions/background.qmd
-         - text: "The approach to criticality"
-           href:  phase-transitions/approach-to-criticality.qmd
-         - text: "The Ising model"
-           href: phase-transitions/Ising-model.qmd            
-         - text: "Mean field theory"
-           href:  phase-transitions/mean-field-theory.qmd
+        #  - text: "The approach to criticality"
+        #    href:  phase-transitions/approach-to-criticality.qmd
+        #  - text: "The Ising model"
+        #    href: phase-transitions/Ising-model.qmd            
+        #  - text: "Mean field theory"
+        #    href:  phase-transitions/mean-field-theory.qmd
+          #  keep commented
 #        - text: "The lattice gas"
-#≈ß           href: phase-transitions/lattice-gas.qmd
-         - text: "The static scaling hypothesis"
-           href: phase-transitions/scaling.qmd
-         - text: "Universality and renormalization group theory"
-           href:  phase-transitions/rg.qmd
-         - text: "RG- the effective coupling viewpoint"
-           href: phase-transitions/rg-effective-coupling.qmd
-         - text: "Nucleation, growth and spinodal decomposition"
-           href: phase-transitions/nucleation-and-growth.qmd  
-         - text: "Introduction to stochastic processes"  
-           href: phase-transitions/master-equation-and-diffusion.qmd
-         - text: "Brownian and Langevin dynamics"
-           href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
-         - text: "Dynamics of fluctuations (non-examinable)"
-           href: phase-transitions/dynamics-of-fluctuations.qmd  
+#           href: phase-transitions/lattice-gas.qmd
+# end of kee commented
+
+        #  - text: "The static scaling hypothesis"
+        #    href: phase-transitions/scaling.qmd
+        #  - text: "Universality and renormalization group theory"
+        #    href:  phase-transitions/rg.qmd
+        #  - text: "RG- the effective coupling viewpoint"
+        #    href: phase-transitions/rg-effective-coupling.qmd
+        #  - text: "Nucleation, growth and spinodal decomposition"
+        #    href: phase-transitions/nucleation-and-growth.qmd  
+        #  - text: "Introduction to stochastic processes"  
+        #    href: phase-transitions/master-equation-and-diffusion.qmd
+        #  - text: "Brownian and Langevin dynamics"
+        #    href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
+        #  - text: "Dynamics of fluctuations (non-examinable)"
+        #    href: phase-transitions/dynamics-of-fluctuations.qmd  
          - text: "Precourse reading and revision"
            href: phase-transitions/precourse-reading.qmd
          - text: "Problems" 
@@ -56,35 +59,35 @@ book:
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
 
-    - part: "Complex disordered systems"
-      chapters:
-        # - href: soft-matter/soft-matter_plan.qmd
-        #   text: "Plan"
-        - href: soft-matter/soft-matter_intro.qmd
-          text: "Entropy matters"
-        - href: soft-matter/soft-matter_colloids.qmd
-          text: "Colloids"
-        - href: soft-matter/soft-matter_polymers.qmd
-          text: "Polymers"
-        - href: soft-matter/soft-matter_liquidcrystals.qmd
-          text: "Liquid crystals"
-        - href: soft-matter/soft-matter_surfactants.qmd
-          text: "Surfactants"
-        - href: soft-matter/soft-matter_glasses.qmd
-          text: "Arrested states"
-        - href: soft-matter/soft-matter_active.qmd
-          text: "Active matter"
-        # - href: soft-matter/soft-matter_readings.qmd
-          # text: "Readings"
-        - href: soft-matter/soft-matter_problems.qmd
-          text: "Problems"
-    - part: "Experimental techniques"
+    # - part: "Complex disordered systems"
+    #   chapters:
+    #     # - href: soft-matter/soft-matter_plan.qmd
+    #     #   text: "Plan"
+    #     - href: soft-matter/soft-matter_intro.qmd
+    #       text: "Entropy matters"
+    #     - href: soft-matter/soft-matter_colloids.qmd
+    #       text: "Colloids"
+    #     - href: soft-matter/soft-matter_polymers.qmd
+    #       text: "Polymers"
+    #     - href: soft-matter/soft-matter_liquidcrystals.qmd
+    #       text: "Liquid crystals"
+    #     - href: soft-matter/soft-matter_surfactants.qmd
+    #       text: "Surfactants"
+    #     - href: soft-matter/soft-matter_glasses.qmd
+    #       text: "Arrested states"
+    #     - href: soft-matter/soft-matter_active.qmd
+    #       text: "Active matter"
+    #     # - href: soft-matter/soft-matter_readings.qmd
+    #       # text: "Readings"
+    #     - href: soft-matter/soft-matter_problems.qmd
+    #       text: "Problems"
+    # - part: "Experimental techniques"
 
-  appendices:
-    - href: revision_guide.qmd
-      text: "Revision guide"
-    - href: phase-transitions/concepts_map.qmd
-      text: "Concept maps"    
+  # appendices:
+  #   - href: revision_guide.qmd
+  #     text: "Revision guide"
+  #   - href: phase-transitions/concepts_map.qmd
+  #     text: "Concept maps"    
 format:
   live-html:
     theme: cosmo
@@ -99,19 +102,19 @@ format:
         cell-options:
           autorun: true
 
-  pdf:
-    documentclass: report
-    classoption: [enabledeprecatedfontcommands]
-    # papersize: a4paper
-    mainfont: "Helvetica" 
-    bibliography:
-      - soft-matter/references.bib
-    geometry:
-      - top=2cm
-      - left=2cm
-      - right=5cm
-    execute:
-      echo: false      # don’t show code
-      warning: false
-      error: false
-      eval: false      # completely skip execution
+  # pdf:
+  #   documentclass: report
+  #   classoption: [enabledeprecatedfontcommands]
+  #   # papersize: a4paper
+  #   mainfont: "Helvetica" 
+  #   bibliography:
+  #     - soft-matter/references.bib
+  #   geometry:
+  #     - top=2cm
+  #     - left=2cm
+  #     - right=5cm
+  #   execute:
+  #     echo: false      # don’t show code
+  #     warning: false
+  #     error: false
+  #     eval: false      # completely skip execution
