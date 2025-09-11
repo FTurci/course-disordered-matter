@@ -109,6 +109,8 @@ Now imagine that rather than positioning the system just inside the coexistence 
 
  ![Schematic phase doagram showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
 
+Formally the spinodal is located by the locus of points that satisfy $\partial^2 F/\partial Q^2=0$, where $F(Q)$ is the free energy as a function of the order parameter $Q$ at a given temeprature. 
+
 The nature of spinodal decomposition and late-time domain growth depends sensitively on whether the order parameter is conserved or not.
 
 
