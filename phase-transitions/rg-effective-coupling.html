@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>8&nbsp; The renormalisation group: effective coupling viewpoint</title>
+<title>10&nbsp; The renormalisation group: effective coupling viewpoint</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -115,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/rg-effective-coupling.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/rg-effective-coupling.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -154,13 +154,13 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Unifying concepts</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
@@ -171,66 +171,6 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations (non-examinable)</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -249,59 +189,154 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Complex disordered systems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Unifying concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg-effective-coupling.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/dynamics-of-fluctuations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations (non-examinable)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precourse reading and revision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Complex disordered systems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_liquidcrystals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Problems</span></span></a>
   </div>
 </li>
       </ul>
@@ -312,13 +347,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false">
  <span class="menu-text">Appendices</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../revision_guide.html" class="sidebar-item-text sidebar-link">
@@ -343,17 +378,17 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link active" data-scroll-target="#a-simple-example"><span class="header-section-number">8.1</span> A simple example</a></li>
-  <li><a href="#universality-and-scaling" id="toc-universality-and-scaling" class="nav-link" data-scroll-target="#universality-and-scaling"><span class="header-section-number">8.2</span> Universality and scaling</a></li>
+  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link active" data-scroll-target="#a-simple-example"><span class="header-section-number">10.1</span> A simple example</a></li>
+  <li><a href="#universality-and-scaling" id="toc-universality-and-scaling" class="nav-link" data-scroll-target="#universality-and-scaling"><span class="header-section-number">10.2</span> Universality and scaling</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/rg-effective-coupling.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/rg-effective-coupling.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">RG- the effective coupling viewpoint</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">The renormalisation group: effective coupling viewpoint</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The renormalisation group: effective coupling viewpoint</span></h1>
 </div>
 
 
@@ -383,9 +418,9 @@ window.Quarto = {
 </blockquote>
 <p>Now consider the coarse-graining procedure. Let us suppose that this procedure takes the form of a ‘majority rule’ operation in which the new spins are assigned values <span class="math inline">\(+1\)</span> or <span class="math inline">\(-1\)</span> according to the signs of the magnetic moments of the blocks with which they are associated. The new energy function <span class="math inline">\({\cal H}^\prime\)</span> will be expressible in terms of some new coupling strengths <span class="math inline">\(K^\prime\)</span> describing the interactions amongst the new spin variables (and thus, in effect, the interactions between blocks of the original spin variables). The RGT simply states that these new couplings depend on the old couplings: <span class="math inline">\(K_1^\prime\)</span> is some function <span class="math inline">\(f_1\)</span> of all the original couplings, and generally</p>
 <p><span id="eq-rgt"><span class="math display">\[K^\prime_a=f_a(K_1,K_2,\dots) =f_a({\bf K}),~~~~ a= 1, 2,\dots
-\tag{8.1}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
-<section id="a-simple-example" class="level2" data-number="8.1">
-<h2 data-number="8.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">8.1</span> A simple example</h2>
+\tag{10.1}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
+<section id="a-simple-example" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">10.1</span> A simple example</h2>
 <p>This example illustrates how one can perform the RG transformation <a href="#eq-rgt" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-rgt</span></a> directly, without recourse to a ‘sequence of typical configurations’. The calculation involves a very crude approximation which has the advantage that it simplifies the subsequent analysis.</p>
 <div id="fig-rglat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -393,20 +428,20 @@ window.Quarto = {
 <img src="Figs/rglat.png" class="img-fluid figure-img" style="width:40.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-rglat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.1: Coarse graining by decimation. The spins on the original lattice are divided into two sets <span class="math inline">\(\{s^\prime\}\)</span> and <span class="math inline">\(\{\tilde{s}\}\)</span>. The <span class="math inline">\(\{s^\prime\}\)</span> spins occupy a lattice whose spacing is twice that of the original. The effective coupling interaction between the <span class="math inline">\(\{s^\prime\}\)</span> spins is obtained by performing the configurational average over the <span class="math inline">\(\{\tilde{s}\}\)</span>
+Figure&nbsp;10.1: Coarse graining by decimation. The spins on the original lattice are divided into two sets <span class="math inline">\(\{s^\prime\}\)</span> and <span class="math inline">\(\{\tilde{s}\}\)</span>. The <span class="math inline">\(\{s^\prime\}\)</span> spins occupy a lattice whose spacing is twice that of the original. The effective coupling interaction between the <span class="math inline">\(\{s^\prime\}\)</span> spins is obtained by performing the configurational average over the <span class="math inline">\(\{\tilde{s}\}\)</span>
 </figcaption>
 </figure>
 </div>
 <p>Consider an Ising model in two dimensions, with only nearest neighbour interactions as shown in <a href="#fig-rglat" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-rglat</span></a>. We have divided the spins into two sets, the spins <span class="math inline">\(\{s^\prime\}\)</span> form a square lattice of spacing <span class="math inline">\(2\)</span>, the others being denoted by <span class="math inline">\(\{\tilde{s}\}\)</span>. One then defines an effective energy function <span class="math inline">\({\cal H^\prime}\)</span> for the <span class="math inline">\(s^\prime\)</span> spins by performing an average over all the possible arrangements of the <span class="math inline">\(\tilde{s}\)</span> spins</p>
 <p><span id="eq-decimate"><span class="math display">\[
 \exp(-{\cal H}^\prime)=\sum_{\{\tilde {s}\}} \exp(-{\cal H}).
-\tag{8.2}\]</span></span></p>
+\tag{10.2}\]</span></span></p>
 <p>This particular coarse-graining scheme is called ‘decimation’ because a certain fraction (not necessarily one-tenth!) of spins on the lattice is eliminated. This formulation of a new energy function realizes two basic aims of the RG method: the long-distance physics of the ‘original’ system, described by <span class="math inline">\({\cal H}\)</span>, is contained in that of the ‘new’ system, described by <span class="math inline">\({\cal H}^\prime\)</span> (indeed the partition functions are the same as one can see by summing both sides over <span class="math inline">\(s^\prime\)</span>) and the new system is further from critically because the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing (‘minimum length scale’) has been reduced by a factor of <span class="math inline">\(1/2\)</span> (the ratio of the lattice spacings of the two systems). We must now face the question of how to perform the configuration sum in <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-decimate</span></a>. This cannot in general be done exactly, so we must resort to some approximation scheme. The particular approximation which we invoke is the high temperature series expansion. In its simplest mathematical form, since <span class="math inline">\({\cal H}\)</span> contains a factor <span class="math inline">\(1/k_BT\)</span>, it involves the expansion of <span class="math inline">\(\exp(-{\cal H})\)</span> as a power series:</p>
 <p><span class="math display">\[\exp(-{\cal H}/k_BT)=1-{\cal H}/k_BT +\frac{1}{2!}({\cal H}/k_BT)^2+.....\]</span></p>
 <p>We substitute this expansion into the right hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-decimate</span></a> and proceed to look for terms which depend on the <span class="math inline">\(s^\prime\)</span> spins after the sum over the possible arrangements of the <span class="math inline">\(\tilde{s}\)</span> spins is performed. This sum extends over all the possible (<span class="math inline">\(\pm 1\)</span>) values of all the <span class="math inline">\(\tilde{s}\)</span> spins. The first term (the 1) in the expansion of the exponential is clearly independent of the values of the <span class="math inline">\(s^\prime\)</span> spins. The second term (<span class="math inline">\({\cal H}\)</span>) is a function of the <span class="math inline">\(s^\prime\)</span> spins, but gives zero when the sum over the <span class="math inline">\(s^\prime\)</span> spins is performed because only a single factor of any <span class="math inline">\(s^\prime\)</span> ever appears, and <span class="math inline">\(+ 1 - 1 = 0\)</span>. The third term (<span class="math inline">\({\cal H}^2/2\)</span>) does contribute. If one writes out explicitly the form of <span class="math inline">\({\cal H}^2/2\)</span> one finds terms of the form <span class="math inline">\(K^2s_1^\prime\tilde{s}\tilde{s}s_2^\prime=K^2s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(s_1^\prime\)</span> and <span class="math inline">\(s_2^\prime\)</span> denote two spins at nearest neighbour sites on the lattice of <span class="math inline">\(s^\prime\)</span> spins and <span class="math inline">\(\tilde{s}\)</span> is the spin (in the other set) which lies between them. Now, in the corresponding expansion of the left hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-decimate</span></a>, we find terms of the form <span class="math inline">\(K^\prime s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(K^\prime\)</span> is the nearest neighbour coupling for the <span class="math inline">\(s^\prime\)</span> spins. We conclude (with a little more thought than we detail here) that</p>
 <p><span id="eq-rgdec"><span class="math display">\[
 K^\prime=K^2
-\tag{8.3}\]</span></span></p>
+\tag{10.3}\]</span></span></p>
 <p>Of course many other terms and couplings are generated by the higher orders of the high temperature expansion and it is necssary to include these if one wishes reliable values for the critical temperature and exponents, However, our aim here is to use this simple calculation to illustrate the RG method. Let us therefore close our eyes, forget about the higher order terms and show how the RGT <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-rgdec</span></a> can be used to obtain information on the phase transition.</p>
 <div id="fig-flow1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -414,7 +449,7 @@ K^\prime=K^2
 <img src="Figs/flow1.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.2: Coupling flow under the decimation transformation described in the text.
+Figure&nbsp;10.2: Coupling flow under the decimation transformation described in the text.
 </figcaption>
 </figure>
 </div>
@@ -422,7 +457,7 @@ Figure&nbsp;8.2: Coupling flow under the decimation transformation described in 
 K\)</span>. The fixed point <span class="math inline">\(K^*= 1\)</span> is therefore a candidate for the critical point <span class="math inline">\(K_c\)</span>, where the phase transition occurs. This interpretation is reinforced by considering the case where the original system is close to, but not at, criticality. Then <span class="math inline">\(\xi\)</span> is finite and the new system is further from critically because the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing is reduced by a factor of two. This instability of a fixed point to deviations of <span class="math inline">\(K\)</span> from <span class="math inline">\(K^*\)</span> is a further necessary condition for its interpretation as a critical point of the system. In summary then we make the prediction</p>
 <p><span id="eq-Kc"><span class="math display">\[
 K_c=J/k_BT_c=1
-\tag{8.4}\]</span></span></p>
+\tag{10.4}\]</span></span></p>
 <p>We can obtain further information about the behaviour of the system close to its critical point. In order to do so, we rewrite the transformation (<a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-rgdec</span></a>) in terms of the deviation of the coupling from its fixed point value. A Taylor expansion of the function <span class="math inline">\(K^\prime=K^2\)</span> yields <span class="math display">\[
 \begin{aligned}
 K^\prime =&amp; (K^*)^2 +(K-K^*)\left.\frac{\partial K^\prime}{\partial K}\right|_{K=K^*}+\frac{1}{2}(K-K^*)^2\left.\frac{\partial^2 K^\prime}{\partial K^2}\right|_{K=K^*}+\ldots\nonumber\\
@@ -439,8 +474,8 @@ K^\prime - K^* =&amp; 2 (K - K^*)+ (K - K^*)^2
 <p>for <span class="math inline">\(T\)</span> close to <span class="math inline">\(T_c\)</span>. Thus we see that the RGT predicts scaling behaviour with calculable critical exponents. In this simple calculation we estimate the critical exponent <span class="math inline">\(\nu=1\)</span> for the square lattice Ising model. This prediction is actually in agreement with the exactly established value. The agreement is fortuitous- the prediction in Eq.&nbsp;refeq:Kc for <span class="math inline">\(K_c\)</span>, is larger than the exactly established value by a factor of more than two. In order to obtain reliable estimates more sophisticated and systematic methods must be used.</p>
 <p>The crude approximation in the calculation above produced a transformation, <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-rgdec</span></a>, involving only the nearest neighbour coupling, with the subsequent advantages of simple algebra. We pay a penalty for this simplicity in two ways: the results obtained for critical properties are in rather poor agreement with accepted values, and we gain no insight into the origin of universality.</p>
 </section>
-<section id="universality-and-scaling" class="level2" data-number="8.2">
-<h2 data-number="8.2" class="anchored" data-anchor-id="universality-and-scaling"><span class="header-section-number">8.2</span> Universality and scaling</h2>
+<section id="universality-and-scaling" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="universality-and-scaling"><span class="header-section-number">10.2</span> Universality and scaling</h2>
 <p>In order to expose how universality can arise, we should from the start allow for several different kinds of coupling <span class="math inline">\(J_a\)</span>, and show how the systems with <em>different</em> <span class="math inline">\(J_a\)</span> can have the <em>same</em> critical behaviour.</p>
 <div id="fig-flow2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -448,7 +483,7 @@ K^\prime - K^* =&amp; 2 (K - K^*)+ (K - K^*)^2
 <img src="Figs/flow2.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-flow2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;8.3: General flow in coupling space
+Figure&nbsp;10.3: General flow in coupling space
 </figcaption>
 </figure>
 </div>
@@ -894,12 +929,12 @@ window._ojs.runtime.interpretFromScriptTags();
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../phase-transitions/rg.html" class="pagination-link" aria-label="Universality and renormalization group theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../phase-transitions/nucleation-and-growth.html" class="pagination-link" aria-label="Nucleation, growth and spinodal decomposition">
-        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
