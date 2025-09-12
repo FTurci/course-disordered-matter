@@ -107,9 +107,9 @@ We then wait for a fluctuation that yields a critical nucleus and subsequent gro
 Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region (cf. @fig-spinodal) such that there is no metastable minimum in the free energy.  Then there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
 
 
- ![Schematic phase doagram showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
+ ![Schematic phase diagram for a magnet showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
 
-Formally the spinodal is located by the locus of points that satisfy $\partial^2 F/\partial Q^2=0$, where $F(Q)$ is the free energy as a function of the order parameter $Q$ at a given temeprature. 
+Formally the spinodal is located by the locus of points that satisfy $\partial F/\partial Q=\partial^2 F/\partial Q^2=0$, where $F(Q)$ is the free energy as a function of the order parameter $Q$ at a given temperature. This corresponds to the points at which the metastable minimum is lost and the system can simply run downhill in free energy to the stable phase.
 
 The nature of spinodal decomposition and late-time domain growth depends sensitively on whether the order parameter is conserved or not.
 
