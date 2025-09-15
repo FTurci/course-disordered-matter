@@ -8,7 +8,7 @@ profiles:
 
 profile:
   default: remote
-  
+
 book:
   page-navigation: true
   back-to-top-navigation: true
