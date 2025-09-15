@@ -50,9 +50,10 @@ book:
          - text: "Problems" 
            href: phase-transitions/problems.qmd
         #  - text: "Solutions"
-        #    href: phase-transitions/Solutions_to_problems.qmd             
-#  #        - href: phase-transitions/assignment_October2025.qmd
-#  #          text: "First coursework assignment"                      
+          #  href: phase-transitions/Solutions_to_problems.qmd             
+
+         - text: "First coursework assignment"   
+           href: phase-transitions/assignment_October2025.qmd                   
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
 
