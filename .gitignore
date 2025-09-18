@@ -9,3 +9,4 @@ quarto/_site-local/*
 *.tex
 *.aux
 *.log
+*.toc
