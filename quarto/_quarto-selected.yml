@@ -1,24 +1,29 @@
 project:
-  type: book
+  render:
+    - phase-transitions/problems.qmd  
+
+  # type: book
   #output-dir: _site-local  # Uncomment if you want to specify output directory
 
-book:
-  page-navigation: true
-  back-to-top-navigation: true
-  #title: "Complex Disordered Matter"
-  sidebar:
-    smooth-scroll: true
-    logo: courselogo.png
-    style: "docked"
-    search: true
-    collapse-level: 1
-  chapters:
-    - href: index.qmd
-      text: Overview  
-    - href: reading.qmd
-      text: "Recommended texts"
-    - part: "Unifying concepts"
-      chapters:
+# book:
+#   page-navigation: true
+#   back-to-top-navigation: true
+#   #title: "Complex Disordered Matter"
+#   sidebar:
+#     smooth-scroll: true
+#     logo: courselogo.png
+#     style: "docked"
+#     search: true
+#     collapse-level: 1
+#   chapters:
+#     - href: index.qmd
+#     - text: "Problems" 
+#       href: phase-transitions/problems.qmd
+    #   text: Overview  
+    # - href: reading.qmd
+    #   text: "Recommended texts"
+    # - part: "Unifying concepts"
+      # chapters:
 #          - text: "Introduction to phase behaviour"
 #            href:  phase-transitions/introduction.qmd
 #          - text: "Background concepts"
@@ -47,8 +52,7 @@ book:
 #            href: phase-transitions/dynamics-of-fluctuations.qmd  
 #          - text: "Precourse reading and revision"
 #            href: phase-transitions/precourse-reading.qmd
-         - text: "Problems" 
-           href: phase-transitions/problems.qmd
+
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd
@@ -85,7 +89,7 @@ book:
   #     text: "Revision guide"
   #   - href: phase-transitions/concepts_map.qmd
   #     text: "Concept maps"    
-# format:
+format:
 #   live-html:
 #     theme: cosmo
 #     page-layout: full
@@ -104,8 +108,8 @@ book:
     classoption: [enabledeprecatedfontcommands]
     # papersize: a4paper
     mainfont: "Helvetica" 
-    bibliography:
-      - soft-matter/references.bib
+    # bibliography:
+    #   - soft-matter/references.bib
     geometry:
       - top=2cm
       - left=2cm

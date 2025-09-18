@@ -57,6 +57,7 @@ a single domain wall at each bond given by
 $$
 p=\frac{e^{-2J/k_BT}}{1+e^{-2J/k_BT}}
 $$
+
 and the probability of no wall is $1-p$. 
 Now, in the regime where $T$ is small, $p$ is very small, and there will be few domain walls between
 sites $i$ and $j$. If additionally, $R_{ij}=|i-j|a$ is large, it tranpires that the binomial distribution
@@ -68,12 +69,12 @@ $$
 
 where $\bar{m}=p|j-i|=pR_{ij}/a$ . Then
 
-$$
-\begin{eqnarray*}
-\langle s_i s_j\rangle &=& e^{-\bar {m}}\sum_m\frac{(-1)^m\bar{m}^m} {m!}\approx e^{-2\bar{m}}\\
-                       &=& e^{-2pR_{ij}/a}\\
-                       &=& e^{-R_{ij}/\xi}
-\end{eqnarray*}$$
+\begin{align*}
+\langle s_i s_j\rangle =& e^{-\bar {m}}\sum_m\frac{(-1)^m\bar{m}^m} {m!}\approx e^{-2\bar{m}}\\
+                       =& e^{-2pR_{ij}/a}\\
+                       =& e^{-R_{ij}/\xi}
+\end{align*}
+
 with $\xi=a/2p$, the correlation length. 
 
 ---
@@ -108,17 +109,17 @@ $$
 $$
 
 Thus
-$$
-\begin{eqnarray*}
-\frac{Nk_BT}{(V_c-b)^2} &=& \frac{2a}{V_c^3}\\
-\frac{2Nk_BT}{(V_c-b)^3} &=& \frac{6a}{V_c^4}
-\end{eqnarray*}$$
+\begin{align*}
+\frac{Nk_BT}{(V_c-b)^2} =& \frac{2a}{V_c^3}\\
+\frac{2Nk_BT}{(V_c-b)^3} =& \frac{6a}{V_c^4}
+\end{align*}
+
 solving for $V_c$ and $Nk_BT_c$ yields
 
-$$\begin{eqnarray*}
-V_c &=& 3b\\
-Nk_BT_c &=& \frac{8a}{27b}
-\end{eqnarray*}$$
+\begin{align*}
+V_c =& 3b\\
+Nk_BT_c =& \frac{8a}{27b}
+\end{align*}
 
 Substituting these two results into @eq-pres yields 
 
@@ -135,12 +136,10 @@ $$
 
 Substituting in for $V_c, N_Ak_BT_c$ and $P_c$
 
-$$
-\begin{eqnarray*}
-\left(p\frac{a}{27b^2}+\frac{a}{9b^2v^2}\right)\left(3bv-b\right)&=&\frac{8a}{27b}t\\
-\Rightarrow\left(p+\frac{3}{v^2}\right)\left(v-\frac{1}{3}\right)&=&\frac{8}{3}t
-\end{eqnarray*}
-$$
+\begin{align*}
+\left(p\frac{a}{27b^2}+\frac{a}{9b^2v^2}\right)\left(3bv-b\right)=&\frac{8a}{27b}t\\
+\Rightarrow\left(p+\frac{3}{v^2}\right)\left(v-\frac{1}{3}\right)=&\frac{8}{3}t
+\end{align*}
 
 This expression for the equation of state in terms of reduced variables
 is useful because reference to the system specific parameters $a$ and
@@ -196,20 +195,18 @@ Recalling the behaviour of the order parameter for small $t$, that
 the number of bonds $=qN/2$, and the mean field value
 of $T_c=qJ/k_B$, we have for $T<T_c$
 
-$$
-\begin{eqnarray*}
-\langle E \rangle &=& \frac{-NqJm^2}{2}\\
-\:                &=& \frac{3NqJt}{2}\\
-\:                &=& \frac{3Nk_B(T-T_c)}{2}
-\end{eqnarray*}
-$$
+\begin{align*}
+\langle E \rangle =& \frac{-NqJm^2}{2}\\
+\:                =& \frac{3NqJt}{2}\\
+\:                =& \frac{3Nk_B(T-T_c)}{2}
+\end{align*}
 while $\langle E \rangle= \textrm{ constant}$ for $T>T_c$.
 
 Hence differentiating, we find
-$$\begin{eqnarray*}
-C_H&=& 0 &~~~~~T>T_c\\
-C_H&=& 3Nk_B/2 & ~~~~~T\le T_c
-\end{eqnarray*}$$
+\begin{align*}
+C_H= 0; &\quad T>T_c\\
+C_H= 3Nk_B/2; & \quad T\le T_c
+\end{align*}
 
 This independence of the heat capacity on $t$ corresponds to a critical
 exponent $\alpha=0$
@@ -230,23 +227,21 @@ Z=\sum_{{s}}\exp[-({\cal H}-hM)/k_BT]
 $$
 
 Thus
-$$
-\begin{eqnarray*}
--\left(\frac{\partial F}{\partial h}\right)_T &=& k_BT\frac{1}{Z}\left(\frac{\partial Z}{\partial h}\right)_T\\
-\: &=&\frac{1}{Z}\sum_{{s}}M \exp[-({\cal H}-hM)/k_BT]\\
-   &=& \langle M\rangle
-\end{eqnarray*}
-$$
+\begin{align*}
+-\left(\frac{\partial F}{\partial h}\right)_T =& k_BT\frac{1}{Z}\left(\frac{\partial Z}{\partial h}\right)_T\\
+\: =&\frac{1}{Z}\sum_{{s}}M \exp[-({\cal H}-hM)/k_BT]\\
+   =& \langle M\rangle
+\end{align*}
 where we have used the definition of the average of an observable given
 in lectures.
 
 Now 
 
-$$\begin{eqnarray*}
-\left(\frac{\partial^2 F}{\partial h^2}\right)_T &=& -k_BT\left[\frac{1}{Z}\left(\frac{\partial^2 Z}{\partial h^2}\right)_T-\left(\frac{\partial Z}{\partial h}\right)_T\frac{1}{Z^2}\left(\frac{\partial Z}{\partial h}\right)_T\right]\\
-\: &=&\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-({\cal H}-hM)/k_BT]-\langle M\rangle^2\right]\\
-\:   &=& \frac{-1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
-\end{eqnarray*}$$
+\begin{align*}
+\left(\frac{\partial^2 F}{\partial h^2}\right)_T =& -k_BT\left[\frac{1}{Z}\left(\frac{\partial^2 Z}{\partial h^2}\right)_T-\left(\frac{\partial Z}{\partial h}\right)_T\frac{1}{Z^2}\left(\frac{\partial Z}{\partial h}\right)_T\right]\\
+\: =&\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-({\cal H}-hM)/k_BT]-\langle M\rangle^2\right]\\
+\:  =& \frac{-1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
+\end{align*}
 
 You should recognise the terms in square brackets as the variance of the
 magnetisation distribution.
@@ -271,17 +266,17 @@ $$
 {\cal H}(s_0)=-s_0\left(qJm + H\right)
 $$
 The probability of finding this spin with value $s_0$ is
-$$\begin{eqnarray*}
-p(s_0) &=& \frac{e^{-\beta{\cal H}(s_0)}} {\sum_{s_0=0,\pm 1}e^{-\beta{\cal H}(s_0)}}\\
-&=&\frac{e^{\beta s_0(qJm+H)}}{1+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}
-\end{eqnarray*}$$
+\begin{align*}
+p(s_0) =& \frac{e^{-\beta{\cal H}(s_0)}} {\sum_{s_0=0,\pm 1}e^{-\beta{\cal H}(s_0)}}\\
+=&\frac{e^{\beta s_0(qJm+H)}}{1+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}
+\end{align*}
 
 Now for consistency $\langle s_0\rangle=m$, so
-$$\begin{eqnarray*}
-m &=& \sum_{s_0=0,\pm 1}s_0p(s_0)\\
- \:&=& \frac{0+e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^0+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\\
- \:&=&  \frac{2\sinh[\beta(Jqm+h)]}{1+2\cosh[\beta(Jqm+h)]}
-\end{eqnarray*}$$
+\begin{align*}
+m =& \sum_{s_0=0,\pm 1}s_0p(s_0)\\
+ \:=& \frac{0+e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^0+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\\
+ \:=&  \frac{2\sinh[\beta(Jqm+h)]}{1+2\cosh[\beta(Jqm+h)]}
+\end{align*}
 To get the critical temperature, we can solve this graphically. One plots
 the RHS as a function of $m$, for various $\beta$. On the same graph one
 plots the curve $y=m$ (representing the LHS). $T_c$ is the highest $T$ for which
@@ -295,16 +290,16 @@ The transfer matrix is a list of the possible interactions of a pair
 of spins with one another and with a magnetic field. For a 1d spin-1/2
 system it takes the form:
 $$
-{\bf V}(H)=\begin{bmatrix}
+\mathbf{V}(H)=\begin{bmatrix}
 e^{\beta(J+H)} & e^{-\beta J} \\
 e^{-\beta J}   & e^{\beta(J-H)}
  \end{bmatrix}
 $$
 We need to find the eigenvalues, so we solve
-the characteristic equation det(${\bf V}-\lambda {\bf I})=0$, i.e.
+the characteristic equation det($\mathbf{V}-\lambda \mathbf{I})=0$, i.e.
 
 $$
-{\bf V}(H)=\begin{vmatrix}
+\mathbf{V}(H)=\begin{vmatrix}
 e^{\beta(J+H)} -\lambda & e^{-\beta J} \\
 e^{-\beta J}   & e^{\beta(J-H)}-\lambda
  \end{vmatrix} =0
@@ -312,23 +307,21 @@ $$
 
 Then $\lambda^2-(a+d)\lambda+(ad-bc)=0$. So
 
-$$
-\begin{eqnarray*}
-\lambda_\pm &=& \frac{a+d\pm\sqrt{(a+d)^2-4(ad-bc)}}{2}\\
-\lambda_{\pm} &=& e^{\beta J}\cosh(\beta H) \pm \frac{1}{2}\sqrt{e^{2\beta J}4\cosh^2\beta H-4(e^{2\beta J}-e^{-2\beta J})}\\
-\lambda_{\pm} &=& e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.
-\end{eqnarray*}
-$$
+\begin{align*}
+\lambda_\pm =& \frac{a+d\pm\sqrt{(a+d)^2-4(ad-bc)}}{2}\\
+\lambda_{\pm} =& e^{\beta J}\cosh(\beta H) \pm \frac{1}{2}\sqrt{e^{2\beta J}4\cosh^2\beta H-4(e^{2\beta J}-e^{-2\beta J})}\\
+\lambda_{\pm} =& e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.
+\end{align*}
 
 (You'll need the identity  $\cosh^2 x-\sinh^2 x = 1$).
 
 From lectures, you should know that the partition function
-$$
+
 \begin{align}
-Z=\textrm{Tr}({\bf V}^N)=&\lambda_+^N+\lambda_-^N\\
+Z=\textrm{Tr}(\mathbf{V}^N)=&\lambda_+^N+\lambda_-^N\\
 \approx & \lambda_+^N \hspace{5mm}\textrm{N~large}
 \end{align}
-$$
+
 where $\lambda_+$ is the largest of the two evals.
 
 Hence the free energy $F=-k_BT\ln(Z)$ can be written 
@@ -364,20 +357,18 @@ another starting point, namely thermodynamics. The appropriate
 thermodynamic potential for the magnet is $F=U-TS-MH$ with $U$ the internal
 energy. Then 
 $$
-$$
-\begin{eqnarray*}
-dF &=& dU-TdS-SdT-MdH-HdM\\
-\: &=& TdS+HdM-TdS-SdT-MdH-HdM\\
-\: &=& -SdT-MdH
-\end{eqnarray*}
-$$
+\begin{align*}
+dF =& dU-TdS-SdT-MdH-HdM\\
+\: =& TdS+HdM-TdS-SdT-MdH-HdM\\
+\: =& -SdT-MdH
+\end{align*}
 where we have used the first law for a magnet $dU=TdS+HdM$, 
 Thus
 
-$$\begin{eqnarray*}
-\left(\frac{\partial F}{\partial T}\right)_H &=& -S\\
--T\left(\frac{\partial^2 F}{\partial T^2}\right)_H &=&T\frac{dS}{dT}=\frac{dQ}{dT}\\ C_H=-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H
-\end{eqnarray*}$$
+\begin{align*}
+\left(\frac{\partial F}{\partial T}\right)_H =& -S\\
+-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H =&T\frac{dS}{dT}=\frac{dQ}{dT}\\ C_H=-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H
+\end{align*}
 
 where $C_H$ is the specific heat at constant field and we have used the
 fact that $dS=dQ/T$.
@@ -391,20 +382,17 @@ $$
 for $T<T_c$ and zero otherwise. Substituting this into the Landau free energy
 $F=F_0+a_2m^2+a_4m^4$ gives
 
-$$
-\begin{eqnarray*}
-F = F_0 & ~~~~~ T>T_c\\
-F = -a_2^2/4a_4 &~~~~~ T < T_c
-\end{eqnarray*}
-$$
+\begin{align*}
+F = F_0 & \quad T>T_c\\
+F = -a_2^2/4a_4 & \quad T < T_c
+\end{align*}
 
 Using the fact that $a_2=\tilde{a_2} t$, with $t=(T-T_c)/T_c$ and differentiating wrt $T$ twice, to get the heat capacity, we find 
 
-$$
-\begin{eqnarray*}
-C_H &=& 0 & \quad T\to T_c^+\\
-C_H &=& \frac{T\tilde a_2^2}{2a_4T_c^2} & \quad T \to T_c^-\:,
-\end{eqnarray*}$$
+\begin{align*}
+C_H =  0; & \quad T\to T_c^+\\
+C_H = \frac{T\tilde a_2^2}{2a_4T_c^2}; & \quad T \to T_c^-\:,
+\end{align*}
 The jump discontinuity rather that a divergence in the specific heat at
 $T=T_c$ formally corresponds to a critical exponent $\alpha=0$.
 
@@ -417,13 +405,12 @@ $$
 
 Then the equilibrium magnetisation satisfies
 
-$$\begin{eqnarray*}
-\frac{dF}{dm}&=&2\tilde{a_2} tm+4a_4m^3-H=0\\
-\Rightarrow H&=&2\tilde{a_2} tm+4a_4m^3\\
-\Rightarrow \left(\frac{\partial H}{\partial m}\right )_T&=&2\tilde{a_2} t+12a_4m^2
-\end{eqnarray*}$$
-Now using the results that $m^2=0$ for $t>0$ and $m^2=-\tilde{a_2}t/(2a_4)$ for $t<0$, we have 
-that in both cases 
+\begin{align*}
+\frac{dF}{dm} =&2\tilde{a_2} tm+4a_4m^3-H=0\\
+\Rightarrow H =&2\tilde{a_2} tm+4a_4m^3\\
+\Rightarrow \left(\frac{\partial H}{\partial m}\right )_T =&2\tilde{a_2} t+12a_4m^2
+\end{align*}
+Now using the results that $m^2=0$ for $t>0$ and $m^2=-\tilde{a_2}t/(2a_4)$ for $t<0$, we have that in both cases 
 
 $$
 \left(\frac{\partial H}{\partial m}\right )_T\propto t
@@ -465,12 +452,13 @@ The choice of scale $a_4=1/4$ and $\tilde{a_2}=1/2$ yields the given form of the
 ### 10. Scaling laws
 
 First of all recall the definition of the critical exponents: 
-$$\begin{eqnarray*}
-m      & \propto & t^{\beta};&~~~~~(h=0) \\
-\chi_T & \propto & t^{-\gamma};&~~~~~(h=0) \\
-C_H & \propto & t^{-\alpha};&~~~~~(h=0) \\
-m & \propto & h^{1/\delta}.&~~~~~(t=0) \\
-\end{eqnarray*}$$
+\begin{align*}
+m       \propto  t^{\beta};& \quad (h=0) \\
+\chi_T  \propto  t^{-\gamma};&\quad (h=0) \\
+C_H  \propto  t^{-\alpha};& \quad (h=0) \\
+m  \propto  h^{1/\delta}.& \quad (t=0) \\
+\end{align*}
+
 The free energy in generalised homogeneous form is 
 
 $$
@@ -480,10 +468,10 @@ $$
 The first of the scaling relations to be derived was covered in lectures:
 Let $\lambda^a=1/t$, so that $\lambda=t^{-1/a}$. Then
 
-$$\begin{eqnarray*}
-F(t,h)&=&t^{1/a}F(1,t^{-b/a}h)\\
-m(t,h)&=&-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\frac{\partial F(1,y)}{\partial y}\right|_{ht^{-b/a}}=t^{(1-b)/a}m(1,ht^{-b/a})
-\end{eqnarray*}$$
+\begin{align*}
+F(t,h)=&t^{1/a}F(1,t^{-b/a}h)\\
+m(t,h)=&-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\frac{\partial F(1,y)}{\partial y}\right|_{ht^{-b/a}}=t^{(1-b)/a}m(1,ht^{-b/a})
+\end{align*}
 
 so when $h=0$, we have $m(1,t^{-b/a}h)=m(1,0)=\textrm{ const}$ and hence we can identify $\boxed{\beta=(1-b)/a}$.
 
@@ -500,25 +488,21 @@ C_H = \left(\frac{\partial E}{\partial T}\right)_{h=0}=-T\left(\frac{\partial^2F
 $$
 where in the last step have used $E=-\partial (\beta F)/\partial\beta$, with $\beta=(k_BT)^{-1}$ (see fig X). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from $T$ to $t=(T-T_c)/T_c$ and inserting the generalised homogeneous form for $F$ gives:
 
-$$
-\begin{eqnarray*}
-C_H &=& -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
-C_H &\approx& -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
-C_H &=& -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
-\end{eqnarray*}
-$$
+\begin{align*}
+C_H =& -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H \approx& -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H =& -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
+\end{align*}
 Here we have neglected all derivatives of $F$ since they are multiplied
 by at least one power of $h$ which is zero. Hence $\boxed{\alpha=2-1/a}$.
 
 Finally, if we let $\lambda^b=1/h$, so that $\lambda=h^{-1/b}$ and
 consider the critical isotherm $t=0$. Then
 
-$$
-\begin{eqnarray*}
-F(t,h)&=&h^{1/b}F(h^{-a/b}t,1)\\
-\Rightarrow m(t,h)&=& \frac{ta}{b}h^{(1-a-b)/b}\left.\frac{\partial F(x,1)}{\partial x}\right|_{h^{-a/b}t}-\frac{1}{b}h^{1/b-1}F(h^{-a/b}t,1).
-\end{eqnarray*}
-$$
+\begin{align*}
+F(t,h)=&h^{1/b}F(h^{-a/b}t,1)\\
+\Rightarrow m(t,h)=& \frac{ta}{b}h^{(1-a-b)/b}\left.\frac{\partial F(x,1)}{\partial x}\right|_{h^{-a/b}t}-\frac{1}{b}h^{1/b-1}F(h^{-a/b}t,1).
+\end{align*}
 so when $t=0$, we get $m(0,h)$ and can identify $\boxed{\delta=b/(1-b)}$.
 
 To derive the relationships (``scaling laws'') among the critical exponents, we eliminate $a$ and $b$ from the boxed scaling relations. 

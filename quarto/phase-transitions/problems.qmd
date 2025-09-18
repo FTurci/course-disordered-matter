@@ -81,19 +81,20 @@ $$\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0$$
 
 ---
 
+
 ### 4.  Mean field theory of the Ising model heat capacity
 
 Using results derived in lectures, obtain an expression for the mean energy $\langle E\rangle$ of the Ising model
 in zero field, within the simplest mean field approximation $\langle
   s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$. Hence
-show that for $H=0$ the heat capacity $\partial \langle
-  E\rangle/\partial T$ has the behaviour
-$$
-\begin{eqnarray*}
-C_H&=& 0 ~~~~ T>T_c\\
-C_H&=& 3Nk_B/2 ~~~~ T\le T_c
-\end{eqnarray*}
-$$
+show that for $H=0$ the heat capacity $\partial \langle E\rangle/\partial T$ has the behaviour
+
+
+\begin{align}
+C_H=& 0 \quad T>T_c\\
+C_H=& 3Nk_B/2 \quad T\le T_c
+\end{align}
+
 ---
 
 ### 5. Magnetisation and fluctuations
@@ -202,15 +203,20 @@ Deduce that $g(x)=x+1$ up to a choice of scale for $\tilde{a}_2$ and $a_4$.
 Using the generalised homogeneous form for the free energy given in lectures, take appropriate derivatives to find
 the relationships to the critical exponents:
 
-$$\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}.$$
+$$
+\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}.
+$$
 
 Hence derive the scaling laws among the critical exponents:
-$$
-\begin{eqnarray*}
-\alpha+\beta(\delta+1)&=&2 \\
-\alpha+2\beta+\gamma &=&2\\
+
+
+\begin{align}
+\alpha+\beta(\delta+1)=& 2 \\
+\alpha+2\beta+\gamma =& 2\\
 %\gamma=\beta(\delta-1)
-\end{eqnarray*}$$ (*Hint: For the heat capacity exponent $\alpha$ use
+\end{align}
+
+(*Hint: For the heat capacity exponent $\alpha$ use
 the result from problem 8:
 $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
 

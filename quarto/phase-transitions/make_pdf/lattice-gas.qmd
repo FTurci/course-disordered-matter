@@ -1,0 +1,76 @@
+---
+title: "The Lattice Gas model"
+
+---
+
+
+A crude representation of a fluid is the lattice gas model. Here
+particles can occupy the sites of a hypercubic lattice. The occupancy of
+a site $i$ is specified by the variable $c_i=1$ (occupied) or $c_i=0$
+vacant. The complete list of these occupancies $\{c\}$ specifies a
+microstate. The average particle number density (fraction of occupied
+sites) is given by
+
+$$c=L^{-d}\sum_i c_i $$ 
+
+where $L$ is the linear extent of the lattice and $d$ its dimensionality.
+
+The Hamiltonian of the lattice gas model is
+
+$${\cal H}_{LG}=-\epsilon\sum_{<i,j>}c_ic_j - \mu\sum_ic_i$$
+
+where $\epsilon$ is an attraction energy between a pair of particles on
+adjacent (nearest neighbouring) sites and $\mu$ is a field known as the
+chemical potential, which couples to the particle density which is
+assumed to fluctuate around a mean value controlled by the prescribed
+chemical potential. This representation of the model in which the
+overall density fluctuates is known as the *Grand Canonical ensemble.*
+
+## Mapping between Ising model and lattice gas
+
+The lattice gas model is interesting because whilst being a plausible
+model for a fluid, it maps onto the Ising model. This extends the
+applicability of the Ising model. To expose the mapping we write the
+grand partition function of the lattice gas:
+
+$$ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{<i,j>}c_ic_j +\beta\mu\sum_ic_i\right] $$
+where the sum is an unrestricted sum over the occupancies of the lattice
+sites. We now change variables to
+
+$$c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4} ~~~~
+h=\frac{\epsilon q+2\mu}{4}$$ Hence
+
+$${\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}$$ Since the last term
+does not depend on the configuration, it feeds through as an additive
+constant in the free energy; and since all observables feature as
+derivatives of the free energy, the constant has no physical
+implications.
+
+## Phase diagram
+
+Using these translation rules we can plot the phase diagram of the
+lattice gas in the number density-temperature plane.
+
+ ![Phase diagram of the lattice gas model in the density-temperature plane.](Figs/lattice_gas_phase_diagram.png){width=60% fig-align="center" #fig-lattgas}
+
+In the $\mu-T$ plane there is a line of first order phase transitions terminating at a
+critical point. The first order line means that if $T<T_c$ we smoothly
+increase the chemical potential through the coexistence value of $\mu$,
+the density of particles on our lattice $\rho=N/L^d$ jumps discontinuously from a
+low to a high value.
+
+$$\rho_\textrm{ gas}=\frac{1-m^\star}{2} \to \rho_\textrm{ liquid}=\frac{1+m^\star}{2}
+$$
+These values merge at $T_c$, the gas-liquid critical point. At higher
+temperatures, the distinction between the phases disappears.
+
+## Real Fluids
+
+You may wish to compare this with the results of (say) van der Waals
+equation (see recommended textbooks for the required phase diagram). The
+main difference is that the lattice gas has so-called "particle-hole" symmetry,
+$\rho\to 1-\rho$ (inherited from the up-down symmetry of the Ising model) which is not present for a real fluid. Accordingly, the
+phase diagram in a real fluid looks like a lopsided version of the above
+picture as shown in @fig-realfluid. See [here](https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.55.2160) for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.
+
+![Schematic of the liquid-gas phase diagram in the $\rho-T$ plane for a realistic fluid .](Figs/real_fluid_pd_schem.png){width=60% fig-align="center" #fig-realfluid}

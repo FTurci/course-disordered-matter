@@ -1,0 +1,373 @@
+# Unifying concepts: Problems {#problems .unnumbered}
+
+Although you should try all of these questions, some of them are
+deliberately quite challenging. If you don't get very far with some,
+don't worry. We'll be going over them in problems classes, so you can
+just regard them as worked examples.
+
+### 1. Existence of a phase transition in $d=2$.
+
+In lectures it was argued that no long ranged order occurs at finite-temperatures in a one dimensional system
+because of the presence of domain walls. Were macroscopic domain
+walls to exist in two dimensions at finite temperature, they would
+similarly destroy long ranged order and prevent a phase transition.
+By calculating the free energy of a 2D domain wall for an Ising
+lattice, show that domain walls do not in fact exist for
+sufficiently low $T$.
+
+(Hint: Model the domain wall as a non-reversing $N$-step random 
+walk on the lattice and find an expression for its energy and -from
+the number of random walk configurations- its entropy.)
+
+---
+
+### 2.  Correlation Length
+ For a 1D Ising model, show that the correlation between the spins at sites $i$ and $j$, is
+
+$$\langle s_i s_j\rangle =\sum_m p_m(-1)^m$$ where $m$ is the number
+of domain walls between $i$ and $j$ and $p_m$ is the probability of
+finding $m$ domain walls between them.
+
+Hence show that when $R_{ij}=|i-j|a$ is large (with $a$ the lattice
+spacing) and the temperature is small, that
+
+$$\langle s_i s_j\rangle =\exp(-R_{ij}/\xi)$$ with $\xi=a/2p$ and
+$p$ the probability of finding a domain wall on a bond.
+
+*Hint: In the second part note that $p_m$ is given by a binomial
+distribution because there is a probability $p$ of each bond
+containing a domain wall and $(1-p)$ that it doesn't. What special
+type of distribution does $p_m$ tend to when $p$ is small (as occurs
+at low $T$)?*
+
+---
+
+### 3. A model fluid
+
+The van der Waals (vdW) equation of state is essentially a mean field theory for fluids. It relates
+the pressure and the volume of a fluid to the temperature:
+
+$$\left(P+\frac{a}{V^2}\right)(V-b)=N_Ak_BT$$ where $a$ and $b$ are
+constants and $N_A$ is Avogadro's number.
+
+The critical point of a fluid corresponds to the point at which the
+isothermal compressibility diverges, that is
+
+$$\left(\frac{\partial P}{\partial V}\right)_T=0$$ Additionally, one
+finds that isotherms of $P$ versus $V$ exhibit a point of inflection
+at the critical point, that is
+
+$$\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0$$
+
+- Use these two requirements to show that the critical point of the
+  vdW fluid is located at
+
+  $$V_c=3b, ~~~ P_c=\frac{a}{27b^2},~~~ N_AK_BT_c=\frac{8a}{27b}$$
+
+- Hence show that when written in terms of reduced variables
+
+  $$p=\frac{P}{P_c}, ~~~~ v=\frac{V}{V_c} ~~~~ t=\frac{T}{T_c}$$
+
+  the equation takes the form
+
+  $$\left(p+\frac{3}{v^2}\right)(v-\frac{1}{3})=\frac{8t}{3}$$
+
+- Write a Python script to plot a selection of isotherms close to the critical temperature (you will need to
+  choose suitable units for your axes). Plot also the gradient and second derivative of $P$ vs $V$ on the critical isotherm and confirm
+  numerically that it exhibits a point of inflection at the critical pressure and temperature.
+
+- Obtain the value of the critical exponent $\gamma$ of the vdW
+  model and confirm that it takes a mean-field value.
+
+---
+
+
+### 4.  Mean field theory of the Ising model heat capacity
+
+Using results derived in lectures, obtain an expression for the mean energy $\langle E\rangle$ of the Ising model
+in zero field, within the simplest mean field approximation $\langle
+  s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$. Hence
+show that for $H=0$ the heat capacity $\partial \langle E\rangle/\partial T$ has the behaviour
+
+
+\begin{align}
+C_H=& 0 \quad T>T_c\\
+C_H=& 3Nk_B/2 \quad T\le T_c
+\end{align}
+
+---
+
+### 5. Magnetisation and fluctuations
+
+A system of spins on a lattice, has, in the absence of an applied field, a Hamiltonian ${\cal H}$. In the
+presence of a field $h$ the Hamiltonian becomes
+$$
+\tilde {\cal H}={\cal H}-hM
+$$ 
+where $M$ is the total magnetisation and $h$ is the magnetic field. By considering the partition function
+$Z(T,h)$ and its relationship to the free energy $F$ show that in general
+
+$$
+\langle M \rangle=-\left(\frac{\partial F}{\partial h}\right)_T
+$$
+
+Show also that the variance of the magnetisation fluctuations is
+
+$$\langle M^2\rangle-\langle M\rangle^2=-k_BT\left(\frac{\partial^2 F}{\partial h^2}\right)_T$$
+
+(*Hint: This is an important standard derivation found in many text
+books on Statistical Mechanics. You will need to differentiate $F$
+(twice) and use the product and chain rules.*)
+
+---
+
+### 6.  Spin-1 Ising model
+
+A set of spins on a lattice of coordination number $q$ can take values $(-1,0,1)$, as opposed to just $(-1,1)$ as in
+the spin-1/2 Ising model. The Hamiltonian is
+
+$${\cal H}=-J\sum_{<ij>}s_is_j + h\sum_i s_i$$
+
+Find the partition function and hence show that in the mean field
+approximation, the magnetisation per site obeys
+
+$$m=\frac{2\sinh[\beta(Jqm+h)]}{2\cosh[\beta(Jqm+h)]+1}$$
+
+and find the critical temperature $T_c$ at which the net
+magnetisation vanishes.
+
+---
+
+### 7.  Transfer Matrix.
+
+Verify the calculation of the free energy of the 1D periodic chain
+Ising model in a field outlined in lectures using the Transfer
+Matrix method.
+
+Use your results to show that the spontaneous magnetisation is:
+
+$$m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{-4\beta J}}}$$
+Comment on the value of $m$ in zero field.
+
+(*Hint: Follow the prescription given in lectures. Depending on your
+approach you may need to use the trigonometrical identities
+$\cosh^2x-\sinh^2x=1$, $\cosh(2x)=2\cosh^2x-1$.*)
+
+---
+
+### 8.  Landau theory
+
+Check and complete the Landau theory calculations, given in
+lectures, for the critical exponents $\gamma=1$ and $\alpha=0$ of
+the Ising model. For the latter, you should first prove the result
+
+$$C_H =-T\frac{\partial^2 F}{\partial T^2}$$ starting from the
+classical theormodynamics expression for changes in the free energy
+of a magnet $dF=-SdT-MdH$.
+
+(*Hint: If you get stuck with the proof see standard thermodynamics
+text books. To get the susceptibility exponent in Landau theory add
+a term $-Hm$ to the Hamiltonian.*)
+
+---
+
+### 9. Scaling equation of state
+
+Consider a Landau expression for the free energy of a magnetic system having magnetisation $m$:
+
+$$
+F=F_0+\tilde{a}_2tm^2+a_4m^4-Hm\:,
+$$
+where $t=T-T_c$ and $H$ is an applied magnetic field; $\tilde{a}_2$ and $a_4$ are positive constants and $F_0$
+is a constant background term. 
+
+Show that the equation of state for the model is
+
+$$
+H=2\tilde{a}_2tm+4a_4m^3\:.
+$$
+
+Use the near-critical power law behaviour of $m$ to show that the equation of state may be written in the scaling form
+
+$$
+\frac{H}{m^\delta}=g\left(\frac{t}{m^{1/\beta}}\right)\:,
+$$
+and find the (mean field) values of the critical exponents $\delta$ and $\beta$.  
+
+Deduce that $g(x)=x+1$ up to a choice of scale for $\tilde{a}_2$ and $a_4$.
+
+---
+
+### 10. Scaling laws
+
+Using the generalised homogeneous form for the free energy given in lectures, take appropriate derivatives to find
+the relationships to the critical exponents:
+
+$$
+\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}.
+$$
+
+Hence derive the scaling laws among the critical exponents:
+
+
+\begin{align}
+\alpha+\beta(\delta+1)=& 2 \\
+\alpha+2\beta+\gamma =& 2\\
+%\gamma=\beta(\delta-1)
+\end{align}
+
+(*Hint: For the heat capacity exponent $\alpha$ use
+the result from problem 8:
+$C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
+
+---
+
+### 11. Classical nucleation theory
+
+A supercooled liquid metal is undergoing solidification. According to classical nucleation theory, the Gibbs free energy change
+$\Delta G$ for forming a spherical solid nucleus of radius $r$ in the liquid is given by:
+
+$$
+\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \gamma
+$$
+where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\gamma > 0$ is the interfacial energy between the solid and liquid phases.
+
+**(a)** Derive the expression for the critical radius $r^*$ at which the nucleus becomes stable and begins to grow.
+
+**(b)** Show that the critical energy barrier for nucleation $\Delta G^*$ is given by:
+
+$$
+\Delta G^* = \frac{16\pi \gamma^3}{3 (\Delta G_v)^2}
+$$
+
+**(c)** Explain qualitatively how the degree of undercooling $\Delta T$ affects the rate of nucleation. You may use the fact that $\Delta G_v \propto \Delta T$ to support your answer.
+
+---
+
+### 12. Colloidal diffusion
+
+A large colloidal particle of mass $M$ moves in a fluid under the influence of a random force $F(t)$ and a coefficient of Stokes friction drag $\gamma$, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by
+
+$$
+u = u_0 e^{-\gamma t} + \frac{e^{-\gamma t}}{M} \int_0^t dt' \, e^{\gamma t'} F(t'),
+$$
+
+where $u_0$ is the velocity at $t = 0$, show that for long times the velocity of the particle satisfies the relation
+
+$$
+\langle u^2 \rangle = \frac{kT}{M} + \left( u_0^2 - \frac{kT}{M} \right) e^{-2\gamma t},
+$$
+
+where $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+
+State clearly any assumptions that you make.
+
+---
+
+### 13.  Einstein's expression for the diffusion coefficient
+
+In 1905, Einstein showed that the friction coefficient $\gamma$ (per unit mass) of a colloidal particle must be related to the diffusion coefficient $D$ of the particle by
+
+$$
+D = \frac{kT}{\gamma}.
+$$
+
+If a marked particle covers a distance $X$ in a given time $t$ (assuming a one-dimensional random walk), the diffusion coefficient is defined to be
+
+$$
+D = \lim_{t \to \infty} \frac{1}{2t} \langle [X(t) - X(0)]^2 \rangle,
+$$
+
+where the average $\langle \cdot \rangle$ is taken over an ensemble in thermal equilibrium.
+
+Use the fact that $X(t) - X(0)
+= \int_{0}^{t} u(t')\,\mathrm{d}t'$  to show that the Einstein relation may be written as
+
+$$
+\gamma = \frac{1}{\mu} = \frac{D}{kT} = \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle \, dt,
+$$
+
+where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitrarily chosen time.
+
+---
+
+### 14. Life in one dimension
+
+A particle lives on the sites of a one-dimensional lattice. At any instant it has probability $\alpha$ per unit time that
+it will hop to the site on its right and probability $\alpha$ per unit time of hopping to the site on its left. 
+
+Write down the master equation for the set of probabilities $p_n(t)$ of finding the particle at the $n^{\text{th}}$ site, 
+where $-\infty < n < \infty$.
+
+Solve the master equation for the $p_n$, subject to the initial condition that the particle was at the site $n = 0$ 
+at time $t = 0$. Hence obtain the mean position $\langle n \rangle$ and root mean square deviation from the mean, both as functions of time.
+
+**Hint**: The second part of the question is most easily done by introducing the generating function
+
+$$
+F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
+$$
+
+---
+
+### 15. Master equation
+
+A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at 
+temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have 
+a probability $\lambda_{-\to+}(T)$ per unit time of transition from lower to higher level, and a probability 
+$\lambda_{+\to-}(T)$ per unit time of the reverse transition.
+
+If at any time $t$ there are $n_+(t)$ atoms at the higher level and $n_-(t)$ at the lower level, then $n(t) = n_-(t) - n_+(t)$ 
+is a convenient measure of the non-equilibrium state.
+
+Obtain the master equation for $n(t)$ and hence the relaxation time $\tau$ which characterizes the exponential approach 
+of the system to equilibrium.
+
+---
+
+### 16. Detailed balance
+
+**(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states
+ within it, $A$ and $B$, the overall rate of transitions from group $A$ to group $B$ is balanced, in equilibrium, 
+ by those from $B$ to $A$:
+
+$$
+\lambda_{A \to B} p^{\text{eq}}_A = \lambda_{B \to A} p^{\text{eq}}_B
+$$
+
+**(b)** Deduce that the principle applies to microstates in the canonical ensemble, and hence that the jump rates
+ between states of a subsystem (of fixed number of particles) connected to a heat bath must obey
+
+$$
+\frac{\lambda_{i \to j}}{\lambda_{j \to i}} = e^{-(E_j - E_i)/kT}.
+$$
+
+---
+
+### 17. Jump processes
+
+An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from
+ state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability $\lambda_0$ that the 
+ system makes a jump, from the state it is in, into (each of) the other state(s) it can reach.
+
+**(a)** Show that the occupancy probabilities $p = (p_1, p_2, p_3)$ of the three states obey the master equation
+
+$$
+\dot{p} = M \cdot p
+$$
+
+where the rate matrix is
+
+$$
+M = \lambda_0 \begin{bmatrix}
+-1 & 1 & 0 \\
+1 & -2 & 1 \\
+0 & 1 & -1
+\end{bmatrix}
+$$
+
+**(b)** Confirm that an equilibrium state is $p = (1, 1, 1)/3$.
+
+**(c)** Prove this equilibrium state is unique.
+
+**Hint**: For part (c), consider the eigenvalues of $M$.
