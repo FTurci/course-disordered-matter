@@ -6,3 +6,6 @@ quarto/.python-version
 quarto/.quarto
 slides/
 quarto/_site-local/*
+*.tex
+*.aux
+*.log
