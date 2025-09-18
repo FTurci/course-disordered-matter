@@ -273,7 +273,7 @@ F_{NVT}=E-TS\:,
 Z_{\mu VT}=\sum_{N=0}^\infty e^{\beta\mu N}Z_{NVT}
 \]</span> and a state probability analogous to <a href="#eq-Pi" class="quarto-xref">Equation&nbsp;<span>2</span></a> holds. One can recast this in a form similar to <a href="#eq-ZNVT" class="quarto-xref">Equation&nbsp;<span>1</span></a>:</p>
 <p><span id="eq-ZmuVT"><span class="math display">\[
-Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm all~states~i}e^{-\beta {\cal H}_i},
+Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_\textrm{all~states~i}e^{-\beta {\cal H}_i},
 \tag{3}\]</span></span> where <span class="math inline">\({\cal H}_i=E_i-\mu N\)</span> is the form of the Hamiltonian in the grand canonical ensemble.</p>
 <p>Statistically, the states favored in the grand canonical ensemble are those that minimise the free energy:</p>
 <p><span class="math display">\[
@@ -291,7 +291,7 @@ F_{\mu VT}=E-TS-\mu N=-pV,
 <p><span class="math display">\[
 Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}
 \]</span> or <span id="eq-ZNpT"><span class="math display">\[
-Z_{NVT}=\int_0^\infty dV\:\sum_{\rm i}e^{-\beta {\cal H}_i},
+Z_{NVT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
 \tag{4}\]</span></span> where <span class="math inline">\({\cal H}_i=E_i+pV\)</span> is the form of the Hamiltonian in the constant-<span class="math inline">\(NpT\)</span> ensemble. Again a state probability analogous to <a href="#eq-Pi" class="quarto-xref">Equation&nbsp;<span>2</span></a> holds.</p>
 <p>Statistically, the states favored in the costant-NpT ensemble are those that minimise the free energy:</p>
 <p><span class="math display">\[
@@ -322,15 +322,13 @@ V=\left(\frac{\partial F}{\partial p}\right)_T\:.
 Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_0^\infty dV\sum_{all~states~i}e^{-\beta (p V_i+E_i)}
 \]</span></p>
 <p>Then</p>
-<p><span class="math display">\[
-\begin{align}
+<p><span class="math display">\[\begin{align}
 \left(\frac{\partial F}{\partial p}\right)_T
 &amp;= -\frac{1}{\beta} \left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T \\
 &amp;= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \frac{\partial Z_{NpT}}{\partial p} \\
 &amp;= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \int_0^\infty dV \int_{\text{all states}} (-\beta V) e^{-\beta (p V + E)} \\
 &amp;= \langle V \rangle_T \,.
-\end{align}
-\]</span></p>
+\end{align}\]</span></p>
 <p>where in the last step we have used the fact that the probability of a state is defined to be <span class="math inline">\(e^{-\beta (p V_i+E_i)}/Z_{NpT}\)</span>.</p>
 <p><em>Exercise</em>. Repeat these manipulations to find an expression for the mean particle number <span class="math inline">\(N\)</span> in the grand canonical ensemble</p>
 <div class="callout callout-style-default callout-caution callout-titled">
