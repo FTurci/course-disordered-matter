@@ -151,7 +151,6 @@ $$
 
 Then 
 
-$$
 \begin{align}
 \left(\frac{\partial F}{\partial p}\right)_T
 &= -\frac{1}{\beta} \left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T \\
@@ -159,7 +158,6 @@ $$
 &= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \int_0^\infty dV \int_{\text{all states}} (-\beta V) e^{-\beta (p V + E)} \\
 &= \langle V \rangle_T \,.
 \end{align}
-$$
 
 where in the last step we have used the fact that the probability of a state is defined to be $e^{-\beta (p V_i+E_i)}/Z_{NpT}$.
 

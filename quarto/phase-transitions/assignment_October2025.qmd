@@ -205,13 +205,13 @@ $$
 
 ## 3.3 Code modification tasks
 
-The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S({\bf k})$ (refer to Chapter 2 of the notes for the definitions of these quantities).
+The provided program simulates the 2D lattice gas model in the **canonical ensemble** (i.e., at a fixed particle number density $\rho$), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) $g(r)$ and the structure factor $S(\mathbf{k})$ (refer to Chapter 2 of the notes for the definitions of these quantities).
 
 In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, $T_c \le T \le 1.0$. For convenience, the program uses dimensionless units by setting $\epsilon = k_B = 1$. The linear system size is intially set to $L=50$.
 
 - *Review the program thoroughly and gain a clear understanding of its functionality.*
 
-- *The program calculates the average form of the 2d structure factor $S({\bf k})$. Using this, obtain and plot the radially averaged structure 1d factor $S(|k|)$. *
+- *The program calculates the average form of the 2d structure factor $S(\mathbf{k})$. Using this, obtain and plot the radially averaged structure 1d factor $S(|k|)$. *
   **[6 marks]**
 
 - *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.2, above.*  
@@ -222,7 +222,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 - *Perform simulations at several (six or seven) temperatures within the super critical range $T_c \le T \le 1.0$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.* **[4 marks]**
 
-* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S({\bf k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[4 marks]**
+* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(\mathbf{k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[4 marks]**
 
 * *Interpret the peak structure in the structure factor and discuss signs of clustering or ordering in these quantities*. **[3 marks]**
 

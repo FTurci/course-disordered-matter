@@ -102,8 +102,7 @@ walls can occupy the bonds of the lattice, of which there are $N-1$.
 Moreover, the walls are noninteracting, except that you cannot have two
 of them on the same bond. (Check through these ideas if you are unsure.)
 
-In this representation, the partition function involves a count over all
-possible domain wall arrangements. Since the domain walls are non
+In this representation, the partition function involves a count over all possible domain wall arrangements. Since the domain walls are non
 interacting (eg it doesn't cost energy for one to move along the chain)
 we can calculate $Z$ by considering the partition function associated
 with a single domain wall being present or absent on some given bond,
@@ -273,7 +272,7 @@ Let us start by assuming that the assembly has cyclic boundary
 conditions, then the total energy of configuration $\{s\}$ is
 $$
 \begin{aligned}
-H(\{s\})=&-\sum_{i=1}^N (J s_i s_{i+1}+Hs_i)\\
+{\cal H}(\{s\})=&-\sum_{i=1}^N (J s_i s_{i+1}+Hs_i)\\
 \:=&-\sum_{i=1}^N (J s_i s_{i+1}+H(s_i+s_{i+1})/2)\\
 \:=&\sum_{i=1}^N E(s_i,s_{i+1})
 \end{aligned}
@@ -284,7 +283,7 @@ $$
 Now the partition function may be written
 
 $$\begin{aligned}
-Z_N =& \sum_{\{s\}}\exp\left(-\beta H(\{s\})\right)\nonumber \\
+Z_N =& \sum_{\{s\}}\exp\left(-\beta {\cal H}(\{s\})\right)\nonumber \\
  =&\sum_{\{s\}}\exp\left(-\beta[E(s_1,s_2)+E(s_2,s_3)+....E(s_N,s_1)]\right) \nonumber\\
  =&\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
 =&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} 

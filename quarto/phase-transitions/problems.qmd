@@ -90,10 +90,10 @@ in zero field, within the simplest mean field approximation $\langle
 show that for $H=0$ the heat capacity $\partial \langle E\rangle/\partial T$ has the behaviour
 
 
-\begin{align}
+\begin{align*}
 C_H=& 0 \quad T>T_c\\
 C_H=& 3Nk_B/2 \quad T\le T_c
-\end{align}
+\end{align*}
 
 ---
 
@@ -210,11 +210,11 @@ $$
 Hence derive the scaling laws among the critical exponents:
 
 
-\begin{align}
+\begin{align*}
 \alpha+\beta(\delta+1)=& 2 \\
 \alpha+2\beta+\gamma =& 2\\
 %\gamma=\beta(\delta-1)
-\end{align}
+\end{align*}
 
 (*Hint: For the heat capacity exponent $\alpha$ use
 the result from problem 8:

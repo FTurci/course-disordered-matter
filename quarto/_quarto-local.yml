@@ -35,8 +35,8 @@ book:
            href: phase-transitions/scaling.qmd
          - text: "Universality and renormalization group theory"
            href:  phase-transitions/rg.qmd
-         - text: "RG- the effective coupling viewpoint"
-           href: phase-transitions/rg-effective-coupling.qmd
+#         - text: "RG- the effective coupling viewpoint"
+#           href: phase-transitions/rg-effective-coupling.qmd
          - text: "Nucleation, growth and spinodal decomposition"
            href: phase-transitions/nucleation-and-growth.qmd  
          - text: "Introduction to stochastic processes"  
