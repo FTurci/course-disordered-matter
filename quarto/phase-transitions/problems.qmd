@@ -88,12 +88,12 @@ in zero field, within the simplest mean field approximation $\langle
   s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$. Hence
 show that for $H=0$ the heat capacity $\partial \langle
   E\rangle/\partial T$ has the behaviour
-
-\begin{aligned}
-C_H=& 0 ~~~~ T>T_c\\
-C_H=& 3Nk_B/2 ~~~~ T\le T_c
-\end{aligned}
-
+$$
+\begin{eqnarray*}
+C_H&=& 0 ~~~~ T>T_c\\
+C_H&=& 3Nk_B/2 ~~~~ T\le T_c
+\end{eqnarray*}
+$$
 ---
 
 ### 5. Magnetisation and fluctuations
@@ -205,12 +205,12 @@ the relationships to the critical exponents:
 $$\beta=\frac{1-b}{a}; ~~ \gamma=\frac{2b-1}{a};~~ \delta= \frac{b}{1-b}; ~~~ \alpha=2-\frac{1}{a}.$$
 
 Hence derive the scaling laws among the critical exponents:
-
-\begin{aligned}
-\alpha+\beta(\delta+1)=2 \\
-\alpha+2\beta+\gamma=2\\
+$$
+\begin{eqnarray*}
+\alpha+\beta(\delta+1)&=&2 \\
+\alpha+2\beta+\gamma &=&2\\
 %\gamma=\beta(\delta-1)
-\end{aligned} (*Hint: For the heat capacity exponent $\alpha$ use
+\end{eqnarray*}$$ (*Hint: For the heat capacity exponent $\alpha$ use
 the result from problem 8:
 $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
 
@@ -243,7 +243,7 @@ $$
 A large colloidal particle of mass $M$ moves in a fluid under the influence of a random force $F(t)$ and a coefficient of Stokes friction drag $\gamma$, both per unit mass. If the solution of the corresponding Langevin equation for the velocity of the colloidal particle is given by
 
 $$
-u = u_0 e^{-\gamma t} + e^{-\gamma t} \int_0^t dt' \, e^{\gamma t'} F(t'),
+u = u_0 e^{-\gamma t} + \frac{e^{-\gamma t}}{M} \int_0^t dt' \, e^{\gamma t'} F(t'),
 $$
 
 where $u_0$ is the velocity at $t = 0$, show that for long times the velocity of the particle satisfies the relation

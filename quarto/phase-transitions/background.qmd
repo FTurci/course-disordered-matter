@@ -37,7 +37,7 @@ weighting each contribution by the appropriate probability:
 $$\overline {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
 $${#eq-observable}
 
-Sums like @eq-observable are not easily evaluated. Nevertheless, some
+Sums like @eq-observable are not easily evaluated because the number of terms grows exponentially in the system size. Nevertheless, some
 important insights follow painlessly. Consider the case where the
 observable of interest is the order parameter, or more specifically the
 magnetisation of a ferromagnet.

@@ -69,7 +69,7 @@ $$
 and a state probability analogous to @eq-Pi holds. One can recast this in a form similar to @eq-ZNVT:
 
 $$
-Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_{\rm all~states~i}e^{-\beta {\cal H}_i},
+Z_{\mu VT}=\sum_{N=0}^\infty\:\sum_\textrm{all~states~i}e^{-\beta {\cal H}_i},
 $${#eq-ZmuVT}
 where ${\cal H}_i=E_i-\mu N$ is the form of the Hamiltonian in the grand canonical ensemble.
 
@@ -99,7 +99,7 @@ Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}
 $$
 or 
 $$
-Z_{NVT}=\int_0^\infty dV\:\sum_{\rm i}e^{-\beta {\cal H}_i},
+Z_{NVT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
 $${#eq-ZNpT}
 where ${\cal H}_i=E_i+pV$ is the form of the Hamiltonian in the constant-$NpT$ ensemble.
 Again a state probability analogous to @eq-Pi holds. 
