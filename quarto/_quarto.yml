@@ -5,6 +5,7 @@ project:
 profiles:
   local: _quarto-local.yml
   remote: _quarto-remote.yml
+  selected: _quarto-selected.yml
 
 profile:
   default: remote
