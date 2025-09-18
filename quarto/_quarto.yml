@@ -2,6 +2,13 @@ project:
   type: book
   output-dir: ../docs  # Uncomment if you want to specify output directory
 
+profiles:
+  local: _quarto-local.yml
+  remote: _quarto-remote.yml
+
+profile:
+  default: remote
+
 book:
   page-navigation: true
   back-to-top-navigation: true
@@ -12,17 +19,17 @@ book:
     style: "docked"
     search: true
     collapse-level: 1
-  chapters:
-    - href: index.qmd
-      text: Overview  
-    - href: reading.qmd
-      text: "Recommended texts"
-    - part: "Unifying concepts"
-      chapters:
-         - text: "Introduction to phase behaviour"
-           href:  phase-transitions/introduction.qmd
-         - text: "Background concepts"
-           href: phase-transitions/background.qmd
+  # chapters:
+  #   - href: index.qmd
+  #     text: Overview  
+  #   - href: reading.qmd
+  #     text: "Recommended texts"
+  #   - part: "Unifying concepts"
+  #     chapters:
+  #        - text: "Introduction to phase behaviour"
+  #          href:  phase-transitions/introduction.qmd
+  #        - text: "Background concepts"
+  #          href: phase-transitions/background.qmd
         #  - text: "The approach to criticality"
         #    href:  phase-transitions/approach-to-criticality.qmd
         #  - text: "The Ising model"
@@ -48,10 +55,10 @@ book:
         #    href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
         #  - text: "Dynamics of fluctuations (non-examinable)"
         #    href: phase-transitions/dynamics-of-fluctuations.qmd  
-         - text: "Precourse reading and revision"
-           href: phase-transitions/precourse-reading.qmd
-         - text: "Problems" 
-           href: phase-transitions/problems.qmd
+        #  - text: "Precourse reading and revision"
+        #    href: phase-transitions/precourse-reading.qmd
+        #  - text: "Problems" 
+        #    href: phase-transitions/problems.qmd
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd
