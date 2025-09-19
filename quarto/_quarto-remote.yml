@@ -52,6 +52,8 @@ book:
            href: phase-transitions/precourse-reading.qmd
          - text: "Problems" 
            href: phase-transitions/problems.qmd
+         - text: "Lecture Slides" 
+           href: phase-transitions/Lecture Slides/Slides.pdf
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd
