@@ -453,7 +453,7 @@ import matplotlib.pyplot as plt
 # Parameters (change to explore)
 R = 1.0           # Colloid radius
 delta = 0.2       # Polymer radius
-eta_p^r = 0.1       # Polymer concentration (dimensionless)
+eta_p = 0.1       # Polymer concentration (dimensionless)
 kBT = 1.0         # Set kBT=1 for reduced units
 
 # Depletion radius
@@ -462,16 +462,16 @@ Rd = R + delta
 # r values: from contact (2R) up to 3(R+delta)
 r = np.linspace(2*R, 3*Rd, 500)
 
-def AO_potential(r, R, delta, eta_p^r, kBT):
+def AO_potential(r, R, delta, eta_p, kBT):
     Rd = R + delta
     # Only defined for 2R <= r < 2Rd
     W = np.zeros_like(r)
     mask = (r >= 2*R) & (r < 2*Rd)
     x = r[mask] / Rd
-    W[mask] = - (4 * np.pi * eta_p^r * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
+    W[mask] = - (4 * np.pi * eta_p * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
     return W
 
-W_AO = AO_potential(r, R, delta, eta_p^r, kBT)
+W_AO = AO_potential(r, R, delta, eta_p, kBT)
 
 plt.plot(r, W_AO)
 plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$", title="Asakura-Oosawa Depletion Potential")
