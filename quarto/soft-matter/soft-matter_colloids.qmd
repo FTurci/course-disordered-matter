@@ -392,7 +392,9 @@ The simple unidimensional scenario can be extended to a more interesting situati
 
 This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by 
 
-$$\mu = k_BT \ln \eta_b$${#eq-ideal-mu}
+$$\mu = k_BT \ln \eta_p^r$${#eq-ideal-mu}
+
+where $\eta_p^r=\frac{\pi}{6} \rho_p^r \sigma_p^3 $ is therefore the **packing fraction** of the polymers in the ideal reservoir.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
@@ -421,24 +423,24 @@ Th new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\
 
 $$
 \begin{aligned}
-W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{m/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
+W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
 & = -k_BT e^{m/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
 & = -k_BT e^{m/k_B T} V_{\mathrm{overlap}(r)}
 \end{aligned}
 $$
 
-We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu and the gemoetrical expression for $V_{\mathrm{overlap}}$ in @eq-voverlap to finally write the **Asakura-Oosawa** potential
+We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu and the geometrical expression for $V_{\mathrm{overlap}}$ in @eq-voverlap to finally write the **Asakura-Oosawa** potential
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
-W_{\rm AO} (r) = - \dfrac{4 \pi \eta_b k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
+W_{\rm AO} (r) = - \dfrac{4 \pi \eta_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
 $$ 
 </div>
 
 taking $q = \delta / R$ (the polymer-to-colloid size ratio), so $R+\delta = R(1+q)$ and $r/(R+\delta) = r/[R(1+q)]$ the AO potential can also be rewritten as:
 
 $$
-W_{\rm AO}(r) = -\frac{4\pi \eta_b k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
+W_{\rm AO}(r) = -\frac{4\pi \eta_p^r k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
 $$
 
 ```{pyodide}
@@ -451,7 +453,7 @@ import matplotlib.pyplot as plt
 # Parameters (change to explore)
 R = 1.0           # Colloid radius
 delta = 0.2       # Polymer radius
-eta_b = 0.1       # Polymer concentration (dimensionless)
+eta_p^r = 0.1       # Polymer concentration (dimensionless)
 kBT = 1.0         # Set kBT=1 for reduced units
 
 # Depletion radius
@@ -460,16 +462,16 @@ Rd = R + delta
 # r values: from contact (2R) up to 3(R+delta)
 r = np.linspace(2*R, 3*Rd, 500)
 
-def AO_potential(r, R, delta, eta_b, kBT):
+def AO_potential(r, R, delta, eta_p^r, kBT):
     Rd = R + delta
     # Only defined for 2R <= r < 2Rd
     W = np.zeros_like(r)
     mask = (r >= 2*R) & (r < 2*Rd)
     x = r[mask] / Rd
-    W[mask] = - (4 * np.pi * eta_b * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
+    W[mask] = - (4 * np.pi * eta_p^r * kBT / 3) * Rd**3 * (1 - 0.75 * x + 0.0625 * x**3)
     return W
 
-W_AO = AO_potential(r, R, delta, eta_b, kBT)
+W_AO = AO_potential(r, R, delta, eta_p^r, kBT)
 
 plt.plot(r, W_AO)
 plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$", title="Asakura-Oosawa Depletion Potential")
@@ -485,12 +487,12 @@ The lens-shaped overlap region between the two colloids consists of two identica
 
 The uncompensated pressure acts on such surface.
 
-For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $\theta$ the components is proportional to $P\cos\theta$ where $P$ is the pressure exerted by the ideal gas of polymers is simply $P=\eta_b kT$ where $\eta_b$ is the polymer concentration. The surface element on which this pressure acts for a small increment $d\theta$ is $$dS = 2\pi R_d^2\sin\theta d\theta$$. Integrating over the range $[0,\theta_0]$  yields the total force $F_d$ 
+For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $\theta$ the components is proportional to $P\cos\theta$ where $P$ is the pressure exerted by the ideal gas of polymers is simply $P=\eta_p^r kT$ where $\eta_p^r$ is the polymer concentration. The surface element on which this pressure acts for a small increment $d\theta$ is $$dS = 2\pi R_d^2\sin\theta d\theta$$. Integrating over the range $[0,\theta_0]$  yields the total force $F_d$ 
 
 $$
 \begin{aligned}
-F_d(r) &= -2\pi \eta_b k_B T R_d^2 \int_0^{\theta_0} \sin\theta \cos\theta \, d\theta \\
-&= -\pi R_d^2 \eta_b k_B T \left[1 - \left(\frac{r}{2R_d}\right)^2\right]
+F_d(r) &= -2\pi \eta_p^r k_B T R_d^2 \int_0^{\theta_0} \sin\theta \cos\theta \, d\theta \\
+&= -\pi R_d^2 \eta_p^r k_B T \left[1 - \left(\frac{r}{2R_d}\right)^2\right]
 \end{aligned}
 $$
 
