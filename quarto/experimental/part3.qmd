@@ -21,15 +21,15 @@ So how do we use diffraction in disordered systems to obtain structural informat
 
 We will not use a rigorous approach to diffraction (that requires quantum mechanics) but we will approach the relationship between the scattering of x-rays, neutrons and electrons by atoms by considering the following simple picture. We note that we haven't included the strength or the specific way in which the atoms scatter at this point but have assumed an incoming quantum is scattered by the atoms. We also assume for the moment that we only have one atom type.
 
-<center><img src="Part3_files/diffraction1.png" alt="diffraction from pairs an atome in the material" width="500"/></center>
+<center><img src="part3_figs/diffraction1.png" alt="diffraction from pairs an atome in the material" width="500"/></center>
 
 We then wish to understand how the scattered waves from different atoms interfere to give rise to a diffraction pattern (for example scattered intensity vs. angle).
 
-<center><img src="Part3_files/diffraction2.png" alt="diffraction from pairs of atome in the material" width="500"/></center>
+<center><img src="part3_figs/diffraction2.png" alt="diffraction from pairs of atome in the material" width="500"/></center>
 
 We can then write a structure factor (beware, if you are familiar with crystal diffraction this is a different definition for the structure factor) for the scattering of all the atoms in the material as
 
-<center><img src="Part3_files/SofQ.png" alt="Structure Factor" width="500"/></center>
+<center><img src="part3_figs/SofQ.png" alt="Structure Factor" width="500"/></center>
 
 We note that $N$ is just a normalizing factor to give the scattering per atom and that for a liquid we need to take the spherical average of this function to return a function $S(Q)$ that is isotropic (the same in all directions). (NB. This latter step would not be  taken, in for example representing the scattering from a liquid crystal, where we know there is an orientation of the molecules in the liquid - the director - even though there is still liquid like disorder in the other directions). 
 
@@ -43,7 +43,7 @@ $\frac{1}{N} \frac{d\sigma}{d\Omega}=f(q)^2 S(Q)$
 
 where we note this is after corrections for the effects of polarization if the x-ray beam in the incident and scattered beam has been made. 
 
-<center><img src="Part3_files/XrayVsNeutron.png" alt="Comoarison of X-ray and neutron scattering" width="800"/></center>
+<center><img src="part3_figs/XrayVsNeutron.png" alt="Comoarison of X-ray and neutron scattering" width="800"/></center>
 
 From the figure we note the important difference between the neutron and X-ray diffraction patterns. At large values of $Q$ the neutron diffraction cross-section tends to a constant value $b^2_{coh}+b^2_{incoh}$ whereas for X-rays we see that the diffractions tends to zero at large $Q$ due to the $Q$ dependence of the X-ray form factor. The physical origin of this effect is that for neutrons it is the nucleus (with a size of a few femtometres) that is the scattering object where as for X-rays it is the electron cloud around the atom (with dimensions of about a tenth of a nanometer) that is the scattering object. Hence for a thermal neutron (of wavelength 0.18 nm) the atoms in the material act as point scatterer whereas the scattering from X-rays is for an object of roughly the same wavelength. Hence the shape of $f(Q)$ reflects the distribution of the electrons around the atom. This $Q$ dependence of the form factor has important consequences when we consider materials composed of more than one element as we shall see shortly. 
 
@@ -58,9 +58,9 @@ Hence, provided we are able to make the experimental corrections we can see that
 
 Here are some images of some typical X-ray and neutron diffractoemters at the ILL and ESRF central faciities.
 
-<center><img src="Part3_files/NeutronDiffractometer.png" alt="Example of D4C neutron diffractometer" width="800"/></center>
+<center><img src="part3_figs/NeutronDiffractometer.png" alt="Example of D4C neutron diffractometer" width="800"/></center>
 
-<center><img src="Part3_files/XrayDiffractometer.png" alt="Example of X-ray diffractometers at the ESRF" width="800"/></center>
+<center><img src="part3_figs/XrayDiffractometer.png" alt="Example of X-ray diffractometers at the ESRF" width="800"/></center>
 
 ## The relationship between $S(Q)$ and $g(r)$ for a disordered material.
 
@@ -145,7 +145,7 @@ is no longer a linear combination of the partial radial distribution functions a
 
 We have seen that it is not possible, in a single neutron or X-ray diffraction experiment, to obtain the partial radial distribution functions of a disordered material. So in a simple measurement, the interpretation (e.g. assignment of bond distances, coordination numbers ...) of $G(r)$ is by assignment and fitting overlapping peaks. More recently, rather than fitting peaks, the trend is for data to be directly compared to the structures calculated from computer simulations (Monte Carlo or Molecular Dynamics) and/or by refining (by fitting) the simulation structures to obtain agreement with the experimental data. However, both methods inevitably limit the precision of the structure determination possible.
 
-<center><img src="Part3_files/GeO2total.png" alt="Total structure factor and g(r) for GeO2" width="800"/></center>
+<center><img src="part3_figs/GeO2total.png" alt="Total structure factor and g(r) for GeO2" width="800"/></center>
 
 However, as we have seen, the neutron scatterng cross-section depends on the properties of the nucleus of the atom, that is in itself dependent on the atomic weight, and not the atomic number of the element in question. In particular, $b_{coh}$ depends on the isotope of the element. Hence, the scattering cross-section of a material will be different if its isotopic composition is changed. However, its chemical properties will remain unchanged. This difference in scattering from different isotopes is exploited in the technique of neutron diffraction and isostopic substitution (NDIS). Take for example our GeO$_2$ glass. We can make this glass from Germanium with its natural abundance of elements or we can use isotopically enriched samples made with Ge$^{70}$ and Ge$^{73}$. The different coherent neutron scattering lengths for oxygen and these germanium isotopes are show in the table below.
 
@@ -159,7 +159,8 @@ However, as we have seen, the neutron scatterng cross-section depends on the pro
 The concentrations of the germanium and oxygen atoms are $c_{Ge}=1/2$ and $c_O=2/3$ so the relative weightings of the three partial structure factors in $F^N$ are different for the differently isotopically labelled samples so that the diffaction pattern observed will be different for each case. We can express the difference in matrix form
 
 <center>
-$ \left(\begin{matrix} 0.074&0.150&0.211\\0.110&0.150&0.256\\0.030&0.150&0.133\\\end{matrix}\right)\left(\begin{matrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\\\end{matrix}\right)=\left(\begin{matrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\\\end{matrix}\right)$</center>
+$ \left(\begin{matrix} 0.074&0.150&0.211\\0.110&0.150&0.256\\0.030&0.150&0.133\\\end{matrix}\right)\left(\begin{matrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\\\end{matrix}\right)=\left(\begin{matrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\\\end{matrix}\right)$
+</center>
 
 from which we can see that we have three measurements (the $F^N(Q)$ for the different isotope compositions) and three unknowns (the partial $S_{\alpha\beta}(Q)$, Hence, we can determine $S_{GeGe}(Q)$,$S_{OO}(Q)$ and $S_{GeO}{Q}$ by multiplying the left and right side of this equation byt the inverse matrix. Hence we obtain,
 
@@ -169,9 +170,9 @@ $ \left(\begin{matrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\\\end{matrix}\right)=\l
 
 The figures below show the measured $F^N(Q)$ for these isotopically labelled glasses and the partial structure factors obtained by this matrix inversion. The $g_{\alpha\beta}(r)$ obtained by fourier transform of the partial structure is shown below in addition to the total $G(r)$ for the natural sample. 
 
-<center><img src="Part3_files/GeO2partialSQ.png" alt="Partial structure factors for GeO2" width="800"/></center>
+<center><img src="part3_figs/GeO2partialSQ.png" alt="Partial structure factors for GeO2" width="800"/></center>
 
-<center><img src="Part3_files/GeO2partialgr.png" alt="Partial g(r) for GeO2" width="800"/></center>
+<center><img src="part3_figs/GeO2partialgr.png" alt="Partial g(r) for GeO2" width="800"/></center>
 
 It is important to note some of the limitations of this method 
 
@@ -228,7 +229,7 @@ From the discussion above it should be apparent that none of the techniques ment
 In the last few decades computer simulation of disordered structures with Monte-Carlo or Molecular Dynamics simulations has moved from being a specialised field needing expensive computer resources and theoretical knowledge to calculations that can be done on a typical desktop or laptop computer using well established potentials. Increasingly, such simulations may be used as the starting point in the interpretation of experimental data. For example, if there is a good agreement between the measured diffraction data and the structure predicted by simulation it gives validty and utility to the potentials etc. used in the calculations. In particular, the more diffraction data included (X-ray, neutron etc.) the more strngent this validation becomes. Similarly, spectroscopic signals may also be calculated from the simulation data as a validation procedure. The figure below shows the comparison of experimental data obtained by NDIS compared with a Molecular Dynamics simulation (using potentials) and an Ab Initio Molecular Dynamics simulations in which the atomic interactions are calculated directly from quantum calculations.
 
 
-<center><img src="Part3_files/datacompare.png" alt="Comparison of Ag2Se data with simulation" width="800"/></center>
+<center><img src="part3_figs/datacompare.png" alt="Comparison of Ag2Se data with simulation" width="800"/></center>
 
 
 The ultimate aim of the experiment and simulations would be a structure that is self consistent with all the techniques exploited. Computer methods that are moving to this goal are the latest implementation of Reverse Monte Carlo fitting (where atomic positions in a model stcuture are continually adjusted to obtain good fits to, for example, diffraction and EXAFS data simultaneously) or the Empirical Potential STructural Refinement (EPSR) where molecular dynamic potentials are dynamically adjusted until the simulation agrees with experimental measurement.

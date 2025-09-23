@@ -80,6 +80,14 @@ book:
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
     - part: "Experimental techniques"
+      chapters:
+        - href: experimental/part1.qmd
+          text: "Macroscopic measurements"
+        - href: experimental/part2.qmd
+          text: "Real-space measurements"
+        - href: experimental/part3.qmd
+          text: "Reciprocal-space measurements"
+        
 
   appendices:
     - href: revision_guide.qmd

@@ -12,7 +12,7 @@ In layman's terms the radial distribution function is often described loosely as
 
 A better definition is that $g(r)$ represents the deviation from the mean particle density, normalised to one, as you move outward from a particle at the origin. At large $r$ we expect this to equate to a constant related to the mean particle density of the material. When properly normalised to the mean density $g(r) _{r\rightarrow \infty} \rightarrow 1$. The figure below shows the key features of a typical radial distribution function.
 
-<center><img src="Part2_files/gofr.png" alt="g of r" width="500"/></center>
+<center><img src="part2_figs/gofr.png" alt="g of r" width="500"/></center>
 
 Points to note are
 
@@ -41,7 +41,7 @@ $\bar{n} = 4\pi\rho_N\int_{r1}^{r2}r^2g(r)dr$.
 
 If we define a peak in $g(r)$ by $r_1$ and $r_2$ we call $n$ the coordination number of the particles in the peak. 
 
-<center><img src="Part2_files/coordno.png" alt="coordination number" width="500"/></center>
+<center><img src="part2_figs/coordno.png" alt="coordination number" width="500"/></center>
 
 It is important to note that the coordination number is an average ($g(r)$ is a statistical distribution) and in general will vary particle by particle in the material. It does not have to be integer and unless $g(r_1)=g(r_2)=0$ it is an ill defined quantity. Nevertheless, it is a commonly quoted number in research papers so it is important to read carefully how it has been caclulated to obtain meaningful conclusions that can be compared to figures in other research work. 
 
@@ -73,19 +73,19 @@ If we have our ideal colloid there are several things we may wish to control. Fo
 
 There are a few further steps we need to achieve to be able to measure and track the positions of the particles in our hard sphere colloid. Firstly, it is important that the particles are transparent, otherwise, we will not be able to see into the depth of the sample and secondly we need to match, as closely as possible, the refractive index of the solvent. If we don't do this the difference in refractive index will mean light is quickly scattered in all directions meaning we will just have an opaque material. Howver, by making that the particles all but invisible how to we determine their positions? The trick is to include a fluorescent die in the centre their centre. When illuminated with the correct wavelength of light (using a laser) the particles will glow. This works well but how to we measure the positions of the particles in 3D. The answer is to use a confocal microscope as illustrated below (figure take from Royall et. al.2024). 
 
-<center><img src="Part2_files/confocal.png" alt="schematic of confocal microscope" width="500"/></center>
+<center><img src="part2_figs/confocal.png" alt="schematic of confocal microscope" width="500"/></center>
 
 In the confocal microscope laser light is passed through a small pinhole and then brought to focus at a point in the sample by a lens, known as the condenser lens. The fluorescent light coming back from the illuminated samples is then focused by the objective lens (which in this case is the same lens as the condenser) and the microscopy image is obtained by the camera. However, although the laser light is brought to a tight focus in the sample there are nevertheless still regions that are illuminated by the laser that, under normal circumstances, would also bring unwanted light into the camera. The key point of the confocal system is that a second pinhole is placed precisely at the focus (hence confocal) of the objective lens for the light coming from the sample. The effect of this pinhole is to reduce the volume of the sample that is illuminated and seen by the camera. The method is good enough that the fluorescence from individual particles can be observed clearly and the ability to resolve the individual particles is given by the diffraction limit imposed by the wavelength of the laser light used. (There are also ways in which this has been overcome to an extent in practical systems).   The figures below, also taken from Royall et. al. 2024 shows examples of confocal images used to map out the phase diagram of the hard sphere system.
-<center><img src="Part2_files/confocalimage.png" alt="Phase diagram of hard spheres with confocal images" width="500"/></center>
+<center><img src="part2_figs/confocalimage.png" alt="Phase diagram of hard spheres with confocal images" width="500"/></center>
 
 Note, moving the sample up and down changes the 'z' direction and a three dimensional image may be obtained by 'stacking' vertically scanned 2D images.
 
 Once the particles positions had been determeind it is possible to plot $g(r)$ for the different packing densities to show how it varies over the phase diagram as shown below
-<center><img src="Part2_files/experimental gr.png" alt="Experimental g of r" width="500"/></center>
+<center><img src="part2_figs/experimental gr.png" alt="Experimental g of r" width="500"/></center>
 
 As mentioned previously, the early attempts at understanding the packing of particles in disordered materials came to te conclusion that 5 fold coordination (inconsistent with the long range order required for crystals) was the characteristic of simple dense packed structures. In the same spirit as these early experiments the results from confocal imaging have allowed the prevalence of different types of local ordering to investigated. This leads to the mapping out the topological cluster distribution (i.e. the different types of lcoal structure) that occur in the systems. As noted before, these higher order correlations may be calculated from the particle positions (once we have them) but cannot be determined unambiguously from measurements of $g(r)$ alone. 
 
-<center><img src="Part2_files/topcluster.png" alt="topological clusters" width="500"/></center>
+<center><img src="part2_figs/topcluster.png" alt="topological clusters" width="500"/></center>
 
 These are just a few examples of the ares studied using colloids and confocal microscopy techqniues.
 
