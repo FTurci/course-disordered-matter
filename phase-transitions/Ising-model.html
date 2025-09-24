@@ -238,7 +238,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/notes.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../Index.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes as pdf</span></a>
   </div>
 </li>
@@ -365,7 +365,7 @@ Figure&nbsp;4.2: (a) Schematic of an Ising chain at <span class="math inline">\(
 <p><span class="math display">\[\beta f\equiv \beta F/(N-1)=-\ln Z_1=-\beta J-\ln(1+e^{-\beta\Delta})\]</span></p>
 <p>The first term on the RHS is simply the energy per spin of the ferromagnetic (ordered) phase, while the second term arises from the free energy of domain walls. Clearly for any finite temperature (ie. for <span class="math inline">\(\beta&lt;\infty\)</span>), this second term is finite and negative. Hence the free energy will always be lowered by having a finite concentration of domain walls in the system. Since these domain walls disorder the system, leading to a zero average magnetisation, the 1D system is paramagnetic for all finite temperatures. <em>Exercise</em>: Explain why this argument works only in 1D.</p>
 <p>The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you’d lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available. You will learn about Monte Carlo simulation in the coursework and in later parts of the course.</p>
-<div id="2abd6c0f" class="cell" data-execution_count="1">
+<div id="db1d21b2" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions</span></span>
@@ -504,16 +504,16 @@ Z_N =&amp; \sum_{\{s\}}\exp\left(-\beta {\cal H}(\{s\})\right)\nonumber \\
 =&amp;\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
 =&amp;\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li}
 \end{aligned} \tag{4.2}\]</span></span></p>
-<p>where the <span class="math inline">\(V_{ij}=\exp(-\beta E_{ij})\)</span> are elements of an <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\({\bf V}\)</span>, known as the transfer matrix (<span class="math inline">\(i,j,k\)</span> etc are dummy indices that run over the matrix elements). You should see that the sum over the product of matrix elements picks up all the terms in the partition function and therefore <a href="#eq-Vs" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is an alternative way of writing the partition function.</p>
-<p>The reason it is useful to transform to a matrix representation is that it transpires that the sum over the product of matrix elements in <a href="#eq-Vs" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is simply just the trace of <span class="math inline">\({\bf V}^N\)</span> (check this yourself for a short periodic chain), given by the sum of its eigenvalues:-</p>
+<p>where the <span class="math inline">\(V_{ij}=\exp(-\beta E_{ij})\)</span> are elements of an <span class="math inline">\(m \times m\)</span> matrix <span class="math inline">\(\mathbf{V}\)</span>, known as the transfer matrix (<span class="math inline">\(i,j,k\)</span> etc are dummy indices that run over the matrix elements). You should see that the sum over the product of matrix elements picks up all the terms in the partition function and therefore <a href="#eq-Vs" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is an alternative way of writing the partition function.</p>
+<p>The reason it is useful to transform to a matrix representation is that it transpires that the sum over the product of matrix elements in <a href="#eq-Vs" class="quarto-xref">Equation&nbsp;<span>4.2</span></a> is simply just the trace of <span class="math inline">\(\mathbf{V}^N\)</span> (check this yourself for a short periodic chain), given by the sum of its eigenvalues:-</p>
 <p><span class="math display">\[Z_N=\lambda_1^N+\lambda_2^N+...\lambda_m^N\]</span> For very large <span class="math inline">\(N\)</span>, this expression simplifies further because the largest eigenvalue <span class="math inline">\(\lambda_1\)</span> dominates the behaviour since <span class="math inline">\((\lambda_2/\lambda_1)^N\)</span> vanishes as <span class="math inline">\(N\rightarrow \infty\)</span>. Consequently in the thermodynamic limit one may put <span class="math inline">\(Z_N=\lambda_1^N\)</span> and the problem reduces to identifying the largest eigenvalue of the transfer matrix.</p>
 <p>Specializing to the case of the simple Ising model in the presence of an applied field <span class="math inline">\(H\)</span>, the transfer matrix takes the form</p>
-<p><span class="math display">\[{\bf V}(H)=\left(
+<p><span class="math display">\[\mathbf{V}(H)=\left(
 \begin{array}{cc}
 e^{\beta(J+H)} &amp; e^{-\beta J} \\
 e^{-\beta J}   &amp; e^{\beta(J-H)}
 \end{array} \right)\]</span></p>
-<p>This matrix has two eigenvalues which can be readily calculated in the usual fashion as the roots of the characteristic polynomial <span class="math inline">\(|{\bf V}-\lambda{\bf I}|\)</span>. They are</p>
+<p>This matrix has two eigenvalues which can be readily calculated in the usual fashion as the roots of the characteristic polynomial <span class="math inline">\(|\mathbf{V}-\lambda\mathbf{I}|\)</span>. They are</p>
 <p><span class="math display">\[\lambda_{\pm}=e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.\]</span></p>
 <p>Hence the free energy per spin <span class="math inline">\(f=-k_BT\ln \lambda_+\)</span> is</p>
 <p><span class="math display">\[f=-k_BT\ln \left[e^{\beta J}\cosh(\beta H) + \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}\right].\]</span></p>
