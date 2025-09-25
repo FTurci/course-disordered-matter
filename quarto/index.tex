@@ -1,5 +1,4 @@
 % Options for packages loaded elsewhere
-% Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
@@ -8,22 +7,21 @@
   letterpaper,
   DIV=11,
   numbers=noendperiod]{scrreprt}
-\usepackage{xcolor}
+
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{5}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
 \usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
+\ifPDFTeX\else  
+    % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -41,6 +39,9 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
 % Make \paragraph and \subparagraph free-standing
 \makeatletter
 \ifx\paragraph\undefined\else
@@ -65,8 +66,49 @@
 \fi
 \makeatother
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
-\usepackage{longtable,booktabs,array}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
 \usepackage{etoolbox}
@@ -91,20 +133,6 @@
 % Set default figure placement to htbp
 \def\fps@figure{htbp}
 \makeatother
-
-
-
-
-
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-
-
-
- 
-
 
 \KOMAoption{captions}{tableheading}
 \makeatletter
@@ -167,9 +195,11 @@
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
 \makeatother
+
 \usepackage{bookmark}
+
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   colorlinks=true,
   linkcolor={blue},
@@ -181,6 +211,7 @@
 
 \author{}
 \date{}
+
 \begin{document}
 
 \renewcommand*\contentsname{Table of contents}
@@ -222,11 +253,11 @@ undergo phase transitions, such as demixing and crystallisation, and
 near these transitions, they can display critical phenomena with
 extensive fluctuations and correlations.
 
-These various are examples of \textbf{soft matter}. systems In soft
-matter systems, the interplay between disorder, softness, and phase
+These various systems are examples of \textbf{soft matter} systems. In
+such systems, the interplay between disorder, softness, and phase
 behavior leads to rich physical phenomena, particularly near critical
 points where even small changes in external conditions can trigger
-large-scale reorganizations and universal behaviour. Glasses, for
+large-scale reorganisations and universal behaviour. Glasses, for
 instance, exhibit slow relaxation and memory effects, while colloidal
 systems may crystallize, phase separate, or become jammed depending on
 particle interactions and concentration. Understanding such behaviors
@@ -356,9 +387,9 @@ Finally, this is a new course for 2025/26. If you find any errors or
 mistakes or something which isn't clear, please let us know by email, or
 fill in this anonymous form:
 
-\begin{tcolorbox}[enhanced jigsaw, opacityback=0, colframe=quarto-callout-note-color-frame, breakable, arc=.35mm, rightrule=.15mm, colback=white, bottomrule=.15mm, toprule=.15mm, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, colback=white, breakable, rightrule=.15mm, arc=.35mm, leftrule=.75mm, bottomrule=.15mm, toprule=.15mm, left=2mm, opacityback=0]
 
-\href{https://forms.office.com/e/6uL2Bd5QGq}{Submit an
+\href{https://forms.office.com/e/YnWKHdiGjv}{Submit an
 error/mistake/query}
 
 \end{tcolorbox}
@@ -544,7 +575,7 @@ or down spin states respectively, as shown schematically in
 Figure~\ref{fig-isingpd} (right part). Changing the sign of the magnetic
 field \(H\) for \(T<T_c\) leads to a phase transition chacterised by a
 discontinuous jump in \(m\). We shall explore this behaviour in more
-detail in \textbf{?@sec-meanfield}.
+detail in section 5.
 
 \begin{figure}
 
@@ -575,8 +606,7 @@ vanishes and the two phases coalesce. These conditions of pressure and
 temperature serve to locate the critical point for the fluid. We define
 the density difference \(\rho_{liq}-\rho_{vap}\) to be the order
 parameter for the liquid-gas phase transition. We shall meet order
-parameters for other, more complex, systems in
-\textbf{?@sec-landau-theory},
+parameters for other, more complex, systems in section 5,
 
 \begin{figure}
 
@@ -901,6 +931,444 @@ function is defined as:
 This defines the elements of a dynamic correlation matrix, of which
 \(M_{xx}(t)\) is the diagonal.
 
+\chapter{The approach to criticality}\label{sec:approach}
+
+It is a matter of experimental fact that the approach to criticality in
+a given system is characterized by the divergence of various
+thermodynamic observables. Let us remain with the archetypal example of
+a critical system, the ferromagnet, whose critical temperature will be
+denoted as \(T_c\). For temperatures close to \(T_c\), the magnetic
+response functions (the magnetic susceptibility \(\chi\) and the
+specific heat) are found to be singular functions, diverging as a
+\emph{power} of the reduced (dimensionless) temperature \(t \equiv
+(T-T_c)/T_c\):-
+
+\begin{equation}\phantomsection\label{eq-chipow}{
+\chi \equiv \frac{\partial M}{\partial H}\propto t^{-\gamma} ~~~~ (H=0) 
+}\end{equation}
+
+(where \(M=mN\)), \begin{equation}\phantomsection\label{eq-Cv}{
+C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant}) 
+}\end{equation}
+
+Another key quantity is the correlation length \(\xi\), which measures
+the distance over which fluctuations of the magnetic moments are
+correlated. This is observed to diverge near the critical point with an
+exponent \(\nu\).
+
+\begin{equation}\phantomsection\label{eq-corr}{
+\xi \propto t^{-\nu} ~~~~ (T > T_c,\: H=0)
+}\end{equation}
+
+Similar power law behaviour is found for the order parameter \(Q\) (in
+this case the magnetisation) which vanishes in a singular fashion (it
+has infinite gradient) as the critical point is is approached as a
+function of temperature:
+
+\begin{equation}\phantomsection\label{eq-mag}{
+m \propto t^{\beta} ~~~~ (T < T_c,\: H=0) 
+}\end{equation} (here the symbol \(\beta\), is not to be confused with
+\(\beta=1/k_BT\)-- this unfortunately is the standard notation.)
+
+Finally, as a function of magnetic field:
+
+\begin{equation}\phantomsection\label{eq-field}{m \propto h^{1/\delta} ~~~~ (T = T_c,\: H>0) .}\end{equation}
+with \(h=(H-H_c)/H_c\), the reduced magnetic field.
+
+As examples, the behaviour of the magnetisation and correlation length
+are plotted in Figure~\ref{fig-sing} as a function of \(t\).
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.5\linewidth,height=\textheight,keepaspectratio]{phase-transitions/Figs/sing_color.png}
+
+}
+
+\caption{\label{fig-sing}Singular behaviour of the correlation length
+and order parameter in the vicinity of the critical point as a function
+of the reduced temperature \(t\).}
+
+\end{figure}%
+
+The quantities \(\gamma, \alpha, \nu, \beta\) in the above equations are
+known as critical exponents. They serve to control the rate at which the
+various thermodynamic quantities change on the approach to criticality.
+
+Remarkably, the form of singular behaviour observed at criticality for
+the example ferromagnet also occurs in qualitatively quite different
+systems such as the fluid. All that is required to obtain the
+corresponding power law relationships for the fluid is to substitute the
+analogous thermodynamic quantities in to the above equations.
+Accordingly the magnetisation order parameter is replaced by the density
+difference \(\rho_{liq}-\rho_{gas}\) while the susceptibility is
+replaced by the isothermal compressibility and the specific heat
+capacity at constant field is replaced by the specific heat capacity at
+constant volume. The approach to criticality in a variety of
+qualitatively quite different systems can therefore be expressed in
+terms of a set of critical exponents describing the power law behaviour
+for that system (see the book by Yeomans for examples).
+
+Even more remarkable is the experimental observation that the values of
+the critical exponents for a whole range of fluids and magnets (and
+indeed many other systems with critical points) are \emph{identical}.
+This is the phenomenon of \emph{universality}. It implies a deep
+underlying physical similarity between ostensibly disparate critical
+systems. The principal aim of theories of critical point phenomena is to
+provide a sound theoretical basis for the existence of power law
+behaviour, the factors governing the observed values of critical
+exponents and the universality phenomenon. Ultimately this basis is
+provided by the Renormalisation Group (RG) theory, for which K.G. Wilson
+was awarded the Nobel Prize in Physics in 1982.
+
+More about the scientists mentioned in this chapter:
+
+\href{https://en.wikipedia.org/wiki/Kenneth_G._Wilson}{Kenneth Wilson}
+
+\chapter{The Ising model: the prototype model for a phase
+transition}\label{sec-Isingmodel}
+
+In order to probe the properties of the critical region, it is common to
+appeal to simplified model systems whose behaviour parallels that of
+real materials. The sophistication of any particular model depends on
+the properties of the system it is supposed to represent. The simplest
+model to exhibit critical phenomena is the two-dimensional Ising model
+of a ferromagnet. Actual physical realizations of 2-d magnetic systems
+do exist in the form of layered ferromagnets such as K\(_2\)CoF\(_4\),
+so the 2-d Ising model is of more than just technical relevance.
+
+\section{The 2D Ising model}\label{the-2d-ising-model}
+
+The 2-d spin-\(\frac{1}{2}\) Ising model envisages a regular arrangement
+of magnetic moments or `spins' on an infinite plane. Each spin can take
+two values, \(+1\) (`up' spins) or \(-1\) (`down' spins) and is assumed
+to interact with its nearest neighbours according to the Hamiltonian
+
+\begin{equation}\phantomsection\label{eq-ising}{
+{\cal H}_I=-J\sum_{<ij>}s_is_j - H\sum_i s_i
+}\end{equation}
+
+where \(J>0\) measures the strength of the coupling between spins and
+the sum extends over nearest neighbour spins \(s_i\) and \(s_j\), i.e it
+is a sum of the bonds of the lattice. \(H\) is a magnetic field term
+which can be positive or negative (although for the time being we will
+set it equal to zero). The order parameter is simply the average
+magnetisation:
+
+\[m=\frac{1}{N} \langle \sum_i s_i \rangle\:,\] where
+\(\langle\cdot\rangle\) means an average over typical configurations
+corresponding to the prescribed value of \(J/k_BT\).
+
+The fact that the Ising model displays a phase transition was argued in
+Chapter~\ref{sec-background}. Thus at low temperatures for which there
+is little thermal disorder, there is a preponderance of aligned spins
+and hence a net spontaneous magnetic moment (ie. the system is
+ferromagnetic). As the temperature is raised, thermal disorder increases
+until at a certain temperature \(T_c\), entropy drives the system
+through a continuous phase transition to a disordered spin arrangement
+with zero net magnetisation (ie. the system is paramagnetic). These
+trends are visible in configurational snapshots from computer
+simulations of the 2D Ising model (see Figure~\ref{fig-snapshots}).
+Although each spin interacts only with its nearest neighbours, the phase
+transition occurs due to cooperative effects among a large number of
+spins.
+
+\begin{figure}
+
+\begin{minipage}{0.33\linewidth}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{phase-transitions/Figs/supercrit.png}}
+
+}
+
+\subcaption{\label{fig-ssa}\(T=1.2T_c\)}
+
+\end{minipage}%
+%
+\begin{minipage}{0.33\linewidth}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{phase-transitions/Figs/crit.png}}
+
+}
+
+\subcaption{\label{fig-ssb}\(T=T_c\)}
+
+\end{minipage}%
+%
+\begin{minipage}{0.33\linewidth}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{phase-transitions/Figs/subcrit.png}}
+
+}
+
+\subcaption{\label{fig-ssc}\(T=0.95T_c\)}
+
+\end{minipage}%
+
+\caption{\label{fig-snapshots}Configurations of the 2d Ising model. The
+patterns depict typical arrangements of the spins (white=+1, black=−1)
+generated in a computer simulation of the Ising model on a square
+lattice of \(N=512\) sites, at temperatures (from left to right) of
+\(T= 1.2T_c\), \(T=T_c\), and \(T=0.95T_c\). In each case only a portion
+of the system containing \(128\) sites in shown. The typical island size
+is a measure of the correlation length \(\xi\): the excess of black over
+white (below \(T_c\) is a measure of the order parameter.}
+
+\end{figure}%
+
+\href{https://physics.weber.edu/schroeder/software/demos/isingmodel.html}{An
+interactive Monte Carlo simulation of the Ising model} demonstrates the
+phenomenology, By altering the temperature you will be able to observe
+for yourself how the typical spin arrangements change as one traverses
+the critical region. Pay particular attention to the configurations near
+the critical point. They have very interesting properties. We will
+return to them later!
+
+Although the 2-d Ising model may appear at first sight to be an
+excessively simplistic portrayal of a real magnetic system, critical
+point universality implies that many physical observables such as
+critical exponents are not materially influenced by the actual nature of
+the microscopic interactions. The Ising model therefore provides a
+simple, yet \emph{quantitatively} accurate representation of the
+critical properties of a whole range of real magnetic (and indeed fluid)
+systems. This universal feature of the model is largely responsible for
+its ubiquity in the field of critical phenomena. We shall explore these
+ideas in more detail later in the course.
+
+\section{Exact solutions: the one dimensional Ising
+chain}\label{exact-solutions-the-one-dimensional-ising-chain}
+
+One might well ask why the 2D Ising model is the simplest model to
+exhibit a phase transition. What about the one-dimensional Ising model
+(ie. spins on a line)? In fact in one dimension, the Ising model can be
+solved exactly. It turns out that the system is paramagnetic for all
+\(T>0\), so there is no phase transition at any finite temperature. To
+see this, consider the ground state of the system in zero external
+field. This will have all spins aligned the same way (say up), and hence
+be ferromagnetic. Now consider a configuration with a various ``domain
+walls'' dividing spin up and spin down regions:
+
+\begin{figure}
+
+\centering{
+
+\includegraphics[width=0.8\linewidth,height=\textheight,keepaspectratio]{phase-transitions/Figs/chain.png}
+
+}
+
+\caption{\label{fig-isingchain}(a) Schematic of an Ising chain at
+\(T=0\). (b) At a small finite temperature the chain is split into
+domains of spins ordered in the same direction. Domains are separated by
+notional domain ``walls'', which cost energy \(\Delta=2J\). Periodic
+boundary conditions are assumed.}
+
+\end{figure}%
+
+Instead of considering the underlying spin configurations, we shall
+describe the system in terms of the statistics of its domain walls. The
+energy cost of a wall is \(\Delta = 2J\), independent of position.
+Domain walls can occupy the bonds of the lattice, of which there are
+\(N-1\). Moreover, the walls are noninteracting, except that you cannot
+have two of them on the same bond. (Check through these ideas if you are
+unsure.)
+
+In this representation, the partition function involves a count over all
+possible domain wall arrangements. Since the domain walls are non
+interacting (eg it doesn't cost energy for one to move along the chain)
+they can be treated as independent. Independent contributions to the
+partition function simply multiply. So we can calculate \(Z\) by
+considering the partition function associated with a single domain wall
+being present or absent on some given bond, and then simply raise to the
+power of the number of bonds:
+
+\[Z=Z_1^{N-1}\]
+
+where
+
+\[Z_1=e^{\beta J} + e^{\beta (J-\Delta)}=e^{\beta J}(1+e^{-\beta\Delta})\]
+is the domain wall partition function for a single bond and represent
+the sum over the two possible states: domain wall absent or present.
+Then the free energy per bond of the system is
+
+\[\beta f\equiv \beta F/(N-1)=-\ln Z_1=-\beta J-\ln(1+e^{-\beta\Delta})\]
+
+The first term on the RHS is simply the energy per spin of the
+ferromagnetic (ordered) phase, while the second term arises from the
+free energy of domain walls. Clearly for any finite temperature (ie. for
+\(\beta<\infty\)), this second term is finite and negative. Hence the
+free energy will always be lowered by having a finite concentration of
+domain walls in the system. Since these domain walls disorder the
+system, leading to a zero average magnetisation, the 1D system is
+paramagnetic for all finite temperatures. \emph{Exercise}: Explain why
+this argument works only in 1D.
+
+The animation below lets you see qualitatively how the typical number of
+domain walls varies with temperature. If you'd lke to explore more
+quantitatively, a python code performing a Monte Carlo simulation is
+available. You will learn about Monte Carlo simulation in the coursework
+and in later parts of the course.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\ImportTok{import}\NormalTok{ matplotlib.pyplot }\ImportTok{as}\NormalTok{ plt}
+\ImportTok{from}\NormalTok{ matplotlib.animation }\ImportTok{import}\NormalTok{ FuncAnimation}
+\ImportTok{from}\NormalTok{ matplotlib.widgets }\ImportTok{import}\NormalTok{ Slider}
+
+\CommentTok{\# Number of spins}
+\NormalTok{N }\OperatorTok{=} \DecValTok{20} 
+
+\CommentTok{\# Initialize spins (+1 or {-}1)}
+\NormalTok{spins }\OperatorTok{=}\NormalTok{ np.random.choice([}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{], size}\OperatorTok{=}\NormalTok{N)}
+
+\CommentTok{\# Initial temperature}
+\NormalTok{T }\OperatorTok{=} \FloatTok{2.0}
+
+\CommentTok{\# Set up figure and axis for the spins}
+\NormalTok{fig, ax }\OperatorTok{=}\NormalTok{ plt.subplots(figsize}\OperatorTok{=}\NormalTok{(}\DecValTok{10}\NormalTok{, }\DecValTok{2}\NormalTok{))}
+\NormalTok{plt.subplots\_adjust(bottom}\OperatorTok{=}\FloatTok{0.25}\NormalTok{)  }\CommentTok{\# make room for slider}
+\NormalTok{ax.set\_xlim(}\OperatorTok{{-}}\FloatTok{0.5}\NormalTok{, N }\OperatorTok{{-}} \FloatTok{0.5}\NormalTok{)}
+\NormalTok{ax.set\_ylim(}\OperatorTok{{-}}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\NormalTok{ax.axis(}\StringTok{\textquotesingle{}off\textquotesingle{}}\NormalTok{)}
+
+\CommentTok{\# Create text objects for each spin}
+\NormalTok{texts }\OperatorTok{=}\NormalTok{ []}
+\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(N):}
+\NormalTok{    arrow }\OperatorTok{=} \StringTok{\textquotesingle{}↑\textquotesingle{}} \ControlFlowTok{if}\NormalTok{ spins[i] }\OperatorTok{==} \DecValTok{1} \ControlFlowTok{else} \StringTok{\textquotesingle{}↓\textquotesingle{}}
+\NormalTok{    t }\OperatorTok{=}\NormalTok{ ax.text(i, }\DecValTok{0}\NormalTok{, arrow, fontsize}\OperatorTok{=}\DecValTok{24}\NormalTok{, ha}\OperatorTok{=}\StringTok{\textquotesingle{}center\textquotesingle{}}\NormalTok{, va}\OperatorTok{=}\StringTok{\textquotesingle{}center\textquotesingle{}}\NormalTok{)}
+\NormalTok{    texts.append(t)}
+
+\KeywordTok{def}\NormalTok{ update(frame):}
+    \CommentTok{"""Perform Metropolis updates over all spins, then refresh display."""}
+    \KeywordTok{global}\NormalTok{ spins, T}
+    \ControlFlowTok{for}\NormalTok{ \_ }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(N):}
+\NormalTok{        i }\OperatorTok{=}\NormalTok{ np.random.randint(N)}
+\NormalTok{        left }\OperatorTok{=}\NormalTok{ spins[(i }\OperatorTok{{-}} \DecValTok{1}\NormalTok{) }\OperatorTok{\%}\NormalTok{ N]}
+\NormalTok{        right }\OperatorTok{=}\NormalTok{ spins[(i }\OperatorTok{+} \DecValTok{1}\NormalTok{) }\OperatorTok{\%}\NormalTok{ N]}
+\NormalTok{        deltaE }\OperatorTok{=} \DecValTok{2} \OperatorTok{*}\NormalTok{ spins[i] }\OperatorTok{*}\NormalTok{ (left }\OperatorTok{+}\NormalTok{ right)}
+        \CommentTok{\# Metropolis criterion ensures configurations appear with the correct Boltzmann probability}
+        \ControlFlowTok{if}\NormalTok{ deltaE }\OperatorTok{\textless{}} \DecValTok{0} \KeywordTok{or}\NormalTok{ np.random.rand() }\OperatorTok{\textless{}}\NormalTok{ np.exp(}\OperatorTok{{-}}\NormalTok{deltaE }\OperatorTok{/}\NormalTok{ T):}
+\NormalTok{            spins[i] }\OperatorTok{*=} \OperatorTok{{-}}\DecValTok{1}
+    \CommentTok{\# Update arrows on screen}
+    \ControlFlowTok{for}\NormalTok{ idx, t }\KeywordTok{in} \BuiltInTok{enumerate}\NormalTok{(texts):}
+\NormalTok{        t.set\_text(}\StringTok{\textquotesingle{}↑\textquotesingle{}} \ControlFlowTok{if}\NormalTok{ spins[idx] }\OperatorTok{==} \DecValTok{1} \ControlFlowTok{else} \StringTok{\textquotesingle{}↓\textquotesingle{}}\NormalTok{)}
+    \ControlFlowTok{return}\NormalTok{ texts}
+
+\CommentTok{\# Create the animation with caching disabled and blit turned off}
+\NormalTok{ani }\OperatorTok{=}\NormalTok{ FuncAnimation(}
+\NormalTok{    fig,}
+\NormalTok{    update,}
+\NormalTok{    interval}\OperatorTok{=}\DecValTok{200}\NormalTok{,}
+\NormalTok{    blit}\OperatorTok{=}\VariableTok{False}\NormalTok{,}
+\NormalTok{    cache\_frame\_data}\OperatorTok{=}\VariableTok{False}
+\NormalTok{)}
+
+\CommentTok{\# Add a temperature slider}
+\NormalTok{ax\_T }\OperatorTok{=}\NormalTok{ plt.axes([}\FloatTok{0.2}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.6}\NormalTok{, }\FloatTok{0.03}\NormalTok{], facecolor}\OperatorTok{=}\StringTok{\textquotesingle{}lightgray\textquotesingle{}}\NormalTok{)}
+\NormalTok{slider\_T }\OperatorTok{=}\NormalTok{ Slider(ax\_T, }\StringTok{\textquotesingle{}Temperature T\textquotesingle{}}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{5.0}\NormalTok{, valinit}\OperatorTok{=}\NormalTok{T)}
+
+\KeywordTok{def}\NormalTok{ on\_T\_change(val):}
+    \CommentTok{"""Callback to update T when the slider changes."""}
+    \KeywordTok{global}\NormalTok{ T}
+\NormalTok{    T }\OperatorTok{=}\NormalTok{ val}
+
+\NormalTok{slider\_T.on\_changed(on\_T\_change)}
+
+\CommentTok{\# Show the plot (ani is kept in scope so it won\textquotesingle{}t be deleted)}
+\NormalTok{plt.show()}
+\end{Highlighting}
+\end{Shaded}
+
+\phantomsection\label{ising}
+
+Temperature T =
+
+2.0
+
+\subsection{More general 1D spins systems: transfer matrix
+method}\label{more-general-1d-spins-systems-transfer-matrix-method}
+
+Generally speaking one-dimensional systems lend themselves to a degree
+of analytic tractability not found in most higher dimensional models.
+Indeed for the case of a 1-d assembly of \(N\) spins each having \(m\)
+discrete energy states, and in the presence of a magnetic field, it is
+possible to reduce the evaluation of the partition function to the
+calculation of the eigenvalues of a matrix--the so called transfer
+matrix.
+
+Let us start by assuming that the assembly has cyclic boundary
+conditions, then the total energy of configuration \(\{s\}\) is \[
+\begin{aligned}
+{\cal H}(\{s\})=&-\sum_{i=1}^N (J s_i s_{i+1}+Hs_i)\\
+\:=&-\sum_{i=1}^N (J s_i s_{i+1}+H(s_i+s_{i+1})/2)\\
+\:=&\sum_{i=1}^N E(s_i,s_{i+1})
+\end{aligned}
+\]
+
+where we have defined
+\(E(s_i,s_{i+1})=-J s_i s_{i+1}-H(s_i+s_{i+1})/2\).
+
+Now the partition function may be written
+
+\begin{equation}\phantomsection\label{eq-Vs}{\begin{aligned}
+Z_N =& \sum_{\{s\}}\exp\left(-\beta {\cal H}(\{s\})\right)\nonumber \\
+ =&\sum_{\{s\}}\exp\left(-\beta[E(s_1,s_2)+E(s_2,s_3)+....E(s_N,s_1)]\right) \nonumber\\
+ =&\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
+=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} 
+\end{aligned}}\end{equation}
+
+where the \(V_{ij}=\exp(-\beta E_{ij})\) are elements of an
+\(m \times m\) matrix \({\bf V}\), known as the transfer matrix
+(\(i,j,k\) etc are dummy indices that run over the matrix elements). You
+should see that the sum over the product of matrix elements picks up all
+the terms in the partition function and therefore Equation~\ref{eq-Vs}
+is an alternative way of writing the partition function.
+
+The reason it is useful to transform to a matrix representation is that
+it transpires that the sum over the product of matrix elements in
+Equation~\ref{eq-Vs} is simply just the trace of \({\bf V}^N\) (check
+this yourself for a short periodic chain), given by the sum of its
+eigenvalues:-
+
+\[Z_N=\lambda_1^N+\lambda_2^N+...\lambda_m^N\] For very large \(N\),
+this expression simplifies further because the largest eigenvalue
+\(\lambda_1\) dominates the behaviour since \((\lambda_2/\lambda_1)^N\)
+vanishes as \(N\rightarrow \infty\). Consequently in the thermodynamic
+limit one may put \(Z_N=\lambda_1^N\) and the problem reduces to
+identifying the largest eigenvalue of the transfer matrix.
+
+Specializing to the case of the simple Ising model in the presence of an
+applied field \(H\), the transfer matrix takes the form
+
+\[{\bf V}(H)=\left(
+\begin{array}{cc}
+e^{\beta(J+H)} & e^{-\beta J} \\
+e^{-\beta J}   & e^{\beta(J-H)}
+\end{array} \right)\]
+
+This matrix has two eigenvalues which can be readily calculated in the
+usual fashion as the roots of the characteristic polynomial
+\(|{\bf V}-\lambda{\bf I}|\). They are
+
+\[\lambda_{\pm}=e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.\]
+
+Hence the free energy per spin \(f=-k_BT\ln \lambda_+\) is
+
+\[f=-k_BT\ln \left[e^{\beta J}\cosh(\beta H) + \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}\right].\]
+
+The Ising model in 2D can also be solved exactly, as was done by Lars
+Onsager in 1940. The solution is extremely complicated and is regarded
+as one of the pinnacles of statistical mechanics. In 3D no exact
+solution is known.
+
 \chapter*{Tools for understanding complex disordered
 matter}\label{tools-for-understanding-complex-disordered-matter}
 \addcontentsline{toc}{chapter}{Tools for understanding complex
@@ -1054,13 +1522,13 @@ canonical one
 \[
 Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}
 \] or \begin{equation}\phantomsection\label{eq-ZNpT}{
-Z_{NVT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
+Z_{NpT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
 }\end{equation} where \({\cal H}_i=E_i+pV\) is the form of the
 Hamiltonian in the constant-\(NpT\) ensemble. Again a state probability
 analogous to Equation~\ref{eq-Pi} holds.
 
-Statistically, the states favored in the costant-NpT ensemble are those
-that minimise the free energy:
+Statistically, the states favored in the constant-\(NpT\) ensemble are
+those that minimise the free energy:
 
 \[
 F_{NpT}=-\beta^{-1}\ln Z_{NpT}
@@ -1117,7 +1585,6 @@ Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}=\int_0^\infty dV\sum_{all~states
 
 Then
 
-\[
 \begin{align}
 \left(\frac{\partial F}{\partial p}\right)_T
 &= -\frac{1}{\beta} \left(\frac{\partial \ln Z_{NpT}}{\partial p}\right)_T \\
@@ -1125,7 +1592,6 @@ Then
 &= -\frac{1}{\beta} \frac{1}{Z_{NpT}} \int_0^\infty dV \int_{\text{all states}} (-\beta V) e^{-\beta (p V + E)} \\
 &= \langle V \rangle_T \,.
 \end{align}
-\]
 
 where in the last step we have used the fact that the probability of a
 state is defined to be \(e^{-\beta (p V_i+E_i)}/Z_{NpT}\).
@@ -1133,7 +1599,7 @@ state is defined to be \(e^{-\beta (p V_i+E_i)}/Z_{NpT}\).
 \emph{Exercise}. Repeat these manipulations to find an expression for
 the mean particle number \(N\) in the grand canonical ensemble
 
-\begin{tcolorbox}[enhanced jigsaw, bottomrule=.15mm, colframe=quarto-callout-caution-color-frame, breakable, rightrule=.15mm, colback=white, toprule=.15mm, opacityback=0, colbacktitle=quarto-callout-caution-color!10!white, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Solution}, toptitle=1mm, titlerule=0mm, bottomtitle=1mm, arc=.35mm, opacitybacktitle=0.6, leftrule=.75mm, left=2mm]
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-caution-color-frame, colback=white, bottomtitle=1mm, rightrule=.15mm, arc=.35mm, toptitle=1mm, leftrule=.75mm, opacityback=0, breakable, bottomrule=.15mm, colbacktitle=quarto-callout-caution-color!10!white, left=2mm, titlerule=0mm, toprule=.15mm, opacitybacktitle=0.6, coltitle=black, title=\textcolor{quarto-callout-caution-color}{\faFire}\hspace{0.5em}{Solution}]
 
 In the grand canonical ensemble (GCE), the relevant free energy is
 
@@ -1310,10 +1776,10 @@ simplest mean field approximation \(\langle
 that for \(H=0\) the heat capacity
 \(\partial \langle E\rangle/\partial T\) has the behaviour
 
-\begin{align}
+\begin{align*}
 C_H=& 0 \quad T>T_c\\
 C_H=& 3Nk_B/2 \quad T\le T_c
-\end{align}
+\end{align*}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -1441,11 +1907,11 @@ critical exponents:
 
 Hence derive the scaling laws among the critical exponents:
 
-\begin{align}
+\begin{align*}
 \alpha+\beta(\delta+1)=& 2 \\
 \alpha+2\beta+\gamma =& 2\\
 %\gamma=\beta(\delta-1)
-\end{align}
+\end{align*}
 
 (\emph{Hint: For the heat capacity exponent \(\alpha\) use the result
 from problem 8:

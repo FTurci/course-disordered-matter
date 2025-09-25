@@ -99,12 +99,12 @@ Z_{NpT}=\int_0^\infty dV  e^{-\beta p V}Z_{NVT}
 $$
 or 
 $$
-Z_{NVT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
+Z_{NpT}=\int_0^\infty dV\:\sum_\textrm{i}e^{-\beta {\cal H}_i},
 $${#eq-ZNpT}
 where ${\cal H}_i=E_i+pV$ is the form of the Hamiltonian in the constant-$NpT$ ensemble.
 Again a state probability analogous to @eq-Pi holds. 
 
-Statistically, the states favored in the costant-NpT ensemble are those that minimise the free energy: 
+Statistically, the states favored in the constant-$NpT$ ensemble are those that minimise the free energy: 
 
 $$
 F_{NpT}=-\beta^{-1}\ln Z_{NpT}

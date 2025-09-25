@@ -64,13 +64,13 @@ sites $i$ and $j$. If additionally, $R_{ij}=|i-j|a$ is large, it tranpires that 
 assumes the limiting form of a Poissonian distribution (revise this if necessary). Thus
 
 $$
-p_m=\frac{\bar{m}^me^{-\bar {m}}}{m!}
+p_m=\frac{\overline{m}^me^{-\overline{m}}}{m!}
 $$ 
 
-where $\bar{m}=p|j-i|=pR_{ij}/a$ . Then
+where $\overline{m}=p|j-i|=pR_{ij}/a$ . Then
 
 \begin{align*}
-\langle s_i s_j\rangle =& e^{-\bar {m}}\sum_m\frac{(-1)^m\bar{m}^m} {m!}\approx e^{-2\bar{m}}\\
+\langle s_i s_j\rangle =& e^{-\overline {m}}\sum_m\frac{(-1)^m\overline{m}^m} {m!}\approx e^{-2\overline{m}}\\
                        =& e^{-2pR_{ij}/a}\\
                        =& e^{-R_{ij}/\xi}
 \end{align*}
