@@ -1,0 +1,7 @@
+quarto render Solutions_to_problems.qmd --self-contained --to html
+
+quarto publish gh-pages
+
+quarto preview --profile local
+
+look for conflicted files in course-disordered-matter/.git/refs/heads

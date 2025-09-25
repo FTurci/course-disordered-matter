@@ -1,0 +1,5 @@
+quarto render Solutions_to_problems.qmd --self-contained --to html
+
+quarto publish gh-pages
+
+quarto preview --profile local

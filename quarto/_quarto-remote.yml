@@ -23,10 +23,10 @@ book:
            href:  phase-transitions/introduction.qmd
          - text: "Background concepts"
            href: phase-transitions/background.qmd
-        #  - text: "The approach to criticality"
-        #    href:  phase-transitions/approach-to-criticality.qmd
-        #  - text: "The Ising model"
-        #    href: phase-transitions/Ising-model.qmd            
+         - text: "The approach to criticality"
+           href:  phase-transitions/approach-to-criticality.qmd
+         - text: "The Ising model"
+           href: phase-transitions/Ising-model.qmd            
         #  - text: "Mean field theory"
         #    href:  phase-transitions/mean-field-theory.qmd
           #  keep commented
@@ -54,6 +54,8 @@ book:
            href: phase-transitions/problems.qmd
          - text: "Lecture Slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
+         - text: "Notes as pdf" 
+           href: Index.pdf
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd

@@ -92,7 +92,7 @@ $\langle s_i\rangle=m$. Thus
 $$
 \begin{aligned}
 m & = \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
- \: & = \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
+ \: & = \frac{e^{\beta(qJm+H)}-e^{-\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
  \: & = \tanh(\beta(qJm+H))
 \end{aligned}$${#eq-mfmag} as before.
 

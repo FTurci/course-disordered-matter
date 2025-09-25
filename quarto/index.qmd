@@ -20,7 +20,7 @@ This course is organized into three interconnected parts, each offering a distin
 * **Part 2: Complex disordered matter** (Francesco Turci) explores the phenomenology of key examples of complex disordered soft matter systems, including colloids, polymers, liquid crystals, glasses, gels, and active matter. These systems will be analyzed using the theoretical concepts introduced in Part 1, highlighting how disorder, interactions, and fluctuations shape their macroscopic behavior.  
 * **Part 3: Experimental techniques** (Adrian Barnes) focuses on the methods of microscopy, and scattering via x-rays, neutrons and light that are used to study  complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
 
-In addition to theory and experiment, computer simulation plays a central role in soft matter research. This course includes a substantial coursework component consisting of two computational projects. These exercises will allow you to apply state-of-the-art simulation techniques to investigate the complex behavior of disordered systems, bridging theory and observation through hands-on exploration.
+In addition to theory and experiment, computer simulation plays a central role in soft matter research. This course includes a substantial coursework component consisting of a computational project. This exercise will allow you to apply state-of-the-art simulation techniques to investigate the complex behavior of disordered systems, bridging theory and observation through hands-on exploration.
 
 
 :::
