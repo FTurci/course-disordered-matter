@@ -27,8 +27,8 @@ book:
            href:  phase-transitions/approach-to-criticality.qmd
          - text: "The Ising model"
            href: phase-transitions/Ising-model.qmd            
-        #  - text: "Mean field theory"
-        #    href:  phase-transitions/mean-field-theory.qmd
+         - text: "Mean field theory"
+           href:  phase-transitions/mean-field-theory.qmd
           #  keep commented
 #        - text: "The lattice gas"
 #           href: phase-transitions/lattice-gas.qmd
@@ -52,7 +52,7 @@ book:
            href: phase-transitions/precourse-reading.qmd
          - text: "Problems" 
            href: phase-transitions/problems.qmd
-         - text: "Lecture Slides" 
+         - text: "Lecture slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
          - text: "Notes as pdf" 
            href: Index.pdf
