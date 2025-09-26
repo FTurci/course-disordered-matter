@@ -55,7 +55,7 @@ book:
          - text: "Lecture slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
          - text: "Notes as pdf" 
-           href: Index.pdf
+           href: index.pdf
         #  - text: "Solutions"
         #    href: phase-transitions/Solutions_to_problems.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd

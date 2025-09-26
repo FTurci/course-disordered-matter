@@ -218,7 +218,7 @@ $$m^2\simeq -3t$$
 Hence
 
 $$\begin{aligned}
-m= 0  &    ~~~\textrm{for } T>T_c \:\:\:  \textrm{ since~otherwise~{\it m}~imaginary}\nonumber\\
+m= 0  &    ~~~\textrm{for } T>T_c \:\:\:  \textrm{since otherwise $m$ imaginary}\\
 m= \pm\sqrt{-3t} & ~~\textrm{ for}  \:\:\: T<T_c ~~\textrm{ real}
 \end{aligned} $${#eq-mbeta}
 This result implies that (within the mean field
