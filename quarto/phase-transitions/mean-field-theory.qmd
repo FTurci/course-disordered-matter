@@ -163,7 +163,7 @@ definitions are:
 *First order transition:* magnetisation (or similar order parameter)
 depends discontinuously on a field variable (such as $h$ or $T$).
 
-*Continuous transition:* Change of functional form, but no discontinuity
+*Continuous transition (criticality):* Change of functional form, but no discontinuity
 in $m$; typically, however, $(\partial m/\partial T)_h$ (or similar) is
 either discontinuous, or diverges with an integrable singularity.
 
