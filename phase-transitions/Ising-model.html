@@ -373,7 +373,7 @@ Figure&nbsp;4.2: (a) Schematic of an Ising chain at <span class="math inline">\(
 <p><span class="math display">\[\beta f\equiv \beta F/(N-1)=-\ln Z_1=-\beta J-\ln(1+e^{-\beta\Delta})\]</span></p>
 <p>The first term on the RHS is simply the energy per spin of the ferromagnetic (ordered) phase, while the second term arises from the free energy of domain walls. Clearly for any finite temperature (ie. for <span class="math inline">\(\beta&lt;\infty\)</span>), this second term is finite and negative. Hence the free energy will always be lowered by having a finite concentration of domain walls in the system. Since these domain walls disorder the system, leading to a zero average magnetisation, the 1D system is paramagnetic for all finite temperatures. <em>Exercise</em>: Explain why this argument works only in 1D.</p>
 <p>The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you’d lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available. You will learn about Monte Carlo simulation in the coursework and in later parts of the course.</p>
-<div id="1235dcc4" class="cell" data-execution_count="1">
+<div id="1c581315" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions</span></span>
@@ -526,7 +526,7 @@ Proof (non examinable)
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n \times n\)</span> complex matrix, and let <span class="math inline">\(\lambda_1, \dots, \lambda_n\)</span> denote its eigenvalues (counted with algebraic multiplicity).</p>
+<p>Let <span class="math inline">\(V\)</span> be an <span class="math inline">\(n \times n\)</span> matrix, and let <span class="math inline">\(\lambda_1, \dots, \lambda_n\)</span> denote its eigenvalues.</p>
 <p>Every square matrix <span class="math inline">\(V\)</span> can be written as <span class="math display">\[
 V = Q T Q^\dagger,
 \]</span> where <span class="math inline">\(Q\)</span> is a unitary matrix (<span class="math inline">\(Q^\dagger Q = I\)</span>), and <span class="math inline">\(T\)</span> is upper triangular with the eigenvalues of <span class="math inline">\(V\)</span> on its diagonal: <span class="math display">\[
@@ -539,7 +539,7 @@ T = \begin{pmatrix}
 \]</span></p>
 <p>Raising both sides to the <span class="math inline">\(N\)</span>th power gives <span class="math display">\[
 V^N = (Q T Q^\dagger)^N = Q \, T^N \, Q^\dagger.
-\]</span> The trace is invariant under similarity transformations: <span class="math display">\[
+\]</span> The trace (ie. the sum of diagonal elements) is invariant under similarity transformations: <span class="math display">\[
 \mathrm{Tr}(V^N) = \mathrm{Tr}(T^N).
 \]</span></p>
 <p>Since <span class="math inline">\(T\)</span> is upper triangular, so is <span class="math inline">\(T^N\)</span>. The diagonal elements of <span class="math inline">\(T^N\)</span> are simply the <span class="math inline">\(N\)</span>th powers of the diagonal elements of <span class="math inline">\(T\)</span>, i.e. <span class="math display">\[
