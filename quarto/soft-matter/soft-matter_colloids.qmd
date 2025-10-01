@@ -392,9 +392,9 @@ The simple unidimensional scenario can be extended to a more interesting situati
 
 This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by 
 
-$$\mu = k_BT \ln \eta_p^r$${#eq-ideal-mu}
+$$\mu = k_BT \ln rho_p^r$${#eq-ideal-mu}
 
-where $\eta_p^r=\frac{\pi}{6} \rho_p^r \sigma_p^3 $ is therefore the **packing fraction** of the polymers in the ideal reservoir.
+where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction $\eta_p^r=\rho_p v_p = \frac{\pi}{6} \rho_p^r \sigma_p^3 $, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
@@ -424,8 +424,10 @@ Th new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\
 $$
 \begin{aligned}
 W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
-& = -k_BT e^{m/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
-& = -k_BT e^{m/k_B T} V_{\mathrm{overlap}(r)}
+& = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
+& = -k_BT e^{\mu/k_B T} V_{\mathrm{overlap}(r)}\\
+& = -k_B T \rho_p V_{\mathrm{overlap}(r)}\\
+& =  -k_B T \dfrac{\eta_p}{v_p} V_{\mathrm{overlap}(r)}
 \end{aligned}
 $$
 
