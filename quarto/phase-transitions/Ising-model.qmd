@@ -61,8 +61,6 @@ island size is a measure of the correlation length $\xi$: the excess of black ov
 
 :::
 
-
-
 [An interactive Monte Carlo simulation of the Ising model](https://physics.weber.edu/schroeder/software/demos/isingmodel.html) demonstrates the phenomenology,  By altering the temperature you will be able to observe
 for yourself how the typical spin arrangements change as one traverses the
 critical region. Pay particular attention to the configurations near the
@@ -299,6 +297,49 @@ The reason it is useful to transform to a matrix representation is that
 it transpires that the sum over the product of matrix elements in
 @eq-Vs is simply just the trace of $\mathbf{V}^N$ (check this yourself for a short
 periodic chain), given by the sum of its eigenvalues:-
+
+::: {.callout-caution collapse="true"}
+## Proof (non examinable)
+
+Let $V$ be an $n \times n$ matrix, and let $\lambda_1, \dots, \lambda_n$ denote its eigenvalues.
+
+Every square matrix $V$ can be written as
+$$
+V = Q T Q^\dagger,
+$$
+where $Q$ is a unitary matrix ($Q^\dagger Q = I$), and 
+$T$ is upper triangular with the eigenvalues of $V$ on its diagonal:
+$$
+T = \begin{pmatrix}
+\lambda_1 & * & \cdots & * \\
+0 & \lambda_2 & \cdots & * \\
+\vdots & & \ddots & \vdots \\
+0 & \cdots & 0 & \lambda_n
+\end{pmatrix}.
+$$
+
+
+Raising both sides to the $N$th power gives
+$$
+V^N = (Q T Q^\dagger)^N = Q \, T^N \, Q^\dagger.
+$$
+The trace (ie. the sum of diagonal elements) is invariant under similarity transformations:
+$$
+\mathrm{Tr}(V^N) = \mathrm{Tr}(T^N).
+$$
+
+Since $T$ is upper triangular, so is $T^N$. The diagonal elements of $T^N$ are simply the $N$th powers of the diagonal elements of $T$, i.e.
+$$
+(T^N)_{ii} = (T_{ii})^N = \lambda_i^N.
+$$
+
+
+Therefore,
+$$
+\mathrm{Tr}(T^N) = \sum_{i=1}^n (T^N)_{ii} = \sum_{i=1}^n \lambda_i^N.
+$$
+
+:::
 
 $$Z_N=\lambda_1^N+\lambda_2^N+...\lambda_m^N$$ For very large $N$, this
 expression simplifies further because the largest eigenvalue $\lambda_1$

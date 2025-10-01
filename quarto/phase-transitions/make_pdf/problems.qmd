@@ -15,9 +15,9 @@ By calculating the free energy of a 2D domain wall for an Ising
 lattice, show that domain walls do not in fact exist for
 sufficiently low $T$.
 
-(Hint: Model the domain wall as a non-reversing $N$-step random 
+(*Hint: Model the domain wall as a non-reversing $N$-step random 
 walk on the lattice and find an expression for its energy and -from
-the number of random walk configurations- its entropy.)
+the number of random walk configurations- its entropy.*)
 
 ---
 

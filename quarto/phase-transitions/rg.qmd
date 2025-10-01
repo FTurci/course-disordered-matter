@@ -75,7 +75,7 @@ There are many ways of implementing this coarse-graining procedure. We
 adopt a simple strategy in which we divide our sample into blocks of
 side $L$, each of which contains $L^d$ sites, with $d$ the space
 dimensions . The centres of the blocks define a lattice of points
-indexed by $I=1,2,N/L^d$. We associate with each block lattice
+indexed by $I=1,2,\ldots,N/L^d$. We associate with each block lattice
 point centre, $I$, a coarse-grained or block variable $S_I(L)$ defined
 as the spatial average of the local variables it contains:
 

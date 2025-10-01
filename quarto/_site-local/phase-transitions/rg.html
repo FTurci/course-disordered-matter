@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -243,6 +243,18 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_to_problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/assignment_October2025.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First coursework assignment</span></a>
   </div>
@@ -260,14 +272,14 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part1.ipynb" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Macroscopic measurements</span></a>
+  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part2.ipynb" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Real-space measurements</span></a>
+  <a href="../experimental/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
   </div>
 </li>
       </ul>
@@ -342,8 +354,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part3.ipynb" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Reciprocal-space measurements</span></a>
+  <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -443,7 +455,7 @@ max}\)</span>, often requiring considerable computing resources.</p>
 <h2 data-number="7.2" class="anchored" data-anchor-id="sec-rgmethod"><span class="header-section-number">7.2</span> Methodology of the RG</h2>
 <p>The central idea of the renormalisation group (RG) method is a stepwise elimination of the degrees of freedom of the system on successively larger length-scales. To achieve this one introduces a fourth length scale <span class="math inline">\(L\)</span>. In contrast to the other three, which characterize the system itself, <span class="math inline">\(L\)</span> characterises the <em>description</em> of the system. It may be thought of as typifying the size of the smallest resolvable detail in a description of the system’s microstructure.</p>
 <p>Consider the Ising model arrangements displayed in <a href="Ising-model.html#fig-snapshots" class="quarto-xref">Figure&nbsp;<span>4.1</span></a>. These pictures contain <em>all</em> the details of each configuration shown: the resolution length <span class="math inline">\(L\)</span> in this case has its smallest possible value, coinciding with the lattice spacing i.e.&nbsp;<span class="math inline">\(L=L_{\min}\)</span>. In the present context, the most detailed description is not the most useful: the essential signals with which we are concerned are hidden in a noise of relevant detail. A clue to eliminating this noise lies in the nature of the correlation length, i.e.&nbsp;the size of the largest droplets. The explicit form of the small scale microstructure is irrelevant to the behaviour of <span class="math inline">\(\xi\)</span>. The small scale microstructure is the noise. To eliminate it, we simply select a larger value of the resolution length (or ‘coarse-graining’ length) <span class="math inline">\(L\)</span>.</p>
-<p>There are many ways of implementing this coarse-graining procedure. We adopt a simple strategy in which we divide our sample into blocks of side <span class="math inline">\(L\)</span>, each of which contains <span class="math inline">\(L^d\)</span> sites, with <span class="math inline">\(d\)</span> the space dimensions . The centres of the blocks define a lattice of points indexed by <span class="math inline">\(I=1,2,N/L^d\)</span>. We associate with each block lattice point centre, <span class="math inline">\(I\)</span>, a coarse-grained or block variable <span class="math inline">\(S_I(L)\)</span> defined as the spatial average of the local variables it contains:</p>
+<p>There are many ways of implementing this coarse-graining procedure. We adopt a simple strategy in which we divide our sample into blocks of side <span class="math inline">\(L\)</span>, each of which contains <span class="math inline">\(L^d\)</span> sites, with <span class="math inline">\(d\)</span> the space dimensions . The centres of the blocks define a lattice of points indexed by <span class="math inline">\(I=1,2,\ldots,N/L^d\)</span>. We associate with each block lattice point centre, <span class="math inline">\(I\)</span>, a coarse-grained or block variable <span class="math inline">\(S_I(L)\)</span> defined as the spatial average of the local variables it contains:</p>
 <p><span id="eq-blkvar"><span class="math display">\[
 S_I(L)=L^{-d}\sum_i^Is_i
 \tag{7.1}\]</span></span> where the sum extends over the <span class="math inline">\(L^d\)</span> sites in the block <span class="math inline">\(I\)</span>. The set of coarse grained coordinates <span class="math inline">\(\{S(L)\}\)</span> are the basic ingredients of a picture of the system having spatial resolution of order <span class="math inline">\(L\)</span>.</p>
