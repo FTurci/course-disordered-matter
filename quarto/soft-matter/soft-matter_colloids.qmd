@@ -392,9 +392,9 @@ The simple unidimensional scenario can be extended to a more interesting situati
 
 This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by 
 
-$$\mu = k_BT \ln \eta_p^r$${#eq-ideal-mu}
+$$\mu = k_BT \ln rho_p^r$${#eq-ideal-mu}
 
-where $\eta_p^r=\frac{\pi}{6} \rho_p^r \sigma_p^3 $ is therefore the **packing fraction** of the polymers in the ideal reservoir.
+where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction $\phi_p^r=\rho_p v_p = \frac{\pi}{6} \rho_p^r \sigma_p^3 $, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
@@ -424,8 +424,9 @@ Th new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\
 $$
 \begin{aligned}
 W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
-& = -k_BT e^{m/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
-& = -k_BT e^{m/k_B T} V_{\mathrm{overlap}(r)}
+& = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
+& = -k_BT e^{\mu/k_B T} V_{\mathrm{overlap}(r)}\\
+& = -k_B T \rho_p V_{\mathrm{overlap}(r)}
 \end{aligned}
 $$
 
@@ -433,14 +434,14 @@ We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu a
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
-W_{\rm AO} (r) = - \dfrac{4 \pi \eta_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
+W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+\delta
 $$ 
 </div>
 
 taking $q = \delta / R$ (the polymer-to-colloid size ratio), so $R+\delta = R(1+q)$ and $r/(R+\delta) = r/[R(1+q)]$ the AO potential can also be rewritten as:
 
 $$
-W_{\rm AO}(r) = -\frac{4\pi \eta_p^r k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
+W_{\rm AO}(r) = -\frac{4\pi \rho_p^r k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
 $$
 
 ```{pyodide}
@@ -453,7 +454,7 @@ import matplotlib.pyplot as plt
 # Parameters (change to explore)
 R = 1.0           # Colloid radius
 delta = 0.2       # Polymer radius
-eta_p = 0.1       # Polymer concentration (dimensionless)
+rho_p = 0.1       # Polymer density 
 kBT = 1.0         # Set kBT=1 for reduced units
 
 # Depletion radius
