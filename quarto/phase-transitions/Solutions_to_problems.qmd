@@ -223,13 +223,13 @@ $$
 with the partition function 
 
 $$
-Z=\sum_{{s}}\exp[-({\cal H}-hM)/k_BT]
+Z=\sum_{{s}}\exp[-(E-hM)/k_BT]
 $$
 
 Thus
 \begin{align*}
 -\left(\frac{\partial F}{\partial h}\right)_T =& k_BT\frac{1}{Z}\left(\frac{\partial Z}{\partial h}\right)_T\\
-\: =&\frac{1}{Z}\sum_{{s}}M \exp[-({\cal H}-hM)/k_BT]\\
+\: =&\frac{1}{Z}\sum_{{s}}M \exp[-(E-hM)/k_BT]\\
    =& \langle M\rangle
 \end{align*}
 where we have used the definition of the average of an observable given
@@ -239,7 +239,7 @@ Now
 
 \begin{align*}
 \left(\frac{\partial^2 F}{\partial h^2}\right)_T =& -k_BT\left[\frac{1}{Z}\left(\frac{\partial^2 Z}{\partial h^2}\right)_T-\left(\frac{\partial Z}{\partial h}\right)_T\frac{1}{Z^2}\left(\frac{\partial Z}{\partial h}\right)_T\right]\\
-\: =&\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-({\cal H}-hM)/k_BT]-\langle M\rangle^2\right]\\
+\: =&\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-(E-hM)/k_BT]-\langle M\rangle^2\right]\\
 \:  =& \frac{-1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
 \end{align*}
 
@@ -263,24 +263,44 @@ Instead one merely looks at the form of the equilibrium fluctuations. It is used
 As in lectures, the mean field Hamiltonian for a single spin is 
 
 $$
-{\cal H}(s_0)=-s_0\left(qJm + H\right)
+{\cal H}(s_0)=-s_0\left(qJm + h\right)
 $$
+where here $h$ is the magnetic field.
+
 The probability of finding this spin with value $s_0$ is
 \begin{align*}
 p(s_0) =& \frac{e^{-\beta{\cal H}(s_0)}} {\sum_{s_0=0,\pm 1}e^{-\beta{\cal H}(s_0)}}\\
-=&\frac{e^{\beta s_0(qJm+H)}}{1+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}
+=&\frac{e^{\beta s_0(qJm+h)}}{1+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}
 \end{align*}
 
 Now for consistency $\langle s_0\rangle=m$, so
 \begin{align*}
 m =& \sum_{s_0=0,\pm 1}s_0p(s_0)\\
- \:=& \frac{0+e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^0+e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\\
+ \:=& \frac{0+e^{\beta(qJm+h)}-e^{\beta(qJm+h)}} {e^0+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}\\
  \:=&  \frac{2\sinh[\beta(Jqm+h)]}{1+2\cosh[\beta(Jqm+h)]}
 \end{align*}
 To get the critical temperature, we can solve this graphically. One plots
 the RHS as a function of $m$, for various $\beta$. On the same graph one
 plots the curve $y=m$ (representing the LHS). $T_c$ is the highest $T$ for which
 the two curves intersect.
+
+Alternatively to get $T_c$ analytically, set $h=0$ and expand for small $m$ (i.e.\ small $x=\beta J q m$), we have
+$$
+m \approx \frac{2(\beta J q m)}{1+2} = \frac{2}{3}\,\beta J q\, m .
+$$
+(I would advise looking up the expansions of $\sinh(x)$ and $\cosh(x)$ to see how this is obtained.)
+
+Now, a nonzero solution appears when the prefactor equals $1$, i.e. when $m=m$. Thus
+$$
+1 = \frac{2}{3}\,\beta_c J q
+\quad \Rightarrow \quad
+\beta_c = \frac{3}{2Jq}.
+$$
+
+Hence the critical temperature is
+$$
+k_B T_c = \frac{2}{3}\, J q .
+$$
 
 ---
 

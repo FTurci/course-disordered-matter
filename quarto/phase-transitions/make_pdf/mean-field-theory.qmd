@@ -31,7 +31,7 @@ Then $$\begin{aligned}
 =&-J\sum_{<i,j>}[m^2+m(s_i-m)+m(s_j-m)+\delta s_i\delta s_j]-H\sum_i s_i\nonumber\\
 =&-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{<i,j>}\delta s_i\delta s_j 
 \end{aligned}$$ {#eq-mfa}
-where in the last line we have used the fact that when
+where in the last line we trnsformed from a sum over bonds to a sum over sites. Doing so makes use of the fact that when
 for each site $i$ we perform the sum $\sum_{<i,j>}$ over bonds of a
 quantity which is independent of $s_j$, then the result is just the
 number of bonds per site times that quantity. Since the number of bonds
@@ -92,7 +92,7 @@ $\langle s_i\rangle=m$. Thus
 $$
 \begin{aligned}
 m & = \sum_{s_i=\pm 1}s_ip(s_i)\nonumber\\
- \: & = \frac{e^{\beta(qJm+H)}-e^{\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
+ \: & = \frac{e^{\beta(qJm+H)}-e^{-\beta(qJm+H)}} {e^{\beta(qJm+H)}+e^{-\beta(qJm+H)}}\nonumber\\
  \: & = \tanh(\beta(qJm+H))
 \end{aligned}$${#eq-mfmag} as before.
 
@@ -163,7 +163,7 @@ definitions are:
 *First order transition:* magnetisation (or similar order parameter)
 depends discontinuously on a field variable (such as $h$ or $T$).
 
-*Continuous transition:* Change of functional form, but no discontinuity
+*Continuous transition (criticality):* Change of functional form, but no discontinuity
 in $m$; typically, however, $(\partial m/\partial T)_h$ (or similar) is
 either discontinuous, or diverges with an integrable singularity.
 
@@ -218,7 +218,7 @@ $$m^2\simeq -3t$$
 Hence
 
 $$\begin{aligned}
-m= 0  &    ~~~\textrm{for } T>T_c \:\:\:  \textrm{ since~otherwise~{\it m}~imaginary}\nonumber\\
+m= 0  &    ~~~\textrm{for } T>T_c \:\:\:  \textrm{since otherwise $m$ imaginary}\\
 m= \pm\sqrt{-3t} & ~~\textrm{ for}  \:\:\: T<T_c ~~\textrm{ real}
 \end{aligned} $${#eq-mbeta}
 This result implies that (within the mean field

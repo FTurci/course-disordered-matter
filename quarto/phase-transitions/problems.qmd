@@ -99,12 +99,11 @@ C_H=& 3Nk_B/2 \quad T\le T_c
 
 ### 5. Magnetisation and fluctuations
 
-A system of spins on a lattice, has, in the absence of an applied field, a Hamiltonian ${\cal H}$. In the
-presence of a field $h$ the Hamiltonian becomes
+A system of spins on a lattice in the presence of an applied field $h$, has a Hamiltonian 
 $$
-\tilde {\cal H}={\cal H}-hM
+{\cal H}=E - hM
 $$ 
-where $M$ is the total magnetisation and $h$ is the magnetic field. By considering the partition function
+where $E$ is the spin-spin interaction energy, $M$ is the total magnetisation and $h$ is the magnetic field. By considering the partition function
 $Z(T,h)$ and its relationship to the free energy $F$ show that in general
 
 $$
@@ -128,8 +127,7 @@ the spin-1/2 Ising model. The Hamiltonian is
 
 $${\cal H}=-J\sum_{<ij>}s_is_j + h\sum_i s_i$$
 
-Find the partition function and hence show that in the mean field
-approximation, the magnetisation per site obeys
+Find the partition function in the mean field approximation and hence show that in the same approximation, the magnetisation per site obeys
 
 $$m=\frac{2\sinh[\beta(Jqm+h)]}{2\cosh[\beta(Jqm+h)]+1}$$
 
