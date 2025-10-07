@@ -262,20 +262,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -1224,7 +1224,7 @@ h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 \]</span> where the pairwise interaction enters explicitly.</p>
 <p>Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.</p>
-<div id="1c4c3fcf" class="cell" data-execution_count="1">
+<div id="46408063" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1325,7 +1325,7 @@ D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = 0
 <p>For sufficiently dense hard spheres (e.g.&nbsp;above <span class="math inline">\(\phi \sim 0.3\)</span>), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant.</p>
 <p>While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math display">\[\langle r^{2}(t)\rangle \propto t\]</span> when the particles undergo large-scale random-walk diffusion through many cages.</p>
 <p>However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>.</p>
-<div id="1950e069" class="cell" data-execution_count="2">
+<div id="d7e41137" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1603,21 +1603,19 @@ n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\rig
 </div>
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466) -->
 <p>In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, <span class="math inline">\(J_{F}\)</span></p>
-<p>The velocity of a particle under an applied force <span class="math inline">\(F\)</span> in a viscous fluid can be written as <span class="math inline">\(v=\)</span> <span class="math inline">\(F / \xi\)</span> which defines the friction coefficient <span class="math inline">\(\xi\)</span>. Hence</p>
+<p>The velocity of a particle under an applied force <span class="math inline">\(F\)</span> in a viscous fluid can be written as <span class="math inline">\(v=F / \xi\)</span> which defines the friction coefficient <span class="math inline">\(\xi\)</span>. Hence</p>
 <p><span class="math display">\[
 J_{F}=n(x) v=\frac{n(x) F}{\xi}
 \]</span></p>
-<ol start="2" type="a">
-<li>Diffusive flux, <span class="math inline">\(J_{D}\)</span> <span class="math inline">\(J_{D}\)</span> is given by Fick’s Law (see above):</li>
-</ol>
+<p>Diffusive flux, <span class="math inline">\(J_{D}\)</span> is given by Fick’s Law (see above):</p>
 <p><span class="math display">\[
 J_{D}(x)=-D \frac{\partial n(x)}{\partial x}
 \]</span></p>
 <p>Equating the two fluxes <span class="math inline">\(J_{F}=J_{D}\)</span> we get</p>
 <p><span class="math display">\[
-\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=+D \frac{F}{k_{B} T} n(x)
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_{B} T} n(x)
 \]</span></p>
-<p>The second equation is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:</p>
+<p>The second equality is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:</p>
 <p><span class="math display">\[
 D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 \]</span></p>

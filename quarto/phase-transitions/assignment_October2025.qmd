@@ -12,7 +12,7 @@ $$
 \rho=L^{-d}\sum_i c_i 
 $$ 
 
-where $L$ is the linear extent of the lattice and $d$ its dimensionality.
+where $L$ is the linear extent of the lattice (i.e. the number of unit cells along a coordinate axis) and $d$ its dimensionality.
 
 Within the Grand Canonical ensemble (see precourse reading) the Hamiltonian of the lattice gas model is
 
@@ -22,7 +22,7 @@ where $\epsilon$ is an attraction energy between a pair of particles on
 adjacent (nearest neighbouring) sites and $\mu$ is a field known as the
 chemical potential, which couples to the particle density which is
 assumed to fluctuate around a mean value controlled by the prescribed
-chemical potential. One can also fix the particle number to some prescribed value- the correspponding set of microstates then define the canonical ensemble (see precourse reading) of the lattice gas at that density. 
+chemical potential. One can also fix the particle number to some prescribed value- the corresponding set of microstates then define the canonical ensemble (see precourse reading) of the lattice gas at that density. 
 
 ## 1.1 Mapping between lattice gas and Ising model
 
