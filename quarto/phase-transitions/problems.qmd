@@ -125,7 +125,7 @@ books on Statistical Mechanics. You will need to differentiate $F$
 A set of spins on a lattice of coordination number $q$ can take values $(-1,0,1)$, as opposed to just $(-1,1)$ as in
 the spin-1/2 Ising model. The Hamiltonian is
 
-$${\cal H}=-J\sum_{<ij>}s_is_j + h\sum_i s_i$$
+$${\cal H}=-J\sum_{<ij>}s_is_j - h\sum_i s_i$$
 
 Find the partition function in the mean field approximation and hence show that in the same approximation, the magnetisation per site obeys
 

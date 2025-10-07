@@ -61,12 +61,13 @@ $$F(m)=NJqm^2/2-Nk_BT\ln[2\cosh(\beta (qJm+H)]\:.$$
 and the magnetisation as
 
 $$
-m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H))
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H)),
 $$
+where the first term drops out because we treat $m$ as an independent variable when differentiating w.r.t. $H$.
 
-This is a self consistent equation because $m$ appears on both the left and the right hand sides. 
-To find $m(H,T)$, we must numerically solve this last equation-self
-consistently. You will meet such an equation again later when you learn about mean field theories for liquid crystals. 
+This is a self consistent equation because $m$ appears on both the left and the right hand sides.  To find $m(H,T)$, we must numerically solve this last equation-self consistently. You will meet such an equation again later when you learn about mean field theories for liquid crystals.  
+
+
 
 ::: {.callout-caution collapse="true"}
 ## Why self-consistent?

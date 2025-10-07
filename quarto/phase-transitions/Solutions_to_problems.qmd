@@ -263,7 +263,7 @@ Instead one merely looks at the form of the equilibrium fluctuations. It is used
 As in lectures, the mean field Hamiltonian for a single spin is 
 
 $$
-{\cal H}(s_0)=-s_0\left(qJm + h\right)
+{\cal H}(s_0)=-s_0\left(qJm + h\right)+NqJm^2/2
 $$
 where here $h$ is the magnetic field.
 

@@ -33,7 +33,7 @@ $$\label{eq:sca2}
 g(u,v)=v^{1/b}g(\frac{u}{v^{a/b}},1)$$
 
 This equation demonstrates that $g(u,v)$ indeed satisfies a simple power
-law in $\it{one}$ variable, subject to the constraint that $u/v^{a/b}$
+law in $\mathit{one}$ variable, subject to the constraint that $u/v^{a/b}$
 is a constant. It should be stressed, however, that such a scaling
 relation specifies neither the function $g$ nor the parameters $a$ and
 $b$.
@@ -144,4 +144,4 @@ which would provide accurate estimates of critical parameters. To help
 deal with this difficulty, finite-size scaling (FSS) methods have been
 developed to allow extraction of bulk critical properties from
 simulations of finite size. FSS will be discussed
-in @sec-fss
+in section 7.

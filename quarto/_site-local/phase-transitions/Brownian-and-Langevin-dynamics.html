@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; The Langevin Approach</title>
+<title>9&nbsp; The Langevin Approach</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../phase-transitions/dynamics-of-fluctuations.html" rel="next">
+<link href="../phase-transitions/nucleation-and-growth.html" rel="next">
 <link href="../phase-transitions/master-equation-and-diffusion.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Brownian-and-Langevin-dynamics.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Brownian-and-Langevin-dynamics.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -242,20 +242,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -284,7 +284,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/notes.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../index.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes as pdf</span></a>
   </div>
 </li>
@@ -434,15 +434,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-random-walk-and-the-langevin-equation" id="toc-the-random-walk-and-the-langevin-equation" class="nav-link active" data-scroll-target="#the-random-walk-and-the-langevin-equation"><span class="header-section-number">10.1</span> The Random Walk and the Langevin equation</a></li>
-  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion"><span class="header-section-number">10.2</span> Brownian Motion</a>
+  <li><a href="#the-random-walk-and-the-langevin-equation" id="toc-the-random-walk-and-the-langevin-equation" class="nav-link active" data-scroll-target="#the-random-walk-and-the-langevin-equation"><span class="header-section-number">9.1</span> The Random Walk and the Langevin equation</a></li>
+  <li><a href="#brownian-motion" id="toc-brownian-motion" class="nav-link" data-scroll-target="#brownian-motion"><span class="header-section-number">9.2</span> Brownian Motion</a>
   <ul class="collapse">
-  <li><a href="#noise-properties" id="toc-noise-properties" class="nav-link" data-scroll-target="#noise-properties"><span class="header-section-number">10.2.1</span> Noise Properties</a></li>
-  <li><a href="#solving-the-langevin-equation-velocity" id="toc-solving-the-langevin-equation-velocity" class="nav-link" data-scroll-target="#solving-the-langevin-equation-velocity"><span class="header-section-number">10.2.2</span> Solving the Langevin Equation (velocity)</a></li>
-  <li><a href="#mean-square-velocity" id="toc-mean-square-velocity" class="nav-link" data-scroll-target="#mean-square-velocity"><span class="header-section-number">10.2.3</span> Mean-square velocity</a></li>
-  <li><a href="#mean-square-displacement" id="toc-mean-square-displacement" class="nav-link" data-scroll-target="#mean-square-displacement"><span class="header-section-number">10.2.4</span> Mean-square displacement</a></li>
-  <li><a href="#external-forces-and-mobility" id="toc-external-forces-and-mobility" class="nav-link" data-scroll-target="#external-forces-and-mobility"><span class="header-section-number">10.2.5</span> External Forces and Mobility</a></li>
-  <li><a href="#molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" id="toc-molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="nav-link" data-scroll-target="#molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">10.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</a></li>
+  <li><a href="#noise-properties" id="toc-noise-properties" class="nav-link" data-scroll-target="#noise-properties"><span class="header-section-number">9.2.1</span> Noise Properties</a></li>
+  <li><a href="#solving-the-langevin-equation-velocity" id="toc-solving-the-langevin-equation-velocity" class="nav-link" data-scroll-target="#solving-the-langevin-equation-velocity"><span class="header-section-number">9.2.2</span> Solving the Langevin Equation (velocity)</a></li>
+  <li><a href="#mean-square-velocity" id="toc-mean-square-velocity" class="nav-link" data-scroll-target="#mean-square-velocity"><span class="header-section-number">9.2.3</span> Mean-square velocity</a></li>
+  <li><a href="#mean-square-displacement" id="toc-mean-square-displacement" class="nav-link" data-scroll-target="#mean-square-displacement"><span class="header-section-number">9.2.4</span> Mean-square displacement</a></li>
+  <li><a href="#external-forces-and-mobility" id="toc-external-forces-and-mobility" class="nav-link" data-scroll-target="#external-forces-and-mobility"><span class="header-section-number">9.2.5</span> External Forces and Mobility</a></li>
+  <li><a href="#molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" id="toc-molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="nav-link" data-scroll-target="#molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -450,9 +450,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Brownian-and-Langevin-dynamics.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/Brownian-and-Langevin-dynamics.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">The Langevin Approach</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">The Langevin Approach</span></h1>
 </div>
 
 
@@ -469,8 +469,8 @@ window.Quarto = {
 </header>
 
 
-<section id="the-random-walk-and-the-langevin-equation" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="the-random-walk-and-the-langevin-equation"><span class="header-section-number">10.1</span> The Random Walk and the Langevin equation</h2>
+<section id="the-random-walk-and-the-langevin-equation" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="the-random-walk-and-the-langevin-equation"><span class="header-section-number">9.1</span> The Random Walk and the Langevin equation</h2>
 <p>The concept of a random walk and its continuum limit – diffusion – introduced in the previous chapter, expresses the time evolution of the probability distribution <span class="math inline">\(p(x, t)\)</span> for a particle’s position <span class="math inline">\(x\)</span> by the diffusion equation:</p>
 <p><span class="math display">\[
 \frac{\partial p}{\partial t} = D \frac{\partial^2 p}{\partial x^2},
@@ -531,8 +531,8 @@ x(t) - x_0 = \int_0^t \eta(t')\, dt'
 <p>Hence, the Langevin description yields the same physical behavior — not just the mean-square displacement but also the full probability distribution <span class="math inline">\(p(x, t)\)</span> — as the diffusion (Fokker-Planck) equation. This equivalence arises from the fact that the integral of many small, independent random steps leads to a Gaussian distribution, in agreement with the solution of the diffusion equation.</p>
 <p>For more details, see: <em>Stochastic Processes in Physics and Chemistry</em> by N.G. van Kampen (North Holland, 1981).</p>
 </section>
-<section id="brownian-motion" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">10.2</span> Brownian Motion</h2>
+<section id="brownian-motion" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="brownian-motion"><span class="header-section-number">9.2</span> Brownian Motion</h2>
 <p>Let us now examine Brownian motion, originally observed as the erratic motion of colloidal particles suspended in a fluid. These particles undergo constant collisions with surrounding (smaller) fluid molecules, which results in seemingly random movement.</p>
 <p>From a coarse-grained perspective — where we do not track each individual collision — this appears as motion under random forces. This statistical treatment introduces irreversibility at the macroscopic level, even though the underlying molecular dynamics are reversible.</p>
 <p>The Langevin equation provides a way to model this behavior. For a particle of mass <span class="math inline">\(m\)</span> in one dimension, Langevin proposed the equation:</p>
@@ -547,8 +547,8 @@ m \ddot{x} = -\gamma \dot{x} + f(t)
 <blockquote class="blockquote">
 <p>Often, the mobility is defined as <span class="math inline">\(\mu = 1/\gamma\)</span> — note that this is unrelated to chemical potential.</p>
 </blockquote>
-<section id="noise-properties" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="noise-properties"><span class="header-section-number">10.2.1</span> Noise Properties</h3>
+<section id="noise-properties" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="noise-properties"><span class="header-section-number">9.2.1</span> Noise Properties</h3>
 <p>In principle the random forces are correlated in time since the molecular collisions which cause them are correlated and have some definite duration.</p>
 <p>Let us assume that there is some correlation time <span class="math inline">\(t_c\)</span> over which <span class="math inline">\(\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)\)</span> decays rapidly as shown in the sketch below:</p>
 <div id="fig-autocorrelate" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -557,7 +557,7 @@ m \ddot{x} = -\gamma \dot{x} + f(t)
 <img src="Figs/autocorrelate.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-autocorrelate-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;10.1: Sketch of <span class="math inline">\(g(t1−t2)\)</span> against <span class="math inline">\(|t1− t2|\)</span>
+Figure&nbsp;9.1: Sketch of <span class="math inline">\(g(t1−t2)\)</span> against <span class="math inline">\(|t1− t2|\)</span>
 </figcaption>
 </figure>
 </div>
@@ -569,8 +569,8 @@ Figure&nbsp;10.1: Sketch of <span class="math inline">\(g(t1−t2)\)</span> agai
 \langle f(t_1) f(t_2) \rangle = \Gamma \delta(t_1 - t_2)
 \]</span></p>
 </section>
-<section id="solving-the-langevin-equation-velocity" class="level3" data-number="10.2.2">
-<h3 data-number="10.2.2" class="anchored" data-anchor-id="solving-the-langevin-equation-velocity"><span class="header-section-number">10.2.2</span> Solving the Langevin Equation (velocity)</h3>
+<section id="solving-the-langevin-equation-velocity" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="solving-the-langevin-equation-velocity"><span class="header-section-number">9.2.2</span> Solving the Langevin Equation (velocity)</h3>
 <p>Let’s set <span class="math inline">\(m = 1\)</span> for simplicity and solve the equation:</p>
 <p><span class="math display">\[
 \dot{v} + \gamma v = f(t)
@@ -593,8 +593,8 @@ v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 <li>At long times: (<span class="math inline">\(\gamma t \gg 1\)</span>): <span class="math inline">\(\langle v \rangle \to 0\)</span> ie. the system loses memory of the initial velocity.</li>
 </ul>
 </section>
-<section id="mean-square-velocity" class="level3" data-number="10.2.3">
-<h3 data-number="10.2.3" class="anchored" data-anchor-id="mean-square-velocity"><span class="header-section-number">10.2.3</span> Mean-square velocity</h3>
+<section id="mean-square-velocity" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="mean-square-velocity"><span class="header-section-number">9.2.3</span> Mean-square velocity</h3>
 <p>We now compute (do it as an exercise):</p>
 <p><span class="math display">\[
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
@@ -658,8 +658,8 @@ v(t)^2
 \]</span></p>
 <p>This important result relates the noise strength to the damping and temperature — they have the same microscopic origin (molecular collisions).</p>
 </section>
-<section id="mean-square-displacement" class="level3" data-number="10.2.4">
-<h3 data-number="10.2.4" class="anchored" data-anchor-id="mean-square-displacement"><span class="header-section-number">10.2.4</span> Mean-square displacement</h3>
+<section id="mean-square-displacement" class="level3" data-number="9.2.4">
+<h3 data-number="9.2.4" class="anchored" data-anchor-id="mean-square-displacement"><span class="header-section-number">9.2.4</span> Mean-square displacement</h3>
 <p>We now integrate <span class="math inline">\(v(t)\)</span> again to get position <span class="math inline">\(x(t)\)</span> (with <span class="math inline">\(m = 1\)</span>):</p>
 <p>Using the result above and substituting <span class="math inline">\(\Gamma = 2\gamma k_B T\)</span>, we find:</p>
 <p><span class="math display">\[
@@ -690,8 +690,8 @@ D = \frac{k_B T}{\gamma}
 D=\frac{6\pi\eta a}{kT}
 \]</span> which is the <strong>Stokes-Einstein</strong> formula for the diffusion constant of a colloidal particle.</p>
 </section>
-<section id="external-forces-and-mobility" class="level3" data-number="10.2.5">
-<h3 data-number="10.2.5" class="anchored" data-anchor-id="external-forces-and-mobility"><span class="header-section-number">10.2.5</span> External Forces and Mobility</h3>
+<section id="external-forces-and-mobility" class="level3" data-number="9.2.5">
+<h3 data-number="9.2.5" class="anchored" data-anchor-id="external-forces-and-mobility"><span class="header-section-number">9.2.5</span> External Forces and Mobility</h3>
 <p>Now consider a charged particle with charge <span class="math inline">\(q\)</span> under an external electric field <span class="math inline">\(E\)</span>. The Langevin equation becomes:</p>
 <p><span class="math display">\[
 m \dot{v} = -\gamma v + qE
@@ -706,8 +706,8 @@ m \dot{v} = -\gamma v + qE
 \]</span></p>
 <p>This relation connects the response of a system to an external perturbation (mobility) with its internal fluctuations (diffusivity).</p>
 </section>
-<section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="10.2.6">
-<h3 data-number="10.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">10.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
+<section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
+<h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
 <div id="3150e2ae" class="cell" data-execution_count="1">
 <details class="code-fold">
@@ -1337,12 +1337,12 @@ window._ojs.runtime.interpretFromScriptTags();
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../phase-transitions/master-equation-and-diffusion.html" class="pagination-link" aria-label="Introduction to stochastic processes">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../phase-transitions/dynamics-of-fluctuations.html" class="pagination-link" aria-label="Dynamics of fluctuations (non-examinable)">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Dynamics of fluctuations (non-examinable)</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../phase-transitions/nucleation-and-growth.html" class="pagination-link" aria-label="Nucleation, growth and spinodal decomposition">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -37,12 +37,12 @@ book:
            href:  phase-transitions/rg.qmd
 #         - text: "RG- the effective coupling viewpoint"
 #           href: phase-transitions/rg-effective-coupling.qmd
-         - text: "Nucleation, growth and spinodal decomposition"
-           href: phase-transitions/nucleation-and-growth.qmd  
          - text: "Introduction to stochastic processes"  
            href: phase-transitions/master-equation-and-diffusion.qmd
-         - text: "Brownian and Langevin dynamics"
+         - text: "Langevin and Brownian dynamics"
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
+         - text: "Nucleation, growth and spinodal decomposition"
+           href: phase-transitions/nucleation-and-growth.qmd  
          - text: "Dynamics of fluctuations (non-examinable)"
            href: phase-transitions/dynamics-of-fluctuations.qmd  
          - text: "Precourse reading and revision"
@@ -52,7 +52,7 @@ book:
          - text: "Solutions to problems"
            href: phase-transitions/Solutions_to_problems.qmd             
          - text: "Notes as pdf" 
-           href: phase-transitions/notes.pdf
+           href: index.pdf
          - text: "First coursework assignment"   
            href: phase-transitions/assignment_October2025.qmd                   
 #          - href: phase-transitions/live-test.qmd

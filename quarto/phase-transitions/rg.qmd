@@ -561,7 +561,7 @@ blocks of the original spin variables). The RGT simply states that these
 new couplings depend on the old couplings: $K_1^\prime$ is some function
 $f_1$ of all the original couplings, and generally
 
-$$K^\prime_a=f_a(K_1,K_2,\dots) =f_a({\bf K}),~~~~ a= 1, 2,\dots
+$$K^\prime_a=f_a(K_1,K_2,\dots) =f_a(\mathbf {K}),\quad a= 1, 2,\dots
 $${#eq-rgt} where **K** is shorthand for the set $K_1, K_2,\dots$
 
 ### A simple example
@@ -757,12 +757,12 @@ behaviour. Let us turn now to the schematic representation of the RG
 flow in @fig-flow2. Suppose we start with a physical system, with
 coupling strengths $K_a,  a= 1,2, \dots$. What the RGT does is generate
 a new point in the figure, at the coupling strengths
-$K_a^{(1)}=f_a({\bf K})$; these are the couplings appearing in the
+$K_a^{(1)}=f_a(\mathbf {K})$; these are the couplings appearing in the
 effective energy function describing the coarse-grained system. If we
 repeat the transformation, the new energy function has coupling
-strengths $K_a^{(2)}=f_a({\bf K})$. Thus repeated application of the
-transformation generates a flow of points in the figure: ${\bf K\to
-K^{(1)}\to\dots\to K^{(n)}}$ where the superscript ($n$) labels the
+strengths $K_a^{(2)}=f_a(\mathbf {K})$. Thus repeated application of the
+transformation generates a flow of points in the figure: $\mathbf{K}\to
+K^{(1)}\to\dots\to K^{(n)}$ where the superscript ($n$) labels the
 effective couplings after $n$ coarse-graining steps. if the change in
 coarse-graining scale is $b$ ($> 1$) at each step, the total change in
 coarse-graining scale is $b^n$ after $n$ steps. In the process,
@@ -777,13 +777,13 @@ model at its critical point. The ratio of $\xi$ to coarse-graining scale
 is reduced by a factor b at each step, but, since it starts infinite, it
 remains infinite after any finite number of steps. In this case we can
 in principle generate an unbounded number of dots,
-${\bf K^{(1)}, K^{(2)},\dots,K^{(n)}}$, all of which lie in the critical
+$\mathbf{ K^{(1)}, K^{(2)},\dots,K^{(n)}}$, all of which lie in the critical
 surface. The simplest behaviour of such a sequence as $n$ increases is
 to tend to a limit, $K^*$, say. In such a case
 
 $$K^*_a=f_a(K^*)~~~~ a= 1,2 .....$$
 
-This point ${\bf K^*} \equiv K_1^*, K_2^*, \dots$ is therefore a *fixed
+This point $\mathbf{K^*} \equiv K_1^*, K_2^*, \dots$ is therefore a *fixed
 point* which lies in the critical surface.
 
 By contrast, consider the same magnet as before, now at temperature $T$

@@ -34,19 +34,19 @@ book:
 #           href: phase-transitions/lattice-gas.qmd
 # end of kee commented
 
-        #  - text: "The static scaling hypothesis"
-        #    href: phase-transitions/scaling.qmd
-        #  - text: "Universality and renormalization group theory"
-        #    href:  phase-transitions/rg.qmd
-        #  - text: "RG- the effective coupling viewpoint"
-        #    href: phase-transitions/rg-effective-coupling.qmd
-        #  - text: "Nucleation, growth and spinodal decomposition"
-        #    href: phase-transitions/nucleation-and-growth.qmd  
+         - text: "The static scaling hypothesis"
+           href: phase-transitions/scaling.qmd
+         - text: "Universality and renormalization group theory"
+           href:  phase-transitions/rg.qmd
+        #   - text: "RG- the effective coupling viewpoint"
+        #     href: phase-transitions/rg-effective-coupling.qmd 
         #  - text: "Introduction to stochastic processes"  
         #    href: phase-transitions/master-equation-and-diffusion.qmd
-        #  - text: "Brownian and Langevin dynamics"
+        #  - text: "Langevin and Brownian dynamics"
         #    href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
-        #  - text: "Dynamics of fluctuations (non-examinable)"
+        #  - text: "Nucleation, growth and spinodal decomposition"
+        #    href: phase-transitions/nucleation-and-growth.qmd 
+        #   - text: "Dynamics of fluctuations (non-examinable)"
         #    href: phase-transitions/dynamics-of-fluctuations.qmd  
          - text: "Precourse reading and revision"
            href: phase-transitions/precourse-reading.qmd
@@ -56,8 +56,8 @@ book:
            href: phase-transitions/Lecture Slides/Slides.pdf
          - text: "Notes as pdf" 
            href: index.pdf
-        #  - text: "Solutions"
-        #    href: phase-transitions/Solutions_to_problems.qmd             
+         - text: "Solutions to problems"
+           href: phase-transitions/Solutions_partial.qmd             
 #  #        - href: phase-transitions/assignment_October2025.qmd
 #  #          text: "First coursework assignment"                      
 #          - href: phase-transitions/live-test.qmd
@@ -107,18 +107,18 @@ format:
           autorun: true
 
   # pdf:
-  #   documentclass: report
-  #   classoption: [enabledeprecatedfontcommands]
-  #   # papersize: a4paper
-  #   mainfont: "Helvetica" 
-  #   bibliography:
-  #     - soft-matter/references.bib
-  #   geometry:
-  #     - top=2cm
-  #     - left=2cm
-  #     - right=5cm
-  #   execute:
-  #     echo: false      # don’t show code
-  #     warning: false
-  #     error: false
-  #     eval: false      # completely skip execution
+  #    documentclass: report
+  #    classoption: [enabledeprecatedfontcommands]
+  #    # papersize: a4paper
+  #    mainfont: "Helvetica" 
+  #    bibliography:
+  #      - soft-matter/references.bib
+  #    geometry:
+  #      - top=2cm
+  #      - left=2cm
+  #      - right=5cm
+  #    execute:
+  #      echo: false      # don’t show code
+  #      warning: false
+  #      error: false
+  #      eval: false      # completely skip execution

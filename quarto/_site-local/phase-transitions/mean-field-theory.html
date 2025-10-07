@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -207,20 +207,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Brownian and Langevin dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -249,7 +249,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/notes.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../index.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Notes as pdf</span></a>
   </div>
 </li>
@@ -444,7 +444,7 @@ window.Quarto = {
 {\cal H}_I=&amp;-J\sum_{&lt;i,j&gt;}[m+(s_i-m)][m+(s_j-m)]-H\sum_i s_i\nonumber\\
 =&amp;-J\sum_{&lt;i,j&gt;}[m^2+m(s_i-m)+m(s_j-m)+\delta s_i\delta s_j]-H\sum_i s_i\nonumber\\
 =&amp;-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{&lt;i,j&gt;}\delta s_i\delta s_j
-\end{aligned} \tag{5.1}\]</span></span> where in the last line we have used the fact that when for each site <span class="math inline">\(i\)</span> we perform the sum <span class="math inline">\(\sum_{&lt;i,j&gt;}\)</span> over bonds of a quantity which is independent of <span class="math inline">\(s_j\)</span>, then the result is just the number of bonds per site times that quantity. Since the number of bonds on a lattice of <span class="math inline">\(N\)</span> sites of coordination <span class="math inline">\(q\)</span> is <span class="math inline">\(Nq/2\)</span> (because each bond is shared between two sites), there are therefore <span class="math inline">\(q/2\)</span> bonds per site.</p>
+\end{aligned} \tag{5.1}\]</span></span> where in the last line we trnsformed from a sum over bonds to a sum over sites. Doing so makes use of the fact that when for each site <span class="math inline">\(i\)</span> we perform the sum <span class="math inline">\(\sum_{&lt;i,j&gt;}\)</span> over bonds of a quantity which is independent of <span class="math inline">\(s_j\)</span>, then the result is just the number of bonds per site times that quantity. Since the number of bonds on a lattice of <span class="math inline">\(N\)</span> sites of coordination <span class="math inline">\(q\)</span> is <span class="math inline">\(Nq/2\)</span> (because each bond is shared between two sites), there are therefore <span class="math inline">\(q/2\)</span> bonds per site.</p>
 <p>Now the mean field approximation is to ignore the last term in the last line of <a href="#eq-mfa" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> giving the configurational energy as</p>
 <p><span class="math display">\[
 {\cal H}_{mf}=-\sum_{i}H_{mf}s_i+NqJm^2/2
@@ -456,8 +456,8 @@ Z=e^{-\beta qJm^2N/2}[2\cosh(\beta(qJm+H))]^N
 <p><span class="math display">\[F(m)=NJqm^2/2-Nk_BT\ln[2\cosh(\beta (qJm+H)]\:.\]</span></p>
 <p>and the magnetisation as</p>
 <p><span class="math display">\[
-m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H))
-\]</span></p>
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\tanh(\beta(qJm+H)),
+\]</span> where the first term drops out because we treat <span class="math inline">\(m\)</span> as an independent variable when differentiating w.r.t. <span class="math inline">\(H\)</span>.</p>
 <p>This is a self consistent equation because <span class="math inline">\(m\)</span> appears on both the left and the right hand sides. To find <span class="math inline">\(m(H,T)\)</span>, we must numerically solve this last equation-self consistently. You will meet such an equation again later when you learn about mean field theories for liquid crystals.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -825,7 +825,7 @@ of the minima marking the coexistence magnetisation values, and thus tracing out
 <p><span class="math display">\[C_H \sim |T-T_c|^{-\alpha}\]</span></p>
 <p>By convention, <span class="math inline">\(\alpha\)</span> is defined to be positive for systems where there is a <em>divergence</em> of the heat capacity at the critical point (very often the case). The heat capacity can be calculated from</p>
 <p><span class="math display">\[C_H =-T\frac{\partial^2 F}{\partial T^2}\]</span></p>
-<p>From the minimization over <span class="math inline">\(m\)</span> @#eq-minimize one finds (<em>exercise</em>: check this) <span class="math display">\[
+<p>From the minimization over <span class="math inline">\(m\)</span> <a href="#eq-minimize" class="quarto-xref">Equation&nbsp;<span>5.5</span></a> one finds (<em>exercise</em>: check this) <span class="math display">\[
 \begin{aligned}
 F = &amp; 0 ~~~~T&gt;T_c\nonumber\\
 F = &amp; -a_2^2/4a_4 ~~~~ T &lt; T_c
