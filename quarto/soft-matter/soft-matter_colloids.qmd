@@ -1486,13 +1486,13 @@ return container.node();
 
 In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, $J_{F}$
 
-The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=$ $F / \xi$ which defines the friction coefficient $\xi$. Hence
+The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=F / \xi$ which defines the friction coefficient $\xi$. Hence
 
 $$
 J_{F}=n(x) v=\frac{n(x) F}{\xi}
 $$
 
-(b) Diffusive flux, $J_{D}$ $J_{D}$ is given by Fick's Law (see above):
+Diffusive flux, $J_{D}$ is given by Fick's Law (see above):
 
 $$
 J_{D}(x)=-D \frac{\partial n(x)}{\partial x}
@@ -1501,10 +1501,10 @@ $$
 Equating the two fluxes $J_{F}=J_{D}$ we get
 
 $$
-\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=+D \frac{F}{k_{B} T} n(x)
+\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_{B} T} n(x)
 $$
 
-The second equation is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:
+The second equality is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:
 
 $$
 D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
