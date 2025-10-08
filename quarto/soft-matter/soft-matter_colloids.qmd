@@ -82,16 +82,18 @@ However, colloidal dispersions consist of large particles that carry many charge
 
 This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic spatial fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
-There are many examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.
+There are many examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double-layer interaction and the depletion interaction. We detail them below.
 
 ### Van der Waals interaction
 
 The London-van der Waals **dispersion forces** arise from the interaction between **instantaneous dipoles** in overall neutral atoms or molecules. We know from classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like $1/r^3$, where $r$ is the separation between two dipoles.
 
-More in general, neutral atom or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a **temporary dipole**. Such instantaneous dipole **induces** a dipole in a neighboring atom or molecule by distorting its electron cloud.
+More generally, neutral atoms or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a **temporary dipole**. Such an instantaneous dipole induces a dipole in a neighbouring atom or molecule by distorting its electron cloud.
 
-The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to: $$
-U \propto -\frac{\mu_1 \mu_2}{r^3}
+The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to: 
+
+$$U \propto -\frac{\mu_1 \mu_2}{r^3}
+
 $$
 ::: column-margin
 ::: {.content-visible when-format="live-html"}
@@ -124,7 +126,8 @@ where $A_H$ is the **Hamaker constant** and $f(h/R)$ is
 $$f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]$$
 
 ::: {.callout-note collapse="true"}
-# Sketch of a derivation of colloid-colloid Van der Waals potential
+
+## Sketch of a derivation of colloid-colloid Van der Waals potential
 
 Each volume element in one sphere interacts with each in the other sphere via:
 $$
@@ -181,19 +184,19 @@ W_vdW = van_der_waals_potential(h, R, A_H)
 plotting.simple_plot(h,W_vdW)
 ```
 
-Van der Waals interactions are considered to be **short-range** forces in the sense that their decay rate(e.g. London's $1/r^6$) is much faster than Coulombic interactions ($1/r$). Importantly, since their origin resides in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully accurately account for man-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
+Van der Waals interactions are regarded as **short-range** forces because their decay rate (e.g., London's $1/r^6$) is much faster than that of Coulombic interactions ($1/r$). Importantly, since their origin lies in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully accurately account for many-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
 
 ### Double-layer interaction
 
-Colloids are often charged. The solution they are immersed also has an **inhomogeneous** distribution of ions: there will be
+Colloids are often charged. The solution they are immersed also has an **inhomogeneous** distribution of ions. There will be
 
 -   **co-ions** (same charge as the colloid) that will be pushed away from the colloid surface, while
 
 -   **counter-ions** (opposite charge) will accumulate at the surface.
 
-These two different concentrations of oppositely charged ions form what is called a **double layer** and its property (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
+These two different concentrations of oppositely charged ions form what is called a **double layer** and its properties (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
 
-Suppose we now have two colloids of the same size and charges in the solvent. Th charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
+Suppose we now have two colloids of the same size and total charge in the solvent. The charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -202,16 +205,20 @@ $$
 :::
 
 where $\lambda_D$ is called the **Debye length**
+
 $$
 \lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
 $$
+
 while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the characteristic distance at which two elementary charges have energy $k_B T$ [^soft-matter_colloids-2]
 
-[^soft-matter_colloids-2]: As you see, scaling by $k_B T$ is a recurrent feature of soft matter.
+[^soft-matter_colloids-2]: As you see, scaling by $k_B T$ is a recurrent energy scale of soft matter.
+
 $$
 \lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
 $$
-The coefficient $B$ is a material properties that depend on the surface potential. We are not going more into the details of these features, which are important for the design of colloidal experiments.
+
+The coefficient $B$ is a material property that depends on the surface potential. We are not going into the details of these features, which are however  important for the design of colloidal experiments.
 
 ------------------------------------------------------------------------
 
@@ -282,14 +289,17 @@ Modify the script above and test graphically that:
 ### Steric interactions and depletion interactions
 
 We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle -- Paulis's **exclusion principle** -- is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together.
+We have observed that quantum fluctuations arising from the uncertainty principle can be reformulated through a semi-classical approach into effective short-range interactions (van-der Waals). 
 
-This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^soft-matter_colloids-3].
+Another fundamental quantum principle—Pauli's **exclusion principle**—also plays a key role in generating effective interactions that can be understood in a semi-classical framework. Specifically, the main consequence of the exclusion principle is that, since electrons cannot occupy the same quantum state, there are minimum distances below which atoms cannot be brought together.
+
+This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces that emerge from the overlapping electron clouds, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^soft-matter_colloids-3].
 
 [^soft-matter_colloids-3]: From the Greek στερεός, "solid, three-dimensional".
 
-These fundamentally repulsive interactions mean that that, in a system with $N$ colloids, an additional $N+1$ colloid does not have access to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids.
+These fundamentally repulsive interactions mean that , in a system with $N$ colloids, an additional $N+1$th colloid does not have access to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids.
 
-What is intriguing of these interactions is that, even if they are purely repulsive, they can collectively give rise to effective attractive interactions: **attraction through repulsion**.
+What is intriguing of these interactions is that, even if they are purely repulsive, they can collectively give rise to *effective* attractive interactions: **attraction through repulsion**. The origin of this effect is purely statistical and hence generic.
 
 #### A simple example: particles in a one-dimensional line (*hard rods*)
 
@@ -398,7 +408,7 @@ $$
 
 Changing the separation between the two colloids but maintaining $r>2R_d$ does not change the grand potential: there is no free energy advantage and hence no effective interaction.
 
-Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of tha figur above). Its volume can be calculated simply from geometrical considerations and it is
+Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of the figure above). Its volume can be calculated simply from geometrical considerations, and it is
 $$
 V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
 $$ {#eq-voverlap}
