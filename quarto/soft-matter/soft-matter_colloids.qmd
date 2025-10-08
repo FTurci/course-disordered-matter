@@ -25,7 +25,7 @@ sys.path.insert(0, 'src')
 
 ## Kinds of colloids
 
-Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.
+Colloids are mixtures where one substance is dispersed throughout another. They consist of particles that are larger than typical atoms/molecules but small enough to remain suspended without settling. Examples include milk, fog, and paint.
 
 Colloids can be classified based on the state of the **dispersed phase** and the **dispersion medium**. Depending on the particular mixture, one can obtain a wide variety of soft materials, with unique mechanical, optical, and thermal properties.
 
@@ -52,33 +52,35 @@ Clearly, colloidal materials form an incredibly diverse class, and surround us i
 
 ![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com](figs/colloids.png)
 
-The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**: approximately 1nm to 1µm.
+The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**, which is approximately 1nm to 1µm.
 
-The small sizes of colloids means that they are constantly subject to the collisions with the atom/molecules/particle of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $k_B T$ (the reference energy scale of thermal soft matter). This energy can be compared with the the potential energy to produce a dimensionless number, the **gravitational Péclet number**
+The small size of colloids means that they are constantly subject to collisions with the atoms/molecules/particles of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $1 k_B T$ (the reference energy scale of soft matter). This energy can be compared with the potential energy associated with a displacement of a particle radius to produce a dimensionless number, the **gravitational Péclet number**
 
 $${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
 
-where $R$ is the radius of the colloid respectively, $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only marginally perturbed by the effects of gravity.
+where $R$ is the radius of the colloid respectively, $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only *marginally* perturbed by the effects of gravity.
 
 ## Stability of colloids and colloid-colloid interactions
 
-A colloidal dispersion is said to be **stable** if it is able to remain dispersed and Brownian for a long time (typically, significantly longer than the experimental observation time). Unstable colloids undergo aggregation or sedimentation due to the dominance of attractive forces or gravity.
+A colloidal dispersion is said to be **stable** if it is able to remain dispersed and Brownian for a long time (typically, significantly longer than the experimental observation time). Unstable colloids undergo aggregation or sedimentation due to the dominance of internal *attractive forces* or external fields such as gravity.
 
-For example, consider a colloidal suspension like milk. Milk is an emulsion where fat droplets are dispersed in water and stabilised by proteins. If lemon juice (an acid) is added, the dispersion medium (water) changes, the pH drops, and the emulsion is *destabilised*. This causes the proteins to coagulate, leading to the separation of curds (solid) and whey (liquid).
+For example, consider a colloidal suspension like milk. Milk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins. If lemon juice[^soft-matter_colloids-lemon] is added, the dispersion medium (water) changes, the pH drops, and the emulsion is *destabilised*. This causes the proteins to coagulate, leading to the separation of curds (solid) and whey (liquid).
+
+[^soft-matter_colloids-lemon]: The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative of the logarithm of the concentration of hydrogen atoms.
 
 ![Curds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)](figs/Curds_and_whey.jpg)
 
-It is clear from this example that the nature of the dispersed phase and the dispersed medium ultimately determine the stability of colloidal dispersions. What ultimately matters for the stability is whether the colloids have a propensity to aggregate or not. This propensity is quantified in terms of **colloidal interactions**.
+It is clear from this example that the nature of the dispersed phase and the dispersed medium ultimately determines the stability of colloidal dispersions. What ultimately matters for the stability is whether the colloids have a propensity to aggregate or not. This propensity is quantified in terms of **colloidal interactions**.
 
 ### Fundamental and effective forces
 
-At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro (and occasionally magneto) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect for a non magnetic colloid (which is the vast majority of colloidal systems) only electrostatic forces are fundamentally important.
+At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro- (and occasionally magneto-) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect, for a non-magnetic colloid (which is the vast majority of colloidal systems), only electrostatic forces are fundamentally important.
 
-However, colloidal dispersions consist of large particles carrying many charges both in the dispersed phase and the surrounding medium, arranged disorderly at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is the one of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale take place and we can think of taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-1].
+However, colloidal dispersions consist of large particles that carry many charges both in the dispersed phase and the surrounding medium, arranged in a disordered manner at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is that of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale occur, and we can consider taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-1].
 
 [^soft-matter_colloids-1]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
 
-This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
+This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic spatial fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
 There are many examples of such effective forces [@lekkerkerker2024colloids]. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double layer interaction and the depletion interaction. We detail them here below.
 
@@ -91,7 +93,6 @@ More in general, neutral atom or molecules have electronic clouds that are fluct
 The interaction energy between two dipoles $\mu_1$ and $\mu_2$ separated by a distance $r$ is proportional to: $$
 U \propto -\frac{\mu_1 \mu_2}{r^3}
 $$
-
 ::: column-margin
 ::: {.content-visible when-format="live-html"}
 ![Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases.](figs/Johannes_Diderik_van_der_Waals.jpg){width="150" fig-align="left"}
@@ -126,17 +127,13 @@ $$f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h
 # Sketch of a derivation of colloid-colloid Van der Waals potential
 
 Each volume element in one sphere interacts with each in the other sphere via:
-
 $$
 \phi(r) = -\frac{C}{r^6}
 $$
-
 So the total interaction energy is:
-
 $$
 U(h) = -C \iint \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|^6} \, dV_1 \, dV_2
 $$
-
 Let:
 
 -   Sphere 1 be centered at $(0, 0, 0)$,
@@ -144,31 +141,22 @@ Let:
 -   $\mathbf{r}_1 = \mathbf{r}$, $\mathbf{r}_2 = \mathbf{r}'$
 
 Then $|\mathbf{r}_1 - \mathbf{r}_2| = |\mathbf{r} - \mathbf{r}'|$, and the integral becomes:
-
 $$
 U(h) = -C \iiint_{|\mathbf{r}| \leq R} \iiint_{|\mathbf{r}' - h\hat{z}| \leq R} \frac{1}{|\mathbf{r} - \mathbf{r}'|^6} \, d^3\mathbf{r} \, d^3\mathbf{r}'
 $$
-
 Hamaker evaluated this by integrating over the **densities of interacting atoms** with number density $\rho$ in both spheres. The result:
-
 $$
 U(h) = -\rho^2 C \iint \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|^6} \, dV_1 \, dV_2
 $$
-
 Defining the **Hamaker constant**:
-
 $$
 A_H = \pi^2 \rho^2 C
 $$
-
 So,
-
 $$
 U(h) = -\frac{A_H}{\pi^2} \iint \frac{1}{|\mathbf{r}_1 - \mathbf{r}_2|^6} \, dV_1 \, dV_2
 $$
-
 This six-dimensional integral can be evaluated analytically for spheres, yielding:
-
 $$
 U(h) = -\frac{A_H}{6} \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]
 $$
@@ -214,19 +202,15 @@ $$
 :::
 
 where $\lambda_D$ is called the **Debye length**
-
 $$
 \lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
 $$
-
 while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the characteristic distance at which two elementary charges have energy $k_B T$ [^soft-matter_colloids-2]
 
 [^soft-matter_colloids-2]: As you see, scaling by $k_B T$ is a recurrent feature of soft matter.
-
 $$
 \lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
 $$
-
 The coefficient $B$ is a material properties that depend on the surface potential. We are not going more into the details of these features, which are important for the design of colloidal experiments.
 
 ------------------------------------------------------------------------
@@ -417,7 +401,7 @@ Changing the separation between the two colloids but maintaining $r>2R_d$ does n
 Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of tha figur above). Its volume can be calculated simply from geometrical considerations and it is
 $$
 V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
-$${#eq-voverlap}
+$$ {#eq-voverlap}
 
 Th new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as 
 
@@ -723,7 +707,7 @@ In contrast, **random close packing** (the densest disordered arrangement of sph
  A simple **cell model** can help us rationalise what is taking place. When the spheres are packed within their FCC cell, they can move very little beyond their own diameter $\sigma$. Assume that the volume per particle again is $v$ and the (geometrically consrained) close packed volume is $v_{cp}$.
 
  The maximum dispalcement is 
- $$
+$$
 \delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
 $$
 The corresponding free volume is then $v_f=\frac{4 \pi}{3} \delta^3$ from which we can calculate the entropy
@@ -951,7 +935,7 @@ The $g(r)$ contains both direct and indirect correlations. We can assume that a 
 
 $$
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
-$${#eq-oz}
+$$ {#eq-oz}
 
 where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes an algebraic equation
 $$
@@ -1169,11 +1153,11 @@ We are interested in the mean squared displacement $\left\langle r^{2}(t)\right\
 where the meaning of the subscript 0 will be apparent shortly.
 
  For sufficiently dense hard spheres (e.g. above $\phi \sim 0.3$), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. 
- 
+
  While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $$\langle r^{2}(t)\rangle \propto t$$ when the particles undergo large-scale random-walk diffusion through many cages. 
- 
+
  However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. 
- 
+
 ```{python}
 #| echo: false
 
