@@ -250,6 +250,10 @@ window.Quarto = {
   <li><a href="#mean-field-theory-of-the-ising-model-heat-capacity" id="toc-mean-field-theory-of-the-ising-model-heat-capacity" class="nav-link" data-scroll-target="#mean-field-theory-of-the-ising-model-heat-capacity">4. Mean field theory of the Ising model heat capacity</a></li>
   <li><a href="#magnetisation-and-fluctuations" id="toc-magnetisation-and-fluctuations" class="nav-link" data-scroll-target="#magnetisation-and-fluctuations">5. Magnetisation and fluctuations</a></li>
   <li><a href="#spin-1-ising-model" id="toc-spin-1-ising-model" class="nav-link" data-scroll-target="#spin-1-ising-model">6. Spin-1 Ising model</a></li>
+  <li><a href="#transfer-matrix" id="toc-transfer-matrix" class="nav-link" data-scroll-target="#transfer-matrix">7. Transfer Matrix</a></li>
+  <li><a href="#landau-theory" id="toc-landau-theory" class="nav-link" data-scroll-target="#landau-theory">8. Landau theory</a></li>
+  <li><a href="#scaling-equation-of-state" id="toc-scaling-equation-of-state" class="nav-link" data-scroll-target="#scaling-equation-of-state">9. Scaling equation of state</a></li>
+  <li><a href="#scaling-laws" id="toc-scaling-laws" class="nav-link" data-scroll-target="#scaling-laws">10. Scaling laws</a></li>
   </ul>
 </nav>
     </div>
@@ -478,6 +482,146 @@ m \approx \frac{2(\beta J q m)}{1+2} = \frac{2}{3}\,\beta J q\, m .
 k_B T_c = \frac{2}{3}\, J q .
 \]</span></p>
 <hr>
+</section>
+<section id="transfer-matrix" class="level3">
+<h3 class="anchored" data-anchor-id="transfer-matrix">7. Transfer Matrix</h3>
+<p>The transfer matrix is a list of the possible interactions of a pair of spins with one another and with a magnetic field. For a 1d spin-1/2 system it takes the form: <span class="math display">\[
+\mathbf{V}(H)=\begin{bmatrix}
+e^{\beta(J+H)} &amp; e^{-\beta J} \\
+e^{-\beta J}   &amp; e^{\beta(J-H)}
+\end{bmatrix}
+\]</span> We need to find the eigenvalues, so we solve the characteristic equation det(<span class="math inline">\(\mathbf{V}-\lambda \mathbf{I})=0\)</span>, i.e.</p>
+<p><span class="math display">\[
+\mathbf{V}(H)=\begin{vmatrix}
+e^{\beta(J+H)} -\lambda &amp; e^{-\beta J} \\
+e^{-\beta J}   &amp; e^{\beta(J-H)}-\lambda
+\end{vmatrix} =0
+\]</span></p>
+<p>Then <span class="math inline">\(\lambda^2-(a+d)\lambda+(ad-bc)=0\)</span>. So</p>
+<p><span class="math display">\[\begin{align*}
+\lambda_\pm =&amp; \frac{a+d\pm\sqrt{(a+d)^2-4(ad-bc)}}{2}\\
+\lambda_{\pm} =&amp; e^{\beta J}\cosh(\beta H) \pm \frac{1}{2}\sqrt{e^{2\beta J}4\cosh^2\beta H-4(e^{2\beta J}-e^{-2\beta J})}\\
+\lambda_{\pm} =&amp; e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.
+\end{align*}\]</span></p>
+<p>(You’ll need the identity <span class="math inline">\(\cosh^2 x-\sinh^2 x = 1\)</span>).</p>
+<p>From lectures, you should know that the partition function</p>
+<p><span class="math display">\[\begin{align}
+Z=\textrm{Tr}(\mathbf{V}^N)=&amp;\lambda_+^N+\lambda_-^N\\
+\approx &amp; \lambda_+^N \hspace{5mm}\textrm{N~large}
+\end{align}\]</span></p>
+<p>where <span class="math inline">\(\lambda_+\)</span> is the largest of the two evals.</p>
+<p>Hence the free energy <span class="math inline">\(F=-k_BT\ln(Z)\)</span> can be written</p>
+<p><span class="math display">\[
+F=-Nk_BT\ln \left[e^{\beta J}\cosh(\beta H) + \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}\right].
+\]</span></p>
+<p>Now the magnetisation per site is</p>
+<p><span class="math display">\[
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\frac{k_BT}{\lambda_+}\frac{\partial \lambda_+}{\partial H}
+\]</span></p>
+<p>You can either be a hero here, or use a symbolic solution program like Maple or Wolfram Alpha. I did the latter to find the stated result.</p>
+<p><span class="math display">\[
+m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{(-4\beta J)}}}
+\]</span></p>
+<p>Hence at zero <span class="math inline">\(H\)</span>, there is no spontaneous magnetisation at any <span class="math inline">\(T\)</span>.</p>
+<hr>
+</section>
+<section id="landau-theory" class="level3">
+<h3 class="anchored" data-anchor-id="landau-theory">8. Landau theory</h3>
+<p>If this were an Ising model problem (ie a microscopic model) we could write down the partition function, get an explicit expression for the free energy and differentiate once (wrt <span class="math inline">\(T\)</span>) to get the energy and again (wrt <span class="math inline">\(T\)</span>) to get the heat capacity. But the starting point for Landau theory is the free energy itself, so we need another starting point, namely thermodynamics. The appropriate thermodynamic potential for the magnet is <span class="math inline">\(F=E-TS-MH\)</span> with <span class="math inline">\(E\)</span> the internal energy. Then <span class="math display">\[
+\begin{align*}
+dF =&amp; dE-TdS-SdT-MdH-HdM\\
+\: =&amp; TdS+HdM-TdS-SdT-MdH-HdM\\
+\: =&amp; -SdT-MdH
+\end{align*}
+\]</span> where we have used the first law for a magnet <span class="math inline">\(dE=TdS+HdM\)</span>.</p>
+<p>Thus</p>
+<p><span class="math display">\[\begin{align*}
+\left(\frac{\partial F}{\partial T}\right)_H =&amp; -S\\
+-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H =&amp;T\frac{dS}{dT}=\frac{dQ}{dT}\\ C_H=-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H
+\end{align*}\]</span></p>
+<p>where <span class="math inline">\(C_H\)</span> is the specific heat at constant field and we have used the fact that <span class="math inline">\(dS=dQ/T\)</span>.</p>
+<p>Now from lectures, the equilibrium magnetisation in the Landau free energy is given by</p>
+<p><span class="math display">\[
+m^2=\frac{-a_2}{2a_4}
+\]</span> for <span class="math inline">\(T&lt;T_c\)</span> and zero otherwise. Substituting this into the Landau free energy <span class="math inline">\(F=F_0+a_2m^2+a_4m^4\)</span> gives</p>
+<p><span class="math display">\[\begin{align*}
+F = F_0 &amp; \quad T&gt;T_c\\
+F = -a_2^2/4a_4 &amp; \quad T &lt; T_c
+\end{align*}\]</span></p>
+<p>Using the fact that <span class="math inline">\(a_2=\tilde{a_2} t\)</span>, with <span class="math inline">\(t=(T-T_c)/T_c\)</span> and differentiating wrt <span class="math inline">\(T\)</span> twice, to get the heat capacity, we find</p>
+<p><span class="math display">\[\begin{align*}
+C_H =  0; &amp; \quad T\to T_c^+\\
+C_H = \frac{T\tilde a_2^2}{2a_4T_c^2}; &amp; \quad T \to T_c^-\:,
+\end{align*}\]</span> The jump discontinuity rather that a divergence in the specific heat at <span class="math inline">\(T=T_c\)</span> formally corresponds to a critical exponent <span class="math inline">\(\alpha=0\)</span>.</p>
+<p>To get the susceptibility exponent, we add a magnetic field to the free energy</p>
+<p><span class="math display">\[
+F(m)=F_0+a_2m^2+a_4m^4-Hm
+\]</span></p>
+<p>Then the equilibrium magnetisation satisfies</p>
+<p><span class="math display">\[\begin{align*}
+\frac{dF}{dm} =&amp;2\tilde{a_2} tm+4a_4m^3-H=0\\
+\Rightarrow H =&amp;2\tilde{a_2} tm+4a_4m^3\\
+\Rightarrow \left(\frac{\partial H}{\partial m}\right )_T =&amp;2\tilde{a_2} t+12a_4m^2
+\end{align*}\]</span> Now using the results that <span class="math inline">\(m^2=0\)</span> for <span class="math inline">\(t&gt;0\)</span> and <span class="math inline">\(m^2=-\tilde{a_2}t/(2a_4)\)</span> for <span class="math inline">\(t&lt;0\)</span>, we have that in both cases</p>
+<p><span class="math display">\[
+\left(\frac{\partial H}{\partial m}\right )_T\propto t
+\]</span></p>
+<p>Hence</p>
+<p><span class="math display">\[
+\left(\frac{\partial m}{\partial H}\right )_T\propto t^{-1}
+\]</span> so <span class="math inline">\(\gamma=1\)</span>.</p>
+<hr>
+</section>
+<section id="scaling-equation-of-state" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-equation-of-state">9. Scaling equation of state</h3>
+<p>The equilibrium state corresponds to the minimum of the free energy <span class="math inline">\(\partial F/\partial M=0\)</span>. This gives the equation of state</p>
+<p><span class="math display">\[
+H=2\tilde{a_2}tm+4a_4m^3
+\]</span> (Note that we ignore the solution <span class="math inline">\(H=m=0\)</span> which corresponds to a maximum of the free energy.)</p>
+<p>The near critical power law scaling of the magnetisation is <span class="math inline">\(m\propto t^\beta\)</span> and <span class="math inline">\(m\propto H^{1/\delta}\)</span>. To find a scaling form for the equation of state we need to transform to scaled variables <span class="math inline">\(H/m^\delta\)</span> and <span class="math inline">\(t/m^{1/\beta}\)</span>. We can get a scaling equation in terms of these variables by dividing through the equation of state by <span class="math inline">\(m^3\)</span>, so that</p>
+<p><span class="math display">\[
+\frac{H}{m^{3}}=\frac{2\tilde{a_2}t}{m^2}+4a_4
+\]</span></p>
+<p>Hence <span class="math inline">\(\delta=3\)</span> and <span class="math inline">\(\beta=1/2\)</span>.</p>
+<p>The choice of scale <span class="math inline">\(a_4=1/4\)</span> and <span class="math inline">\(\tilde{a_2}=1/2\)</span> yields the given form of the scaling function.</p>
+<hr>
+</section>
+<section id="scaling-laws" class="level3">
+<h3 class="anchored" data-anchor-id="scaling-laws">10. Scaling laws</h3>
+<p>First of all recall the definition of the critical exponents: <span class="math display">\[\begin{align*}
+m       \propto  t^{\beta};&amp; \quad (h=0) \\
+\chi_T  \propto  t^{-\gamma};&amp;\quad (h=0) \\
+C_H  \propto  t^{-\alpha};&amp; \quad (h=0) \\
+m  \propto  h^{1/\delta}.&amp; \quad (t=0) \\
+\end{align*}\]</span></p>
+<p>The free energy in generalised homogeneous form is</p>
+<p><span class="math display">\[
+F(\lambda^a t,\lambda^b h)=\lambda F(t,h)
+\]</span></p>
+<p>The first of the scaling relations to be derived was covered in lectures: Let <span class="math inline">\(\lambda^a=1/t\)</span>, so that <span class="math inline">\(\lambda=t^{-1/a}\)</span>. Then</p>
+<p><span class="math display">\[\begin{align*}
+F(t,h)=&amp;t^{1/a}F(1,t^{-b/a}h)\\
+m(t,h)=&amp;-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\frac{\partial F(1,y)}{\partial y}\right|_{ht^{-b/a}}=t^{(1-b)/a}m(1,ht^{-b/a})
+\end{align*}\]</span></p>
+<p>so when <span class="math inline">\(h=0\)</span>, we have <span class="math inline">\(m(1,t^{-b/a}h)=m(1,0)=\textrm{ const}\)</span> and hence we can identify <span class="math inline">\(\boxed{\beta=(1-b)/a}\)</span>.</p>
+<p>We also have for the isothermal susceptibility</p>
+<p><span class="math display">\[
+\chi=\left(\frac{\partial m}{\partial h}\right)_t=-t^{(1-2b)/a}\left.\frac{\partial^2 F(1,y)}{\partial y^2}\right|_{ht^{-b/a}},
+\]</span> so taking again <span class="math inline">\(h=0\)</span>, we find <span class="math inline">\(\boxed{\gamma=(2b-1)/a}\)</span>.</p>
+<p>For the specific heat at constant (zero) field, we have the definition: <span class="math display">\[
+C_H = \left(\frac{\partial E}{\partial T}\right)_{h=0}=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\:,
+\]</span> where in the last step have used <span class="math inline">\(E=-\partial (\beta F)/\partial\beta\)</span>, with <span class="math inline">\(\beta=(k_BT)^{-1}\)</span> (see fig 2.1 in notes). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from <span class="math inline">\(T\)</span> to <span class="math inline">\(t=(T-T_c)/T_c\)</span> and inserting the generalised homogeneous form for <span class="math inline">\(F\)</span> gives:</p>
+<p><span class="math display">\[\begin{align*}
+C_H =&amp; -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H \approx&amp; -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H =&amp; -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
+\end{align*}\]</span> Here we have neglected all derivatives of <span class="math inline">\(F\)</span> since they are multiplied by at least one power of <span class="math inline">\(h\)</span> which is zero. Hence <span class="math inline">\(\boxed{\alpha=2-1/a}\)</span>.</p>
+<p>Finally, if we let <span class="math inline">\(\lambda^b=1/h\)</span>, so that <span class="math inline">\(\lambda=h^{-1/b}\)</span> and consider the critical isotherm <span class="math inline">\(t=0\)</span>. Then</p>
+<p><span class="math display">\[\begin{align*}
+F(t,h)=&amp;h^{1/b}F(h^{-a/b}t,1)\\
+\Rightarrow m(t,h)=&amp; \frac{ta}{b}h^{(1-a-b)/b}\left.\frac{\partial F(x,1)}{\partial x}\right|_{h^{-a/b}t}-\frac{1}{b}h^{1/b-1}F(h^{-a/b}t,1).
+\end{align*}\]</span> so when <span class="math inline">\(t=0\)</span>, we get <span class="math inline">\(m(0,h)\)</span> and can identify <span class="math inline">\(\boxed{\delta=b/(1-b)}\)</span>.</p>
+<p>To derive the relationships (``scaling laws’’) among the critical exponents, we eliminate <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the boxed scaling relations. Setting <span class="math inline">\(a=(2-\alpha)^{-1}\)</span> in the first scaling relation, we find <span class="math inline">\(b=1-\beta/(2-\alpha)\)</span>. Substituting this into the second scaling relation gives the second of the two scaling laws quoted in the notes. Substituting into the 4th scaling relation gives the first scaling law.</p>
 
 
 <script type="ojs-module-contents">
