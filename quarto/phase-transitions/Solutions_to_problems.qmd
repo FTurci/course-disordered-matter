@@ -374,15 +374,17 @@ free energy and differentiate once (wrt $T$) to get the energy and again
 (wrt $T$) to get the heat capacity. But the
 starting point for Landau theory is the free energy itself, so we need
 another starting point, namely thermodynamics. The appropriate
-thermodynamic potential for the magnet is $F=U-TS-MH$ with $U$ the internal
+thermodynamic potential for the magnet is $F=E-TS-MH$ with $E$ the internal
 energy. Then 
 $$
 \begin{align*}
-dF =& dU-TdS-SdT-MdH-HdM\\
+dF =& dE-TdS-SdT-MdH-HdM\\
 \: =& TdS+HdM-TdS-SdT-MdH-HdM\\
 \: =& -SdT-MdH
 \end{align*}
-where we have used the first law for a magnet $dU=TdS+HdM$, 
+$$
+where we have used the first law for a magnet $dE=TdS+HdM$.
+
 Thus
 
 \begin{align*}
@@ -460,7 +462,7 @@ scaling form for the equation of state we need to transform to scaled variables 
 a scaling equation in terms of these variables by dividing through the equation of state by $m^3$, so that
 
 $$
-\frac{H}{m^{3}}=g\left(\frac{2\tilde{a_2}t}{m^2}\right)+4a_4
+\frac{H}{m^{3}}=\frac{2\tilde{a_2}t}{m^2}+4a_4
 $$
 
 Hence $\delta=3$ and $\beta=1/2$. 
@@ -506,7 +508,7 @@ For the specific heat at constant (zero) field, we have the definition:
 $$
 C_H = \left(\frac{\partial E}{\partial T}\right)_{h=0}=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\:,
 $$
-where in the last step have used $E=-\partial (\beta F)/\partial\beta$, with $\beta=(k_BT)^{-1}$ (see fig X). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from $T$ to $t=(T-T_c)/T_c$ and inserting the generalised homogeneous form for $F$ gives:
+where in the last step have used $E=-\partial (\beta F)/\partial\beta$, with $\beta=(k_BT)^{-1}$ (see fig 2.1 in notes). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from $T$ to $t=(T-T_c)/T_c$ and inserting the generalised homogeneous form for $F$ gives:
 
 \begin{align*}
 C_H =& -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\

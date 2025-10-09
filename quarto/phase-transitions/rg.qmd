@@ -211,8 +211,10 @@ have a trivial character for $T>T_c$, (a perfectly disordered
 arrangement) and $T< T_c$, (a perfectly ordered arrangement). The hallmark of the critical
 point is the existence of a scale-invariant limit which is neither fully
 ordered nor fully disordered but which possesses structure on all length
-scales. A nice illustration of these points can be viewed [here](https://www.youtube.com/watch?v=MxRddFrEnPc).
- 
+scales. 
+
+A nice illustration of these points made by my former postdoc Douglas Ashton can be viewed [here](https://www.youtube.com/watch?v=MxRddFrEnPc).
+
 ## Universality and Scaling
 
 Equipped with the coarse-graining technique, we now address the
@@ -321,7 +323,7 @@ components $n$ of the order parameter. Up to now, we have only
 considered order parameters which are scalar (for a fluid the density,
 for a magnet the magnetisation), for which $n=1$. In some ferromagnets,
 the order parameter may have components along two axes, or three axes,
-implying a vector order parameter, with $n=2$ (the solcalled XY model) or $n=3$ (Heisenberg model), respectively. It
+implying a vector order parameter, with $n=2$ (the so called XY model) or $n=3$ (Heisenberg model), respectively. It
 is clear that the order-parameter $n$-value will be reflected in the
 nature of the coarse-grained configurations, and thus in the universal
 observables they imply.

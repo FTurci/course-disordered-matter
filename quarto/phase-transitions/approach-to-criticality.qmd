@@ -42,7 +42,7 @@ this unfortunately is the standard notation.)
 
 Finally, as a function of magnetic field:
 
-$$m \propto h^{1/\delta} ~~~~ (T = T_c,\: H>0) .$${#eq-field}
+$$m \propto h^{1/\delta} ~~~~ (T = T_c,\: |H|>0) .$${#eq-field}
 with $h=(H-H_c)/H_c$, the reduced magnetic field.
 
 As examples, the behaviour of the magnetisation and correlation length
