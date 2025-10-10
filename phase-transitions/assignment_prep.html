@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; The Static Scaling Hypothesis</title>
+<title>PHYSM0071: First coursework assignment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../phase-transitions/rg.html" rel="next">
-<link href="../phase-transitions/mean-field-theory.html" rel="prev">
+<link href="../phase-transitions/Solutions_partial.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +114,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/scaling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/assignment_prep.html">Preparation for first coursework assignment</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -193,7 +192,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link active">
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
   </div>
 </li>
@@ -235,7 +234,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/assignment_prep.html" class="sidebar-item-text sidebar-link">
+  <a href="../phase-transitions/assignment_prep.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Preparation for first coursework assignment</span></a>
   </div>
 </li>
@@ -251,17 +250,30 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#experimental-verification-of-scaling" id="toc-experimental-verification-of-scaling" class="nav-link active" data-scroll-target="#experimental-verification-of-scaling"><span class="header-section-number">6.1</span> Experimental Verification of Scaling</a></li>
-  <li><a href="#sec-compsim" id="toc-sec-compsim" class="nav-link" data-scroll-target="#sec-compsim"><span class="header-section-number">6.2</span> Computer simulation</a></li>
+  <li><a href="#introduction-and-background" id="toc-introduction-and-background" class="nav-link active" data-scroll-target="#introduction-and-background">1. Introduction and background</a>
+  <ul class="collapse">
+  <li><a href="#mapping-between-lattice-gas-and-ising-model" id="toc-mapping-between-lattice-gas-and-ising-model" class="nav-link" data-scroll-target="#mapping-between-lattice-gas-and-ising-model">1.1 Mapping between lattice gas and Ising model</a></li>
+  <li><a href="#phase-diagram" id="toc-phase-diagram" class="nav-link" data-scroll-target="#phase-diagram">1.2 Phase diagram</a></li>
+  </ul></li>
+  <li><a href="#monte-carlo-simulation" id="toc-monte-carlo-simulation" class="nav-link" data-scroll-target="#monte-carlo-simulation">2. Monte Carlo Simulation</a>
+  <ul class="collapse">
+  <li><a href="#grand-canonical-monte-carlo-gcmc-algorithm" id="toc-grand-canonical-monte-carlo-gcmc-algorithm" class="nav-link" data-scroll-target="#grand-canonical-monte-carlo-gcmc-algorithm">2.1 Grand Canonical Monte Carlo (GCMC) algorithm</a></li>
+  <li><a href="#fixed-particle-number-case-canonical-ensemble" id="toc-fixed-particle-number-case-canonical-ensemble" class="nav-link" data-scroll-target="#fixed-particle-number-case-canonical-ensemble">2.2 Fixed-Particle-Number Case (Canonical Ensemble)</a></li>
+  <li><a href="#observables-and-measurement" id="toc-observables-and-measurement" class="nav-link" data-scroll-target="#observables-and-measurement">2.3 Observables and measurement</a></li>
+  </ul></li>
+  <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">3. The assignment</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup">3.1 Setup</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/scaling.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/assignment_prep.html">Preparation for first coursework assignment</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The Static Scaling Hypothesis</span></h1>
+<h1 class="title"><span id="coursework" class="quarto-section-identifier">PHYSM0071: First coursework assignment</span></h1>
 </div>
 
 
@@ -278,66 +290,152 @@ window.Quarto = {
 </header>
 
 
-<p>Historically, the first step towards properly elucidating near-critical behaviour was taken with the static scaling hypothesis. This is essentially a plausible conjecture concerning the origin of power law behaviour which appears to be consistent with observed phenomena. According to the hypothesis, the basis for power law behaviour (and associated scale invariance or “scaling”) in near-critical systems is expressed in the claim that: in the neighbourhood of a critical point, the basic thermodynamic functions (most notably the free energy) are <em>generalized homogeneous functions</em> of their variables. For such functions one can always deduce a scaling law such that by an appropriate change of scale, the dependence on two variables (e.g.&nbsp;the temperature and applied field) can be reduced to dependence on one new variable. This claim may be warranted by the following general argument.</p>
-<p>A function of two variables <span class="math inline">\(g(u,v)\)</span> is called a generalized homogeneous function if it has the property</p>
-<p><span class="math display">\[g(\lambda^au,\lambda^bv)=\lambda g(u,v)\]</span> <strong>for all <span class="math inline">\(\lambda\)</span></strong>, where the parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> (known as scaling parameters) are constants. An example of such a function is <span class="math inline">\(g(u,v)=u^3+v^2\)</span> with <span class="math inline">\(a=1/3, b=1/2\)</span>.</p>
-<p>Now, the arbitrary scale factor <span class="math inline">\(\lambda\)</span> can be redefined without loss of generality as <span class="math inline">\(\lambda^a=u^{-1}\)</span> giving</p>
-<p><span class="math display">\[g(u,v)=u^{1/a}g(1,\frac{v}{u^{b/a}})\]</span> A corresponding relation is obtained by choosing the rescaling to be <span class="math inline">\(\lambda^b=v^{-1}\)</span>.</p>
-<p><span class="math display">\[\label{eq:sca2}
-g(u,v)=v^{1/b}g(\frac{u}{v^{a/b}},1)\]</span></p>
-<p>This equation demonstrates that <span class="math inline">\(g(u,v)\)</span> indeed satisfies a simple power law in <span class="math inline">\(\mathit{one}\)</span> variable, subject to the constraint that <span class="math inline">\(u/v^{a/b}\)</span> is a constant. It should be stressed, however, that such a scaling relation specifies neither the function <span class="math inline">\(g\)</span> nor the parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
-<p>Now, the static scaling hypothesis asserts that in the critical region, the free energy <span class="math inline">\(F\)</span> is a generalized homogeneous function of the (reduced) thermodynamic fields <span class="math inline">\(t=(T-T_c)/T_c\)</span> and <span class="math inline">\(h=(H-H_c)\)</span>. Remaining with the example ferromagnet, the following scaling assumption can then be made:</p>
-<p><span class="math display">\[F(\lambda^a t,\lambda^b h)=\lambda F(t,h) \:.
-\label{eq:scagibbs}\]</span></p>
-<p>Without loss of generality, we can set <span class="math inline">\(\lambda^a=t^{-1}\)</span>, implying <span class="math inline">\(\lambda=t^{-1/a}\)</span> and <span class="math inline">\(\lambda^b=t^{-b/a}\)</span>.</p>
-<p>Then <span class="math display">\[F(t,h)=t^{1/a}F(1,t^{-b/a}h)\]</span> where our choice of <span class="math inline">\(\lambda\)</span> ensures that <span class="math inline">\(F\)</span> on the rhs is now a function of a single variable <span class="math inline">\(t^{-b/a}h\)</span>.</p>
-<p>Now, as stated in <a href="background.html" class="quarto-xref"><span>Chapter 2</span></a>, the free energy provides the route to all thermodynamic functions of interest. An expression for the magnetisation can be obtained simply by taking the field derivative of <span class="math inline">\(F\)</span> (cf. <a href="background.html#fig-thermo" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>)</p>
-<p><span id="eq-magscale"><span class="math display">\[m(t,h)=-t^{(1-b)/a}m(1,t^{-b/a}h)
-\tag{6.1}\]</span></span></p>
-<p>In zero applied field <span class="math inline">\(h=0\)</span>, this reduces to</p>
-<p><span class="math display">\[m(t,0)=(-t)^{(1-b)/a}m(1,0)\]</span> where the r.h.s. is a power law in <span class="math inline">\(t\)</span>. <a href="approach-to-criticality.html#eq-mag" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> then allows identification of the exponent <span class="math inline">\(\beta\)</span> in terms of the scaling parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
-<p><span class="math display">\[\beta=\frac{1-b}{a}\]</span></p>
-<p>By taking further appropriate derivatives of the free energy, other relations between scaling parameters and critical exponents may be deduced. Such calculations (<em>Exercise: try to derive them</em>) yield the results <span class="math inline">\(\delta =
-b/(1-b)\)</span>,<span class="math inline">\(\gamma = (2b-1)/a\)</span>, and <span class="math inline">\(\alpha =(2a-1)/a\)</span> . Relationships between the critical exponents themselves can be obtained trivially by eliminating the scaling parameters from these equations. The principal results (known as “scaling laws”) are:- <span class="math display">\[
-\begin{aligned}
-\alpha+\beta(\delta+1)=2 \\
-\alpha+2\beta+\gamma=2
-\end{aligned}
-\]</span></p>
-<p>Thus, provided all critical exponents can be expressed in terms of the scaling parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, then only two critical exponents need be specified, for all others to be deduced. Of course these scaling laws are also expected to hold for the appropriate thermodynamic functions of analogous systems such as the liquid-gas critical point.</p>
-<section id="experimental-verification-of-scaling" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="experimental-verification-of-scaling"><span class="header-section-number">6.1</span> Experimental Verification of Scaling</h2>
-<p>The validity of the scaling hypothesis finds startling verification in experiment. To facilitate contact with experimental data for real systems, consider again <a href="#eq-magscale" class="quarto-xref">Equation&nbsp;<span>6.1</span></a>. Eliminating the scaling parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in favour of the exponents <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\delta\)</span> gives</p>
+<section id="introduction-and-background" class="level1">
+<h1>1. Introduction and background</h1>
+<p>In this coursework assignment, you will explore the phenomena of spatial correlations and their relationship to phase behaviour in a simple lattice gas model. This model is a crude representation of a fluid in which particles can occupy the sites of a hypercubic lattice. The occupancy of a site <span class="math inline">\(i\)</span> is specified by the variable <span class="math inline">\(c_i=1\)</span> (occupied) or <span class="math inline">\(c_i=0\)</span> vacant. The complete list of these occupancies <span class="math inline">\(\{c\}\)</span> specifies a microstate. The instantaneous particle number density (fraction of occupied sites) is given by</p>
 <p><span class="math display">\[
-\frac{m(t,h)}{t^{\beta}}=m(1,\frac{h}{t^{\beta\delta}})
-\]</span> where the RHS of this last equation can be regarded as a function of the single scaled variable <span class="math inline">\(\tilde{H} \equiv t^{-\beta\delta} h(t,M)\)</span>.</p>
-<p>For some particular magnetic system, one can perform an experiment in which one measures <span class="math inline">\(m\)</span> vs <span class="math inline">\(h\)</span> for various fixed temperatures. This allows one to draw a set of isotherms, i.e.&nbsp;<span class="math inline">\(m-h\)</span> curves of constant <span class="math inline">\(t\)</span>. These can be used to demonstrate scaling by plotting the data against the scaling variables <span class="math inline">\(M=t^{-\beta}m(t,h)\)</span> and <span class="math inline">\(\tilde{H}=t^{-\beta\delta}h(t,M)\)</span>. Under this scale transformation, it is found that all isotherms (for <span class="math inline">\(t\)</span> close to zero) coincide to within experimental error. Reassuringly, similar results are found using the scaled equation of state of simple fluid systems such as He<span class="math inline">\(^3\)</span> or Xe.</p>
-<div id="fig-scalingexp" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scalingexp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/scaling.png" class="img-fluid figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scalingexp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.1: Magnetisation of CrBr<span class="math inline">\(_3\)</span> in the critical region plotted in scaled form (see text). From <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.22.603">Ho and Lister (1969)</a>.
-</figcaption>
-</figure>
-</div>
-<p>In summary, the static scaling hypothesis is remarkably successful in providing a foundation for the observation of power laws and scaling phenomena. However, it furnishes little or no guidance regarding the role of co-operative phenomena at the critical point. In particular it provides no means for calculating the values of the critical exponents appropriate to given model systems.</p>
+\rho=L^{-d}\sum_i c_i
+\]</span></p>
+<p>where <span class="math inline">\(L\)</span> is the linear extent of the lattice (i.e.&nbsp;the number of unit cells along a coordinate axis) and <span class="math inline">\(d\)</span> its dimensionality.</p>
+<p>Within the Grand Canonical ensemble (see precourse reading) the Hamiltonian of the lattice gas model is</p>
+<p><span class="math display">\[{\cal H}_{LG}=-\epsilon\sum_{&lt;i,j&gt;}c_ic_j - \mu\sum_ic_i\]</span></p>
+<p>where <span class="math inline">\(\epsilon\)</span> is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and <span class="math inline">\(\mu\)</span> is a field known as the chemical potential which couples to the particle number density <span class="math inline">\(\rho\)</span>. The number density typically fluctuates around a mean value controlled by the prescribed value of <span class="math inline">\(\mu\)</span>.</p>
+<p>One can also consider the model under conditions in which the particle number is fixed to some prescribed value - then there is no chemical potential and the corresponding set of microstates define the canonical ensemble (see precourse reading) of the lattice gas at that density.</p>
+<section id="mapping-between-lattice-gas-and-ising-model" class="level2">
+<h2 class="anchored" data-anchor-id="mapping-between-lattice-gas-and-ising-model">1.1 Mapping between lattice gas and Ising model</h2>
+<p>The lattice gas model is interesting because whilst being a plausible model for a fluid, it maps onto the Ising model. We say that they are <em>isomorphic</em> to one another. This isomorphism extends the applicability of the Ising model. To expose the mapping we write the grand partition function of the lattice gas:</p>
+<p><span class="math display">\[ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{&lt;i,j&gt;}c_ic_j +\beta\mu\sum_ic_i\right] \]</span> where the sum runs over all possible combinations of occupancies of the lattice sites.</p>
+<p>We now change variables to</p>
+<p><span class="math display">\[c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4}; ~~~~
+h=\frac{\epsilon q+2\mu}{4},
+\]</span> where <span class="math inline">\(q\)</span> is the lattice coordination number.</p>
+<p>One finds,</p>
+<p><span class="math display">\[{\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}\]</span> Since the last term does not depend on the configuration, it feeds through as an additive constant in the free energy; and since all observables feature as derivatives of the free energy, the constant has no physical implications.</p>
 </section>
-<section id="sec-compsim" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="sec-compsim"><span class="header-section-number">6.2</span> Computer simulation</h2>
-<p>In seeking to employ simulation to obtain estimates of bulk critical point properties (such as the location of a critical point and the values of its associated exponents), one is immediately confronted with a difficulty. The problem is that simulations are necessarily restricted to dealing with systems of finite-size and cannot therefore accommodate the truly long ranged fluctuations that characterize the near-critical regime. As a consequence, the critical singularities in <span class="math inline">\(C_v\)</span>, order parameter, etc. appear rounded and shifted in a simulation study. <a href="#fig-shift" class="quarto-xref">Figure&nbsp;<span>6.2</span></a> shows a schematic example for the susceptibility of a magnet.</p>
-<div id="fig-shift" class="quarto-float quarto-figure quarto-figure-center anchored">
+<section id="phase-diagram" class="level2">
+<h2 class="anchored" data-anchor-id="phase-diagram">1.2 Phase diagram</h2>
+<p>Using the isomorphism we can plot the phase diagram of the lattice gas in the plane of average number density and temperature.</p>
+<div id="fig-lattgas" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/shift.png" class="img-fluid figure-img" style="width:60.0%">
+<div aria-describedby="fig-lattgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/lattice_gas_phase_diagram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-shift-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;6.2: Schematic of the near-critical temperature dependence of the magnet susceptibility in a finite-sized system.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lattgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.1: Phase diagram of the lattice gas model in the density-temperature plane.
 </figcaption>
 </figure>
 </div>
-<p>Thus the position of the peak in a response function (such as <span class="math inline">\(C_v\)</span>) measured for a finite-sized system does not provide an accurate estimate of the critical temperature. Although the degree of rounding and shifting reduces with system size, it is often the case, that computational constraints prevent access to the largest system sizes which would provide accurate estimates of critical parameters. To help deal with this difficulty, finite-size scaling (FSS) methods have been developed to allow extraction of bulk critical properties from simulations of finite size. FSS will be discussed in section 7.</p>
+<p>In the <span class="math inline">\(\mu-T\)</span> plane there is a line of first order phase transitions terminating at a critical point which has density <span class="math inline">\(\rho_c=0.5\)</span>. The first order line means that if <span class="math inline">\(T&lt;T_c\)</span> and starting from the gas phase we smoothly increase the chemical potential through the coexistence value of <span class="math inline">\(\mu\)</span>, the average number density of particles on our lattice <span class="math inline">\(\rho=N/L^d\)</span> jumps discontinuously from a low value <span class="math inline">\(\rho_\textrm{gas}\)</span> to a high value <span class="math inline">\(\rho_\textrm{liquid}\)</span>. This is the gas-liquid phase transition. The values of <span class="math inline">\(\rho_\textrm{gas}\)</span> and <span class="math inline">\(\rho_\textrm{liquid}\)</span> merge at <span class="math inline">\(T_c\)</span>, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+1.3 Aside on Real Fluids
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>You may wish to compare the phase diagram of the lattice gas mode with the results of (say) van der Waals equation (see recommended textbooks for the required phase diagram). The main difference is that the lattice gas has so-called “particle-hole” symmetry, <span class="math inline">\(\rho\to 1-\rho\)</span> (inherited from the up-down symmetry of the Ising model) which is not present for a real fluid. Accordingly, the phase diagram in a real fluid looks like a lopsided version of the above picture as shown in <a href="#fig-realfluid" class="quarto-xref">Figure&nbsp;<span>1.2</span></a>. See <a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.55.2160">here</a> for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.</p>
+<div id="fig-realfluid" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-realfluid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/real_fluid_pd_schem.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-realfluid-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1.2: Schematic of the liquid-gas phase diagram in the <span class="math inline">\(\rho-T\)</span> plane for a realistic fluid .
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="monte-carlo-simulation" class="level1">
+<h1>2. Monte Carlo Simulation</h1>
+<p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For example, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\({\cal N}\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
+<p><span class="math display">\[
+I = \int_A dx \, f(x) \approx \frac{1}{{\cal N}} \sum_{i=1}^{{\cal N}} f(x_i),
+\]</span></p>
+<p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\({\cal N}\)</span> still provides a good approximation.</p>
+<p>This idea also applies to sums over microstates, such as those appearing in the partition function of the lattice gas model. However, the space of all configurations is typically vast, and most configurations contribute negligibly to thermodynamic averages. Therefore, rather than sampling configurations uniformly, we use <em>importance sampling</em>, preferentially sampling microstates that contribute significantly to the ensemble.</p>
+<p>In the grand canonical ensemble, the number of particles <span class="math inline">\(N\)</span> is allowed to fluctuate, and importance sampling means that configurations are sampled with a probability proportional to the Boltzmann weight:</p>
+<p><span class="math display">\[
+P(C) \propto e^{-\beta [E(C) - \mu N(C)]},
+\]</span></p>
+<p>where <span class="math inline">\(E(C)\)</span> is the energy of particle configuration <span class="math inline">\(C\)</span>, <span class="math inline">\(N(C)\)</span> is the number of particles in that configuration, <span class="math inline">\(\mu\)</span> is the chemical potential, and <span class="math inline">\(\beta = 1/k_BT\)</span>. To generate such configurations efficiently, one can use the <strong>Metropolis algorithm</strong> adapted for grand canonical importance sampling:</p>
+<section id="grand-canonical-monte-carlo-gcmc-algorithm" class="level2">
+<h2 class="anchored" data-anchor-id="grand-canonical-monte-carlo-gcmc-algorithm">2.1 Grand Canonical Monte Carlo (GCMC) algorithm</h2>
+<p>A suitable algorithm for this case is to repeatedly update the system via the following fours steps:</p>
+<ol type="1">
+<li><p>Select a random lattice site <span class="math inline">\((i,j)\)</span>.</p></li>
+<li><p>If the site is <strong>empty</strong>, propose inserting a particle. If it is <strong>occupied</strong>, propose removing the particle.</p></li>
+<li><p>Compute the change in energy <span class="math inline">\(\Delta E\)</span> and particle number <span class="math inline">\(\Delta N = \pm 1\)</span>.</p></li>
+<li><p>Accept the move with probability:</p></li>
+</ol>
+<p><span class="math display">\[
+W(C \to C') =
+\begin{cases}
+1 &amp; \text{if } \Delta {\cal H}_{LG}&lt; 0, \\
+e^{-\beta \Delta {\cal H}_{LG}} &amp; \text{otherwise},
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(\Delta {\cal H}_{LG} = \Delta E - \mu \Delta N\)</span> is the change in the grand canonical Hamiltonian.</p>
+<p>This update scheme allows the system to explore states with varying particle numbers according to grand canonical statistics.</p>
+</section>
+<section id="fixed-particle-number-case-canonical-ensemble" class="level2">
+<h2 class="anchored" data-anchor-id="fixed-particle-number-case-canonical-ensemble">2.2 Fixed-Particle-Number Case (Canonical Ensemble)</h2>
+<p>In contrast, we may for simplicity want to simulate with the total number of particles <span class="math inline">\(N\)</span> fixed, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use <strong>Kawasaki dynamics</strong>, which conserves particle number by moving particles between lattice sites. An update consists of the following four steps.</p>
+<ol type="1">
+<li><p>Select two sites <span class="math inline">\((i,j)\)</span> and <span class="math inline">\((i',j')\)</span> at random.</p></li>
+<li><p>If one site is occupied and the other is empty, propose <strong>exchanging</strong> the particle and vacancy.</p></li>
+<li><p>Compute the energy change <span class="math inline">\(\Delta E = E(C') - E(C)\)</span> associated with this proposed particle move.</p></li>
+<li><p>Accept the move with probability:</p></li>
+</ol>
+<p><span class="math display">\[
+W(C \to C') =
+\begin{cases}
+1 &amp; \text{if } \Delta E &lt; 0, \\
+e^{-\beta \Delta E} &amp; \text{otherwise}.
+\end{cases}
+\]</span></p>
+<p>This approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations of the canonical (ie. fixed <span class="math inline">\(N\)</span>) ensemble.</p>
+</section>
+<section id="observables-and-measurement" class="level2">
+<h2 class="anchored" data-anchor-id="observables-and-measurement">2.3 Observables and measurement</h2>
+<p>A <strong>Monte Carlo sweep</strong> in either ensemble involves performing <span class="math inline">\(L^2\)</span> update attempts on a lattice of size <span class="math inline">\(L \times L\)</span>.</p>
+<p>The expectation value of a macrovariable <span class="math inline">\(O\)</span> (e.g., energy, particle density, correlation functions) is estimated by averaging over sampled configurations:</p>
+<p><span class="math display">\[
+\overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{\cal N} O_n,
+\]</span></p>
+<p>where <span class="math inline">\(O_n\)</span> is the value measured in configuration <span class="math inline">\(C_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of configurations use for sampling.</p>
+<p>Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can’t be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (c.f. problem set) is</p>
+<p><span class="math display">\[
+C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
+\]</span></p>
+</section>
+</section>
+<section id="assignment" class="level1 unnumbered">
+<h1 class="unnumbered">3. The assignment</h1>
+<p>You should investigate certain properties of the 2d square lattice gas model applying insight and knowledge from lectures and making use of a prewritten Python Monte Carlo code.</p>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">3.1 Setup</h2>
+<p>This should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.</p>
+<ul>
+<li>On the PHYSM0071 Blackboard page open the Unit Information and Resources tab</li>
+<li>Scroll down to Notable and open it (if off campus make sure you have the <a href="https://uob.sharepoint.com/sites/itservices/SitePages/vpn.aspx">UoB VPN</a> enabled)</li>
+<li>Select the Jupyter Notebook (Legacy) notebook server option</li>
+<li>When the notebook has opened click the +Gitrepo button</li>
+<li>Under enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework</li>
+<li>Press the “clone” button. This will download a notebook called lattice-gas.ipynb into Jupyter</li>
+<li>Check that the program runs</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature, number of lattice sites <span class="math inline">\(N=L^2\)</span>, and the number of equilibration and sampling sweeps. Also check how to toggle live visualisation on and off. Be aware that the program can take several minutes to run depending on the system size, and equilibration/sampling parameters.</li>
+</ul>
+<p><strong>The assignment itself will be released ar 12:30 pm on Monday 13th October 2025 on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October 2025 at 09:30.</strong></p>
+<p><strong>Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.</strong></p>
 
 
 <script type="ojs-module-contents">
@@ -354,6 +452,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -769,14 +868,11 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../phase-transitions/mean-field-theory.html" class="pagination-link" aria-label="Mean field theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span>
+      <a href="../phase-transitions/Solutions_partial.html" class="pagination-link" aria-label="Solutions to problems">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Solutions to problems</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../phase-transitions/rg.html" class="pagination-link" aria-label="Universality and renormalization group theory">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
