@@ -378,6 +378,50 @@
     ]
   },
   {
+    "objectID": "phase-transitions/master-equation-and-diffusion.html",
+    "href": "phase-transitions/master-equation-and-diffusion.html",
+    "title": "8  Introduction to stochastic processes",
+    "section": "",
+    "text": "8.1 The Master Equation\nMany natural phenomena are stochastic — they involve randomness in their evolution over time.\nIn classical physics, this randomness may arise from our lack of knowledge about microscopic details. For example, in a gas, we do not know the precise positions and velocities of each particle, so their collisions with the container walls appear random.\nIn quantum mechanics, stochasticity is even more intrinsic. The fundamental objects are probability amplitudes, and outcomes are inherently probabilistic.\nTo describe these systems effectively, we use a coarse-grained probabilistic description, which tracks the likelihood of different outcomes rather than precise trajectories. One of the key tools in this approach is the master equation.\nConsider a system in microstate \\(i\\) with energy \\(E_i\\). It can transition to neighboring microstates \\(j\\), where the energy difference \\(|E_j - E_i|\\) is small (within \\(\\delta E\\)).\nLet \\(\\nu_{ij}\\) be the rate at which the system jumps from state \\(i\\) to state \\(j\\). Over an infinitesimal time interval \\(dt\\), the probability \\(p_i\\) changes as:\n\\[\ndp_i = \\left[ -p_i \\sum_j  \\nu_{ij} + \\sum_j \\nu_{ji} p_j \\right] dt\n\\]\nThis expression contains two terms:\nThe master equation becomes:\n\\[\n\\frac{dp_i}{dt} = -\\sum_j \\nu_{ij} p_i + \\sum_j \\nu_{ji} p_j\n\\]\nThis is a linear first-order differential equation for the vector of probabilities \\(\\{p_i\\}\\).\nAlternatively, in matrix form:\n\\[\n\\frac{d\\mathbf{p}}{dt} = W \\mathbf{p}\n\\]\nwhere \\(W\\) is the rate matrix with entries:\nThis structure ensures probability conservation: the total probability \\(\\sum_i p_i = 1\\) remains constant in time.\nThe master equation is first order in time and does not have time reversal symmetry so describes an irreversible process. This irreversibility arises from the coarse-graining process that throws away information about underlying microphysics which is described by Newton’s equations and which are time reversible. Only by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. Consequently the increase of entropy is linked to our knowledge about the system rather than anything it is doing internally in a manner that may appear dubious. Can it be possible that macroscopic and reproducible phenomena such as heat flow depend on how we handle information? Perhaps yes since the division between work and heat is somewhat arbitrary. Were we able to track all the particle positions there would be no need to talk about heat energy or heat flow.",
+    "crumbs": [
+      "Unifying concepts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to stochastic processes</span>"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/master-equation-and-diffusion.html#the-master-equation",
+    "href": "phase-transitions/master-equation-and-diffusion.html#the-master-equation",
+    "title": "8  Introduction to stochastic processes",
+    "section": "",
+    "text": "A loss term: the system leaves state \\(i\\) at rate \\(\\nu_{ij}\\),\nA gain term: the system arrives in state \\(i\\) from other states \\(j\\) at rate \\(\\nu_{ji}\\).\n\n\n\n\n\n\n\n\n\\(W_{ij} = \\nu_{ji}\\) for \\(i \\neq j\\),\n\\(W_{ii} = -\\sum_{j \\neq i} \\nu_{ij}\\).",
+    "crumbs": [
+      "Unifying concepts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to stochastic processes</span>"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/master-equation-and-diffusion.html#from-the-master-equation-to-the-diffusion-equation",
+    "href": "phase-transitions/master-equation-and-diffusion.html#from-the-master-equation-to-the-diffusion-equation",
+    "title": "8  Introduction to stochastic processes",
+    "section": "8.2 From the Master Equation to the Diffusion Equation",
+    "text": "8.2 From the Master Equation to the Diffusion Equation\nNow consider the situation where the state index \\(i\\) corresponds to a position in space, \\(x_i = i a\\), ie a one-dimensional lattice with lattice spacing \\(a\\), and transitions only occur between neighboring lattice sites.\nWe assume:\n\nTransition rates are symmetric: \\(\\nu_{i, i+1} = \\nu_{i, i-1} = \\nu\\),\nThe spacing \\(a\\to 0\\) in the continuum limit.\n\nThe master equation becomes a finite-difference equation:\n\\[\n\\begin{aligned}\n\\frac{dp_i}{dt} =  &\\sum_j\\nu_{ij}(p_j-p_i)\\\\\n\\frac{dp_i}{dt} =  &\\nu(p_{i-1}-p_i) + \\nu(p_{i+1} - p_i)\\\\\n\\frac{dp_i}{dt} =  &\\nu(p_{i+1} + p_{i-1} - 2p_i)\n\\end{aligned}\n\\]\nWe now define a continuous variable \\(x = i a\\), and a probability density \\(p(x, t)\\) such that \\(p_i(t) \\approx p(x, t)\\).\nUsing Taylor expansions:\n\\[\np(x \\pm a, t) = p(x, t) \\pm a \\frac{\\partial p}{\\partial x} + \\frac{a^2}{2} \\frac{\\partial^2 p}{\\partial x^2} + \\cdots\n\\]\nSubstituting into the master equation gives:\n\\[\n\\frac{\\partial p}{\\partial t} =\n\\nu a^2 \\frac{\\partial^2 p}{\\partial x^2}\n\\]\nDefining the diffusion constant \\(D = \\nu a^2\\), we obtain the diffusion equation:\n\\[\n\\frac{\\partial p}{\\partial t} = D \\frac{\\partial^2 p}{\\partial x^2}\n\\]\nThe diffusion equation describes the evolution of the probability density of a particle with diffusion constant (sometimes called diffusivity) given by \\(D = \\nu a^2\\). The dimensions of \\(D\\) are \\([\\text{length}]^2/[\\text{time}]\\). Typically, after expansion, we set the lattice spacing \\(a\\) to 1. Additionally, the diffusion equation can describe many non-interacting diffusing particles. In this case, we replace \\(p\\) with \\(\\rho\\), representing the density or concentration of particles, and use the normalization \\(\\int dx \\, \\rho = M\\), where \\(M\\) is the number of particles.\nThe diffusion equation, much like the master equation from which it originates, explicitly violates time-reversal symmetry, thus permitting entropy to increase.\nThe solution of the diffusion equation for an initial condition where the particle is initially localized at the origin (formally, \\(p(x,0) = \\delta(x)\\)) is a Gaussian:\n\\[\np(x,t) = (4 \\pi D t)^{-1/2} \\exp\\left[-\\frac{x^2}{4 D t}\\right]\n\\]\nWe explicitly see the arrow of time by examining this Gaussian solution at various times \\(t\\). As \\(t\\) increases, the Gaussian “bell-shaped” curve spreads out. Its width grows according to \\(\\langle x^2 \\rangle^{1/2} \\sim t^{1/2}\\). This is known as “diffusive scaling,” and it implies that, after time \\(t\\), a particle will typically be found at a distance roughly proportional to \\(t^{1/2}\\) from its starting point. Conversely, exploring a region of size \\(L\\) typically requires a time of order \\(O(L^2)\\).\nThe evolution of the solution to the 1d diffusion equation in a spatial region \\(x=[0,1]\\) as a function of times are shown in the movie below. The diffusion constant is \\(D=0.01\\). The movie corresponds to a particle initialised at \\(x=0.5\\). One sees how the probability density spreads out over the range as time increases. This can be used to model the diffusion of particles down a concentration gradient as you will see in the next part of the course.\n\n\n\nShow python code\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport matplotlib.animation as animation\nimport os\n\n# Parameters\nL = 1.0        # Length of the domain\nT = 1.0        # Total time \nnx = 400       # Number of spatial points\nnt = 2000      # Number of time steps\nD = 0.1        # Diffusion coefficient\n\n# Discretization\ndx = L / (nx - 1)\ndt = T / nt\n\n# Stability condition auto-adjust\nif D * dt / dx**2 &gt; 0.5:\n    print(\"Adjusting dt and nt to satisfy stability condition...\")\n    dt = 0.4 * dx**2 / D\n    nt = int(T / dt)\n    dt = T / nt  # Recalculate dt exactly\n\nnt = int(nt / 50)  # Artificial slowdown for animation\n\nprint(f\"Using dt = {dt:.4e}, nt = {nt}\")\n\n# Initialize x and u\nx = np.linspace(0, L, nx)\n\n# Initial condition: smooth narrow Gaussian\nsigma = 0.01\nu = np.exp(-(x - L/2)**2 / (2 * sigma**2))\n\n# Normalize initial condition\nu /= np.sum(u) * dx\n\n# Setup figure\nplt.rcParams.update({\n    \"text.usetex\": True,\n    \"font.family\": \"serif\"\n})\n\nfig, ax = plt.subplots()\nline, = ax.plot(x, u)\n\n# Compute peak height for setting y-axis\npeak_height = 1 / (np.sqrt(2 * np.pi) * sigma)\nax.set_ylim(0, peak_height * 1.05)\n\nax.set_xlabel(r'$x$', fontsize=20)\nax.set_ylabel(r'$p(x,t)$', fontsize=20)\n\nax.tick_params(axis='both', which='major', labelsize=14)\n\n# Tiny time counter text\ntime_text = ax.text(0.85, 0.05, '', transform=ax.transAxes, fontsize=10, verticalalignment='bottom')\n\n\n# Function to update the plot\ndef update(frame):\n    global u\n    unew = np.copy(u)\n    unew[1:-1] = u[1:-1] + D * dt / dx**2 * (u[2:] - 2*u[1:-1] + u[:-2])\n    u = unew\n\n    # Normalize at every step\n    u /= np.sum(u) * dx\n\n    line.set_ydata(u)\n    current_time = frame * dt\n    time_text.set_text(r'$t=%.4f$' % current_time)\n    return line, time_text\n\nani = animation.FuncAnimation(fig, update, frames=nt, interval=100, blit=True)\n\n\n# Save the animation as a movie\nWriter = animation.writers['ffmpeg']\nwriter = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)\nani.save(\"../Movies/diffusion_evolution.mp4\", writer=writer)\n\n\nplt.show()",
+    "crumbs": [
+      "Unifying concepts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to stochastic processes</span>"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/master-equation-and-diffusion.html#consequences-of-time-reversal-symmetry",
+    "href": "phase-transitions/master-equation-and-diffusion.html#consequences-of-time-reversal-symmetry",
+    "title": "8  Introduction to stochastic processes",
+    "section": "8.3 Consequences of time reversal symmetry",
+    "text": "8.3 Consequences of time reversal symmetry\nAs we have seen by introducing a type of coarse graining, the master equation violates time reversal symmetry of the underlying Newtonian dynamics. Remarkably however, the fact that the underlying microphysics is actually time reversal symmetric has several deep consequences which survive the coarse graining procedure These results are some of the cornerstones of nonequilibrium thermodynamics\n\n8.3.1 Detailed balance\nRecall from year 2 Statistical Mechanics that for a system in equilibrium, the principle of equal a-priori probabilities of microstates holds. Therefore\n\\[\n\\nu_{ij} p_i^{eq} = \\nu_{ji} p_j^{eq}\n\\]\nHence, on average, the actual rate of quantum jumps from \\(i\\) to \\(j\\) (the left-hand side) is the same as from \\(j\\) to \\(i\\). This is a stronger statement than the master equation, which asserts only that there is overall balance between the rate of jumping into and out of state \\(i\\) in equilibrium. The result above is known as the principle of detailed balance.\nThis principle is powerful because it applies not only to individual states but also to any grouping of states.\nExercise: Show that for two groups of states, \\(A\\) and \\(B\\), the overall rate of transitions from group \\(A\\) to group \\(B\\) is balanced, in equilibrium, by those from \\(B\\) to \\(A\\):\n\\[\n\\nu_{AB} p_A^{eq} = \\nu_{BA} p_B^{eq}\n\\]\nHence, detailed balance arguments can be extended to subsystems within a large isolated system, and even to systems that are not isolated. However, in such cases, the principle is far from obvious, because once states are grouped together:\n\\[\n\\nu_{AB} \\ne \\nu_{BA}, \\quad p_A \\ne p_B\n\\]\n(This can be easily demonstrated, for example, by considering two groups that contain different numbers of states with similar energies.) Nonetheless, the detailed balance relation holds, in equilibrium, in the general form above.\n\n\n8.3.2 Computer simulation\nIn computer simulation, good results will be obtained if one accurately follows the microscopic equations of motion. This is the molecular dynamics (MD) method which we now outline.\nMolecular dynamics\nMolecular Dynamics (MD) involves a system of classical particles interacting through specified interparticle forces. The motion of these particles is determined by numerically integrating Newton’s equations of motion. In MD simulations, averages of state variables are obtained as time averages over trajectories in phase space. Typically, the forces acting between particles are conservative, ensuring that the total energy \\(E\\) remains constant. This conservation implies that the motion is restricted to a \\((2dN - 1)\\)-dimensional surface in phase space, denoted by \\(\\Gamma(E)\\).\nA central aspect of MD is the averaging of observables. For a given observable \\(A\\), its average is computed as the time average along the trajectory. Mathematically, this is expressed as:\n\\[\n\\left\\langle A(\\{ \\mathbf{p}_i \\}, \\{ \\mathbf{r}_i \\}) \\right\\rangle = \\frac{1}{\\tau} \\int_{t_0}^{t_0+\\tau} dt\\, A(\\{ \\mathbf{p}_i(t) \\}, \\{ \\mathbf{r}_i(t) \\})\n\\]\nThis formula represents the integral of the observable over a time interval \\(\\tau\\), normalized by the length of that interval.\nThe practical steps of an MD simulation start with generating an initial random configuration of particle positions \\(\\{ \\mathbf{r}_i \\}\\) and momenta \\(\\{ \\mathbf{p}_i \\}\\). The system’s equations of motion are then iteratively solved using a suitable algorithm to allow it to reach equilibrium. After equilibration, a production run is performed over many time steps to collect meaningful data. Finally, relevant averages, such as pressure or kinetic energy, are calculated from the collected data.\nMonte Carlo\nHowever, to obtain the equilibrium properties of the system, it may be much faster to use a dynamics which is nothing like the actual equations of motion.\nAt first sight, this looks very dangerous; however, if one can prove that in the required equilibrium distribution, the artificial dynamics obey the principle of detailed balance, then it is (almost) guaranteed that the steady state found by simulation is the true equilibrium state.\nThe best known example is the Monte Carlo method, in which the dynamical algorithm consists of random jumps. The jump rates \\(\\nu_{AB}\\) for all pairs of states \\((A, B)\\) take the form:\n\\[\n\\nu_{AB} = \\nu_0 \\quad \\text{if } E_B \\le E_A\n\\]\n\\[\n\\nu_{AB} = \\nu_0 e^{-\\beta (E_B - E_A)} \\quad \\text{if } E_B \\ge E_A\n\\]\nwhere \\(\\nu_0\\) is a constant.\nExercise: Show that this gives the canonical distribution in steady state.\n\n\n\n\n\n\nSolution\n\n\n\n\n\nTo show that this jump rate rule gives the canonical distribution in steady state, we assume the system reaches a steady-state probability distribution \\(P_A\\) for state \\(A\\) and apply the condition of detailed balance.\nDetailed balance requires: \\[\nP_A \\nu_{AB} = P_B \\nu_{BA}\n\\]\nAssume the canonical distribution: \\[\nP_A = \\frac{1}{Z} e^{-\\beta E_A}, \\quad P_B = \\frac{1}{Z} e^{-\\beta E_B}\n\\]\nNow consider two cases for \\(\\nu_{AB}\\) and \\(\\nu_{BA}\\):\nCase 1: \\(E_B \\leq E_A\\)\nThen: \\[\n\\nu_{AB} = \\nu_0, \\quad \\nu_{BA} = \\nu_0 e^{-\\beta (E_A - E_B)}\n\\]\nSubstitute into the detailed balance condition: \\[\nP_A \\nu_0 = P_B \\nu_0 e^{-\\beta (E_A - E_B)}\n\\]\nCancel \\(\\nu_0\\): \\[\nP_A = P_B e^{-\\beta (E_A - E_B)}\n\\]\nUse canonical form: \\[\n\\frac{1}{Z} e^{-\\beta E_A} = \\frac{1}{Z} e^{-\\beta E_B} e^{-\\beta (E_A - E_B)} = \\frac{1}{Z} e^{-\\beta E_A}\n\\]\nVerified.\nCase 2: \\(E_B &gt; E_A\\)\nThen: \\[\n\\nu_{AB} = \\nu_0 e^{-\\beta (E_B - E_A)}, \\quad \\nu_{BA} = \\nu_0\n\\]\nSubstitute: \\[\nP_A \\nu_0 e^{-\\beta (E_B - E_A)} = P_B \\nu_0\n\\]\nCancel \\(\\nu_0\\): \\[\nP_A e^{-\\beta (E_B - E_A)} = P_B\n\\]\nAgain using canonical form: \\[\n\\frac{1}{Z} e^{-\\beta E_A} e^{-\\beta (E_B - E_A)} = \\frac{1}{Z} e^{-\\beta E_B} = P_B\n\\]\nVerified.\nHence, in both cases the detailed balance condition is satisfied with the canonical distribution, and the steady state is indeed the canonical distribution.",
+    "crumbs": [
+      "Unifying concepts",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Introduction to stochastic processes</span>"
+    ]
+  },
+  {
     "objectID": "phase-transitions/precourse-reading.html",
     "href": "phase-transitions/precourse-reading.html",
     "title": "Tools for understanding complex disordered matter",
@@ -433,80 +477,135 @@
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html",
-    "href": "phase-transitions/assignment_prep.html",
+    "objectID": "phase-transitions/assignment_October2025.html",
+    "href": "phase-transitions/assignment_October2025.html",
     "title": "PHYSM0071: First coursework assignment",
     "section": "",
     "text": "1. Introduction and background\nIn this coursework assignment, you will explore the phenomena of spatial correlations and their relationship to phase behaviour in a simple lattice gas model. This model is a crude representation of a fluid in which particles can occupy the sites of a hypercubic lattice. The occupancy of a site \\(i\\) is specified by the variable \\(c_i=1\\) (occupied) or \\(c_i=0\\) vacant. The complete list of these occupancies \\(\\{c\\}\\) specifies a microstate. The instantaneous particle number density (fraction of occupied sites) is given by\n\\[\n\\rho=L^{-d}\\sum_i c_i\n\\]\nwhere \\(L\\) is the linear extent of the lattice (i.e. the number of unit cells along a coordinate axis) and \\(d\\) its dimensionality.\nWithin the Grand Canonical ensemble (see precourse reading) the Hamiltonian of the lattice gas model is\n\\[{\\cal H}_{LG}=-\\epsilon\\sum_{&lt;i,j&gt;}c_ic_j - \\mu\\sum_ic_i\\]\nwhere \\(\\epsilon\\) is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and \\(\\mu\\) is a field known as the chemical potential which couples to the particle number density \\(\\rho\\). The number density typically fluctuates around a mean value controlled by the prescribed value of \\(\\mu\\).\nOne can also consider the model under conditions in which the particle number is fixed to some prescribed value - then there is no chemical potential and the corresponding set of microstates define the canonical ensemble (see precourse reading) of the lattice gas at that density.",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#mapping-between-lattice-gas-and-ising-model",
-    "href": "phase-transitions/assignment_prep.html#mapping-between-lattice-gas-and-ising-model",
+    "objectID": "phase-transitions/assignment_October2025.html#mapping-between-lattice-gas-and-ising-model",
+    "href": "phase-transitions/assignment_October2025.html#mapping-between-lattice-gas-and-ising-model",
     "title": "PHYSM0071: First coursework assignment",
     "section": "1.1 Mapping between lattice gas and Ising model",
     "text": "1.1 Mapping between lattice gas and Ising model\nThe lattice gas model is interesting because whilst being a plausible model for a fluid, it maps onto the Ising model. We say that they are isomorphic to one another. This isomorphism extends the applicability of the Ising model. To expose the mapping we write the grand partition function of the lattice gas:\n\\[ \\Xi=\\sum_\\textrm{ state}\\exp-\\beta{\\cal H}_{LG}=\\sum_{\\{c\\}}\\exp\\left[\\beta \\epsilon\\sum_{&lt;i,j&gt;}c_ic_j +\\beta\\mu\\sum_ic_i\\right] \\] where the sum runs over all possible combinations of occupancies of the lattice sites.\nWe now change variables to\n\\[c_i=(1+s_i)/2; ~~~~ J=\\frac{\\epsilon}{4}; ~~~~\nh=\\frac{\\epsilon q+2\\mu}{4},\n\\] where \\(q\\) is the lattice coordination number.\nOne finds,\n\\[{\\cal H}_{LG}={\\cal H}_\\textrm{ I} + \\textrm{ constant}\\] Since the last term does not depend on the configuration, it feeds through as an additive constant in the free energy; and since all observables feature as derivatives of the free energy, the constant has no physical implications.",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#phase-diagram",
-    "href": "phase-transitions/assignment_prep.html#phase-diagram",
+    "objectID": "phase-transitions/assignment_October2025.html#phase-diagram",
+    "href": "phase-transitions/assignment_October2025.html#phase-diagram",
     "title": "PHYSM0071: First coursework assignment",
     "section": "1.2 Phase diagram",
     "text": "1.2 Phase diagram\nUsing the isomorphism we can plot the phase diagram of the lattice gas in the plane of average number density and temperature.\n\n\n\n\n\n\nFigure 1.1: Phase diagram of the lattice gas model in the density-temperature plane.\n\n\n\nIn the \\(\\mu-T\\) plane there is a line of first order phase transitions terminating at a critical point which has density \\(\\rho_c=0.5\\). The first order line means that if \\(T&lt;T_c\\) and starting from the gas phase we smoothly increase the chemical potential through the coexistence value of \\(\\mu\\), the average number density of particles on our lattice \\(\\rho=N/L^d\\) jumps discontinuously from a low value \\(\\rho_\\textrm{gas}\\) to a high value \\(\\rho_\\textrm{liquid}\\). This is the gas-liquid phase transition. The values of \\(\\rho_\\textrm{gas}\\) and \\(\\rho_\\textrm{liquid}\\) merge at \\(T_c\\), the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.\n\n\n\n\n\n\n1.3 Aside on Real Fluids\n\n\n\n\n\nYou may wish to compare the phase diagram of the lattice gas mode with the results of (say) van der Waals equation (see recommended textbooks for the required phase diagram). The main difference is that the lattice gas has so-called “particle-hole” symmetry, \\(\\rho\\to 1-\\rho\\) (inherited from the up-down symmetry of the Ising model) which is not present for a real fluid. Accordingly, the phase diagram in a real fluid looks like a lopsided version of the above picture as shown in Figure 1.2. See here for some real experimental data showing the asymmetry of the coexistence curve in liquid metals.\n\n\n\n\n\n\nFigure 1.2: Schematic of the liquid-gas phase diagram in the \\(\\rho-T\\) plane for a realistic fluid .",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#grand-canonical-monte-carlo-gcmc-algorithm",
-    "href": "phase-transitions/assignment_prep.html#grand-canonical-monte-carlo-gcmc-algorithm",
+    "objectID": "phase-transitions/assignment_October2025.html#grand-canonical-monte-carlo-gcmc-algorithm",
+    "href": "phase-transitions/assignment_October2025.html#grand-canonical-monte-carlo-gcmc-algorithm",
     "title": "PHYSM0071: First coursework assignment",
     "section": "2.1 Grand Canonical Monte Carlo (GCMC) algorithm",
     "text": "2.1 Grand Canonical Monte Carlo (GCMC) algorithm\nA suitable algorithm for this case is to repeatedly update the system via the following fours steps:\n\nSelect a random lattice site \\((i,j)\\).\nIf the site is empty, propose inserting a particle. If it is occupied, propose removing the particle.\nCompute the change in energy \\(\\Delta E\\) and particle number \\(\\Delta N = \\pm 1\\).\nAccept the move with probability:\n\n\\[\nW(C \\to C') =\n\\begin{cases}\n1 & \\text{if } \\Delta {\\cal H}_{LG}&lt; 0, \\\\\ne^{-\\beta \\Delta {\\cal H}_{LG}} & \\text{otherwise},\n\\end{cases}\n\\]\nwhere \\(\\Delta {\\cal H}_{LG} = \\Delta E - \\mu \\Delta N\\) is the change in the grand canonical Hamiltonian.\nThis update scheme allows the system to explore states with varying particle numbers according to grand canonical statistics.",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#fixed-particle-number-case-canonical-ensemble",
-    "href": "phase-transitions/assignment_prep.html#fixed-particle-number-case-canonical-ensemble",
+    "objectID": "phase-transitions/assignment_October2025.html#fixed-particle-number-case-canonical-ensemble",
+    "href": "phase-transitions/assignment_October2025.html#fixed-particle-number-case-canonical-ensemble",
     "title": "PHYSM0071: First coursework assignment",
-    "section": "2.2 Fixed-Particle-Number Case (Canonical Ensemble)",
-    "text": "2.2 Fixed-Particle-Number Case (Canonical Ensemble)\nIn contrast, we may for simplicity want to simulate with the total number of particles \\(N\\) fixed, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use Kawasaki dynamics, which conserves particle number by moving particles between lattice sites. An update consists of the following four steps.\n\nSelect two sites \\((i,j)\\) and \\((i',j')\\) at random.\nIf one site is occupied and the other is empty, propose exchanging the particle and vacancy.\nCompute the energy change \\(\\Delta E = E(C') - E(C)\\) associated with this proposed particle move.\nAccept the move with probability:\n\n\\[\nW(C \\to C') =\n\\begin{cases}\n1 & \\text{if } \\Delta E &lt; 0, \\\\\ne^{-\\beta \\Delta E} & \\text{otherwise}.\n\\end{cases}\n\\]\nThis approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations of the canonical (ie. fixed \\(N\\)) ensemble.",
+    "section": "2.2 Fixed-particle-number case (Canonical Ensemble)",
+    "text": "2.2 Fixed-particle-number case (Canonical Ensemble)\nIn contrast, we may for simplicity want to simulate with the total number of particles \\(N\\) fixed, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use Kawasaki dynamics, which conserves particle number by moving particles between lattice sites. An update consists of the following four steps.\n\nSelect two sites \\((i,j)\\) and \\((i',j')\\) at random.\nIf one site is occupied and the other is empty, propose exchanging the particle and vacancy.\nCompute the energy change \\(\\Delta E = E(C') - E(C)\\) associated with this proposed particle move.\nAccept the move with probability:\n\n\\[\nW(C \\to C') =\n\\begin{cases}\n1 & \\text{if } \\Delta E &lt; 0, \\\\\ne^{-\\beta \\Delta E} & \\text{otherwise}.\n\\end{cases}\n\\]\nThis approach ensures particle number is conserved while still allowing the system to explore equilibrium configurations of the canonical (ie. fixed \\(N\\)) ensemble.",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#observables-and-measurement",
-    "href": "phase-transitions/assignment_prep.html#observables-and-measurement",
+    "objectID": "phase-transitions/assignment_October2025.html#observables-and-measurement",
+    "href": "phase-transitions/assignment_October2025.html#observables-and-measurement",
     "title": "PHYSM0071: First coursework assignment",
     "section": "2.3 Observables and measurement",
-    "text": "2.3 Observables and measurement\nA Monte Carlo sweep in either ensemble involves performing \\(L^2\\) update attempts on a lattice of size \\(L \\times L\\).\nThe expectation value of a macrovariable \\(O\\) (e.g., energy, particle density, correlation functions) is estimated by averaging over sampled configurations:\n\\[\n\\overline O \\approx \\frac{1}{{\\cal N}} \\sum_{n=0}^{\\cal N} O_n,\n\\]\nwhere \\(O_n\\) is the value measured in configuration \\(C_n\\), and \\({\\cal N}\\) is the total number of configurations use for sampling.\nOther observables (those which are second derivatives of the free energy) such as the specific heat capacity can’t be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (c.f. problem set) is\n\\[\nC=\\frac{1}{k_BT^2} \\left[\\overline{E^2} - \\overline{E}^2\\right] = \\frac{(\\Delta E)^2}{k_BT^2}\n\\]",
+    "text": "2.3 Observables and measurement\nA Monte Carlo sweep in either ensemble involves performing \\(L^2\\) update attempts on a lattice of size \\(L \\times L\\).\nThe expectation value of a macrovariable \\(O\\) (e.g., energy, particle density, correlation functions) is estimated by averaging over sampled configurations:\n\\[\n\\overline O \\approx \\frac{1}{{\\cal N}} \\sum_{n=0}^{\\cal N} O_n,\n\\]\nwhere \\(O_n\\) is the value measured in configuration \\(C_n\\), and \\({\\cal N}\\) is the total number of configurations use for sampling.\nOther observables (those which are second derivatives of the free energy) such as the specific heat capacity can’t be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (cf. problem set) is\n\\[\nC=\\frac{1}{k_BT^2} \\left[\\overline{E^2} - \\overline{E}^2\\right] = \\frac{(\\Delta E)^2}{k_BT^2}\n\\]",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
     ]
   },
   {
-    "objectID": "phase-transitions/assignment_prep.html#setup",
-    "href": "phase-transitions/assignment_prep.html#setup",
+    "objectID": "phase-transitions/assignment_October2025.html#setup",
+    "href": "phase-transitions/assignment_October2025.html#setup",
     "title": "PHYSM0071: First coursework assignment",
     "section": "3.1 Setup",
-    "text": "3.1 Setup\nThis should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.\n\nOn the PHYSM0071 Blackboard page open the Unit Information and Resources tab\nScroll down to Notable and open it (if off campus make sure you have the UoB VPN enabled)\nSelect the Jupyter Notebook (Legacy) notebook server option\nWhen the notebook has opened click the +Gitrepo button\nUnder enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework\nPress the “clone” button. This will download a notebook called lattice-gas.ipynb into Jupyter\nCheck that the program runs\nFamiliarise yourself with the main features of the program. Pay attention to how to change the temperature, number of lattice sites \\(N=L^2\\), and the number of equilibration and sampling sweeps. Also check how to toggle live visualisation on and off. Be aware that the program can take several minutes to run depending on the system size, and equilibration/sampling parameters.\n\nThe assignment itself will be released at 12:30 pm on Monday 13th October 2025 on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October 2025 at 09:30.\nPlease contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.",
+    "text": "3.1 Setup\nThis should be completed in the week prior to the release of the assignment to make sure that any technical problems are resolved.\n\nOn the PHYSM0071 Blackboard page open the Unit Information and Resources tab\nScroll down to Notable and open it (if off campus make sure you have the UoB VPN enabled)\nSelect the Jupyter Notebook (Legacy) notebook server option\nWhen the notebook has opened click the +Gitrepo button\nUnder enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework\nPress the “clone” button. This will download a notebook called lattice-gas.ipynb into Jupyter\nCheck that the program runs\nFamiliarise yourself with the main features of the program. Pay attention to how to change the temperature, number of lattice sites \\(N=L^2\\), and the number of equilibration and sampling sweeps. Also check how to toggle live visualisation on and off. Be aware that the program can take several minutes to run depending on the system size, and equilibration/sampling parameters.\n\nThe assignment itself will be released at 12:30pm on Monday 13th October 2025 on Blackboard via the Unit Assessment tab. The submission deadline is Monday 27th October 2025 at 09:30.\nPlease contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.\nThe various elements of the assignment are set out below. Instructions are given in italics.",
     "crumbs": [
       "Unifying concepts",
-      "Preparation for first coursework assignment"
+      "First coursework assignment"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/assignment_October2025.html#sec-isomorph",
+    "href": "phase-transitions/assignment_October2025.html#sec-isomorph",
+    "title": "PHYSM0071: First coursework assignment",
+    "section": "3.2 Isomorphism of the lattice gas and Ising model",
+    "text": "3.2 Isomorphism of the lattice gas and Ising model\nBy referring to section 1.1 above, show that the Hamiltonian of the Lattice Gas model in the grand canonical ensemble\n\\[\n    {\\cal H}_{LG}=-\\epsilon\\sum_{&lt;i,j&gt;}c_ic_j -\\mu\\sum_ic_i\n\\] is transformed to that of the Ising model by means of the change of variable\n\\[\n    s_i=2c_i-1;~~~~ J=\\frac{\\epsilon}{4};~~~~\n    h=\\frac{\\epsilon q+2\\mu}{4}.\n\\] where \\(q\\) is the lattice coordination number (\\(q=4\\) in 2-dimensions and \\(q=6\\) in 3d).\n(Hint: Note that when doing sums over bonds \\(\\sum_{\\langle i,j\\rangle}\\) for a lattice of coordination \\(q\\) there are \\(q/2\\) bonds per site since each bond is shared between two sites.) [4 marks]\nGiven that the critical temperature of the 2d Ising model is \\(T_c\\approx 2.269\\: J/k_B\\), use the above mapping to find the value of the critical temperature of the 2d lattice gas model in units of \\(\\epsilon/k_B\\). [2 marks]",
+    "crumbs": [
+      "Unifying concepts",
+      "First coursework assignment"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/assignment_October2025.html#code-modification-tasks",
+    "href": "phase-transitions/assignment_October2025.html#code-modification-tasks",
+    "title": "PHYSM0071: First coursework assignment",
+    "section": "3.3 Code modification tasks",
+    "text": "3.3 Code modification tasks\nThe program provided to you simulates the 2D lattice gas model in the canonical ensemble (i.e., at a fixed particle number density \\(\\rho\\)), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) \\(g(r)\\) and the structure factor \\(S(\\mathbf{k})\\) (refer to Chapter 2 of the notes for the definitions of these quantities).\nIn this implementation, the particle density is fixed at \\(\\rho = \\rho_c = 0.5\\). This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime. For convenience, the program uses dimensionless units by setting \\(\\epsilon = k_B = 1\\). The linear system size is intially set to \\(L=50\\) lattice units.\n\nReview the program thoroughly and gain a clear understanding of its functionality.\nThe program calculates the average form of the 2d structure factor \\(S(\\mathbf{k})\\). Using this, obtain and plot the radially averaged structure 1d factor \\(S(|k|)\\).  [6 marks]\nAdd a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.2, above.\n[5 marks]",
+    "crumbs": [
+      "Unifying concepts",
+      "First coursework assignment"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/assignment_October2025.html#computational-investigations-of-correlations-on-the-approach-to-criticality",
+    "href": "phase-transitions/assignment_October2025.html#computational-investigations-of-correlations-on-the-approach-to-criticality",
+    "title": "PHYSM0071: First coursework assignment",
+    "section": "3.4 Computational investigations of correlations on the approach to criticality",
+    "text": "3.4 Computational investigations of correlations on the approach to criticality\n\nPerform simulations at several (six or seven) temperatures within the super critical range \\(T_c \\le T \\lesssim 2T_c\\). For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated [4 marks]\nPlot and compare the radial distribution function \\(g(r)\\) and the structure factor \\(S(\\mathbf{k})\\), and its radially averaged form, \\(S(|k|)\\) at each temperature. [4 marks]\nInterpret the peak structure in \\(g(r)\\) and \\(S(|k|)\\) and discuss the relationship to clustering or ordering. [3 marks]\nThe full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length \\(\\xi\\) through \\(\\xi=1/FWHM\\). For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of \\(\\xi\\) and comment on its behaviour. [4 marks]",
+    "crumbs": [
+      "Unifying concepts",
+      "First coursework assignment"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/assignment_October2025.html#temperature-and-system-size-dependence-of-the-specific-heat",
+    "href": "phase-transitions/assignment_October2025.html#temperature-and-system-size-dependence-of-the-specific-heat",
+    "title": "PHYSM0071: First coursework assignment",
+    "section": "3.5 Temperature and system size dependence of the specific heat",
+    "text": "3.5 Temperature and system size dependence of the specific heat\n*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g \\(T_c/2&lt;T&lt;2T_c\\)). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations. [4 marks]\nRepeat the analysis that you performed for the \\(L=50\\) system, for system sizes \\(L=20\\) and \\(L=35\\). Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects. [4 marks]",
+    "crumbs": [
+      "Unifying concepts",
+      "First coursework assignment"
+    ]
+  },
+  {
+    "objectID": "phase-transitions/assignment_October2025.html#your-report",
+    "href": "phase-transitions/assignment_October2025.html#your-report",
+    "title": "PHYSM0071: First coursework assignment",
+    "section": "4.0 Your report",
+    "text": "4.0 Your report\nYou should produce a short skeleton report (upto 4 sides of A4 including figures and in no less than 11 pt fontsize) focussing on and summarising the results of the above investigations and your comments/observations on the findings.\nAs well as a title and your name, the report should be laid out using the headings above:\n\nIsomorphism of the lattice gas and Ising model\nCode modifications. Include snippets of your modified code, highlighting the modifications in yellow. Do not include the whole code, just enough to see what you changed and where you did it.\n\nComputational investigations of correlations on the approach to criticality\nTemperature and system size dependence of the specific heat\nInclude a line with following declaration at the end of the report: “I have not made use of Artificial Intelligence tools in completing this assessement beyond those of category 2 in the University’s categorisation scheme.”\n\nThere is no need for any other section headings ie. you don’t need abstract, introduction, references etc. Marks will be deducted for reports that exceed four sides (faces) of A4.\nSubmit your report in pdf format for grading via blackboard. The report will be marked out of 40, and will count for \\(30\\%\\) of the unit mark.\nLike any lab report, the marking focus will be on:\n\nDo your results look physically plausible?\nDid you describe the pertinent features?\nAre your descriptions clear?\nDo you explain them correctly using appropriate concepts?",
+    "crumbs": [
+      "Unifying concepts",
+      "First coursework assignment"
     ]
   }
 ]
