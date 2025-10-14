@@ -52,7 +52,7 @@ easily accessed by computer simulation because it entails studying very
 large system sizes $L_\textrm{
 max}$, often requiring considerable computing resources.
 
-A nice illustration of critical point scale invariance in the Ising model can be viewed [here](https://www.youtube.com/watch?v=fi-g2ET97W8&ab_channel=DouglasAshton).
+A nice illustration of critical point scale invariance in the Ising model can be viewed [here](https://www.youtube.com/watch?v=fi-g2ET97W8&ab_channel=DouglasAshton). 
 
 
 ## Methodology of the RG {#sec-rgmethod}
@@ -83,11 +83,11 @@ adopt a simple strategy in which we divide our sample into blocks of
 side $L$, each of which contains $L^d$ sites, with $d$ the space
 dimensions . The centres of the blocks define a lattice of points
 indexed by $I=1,2,\ldots,N/L^d$. We associate with each block lattice
-point centre, $I$, a coarse-grained or block variable $S_I(L)$ defined
+point centre, $I$, a coarse-grained or block variable $S(L)$ defined
 as the spatial average of the local variables it contains:
 
 $$
-S_I(L)=L^{-d}\sum_i^Is_i
+S(L)=L^{-d}\sum_i^Is_i
 $${#eq-blkvar} 
 where the sum extends over the $L^d$ sites in the
 block $I$. The set of coarse grained coordinates $\{S(L)\}$ are the
@@ -96,7 +96,7 @@ of order $L$.
 
 The coarse graining operation is easily implemented on a computer. In so
 doing one is faced with the fact that while the underlying Ising spins
-can only take two possible values, the block variables $S_I(L)$ have
+can only take two possible values, the block variables $S(L)$ have
 $L^d+1$ possible values. Accordingly in displaying the consequences of
 the blocking procedure, we need a more elaborate colour convention than
 that used in @fig-snapshots. We will associate with each block a shade of
@@ -213,7 +213,7 @@ point is the existence of a scale-invariant limit which is neither fully
 ordered nor fully disordered but which possesses structure on all length
 scales. 
 
-A nice illustration of these points made by my former postdoc Douglas Ashton can be viewed [here](https://www.youtube.com/watch?v=MxRddFrEnPc).
+A nice illustration of these points made by my former postdoc Douglas Ashton can be viewed [here](https://www.youtube.com/watch?v=MxRddFrEnPc). (Note this video uses a different coarse-graining scheme called a "majority rule": blocks variables are assigned to be $+1$ or $-1$ depending on whether spin-up or spin-down is in the majority in the underlying block. Thus in contrast to our scheme, there is no gray scale.)
 
 ## Universality and Scaling
 
@@ -431,7 +431,7 @@ $$
 \begin{aligned}
 Q(L,t)  & =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
         & =  b^{-1}(L)f(a(L)t)\nonumber\\
-       & =  b_0L^{-\beta/\nu}f(a_0L^{1/\nu}t)
+       & =  b_0^{-1}L^{-\beta/\nu}f(a_0L^{1/\nu}t)
 \end{aligned}
 $$
 
@@ -737,7 +737,7 @@ In order to expose how universality can arise, we should from the start
 allow for several different kinds of coupling $J_a$, and show how the
 systems with *different* $J_a$ can have the *same* critical behaviour.
 
-![General flow in coupling space](Figs/flow2.png){#fig-flow2 width=80%}
+![General flow in coupling space](Figs/flow2.png){#fig-flow2 width=60%}
 
 @fig-flow2 is a representation of the space of all coupling strengths $K_a$ in the
 energy function ${\cal H}/k_BT$. This is of course actually a space of

@@ -36,11 +36,20 @@ This defines a discrete-time, discrete-space random walk. The average and varian
 
 The steps $\Delta x(t)$ are uncorrelated across time.
 
-To take the continuum limit, we let both $a \to 0$ and $\Delta t \to 0$ in such a way that:
 
+
+To take the continuum limit, we let both $a \to 0$ and $\Delta t \to 0$, while keeping the diffusion constant
 $$
-a \propto \sqrt{\Delta t}
+D = \nu a^2
 $$
+fixed. This requirement implies that we need $\nu\propto a^{-2}$, which is satisfied if 
+$$
+a \propto \sqrt{\Delta t}.
+$$
+
+Hence the step size must shrink as the square root of the time step.
+Only under this scaling does the random walk converge to a well-defined continuum process
+with finite diffusion constant, namely Brownian motion or the Langevin equation.
 
 In this limit, we obtain the **Langevin equation**:
 
@@ -138,13 +147,21 @@ $$
 \dot{v} + \gamma v = f(t)
 $$
 
-We apply an integrating factor:
+We apply an integrating factor to get an exact differential on the LHS:
 
 $$
 \frac{d}{dt} \left[ v e^{\gamma t} \right] = e^{\gamma t} f(t)
 $$
 
 Integrating both sides:
+
+$$
+\int_0^t \frac{d}{dt'}\!\left( v e^{\gamma t'} \right) dt' = \int_0^t e^{\gamma t'} f(t')\, dt'
+$$
+
+$$
+v(t)e^{\gamma t} - v_0 = \int_0^t e^{\gamma t'} f(t')\, dt'
+$$
 
 $$
 v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
@@ -156,6 +173,7 @@ $$
 \langle v(t) \rangle = v_0 e^{-\gamma t}
 $$
 
+where we have used the fact that $f(t)$ is random with  $\langle f(t)\rangle=0$.
 Thus:
 
 * At short times: ($\gamma t \ll 1$): $\langle v \rangle \approx v_0$ ie. friction is negligible.
@@ -173,32 +191,26 @@ $$
 ::: {.callout-caution collapse="true"}
 ## Solution
 
-$$
+
 \begin{aligned}
-&\text{From the solution for }v(t)\text{ (with }m=1\text{):}\quad
-v(t)=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\[6pt]
-&\Rightarrow\;
-v(t)^2
-= v_0^2 e^{-2\gamma t}
+\text{From the solution for }v(t)\text{ with }m=1\text{:}\\
+v(t)&=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
+\Rightarrow\; v(t)^2 &= v_0^2 e^{-2\gamma t}
 + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} f(t')\,dt'
 + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')} f(t')f(t'')\,dt'\,dt''.
 \end{aligned}
-$$
 
-$$
+
+
 \begin{aligned}
-\langle v(t)^2\rangle
+\Rightarrow\; \langle v(t)^2\rangle &= v_0^2 e^{-2\gamma t} + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt' + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
+\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\
 &= v_0^2 e^{-2\gamma t}
-+ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt'\\
-&\quad + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
-\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\[6pt]
++ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\
 &= v_0^2 e^{-2\gamma t}
-+ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\[6pt]
-&= v_0^2 e^{-2\gamma t}
-+ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\[6pt]
++ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
 &= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
 \end{aligned}
-$$
 
 $$
 \boxed{\;\langle v(t)^2\rangle

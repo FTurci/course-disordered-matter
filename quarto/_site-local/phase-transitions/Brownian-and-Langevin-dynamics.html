@@ -495,10 +495,12 @@ x(t + \Delta t) = x(t) + \Delta x(t)
 <li><p>Variance: <span class="math inline">\(\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t\)</span></p></li>
 </ul>
 <p>The steps <span class="math inline">\(\Delta x(t)\)</span> are uncorrelated across time.</p>
-<p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span> in such a way that:</p>
-<p><span class="math display">\[
-a \propto \sqrt{\Delta t}
+<p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span>, while keeping the diffusion constant <span class="math display">\[
+D = \nu a^2
+\]</span> fixed. This requirement implies that we need <span class="math inline">\(\nu\propto a^{-2}\)</span>, which is satisfied if <span class="math display">\[
+a \propto \sqrt{\Delta t}.
 \]</span></p>
+<p>Hence the step size must shrink as the square root of the time step. Only under this scaling does the random walk converge to a well-defined continuum process with finite diffusion constant, namely Brownian motion or the Langevin equation.</p>
 <p>In this limit, we obtain the <strong>Langevin equation</strong>:</p>
 <p><span class="math display">\[
 \dot{x}(t) = \eta(t)
@@ -575,11 +577,17 @@ Figure&nbsp;9.1: Sketch of <span class="math inline">\(g(t1−t2)\)</span> again
 <p><span class="math display">\[
 \dot{v} + \gamma v = f(t)
 \]</span></p>
-<p>We apply an integrating factor:</p>
+<p>We apply an integrating factor to get an exact differential on the LHS:</p>
 <p><span class="math display">\[
 \frac{d}{dt} \left[ v e^{\gamma t} \right] = e^{\gamma t} f(t)
 \]</span></p>
 <p>Integrating both sides:</p>
+<p><span class="math display">\[
+\int_0^t \frac{d}{dt'}\!\left( v e^{\gamma t'} \right) dt' = \int_0^t e^{\gamma t'} f(t')\, dt'
+\]</span></p>
+<p><span class="math display">\[
+v(t)e^{\gamma t} - v_0 = \int_0^t e^{\gamma t'} f(t')\, dt'
+\]</span></p>
 <p><span class="math display">\[
 v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 \]</span></p>
@@ -587,7 +595,7 @@ v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 <p><span class="math display">\[
 \langle v(t) \rangle = v_0 e^{-\gamma t}
 \]</span></p>
-<p>Thus:</p>
+<p>where we have used the fact that <span class="math inline">\(f(t)\)</span> is random with <span class="math inline">\(\langle f(t)\rangle=0\)</span>. Thus:</p>
 <ul>
 <li>At short times: (<span class="math inline">\(\gamma t \ll 1\)</span>): <span class="math inline">\(\langle v \rangle \approx v_0\)</span> ie. friction is negligible.</li>
 <li>At long times: (<span class="math inline">\(\gamma t \gg 1\)</span>): <span class="math inline">\(\langle v \rangle \to 0\)</span> ie. the system loses memory of the initial velocity.</li>
@@ -611,31 +619,22 @@ Solution
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\text{From the solution for }v(t)\text{ (with }m=1\text{):}\quad
-v(t)=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\[6pt]
-&amp;\Rightarrow\;
-v(t)^2
-= v_0^2 e^{-2\gamma t}
+<span class="math display">\[\begin{aligned}
+\text{From the solution for }v(t)\text{ with }m=1\text{:}\\
+v(t)&amp;=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
+\Rightarrow\; v(t)^2 &amp;= v_0^2 e^{-2\gamma t}
 + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} f(t')\,dt'
 + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')} f(t')f(t'')\,dt'\,dt''.
-\end{aligned}
-\]</span></p>
-<p><span class="math display">\[
-\begin{aligned}
-\langle v(t)^2\rangle
+\end{aligned}\]</span>
+<span class="math display">\[\begin{aligned}
+\Rightarrow\; \langle v(t)^2\rangle &amp;= v_0^2 e^{-2\gamma t} + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt' + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
+\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\
 &amp;= v_0^2 e^{-2\gamma t}
-+ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt'\\
-&amp;\quad + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
-\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\[6pt]
++ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\
 &amp;= v_0^2 e^{-2\gamma t}
-+ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\[6pt]
-&amp;= v_0^2 e^{-2\gamma t}
-+ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\[6pt]
++ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
 &amp;= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span>
 <p><span class="math display">\[
 \boxed{\;\langle v(t)^2\rangle
 = v_0^2 e^{-2\gamma t} + \dfrac{\Gamma}{2\gamma}\left(1-e^{-2\gamma t}\right)\;}
@@ -709,7 +708,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="3150e2ae" class="cell" data-execution_count="1">
+<div id="ddd34766" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

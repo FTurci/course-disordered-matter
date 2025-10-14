@@ -46,6 +46,9 @@ where $W$ is the **rate matrix** with entries:
 
 This structure ensures probability conservation: the total probability $\sum_i p_i = 1$ remains constant in time.
 
+:::{.callout-caution collapse="true"}
+## An aside on entropy production
+
 The master equation is first order in time and does not have time reversal symmetry so describes an irreversible process.
 This irreversibility arises from the coarse-graining process that throws away information about underlying microphysics which 
 is described by Newton's equations and which *are* time reversible. Only  by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. 
@@ -54,7 +57,7 @@ in a manner that may appear dubious. Can it be possible that macroscopic and rep
 on how we handle information? Perhaps yes since the division between work and heat is somewhat arbitrary. 
 Were we able to track all the particle positions there would be no need to talk about heat energy or heat flow.
 
-
+:::
 ## From the Master Equation to the Diffusion Equation
 
 Now consider the situation where the state index $i$ corresponds to a position in space, $x_i = i a$, ie a one-dimensional lattice with lattice spacing $a$, and transitions only occur between neighboring lattice sites.

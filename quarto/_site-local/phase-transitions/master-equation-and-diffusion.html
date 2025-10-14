@@ -497,7 +497,22 @@ dp_i = \left[ -p_i \sum_j  \nu_{ij} + \sum_j \nu_{ji} p_j \right] dt
 <li><span class="math inline">\(W_{ii} = -\sum_{j \neq i} \nu_{ij}\)</span>.</li>
 </ul>
 <p>This structure ensures probability conservation: the total probability <span class="math inline">\(\sum_i p_i = 1\)</span> remains constant in time.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+An aside on entropy production
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>The master equation is first order in time and does not have time reversal symmetry so describes an irreversible process. This irreversibility arises from the coarse-graining process that throws away information about underlying microphysics which is described by Newton’s equations and which <em>are</em> time reversible. Only by doing so is the entropy allowed to increase which is required by the second law of thermodynamics for an irreversible process. Consequently the increase of entropy is linked to our knowledge about the system rather than anything it is doing internally in a manner that may appear dubious. Can it be possible that macroscopic and reproducible phenomena such as heat flow depend on how we handle information? Perhaps yes since the division between work and heat is somewhat arbitrary. Were we able to track all the particle positions there would be no need to talk about heat energy or heat flow.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="from-the-master-equation-to-the-diffusion-equation" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">8.2</span> From the Master Equation to the Diffusion Equation</h2>
@@ -538,7 +553,7 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
 <p>We explicitly see the arrow of time by examining this Gaussian solution at various times <span class="math inline">\(t\)</span>. As <span class="math inline">\(t\)</span> increases, the Gaussian “bell-shaped” curve spreads out. Its width grows according to <span class="math inline">\(\langle x^2 \rangle^{1/2} \sim t^{1/2}\)</span>. This is known as “diffusive scaling,” and it implies that, after time <span class="math inline">\(t\)</span>, a particle will typically be found at a distance roughly proportional to <span class="math inline">\(t^{1/2}\)</span> from its starting point. Conversely, exploring a region of size <span class="math inline">\(L\)</span> typically requires a time of order <span class="math inline">\(O(L^2)\)</span>.</p>
 <p>The evolution of the solution to the 1d diffusion equation in a spatial region <span class="math inline">\(x=[0,1]\)</span> as a function of times are shown in the movie below. The diffusion constant is <span class="math inline">\(D=0.01\)</span>. The movie corresponds to a particle initialised at <span class="math inline">\(x=0.5\)</span>. One sees how the probability density spreads out over the range as time increases. This can be used to model the diffusion of particles down a concentration gradient as you will see in the next part of the course.</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/diffusion_evolution.mp4"></video></div>
-<div id="5973fb62" class="cell" data-execution_count="1">
+<div id="933db051" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -676,7 +691,7 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
 <p>where <span class="math inline">\(\nu_0\)</span> is a constant.</p>
 <p><em>Exercise:</em> Show that this gives the canonical distribution in steady state.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -685,7 +700,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>To show that this jump rate rule gives the canonical distribution in steady state, we assume the system reaches a steady-state probability distribution <span class="math inline">\(P_A\)</span> for state <span class="math inline">\(A\)</span> and apply the condition of detailed balance.</p>
 <p>Detailed balance requires: <span class="math display">\[
