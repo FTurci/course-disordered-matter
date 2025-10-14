@@ -355,11 +355,39 @@ x(t + \Delta t) = x(t) + \Delta x(t)
 0 &amp; \text{with probability } 1 - 2\nu \Delta t
 \end{cases}
 \]</span></p>
-<p>This defines a discrete-time, discrete-space random walk. The average and variance of the step are easily derived using binomial statistics:</p>
+<p>This defines a discrete-time, discrete-space random walk. The average and variance of the step are easily derived (try as an exercise):</p>
 <ul>
 <li><p>Mean: <span class="math inline">\(\langle \Delta x \rangle = 0\)</span></p></li>
 <li><p>Variance: <span class="math inline">\(\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t\)</span></p></li>
 </ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The mean displacement is <span class="math display">\[
+\langle \Delta x \rangle = (+a)(\nu \Delta t) + (-a)(\nu \Delta t) + 0(1 - 2\nu \Delta t) = 0.
+\]</span></p>
+<p>The mean square displacement is <span class="math display">\[
+\langle (\Delta x)^2 \rangle = (+a)^2(\nu \Delta t) + (-a)^2(\nu \Delta t) + 0^2(1 - 2\nu \Delta t)
+= 2a^2\nu \Delta t.
+\]</span></p>
+<p>Hence the variance is <span class="math display">\[
+\mathrm{Var}(\Delta x) = \langle (\Delta x)^2 \rangle - \langle \Delta x \rangle^2 = 2a^2\nu \Delta t.
+\]</span></p>
+<p>Identifying <span class="math inline">\(D = a^2\nu\)</span>, we obtain <span class="math display">\[
+\langle (\Delta x)^2 \rangle = 2D\Delta t.
+\]</span></p>
+</div>
+</div>
+</div>
 <p>The steps <span class="math inline">\(\Delta x(t)\)</span> are uncorrelated across time.</p>
 <p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span>, while keeping the diffusion constant <span class="math display">\[
 D = \nu a^2
@@ -474,7 +502,7 @@ v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
 \]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -483,7 +511,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <span class="math display">\[\begin{aligned}
 \text{From the solution for }v(t)\text{ with }m=1\text{:}\\
@@ -574,7 +602,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="7384cb27" class="cell" data-execution_count="1">
+<div id="cfcc534a" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
