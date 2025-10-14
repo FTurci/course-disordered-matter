@@ -361,42 +361,12 @@ x(t + \Delta t) = x(t) + \Delta x(t)
 <li><p>Variance: <span class="math inline">\(\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t\)</span></p></li>
 </ul>
 <p>The steps <span class="math inline">\(\Delta x(t)\)</span> are uncorrelated across time.</p>
-<p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span> in such a way that:</p>
-<p><span class="math display">\[
-a \propto \sqrt{\Delta t}
-\]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-why?
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>We consider a random walk in discrete time with time step <span class="math inline">\(\Delta t\)</span>. After each interval <span class="math inline">\(\Delta t\)</span>, the position changes by a random increment <span class="math inline">\(\Delta x\)</span> of magnitude <span class="math inline">\(a\)</span>, so that <span class="math display">\[
-x(t + \Delta t) = x(t) + \Delta x(t).
-\]</span> After <span class="math inline">\(N = t / \Delta t\)</span> steps, the total mean-square displacement is <span class="math display">\[
-\langle [x(t) - x(0)]^2 \rangle = N \langle (\Delta x)^2 \rangle.
-\]</span> If each step satisfies <span class="math inline">\(\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t\)</span>, then <span class="math display">\[
-\langle [x(t) - x(0)]^2 \rangle
-= \frac{t}{\Delta t} (2 a^2 \nu \Delta t)
-= 2 \nu a^2 t.
-\]</span> Notice that the factor of <span class="math inline">\(\Delta t\)</span> cancels. This means the total variance grows linearly in time, as required for diffusion, <em>provided the combination</em> <span class="math inline">\(\nu a^2\)</span> remains finite.</p>
 <p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span>, while keeping the diffusion constant <span class="math display">\[
 D = \nu a^2
-\]</span> fixed. This condition implies <span class="math display">\[
-a^2 \propto \Delta t
-\quad \Rightarrow \quad
+\]</span> fixed. This requirement implies that we need <span class="math inline">\(\nu\propto a^{-2}\)</span>, which is satisfied if <span class="math display">\[
 a \propto \sqrt{\Delta t}.
 \]</span></p>
 <p>Hence the step size must shrink as the square root of the time step. Only under this scaling does the random walk converge to a well-defined continuum process with finite diffusion constant, namely Brownian motion or the Langevin equation.</p>
-</div>
-</div>
-</div>
 <p>In this limit, we obtain the <strong>Langevin equation</strong>:</p>
 <p><span class="math display">\[
 \dot{x}(t) = \eta(t)
@@ -504,7 +474,7 @@ v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
 \]</span></p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -513,21 +483,24 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\text{From the solution for }v(t)\text{ (with }m=1\text{):}\quad
-v(t)=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\]</span>6pt] &amp;; v(t)^2 = v_0^2 e^{-2t} + 2 v_0 e^{-t}_0^t e^{-(t-t’)} f(t’),dt’ + _0^t!!_0^t e^{-(2t-t’-t’‘)} f(t’)f(t’‘),dt’,dt’’. \end{aligned} $$</p>
-<p><span class="math display">\[
-\begin{aligned}
-\langle v(t)^2\rangle
+<span class="math display">\[\begin{aligned}
+\text{From the solution for }v(t)\text{ with }m=1\text{:}\\
+v(t)&amp;=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
+\Rightarrow\; v(t)^2 &amp;= v_0^2 e^{-2\gamma t}
++ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} f(t')\,dt'
++ \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')} f(t')f(t'')\,dt'\,dt''.
+\end{aligned}\]</span>
+<span class="math display">\[\begin{aligned}
+\Rightarrow\; \langle v(t)^2\rangle &amp;= v_0^2 e^{-2\gamma t} + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt' + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
+\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\
 &amp;= v_0^2 e^{-2\gamma t}
-+ 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt'\\
-&amp;\quad + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
-\underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\]</span>6pt] &amp;= v_0^2 e^{-2t} + <em>0^t e^{-2(t-t’)},dt’$$6pt] &amp;= v_0^2 e^{-2t} + </em>{t’=0}^{t’=t}$<span class="math inline">\(6pt]
++ \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\
+&amp;= v_0^2 e^{-2\gamma t}
++ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
 &amp;= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
-\end{aligned}\)</span>$</p>
+\end{aligned}\]</span>
 <p><span class="math display">\[
 \boxed{\;\langle v(t)^2\rangle
 = v_0^2 e^{-2\gamma t} + \dfrac{\Gamma}{2\gamma}\left(1-e^{-2\gamma t}\right)\;}
@@ -601,7 +574,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="ed3444a3" class="cell" data-execution_count="1">
+<div id="7384cb27" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
