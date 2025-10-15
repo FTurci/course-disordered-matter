@@ -98,6 +98,7 @@ book:
   #     text: "Concept maps"    
 format:
   live-html:
+    default: true
     theme: cosmo
     page-layout: full
     grid:
