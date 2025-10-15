@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Macroscopic measurements</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../experimental/part2.html" rel="next">
+<link href="../phase-transitions/assignment_October2025.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part1.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended texts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">Unifying concepts</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precourse reading and revision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Lecture Slides/Slides.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/assignment_October2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">First experimental interlude</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/part2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">10.1</span> Introduction</a></li>
+  <li><a href="#macroscopic-observation-and-experiments" id="toc-macroscopic-observation-and-experiments" class="nav-link" data-scroll-target="#macroscopic-observation-and-experiments"><span class="header-section-number">10.2</span> Macroscopic observation and experiments</a>
+  <ul class="collapse">
+  <li><a href="#st-order-phase-transitions---ice-and-water-as-an-example." id="toc-st-order-phase-transitions---ice-and-water-as-an-example." class="nav-link" data-scroll-target="#st-order-phase-transitions---ice-and-water-as-an-example."><span class="header-section-number">10.2.1</span> 1st Order Phase Transitions - ice and water as an example.</a></li>
+  <li><a href="#first-order-transitions---experimental-measurements." id="toc-first-order-transitions---experimental-measurements." class="nav-link" data-scroll-target="#first-order-transitions---experimental-measurements."><span class="header-section-number">10.2.2</span> First Order transitions - Experimental measurements.</a></li>
+  <li><a href="#first-order-phase-transitions---nucleation-and-growth." id="toc-first-order-phase-transitions---nucleation-and-growth." class="nav-link" data-scroll-target="#first-order-phase-transitions---nucleation-and-growth."><span class="header-section-number">10.2.3</span> First Order Phase transitions - nucleation and growth.</a></li>
+  <li><a href="#phase-separation-in-mixtures---spinodal-decomposition." id="toc-phase-separation-in-mixtures---spinodal-decomposition." class="nav-link" data-scroll-target="#phase-separation-in-mixtures---spinodal-decomposition."><span class="header-section-number">10.2.4</span> Phase Separation in mixtures - spinodal decomposition.</a></li>
+  <li><a href="#the-glass-transition." id="toc-the-glass-transition." class="nav-link" data-scroll-target="#the-glass-transition."><span class="header-section-number">10.2.5</span> The Glass Transition.</a></li>
+  <li><a href="#second-order-phase-transitions" id="toc-second-order-phase-transitions" class="nav-link" data-scroll-target="#second-order-phase-transitions"><span class="header-section-number">10.2.6</span> Second Order Phase transitions</a></li>
+  </ul></li>
+  <li><a href="#experimental-observation-of-phase-transitions" id="toc-experimental-observation-of-phase-transitions" class="nav-link" data-scroll-target="#experimental-observation-of-phase-transitions"><span class="header-section-number">11</span> Experimental observation of phase transitions</a>
+  <ul class="collapse">
+  <li><a href="#examples-of-macroscopic-measurements." id="toc-examples-of-macroscopic-measurements." class="nav-link" data-scroll-target="#examples-of-macroscopic-measurements."><span class="header-section-number">11.1</span> Examples of macroscopic measurements.</a>
+  <ul class="collapse">
+  <li><a href="#differential-thermal-analysis." id="toc-differential-thermal-analysis." class="nav-link" data-scroll-target="#differential-thermal-analysis."><span class="header-section-number">11.1.1</span> Differential Thermal analysis.</a></li>
+  <li><a href="#other-techniques-non-exhaustive" id="toc-other-techniques-non-exhaustive" class="nav-link" data-scroll-target="#other-techniques-non-exhaustive"><span class="header-section-number">11.1.2</span> Other techniques (non exhaustive)</a></li>
+  </ul></li>
+  <li><a href="#keypoints" id="toc-keypoints" class="nav-link" data-scroll-target="#keypoints"><span class="header-section-number">11.2</span> Keypoints</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part1.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">10.1</span> Introduction</h2>
+<p>In the course so far you have discussed the theoretical origins of phase transitions and have been given a theoretical introduction to the properties of disordered materials. In this section we will look briefly at some of the experimental techniques and experimental data that have driven and tested the theoretical work. Much of the quantitative experimental work is challenging and in many cases would take many lectures to justify properly. So, in these notes we will concentrate on the ideas underpinning the experiments and I will try to give a justification for the results obtained. The number of techniques discussed is limited and not exhaustive, you may find others as you read along.</p>
+</section>
+<section id="macroscopic-observation-and-experiments" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="macroscopic-observation-and-experiments"><span class="header-section-number">10.2</span> Macroscopic observation and experiments</h2>
+<p>Before discussing experiments in detail it is worth taking a little time to think about our observation of phase transitions and the different types of material we encounter in our everyday life. In the following I will concentrate mainly on water and its states as we know them well. You may consider it as a liquid at room temperature, a solid at cold temperatures and a gas at high temperatures. However, even for this `simple’ material we can observe unusual effects as we change its state. So in the following I will use water as an example even though, hopefully, you can see how the ideas will apply in general to other materials.</p>
+<section id="st-order-phase-transitions---ice-and-water-as-an-example." class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="st-order-phase-transitions---ice-and-water-as-an-example."><span class="header-section-number">10.2.1</span> 1st Order Phase Transitions - ice and water as an example.</h3>
+<p>Phase transitions are all around us in our everyday life. Some take place naturally, for example, the freezing of water on a cold winter night, some are exploited (and maybe hidden) in the technology that surrounds us in for example, liquid crystal displays or non-volatile computer memory.</p>
+<p>Let’s take water as our example and consider our everyday experience. In a warm building at a temperature of 20<span class="math inline">\(^o\)</span>C, water in a beaker is a liquid, it freely flows and you can pour it from one container to another. What happens as we lower the temperature slowly (so that we keep, as best we can, a uniform temperature in the liquid). Common experience tells us it remains as a liquid until we reach its freezing point at 0<span class="math inline">\(^o\)</span>C when it starts to solidify and form solid water - ice. But how does happen and does it always happen in the same way? Let’s think about this a little more deeply.</p>
+<p>Suppose we put our beaker of water at 20<span class="math inline">\(^o\)</span>C straight into a freezer at, say, -10<span class="math inline">\(^o\)</span> C. To start with the water in the beaker will lose heat to the surroundings (mainly by conduction and convection) and temperature gradients will appear in the water (the water at the edges will be cooler than the water in the middle). As the outside approaches 0<span class="math inline">\(^o\)</span>C we expect the water at the edges to freeze (we’ll discuss this further later) and a block of solid ice will eventually form in the beaker. (We might break our container as, unusually, the density of ice is less than water so the total volume occupied by the water tries to get larger). During this process we will have an ice-water <span class="math inline">\(\textit{interface}\)</span> that stays at 0<span class="math inline">\(^o\)</span>C but with large temperature gradients in the freezer and beaker - we are far from having the uniform temperature we mentioned above. As we can see from this short description, the temperature gradients mean that in practise phase transitions never take place uniformly in a material and there will always be some localization of the processes taking place. We can already see that freezing is more complicated than we might first imagine!</p>
+<p>If we are going to look at the ice-water transition more carefully experimentally and to reduce these non-local effects we try to do things more slowly and try to maintain a uniform temperature by e.g.&nbsp;stirring. Ideally we’d also like to know qualitatively how quickly we are removing the heat and how much heat is removed in the process (the latent heat). What happens in this case? Well, if the outside temperature of the beaker is very slightly below zero then heat will be lost slowly from the (stirred) water and we expect small regions of ice mixed with the water to form. The water in the beaker does not freeze instantaneously but the ratio of the amount of ice to water steadily increases as heat is gradually removed (we should describe this as quasi-equilibrium where we consider we are moving gradually from one thermodynamic equilibrium state to another). As more ice forms we get a slushy mixture. If we carefully measure the temperature of the ice-water mixture (slush) during this process we will see that it remains at 0<span class="math inline">\(^o\)</span>C until all the water has changed to ice at which point the ice will reach equilibrium with its surroundings (that we remember was just below zero). If, at any time during the process we prevent heat entering or leaving the system, the ice-water mixture will maintain the same ratio (although changes in the sizes of the regions may take place). The ice and water are then said to be in co-existence at the <span class="math inline">\(\textit{phase ~ transition ~temperature}\)</span> of 0<span class="math inline">\(^o\)</span>C.</p>
+<p>Co-existence of two phases at the transition temperature is the typical characteristic of a first order transition.</p>
+<p>You may wish to remind yourself of this process when we discuss thermal analysis later.</p>
+</section>
+<section id="first-order-transitions---experimental-measurements." class="level3" data-number="10.2.2">
+<h3 data-number="10.2.2" class="anchored" data-anchor-id="first-order-transitions---experimental-measurements."><span class="header-section-number">10.2.2</span> First Order transitions - Experimental measurements.</h3>
+<p>In the discussion above I tried to define more carefully how we were cooling the system. This hints at some of the difficulties in actually trying to measure the details of about what happens when the transition is taking place. Fundamentally we are trying to use equlibrium thermodynamics to explain what happens in a system that is not in equilibrium but in the process of equilibrating. The study of non-equilibrium processes is a very active and important area of study. We might note that the ice-water co-existence is an equilibrium state - it is all at 0<span class="math inline">\(^o\)</span>C but can have very different appearances (slushy, an ice cube surrounded by water etc.). The result is that in all careful (accurate calorimetry) experiments care is taken to avoid non-unformity in the system (i.e.&nbsp;temperature gradients, field gradients in magnetic systems, …). The problem of non-uniform temeperature is even more acute for second order phases transitions as we will discuss below.</p>
+<p>There are many ways in which you might study phase transitions apart from visually, but the most common, quantative and closely related techniques are Differential Thermal Analysis (DTA) and Differential Scanning Calorimetry (DSC). Machines for doing this are commercially available and are ubiquitous in materials science labs.</p>
+<p>We will look at these techniques in more detail later.</p>
+</section>
+<section id="first-order-phase-transitions---nucleation-and-growth." class="level3" data-number="10.2.3">
+<h3 data-number="10.2.3" class="anchored" data-anchor-id="first-order-phase-transitions---nucleation-and-growth."><span class="header-section-number">10.2.3</span> First Order Phase transitions - nucleation and growth.</h3>
+<p>The form of the system after the transition has taken place may be of more interest for practical applications. For example, we know we can get ice by cooling water below 0<span class="math inline">\(^o\)</span>C and if you are looking to cool your drink, the water in the form of a large ice cube is ideal (‘Scotch on the rocks’) whereas it wouldn’t be nice to ‘eat’ on a hot summers day. In contrast, if we can make ice crystals as small as possible (10’s of <span class="math inline">\(\mu\)</span>m), we have the basis for making good ice cream. Indeed if the crystals are small enough the texture is creamy without the need for any ‘cream’ at all. Hence, the way in which macroscopic properties through the transition can be controlled may be as important as understanding the transition itself. For example, one favourite method of making ice cream is to use liquid nitrogen. This has the effect, with rapid stirring, of forming the tiny crystals needed for good ice cream. The processing of materials through phase transitions is ubiquitous. It’s perhaps no surprise to see that major industries including food processing, cosmetics, engineering materials are all heavily dependent on our knowledge of what happens as phase transitions take place.</p>
+<p>To deepen our knowledge of how the transitions take place we need to think beyond the thermodynamics and ask what happens at the microscopic (atomic) level. So what happens to the atoms/particles as a first order freezing transition takes place? To make progress we need to introduce the ideas and theories of the nucleation and growth of crystals at the phase transition temperature. These concepts have been introduced in the theory part of these lectures but let’s thing about what happens in our water/ice system. If I start with liquid water at 0<span class="math inline">\(^o\)</span>C and remove a small amount of heat from the system I expect, from our discussion above, to start forming an ice/water mixture. But how does the first ice crystal start to form?</p>
+<p>The first thing to note and you may be surprised to learn is that crystallization doesn’t have to take place at all at 0<span class="math inline">\(^o\)</span>C! It is perfectly possible to have stable liquid water below 0<span class="math inline">\(^o\)</span>C even under standard atmosphere and pressure. This is known as supercooling or undercooling. It can also occur at other transitions, for example you can find superheated water above 100<span class="math inline">\(^o\)</span>C. Although supercooled/superheated materials are not the equilbrium states they can stay in this <span class="math inline">\(\textit{metastable}\)</span> state for many weeks/months on end unless disturbed.</p>
+<p>Hence, if we are careful we can cool water to well below 0<span class="math inline">\(^o\)</span>C without it freezing. So what happens as we cool our water below 0<span class="math inline">\(^o\)</span>C and why, in some cases does it not freeze? What observations measurements could we make? Firstly, if it supercools, no first-order phase transition has taken place and there is no release of latent heat. Hence, in heat capacity measurements (DSC) we would expect to see a steady and smooth decrease in temperature. The physical properties of the supercooled liquid water would stay broadly the same - it will still flow and pour as a liquid but we might observe steady changes in, for example, its volume or viscosity (which we will discuss in relation to the glass transition later) as the temperature decreases. But where has the heat (energy) associated with the latent heat of freezing (if the sample had frozen) gone? The answer is it hasn’t gone anywhere, it remains in the water even though the temperature has decreased. In other words there is more energy in supercooled water at -10 <span class="math inline">\(^o\)</span>C than ice at the same temperature. Hence, the metastable state is not the <span class="math inline">\(\textit{global}\)</span> minimum energy configuration of the system but is at a <span class="math inline">\(\textit{local}\)</span> energy minimum (i.e.&nbsp;it will return to this local equilibrium after small deviations from the equilibrium state). In order for the global minimum to be reached from the local minimum there is an energy barrier to overcome. In order to freeze from the supercooled state this energy barrier needs to be overcome. The idea that there may be one or more possible local minima for a configuration is known as the <span class="math inline">\(\textit{energy landscape}\)</span> of the material. This is illustrated conceptually in the figure below. Any configuration that lies above the landscape (the squiggly line) is a possible state of the system. For a given energy the system is rapidly changing configuration by moving to a neighbouring state on the configuration axis (in practise the energy landscape is multidimensional). At high energies (above the blue dotted line) it is possible to reach any configuration of the system in time. This would be equivalent to the normal liquid state. The lowest minimum (green dotted line) represents the equilibrium (minimum energy state) state e.g.&nbsp;ice. Now we imagine starting in the liquid state to the left of the vertical purple line and remove some energy. Once we are below this line we see that we cannot access any states to its right - the global minimum, ice, has become inaccessible. If we continue to remove energy we may find ourselves in the local minimum in this part of configuration space. This could perhaps be the supercooled liquid state. To reach the global minimum we have to overcome the energy barrier separating the local from the global minimum. Natural fluctuations in energy may be sufficient and explain why under normal cicumstances we get to the global minimum. However, if the local minimum is deep enough we get stuck in the metastable state.</p>
+<center>
+<img src="part1_figs/energylandscape.png" alt="Illustration of the energy landscape concept " width="800">
+</center>
+<p>In principle we could get ‘stuck’ in any of the local minima if we process our material in a certain way.</p>
+<p>So what happens as we cool the water further - there are two possibilities: it will suddenly freeze to form ice (we find the global minimum energy), or its viscosity becomes so high that the internal molecular motion of the atoms is slowed down so much that the disordered arrangements of the atoms become ‘frozen’ so that it forms a ‘solid’ disordered structure that we call a glass (i.e.&nbsp;we’ve got stuck in a local minimum). In fact, no one has ever been able to produce ‘glassy’ water in this way <span class="math inline">\(^*\)</span> but the transition to a glass on cooling does a occur in many materials. We’ll leave discussion of the glass transition and how we observe it until later.</p>
+<p>So, if we observe our water as we cool it, we find it will suddenly and rapidly appear to freeze to form ice. If you seacrh for `supercooled water’ on youtube (or other) you will find many videos of this happening. So what is happening? In our supercooled water there will always be small regions that spontaneously start to form the atomic arrangements reminiscent of the crystal you’d expect to see at that temperature. But, as you’ve seen in the theory lectures, there is an energy barrier to overcome before the crystals become large enough to start growing continuously. In other words our embryonic crystals start to grow but dissolve again before they have the chance to grow further. However, if a crystal gets large enough, there is no energy barrier to stop more atoms/molecules attaching to the nascent crystal and it will continue to grow.</p>
+<p>Once the crystals are macroscopically large we start to see them and can observe the growth. However, there are a few things we should note. Firstly, this spontaneous crystallization (known as <span class="math inline">\(\textit{homogeneous nucleation}\)</span>), is a ‘local’ event - it could happen anywhere in the liquid. There are many questions that can then be asked. Is it only one crystal that forms and grows, or does homogeneous nucleation take place simultaneously in different parts of fluid at the same time? This poses some very difficult questions and when you investigate further you realise that the simple theory of nucleation and growth is just that - in reality how and where nucleation physically takes place in different materials is hard to predict! In some materials you might see a small number of large crystal form, in others, lots of smaller crystals start to form at the same time. In many cases you see a `front’ of nucleation advancing rapidly from the original nucleation event. We don’t have time in these lectures to explore this fascinating subject but the consequences for materials science (i.e the strength and physical properties of the materials produced) are important.</p>
+<p>There are still a few things we should note. We know in our example that there is more energy in the supercooled liquid water than the same amount of water in the form of ice. So what happens when an ice crystal starts to grow spontaneously in our supercooled water? As the crystal starts to grow, the latent heat associated with the transition, that has remained in the liquid, must be released, so locally around the forming crystal the temperature of the liquid and the crystal will start to rise. In other words temperature gradients will start to form around the crystal and heat will only leave via transport processes (conduction, convection, possibly radiation) through the liquid. So, as the nucleation takes place the material is far from equlibrium with large variations in temperature present etc. What is the final state of the system once equlibrium has been reached in an isolated system? Well, as we noted, as nucleation takes place, the temperature goes up. So, do we end up with ice at a temperature below zero or a mixture of ice and water, which we know should be at 0<span class="math inline">\(^o\)</span>C (at stp)? The answer is the latter, you end up with an ice/water mixture at 0<span class="math inline">\(^o\)</span>C with the ratio of ice to water dependent on the level of supercooling. The more deeply supercooled the greater the proportion of ice to water.</p>
+<p>Exercise. Look up the latent heat of freezing for water and estimate the temperature at which supercooled water needs to be if it was form only ice (i.e.&nbsp;no water) at 0<span class="math inline">\(^o\)</span>C on nucleation.</p>
+<p>From the discussion above you can see that the local and microscopic nature of the nucleation processes make precise experiments difficult. The results will depend, on the size of the sample, the rate of heat transfer through the sample, the randomness, of the nucleation processes, whether the process was at fixed pressure or constant volume (remember ice at stp has lower density than water and think about the implications if the process takes place at constant volume) etc.</p>
+<p>So how does a first order transition from a supercooled state manifest itself in a calorimetry experiment, for example in a DSC? Well, if the transition takes place at the freezing temperature we’d expect to see the temperature of the sample remain at the transition temperature until the transition is complete, at which point the temperatures starts to drop steadily again at a rate corresponding to the heat capacity of the material. If however the material supercools its temperature will decrease steadily through the the transition temperature (no transition takes place). When the material eventually nucleates and crystallizes you observe a sudden rise in temperature (back to the transtion temperature) where it stays until the transition is complete and the temperature decreases as before. The deeper the supercooling the bigger the temperature jump. As noted above, the precise shape of the reheating peak observed depends on the sample size, thermal conductivity etc.</p>
+<p>The sudden reheating of a material from a supercooled state is called <span class="math inline">\(\textit{recalescence}\)</span>.</p>
+<p>Exercise. Recalescence is not confined to liquid/solid/gas transitions. It may occur for any first order transition, for example, the austenitic transition in stainless steel which is of commerical importance. Can you find other examples.</p>
+<p>Final comments about 1st order phase transitions.</p>
+<ul>
+<li><p>Supercooling is often difficult to achieve. The reason is that in real situations we need to hold the material in containers in which there might be impurities or specks of dirt etc. These impurities can act very much like embryonic crystals that form in homogeneous nucleation and they lower the free energy barrier for nucleation. Processing materials under very clean conditions in smooth walled containers is very difficult. Nucleation on impurities is known as <span class="math inline">\(\textit{heterogeneous}\)</span> nucleation and is often the process most observed unless great attention is taken to the preparation method.</p></li>
+<li><p>If there is a known transition and neither the transition or recalescence is observed in for example a DSC scan, then it is possible that the material formed a glass. This is discussed below.</p></li>
+</ul>
+<p><span class="math inline">\(^*\)</span> Although it is possible to make amorphous ice - a topic great interest but we don’t have time to study it here.</p>
+</section>
+<section id="phase-separation-in-mixtures---spinodal-decomposition." class="level3" data-number="10.2.4">
+<h3 data-number="10.2.4" class="anchored" data-anchor-id="phase-separation-in-mixtures---spinodal-decomposition."><span class="header-section-number">10.2.4</span> Phase Separation in mixtures - spinodal decomposition.</h3>
+<p>In the previous section we saw that a first order transition doesn’t necessarily take place at the transition temperature. That is, rather than observing two phases in coexistence at the transition temperature, the material may remain in a metastable supercooled or superheated single state. The crucial observation is that for the transition to start, a nucleation event needs to take place, from which the second phase will grow. The next question you might ask is what happens if I continue to cool the material? Firstly, as the temperature difference increases the likelihood of homogeneous nucleation (and recalescence) increases. However, there are other possibilities, the material may form a glass (which we will discuss shortly) or we reach the point where spinodal decomposition takes place. You have discussed spinodal decomposition in the theoretical section of this course, but briefly there comes a point where the barrier to the separation disappears and the formation of two distinct phases occurs throughout the material (it does not rely on a nucleation centre). This is especially true if you are below and close to the critical point. This is a dynamic process as the size of the different regions grows over time - eventually two distinct macroscopically large phases appear. Spinodal decomposition, has an important role to play in material processing as it has an effect on the microsctructure of the material produced. If the material is quenched fast the growth of the separate regions that form will be rapidly arrested leading to a fine grained solid. If the quench is slow the resulting structure will be coarse grained. This graining of the microstructure will affect the physical properties of the material produced. This behaviour is most associated with phase transitions that involve the separation of components in composition, such as metallic alloys and polymer blends rather than pure liquid/gas, liquid/solid transitions in which spinodal decomposition is far harder to observe.</p>
+</section>
+<section id="the-glass-transition." class="level3" data-number="10.2.5">
+<h3 data-number="10.2.5" class="anchored" data-anchor-id="the-glass-transition."><span class="header-section-number">10.2.5</span> The Glass Transition.</h3>
+<p>In the section above we discussed how, particularly in the case of compositional phase separation, the microstucture of a material may be related to the speed in which it is quenched. As a consequence the end point is a material that is composed of a mixture of different phases rather than a single phase - the result of a true first order phase transition. So, what happens if we manage to cool without nucleation or spinodal decomposition occuring? i.e.&nbsp;what happens if we rapidly quench the sample to the extent that the dynamics driving for example spinodal decomposition are ‘frozen’ out. If we manage to slow the diffusion of the atoms enough, then the atomic re-arrangements needed to cause crystallization or spinodal decomposition cannot take place and the atoms/molecules appear to be fixed in place, but with a disordered arrangement. However we note that overall the material remains homogeneous and uniform - there is no microstructure. As in the case of supercooled liquids, this is not the equilibrium state, but another form of metastable state known as a glass. An example, is typically the material in our windows, `glass’, that is the result of cooling liquid silicates. Not all materials readily form glasses and this is often expressed loosely as the glass forming ability of the material. A good glass former is a material that can be cooled quite slowly, a poor glass former is one that needs to be quenched fast (there are more complex definitions but this is the gist). A characteristic of the glass is that no transition appears to take place in the material as it is quenched. There is no latent heat released, there is no recalescence and there is no evidence of phase separation (microstructure) in the material produced. In other words we imagine the glass forming from the supercooled liquid. So what do we mean by the glass transition and the glass transition temperature <span class="math inline">\(T_g\)</span>? To answer this question, it is interesting to ask what happens as we heat our glass up? If, all we had was a very very high viscosity (behaving like a solid), but metastable supercooled liquid phase, then we would eventually return to the true liquid phase (above the melting point) without any evidence of a phase transition taking place (unless nucleation and recalescence took place). However, when we heat glass, we do see heat evolved at a temperature below the melting point (we’ll see this later on our summary of thermal analysis). For any given glass this occurs consistently at roughly the same temperature (but notably not well defined) and the material will start to change into a more viscous, `rubbery’ state. This is known as the glass transition. It is not a true thermodynamic transition and there are many ways in which it may defined (all occuring at roughly the same temperature). It depends on cooling/heating rate and can be observed in a change in for example viscosity, thermal expansion coefficients, heat capacity etc. It also depends on the thermal history of the material.</p>
+<p>In summary, the existence of a glassy state of matter is readily apparent. However, the transformation of a liquid into a glass and how and why the structure changes on heating/cooling at the glass transition are still very poorly understood and the subject of much research. Indeed, there is no universal definition of the glass transition despite many attempts to define it in a rigorous thermodynamic way.</p>
+<p>The terms glassy and amorphous materials are often used synonymously. Stricter definitions state that a (true) glass is formed by quenching from the liquid state whereas an amorphous solid includes materials that have been formed by for example deposition from a vapour, preciptation from a solution, mechanical processing. Amorphous materials also show a glass transition temperature but the manner in which they form is more complicated to describe theoretically.</p>
+</section>
+<section id="second-order-phase-transitions" class="level3" data-number="10.2.6">
+<h3 data-number="10.2.6" class="anchored" data-anchor-id="second-order-phase-transitions"><span class="header-section-number">10.2.6</span> Second Order Phase transitions</h3>
+<p>In the discussion above we charaterised a first order phase transtion as one in which latent heat is absorbed/emitted. i.e.&nbsp;one in which two phases coexist at the transition temperature and the temperature stays constant until the transition is complete. However, we can also identify other transitions in which no latent heat is associated with the change in phase taking place. Typical examples might be the liquid-vapour transition at the critical point or the ferromagnetic transition. The key point is that the transition between the two states is continuous. For example, in the ferromagnetic transition the magnetization is zero above the transition and increases steadily from zero below the transition. In this case it is the discontinuity in slope of the magnetization vs.&nbsp;temperature that is the signature of the transition taking place. In other cases a discontinuity in the gradient of the temperature dependence of the heat capacity is observed (while the heat capacity itself is continuous across the transition). These transitions have been discussed in the the theory section of this course and their beauty is the observation that the behaviour for a variety of supposedly very different physical transitions may be characterised in terms of universal behaviour. The <span class="math inline">\(\textit{universality class}\)</span> of the transition is characterised by its critical exponents. You might note that many attempts have been made (unsuccessfully) to describe the glass transition in terms of an underlying second order phase transition.</p>
+<p>Experiments to determine, for example, the critical exponents of the transition (rather than observing the transition itself) are extremely difficult. Precise control and accuracy of the temperature measurements is needed, great care must be taken to make any temperature gradients in the material as small as possible and in order to get accurate values of the critical exponents you need to get very close to the transition temperature.</p>
+</section>
+</section>
+<section id="experimental-observation-of-phase-transitions" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Experimental observation of phase transitions</h1>
+<p>In the rest of this course we will highlight a few of the various techniques that are used to investigate and study the various forms of transitions discussed and the materials produced from them. Where possible we will relate them to some of the theoretical concepts that have been discussed in other parts. We will separate the discussion into four broad categories:</p>
+<ul>
+<li>observation of the changes in macroscopic variables associated with transitions,</li>
+<li>the structure and changes in structure in real space (i.e.&nbsp;positions of atoms and particles) as transitions take place,</li>
+<li>the structure and changes in structure as seen in reciprocal space (i.e.&nbsp;by scattering and diffraction),</li>
+<li>and the changes that take place in the structure and the dynamics of the particles in differennt phases.</li>
+</ul>
+<section id="examples-of-macroscopic-measurements." class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="examples-of-macroscopic-measurements."><span class="header-section-number">11.1</span> Examples of macroscopic measurements.</h2>
+<section id="differential-thermal-analysis." class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="differential-thermal-analysis."><span class="header-section-number">11.1.1</span> Differential Thermal analysis.</h3>
+<p>Differential Thermal Analysis (DTA) methods are now a common and routine way of establishing the existenceo of phase transitions in materials in both a qualitative and quantitative way. The methods are all based on the same principle, namely the response to heating/cooling of the material under study is compared to that of a known calibration material that does not have any phase transitions in the region of study. I describe the two most common forms below.</p>
+<section id="heat-flux-dsc-boersma-dta" class="level4" data-number="11.1.1.1">
+<h4 data-number="11.1.1.1" class="anchored" data-anchor-id="heat-flux-dsc-boersma-dta"><span class="header-section-number">11.1.1.1</span> Heat flux DSC (Boersma DTA)</h4>
+<p>This is the simplest thermal analysis technqiue. Two materials, a sample and a reference are heated together in a single furnace as shown below.</p>
+<center>
+<img src="part1_figs/DTA.png" alt="Schematic of a DTA apparatus " width="800">
+</center>
+<p>The temperature of the two materials is monitored carefully as the furnace is heated steadily. The reference is known not to show any phase transitions over the temperature range studied and will therefore heat steadily. If there is a phase change in the sample on heating/cooling, it will show as a temperature difference between the sample and reference. If the change is endothermic the sample will be at a lower temperature until the transition is complete after which the sample will catch up to the base temperature of the furnace, if the change is exothermic its temperature will increase until the transition is complete and then return to the furnace temperature. If the mass of the sample and reference is known and the heat capacity of the reference known, quantative values of, for example, latent heat, can be obtained. In quantitative measurements it is sometimes known as a heat flux DSC. A schematic of a heat flux DSC trace is shown below.</p>
+<center>
+<img src="part1_figs/DTAtrace.png" alt="Schematic of a DTA trace " width="800">
+</center>
+</section>
+<section id="heat-flow-dsc" class="level4" data-number="11.1.1.2">
+<h4 data-number="11.1.1.2" class="anchored" data-anchor-id="heat-flow-dsc"><span class="header-section-number">11.1.1.2</span> Heat flow DSC</h4>
+<p>This technique is similar to heat flux DSC but the sample and reference are located in their own separate furnaces (it is a double furnace technique). The power needed to steadily heat the sample and reference (and hence the heat added to the system) is controlled in such a way as to keep the temperature of the sample and reference the same.</p>
+<center>
+<img src="part1_figs/heatflowDSC.png" alt="Schematic of a Heat Flow DSC apparatus " width="800">
+</center>
+<p>The difference in power supplied to the furnaces indicates when a transition takes place and with the mass of the reference and sample allows the energy absorbed/released in the transition be determined. If on heating there is a first order phase transition then more power is needed to overcome the latent heat to maintain the temperature. If an endothermic transition takes place then the power needed would decrease. The output from the instrument is usually presented as the heat flow to the sample as the temperature is raised. The trace is very similar in form to the heat flux DSC above except that the peaks and troughs observed are the opposite directions. (Increased heat flow into the sample is equivalent to the temperature of the sample being lower in the heat heat flux DSC). With computer control and a carefully designed and insulated chamber accurate measurements of latent heat etc. may be made.</p>
+</section>
+<section id="practical-considerations" class="level4" data-number="11.1.1.3">
+<h4 data-number="11.1.1.3" class="anchored" data-anchor-id="practical-considerations"><span class="header-section-number">11.1.1.3</span> Practical considerations</h4>
+<p>In use, practical questions involve the rate at which you wish to heat/cool the sample (transitions don’t take place instantaneously) and the sensitivity to small changes you are tryinh to observe. One common extension to the technique is <span class="math inline">\(\textit{Temperature ~ Modulated ~ DSC}\)</span>. In this case the heating/cooling may be modulated (e.g.&nbsp;stopped or reversed periodically. Application of this method allows the kinetics of the transition in the DSC to be observed. In particular, it can distinguish between a reversible second order phase transition and an irreversible transition such as the glass transition.</p>
+<p>A typical DSC analysis would involve monitoring the sample as it is heated to some target temperature, for example, to above its melting point. (The limit would be set by the maximum temperature limit of the apparatus, the material stability (does it breakdown/oxidise) or the onset of a reaction between sample and container). If the sample was initially in a non equilibrium state (glassy, supercooled so you pass through <span class="math inline">\(T_g\)</span> or recalescence takes place) then you do not expect to see transitions at the same place in the heating/cooling cycles. Similarly, observations of the differences in the DSC trace of materials with different thermal histories will be different.</p>
+</section>
+</section>
+<section id="other-techniques-non-exhaustive" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="other-techniques-non-exhaustive"><span class="header-section-number">11.1.2</span> Other techniques (non exhaustive)</h3>
+<p>Differential thermal analysis is not the only method for studying phase transitions. There are many other ways, quantitative and qualitative that may be used. Here are a few examples.</p>
+<p><span class="math inline">\(\bf{Thermal ~ mechanical ~ analysis ~ (TMA)}\)</span>. In this case the mechanical properties (modulus) of the material is observed on heating/cooling. For example, on heating, at the glass transition temperature, a glass will start to soften. Note, the glass transition temperature measured in this way is often slightly different to that measured by DSC and is indicative of the vagueness of the definition of <span class="math inline">\(T_g\)</span> itself!</p>
+<p><span class="math inline">\(\bf{Thermogravimetric ~ analysis}\)</span>. Observation of changes in sample mass with temperature.</p>
+<p><span class="math inline">\(\bf{Imaging}\)</span>. It is quite possible to observe (and hence video) the phase transition taking place and getting some insight into the mechanism of the transition taking place.</p>
+<p><span class="math inline">\(\bf{Magnetic ~ susceptibilty}\)</span>. To observe transitions in para to ferro/antiferro magnetic transitions. (e.g.&nbsp;Curie and Néel points),</p>
+<p><span class="math inline">\(\bf{Electrical ~ Conductivity}\)</span>. In addition to structural changes in a material changes in other properties, for example, the electronic conductivity may also take place. For example, some chalcogenide (S,Se,Te) based materials are good glass formers and have very high resistivity (low conductivity) in the glassy state. By contrast, in the crystalline state they have high conductivity. The associated glass and melting transitions may be observed easily by measuring resistance. Indeed, the glass transition in these materials, is exploited in non-volatile memory devices.</p>
+<p><span class="math inline">\(\bf{Pyrometric ~ measurements}\)</span>. This is an example from my own research on oxide glasses (that melt in excess of 2000K). In this case, the glass transition, recalescence, and freezing my all be observed in a semi-quantitative way by measuring the temperature of a cooling sample as a function of time.</p>
+<center>
+<img src="part1_figs/Barnes-recalescence.png" alt="example of recalescence from Barnes 2011" width="1200">
+</center>
+</section>
+</section>
+<section id="keypoints" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="keypoints"><span class="header-section-number">11.2</span> Keypoints</h2>
+<p>We have taken some time here to discuss various aspects about phase transitions as macroscopically observable changes in a material. We have introduced the ideas of</p>
+<ul>
+<li><p>first and second order phase transitions,</p></li>
+<li><p>nucleation and growth,</p></li>
+<li><p>supercooling and superheating,</p></li>
+<li><p>spinodal decomposition,</p></li>
+<li><p>the formation of glasses</p>
+<p>andhave given a brief introduction as how to observe and measure them with especial emphasis on differential thermal analysis techniques.</p></li>
+</ul>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../experimental";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../phase-transitions/assignment_October2025.html" class="pagination-link" aria-label="First coursework assignment">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">First coursework assignment</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../experimental/part2.html" class="pagination-link" aria-label="Real-space measurements">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
