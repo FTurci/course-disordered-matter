@@ -44,8 +44,8 @@ book:
            href: phase-transitions/master-equation-and-diffusion.qmd
          - text: "Langevin and Brownian dynamics"
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
-        #  - text: "Nucleation, growth and spinodal decomposition"
-        #    href: phase-transitions/nucleation-and-growth.qmd 
+         - text: "Nucleation, growth and spinodal decomposition"
+           href: phase-transitions/nucleation-and-growth.qmd 
         #   - text: "Dynamics of fluctuations (non-examinable)"
         #    href: phase-transitions/dynamics-of-fluctuations.qmd  
          - text: "Precourse reading and revision"
