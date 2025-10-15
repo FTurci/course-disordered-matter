@@ -55,7 +55,7 @@ book:
          - text: "Lecture slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
          - text: "Notes as pdf" 
-           href: index.pdf
+           href: notes.pdf
          - text: "Solutions to problems"
            href: phase-transitions/Solutions_partial.qmd    
    #      - text: "Preparation for first coursework assignment"
