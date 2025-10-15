@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,7 +38,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -343,12 +343,13 @@ p=\frac{e^{-2J/k_BT}}{1+e^{-2J/k_BT}}
 p_m=\frac{\overline{m}^me^{-\overline{m}}}{m!}
 \]</span></p>
 <p>where <span class="math inline">\(\overline{m}=p|j-i|=pR_{ij}/a\)</span> . Then</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 \langle s_i s_j\rangle =&amp; e^{-\overline {m}}\sum_m\frac{(-1)^m\overline{m}^m} {m!}\approx e^{-2\overline{m}}\\
                        =&amp; e^{-2pR_{ij}/a}\\
                        =&amp; e^{-R_{ij}/\xi}
-\end{align*}\]</span></p>
-<p>with <span class="math inline">\(\xi=a/2p\)</span>, the correlation length.</p>
+\end{aligned}
+\]</span> with <span class="math inline">\(\xi=a/2p\)</span>, the correlation length.</p>
 <hr>
 </section>
 <section id="a-model-fluid" class="level3">
@@ -370,15 +371,18 @@ P=\frac{Nk_BT}{V-b}-\frac{a}{V^2}
 <p><span class="math display">\[
 \left(\frac{\partial P}{\partial V}\right)_T=\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0
 \]</span></p>
-<p>Thus <span class="math display">\[\begin{align*}
+<p>Thus <span class="math display">\[
+\begin{aligned}
 \frac{Nk_BT}{(V_c-b)^2} =&amp; \frac{2a}{V_c^3}\\
 \frac{2Nk_BT}{(V_c-b)^3} =&amp; \frac{6a}{V_c^4}
-\end{align*}\]</span></p>
-<p>solving for <span class="math inline">\(V_c\)</span> and <span class="math inline">\(Nk_BT_c\)</span> yields</p>
-<p><span class="math display">\[\begin{align*}
+\end{aligned}
+\]</span> solving for <span class="math inline">\(V_c\)</span> and <span class="math inline">\(Nk_BT_c\)</span> yields</p>
+<p><span class="math display">\[
+\begin{aligned}
 V_c =&amp; 3b\\
 Nk_BT_c =&amp; \frac{8a}{27b}
-\end{align*}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>Substituting these two results into <a href="#eq-pres" class="quarto-xref">Equation&nbsp;<span>1</span></a> yields</p>
 <p><span class="math display">\[
 P_c=\frac{a}{27b^2}
@@ -388,10 +392,12 @@ P_c=\frac{a}{27b^2}
 \left(P_cp+\frac{a}{(V_cv)^2}\right)(V_cv-b)=N_Ak_BT_ct
 \]</span></p>
 <p>Substituting in for <span class="math inline">\(V_c, N_Ak_BT_c\)</span> and <span class="math inline">\(P_c\)</span></p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 \left(p\frac{a}{27b^2}+\frac{a}{9b^2v^2}\right)\left(3bv-b\right)=&amp;\frac{8a}{27b}t\\
 \Rightarrow\left(p+\frac{3}{v^2}\right)\left(v-\frac{1}{3}\right)=&amp;\frac{8}{3}t
-\end{align*}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>This expression for the equation of state in terms of reduced variables is useful because reference to the system specific parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> has vanished. In this form the equation is therefore universal.</p>
 <p>Plotting <span class="math inline">\(P/P_c\)</span> vs <span class="math inline">\(V/V_c\)</span> for isotherms (values of <span class="math inline">\(t\)</span>) and focussing on the region close to the critical point, one finds</p>
 <div id="fig-vdWisotherm" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -435,15 +441,19 @@ Figure&nbsp;3: (a) <span class="math inline">\(\frac{\partial p}{\partial v}\)</
 <p><span class="math display">\[
 \langle E \rangle =-J\sum_{&lt;i,j&gt;}\langle s_is_j\rangle\:,
 \]</span> the simplest mean field approximation <span class="math inline">\(\langle s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2\)</span>. Recalling the behaviour of the order parameter for small <span class="math inline">\(t\)</span>, that the number of bonds <span class="math inline">\(=qN/2\)</span>, and the mean field value of <span class="math inline">\(T_c=qJ/k_B\)</span>, we have for <span class="math inline">\(T&lt;T_c\)</span></p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 \langle E \rangle =&amp; \frac{-NqJm^2}{2}\\
 \:                =&amp; \frac{3NqJt}{2}\\
 \:                =&amp; \frac{3Nk_B(T-T_c)}{2}
-\end{align*}\]</span> while <span class="math inline">\(\langle E \rangle= \textrm{ constant}\)</span> for <span class="math inline">\(T&gt;T_c\)</span>.</p>
-<p>Hence differentiating, we find <span class="math display">\[\begin{align*}
+\end{aligned}
+\]</span> while <span class="math inline">\(\langle E \rangle= \textrm{ constant}\)</span> for <span class="math inline">\(T&gt;T_c\)</span>.</p>
+<p>Hence differentiating, we find <span class="math display">\[
+\begin{aligned}
 C_H= 0; &amp;\quad T&gt;T_c\\
 C_H= 3Nk_B/2; &amp; \quad T\le T_c
-\end{align*}\]</span></p>
+\end{aligned}
+\]</span></p>
 <p>This independence of the heat capacity on <span class="math inline">\(t\)</span> corresponds to a critical exponent <span class="math inline">\(\alpha=0\)</span></p>
 <hr>
 </section>
@@ -456,18 +466,19 @@ F=-k_BT\ln Z
 <p><span class="math display">\[
 Z=\sum_{{s}}\exp[-(E-hM)/k_BT]
 \]</span></p>
-<p>Thus <span class="math display">\[\begin{align*}
+<p>Thus <span class="math display">\[
+\begin{aligned}
 -\left(\frac{\partial F}{\partial h}\right)_T =&amp; k_BT\frac{1}{Z}\left(\frac{\partial Z}{\partial h}\right)_T\\
 \: =&amp;\frac{1}{Z}\sum_{{s}}M \exp[-(E-hM)/k_BT]\\
    =&amp; \langle M\rangle
-\end{align*}\]</span> where we have used the definition of the average of an observable given in lectures.</p>
-<p>Now</p>
-<p><span class="math display">\[\begin{align*}
+\end{aligned}\]</span> where we have used the definition of the average of an observable given in lectures.</p>
+<p>Now <span class="math display">\[
+\begin{aligned}
 \left(\frac{\partial^2 F}{\partial h^2}\right)_T =&amp; -k_BT\left[\frac{1}{Z}\left(\frac{\partial^2 Z}{\partial h^2}\right)_T-\left(\frac{\partial Z}{\partial h}\right)_T\frac{1}{Z^2}\left(\frac{\partial Z}{\partial h}\right)_T\right]\\
 \: =&amp;\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-(E-hM)/k_BT]-\langle M\rangle^2\right]\\
 \:  =&amp; \frac{-1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
-\end{align*}\]</span></p>
-<p>You should recognise the terms in square brackets as the variance of the magnetisation distribution.</p>
+\end{aligned}
+\]</span> You should recognise the terms in square brackets as the variance of the magnetisation distribution.</p>
 <p>Thus the susceptibility is <span class="math display">\[
 \chi_H\equiv\frac{\partial \langle M\rangle}{\partial h}=\frac{1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
 \]</span></p>
@@ -480,15 +491,17 @@ Z=\sum_{{s}}\exp[-(E-hM)/k_BT]
 <p><span class="math display">\[
 {\cal H}(s_0)=-s_0\left(qJm + h\right)+NqJm^2/2
 \]</span> where here <span class="math inline">\(h\)</span> is the magnetic field.</p>
-<p>The probability of finding this spin with value <span class="math inline">\(s_0\)</span> is <span class="math display">\[\begin{align*}
+<p>The probability of finding this spin with value <span class="math inline">\(s_0\)</span> is <span class="math display">\[
+\begin{aligned}
 p(s_0) =&amp; \frac{e^{-\beta{\cal H}(s_0)}} {\sum_{s_0=0,\pm 1}e^{-\beta{\cal H}(s_0)}}\\
 =&amp;\frac{e^{\beta s_0(qJm+h)}}{1+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}
-\end{align*}\]</span></p>
-<p>Now for consistency <span class="math inline">\(\langle s_0\rangle=m\)</span>, so <span class="math display">\[\begin{align*}
+\end{aligned}
+\]</span></p>
+<p>Now for consistency <span class="math inline">\(\langle s_0\rangle=m\)</span>, so <span class="math display">\[\begin{aligned}
 m =&amp; \sum_{s_0=0,\pm 1}s_0p(s_0)\\
 \:=&amp; \frac{0+e^{\beta(qJm+h)}-e^{\beta(qJm+h)}} {e^0+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}\\
 \:=&amp;  \frac{2\sinh[\beta(Jqm+h)]}{1+2\cosh[\beta(Jqm+h)]}
-\end{align*}\]</span> To get the critical temperature, we can solve this graphically. One plots the RHS as a function of <span class="math inline">\(m\)</span>, for various <span class="math inline">\(\beta\)</span>. On the same graph one plots the curve <span class="math inline">\(y=m\)</span> (representing the LHS). <span class="math inline">\(T_c\)</span> is the highest <span class="math inline">\(T\)</span> for which the two curves intersect.</p>
+\end{aligned}\]</span> To get the critical temperature, we can solve this graphically. One plots the RHS as a function of <span class="math inline">\(m\)</span>, for various <span class="math inline">\(\beta\)</span>. On the same graph one plots the curve <span class="math inline">\(y=m\)</span> (representing the LHS). <span class="math inline">\(T_c\)</span> is the highest <span class="math inline">\(T\)</span> for which the two curves intersect.</p>
 <p>Alternatively to get <span class="math inline">\(T_c\)</span> analytically, set <span class="math inline">\(h=0\)</span> and expand for small <span class="math inline">\(m\)</span> (i.e.&nbsp;small <span class="math inline">\(x=\beta J q m\)</span>), we have <span class="math display">\[
 m \approx \frac{2(\beta J q m)}{1+2} = \frac{2}{3}\,\beta J q\, m .
 \]</span> (I would advise looking up the expansions of <span class="math inline">\(\sinh(x)\)</span> and <span class="math inline">\(\cosh(x)\)</span> to see how this is obtained.)</p>
@@ -517,12 +530,13 @@ e^{-\beta J}   &amp; e^{\beta(J-H)}-\lambda
 \end{vmatrix} =0
 \]</span></p>
 <p>Then <span class="math inline">\(\lambda^2-(a+d)\lambda+(ad-bc)=0\)</span>. So</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 \lambda_\pm =&amp; \frac{a+d\pm\sqrt{(a+d)^2-4(ad-bc)}}{2}\\
 \lambda_{\pm} =&amp; e^{\beta J}\cosh(\beta H) \pm \frac{1}{2}\sqrt{e^{2\beta J}4\cosh^2\beta H-4(e^{2\beta J}-e^{-2\beta J})}\\
 \lambda_{\pm} =&amp; e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.
-\end{align*}\]</span></p>
-<p>(You’ll need the identity <span class="math inline">\(\cosh^2 x-\sinh^2 x = 1\)</span>).</p>
+\end{aligned}
+\]</span> (You’ll need the identity <span class="math inline">\(\cosh^2 x-\sinh^2 x = 1\)</span>).</p>
 <p>From lectures, you should know that the partition function</p>
 <p><span class="math display">\[\begin{align}
 Z=\textrm{Tr}(\mathbf{V}^N)=&amp;\lambda_+^N+\lambda_-^N\\
@@ -547,41 +561,43 @@ m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{(-4\beta J)}}}
 <section id="landau-theory" class="level3">
 <h3 class="anchored" data-anchor-id="landau-theory">8. Landau theory</h3>
 <p>If this were an Ising model problem (ie a microscopic model) we could write down the partition function, get an explicit expression for the free energy and differentiate once (wrt <span class="math inline">\(T\)</span>) to get the energy and again (wrt <span class="math inline">\(T\)</span>) to get the heat capacity. But the starting point for Landau theory is the free energy itself, so we need another starting point, namely thermodynamics. The appropriate thermodynamic potential for the magnet is <span class="math inline">\(F=E-TS-MH\)</span> with <span class="math inline">\(E\)</span> the internal energy. Then <span class="math display">\[
-\begin{align*}
+\begin{aligned}
 dF =&amp; dE-TdS-SdT-MdH-HdM\\
 \: =&amp; TdS+HdM-TdS-SdT-MdH-HdM\\
 \: =&amp; -SdT-MdH
-\end{align*}
+\end{aligned}
 \]</span> where we have used the first law for a magnet <span class="math inline">\(dE=TdS+HdM\)</span>.</p>
-<p>Thus</p>
-<p><span class="math display">\[\begin{align*}
+<p>Thus <span class="math display">\[
+\begin{aligned}
 \left(\frac{\partial F}{\partial T}\right)_H =&amp; -S\\
 -T\left(\frac{\partial^2 F}{\partial T^2}\right)_H =&amp;T\frac{dS}{dT}=\frac{dQ}{dT}\\ C_H=-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H
-\end{align*}\]</span></p>
+\end{aligned}\]</span></p>
 <p>where <span class="math inline">\(C_H\)</span> is the specific heat at constant field and we have used the fact that <span class="math inline">\(dS=dQ/T\)</span>.</p>
 <p>Now from lectures, the equilibrium magnetisation in the Landau free energy is given by</p>
 <p><span class="math display">\[
 m^2=\frac{-a_2}{2a_4}
 \]</span> for <span class="math inline">\(T&lt;T_c\)</span> and zero otherwise. Substituting this into the Landau free energy <span class="math inline">\(F=F_0+a_2m^2+a_4m^4\)</span> gives</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 F = F_0 &amp; \quad T&gt;T_c\\
 F = -a_2^2/4a_4 &amp; \quad T &lt; T_c
-\end{align*}\]</span></p>
-<p>Using the fact that <span class="math inline">\(a_2=\tilde{a_2} t\)</span>, with <span class="math inline">\(t=(T-T_c)/T_c\)</span> and differentiating wrt <span class="math inline">\(T\)</span> twice, to get the heat capacity, we find</p>
-<p><span class="math display">\[\begin{align*}
+\end{aligned}
+\]</span> Using the fact that <span class="math inline">\(a_2=\tilde{a_2} t\)</span>, with <span class="math inline">\(t=(T-T_c)/T_c\)</span> and differentiating wrt <span class="math inline">\(T\)</span> twice, to get the heat capacity, we find</p>
+<p><span class="math display">\[
+\begin{aligned}
 C_H =  0; &amp; \quad T\to T_c^+\\
 C_H = \frac{T\tilde a_2^2}{2a_4T_c^2}; &amp; \quad T \to T_c^-\:,
-\end{align*}\]</span> The jump discontinuity rather that a divergence in the specific heat at <span class="math inline">\(T=T_c\)</span> formally corresponds to a critical exponent <span class="math inline">\(\alpha=0\)</span>.</p>
+\end{aligned}\]</span> The jump discontinuity rather that a divergence in the specific heat at <span class="math inline">\(T=T_c\)</span> formally corresponds to a critical exponent <span class="math inline">\(\alpha=0\)</span>.</p>
 <p>To get the susceptibility exponent, we add a magnetic field to the free energy</p>
 <p><span class="math display">\[
 F(m)=F_0+a_2m^2+a_4m^4-Hm
 \]</span></p>
-<p>Then the equilibrium magnetisation satisfies</p>
-<p><span class="math display">\[\begin{align*}
+<p>Then the equilibrium magnetisation satisfies <span class="math display">\[
+\begin{aligned}
 \frac{dF}{dm} =&amp;2\tilde{a_2} tm+4a_4m^3-H=0\\
 \Rightarrow H =&amp;2\tilde{a_2} tm+4a_4m^3\\
 \Rightarrow \left(\frac{\partial H}{\partial m}\right )_T =&amp;2\tilde{a_2} t+12a_4m^2
-\end{align*}\]</span> Now using the results that <span class="math inline">\(m^2=0\)</span> for <span class="math inline">\(t&gt;0\)</span> and <span class="math inline">\(m^2=-\tilde{a_2}t/(2a_4)\)</span> for <span class="math inline">\(t&lt;0\)</span>, we have that in both cases</p>
+\end{aligned}\]</span> Now using the results that <span class="math inline">\(m^2=0\)</span> for <span class="math inline">\(t&gt;0\)</span> and <span class="math inline">\(m^2=-\tilde{a_2}t/(2a_4)\)</span> for <span class="math inline">\(t&lt;0\)</span>, we have that in both cases</p>
 <p><span class="math display">\[
 \left(\frac{\partial H}{\partial m}\right )_T\propto t
 \]</span></p>
@@ -607,22 +623,24 @@ H=2\tilde{a_2}tm+4a_4m^3
 </section>
 <section id="scaling-laws" class="level3">
 <h3 class="anchored" data-anchor-id="scaling-laws">10. Scaling laws</h3>
-<p>First of all recall the definition of the critical exponents: <span class="math display">\[\begin{align*}
+<p>First of all recall the definition of the critical exponents: <span class="math display">\[
+\begin{aligned}
 m       \propto  t^{\beta};&amp; \quad (h=0) \\
 \chi_T  \propto  t^{-\gamma};&amp;\quad (h=0) \\
 C_H  \propto  t^{-\alpha};&amp; \quad (h=0) \\
 m  \propto  h^{1/\delta}.&amp; \quad (t=0) \\
-\end{align*}\]</span></p>
-<p>The free energy in generalised homogeneous form is</p>
+\end{aligned}
+\]</span> The free energy in generalised homogeneous form is</p>
 <p><span class="math display">\[
 F(\lambda^a t,\lambda^b h)=\lambda F(t,h)
 \]</span></p>
 <p>The first of the scaling relations to be derived was covered in lectures: Let <span class="math inline">\(\lambda^a=1/t\)</span>, so that <span class="math inline">\(\lambda=t^{-1/a}\)</span>. Then</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 F(t,h)=&amp;t^{1/a}F(1,t^{-b/a}h)\\
 m(t,h)=&amp;-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\frac{\partial F(1,y)}{\partial y}\right|_{ht^{-b/a}}=t^{(1-b)/a}m(1,ht^{-b/a})
-\end{align*}\]</span></p>
-<p>so when <span class="math inline">\(h=0\)</span>, we have <span class="math inline">\(m(1,t^{-b/a}h)=m(1,0)=\textrm{ const}\)</span> and hence we can identify <span class="math inline">\(\boxed{\beta=(1-b)/a}\)</span>.</p>
+\end{aligned}
+\]</span> so when <span class="math inline">\(h=0\)</span>, we have <span class="math inline">\(m(1,t^{-b/a}h)=m(1,0)=\textrm{ const}\)</span> and hence we can identify <span class="math inline">\(\boxed{\beta=(1-b)/a}\)</span>.</p>
 <p>We also have for the isothermal susceptibility</p>
 <p><span class="math display">\[
 \chi=\left(\frac{\partial m}{\partial h}\right)_t=-t^{(1-2b)/a}\left.\frac{\partial^2 F(1,y)}{\partial y^2}\right|_{ht^{-b/a}},
@@ -630,17 +648,20 @@ m(t,h)=&amp;-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\f
 <p>For the specific heat at constant (zero) field, we have the definition: <span class="math display">\[
 C_H = \left(\frac{\partial E}{\partial T}\right)_{h=0}=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\:,
 \]</span> where in the last step have used <span class="math inline">\(E=-\partial (\beta F)/\partial\beta\)</span>, with <span class="math inline">\(\beta=(k_BT)^{-1}\)</span> (see fig 2.1 in notes). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from <span class="math inline">\(T\)</span> to <span class="math inline">\(t=(T-T_c)/T_c\)</span> and inserting the generalised homogeneous form for <span class="math inline">\(F\)</span> gives:</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 C_H =&amp; -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
 C_H \approx&amp; -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
 C_H =&amp; -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
-\end{align*}\]</span> Here we have neglected all derivatives of <span class="math inline">\(F\)</span> since they are multiplied by at least one power of <span class="math inline">\(h\)</span> which is zero. Hence <span class="math inline">\(\boxed{\alpha=2-1/a}\)</span>.</p>
+\end{aligned}\]</span> Here we have neglected all derivatives of <span class="math inline">\(F\)</span> since they are multiplied by at least one power of <span class="math inline">\(h\)</span> which is zero. Hence <span class="math inline">\(\boxed{\alpha=2-1/a}\)</span>.</p>
 <p>Finally, if we let <span class="math inline">\(\lambda^b=1/h\)</span>, so that <span class="math inline">\(\lambda=h^{-1/b}\)</span> and consider the critical isotherm <span class="math inline">\(t=0\)</span>. Then</p>
-<p><span class="math display">\[\begin{align*}
+<p><span class="math display">\[
+\begin{aligned}
 F(t,h)=&amp;h^{1/b}F(h^{-a/b}t,1)\\
 \Rightarrow m(t,h)=&amp; \frac{ta}{b}h^{(1-a-b)/b}\left.\frac{\partial F(x,1)}{\partial x}\right|_{h^{-a/b}t}-\frac{1}{b}h^{1/b-1}F(h^{-a/b}t,1).
-\end{align*}\]</span> so when <span class="math inline">\(t=0\)</span>, we get <span class="math inline">\(m(0,h)\)</span> and can identify <span class="math inline">\(\boxed{\delta=b/(1-b)}\)</span>.</p>
+\end{aligned}\]</span> so when <span class="math inline">\(t=0\)</span>, we get <span class="math inline">\(m(0,h)\)</span> and can identify <span class="math inline">\(\boxed{\delta=b/(1-b)}\)</span>.</p>
 <p>To derive the relationships (``scaling laws’’) among the critical exponents, we eliminate <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the boxed scaling relations. Setting <span class="math inline">\(a=(2-\alpha)^{-1}\)</span> in the first scaling relation, we find <span class="math inline">\(b=1-\beta/(2-\alpha)\)</span>. Substituting this into the second scaling relation gives the second of the two scaling laws quoted in the notes. Substituting into the 4th scaling relation gives the first scaling law.</p>
+<hr>
 
 
 <script type="ojs-module-contents">
