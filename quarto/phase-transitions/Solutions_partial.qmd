@@ -1,0 +1,553 @@
+
+# Unifying concepts: outline solutions to problems {#solutions .unnumbered}
+
+Here we present outline solutions to the problems.
+
+### 1. Existence of a phase transition in $d=2$.
+
+Consider the simplest elementary excitation that will destroy long range
+order in the 2d system: a domain wall of $N$ segments which divides an Ising system of $L\times L$ spins into a spin up and a spin down part. 
+
+
+![An $N$-step domain wall in an Ising lattice.](Figs/domainwall.001.png){width=30% #fig-domainwall}
+
+The associated energy cost is $2JN \equiv \Delta E$. 
+
+To evaluate the entropy gain due to a domain wall in the system we have to estimate $\Omega$ the number of possible paths for the domain wall.
+If we start at the left hand side then there are $L$ starting positions.
+At each step the domain wall can move to the right, move up or move down. This implies that the number of domain walls is approximately
+
+$$
+\Omega\approx L3^N
+$$
+Hence the entropy gain is:
+
+$$
+\Delta S=Nk_B\ln 3+k_B\ln L\approx Nk_B\ln 3  
+$$
+
+Accordingly, the change in the free energy associated with inserting such a domain wall into an ordered system is
+
+$$
+\Delta F=\Delta E-T\Delta S= N(2J-k_BT\ln 3)
+$$
+
+For small enough $T <2J/(k_B\ln 3)$, the free energy change is positive.
+Thus the ordered phase is free energetically stable against formation of a
+wall. Accordingly there will be a non zero value for $T_c$ in two dimensions.
+
+---
+
+### 2. Correlation Length
+
+Denote by $m$ the number of domain walls between sites $i$ and $j$. Then
+$s_is_j=1$ for $m$ even, and $s_is_j=-1$ for $m$
+odd.
+
+Hence
+
+$$
+\langle s_i s_j\rangle =\sum_m p_m(-1)^m
+$$
+with $p_m$ the probability of finding $m$ domain walls between them.
+
+Now $p_m$ is given by the binomial distribution, with the probability of
+a single domain wall at each bond given by 
+
+$$
+p=\frac{e^{-2J/k_BT}}{1+e^{-2J/k_BT}}
+$$
+
+and the probability of no wall is $1-p$. 
+Now, in the regime where $T$ is small, $p$ is very small, and there will be few domain walls between
+sites $i$ and $j$. If additionally, $R_{ij}=|i-j|a$ is large, it tranpires that the binomial distribution
+assumes the limiting form of a Poissonian distribution (revise this if necessary). Thus
+
+$$
+p_m=\frac{\overline{m}^me^{-\overline{m}}}{m!}
+$$ 
+
+where $\overline{m}=p|j-i|=pR_{ij}/a$ . Then
+
+$$
+\begin{aligned}
+\langle s_i s_j\rangle =& e^{-\overline {m}}\sum_m\frac{(-1)^m\overline{m}^m} {m!}\approx e^{-2\overline{m}}\\
+                       =& e^{-2pR_{ij}/a}\\
+                       =& e^{-R_{ij}/\xi}
+\end{aligned}
+$$
+with $\xi=a/2p$, the correlation length. 
+
+---
+
+### 3. A model fluid
+
+The van der Waals (vdW) equation of state (See Sec 4.4.1 of the book by
+Yeomans) is essentially a mean field theory for fluids. It relates the
+pressure and the volume of a fluid to the temperature:
+
+$$
+\left(P+\frac{a}{V^2}\right)(V-b)=Nk_BT
+$$
+where $a$ and $b$ are constants chosen to describe a specific substance and $N$ is Avogadro's number. Hence
+
+$$
+P=\frac{Nk_BT}{V-b}-\frac{a}{V^2}
+$${#eq-pres}
+
+$$
+\Rightarrow \frac{\partial P}{\partial V}=\frac{-Nk_BT}{(V-b)^2}+\frac{2a}{V^3}
+$$
+
+$$
+\Rightarrow \frac{\partial^2 P}{\partial V^2}=\frac{2Nk_BT}{(V-b)^3}-\frac{6a}{V^4}
+$$
+
+Now at criticality (ie. a continuous transition).
+
+$$
+\left(\frac{\partial P}{\partial V}\right)_T=\left(\frac{\partial^2 P}{\partial V^2}\right)_T=0
+$$
+
+Thus
+$$
+\begin{aligned}
+\frac{Nk_BT}{(V_c-b)^2} =& \frac{2a}{V_c^3}\\
+\frac{2Nk_BT}{(V_c-b)^3} =& \frac{6a}{V_c^4}
+\end{aligned}
+$$
+solving for $V_c$ and $Nk_BT_c$ yields
+
+$$
+\begin{aligned}
+V_c =& 3b\\
+Nk_BT_c =& \frac{8a}{27b}
+\end{aligned}
+$$
+
+Substituting these two results into @eq-pres yields 
+
+$$
+P_c=\frac{a}{27b^2}
+$$
+
+Now let $P=P_c p, V=V_cv, T=T_ct$ in the vdW eqn. (Note that in this
+context $t$ is not the reduced temperature).
+
+$$
+\left(P_cp+\frac{a}{(V_cv)^2}\right)(V_cv-b)=N_Ak_BT_ct
+$$
+
+Substituting in for $V_c, N_Ak_BT_c$ and $P_c$
+
+$$
+\begin{aligned}
+\left(p\frac{a}{27b^2}+\frac{a}{9b^2v^2}\right)\left(3bv-b\right)=&\frac{8a}{27b}t\\
+\Rightarrow\left(p+\frac{3}{v^2}\right)\left(v-\frac{1}{3}\right)=&\frac{8}{3}t
+\end{aligned}
+$$
+
+This expression for the equation of state in terms of reduced variables
+is useful because reference to the system specific parameters $a$ and
+$b$ has vanished. In this form the equation is therefore universal. 
+
+Plotting $P/P_c$ vs $V/V_c$ for isotherms (values of $t$) and focussing
+on the region close to the critical point, one finds
+
+
+![Isotherms of $p$ versus $v$ for various $t$ spanning the critical temperatures](Figs/vdw_isotherms.png){width=70% #fig-vdWisotherm}
+
+![(a) $\frac{\partial p}{\partial v}$ for $T=T_c$. (b)  $\frac{\partial^2 p}{\partial v^2}$ for $T=T_c$.](Figs/vdw_derivatives.png){width=90% #fig-vdWderivs}
+
+Plotting $(\frac{\partial p}{\partial v})_{t=1}$ and $(\frac{\partial^2 p}{\partial v^2})_{t=1}$, we see that there is indeed a point of inflexion on the
+critical isotherm, at $v=1$, this is the critical point (ie. a continuous
+phase transition), @fig-vdWderivs .
+
+Subcritical isotherms (first order phase transition) exhibit a so called
+van-der Waals loop. 
+
+To find the compressibility critical exponent $\gamma$, we recall that
+
+$$
+\kappa_T=\frac{-1}{V}\left(\frac{\partial V}{\partial P}\right)_T=\frac{-1}{p_cv}\left(\frac{\partial v}{\partial p}\right)_t\propto \tilde{t}^{-\gamma}
+$$
+with $\tilde{t}=(T-T_c)/T_c$ small.
+
+Now from the reduced equation of state
+
+$$
+\frac{\partial p}{\partial v}=\frac{-8t}{3(v-1/3)^2}+\frac{6}{v^3}
+$$
+setting $t=\tilde{t}+1$ and $v=1$ gives $\frac{\partial p}{\partial v} =-6\tilde{t}$, ie the
+compressibility diverges 
+
+$$
+\kappa_T\propto \tilde{t}^{-1}
+$$
+ie. $\gamma=1$, which is the same as the mean field result which we
+derived in another context of the magnetic susceptibility.
+
+---
+
+### 4. Mean field theory of the Ising model heat capacity
+
+We insert into the expression for the mean Ising energy
+
+$$
+\langle E \rangle =-J\sum_{<i,j>}\langle s_is_j\rangle\:, 
+$$
+the simplest mean field approximation $\langle s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$.
+Recalling the behaviour of the order parameter for small $t$, that 
+the number of bonds $=qN/2$, and the mean field value
+of $T_c=qJ/k_B$, we have for $T<T_c$
+
+$$
+\begin{aligned}
+\langle E \rangle =& \frac{-NqJm^2}{2}\\
+\:                =& \frac{3NqJt}{2}\\
+\:                =& \frac{3Nk_B(T-T_c)}{2}
+\end{aligned}
+$$ while $\langle E \rangle= \textrm{ constant}$ for $T>T_c$.
+
+Hence differentiating, we find
+$$
+\begin{aligned}
+C_H= 0; &\quad T>T_c\\
+C_H= 3Nk_B/2; & \quad T\le T_c
+\end{aligned}
+$$
+
+This independence of the heat capacity on $t$ corresponds to a critical
+exponent $\alpha=0$
+
+--- 
+
+### 5. Magnetisation and fluctuations
+
+The free energy is 
+
+$$
+F=-k_BT\ln Z
+$$
+with the partition function 
+
+$$
+Z=\sum_{{s}}\exp[-(E-hM)/k_BT]
+$$
+
+Thus
+$$
+\begin{aligned}
+-\left(\frac{\partial F}{\partial h}\right)_T =& k_BT\frac{1}{Z}\left(\frac{\partial Z}{\partial h}\right)_T\\
+\: =&\frac{1}{Z}\sum_{{s}}M \exp[-(E-hM)/k_BT]\\
+   =& \langle M\rangle
+\end{aligned}$$
+where we have used the definition of the average of an observable given
+in lectures.
+
+Now 
+$$
+\begin{aligned}
+\left(\frac{\partial^2 F}{\partial h^2}\right)_T =& -k_BT\left[\frac{1}{Z}\left(\frac{\partial^2 Z}{\partial h^2}\right)_T-\left(\frac{\partial Z}{\partial h}\right)_T\frac{1}{Z^2}\left(\frac{\partial Z}{\partial h}\right)_T\right]\\
+\: =&\frac{-1}{k_BT}\left[\frac{1}{Z}\sum_{{s}}M^2 \exp[-(E-hM)/k_BT]-\langle M\rangle^2\right]\\
+\:  =& \frac{-1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
+\end{aligned}
+$$
+You should recognise the terms in square brackets as the variance of the
+magnetisation distribution.
+
+Thus the susceptibility is 
+$$
+\chi_H\equiv\frac{\partial \langle M\rangle}{\partial h}=\frac{1}{k_BT}\left[\langle M^2\rangle-\langle M\rangle^2\right]
+$$
+
+Incidently, this is known as the fluctuation-dissipation theorem. It is
+a neat result, because it allows you to calculate the response to a
+perturbation from equilibrium, without actually perturbing the system!
+Instead one merely looks at the form of the equilibrium fluctuations. It is used extensively in computer simulations.
+
+---
+
+### 6. Spin-1 Ising model
+
+As in lectures, the mean field Hamiltonian for a single spin is 
+
+$$
+{\cal H}(s_0)=-s_0\left(qJm + h\right)+NqJm^2/2
+$$
+where here $h$ is the magnetic field.
+
+The probability of finding this spin with value $s_0$ is
+$$
+\begin{aligned}
+p(s_0) =& \frac{e^{-\beta{\cal H}(s_0)}} {\sum_{s_0=0,\pm 1}e^{-\beta{\cal H}(s_0)}}\\
+=&\frac{e^{\beta s_0(qJm+h)}}{1+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}
+\end{aligned}
+$$
+
+Now for consistency $\langle s_0\rangle=m$, so
+$$\begin{aligned}
+m =& \sum_{s_0=0,\pm 1}s_0p(s_0)\\
+ \:=& \frac{0+e^{\beta(qJm+h)}-e^{\beta(qJm+h)}} {e^0+e^{\beta(qJm+h)}+e^{-\beta(qJm+h)}}\\
+ \:=&  \frac{2\sinh[\beta(Jqm+h)]}{1+2\cosh[\beta(Jqm+h)]}
+\end{aligned}$$
+To get the critical temperature, we can solve this graphically. One plots the RHS as a function of $m$, for various $\beta$. On the same graph one plots the curve $y=m$ (representing the LHS). $T_c$ is the highest $T$ for which
+the two curves intersect.
+
+Alternatively to get $T_c$ analytically, set $h=0$ and expand for small $m$ (i.e.\ small $x=\beta J q m$), we have
+$$
+m \approx \frac{2(\beta J q m)}{1+2} = \frac{2}{3}\,\beta J q\, m .
+$$
+(I would advise looking up the expansions of $\sinh(x)$ and $\cosh(x)$ to see how this is obtained.)
+
+Now, a nonzero solution appears when the prefactor equals $1$, i.e. when $m=m$. Thus
+$$
+1 = \frac{2}{3}\,\beta_c J q
+\quad \Rightarrow \quad
+\beta_c = \frac{3}{2Jq}.
+$$
+
+Hence the critical temperature is
+$$
+k_B T_c = \frac{2}{3}\, J q .
+$$
+
+---
+
+### 7. Transfer Matrix
+
+The transfer matrix is a list of the possible interactions of a pair
+of spins with one another and with a magnetic field. For a 1d spin-1/2
+system it takes the form:
+$$
+\mathbf{V}(H)=\begin{bmatrix}
+e^{\beta(J+H)} & e^{-\beta J} \\
+e^{-\beta J}   & e^{\beta(J-H)}
+ \end{bmatrix}
+$$
+We need to find the eigenvalues, so we solve
+the characteristic equation det($\mathbf{V}-\lambda \mathbf{I})=0$, i.e.
+
+$$
+\mathbf{V}(H)=\begin{vmatrix}
+e^{\beta(J+H)} -\lambda & e^{-\beta J} \\
+e^{-\beta J}   & e^{\beta(J-H)}-\lambda
+ \end{vmatrix} =0
+$$
+
+Then $\lambda^2-(a+d)\lambda+(ad-bc)=0$. So
+
+$$
+\begin{aligned}
+\lambda_\pm =& \frac{a+d\pm\sqrt{(a+d)^2-4(ad-bc)}}{2}\\
+\lambda_{\pm} =& e^{\beta J}\cosh(\beta H) \pm \frac{1}{2}\sqrt{e^{2\beta J}4\cosh^2\beta H-4(e^{2\beta J}-e^{-2\beta J})}\\
+\lambda_{\pm} =& e^{\beta J}\cosh(\beta H) \pm \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}.
+\end{aligned}
+$$
+(You'll need the identity  $\cosh^2 x-\sinh^2 x = 1$).
+
+From lectures, you should know that the partition function
+
+\begin{align}
+Z=\textrm{Tr}(\mathbf{V}^N)=&\lambda_+^N+\lambda_-^N\\
+\approx & \lambda_+^N \hspace{5mm}\textrm{N~large}
+\end{align}
+
+where $\lambda_+$ is the largest of the two evals.
+
+Hence the free energy $F=-k_BT\ln(Z)$ can be written 
+
+$$
+F=-Nk_BT\ln \left[e^{\beta J}\cosh(\beta H) + \sqrt{e^{2\beta J}\sinh^2\beta H+e^{-2\beta J}}\right].
+$$
+
+Now the magnetisation per site is 
+
+$$
+m=-\frac{1}{N}\frac{\partial F}{\partial H}=\frac{k_BT}{\lambda_+}\frac{\partial \lambda_+}{\partial H}
+$$
+
+You can either be a hero here, or use a symbolic solution program like Maple or Wolfram Alpha. I did the latter to find the stated result.
+
+$$
+m=\frac{\sinh \beta H}{\sqrt{\sinh^2\beta H+\exp{(-4\beta J)}}}
+$$
+
+Hence at zero $H$, there is no spontaneous magnetisation at any $T$.
+
+---
+
+### 8. Landau theory
+
+If this were an Ising model problem (ie a microscopic model) we could
+write down the partition function, get an explicit expression for the
+free energy and differentiate once (wrt $T$) to get the energy and again
+(wrt $T$) to get the heat capacity. But the
+starting point for Landau theory is the free energy itself, so we need
+another starting point, namely thermodynamics. The appropriate
+thermodynamic potential for the magnet is $F=E-TS-MH$ with $E$ the internal
+energy. Then 
+$$
+\begin{aligned}
+dF =& dE-TdS-SdT-MdH-HdM\\
+\: =& TdS+HdM-TdS-SdT-MdH-HdM\\
+\: =& -SdT-MdH
+\end{aligned}
+$$
+where we have used the first law for a magnet $dE=TdS+HdM$.
+
+Thus
+$$
+\begin{aligned}
+\left(\frac{\partial F}{\partial T}\right)_H =& -S\\
+-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H =&T\frac{dS}{dT}=\frac{dQ}{dT}\\ C_H=-T\left(\frac{\partial^2 F}{\partial T^2}\right)_H
+\end{aligned}$$
+
+where $C_H$ is the specific heat at constant field and we have used the
+fact that $dS=dQ/T$.
+
+Now from lectures, the equilibrium magnetisation in the Landau free
+energy is given by 
+
+$$
+m^2=\frac{-a_2}{2a_4}
+$$
+for $T<T_c$ and zero otherwise. Substituting this into the Landau free energy
+$F=F_0+a_2m^2+a_4m^4$ gives
+
+$$
+\begin{aligned}
+F = F_0 & \quad T>T_c\\
+F = -a_2^2/4a_4 & \quad T < T_c
+\end{aligned}
+$$
+Using the fact that $a_2=\tilde{a_2} t$, with $t=(T-T_c)/T_c$ and differentiating wrt $T$ twice, to get the heat capacity, we find 
+
+$$
+\begin{aligned}
+C_H =  0; & \quad T\to T_c^+\\
+C_H = \frac{T\tilde a_2^2}{2a_4T_c^2}; & \quad T \to T_c^-\:,
+\end{aligned}$$
+The jump discontinuity rather that a divergence in the specific heat at
+$T=T_c$ formally corresponds to a critical exponent $\alpha=0$.
+
+To get the susceptibility exponent, we add a magnetic field to the free
+energy
+
+$$
+F(m)=F_0+a_2m^2+a_4m^4-Hm
+$$
+
+Then the equilibrium magnetisation satisfies
+$$
+\begin{aligned}
+\frac{dF}{dm} =&2\tilde{a_2} tm+4a_4m^3-H=0\\
+\Rightarrow H =&2\tilde{a_2} tm+4a_4m^3\\
+\Rightarrow \left(\frac{\partial H}{\partial m}\right )_T =&2\tilde{a_2} t+12a_4m^2
+\end{aligned}$$
+Now using the results that $m^2=0$ for $t>0$ and $m^2=-\tilde{a_2}t/(2a_4)$ for $t<0$, we have that in both cases 
+
+$$
+\left(\frac{\partial H}{\partial m}\right )_T\propto t
+$$
+
+Hence
+
+$$
+\left(\frac{\partial m}{\partial H}\right )_T\propto t^{-1}
+$$
+so $\gamma=1$.
+
+---
+
+### 9. Scaling equation of state
+
+The equilibrium state corresponds to the minimum of the free energy $\partial F/\partial M=0$.
+This gives the equation of state
+
+$$
+H=2\tilde{a_2}tm+4a_4m^3
+$$
+(Note that we ignore the solution $H=m=0$ which corresponds to a maximum of the free energy.)
+
+The near critical power law scaling of the magnetisation is $m\propto t^\beta$ and $m\propto H^{1/\delta}$.  To find a
+scaling form for the equation of state we need to transform to scaled variables $H/m^\delta$ and $t/m^{1/\beta}$. We can get 
+a scaling equation in terms of these variables by dividing through the equation of state by $m^3$, so that
+
+$$
+\frac{H}{m^{3}}=\frac{2\tilde{a_2}t}{m^2}+4a_4
+$$
+
+Hence $\delta=3$ and $\beta=1/2$. 
+
+The choice of scale $a_4=1/4$ and $\tilde{a_2}=1/2$ yields the given form of the scaling function.
+
+---
+
+### 10. Scaling laws
+
+First of all recall the definition of the critical exponents: 
+$$
+\begin{aligned}
+m       \propto  t^{\beta};& \quad (h=0) \\
+\chi_T  \propto  t^{-\gamma};&\quad (h=0) \\
+C_H  \propto  t^{-\alpha};& \quad (h=0) \\
+m  \propto  h^{1/\delta}.& \quad (t=0) \\
+\end{aligned}
+$$
+The free energy in generalised homogeneous form is 
+
+$$
+F(\lambda^a t,\lambda^b h)=\lambda F(t,h) 
+$$
+
+The first of the scaling relations to be derived was covered in lectures:
+Let $\lambda^a=1/t$, so that $\lambda=t^{-1/a}$. Then
+
+$$
+\begin{aligned}
+F(t,h)=&t^{1/a}F(1,t^{-b/a}h)\\
+m(t,h)=&-\left(\frac{\partial F}{\partial h}\right)_t= -t^{(1-b)/a} \left.\frac{\partial F(1,y)}{\partial y}\right|_{ht^{-b/a}}=t^{(1-b)/a}m(1,ht^{-b/a})
+\end{aligned}
+$$
+so when $h=0$, we have $m(1,t^{-b/a}h)=m(1,0)=\textrm{ const}$ and hence we can identify $\boxed{\beta=(1-b)/a}$.
+
+We also have for the isothermal susceptibility
+
+$$
+\chi=\left(\frac{\partial m}{\partial h}\right)_t=-t^{(1-2b)/a}\left.\frac{\partial^2 F(1,y)}{\partial y^2}\right|_{ht^{-b/a}},
+$$
+so taking again $h=0$, we find $\boxed{\gamma=(2b-1)/a}$.
+
+For the specific heat at constant (zero) field, we have the definition:
+$$
+C_H = \left(\frac{\partial E}{\partial T}\right)_{h=0}=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}\:,
+$$
+where in the last step have used $E=-\partial (\beta F)/\partial\beta$, with $\beta=(k_BT)^{-1}$ (see fig 2.1 in notes). Alternatively one can use the thermodynamic derivation of this relation given in an earlier problem on Landau theory. Transforming from $T$ to $t=(T-T_c)/T_c$ and inserting the generalised homogeneous form for $F$ gives:
+
+$$
+\begin{aligned}
+C_H =& -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H \approx& -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
+C_H =& -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
+\end{aligned}$$
+Here we have neglected all derivatives of $F$ since they are multiplied
+by at least one power of $h$ which is zero. Hence $\boxed{\alpha=2-1/a}$.
+
+Finally, if we let $\lambda^b=1/h$, so that $\lambda=h^{-1/b}$ and
+consider the critical isotherm $t=0$. Then
+
+$$
+\begin{aligned}
+F(t,h)=&h^{1/b}F(h^{-a/b}t,1)\\
+\Rightarrow m(t,h)=& \frac{ta}{b}h^{(1-a-b)/b}\left.\frac{\partial F(x,1)}{\partial x}\right|_{h^{-a/b}t}-\frac{1}{b}h^{1/b-1}F(h^{-a/b}t,1).
+\end{aligned}$$
+so when $t=0$, we get $m(0,h)$ and can identify $\boxed{\delta=b/(1-b)}$.
+
+To derive the relationships (``scaling laws'') among the critical exponents, we eliminate $a$ and $b$ from the boxed scaling relations. 
+Setting $a=(2-\alpha)^{-1}$ in the first scaling relation, we
+find $b=1-\beta/(2-\alpha)$. Substituting this into the second scaling
+relation gives the second of the two scaling laws quoted in the notes. Substituting
+into the 4th scaling relation gives the first scaling law.
+
+---
