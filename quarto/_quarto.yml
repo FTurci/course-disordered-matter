@@ -110,19 +110,19 @@ format:
         cell-options:
           autorun: true
 
-  # pdf:
-  #   documentclass: report
-  #   classoption: [enabledeprecatedfontcommands]
-  #   # papersize: a4paper
-  #   mainfont: "Helvetica" 
-  #   bibliography:
-  #     - soft-matter/references.bib
-  #   geometry:
-  #     - top=2cm
-  #     - left=2cm
-  #     - right=5cm
-  #   execute:
-  #     echo: false      # don’t show code
-  #     warning: false
-  #     error: false
-  #     eval: false      # completely skip execution
+  pdf:
+    documentclass: report
+    classoption: [enabledeprecatedfontcommands]
+    papersize: a4paper
+    mainfont: "Helvetica" 
+    bibliography:
+      - soft-matter/references.bib
+    geometry:
+      - top=2cm
+      - left=2cm
+      - right=5cm
+    execute:
+      echo: false      # don’t show code
+      warning: false
+      error: false
+      eval: false      # completely skip execution
