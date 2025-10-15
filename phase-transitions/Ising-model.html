@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.31">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -438,7 +438,7 @@ Figure&nbsp;4.2: (a) Schematic of an Ising chain at <span class="math inline">\(
 <p><span class="math display">\[\beta f\equiv \beta F/(N-1)=-\ln Z_1=-\beta J-\ln(1+e^{-\beta\Delta})\]</span></p>
 <p>The first term on the RHS is simply the energy per spin of the ferromagnetic (ordered) phase, while the second term arises from the free energy of domain walls. Clearly for any finite temperature (ie. for <span class="math inline">\(\beta&lt;\infty\)</span>), this second term is finite and negative. Hence the free energy will always be lowered by having a finite concentration of domain walls in the system. Since these domain walls disorder the system, leading to a zero average magnetisation, the 1D system is paramagnetic for all finite temperatures. <em>Exercise</em>: Explain why this argument works only in 1D.</p>
 <p>The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you’d lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available. You will learn about Monte Carlo simulation in the coursework and in later parts of the course.</p>
-<div id="91178bc4" class="cell" data-execution_count="1">
+<div id="234de2cd" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions</span></span>
