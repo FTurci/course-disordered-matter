@@ -37,7 +37,7 @@ $p$ the probability of finding a domain wall on a bond.
 *Hint: In the second part note that $p_m$ is given by a binomial
 distribution because there is a probability $p$ of each bond
 containing a domain wall and $(1-p)$ that it doesn't. What special
-type of distribution does $p_m$ tend to when $p$ is small (as occurs
+type of distribution does $p_m$ tend to when $p$ is small ((as occurs
 at low $T$)?*
 
 ---
@@ -290,7 +290,7 @@ where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitraril
 ---
 
 
-14. **Master equation**
+### 14. Master equation
 
 A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have a probability $\lambda_{-\to+}(T)$ per unit time of transition from lower to higher level, and a probability $\lambda_{+\to-}(T)$ per unit time of the reverse transition.
 
