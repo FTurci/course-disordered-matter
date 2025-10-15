@@ -28,11 +28,39 @@ $$
 \end{cases}
 $$
 
-This defines a discrete-time, discrete-space random walk. The average and variance of the step are easily derived using binomial statistics:
+This defines a discrete-time, discrete-space random walk. The average and variance of the step are easily derived (try as an exercise):
 
 * Mean: $\langle \Delta x \rangle = 0$
 
 * Variance: $\langle (\Delta x)^2 \rangle = 2 a^2 \nu \Delta t = 2D \Delta t$
+
+:::{.callout-caution collapse="true"}
+## Solution
+
+The mean displacement is
+$$
+\langle \Delta x \rangle = (+a)(\nu \Delta t) + (-a)(\nu \Delta t) + 0(1 - 2\nu \Delta t) = 0.
+$$
+
+The mean square displacement is
+$$
+\langle (\Delta x)^2 \rangle = (+a)^2(\nu \Delta t) + (-a)^2(\nu \Delta t) + 0^2(1 - 2\nu \Delta t)
+= 2a^2\nu \Delta t.
+$$
+
+Hence the variance is
+$$
+\mathrm{Var}(\Delta x) = \langle (\Delta x)^2 \rangle - \langle \Delta x \rangle^2 = 2a^2\nu \Delta t.
+$$
+
+Identifying $D = a^2\nu$, we obtain
+$$
+\langle (\Delta x)^2 \rangle = 2D\Delta t.
+$$
+
+
+
+:::
 
 The steps $\Delta x(t)$ are uncorrelated across time.
 
@@ -191,17 +219,17 @@ $$
 ::: {.callout-caution collapse="true"}
 ## Solution
 
-
+$$
 \begin{aligned}
-\text{From the solution for }v(t)\text{ with }m=1\text{:}\\
+\text{From the solution for }v(t)\text{ with }m=1:\\
 v(t)&=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
 \Rightarrow\; v(t)^2 &= v_0^2 e^{-2\gamma t}
 + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} f(t')\,dt'
 + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')} f(t')f(t'')\,dt'\,dt''.
 \end{aligned}
+$$
 
-
-
+$$
 \begin{aligned}
 \Rightarrow\; \langle v(t)^2\rangle &= v_0^2 e^{-2\gamma t} + 2 v_0 e^{-\gamma t}\int_0^t e^{-\gamma (t-t')} \underbrace{\langle f(t')\rangle}_{=\,0}\,dt' + \int_0^t\!\!\int_0^t e^{-\gamma(2t-t'-t'')}
 \underbrace{\langle f(t')f(t'')\rangle}_{=\,\Gamma\,\delta(t'-t'')}\,dt'\,dt''\\
@@ -211,6 +239,7 @@ v(t)&=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
 + \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
 &= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
 \end{aligned}
+$$
 
 $$
 \boxed{\;\langle v(t)^2\rangle
