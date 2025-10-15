@@ -402,10 +402,10 @@ window.Quarto = {
   <li><a href="#mapping-between-lattice-gas-and-ising-model" id="toc-mapping-between-lattice-gas-and-ising-model" class="nav-link" data-scroll-target="#mapping-between-lattice-gas-and-ising-model">1.1 Mapping between lattice gas and Ising model</a></li>
   <li><a href="#phase-diagram" id="toc-phase-diagram" class="nav-link" data-scroll-target="#phase-diagram">1.2 Phase diagram</a></li>
   </ul></li>
-  <li><a href="#monte-carlo-simulation" id="toc-monte-carlo-simulation" class="nav-link" data-scroll-target="#monte-carlo-simulation">2. Monte Carlo Simulation</a>
+  <li><a href="#monte-carlo-simulation" id="toc-monte-carlo-simulation" class="nav-link" data-scroll-target="#monte-carlo-simulation">2. Monte Carlo simulation</a>
   <ul class="collapse">
   <li><a href="#grand-canonical-monte-carlo-gcmc-algorithm" id="toc-grand-canonical-monte-carlo-gcmc-algorithm" class="nav-link" data-scroll-target="#grand-canonical-monte-carlo-gcmc-algorithm">2.1 Grand Canonical Monte Carlo (GCMC) algorithm</a></li>
-  <li><a href="#fixed-particle-number-case-canonical-ensemble" id="toc-fixed-particle-number-case-canonical-ensemble" class="nav-link" data-scroll-target="#fixed-particle-number-case-canonical-ensemble">2.2 Fixed-Particle-Number Case (Canonical Ensemble)</a></li>
+  <li><a href="#fixed-particle-number-case-canonical-ensemble" id="toc-fixed-particle-number-case-canonical-ensemble" class="nav-link" data-scroll-target="#fixed-particle-number-case-canonical-ensemble">2.2 Fixed-particle-number case (Canonical Ensemble)</a></li>
   <li><a href="#observables-and-measurement" id="toc-observables-and-measurement" class="nav-link" data-scroll-target="#observables-and-measurement">2.3 Observables and measurement</a></li>
   </ul></li>
   <li><a href="#assignment" id="toc-assignment" class="nav-link" data-scroll-target="#assignment">3. The assignment</a>
@@ -451,16 +451,17 @@ window.Quarto = {
 <p>where <span class="math inline">\(L\)</span> is the linear extent of the lattice (i.e.&nbsp;the number of unit cells along a coordinate axis) and <span class="math inline">\(d\)</span> its dimensionality.</p>
 <p>Within the Grand Canonical ensemble (see precourse reading) the Hamiltonian of the lattice gas model is</p>
 <p><span class="math display">\[{\cal H}_{LG}=-\epsilon\sum_{&lt;i,j&gt;}c_ic_j - \mu\sum_ic_i\]</span></p>
-<p>where <span class="math inline">\(\epsilon\)</span> is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and <span class="math inline">\(\mu\)</span> is a field known as the chemical potential, which couples to the particle density which is assumed to fluctuate around a mean value controlled by the prescribed chemical potential. One can also fix the particle number to some prescribed value- the corresponding set of microstates then define the canonical ensemble (see precourse reading) of the lattice gas at that density.</p>
+<p>where <span class="math inline">\(\epsilon\)</span> is an attraction energy between a pair of particles on adjacent (nearest neighbouring) sites and <span class="math inline">\(\mu\)</span> is a field known as the chemical potential which couples to the particle number density <span class="math inline">\(\rho\)</span>. The number density typically fluctuates around a mean value controlled by the prescribed value of <span class="math inline">\(\mu\)</span>.</p>
+<p>One can also consider the model under conditions in which the particle number is fixed to some prescribed value - then there is no chemical potential and the corresponding set of microstates define the canonical ensemble (see precourse reading) of the lattice gas at that density.</p>
 <section id="mapping-between-lattice-gas-and-ising-model" class="level2">
 <h2 class="anchored" data-anchor-id="mapping-between-lattice-gas-and-ising-model">1.1 Mapping between lattice gas and Ising model</h2>
 <p>The lattice gas model is interesting because whilst being a plausible model for a fluid, it maps onto the Ising model. We say that they are <em>isomorphic</em> to one another. This isomorphism extends the applicability of the Ising model. To expose the mapping we write the grand partition function of the lattice gas:</p>
-<p><span class="math display">\[ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{&lt;i,j&gt;}c_ic_j +\beta\mu\sum_ic_i\right] \]</span> where the sum is an unrestricted sum over the occupancies of the lattice sites.</p>
+<p><span class="math display">\[ \Xi=\sum_\textrm{ state}\exp-\beta{\cal H}_{LG}=\sum_{\{c\}}\exp\left[\beta \epsilon\sum_{&lt;i,j&gt;}c_ic_j +\beta\mu\sum_ic_i\right] \]</span> where the sum runs over all possible combinations of occupancies of the lattice sites.</p>
 <p>We now change variables to</p>
 <p><span class="math display">\[c_i=(1+s_i)/2; ~~~~ J=\frac{\epsilon}{4}; ~~~~
 h=\frac{\epsilon q+2\mu}{4},
 \]</span> where <span class="math inline">\(q\)</span> is the lattice coordination number.</p>
-<p>One finds (see assignment below),</p>
+<p>One finds,</p>
 <p><span class="math display">\[{\cal H}_{LG}={\cal H}_\textrm{ I} + \textrm{ constant}\]</span> Since the last term does not depend on the configuration, it feeds through as an additive constant in the free energy; and since all observables feature as derivatives of the free energy, the constant has no physical implications.</p>
 </section>
 <section id="phase-diagram" class="level2">
@@ -506,18 +507,18 @@ Figure&nbsp;1.2: Schematic of the liquid-gas phase diagram in the <span class="m
 </section>
 </section>
 <section id="monte-carlo-simulation" class="level1">
-<h1>2. Monte Carlo Simulation</h1>
+<h1>2. Monte Carlo simulation</h1>
 <p>Monte Carlo methods are a class of algorithms that use repeated random sampling to obtain numerical solutions. For example, integrals can be approximated using Monte Carlo techniques by generating <span class="math inline">\({\cal N}\)</span> random samples from the domain of integration <span class="math inline">\(A\)</span> and evaluating the function at these points. For a 1D integral, the result is approximated as:</p>
 <p><span class="math display">\[
 I = \int_A dx \, f(x) \approx \frac{1}{{\cal N}} \sum_{i=1}^{{\cal N}} f(x_i),
 \]</span></p>
 <p>where <span class="math inline">\(x_i\)</span> are random points uniformly distributed in <span class="math inline">\(A\)</span>. In practice, while we cannot generate an infinite number of samples, using a large but finite <span class="math inline">\({\cal N}\)</span> still provides a good approximation.</p>
-<p>This idea also applies to sums over microstates, such as those appearing in the partition function of the <strong>lattice gas model</strong>. However, the space of all configurations is typically vast, and most configurations contribute negligibly to thermodynamic averages. Therefore, rather than sampling configurations uniformly, we use <em>importance sampling</em>, preferentially sampling microstates that contribute significantly to the ensemble.</p>
-<p>In the <strong>grand canonical ensemble</strong>, the number of particles <span class="math inline">\(N\)</span> is allowed to fluctuate, and importance sampling means that configurations are sampled with a probability proportional to the Boltzmann weight:</p>
+<p>This idea also applies to sums over microstates, such as those appearing in the partition function of the lattice gas model. However, the space of all configurations is typically vast, and most configurations contribute negligibly to thermodynamic averages. Therefore, rather than sampling configurations uniformly, we use <em>importance sampling</em>, preferentially sampling microstates that contribute significantly to the ensemble.</p>
+<p>In the grand canonical ensemble, the number of particles <span class="math inline">\(N\)</span> is allowed to fluctuate, and importance sampling means that configurations are sampled with a probability proportional to the Boltzmann weight:</p>
 <p><span class="math display">\[
 P(C) \propto e^{-\beta [E(C) - \mu N(C)]},
 \]</span></p>
-<p>where <span class="math inline">\(E(C)\)</span> is the energy of particle configuration <span class="math inline">\(C\)</span>, <span class="math inline">\(N(C)\)</span> is the number of particles in that configuration, <span class="math inline">\(\mu\)</span> is the chemical potential, and <span class="math inline">\(\beta = 1/k_BT\)</span>. To generate such configurations efficiently, one can use the <strong>Metropolis algorithm</strong> adapted for grand canonical sampling:</p>
+<p>where <span class="math inline">\(E(C)\)</span> is the energy of particle configuration <span class="math inline">\(C\)</span>, <span class="math inline">\(N(C)\)</span> is the number of particles in that configuration, <span class="math inline">\(\mu\)</span> is the chemical potential, and <span class="math inline">\(\beta = 1/k_BT\)</span>. To generate such configurations efficiently, one can use the <strong>Metropolis algorithm</strong> adapted for grand canonical importance sampling:</p>
 <section id="grand-canonical-monte-carlo-gcmc-algorithm" class="level2">
 <h2 class="anchored" data-anchor-id="grand-canonical-monte-carlo-gcmc-algorithm">2.1 Grand Canonical Monte Carlo (GCMC) algorithm</h2>
 <p>A suitable algorithm for this case is to repeatedly update the system via the following fours steps:</p>
@@ -538,7 +539,7 @@ e^{-\beta \Delta {\cal H}_{LG}} &amp; \text{otherwise},
 <p>This update scheme allows the system to explore states with varying particle numbers according to grand canonical statistics.</p>
 </section>
 <section id="fixed-particle-number-case-canonical-ensemble" class="level2">
-<h2 class="anchored" data-anchor-id="fixed-particle-number-case-canonical-ensemble">2.2 Fixed-Particle-Number Case (Canonical Ensemble)</h2>
+<h2 class="anchored" data-anchor-id="fixed-particle-number-case-canonical-ensemble">2.2 Fixed-particle-number case (Canonical Ensemble)</h2>
 <p>In contrast, we may for simplicity want to simulate with the total number of particles <span class="math inline">\(N\)</span> fixed, as in the canonical ensemble. Then particle insertions and deletions are not allowed and the chemical potential term drops out of the Hamiltonian. We can use <strong>Kawasaki dynamics</strong>, which conserves particle number by moving particles between lattice sites. An update consists of the following four steps.</p>
 <ol type="1">
 <li><p>Select two sites <span class="math inline">\((i,j)\)</span> and <span class="math inline">\((i',j')\)</span> at random.</p></li>
@@ -583,9 +584,9 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 <li>Under enter Git Repository insert: https://github.com/nbwilding/Lattice-gas-coursework</li>
 <li>Press the “clone” button. This will download a notebook called lattice-gas.ipynb into Jupyter</li>
 <li>Check that the program runs</li>
-<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature and number of lattice sites <span class="math inline">\(N=L^2\)</span>. Be aware that the program can take several minutes to run depending on the system size.</li>
+<li>Familiarise yourself with the main features of the program. Pay attention to how to change the temperature, number of lattice sites <span class="math inline">\(N=L^2\)</span>, and the number of equilibration and sampling sweeps. Also check how to toggle live visualisation on and off. Be aware that the program can take several minutes to run depending on the system size, and equilibration/sampling parameters.</li>
 </ul>
-<p><strong>The assignment itself will be released on Monday 13th October 2025 on Blackboard via the Assessment, Submission and Feedback tab. The submission deadline is Monday 27th October 2025 at 09:30.</strong></p>
+<p><strong>The assignment itself will be released at 12:30pm on Monday 13th October 2025 on Blackboard via the Unit Assessment tab. The submission deadline is Monday 27th October 2025 at 09:30.</strong></p>
 <p><strong>Please contact me (nigel.wilding@bristol.ac.uk) if you have trouble with the setup described above, detailing the problem you encountered.</strong></p>
 <p>The various elements of the assignment are set out below. Instructions are given in <em>italics</em>.</p>
 </section>
@@ -604,8 +605,8 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 </section>
 <section id="code-modification-tasks" class="level2">
 <h2 class="anchored" data-anchor-id="code-modification-tasks">3.3 Code modification tasks</h2>
-<p>The provided program simulates the 2D lattice gas model in the <strong>canonical ensemble</strong> (i.e., at a fixed particle number density <span class="math inline">\(\rho\)</span>), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) <span class="math inline">\(g(r)\)</span> and the structure factor <span class="math inline">\(S(\mathbf{k})\)</span> (refer to Chapter 2 of the notes for the definitions of these quantities).</p>
-<p>In this implementation, the particle density is fixed at <span class="math inline">\(\rho = \rho_c = 0.5\)</span>. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime, <span class="math inline">\(T_c \le T \le 1.0\)</span>. For convenience, the program uses dimensionless units by setting <span class="math inline">\(\epsilon = k_B = 1\)</span>. The linear system size is intially set to <span class="math inline">\(L=50\)</span>.</p>
+<p>The program provided to you simulates the 2D lattice gas model in the <strong>canonical ensemble</strong> (i.e., at a fixed particle number density <span class="math inline">\(\rho\)</span>), using the Kawasaki swap algorithm as described above. It allows the user to specify the number of lattice sites and the temperature for the simulation. The program computes the pair correlation function (also known as the radial distribution function) <span class="math inline">\(g(r)\)</span> and the structure factor <span class="math inline">\(S(\mathbf{k})\)</span> (refer to Chapter 2 of the notes for the definitions of these quantities).</p>
+<p>In this implementation, the particle density is fixed at <span class="math inline">\(\rho = \rho_c = 0.5\)</span>. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime. For convenience, the program uses dimensionless units by setting <span class="math inline">\(\epsilon = k_B = 1\)</span>. The linear system size is intially set to <span class="math inline">\(L=50\)</span> lattice units.</p>
 <ul>
 <li><p><em>Review the program thoroughly and gain a clear understanding of its functionality.</em></p></li>
 <li><p><em>The program calculates the average form of the 2d structure factor <span class="math inline">\(S(\mathbf{k})\)</span>. Using this, obtain and plot the radially averaged structure 1d factor <span class="math inline">\(S(|k|)\)</span>. </em> <strong>[6 marks]</strong></p></li>
@@ -616,15 +617,15 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 <section id="computational-investigations-of-correlations-on-the-approach-to-criticality" class="level2">
 <h2 class="anchored" data-anchor-id="computational-investigations-of-correlations-on-the-approach-to-criticality">3.4 Computational investigations of correlations on the approach to criticality</h2>
 <ul>
-<li><p><em>Perform simulations at several (six or seven) temperatures within the super critical range <span class="math inline">\(T_c \le T \le 1.0\)</span>. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature.</em> <strong>[4 marks]</strong></p></li>
+<li><p><em>Perform simulations at several (six or seven) temperatures within the super critical range <span class="math inline">\(T_c \le T \lesssim 2T_c\)</span>. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated</em> <strong>[4 marks]</strong></p></li>
 <li><p><em>Plot and compare the radial distribution function <span class="math inline">\(g(r)\)</span> and the structure factor <span class="math inline">\(S(\mathbf{k})\)</span>, and its radially averaged form, <span class="math inline">\(S(|k|)\)</span> at each temperature</em>. <strong>[4 marks]</strong></p></li>
-<li><p><em>Interpret the peak structure in the structure factor and discuss signs of clustering or ordering in these quantities</em>. <strong>[3 marks]</strong></p></li>
+<li><p><em>Interpret the peak structure in <span class="math inline">\(g(r)\)</span> and <span class="math inline">\(S(|k|)\)</span> and discuss the relationship to clustering or ordering</em>. <strong>[3 marks]</strong></p></li>
 <li><p><em>The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length <span class="math inline">\(\xi\)</span> through <span class="math inline">\(\xi=1/FWHM\)</span>. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of <span class="math inline">\(\xi\)</span> and comment on its behaviour</em>. <strong>[4 marks]</strong></p></li>
 </ul>
 </section>
 <section id="temperature-and-system-size-dependence-of-the-specific-heat" class="level2">
 <h2 class="anchored" data-anchor-id="temperature-and-system-size-dependence-of-the-specific-heat">3.5 Temperature and system size dependence of the specific heat</h2>
-<p><em>Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical (i.e.&nbsp;<span class="math inline">\(T&lt;T_c\)</span>) and supercritical regimes. Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form.</em> <strong>[4 marks]</strong></p>
+<p>*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g <span class="math inline">\(T_c/2&lt;T&lt;2T_c\)</span>). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations. <strong>[4 marks]</strong></p>
 <p><em>Repeat the analysis that you performed for the <span class="math inline">\(L=50\)</span> system, for system sizes <span class="math inline">\(L=20\)</span> and <span class="math inline">\(L=35\)</span>. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.</em> <strong>[4 marks]</strong></p>
 </section>
 <section id="your-report" class="level2">
@@ -637,7 +638,7 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 </li>
 <li>Computational investigations of correlations on the approach to criticality</li>
 <li>Temperature and system size dependence of the specific heat</li>
-<li>Include a line with following declaration at the end of the report: “I have not made use of Artificial Intelligence tools in completing this assessement.”</li>
+<li><em>Include a line with following declaration at the end of the report: “I have not made use of Artificial Intelligence tools in completing this assessement beyond those of category 2 in the <a href="https://www.bristol.ac.uk/bilt/sharing-practice/guides/guidance-on-ai/using-ai-in-assessment/">University’s categorisation scheme</a>.”</em></li>
 </ul>
 <p>There is no need for any other section headings ie. you don’t need abstract, introduction, references etc. Marks will be deducted for reports that exceed four sides (faces) of A4.</p>
 <p><em>Submit your report in pdf format for grading via blackboard</em>. The report will be marked out of 40, and will count for <span class="math inline">\(30\%\)</span> of the unit mark.</p>

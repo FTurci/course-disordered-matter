@@ -89,12 +89,12 @@ in zero field, within the simplest mean field approximation $\langle
   s_is_j\rangle=\langle s_i\rangle\langle s_j\rangle=m^2$. Hence
 show that for $H=0$ the heat capacity $\partial \langle E\rangle/\partial T$ has the behaviour
 
-
-\begin{align*}
+$$
+\begin{aligned}
 C_H=& 0 \quad T>T_c\\
 C_H=& 3Nk_B/2 \quad T\le T_c
-\end{align*}
-
+\end{aligned}
+$$
 ---
 
 ### 5. Magnetisation and fluctuations
@@ -207,13 +207,13 @@ $$
 
 Hence derive the scaling laws among the critical exponents:
 
-
-\begin{align*}
+$$
+\begin{aligned}
 \alpha+\beta(\delta+1)=& 2 \\
 \alpha+2\beta+\gamma =& 2\\
 %\gamma=\beta(\delta-1)
-\end{align*}
-
+\end{aligned}
+$$
 (*Hint: For the heat capacity exponent $\alpha$ use
 the result from problem 8:
 $C_H=-T\left(\frac{\partial^2F}{\partial T^2}\right)_{h=0}$*)
@@ -289,41 +289,19 @@ where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitraril
 
 ---
 
-### 14. Life in one dimension
 
-A particle lives on the sites of a one-dimensional lattice. At any instant it has probability $\alpha$ per unit time that
-it will hop to the site on its right and probability $\alpha$ per unit time of hopping to the site on its left. 
+14. **Master equation**
 
-Write down the master equation for the set of probabilities $p_n(t)$ of finding the particle at the $n^{\text{th}}$ site, 
-where $-\infty < n < \infty$.
+A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have a probability $\lambda_{-\to+}(T)$ per unit time of transition from lower to higher level, and a probability $\lambda_{+\to-}(T)$ per unit time of the reverse transition.
 
-Solve the master equation for the $p_n$, subject to the initial condition that the particle was at the site $n = 0$ 
-at time $t = 0$. Hence obtain the mean position $\langle n \rangle$ and root mean square deviation from the mean, both as functions of time.
+If at any time $t$ there are $n_+(t)$ atoms at the higher level and $n_-(t)$ at the lower level, then $n(t) = n_-(t) - n_+(t)$ is a convenient measure of the non-equilibrium state.
 
-**Hint**: The second part of the question is most easily done by introducing the generating function
-
-$$
-F(z, t) = \sum_{n=-\infty}^{\infty} p_n(t) z^n.
-$$
+Obtain the master equation for $n(t)$ and hence the relaxation time $\tau$ which characterizes the exponential approach of the system to equilibrium.
 
 ---
 
-### 15. Master equation
 
-A system of $N$ atoms, each having two energy levels $E = \pm \epsilon$, is brought into contact with a heat bath at 
-temperature $T$. The atoms do not interact with each other, but each atom interacts with the heat bath to have 
-a probability $\lambda_{-\to+}(T)$ per unit time of transition from lower to higher level, and a probability 
-$\lambda_{+\to-}(T)$ per unit time of the reverse transition.
-
-If at any time $t$ there are $n_+(t)$ atoms at the higher level and $n_-(t)$ at the lower level, then $n(t) = n_-(t) - n_+(t)$ 
-is a convenient measure of the non-equilibrium state.
-
-Obtain the master equation for $n(t)$ and hence the relaxation time $\tau$ which characterizes the exponential approach 
-of the system to equilibrium.
-
----
-
-### 16. Detailed balance
+### 15. Detailed balance
 
 **(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states
  within it, $A$ and $B$, the overall rate of transitions from group $A$ to group $B$ is balanced, in equilibrium, 
@@ -342,7 +320,7 @@ $$
 
 ---
 
-### 17. Jump processes
+### 16. Jump processes
 
 An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from
  state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability $\lambda_0$ that the 

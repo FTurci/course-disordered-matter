@@ -603,16 +603,15 @@ fire-extinguisher foam</td>
 <p>This is especially important due to <strong>quantum fluctuations</strong>: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic spatial fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.</p>
 <p>There are many examples of such effective forces <span class="citation" data-cites="lekkerkerker2024colloids">(<a href="#ref-lekkerkerker2024colloids" role="doc-biblioref">Lekkerkerker, Tuinier, and Vis 2024</a>)</span>. One you may already know is the Van der Waals interaction. For colloids, we have additional relevant forces, such as the double-layer interaction and the depletion interaction. We detail them below.</p>
 </section>
-<section id="van-der-waals-interaction" class="level3 page-columns page-full" data-number="15.2.2">
+<section id="van-der-waals-interaction" class="level3" data-number="15.2.2">
 <h3 data-number="15.2.2" class="anchored" data-anchor-id="van-der-waals-interaction"><span class="header-section-number">15.2.2</span> Van der Waals interaction</h3>
 <p>The London-van der Waals <strong>dispersion forces</strong> arise from the interaction between <strong>instantaneous dipoles</strong> in overall neutral atoms or molecules. We know from classical electrostatics that static dipoles interact via the dipole-dipole interaction, with a potential strength which decays like <span class="math inline">\(1/r^3\)</span>, where <span class="math inline">\(r\)</span> is the separation between two dipoles.</p>
 <p>More generally, neutral atoms or molecules have electronic clouds that are fluctuating and not symmetrically distributed, creating a <strong>temporary dipole</strong>. Such an instantaneous dipole induces a dipole in a neighbouring atom or molecule by distorting its electron cloud.</p>
 <p>The interaction energy between two dipoles <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> separated by a distance <span class="math inline">\(r\)</span> is proportional to:</p>
-<p><span class="math display">\[U \propto -\frac{\mu_1 \mu_2}{r^3}\]</span></p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-
-</div></div><p>The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> of the two particles:</p>
+<p>$$U -</p>
+<p>$$ ::: column-margin ::: {.content-visible when-format=“live-html”} <img src="figs/Johannes_Diderik_van_der_Waals.jpg" class="img-fluid quarto-figure quarto-figure-left" width="150" alt="Johannes Diderik van der Waals (1837-1923), who hypothesised the existence of forces responsible for the non-ideal behaviour of gases."></p>
+<p><img src="figs/hamaker-london.png" class="img-fluid quarto-figure quarto-figure-left" width="300" alt="Left: Hugo C. Hamaker (1905-1993), who explained the origin of Van der Waals forces, and Fritz London (1900-1954), who quantified the dispersion force."> ::: :::</p>
+<p>The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities <span class="math inline">\(\alpha_1\)</span> and <span class="math inline">\(\alpha_2\)</span> of the two particles:</p>
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 <p><span class="math display">\[
     U(r) = -\frac{C}{r^6}
@@ -688,7 +687,11 @@ W_{DR}(h) = B\dfrac{R}{\lambda_B}\exp{(-h/\lambda_D)}
 </div>
 <p>where <span class="math inline">\(\lambda_D\)</span> is called the <strong>Debye length</strong> <span class="math display">\[
 \lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
-\]</span> while <span class="math inline">\(\lambda_B\)</span> is the <strong>Bjerrum length</strong>, which is itself derived from the characteristic distance at which two elementary charges have energy <span class="math inline">\(k_B T\)</span> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+\]</span></p>
+<p>while <span class="math inline">\(\lambda_B\)</span> is the <strong>Bjerrum length</strong>, which is itself derived from the characteristic distance at which two elementary charges have energy <span class="math inline">\(k_B T\)</span> <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p><span class="math display">\[
+\lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
+\]</span></p>
 <p>The coefficient <span class="math inline">\(B\)</span> is a material property that depends on the surface potential. We are not going into the details of these features, which are however important for the design of colloidal experiments.</p>
 <hr>
 <p>From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign</p>
@@ -801,7 +804,8 @@ eyJhdHRyIjp7ImNhcHRpb24iOiIxRCBoYXJkIHBhcnRpY2xlcyBbcHJlc3MgY3RybC9jbWQgW0VOVEVS
 V_{\rm exclusion}&amp; = V_{\rm outer}-V_{\rm inner}\\
 &amp;= \dfrac{4\pi}{3}\left((R+\delta)^3-R^3\right)
 \end{aligned}
-\]</span> Changing the separation between the two colloids but maintaining <span class="math inline">\(r&gt;2R_d\)</span> does not change the grand potential: there is no free energy advantage and hence no effective interaction.</p>
+\]</span></p>
+<p>Changing the separation between the two colloids but maintaining <span class="math inline">\(r&gt;2R_d\)</span> does not change the grand potential: there is no free energy advantage and hence no effective interaction.</p>
 <p>Instead, it is only when we take the colloids <em>closer</em> than <span class="math inline">\(2R_d\)</span> that we see a free energy difference. When <span class="math inline">\(r&lt;2R_d\)</span> (and, obviously, <span class="math inline">\(r&gt;2R\)</span>) an overlap region is formed (the lens-shaped region of the figure above). Its volume can be calculated simply from geometrical considerations, and it is <span id="eq-voverlap"><span class="math display">\[
 V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
 \tag{15.2}\]</span></span> The new accessible volume is <span class="math display">\[V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}\]</span>. The interaction between the two colloids resulting from the free energy adgvantage is called <strong>potential of mean force</strong> <span class="math inline">\(W(r)\)</span>. It is expressed as <span class="math display">\[
@@ -1180,7 +1184,7 @@ h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 \]</span> where the pairwise interaction enters explicitly.</p>
 <p>Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.</p>
-<div id="37364013" class="cell" data-execution_count="1">
+<div id="bef0980f" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1257,7 +1261,7 @@ D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = 0
 <p>For sufficiently dense hard spheres (e.g.&nbsp;above <span class="math inline">\(\phi \sim 0.3\)</span>), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant.</p>
 <p>While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math display">\[\langle r^{2}(t)\rangle \propto t\]</span> when the particles undergo large-scale random-walk diffusion through many cages.</p>
 <p>However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>.</p>
-<div id="53097c13" class="cell" data-execution_count="2">
+<div id="31e2af06" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1278,255 +1282,255 @@ n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\rig
 \]</span></p>
 <p>where we assumed a constant force <span class="math inline">\(F\)</span> in the last equation. In the case of gravity <span class="math inline">\(F=m_{B} g\)</span> with <span class="math inline">\(m_{B}\)</span> the buoyant mass. <span class="math inline">\(n(x)\)</span> results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick’s law.</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1057" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1056;"><span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">600</span><span class="op">;</span></span>
-<span id="cb1-1059"><a href="#cb1-1059" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
-<span id="cb1-1060"><a href="#cb1-1060" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numCircles <span class="op">=</span> <span class="dv">300</span><span class="op">;</span></span>
-<span id="cb1-1061"><a href="#cb1-1061" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1062"><a href="#cb1-1062" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> temperature <span class="op">=</span> <span class="dv">300</span><span class="op">;</span>    <span class="co">// Arbitrary scale</span></span>
-<span id="cb1-1063"><a href="#cb1-1063" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> viscosity <span class="op">=</span> <span class="fl">0.02</span><span class="op">;</span>     <span class="co">// Arbitrary scale</span></span>
-<span id="cb1-1064"><a href="#cb1-1064" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> particleRadius <span class="op">=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// pixels</span></span>
-<span id="cb1-1065"><a href="#cb1-1065" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> timeStep <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
-<span id="cb1-1066"><a href="#cb1-1066" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1067"><a href="#cb1-1067" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> kB <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// reduced units</span></span>
-<span id="cb1-1068"><a href="#cb1-1068" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> gravityFactor <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span></span>
-<span id="cb1-1069"><a href="#cb1-1069" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> gravity <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> gravityFactor<span class="op">;</span></span>
-<span id="cb1-1070"><a href="#cb1-1070" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1071"><a href="#cb1-1071" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute damping as velocity decay per timestep (Langevin friction)</span></span>
-<span id="cb1-1072"><a href="#cb1-1072" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> radius<span class="op">,</span> dt) {</span>
-<span id="cb1-1073"><a href="#cb1-1073" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> gamma <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> viscosity <span class="op">*</span> radius<span class="op">;</span> <span class="co">// friction coeff</span></span>
-<span id="cb1-1074"><a href="#cb1-1074" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>gamma <span class="op">*</span> dt)<span class="op">;</span></span>
-<span id="cb1-1075"><a href="#cb1-1075" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-1076"><a href="#cb1-1076" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1077"><a href="#cb1-1077" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> damping <span class="op">=</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> particleRadius<span class="op">,</span> timeStep)<span class="op">;</span></span>
-<span id="cb1-1078"><a href="#cb1-1078" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1079"><a href="#cb1-1079" aria-hidden="true" tabindex="-1"></a><span class="co">// Create SVG</span></span>
-<span id="cb1-1080"><a href="#cb1-1080" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
-<span id="cb1-1081"><a href="#cb1-1081" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
-<span id="cb1-1082"><a href="#cb1-1082" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
-<span id="cb1-1083"><a href="#cb1-1083" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #ccc"</span>)</span>
-<span id="cb1-1084"><a href="#cb1-1084" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f9f9f9"</span>)<span class="op">;</span></span>
-<span id="cb1-1085"><a href="#cb1-1085" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1086"><a href="#cb1-1086" aria-hidden="true" tabindex="-1"></a><span class="co">// Initialize circles</span></span>
-<span id="cb1-1087"><a href="#cb1-1087" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> circles <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> numCircles }<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
-<span id="cb1-1088"><a href="#cb1-1088" aria-hidden="true" tabindex="-1"></a>  <span class="dt">id</span><span class="op">:</span> i<span class="op">,</span></span>
-<span id="cb1-1089"><a href="#cb1-1089" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> width<span class="op">,</span></span>
-<span id="cb1-1090"><a href="#cb1-1090" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> height <span class="op">*</span> <span class="fl">0.3</span><span class="op">,</span></span>
-<span id="cb1-1091"><a href="#cb1-1091" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vx</span><span class="op">:</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb1-1092"><a href="#cb1-1092" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vy</span><span class="op">:</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
-<span id="cb1-1093"><a href="#cb1-1093" aria-hidden="true" tabindex="-1"></a>  <span class="dt">radius</span><span class="op">:</span> particleRadius<span class="op">,</span></span>
-<span id="cb1-1094"><a href="#cb1-1094" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">interpolateYlOrBr</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="fl">0.5</span> <span class="op">+</span> <span class="fl">0.25</span>)</span>
-<span id="cb1-1095"><a href="#cb1-1095" aria-hidden="true" tabindex="-1"></a>}))<span class="op">;</span></span>
-<span id="cb1-1096"><a href="#cb1-1096" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1097"><a href="#cb1-1097" aria-hidden="true" tabindex="-1"></a><span class="co">// Create circles in SVG</span></span>
-<span id="cb1-1098"><a href="#cb1-1098" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> circleElements <span class="op">=</span> svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
-<span id="cb1-1099"><a href="#cb1-1099" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">data</span>(circles)</span>
-<span id="cb1-1100"><a href="#cb1-1100" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">enter</span>()</span>
-<span id="cb1-1101"><a href="#cb1-1101" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
-<span id="cb1-1102"><a href="#cb1-1102" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">radius</span>)</span>
-<span id="cb1-1103"><a href="#cb1-1103" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">color</span>)</span>
-<span id="cb1-1104"><a href="#cb1-1104" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.8</span>)</span>
-<span id="cb1-1105"><a href="#cb1-1105" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#333"</span>)</span>
-<span id="cb1-1106"><a href="#cb1-1106" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb1-1107"><a href="#cb1-1107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1108"><a href="#cb1-1108" aria-hidden="true" tabindex="-1"></a><span class="co">// Collision detection &amp; response</span></span>
-<span id="cb1-1109"><a href="#cb1-1109" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">handleCollisions</span>() {</span>
-<span id="cb1-1110"><a href="#cb1-1110" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> circles<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
-<span id="cb1-1111"><a href="#cb1-1111" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;</span> circles<span class="op">.</span><span class="at">length</span><span class="op">;</span> j<span class="op">++</span>) {</span>
-<span id="cb1-1112"><a href="#cb1-1112" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> c1 <span class="op">=</span> circles[i]<span class="op">;</span></span>
-<span id="cb1-1113"><a href="#cb1-1113" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> c2 <span class="op">=</span> circles[j]<span class="op">;</span></span>
-<span id="cb1-1114"><a href="#cb1-1114" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dx <span class="op">=</span> c2<span class="op">.</span><span class="at">x</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">x</span><span class="op">;</span></span>
-<span id="cb1-1115"><a href="#cb1-1115" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dy <span class="op">=</span> c2<span class="op">.</span><span class="at">y</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">y</span><span class="op">;</span></span>
-<span id="cb1-1116"><a href="#cb1-1116" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dist <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">hypot</span>(dx<span class="op">,</span> dy)<span class="op">;</span></span>
-<span id="cb1-1117"><a href="#cb1-1117" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> minDist <span class="op">=</span> c1<span class="op">.</span><span class="at">radius</span> <span class="op">+</span> c2<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
-<span id="cb1-1118"><a href="#cb1-1118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1119"><a href="#cb1-1119" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (dist <span class="op">&lt;</span> minDist <span class="op">&amp;&amp;</span> dist <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-1120"><a href="#cb1-1120" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> overlap <span class="op">=</span> minDist <span class="op">-</span> dist<span class="op">;</span></span>
-<span id="cb1-1121"><a href="#cb1-1121" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> nx <span class="op">=</span> dx <span class="op">/</span> dist<span class="op">;</span></span>
-<span id="cb1-1122"><a href="#cb1-1122" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> ny <span class="op">=</span> dy <span class="op">/</span> dist<span class="op">;</span></span>
-<span id="cb1-1123"><a href="#cb1-1123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1124"><a href="#cb1-1124" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">x</span> <span class="op">-=</span> nx <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1125"><a href="#cb1-1125" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">y</span> <span class="op">-=</span> ny <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1126"><a href="#cb1-1126" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">x</span> <span class="op">+=</span> nx <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1127"><a href="#cb1-1127" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">y</span> <span class="op">+=</span> ny <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1128"><a href="#cb1-1128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1129"><a href="#cb1-1129" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> dvx <span class="op">=</span> c2<span class="op">.</span><span class="at">vx</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">vx</span><span class="op">;</span></span>
-<span id="cb1-1130"><a href="#cb1-1130" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> dvy <span class="op">=</span> c2<span class="op">.</span><span class="at">vy</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">vy</span><span class="op">;</span></span>
-<span id="cb1-1131"><a href="#cb1-1131" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> vn <span class="op">=</span> dvx <span class="op">*</span> nx <span class="op">+</span> dvy <span class="op">*</span> ny<span class="op">;</span></span>
-<span id="cb1-1132"><a href="#cb1-1132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1133"><a href="#cb1-1133" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (vn <span class="op">&gt;</span> <span class="dv">0</span>) <span class="cf">continue</span><span class="op">;</span></span>
-<span id="cb1-1134"><a href="#cb1-1134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1135"><a href="#cb1-1135" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> restitution <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span></span>
-<span id="cb1-1136"><a href="#cb1-1136" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> impulse <span class="op">=</span> (<span class="op">-</span>(<span class="dv">1</span> <span class="op">+</span> restitution) <span class="op">*</span> vn) <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1137"><a href="#cb1-1137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1138"><a href="#cb1-1138" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">vx</span> <span class="op">-=</span> impulse <span class="op">*</span> nx<span class="op">;</span></span>
-<span id="cb1-1139"><a href="#cb1-1139" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">vy</span> <span class="op">-=</span> impulse <span class="op">*</span> ny<span class="op">;</span></span>
-<span id="cb1-1140"><a href="#cb1-1140" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">vx</span> <span class="op">+=</span> impulse <span class="op">*</span> nx<span class="op">;</span></span>
-<span id="cb1-1141"><a href="#cb1-1141" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> impulse <span class="op">*</span> ny<span class="op">;</span></span>
-<span id="cb1-1142"><a href="#cb1-1142" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb1-1143"><a href="#cb1-1143" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1144"><a href="#cb1-1144" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-1145"><a href="#cb1-1145" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-1146"><a href="#cb1-1146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1147"><a href="#cb1-1147" aria-hidden="true" tabindex="-1"></a><span class="co">// Update damping when viscosity or timestep changes</span></span>
-<span id="cb1-1148"><a href="#cb1-1148" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">updateDamping</span>() {</span>
-<span id="cb1-1149"><a href="#cb1-1149" aria-hidden="true" tabindex="-1"></a>  damping <span class="op">=</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> particleRadius<span class="op">,</span> timeStep)<span class="op">;</span></span>
-<span id="cb1-1150"><a href="#cb1-1150" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-1151"><a href="#cb1-1151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1152"><a href="#cb1-1152" aria-hidden="true" tabindex="-1"></a><span class="co">// Animate function</span></span>
-<span id="cb1-1153"><a href="#cb1-1153" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">animate</span>() {</span>
-<span id="cb1-1154"><a href="#cb1-1154" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> diffusion <span class="op">=</span> (kB <span class="op">*</span> temperature) <span class="op">/</span> (<span class="dv">6</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> viscosity <span class="op">*</span> particleRadius)<span class="op">;</span></span>
-<span id="cb1-1155"><a href="#cb1-1155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1156"><a href="#cb1-1156" aria-hidden="true" tabindex="-1"></a>  circles<span class="op">.</span><span class="fu">forEach</span>(c <span class="kw">=&gt;</span> {</span>
-<span id="cb1-1157"><a href="#cb1-1157" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Apply gravity</span></span>
-<span id="cb1-1158"><a href="#cb1-1158" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> gravity <span class="op">*</span> timeStep<span class="op">;</span></span>
-<span id="cb1-1159"><a href="#cb1-1159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1160"><a href="#cb1-1160" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Diffusion random kick scaled by sqrt(2*D/dt)</span></span>
-<span id="cb1-1161"><a href="#cb1-1161" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffusionForce <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> diffusion <span class="op">/</span> timeStep)<span class="op">;</span></span>
-<span id="cb1-1162"><a href="#cb1-1162" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vx</span> <span class="op">+=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> diffusionForce<span class="op">;</span></span>
-<span id="cb1-1163"><a href="#cb1-1163" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> diffusionForce<span class="op">;</span></span>
-<span id="cb1-1164"><a href="#cb1-1164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1165"><a href="#cb1-1165" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Apply damping</span></span>
-<span id="cb1-1166"><a href="#cb1-1166" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> damping<span class="op">;</span></span>
-<span id="cb1-1167"><a href="#cb1-1167" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> damping<span class="op">;</span></span>
-<span id="cb1-1168"><a href="#cb1-1168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1169"><a href="#cb1-1169" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update position</span></span>
-<span id="cb1-1170"><a href="#cb1-1170" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">x</span> <span class="op">+=</span> c<span class="op">.</span><span class="at">vx</span> <span class="op">*</span> timeStep<span class="op">;</span></span>
-<span id="cb1-1171"><a href="#cb1-1171" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">y</span> <span class="op">+=</span> c<span class="op">.</span><span class="at">vy</span> <span class="op">*</span> timeStep<span class="op">;</span></span>
-<span id="cb1-1172"><a href="#cb1-1172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1173"><a href="#cb1-1173" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Boundary collision</span></span>
-<span id="cb1-1174"><a href="#cb1-1174" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">x</span> <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-1175"><a href="#cb1-1175" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
-<span id="cb1-1176"><a href="#cb1-1176" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb1-1177"><a href="#cb1-1177" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1178"><a href="#cb1-1178" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">x</span> <span class="op">+</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&gt;</span> width) {</span>
-<span id="cb1-1179"><a href="#cb1-1179" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> width <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
-<span id="cb1-1180"><a href="#cb1-1180" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb1-1181"><a href="#cb1-1181" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1182"><a href="#cb1-1182" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">y</span> <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
-<span id="cb1-1183"><a href="#cb1-1183" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
-<span id="cb1-1184"><a href="#cb1-1184" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb1-1185"><a href="#cb1-1185" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1186"><a href="#cb1-1186" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">y</span> <span class="op">+</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&gt;</span> height) {</span>
-<span id="cb1-1187"><a href="#cb1-1187" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> height <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
-<span id="cb1-1188"><a href="#cb1-1188" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
-<span id="cb1-1189"><a href="#cb1-1189" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1190"><a href="#cb1-1190" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb1-1191"><a href="#cb1-1191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1192"><a href="#cb1-1192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">handleCollisions</span>()<span class="op">;</span></span>
-<span id="cb1-1193"><a href="#cb1-1193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1194"><a href="#cb1-1194" aria-hidden="true" tabindex="-1"></a>  circleElements</span>
-<span id="cb1-1195"><a href="#cb1-1195" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
-<span id="cb1-1196"><a href="#cb1-1196" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">;</span></span>
-<span id="cb1-1197"><a href="#cb1-1197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1198"><a href="#cb1-1198" aria-hidden="true" tabindex="-1"></a>  diffusionDisplay<span class="op">.</span><span class="fu">text</span>(<span class="vs">`Diffusion: </span><span class="sc">${</span>diffusion<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
-<span id="cb1-1199"><a href="#cb1-1199" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-1200"><a href="#cb1-1200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1201"><a href="#cb1-1201" aria-hidden="true" tabindex="-1"></a><span class="co">// Start timer</span></span>
-<span id="cb1-1202"><a href="#cb1-1202" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> timer <span class="op">=</span> d3<span class="op">.</span><span class="fu">timer</span>(animate)<span class="op">;</span></span>
-<span id="cb1-1203"><a href="#cb1-1203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1204"><a href="#cb1-1204" aria-hidden="true" tabindex="-1"></a><span class="co">// Controls container</span></span>
-<span id="cb1-1205"><a href="#cb1-1205" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> controls <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-1206"><a href="#cb1-1206" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1207"><a href="#cb1-1207" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1208"><a href="#cb1-1208" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f0f0f0"</span>)</span>
-<span id="cb1-1209"><a href="#cb1-1209" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"border-radius"</span><span class="op">,</span> <span class="st">"8px"</span>)</span>
-<span id="cb1-1210"><a href="#cb1-1210" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"width"</span><span class="op">,</span> <span class="vs">`</span><span class="sc">${</span>width<span class="sc">}</span><span class="vs">px`</span>)<span class="op">;</span></span>
-<span id="cb1-1211"><a href="#cb1-1211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1212"><a href="#cb1-1212" aria-hidden="true" tabindex="-1"></a><span class="co">// Slider factory</span></span>
-<span id="cb1-1213"><a href="#cb1-1213" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">createSlider</span>(labelText<span class="op">,</span> min<span class="op">,</span> max<span class="op">,</span> initial<span class="op">,</span> step<span class="op">,</span> onChange) {</span>
-<span id="cb1-1214"><a href="#cb1-1214" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-1215"><a href="#cb1-1215" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-bottom"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1216"><a href="#cb1-1216" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"display"</span><span class="op">,</span> <span class="st">"flex"</span>)</span>
-<span id="cb1-1217"><a href="#cb1-1217" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"align-items"</span><span class="op">,</span> <span class="st">"center"</span>)</span>
-<span id="cb1-1218"><a href="#cb1-1218" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"gap"</span><span class="op">,</span> <span class="st">"10px"</span>)<span class="op">;</span></span>
-<span id="cb1-1219"><a href="#cb1-1219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1220"><a href="#cb1-1220" aria-hidden="true" tabindex="-1"></a>  container<span class="op">.</span><span class="fu">append</span>(<span class="st">"label"</span>)</span>
-<span id="cb1-1221"><a href="#cb1-1221" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(labelText)</span>
-<span id="cb1-1222"><a href="#cb1-1222" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"min-width"</span><span class="op">,</span> <span class="st">"120px"</span>)</span>
-<span id="cb1-1223"><a href="#cb1-1223" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">;</span></span>
-<span id="cb1-1224"><a href="#cb1-1224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1225"><a href="#cb1-1225" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> slider <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"input"</span>)</span>
-<span id="cb1-1226"><a href="#cb1-1226" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"type"</span><span class="op">,</span> <span class="st">"range"</span>)</span>
-<span id="cb1-1227"><a href="#cb1-1227" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"min"</span><span class="op">,</span> min)</span>
-<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"max"</span><span class="op">,</span> max)</span>
-<span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"step"</span><span class="op">,</span> step)</span>
-<span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"value"</span><span class="op">,</span> initial)</span>
-<span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"flex"</span><span class="op">,</span> <span class="st">"1"</span>)<span class="op">;</span></span>
-<span id="cb1-1232"><a href="#cb1-1232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> valueDisplay <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"span"</span>)</span>
-<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(initial<span class="op">.</span><span class="fu">toFixed</span>(step <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="dv">4</span> <span class="op">:</span> <span class="dv">0</span>))</span>
-<span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"50px"</span>)</span>
-<span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"text-align"</span><span class="op">,</span> <span class="st">"right"</span>)</span>
-<span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"monospace"</span>)<span class="op">;</span></span>
-<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a>  slider<span class="op">.</span><span class="fu">on</span>(<span class="st">"input"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
-<span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> val <span class="op">=</span> <span class="op">+</span><span class="kw">this</span><span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
-<span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a>    <span class="fu">onChange</span>(val)<span class="op">;</span></span>
-<span id="cb1-1242"><a href="#cb1-1242" aria-hidden="true" tabindex="-1"></a>    valueDisplay<span class="op">.</span><span class="fu">text</span>(val<span class="op">.</span><span class="fu">toFixed</span>(step <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="dv">4</span> <span class="op">:</span> <span class="dv">0</span>))<span class="op">;</span></span>
-<span id="cb1-1243"><a href="#cb1-1243" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb1-1244"><a href="#cb1-1244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> slider<span class="op">;</span></span>
-<span id="cb1-1246"><a href="#cb1-1246" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a><span class="co">// Create sliders</span></span>
-<span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Gravity"</span><span class="op">,</span> <span class="op">-</span><span class="dv">100</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> gravity <span class="op">/</span> gravityFactor<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> v <span class="kw">=&gt;</span> gravity <span class="op">=</span> v <span class="op">*</span> gravityFactor)<span class="op">;</span></span>
-<span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Temperature"</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> temperature<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> v <span class="kw">=&gt;</span> temperature <span class="op">=</span> v)<span class="op">;</span></span>
-<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Viscosity"</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> viscosity<span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> v <span class="kw">=&gt;</span> {</span>
-<span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a>  viscosity <span class="op">=</span> v<span class="op">;</span></span>
-<span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">updateDamping</span>()<span class="op">;</span></span>
-<span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
-<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a><span class="co">// createSlider("Time Step", 0.1, 5, timeStep, 0.1, v =&gt; {</span></span>
-<span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a><span class="co">//   timeStep = v;</span></span>
-<span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a><span class="co">//   updateDamping();</span></span>
-<span id="cb1-1261"><a href="#cb1-1261" aria-hidden="true" tabindex="-1"></a><span class="co">// });</span></span>
-<span id="cb1-1262"><a href="#cb1-1262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1263"><a href="#cb1-1263" aria-hidden="true" tabindex="-1"></a><span class="co">// Diffusion display</span></span>
-<span id="cb1-1264"><a href="#cb1-1264" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> diffusionDisplay <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
-<span id="cb1-1265"><a href="#cb1-1265" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1266"><a href="#cb1-1266" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"monospace"</span>)</span>
-<span id="cb1-1267"><a href="#cb1-1267" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
-<span id="cb1-1268"><a href="#cb1-1268" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">""</span>)<span class="op">;</span></span>
-<span id="cb1-1269"><a href="#cb1-1269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1270"><a href="#cb1-1270" aria-hidden="true" tabindex="-1"></a><span class="co">// Reset button</span></span>
-<span id="cb1-1271"><a href="#cb1-1271" aria-hidden="true" tabindex="-1"></a>controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"button"</span>)</span>
-<span id="cb1-1272"><a href="#cb1-1272" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">"Reset Positions"</span>)</span>
-<span id="cb1-1273"><a href="#cb1-1273" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1274"><a href="#cb1-1274" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"6px 12px"</span>)</span>
-<span id="cb1-1275"><a href="#cb1-1275" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
-<span id="cb1-1276"><a href="#cb1-1276" aria-hidden="true" tabindex="-1"></a>    circles<span class="op">.</span><span class="fu">forEach</span>(c <span class="kw">=&gt;</span> {</span>
-<span id="cb1-1277"><a href="#cb1-1277" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> width<span class="op">;</span></span>
-<span id="cb1-1278"><a href="#cb1-1278" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> height <span class="op">*</span> <span class="fl">0.3</span><span class="op">;</span></span>
-<span id="cb1-1279"><a href="#cb1-1279" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
-<span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
-<span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
-<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a><span class="co">// Start/Stop toggle</span></span>
-<span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> startStopBtn <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"button"</span>)</span>
-<span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">"Stop"</span>)</span>
-<span id="cb1-1287"><a href="#cb1-1287" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-left"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
-<span id="cb1-1288"><a href="#cb1-1288" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"6px 12px"</span>)</span>
-<span id="cb1-1289"><a href="#cb1-1289" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">"click"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
-<span id="cb1-1290"><a href="#cb1-1290" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (timer<span class="op">.</span><span class="at">_call</span>) {</span>
-<span id="cb1-1291"><a href="#cb1-1291" aria-hidden="true" tabindex="-1"></a>      timer<span class="op">.</span><span class="fu">stop</span>()<span class="op">;</span></span>
-<span id="cb1-1292"><a href="#cb1-1292" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"Start"</span><span class="op">;</span></span>
-<span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
-<span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>      timer<span class="op">.</span><span class="fu">restart</span>(animate)<span class="op">;</span></span>
-<span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"Stop"</span><span class="op">;</span></span>
-<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1227" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1226;"><span id="cb1-1227"><a href="#cb1-1227" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb1-1228"><a href="#cb1-1228" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">600</span><span class="op">;</span></span>
+<span id="cb1-1229"><a href="#cb1-1229" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
+<span id="cb1-1230"><a href="#cb1-1230" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numCircles <span class="op">=</span> <span class="dv">300</span><span class="op">;</span></span>
+<span id="cb1-1231"><a href="#cb1-1231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1232"><a href="#cb1-1232" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> temperature <span class="op">=</span> <span class="dv">300</span><span class="op">;</span>    <span class="co">// Arbitrary scale</span></span>
+<span id="cb1-1233"><a href="#cb1-1233" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> viscosity <span class="op">=</span> <span class="fl">0.02</span><span class="op">;</span>     <span class="co">// Arbitrary scale</span></span>
+<span id="cb1-1234"><a href="#cb1-1234" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> particleRadius <span class="op">=</span> <span class="dv">5</span><span class="op">;</span> <span class="co">// pixels</span></span>
+<span id="cb1-1235"><a href="#cb1-1235" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> timeStep <span class="op">=</span> <span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-1236"><a href="#cb1-1236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1237"><a href="#cb1-1237" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> kB <span class="op">=</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// reduced units</span></span>
+<span id="cb1-1238"><a href="#cb1-1238" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> gravityFactor <span class="op">=</span> <span class="fl">0.1</span><span class="op">;</span></span>
+<span id="cb1-1239"><a href="#cb1-1239" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> gravity <span class="op">=</span> <span class="dv">10</span> <span class="op">*</span> gravityFactor<span class="op">;</span></span>
+<span id="cb1-1240"><a href="#cb1-1240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1241"><a href="#cb1-1241" aria-hidden="true" tabindex="-1"></a><span class="co">// Compute damping as velocity decay per timestep (Langevin friction)</span></span>
+<span id="cb1-1242"><a href="#cb1-1242" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> radius<span class="op">,</span> dt) {</span>
+<span id="cb1-1243"><a href="#cb1-1243" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> gamma <span class="op">=</span> <span class="dv">6</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> viscosity <span class="op">*</span> radius<span class="op">;</span> <span class="co">// friction coeff</span></span>
+<span id="cb1-1244"><a href="#cb1-1244" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">exp</span>(<span class="op">-</span>gamma <span class="op">*</span> dt)<span class="op">;</span></span>
+<span id="cb1-1245"><a href="#cb1-1245" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-1246"><a href="#cb1-1246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1247"><a href="#cb1-1247" aria-hidden="true" tabindex="-1"></a><span class="kw">let</span> damping <span class="op">=</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> particleRadius<span class="op">,</span> timeStep)<span class="op">;</span></span>
+<span id="cb1-1248"><a href="#cb1-1248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1249"><a href="#cb1-1249" aria-hidden="true" tabindex="-1"></a><span class="co">// Create SVG</span></span>
+<span id="cb1-1250"><a href="#cb1-1250" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> svg <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"svg"</span>)</span>
+<span id="cb1-1251"><a href="#cb1-1251" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"width"</span><span class="op">,</span> width)</span>
+<span id="cb1-1252"><a href="#cb1-1252" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"height"</span><span class="op">,</span> height)</span>
+<span id="cb1-1253"><a href="#cb1-1253" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"border"</span><span class="op">,</span> <span class="st">"1px solid #ccc"</span>)</span>
+<span id="cb1-1254"><a href="#cb1-1254" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f9f9f9"</span>)<span class="op">;</span></span>
+<span id="cb1-1255"><a href="#cb1-1255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1256"><a href="#cb1-1256" aria-hidden="true" tabindex="-1"></a><span class="co">// Initialize circles</span></span>
+<span id="cb1-1257"><a href="#cb1-1257" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> circles <span class="op">=</span> <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>({ <span class="dt">length</span><span class="op">:</span> numCircles }<span class="op">,</span> (_<span class="op">,</span> i) <span class="kw">=&gt;</span> ({</span>
+<span id="cb1-1258"><a href="#cb1-1258" aria-hidden="true" tabindex="-1"></a>  <span class="dt">id</span><span class="op">:</span> i<span class="op">,</span></span>
+<span id="cb1-1259"><a href="#cb1-1259" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> width<span class="op">,</span></span>
+<span id="cb1-1260"><a href="#cb1-1260" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> height <span class="op">*</span> <span class="fl">0.3</span><span class="op">,</span></span>
+<span id="cb1-1261"><a href="#cb1-1261" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vx</span><span class="op">:</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb1-1262"><a href="#cb1-1262" aria-hidden="true" tabindex="-1"></a>  <span class="dt">vy</span><span class="op">:</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb1-1263"><a href="#cb1-1263" aria-hidden="true" tabindex="-1"></a>  <span class="dt">radius</span><span class="op">:</span> particleRadius<span class="op">,</span></span>
+<span id="cb1-1264"><a href="#cb1-1264" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> d3<span class="op">.</span><span class="fu">interpolateYlOrBr</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> <span class="fl">0.5</span> <span class="op">+</span> <span class="fl">0.25</span>)</span>
+<span id="cb1-1265"><a href="#cb1-1265" aria-hidden="true" tabindex="-1"></a>}))<span class="op">;</span></span>
+<span id="cb1-1266"><a href="#cb1-1266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1267"><a href="#cb1-1267" aria-hidden="true" tabindex="-1"></a><span class="co">// Create circles in SVG</span></span>
+<span id="cb1-1268"><a href="#cb1-1268" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> circleElements <span class="op">=</span> svg<span class="op">.</span><span class="fu">selectAll</span>(<span class="st">"circle"</span>)</span>
+<span id="cb1-1269"><a href="#cb1-1269" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">data</span>(circles)</span>
+<span id="cb1-1270"><a href="#cb1-1270" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">enter</span>()</span>
+<span id="cb1-1271"><a href="#cb1-1271" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">append</span>(<span class="st">"circle"</span>)</span>
+<span id="cb1-1272"><a href="#cb1-1272" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"r"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">radius</span>)</span>
+<span id="cb1-1273"><a href="#cb1-1273" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"fill"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">color</span>)</span>
+<span id="cb1-1274"><a href="#cb1-1274" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"opacity"</span><span class="op">,</span> <span class="fl">0.8</span>)</span>
+<span id="cb1-1275"><a href="#cb1-1275" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke"</span><span class="op">,</span> <span class="st">"#333"</span>)</span>
+<span id="cb1-1276"><a href="#cb1-1276" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">attr</span>(<span class="st">"stroke-width"</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb1-1277"><a href="#cb1-1277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1278"><a href="#cb1-1278" aria-hidden="true" tabindex="-1"></a><span class="co">// Collision detection &amp; response</span></span>
+<span id="cb1-1279"><a href="#cb1-1279" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">handleCollisions</span>() {</span>
+<span id="cb1-1280"><a href="#cb1-1280" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> circles<span class="op">.</span><span class="at">length</span><span class="op">;</span> i<span class="op">++</span>) {</span>
+<span id="cb1-1281"><a href="#cb1-1281" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> j <span class="op">=</span> i <span class="op">+</span> <span class="dv">1</span><span class="op">;</span> j <span class="op">&lt;</span> circles<span class="op">.</span><span class="at">length</span><span class="op">;</span> j<span class="op">++</span>) {</span>
+<span id="cb1-1282"><a href="#cb1-1282" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> c1 <span class="op">=</span> circles[i]<span class="op">;</span></span>
+<span id="cb1-1283"><a href="#cb1-1283" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> c2 <span class="op">=</span> circles[j]<span class="op">;</span></span>
+<span id="cb1-1284"><a href="#cb1-1284" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dx <span class="op">=</span> c2<span class="op">.</span><span class="at">x</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">x</span><span class="op">;</span></span>
+<span id="cb1-1285"><a href="#cb1-1285" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dy <span class="op">=</span> c2<span class="op">.</span><span class="at">y</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">y</span><span class="op">;</span></span>
+<span id="cb1-1286"><a href="#cb1-1286" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> dist <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">hypot</span>(dx<span class="op">,</span> dy)<span class="op">;</span></span>
+<span id="cb1-1287"><a href="#cb1-1287" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> minDist <span class="op">=</span> c1<span class="op">.</span><span class="at">radius</span> <span class="op">+</span> c2<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
+<span id="cb1-1288"><a href="#cb1-1288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1289"><a href="#cb1-1289" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (dist <span class="op">&lt;</span> minDist <span class="op">&amp;&amp;</span> dist <span class="op">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-1290"><a href="#cb1-1290" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> overlap <span class="op">=</span> minDist <span class="op">-</span> dist<span class="op">;</span></span>
+<span id="cb1-1291"><a href="#cb1-1291" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> nx <span class="op">=</span> dx <span class="op">/</span> dist<span class="op">;</span></span>
+<span id="cb1-1292"><a href="#cb1-1292" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> ny <span class="op">=</span> dy <span class="op">/</span> dist<span class="op">;</span></span>
+<span id="cb1-1293"><a href="#cb1-1293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1294"><a href="#cb1-1294" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">x</span> <span class="op">-=</span> nx <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1295"><a href="#cb1-1295" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">y</span> <span class="op">-=</span> ny <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1296"><a href="#cb1-1296" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">x</span> <span class="op">+=</span> nx <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1297"><a href="#cb1-1297" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">y</span> <span class="op">+=</span> ny <span class="op">*</span> overlap <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb1-1298"><a href="#cb1-1298" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a><span class="co">// Container div</span></span>
-<span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
-<span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>container<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">appendChild</span>(svg<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
-<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a>container<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">appendChild</span>(controls<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
-<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-1299"><a href="#cb1-1299" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> dvx <span class="op">=</span> c2<span class="op">.</span><span class="at">vx</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">vx</span><span class="op">;</span></span>
+<span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> dvy <span class="op">=</span> c2<span class="op">.</span><span class="at">vy</span> <span class="op">-</span> c1<span class="op">.</span><span class="at">vy</span><span class="op">;</span></span>
+<span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> vn <span class="op">=</span> dvx <span class="op">*</span> nx <span class="op">+</span> dvy <span class="op">*</span> ny<span class="op">;</span></span>
+<span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> (vn <span class="op">&gt;</span> <span class="dv">0</span>) <span class="cf">continue</span><span class="op">;</span></span>
+<span id="cb1-1304"><a href="#cb1-1304" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1305"><a href="#cb1-1305" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> restitution <span class="op">=</span> <span class="fl">1.0</span><span class="op">;</span></span>
+<span id="cb1-1306"><a href="#cb1-1306" aria-hidden="true" tabindex="-1"></a>        <span class="kw">const</span> impulse <span class="op">=</span> (<span class="op">-</span>(<span class="dv">1</span> <span class="op">+</span> restitution) <span class="op">*</span> vn) <span class="op">/</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1307"><a href="#cb1-1307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1308"><a href="#cb1-1308" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">vx</span> <span class="op">-=</span> impulse <span class="op">*</span> nx<span class="op">;</span></span>
+<span id="cb1-1309"><a href="#cb1-1309" aria-hidden="true" tabindex="-1"></a>        c1<span class="op">.</span><span class="at">vy</span> <span class="op">-=</span> impulse <span class="op">*</span> ny<span class="op">;</span></span>
+<span id="cb1-1310"><a href="#cb1-1310" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">vx</span> <span class="op">+=</span> impulse <span class="op">*</span> nx<span class="op">;</span></span>
+<span id="cb1-1311"><a href="#cb1-1311" aria-hidden="true" tabindex="-1"></a>        c2<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> impulse <span class="op">*</span> ny<span class="op">;</span></span>
+<span id="cb1-1312"><a href="#cb1-1312" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb1-1313"><a href="#cb1-1313" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1314"><a href="#cb1-1314" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-1315"><a href="#cb1-1315" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-1316"><a href="#cb1-1316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1317"><a href="#cb1-1317" aria-hidden="true" tabindex="-1"></a><span class="co">// Update damping when viscosity or timestep changes</span></span>
+<span id="cb1-1318"><a href="#cb1-1318" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">updateDamping</span>() {</span>
+<span id="cb1-1319"><a href="#cb1-1319" aria-hidden="true" tabindex="-1"></a>  damping <span class="op">=</span> <span class="fu">computeDamping</span>(viscosity<span class="op">,</span> particleRadius<span class="op">,</span> timeStep)<span class="op">;</span></span>
+<span id="cb1-1320"><a href="#cb1-1320" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-1321"><a href="#cb1-1321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1322"><a href="#cb1-1322" aria-hidden="true" tabindex="-1"></a><span class="co">// Animate function</span></span>
+<span id="cb1-1323"><a href="#cb1-1323" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">animate</span>() {</span>
+<span id="cb1-1324"><a href="#cb1-1324" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> diffusion <span class="op">=</span> (kB <span class="op">*</span> temperature) <span class="op">/</span> (<span class="dv">6</span> <span class="op">*</span> <span class="bu">Math</span><span class="op">.</span><span class="cn">PI</span> <span class="op">*</span> viscosity <span class="op">*</span> particleRadius)<span class="op">;</span></span>
+<span id="cb1-1325"><a href="#cb1-1325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1326"><a href="#cb1-1326" aria-hidden="true" tabindex="-1"></a>  circles<span class="op">.</span><span class="fu">forEach</span>(c <span class="kw">=&gt;</span> {</span>
+<span id="cb1-1327"><a href="#cb1-1327" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Apply gravity</span></span>
+<span id="cb1-1328"><a href="#cb1-1328" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> gravity <span class="op">*</span> timeStep<span class="op">;</span></span>
+<span id="cb1-1329"><a href="#cb1-1329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1330"><a href="#cb1-1330" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Diffusion random kick scaled by sqrt(2*D/dt)</span></span>
+<span id="cb1-1331"><a href="#cb1-1331" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> diffusionForce <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">sqrt</span>(<span class="dv">2</span> <span class="op">*</span> diffusion <span class="op">/</span> timeStep)<span class="op">;</span></span>
+<span id="cb1-1332"><a href="#cb1-1332" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vx</span> <span class="op">+=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> diffusionForce<span class="op">;</span></span>
+<span id="cb1-1333"><a href="#cb1-1333" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">+=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> diffusionForce<span class="op">;</span></span>
+<span id="cb1-1334"><a href="#cb1-1334" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1335"><a href="#cb1-1335" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Apply damping</span></span>
+<span id="cb1-1336"><a href="#cb1-1336" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> damping<span class="op">;</span></span>
+<span id="cb1-1337"><a href="#cb1-1337" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> damping<span class="op">;</span></span>
+<span id="cb1-1338"><a href="#cb1-1338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1339"><a href="#cb1-1339" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Update position</span></span>
+<span id="cb1-1340"><a href="#cb1-1340" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">x</span> <span class="op">+=</span> c<span class="op">.</span><span class="at">vx</span> <span class="op">*</span> timeStep<span class="op">;</span></span>
+<span id="cb1-1341"><a href="#cb1-1341" aria-hidden="true" tabindex="-1"></a>    c<span class="op">.</span><span class="at">y</span> <span class="op">+=</span> c<span class="op">.</span><span class="at">vy</span> <span class="op">*</span> timeStep<span class="op">;</span></span>
+<span id="cb1-1342"><a href="#cb1-1342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1343"><a href="#cb1-1343" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Boundary collision</span></span>
+<span id="cb1-1344"><a href="#cb1-1344" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">x</span> <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-1345"><a href="#cb1-1345" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
+<span id="cb1-1346"><a href="#cb1-1346" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-1347"><a href="#cb1-1347" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1348"><a href="#cb1-1348" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">x</span> <span class="op">+</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&gt;</span> width) {</span>
+<span id="cb1-1349"><a href="#cb1-1349" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> width <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
+<span id="cb1-1350"><a href="#cb1-1350" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-1351"><a href="#cb1-1351" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1352"><a href="#cb1-1352" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">y</span> <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&lt;</span> <span class="dv">0</span>) {</span>
+<span id="cb1-1353"><a href="#cb1-1353" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
+<span id="cb1-1354"><a href="#cb1-1354" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-1355"><a href="#cb1-1355" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1356"><a href="#cb1-1356" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (c<span class="op">.</span><span class="at">y</span> <span class="op">+</span> c<span class="op">.</span><span class="at">radius</span> <span class="op">&gt;</span> height) {</span>
+<span id="cb1-1357"><a href="#cb1-1357" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> height <span class="op">-</span> c<span class="op">.</span><span class="at">radius</span><span class="op">;</span></span>
+<span id="cb1-1358"><a href="#cb1-1358" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">*=</span> <span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-1359"><a href="#cb1-1359" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1360"><a href="#cb1-1360" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-1361"><a href="#cb1-1361" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1362"><a href="#cb1-1362" aria-hidden="true" tabindex="-1"></a>  <span class="fu">handleCollisions</span>()<span class="op">;</span></span>
+<span id="cb1-1363"><a href="#cb1-1363" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1364"><a href="#cb1-1364" aria-hidden="true" tabindex="-1"></a>  circleElements</span>
+<span id="cb1-1365"><a href="#cb1-1365" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cx"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">x</span>)</span>
+<span id="cb1-1366"><a href="#cb1-1366" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"cy"</span><span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">y</span>)<span class="op">;</span></span>
+<span id="cb1-1367"><a href="#cb1-1367" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1368"><a href="#cb1-1368" aria-hidden="true" tabindex="-1"></a>  diffusionDisplay<span class="op">.</span><span class="fu">text</span>(<span class="vs">`Diffusion: </span><span class="sc">${</span>diffusion<span class="op">.</span><span class="fu">toFixed</span>(<span class="dv">4</span>)<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+<span id="cb1-1369"><a href="#cb1-1369" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-1370"><a href="#cb1-1370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1371"><a href="#cb1-1371" aria-hidden="true" tabindex="-1"></a><span class="co">// Start timer</span></span>
+<span id="cb1-1372"><a href="#cb1-1372" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> timer <span class="op">=</span> d3<span class="op">.</span><span class="fu">timer</span>(animate)<span class="op">;</span></span>
+<span id="cb1-1373"><a href="#cb1-1373" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1374"><a href="#cb1-1374" aria-hidden="true" tabindex="-1"></a><span class="co">// Controls container</span></span>
+<span id="cb1-1375"><a href="#cb1-1375" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> controls <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-1376"><a href="#cb1-1376" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1377"><a href="#cb1-1377" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1378"><a href="#cb1-1378" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"background"</span><span class="op">,</span> <span class="st">"#f0f0f0"</span>)</span>
+<span id="cb1-1379"><a href="#cb1-1379" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"border-radius"</span><span class="op">,</span> <span class="st">"8px"</span>)</span>
+<span id="cb1-1380"><a href="#cb1-1380" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"width"</span><span class="op">,</span> <span class="vs">`</span><span class="sc">${</span>width<span class="sc">}</span><span class="vs">px`</span>)<span class="op">;</span></span>
+<span id="cb1-1381"><a href="#cb1-1381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1382"><a href="#cb1-1382" aria-hidden="true" tabindex="-1"></a><span class="co">// Slider factory</span></span>
+<span id="cb1-1383"><a href="#cb1-1383" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">createSlider</span>(labelText<span class="op">,</span> min<span class="op">,</span> max<span class="op">,</span> initial<span class="op">,</span> step<span class="op">,</span> onChange) {</span>
+<span id="cb1-1384"><a href="#cb1-1384" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> container <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-1385"><a href="#cb1-1385" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-bottom"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1386"><a href="#cb1-1386" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"display"</span><span class="op">,</span> <span class="st">"flex"</span>)</span>
+<span id="cb1-1387"><a href="#cb1-1387" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"align-items"</span><span class="op">,</span> <span class="st">"center"</span>)</span>
+<span id="cb1-1388"><a href="#cb1-1388" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"gap"</span><span class="op">,</span> <span class="st">"10px"</span>)<span class="op">;</span></span>
+<span id="cb1-1389"><a href="#cb1-1389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1390"><a href="#cb1-1390" aria-hidden="true" tabindex="-1"></a>  container<span class="op">.</span><span class="fu">append</span>(<span class="st">"label"</span>)</span>
+<span id="cb1-1391"><a href="#cb1-1391" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(labelText)</span>
+<span id="cb1-1392"><a href="#cb1-1392" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"min-width"</span><span class="op">,</span> <span class="st">"120px"</span>)</span>
+<span id="cb1-1393"><a href="#cb1-1393" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)<span class="op">;</span></span>
+<span id="cb1-1394"><a href="#cb1-1394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1395"><a href="#cb1-1395" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> slider <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"input"</span>)</span>
+<span id="cb1-1396"><a href="#cb1-1396" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"type"</span><span class="op">,</span> <span class="st">"range"</span>)</span>
+<span id="cb1-1397"><a href="#cb1-1397" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"min"</span><span class="op">,</span> min)</span>
+<span id="cb1-1398"><a href="#cb1-1398" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"max"</span><span class="op">,</span> max)</span>
+<span id="cb1-1399"><a href="#cb1-1399" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"step"</span><span class="op">,</span> step)</span>
+<span id="cb1-1400"><a href="#cb1-1400" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">attr</span>(<span class="st">"value"</span><span class="op">,</span> initial)</span>
+<span id="cb1-1401"><a href="#cb1-1401" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"flex"</span><span class="op">,</span> <span class="st">"1"</span>)<span class="op">;</span></span>
+<span id="cb1-1402"><a href="#cb1-1402" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1403"><a href="#cb1-1403" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> valueDisplay <span class="op">=</span> container<span class="op">.</span><span class="fu">append</span>(<span class="st">"span"</span>)</span>
+<span id="cb1-1404"><a href="#cb1-1404" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">text</span>(initial<span class="op">.</span><span class="fu">toFixed</span>(step <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="dv">4</span> <span class="op">:</span> <span class="dv">0</span>))</span>
+<span id="cb1-1405"><a href="#cb1-1405" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"width"</span><span class="op">,</span> <span class="st">"50px"</span>)</span>
+<span id="cb1-1406"><a href="#cb1-1406" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"text-align"</span><span class="op">,</span> <span class="st">"right"</span>)</span>
+<span id="cb1-1407"><a href="#cb1-1407" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"monospace"</span>)<span class="op">;</span></span>
+<span id="cb1-1408"><a href="#cb1-1408" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1409"><a href="#cb1-1409" aria-hidden="true" tabindex="-1"></a>  slider<span class="op">.</span><span class="fu">on</span>(<span class="st">"input"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb1-1410"><a href="#cb1-1410" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> val <span class="op">=</span> <span class="op">+</span><span class="kw">this</span><span class="op">.</span><span class="at">value</span><span class="op">;</span></span>
+<span id="cb1-1411"><a href="#cb1-1411" aria-hidden="true" tabindex="-1"></a>    <span class="fu">onChange</span>(val)<span class="op">;</span></span>
+<span id="cb1-1412"><a href="#cb1-1412" aria-hidden="true" tabindex="-1"></a>    valueDisplay<span class="op">.</span><span class="fu">text</span>(val<span class="op">.</span><span class="fu">toFixed</span>(step <span class="op">&lt;</span> <span class="dv">1</span> <span class="op">?</span> <span class="dv">4</span> <span class="op">:</span> <span class="dv">0</span>))<span class="op">;</span></span>
+<span id="cb1-1413"><a href="#cb1-1413" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-1414"><a href="#cb1-1414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1415"><a href="#cb1-1415" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> slider<span class="op">;</span></span>
+<span id="cb1-1416"><a href="#cb1-1416" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-1417"><a href="#cb1-1417" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1418"><a href="#cb1-1418" aria-hidden="true" tabindex="-1"></a><span class="co">// Create sliders</span></span>
+<span id="cb1-1419"><a href="#cb1-1419" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Gravity"</span><span class="op">,</span> <span class="op">-</span><span class="dv">100</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> gravity <span class="op">/</span> gravityFactor<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> v <span class="kw">=&gt;</span> gravity <span class="op">=</span> v <span class="op">*</span> gravityFactor)<span class="op">;</span></span>
+<span id="cb1-1420"><a href="#cb1-1420" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1421"><a href="#cb1-1421" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Temperature"</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1000</span><span class="op">,</span> temperature<span class="op">,</span> <span class="dv">10</span><span class="op">,</span> v <span class="kw">=&gt;</span> temperature <span class="op">=</span> v)<span class="op">;</span></span>
+<span id="cb1-1422"><a href="#cb1-1422" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1423"><a href="#cb1-1423" aria-hidden="true" tabindex="-1"></a><span class="fu">createSlider</span>(<span class="st">"Viscosity"</span><span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> <span class="fl">0.1</span><span class="op">,</span> viscosity<span class="op">,</span> <span class="fl">0.001</span><span class="op">,</span> v <span class="kw">=&gt;</span> {</span>
+<span id="cb1-1424"><a href="#cb1-1424" aria-hidden="true" tabindex="-1"></a>  viscosity <span class="op">=</span> v<span class="op">;</span></span>
+<span id="cb1-1425"><a href="#cb1-1425" aria-hidden="true" tabindex="-1"></a>  <span class="fu">updateDamping</span>()<span class="op">;</span></span>
+<span id="cb1-1426"><a href="#cb1-1426" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span>
+<span id="cb1-1427"><a href="#cb1-1427" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1428"><a href="#cb1-1428" aria-hidden="true" tabindex="-1"></a><span class="co">// createSlider("Time Step", 0.1, 5, timeStep, 0.1, v =&gt; {</span></span>
+<span id="cb1-1429"><a href="#cb1-1429" aria-hidden="true" tabindex="-1"></a><span class="co">//   timeStep = v;</span></span>
+<span id="cb1-1430"><a href="#cb1-1430" aria-hidden="true" tabindex="-1"></a><span class="co">//   updateDamping();</span></span>
+<span id="cb1-1431"><a href="#cb1-1431" aria-hidden="true" tabindex="-1"></a><span class="co">// });</span></span>
+<span id="cb1-1432"><a href="#cb1-1432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1433"><a href="#cb1-1433" aria-hidden="true" tabindex="-1"></a><span class="co">// Diffusion display</span></span>
+<span id="cb1-1434"><a href="#cb1-1434" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> diffusionDisplay <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"div"</span>)</span>
+<span id="cb1-1435"><a href="#cb1-1435" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1436"><a href="#cb1-1436" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-family"</span><span class="op">,</span> <span class="st">"monospace"</span>)</span>
+<span id="cb1-1437"><a href="#cb1-1437" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"font-weight"</span><span class="op">,</span> <span class="st">"bold"</span>)</span>
+<span id="cb1-1438"><a href="#cb1-1438" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">""</span>)<span class="op">;</span></span>
+<span id="cb1-1439"><a href="#cb1-1439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1440"><a href="#cb1-1440" aria-hidden="true" tabindex="-1"></a><span class="co">// Reset button</span></span>
+<span id="cb1-1441"><a href="#cb1-1441" aria-hidden="true" tabindex="-1"></a>controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"button"</span>)</span>
+<span id="cb1-1442"><a href="#cb1-1442" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">"Reset Positions"</span>)</span>
+<span id="cb1-1443"><a href="#cb1-1443" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-top"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1444"><a href="#cb1-1444" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"6px 12px"</span>)</span>
+<span id="cb1-1445"><a href="#cb1-1445" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">"click"</span><span class="op">,</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb1-1446"><a href="#cb1-1446" aria-hidden="true" tabindex="-1"></a>    circles<span class="op">.</span><span class="fu">forEach</span>(c <span class="kw">=&gt;</span> {</span>
+<span id="cb1-1447"><a href="#cb1-1447" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">x</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> width<span class="op">;</span></span>
+<span id="cb1-1448"><a href="#cb1-1448" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">y</span> <span class="op">=</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">*</span> height <span class="op">*</span> <span class="fl">0.3</span><span class="op">;</span></span>
+<span id="cb1-1449"><a href="#cb1-1449" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vx</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1450"><a href="#cb1-1450" aria-hidden="true" tabindex="-1"></a>      c<span class="op">.</span><span class="at">vy</span> <span class="op">=</span> (<span class="bu">Math</span><span class="op">.</span><span class="fu">random</span>() <span class="op">-</span> <span class="fl">0.5</span>) <span class="op">*</span> <span class="dv">2</span><span class="op">;</span></span>
+<span id="cb1-1451"><a href="#cb1-1451" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb1-1452"><a href="#cb1-1452" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-1453"><a href="#cb1-1453" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1454"><a href="#cb1-1454" aria-hidden="true" tabindex="-1"></a><span class="co">// Start/Stop toggle</span></span>
+<span id="cb1-1455"><a href="#cb1-1455" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> startStopBtn <span class="op">=</span> controls<span class="op">.</span><span class="fu">append</span>(<span class="st">"button"</span>)</span>
+<span id="cb1-1456"><a href="#cb1-1456" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">text</span>(<span class="st">"Stop"</span>)</span>
+<span id="cb1-1457"><a href="#cb1-1457" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"margin-left"</span><span class="op">,</span> <span class="st">"10px"</span>)</span>
+<span id="cb1-1458"><a href="#cb1-1458" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">style</span>(<span class="st">"padding"</span><span class="op">,</span> <span class="st">"6px 12px"</span>)</span>
+<span id="cb1-1459"><a href="#cb1-1459" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">on</span>(<span class="st">"click"</span><span class="op">,</span> <span class="kw">function</span> () {</span>
+<span id="cb1-1460"><a href="#cb1-1460" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (timer<span class="op">.</span><span class="at">_call</span>) {</span>
+<span id="cb1-1461"><a href="#cb1-1461" aria-hidden="true" tabindex="-1"></a>      timer<span class="op">.</span><span class="fu">stop</span>()<span class="op">;</span></span>
+<span id="cb1-1462"><a href="#cb1-1462" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"Start"</span><span class="op">;</span></span>
+<span id="cb1-1463"><a href="#cb1-1463" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb1-1464"><a href="#cb1-1464" aria-hidden="true" tabindex="-1"></a>      timer<span class="op">.</span><span class="fu">restart</span>(animate)<span class="op">;</span></span>
+<span id="cb1-1465"><a href="#cb1-1465" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="st">"Stop"</span><span class="op">;</span></span>
+<span id="cb1-1466"><a href="#cb1-1466" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-1467"><a href="#cb1-1467" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb1-1468"><a href="#cb1-1468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1469"><a href="#cb1-1469" aria-hidden="true" tabindex="-1"></a><span class="co">// Container div</span></span>
+<span id="cb1-1470"><a href="#cb1-1470" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> container <span class="op">=</span> d3<span class="op">.</span><span class="fu">create</span>(<span class="st">"div"</span>)<span class="op">;</span></span>
+<span id="cb1-1471"><a href="#cb1-1471" aria-hidden="true" tabindex="-1"></a>container<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">appendChild</span>(svg<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
+<span id="cb1-1472"><a href="#cb1-1472" aria-hidden="true" tabindex="-1"></a>container<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">appendChild</span>(controls<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
+<span id="cb1-1473"><a href="#cb1-1473" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-1474"><a href="#cb1-1474" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
+<span id="cb1-1475"><a href="#cb1-1475" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="expression">
 
@@ -1638,9 +1642,7 @@ Santos, Andrés. 2016. <span>“A Concise Course on the Theory of Classical Liqu
 <ol>
 <li id="fn1"><p>The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative of the logarithm of the concentration of hydrogen atoms.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>This is clearly an instance of the idea of <strong>coarse graining</strong> that we have introduced <a href="../soft-matter/soft-matter_intro.html">earlier</a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>As you see, scaling by <span class="math inline">\(k_B T\)</span> is a recurrent energy scale of soft matter. <span class="math display">\[
-\lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
-\]</span><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>As you see, scaling by <span class="math inline">\(k_B T\)</span> is a recurrent energy scale of soft matter.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>From the Greek στερεός, “solid, three-dimensional”.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>

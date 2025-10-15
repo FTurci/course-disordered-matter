@@ -1,4 +1,4 @@
-# Welcome to the Complex Disordered Matter Course! {.unnumbered}
+# Welcome to the Complex Disordered Matter course! {.unnumbered}
 
 
 ![](placeholder_figure_long.png){fig-align="left"}
