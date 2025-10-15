@@ -64,6 +64,12 @@ book:
            href: phase-transitions/assignment_October2025.qmd                    
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
+    - part: "First experimental interlude"
+      chapters:
+        - href: experimental/part1.ipynb
+          text: "Macroscopic measurements"
+        - href: experimental/part2.ipynb
+          text: "Real-space measurements"
 
     # - part: "Complex disordered systems"
     #   chapters:
