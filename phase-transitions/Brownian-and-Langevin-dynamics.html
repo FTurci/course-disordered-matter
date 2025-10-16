@@ -613,7 +613,7 @@ D = \frac{k_B T}{\gamma}
 \]</span></p>
 <p>This is the <strong>Einstein relation</strong>, connecting the rate of diffusion to temperature and damping. It is useful as it allows an explicit expression for the diffusion constant if one knows <span class="math inline">\(\gamma\)</span>. A famous example is a sphere: the equation for fluid flow past a moving sphere may be solved and yields <span class="math inline">\(\gamma=6\pi\eta a\)</span> where <span class="math inline">\(a\)</span> is the radius of the sphere and here <span class="math inline">\(\eta\)</span> is the fluid viscosity. This gives</p>
 <p><span class="math display">\[
-D=\frac{6\pi\eta a}{kT}
+D=\frac{k_BT}{6\pi\eta a}
 \]</span> which is the <strong>Stokes-Einstein</strong> formula for the diffusion constant of a colloidal particle.</p>
 </section>
 <section id="external-forces-and-mobility" class="level3" data-number="9.2.5">
@@ -635,7 +635,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="6e327ab9" class="cell" data-execution_count="1">
+<div id="57895e8e" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
