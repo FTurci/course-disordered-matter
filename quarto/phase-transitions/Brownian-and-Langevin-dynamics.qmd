@@ -272,11 +272,68 @@ This important result relates the noise strength to the damping and temperature 
 
 We now integrate $v(t)$ again to get position $x(t)$ (with $m = 1$):
 
-Using the result above and substituting $\Gamma = 2\gamma k_B T$, we find:
+Using the result above and substituting $\Gamma = 2\gamma k_B T$, one finds (after integrating twice and some algebra):
 
 $$
 \langle [x(t) - x_0]^2 \rangle = \frac{(v_0^2 - k_B T)}{\gamma^2} (1 - e^{-\gamma t})^2 + \frac{2 k_B T}{\gamma} \left[ t - \frac{1 - e^{-\gamma t}}{\gamma} \right]
 $$
+
+
+::: {.callout-caution collapse="true"}
+## Derivation (non-examinable)
+
+The displacement over time $t$ is
+
+$$
+\Delta x(t) = x(t) - x(0) = \int_0^t v(t_1)\,dt_1.
+$$
+
+Hence, the mean-squared displacement (MSD) is
+
+$$
+\langle \Delta x^2(t) \rangle
+= \Big\langle \int_0^t dt_1 \int_0^t dt_2\, v(t_1)v(t_2) \Big\rangle.
+$$
+
+Substituting the expression for $v(t)$ and averaging, we obtain (after some algebra)
+
+$$
+\langle v(t_1)v(t_2)\rangle = \frac{k_B T}{m}\, e^{-\gamma|t_1 - t_2|}.
+$$
+
+Inserting this result into the MSD expression gives
+
+$$
+\langle \Delta x^2(t) \rangle
+= \frac{2k_B T}{m} \int_0^t dt_1 \int_0^{t_1} dt_2\, e^{-\gamma (t_1 - t_2)}.
+$$
+
+Evaluating the inner integral first:
+
+$$
+\int_0^{t_1} e^{-\gamma (t_1 - t_2)}\,dt_2
+= \frac{1 - e^{-\gamma t_1}}{\gamma}.
+$$
+
+Then the outer integral becomes
+
+$$
+\int_0^t \frac{1 - e^{-\gamma t_1}}{\gamma}\,dt_1
+= \frac{t}{\gamma} - \frac{1 - e^{-\gamma t}}{\gamma^2}.
+$$
+
+Therefore, the mean-squared displacement is
+
+$$
+\boxed{
+\langle \Delta x^2(t)\rangle
+= 2\frac{k_B T}{m}
+\left(\frac{t}{\gamma} - \frac{1 - e^{-\gamma t}}{\gamma^2}\right)
+= 2\frac{k_B T}{m\gamma^2}\big(\gamma t - 1 + e^{-\gamma t}\big).
+}
+$$
+
+:::
 
 Limiting behaviours:
 
@@ -314,7 +371,7 @@ sphere may be solved and yields  $\gamma=6\pi\eta a$ where $a$ is the radius of 
 the fluid viscosity. This gives
 
 $$
-D=\frac{6\pi\eta a}{kT}
+D=\frac{k_BT}{6\pi\eta a}
 $$
 which is the **Stokes-Einstein** formula for the diffusion constant of a colloidal particle.
 

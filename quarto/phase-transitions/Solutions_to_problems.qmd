@@ -600,6 +600,7 @@ Therefore, the nucleation rate increases sharply with undercooling.
 
 Note, however, that at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.
 
+---
 
 ### 12. Colloidal diffusion
 
@@ -711,67 +712,71 @@ where we renamed $\tau \to t$ and assume that $\langle u u \rangle$ will fall of
 
 ### 14. Master equation
 
-The rates of change of $n_+$ and $n_-$ are clearly given by the master equations:
+The rates of change of $n_+$ and $n_-$ are given by the master equations:
 
 $$
-\frac{dn_+}{dt} = -n_+ v_{+-} + n_- v_{-+};
+\frac{dn_+}{dt} = -n_+ \lambda_{+-} + n_- \lambda_{-+};
 $$
 
 $$
-\frac{dn_-}{dt} = n_+ v_{+-} - n_- v_{-+}.
+\frac{dn_-}{dt} = n_+ \lambda_{+-} - n_- \lambda_{-+}.
 $$
+where since the particles are independent we have written $n_i=Np_i$.
 
 At equilibrium the right-hand sides of the above master equations must vanish. Hence the ratio of the transition probabilities is given by:
 
 $$
-\left. \frac{v_{-+}}{v_{+-}} = \frac{n_+}{n_-} \right|_{\text{eq}} = e^{-2\beta \varepsilon}.
+\left. \frac{\lambda_{-+}}{\lambda_{+-}} = \frac{n_+}{n_-} \right|_{\text{eq}} = e^{-2\beta \varepsilon}.
 $$
 
-with $\beta = 1/k\tau$, as usual.
+with $\beta = 1/k_BT$, as usual.
 
-Subtracting one of the above master equations from the other, we obtain:
+Following the lead in the question, we define $n = n_- - n_+$.  Subtracting one of the above master equations from the other, we obtain:
 
 $$
-\frac{dn}{dt} = 2n_+ v_{+-} - 2n_- v_{-+}
+\frac{dn}{dt} = 2n_+ \lambda_{+-} - 2n_- \lambda_{-+}
 $$
 
-Then, noting that $N = n_- + n_+$ and $n = n_- - n_+$ implies that:
+Then, noting that $N = n_- + n_+$, we have that:
 
 $$
 n_- = \frac{N + n}{2} \quad \text{and} \quad n_+ = \frac{N - n}{2},
 $$
 
-we have:
+allowing to rewrite as:
 
 $$
-\frac{dn}{dt} = -n(v_{+-} + v_{-+}) + N(v_{+-} - v_{-+})
+\frac{dn}{dt} = -n(\lambda_{+-} + \lambda_{-+}) + N(\lambda_{+-} - \lambda_{-+})
 $$
 
-which can be written in the suggestive form:
+
+The equilibrium value of $n(t)$ follows by setting $\frac{dn}{dt}=0$ to find
 
 $$
-\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) + \frac{N(v_{+-} - v_{-+})}{v_{+-} + v_{-+}} \right]
+n_{\text{eq}} = N \frac{\lambda_{+-} - \lambda_{-+}}{\lambda_{+-} + \lambda_{-+}}.
+$$
+
+
+Rewrite the differential equation in the suggestive form:
+
+$$
+\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - \frac{N(\lambda_{+-} - \lambda_{-+})}{\lambda_{+-} + \lambda_{-+}} \right]
 $$
 
 where
 
 $$
-\tau = \frac{1}{v_{+-} + v_{-+}}.
+\tau = \frac{1}{\lambda_{+-} + \lambda_{-+}}.
 $$
 
-This can further be written as
+Inserting the result (above) for $n_{\text{eq}}$ yields
 
 $$
 \frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - n_{\text{eq}} \right],
 $$
 
-where the equilibrium value of $n(t)$ is:
 
-$$
-n_{\text{eq}} = N \frac{v_{+-} - v_{-+}}{v_{+-} + v_{-+}} = N \tanh(\beta \varepsilon).
-$$
-
-The solution is:
+Making a change of variables and separating variables in the standard way, one finds the solution to be:
 
 $$
 n(t) = n_{\text{eq}} + e^{-t/\tau} [n(0) - n_{\text{eq}}].
@@ -835,7 +840,9 @@ are equal in equilibrium.
 
 
 
-**(b)** From problem 13, the probability $p_A$ of a group of states $A$ is given by
+**(b)** 
+
+he probability $p_A$ of a group of states $A$ is given by
 
 $$
 p_A = \frac{e^{-\beta F_A}}{Z},
@@ -948,16 +955,18 @@ $$
 \mathbf p^\textrm{ eq} = \bigl(\tfrac13,\tfrac13,\tfrac13\bigr).
 $$
 
-**(c)** The matrix
+**(c)** 
+
+We have 
 $$
 M = \lambda_0
 \begin{pmatrix}
 -1 & 1 & 0\\
 1 & -2 & 1\\
 0 & 1 & -1
-\end{pmatrix}
+\end{pmatrix}.
 $$
-is (up to $\lambda_0$) the negative of the graph-Laplace operator of the path $1\!-\!2\!-\!3$.  Its characteristic polynomial is
+Its characteristic polynomial is
 $$
 \det(M -\mu I)
 =-\mu(\mu+\lambda_0)(\mu+3\lambda_0),

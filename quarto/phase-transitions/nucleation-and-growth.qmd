@@ -128,7 +128,7 @@ $$
 L(t) \sim t^{1/2},
 $$
 
-corresponding to a dynamic exponent $z = 2$. The growth is driven by reduction of the total interfacial area—regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
+corresponding to a dynamic exponent $z = 2$, where in general $L(t)\sim t^{1/z}$. The growth is driven by reduction of the total interfacial area—regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
 
 
 Let is aassume that domain walls move with velocity proportional to curvature:

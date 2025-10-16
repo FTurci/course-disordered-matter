@@ -322,8 +322,8 @@ $$
 
 ### 16. Jump processes
 
-An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump from
- state 1 to 2 and 2 to 3 but not directly from 1 to 3. Per unit time, there is a probability $\lambda_0$ that the 
+An isolated system can occupy three possible states of the same energy. The kinetics are such that it can jump reversibly
+ between states $1$ and $2$ and between states $2$ and $3$ but not directly between $1$ and $3$. Per unit time, there is a probability $\lambda_0$ that the 
  system makes a jump, from the state it is in, into (each of) the other state(s) it can reach.
 
 **(a)** Show that the occupancy probabilities $p = (p_1, p_2, p_3)$ of the three states obey the master equation
