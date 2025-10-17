@@ -335,6 +335,7 @@ $$
 }
 $$
 
+
 :::
 
 Limiting behaviours:
@@ -354,6 +355,61 @@ Limiting behaviours:
   $$
 
   (corresponding to *diffusive motion*)
+
+::: {.callout-caution collapse="true"}
+## why?
+To get the short and long time behaviour note that
+
+\textbf{Short times} ($\gamma t \ll 1$):
+
+$$
+\begin{aligned}
+e^{-\gamma t} &\approx 1 - \gamma t + \tfrac{1}{2}\gamma^2 t^2 + \cdots, \\[4pt]
+1 - e^{-\gamma t} &\approx \gamma t - \tfrac{1}{2}\gamma^2 t^2, \\[4pt]
+(1 - e^{-\gamma t})^2 &\approx (\gamma t)^2.
+\end{aligned}
+$$
+
+Substituting into the MSD expression:
+$$
+\begin{aligned}
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&\approx (v_0^2 - k_B T)t^2, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&\approx \frac{2k_B T}{\gamma}\left(\tfrac{1}{2}\gamma t^2\right)
+= k_B T t^2.
+\end{aligned}
+$$
+
+Adding both contributions:
+$$
+\boxed{\langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2,}
+$$
+which corresponds to ballistic motion (distance travelled is proportional to time).
+
+
+\textbf{Long times} ($\gamma t \gg 1$):
+
+$$
+\begin{aligned}
+e^{-\gamma t} &\to 0, \\[4pt]
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&\to \frac{(v_0^2 - k_B T)}{\gamma^2}, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&\to \frac{2k_B T}{\gamma}\left(t - \frac{1}{\gamma}\right)
+= \frac{2k_B T}{\gamma}t - \frac{2k_B T}{\gamma^2}.
+\end{aligned}
+$$
+
+Neglecting constant terms at large $t$ gives:
+$$
+\boxed{\langle [x(t) - x_0]^2 \rangle \simeq \frac{2k_B T}{\gamma}\, t,}
+$$
+which corresponds to \textit{diffusive motion} (distance travelled is proportional to $\sqrt{t}$) with diffusion constant
+$D = \tfrac{k_B T}{\gamma}$.
+
+
+:::
 
 <!-- 
 ![Schematic plot of the crossover from ballistic to diffusive motion for a colloid in a fluid.](Figs/brownian_crossover.png){#fig-browniancross
