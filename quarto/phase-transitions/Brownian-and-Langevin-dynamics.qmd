@@ -103,7 +103,9 @@ $$
 x(t) - x_0 = \int_0^t \eta(t')\, dt'
 $$
 
-Taking ensemble averages:
+
+
+Taking ensemble averages, i.e. averaging over all possible realisations of the noise:
 
 * Mean displacement:
   $$
@@ -195,12 +197,12 @@ $$
 v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 $$
 
-Taking the average:
+We now averaging over all possible realisations of the random force, i.e we imagine repeating the Brownian motion experiment infinitely many times, each with a different random sequence of microscopic kicks $f(t)$. Then
+
 
 $$
 \langle v(t) \rangle = v_0 e^{-\gamma t}
 $$
-
 where we have used the fact that $f(t)$ is random with  $\langle f(t)\rangle=0$.
 Thus:
 
@@ -210,7 +212,7 @@ Thus:
 
 ### Mean-square velocity
 
-We now compute (do it as an exercise):
+We now compute (try it as an exercise):
 
 $$
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
