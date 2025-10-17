@@ -655,6 +655,56 @@ Derivation (non-examinable)
 \]</span></p>
 <p>(corresponding to <em>diffusive motion</em>)</p></li>
 </ul>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+why?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To get the short and long time behaviour note that</p>
+<p> (<span class="math inline">\(\gamma t \ll 1\)</span>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+e^{-\gamma t} &amp;\approx 1 - \gamma t + \tfrac{1}{2}\gamma^2 t^2 + \cdots, \\[4pt]
+1 - e^{-\gamma t} &amp;\approx \gamma t - \tfrac{1}{2}\gamma^2 t^2, \\[4pt]
+(1 - e^{-\gamma t})^2 &amp;\approx (\gamma t)^2.
+\end{aligned}
+\]</span></p>
+<p>Substituting into the MSD expression: <span class="math display">\[
+\begin{aligned}
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&amp;\approx (v_0^2 - k_B T)t^2, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&amp;\approx \frac{2k_B T}{\gamma}\left(\tfrac{1}{2}\gamma t^2\right)
+= k_B T t^2.
+\end{aligned}
+\]</span></p>
+<p>Adding both contributions: <span class="math display">\[
+\boxed{\langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2,}
+\]</span> which corresponds to ballistic motion (distance travelled is proportional to time).</p>
+<p> (<span class="math inline">\(\gamma t \gg 1\)</span>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+e^{-\gamma t} &amp;\to 0, \\[4pt]
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&amp;\to \frac{(v_0^2 - k_B T)}{\gamma^2}, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&amp;\to \frac{2k_B T}{\gamma}\left(t - \frac{1}{\gamma}\right)
+= \frac{2k_B T}{\gamma}t - \frac{2k_B T}{\gamma^2}.
+\end{aligned}
+\]</span></p>
+<p>Neglecting constant terms at large <span class="math inline">\(t\)</span> gives: <span class="math display">\[
+\boxed{\langle [x(t) - x_0]^2 \rangle \simeq \frac{2k_B T}{\gamma}\, t,}
+\]</span> which corresponds to (distance travelled is proportional to <span class="math inline">\(\sqrt{t}\)</span>) with diffusion constant <span class="math inline">\(D = \tfrac{k_B T}{\gamma}\)</span>.</p>
+</div>
+</div>
+</div>
 <!-- 
 ![Schematic plot of the crossover from ballistic to diffusive motion for a colloid in a fluid.](Figs/brownian_crossover.png){#fig-browniancross
 width=60%}  -->
@@ -686,7 +736,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="372b1d97" class="cell" data-execution_count="1">
+<div id="a0636a8e" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
