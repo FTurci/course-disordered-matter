@@ -587,10 +587,62 @@ v(t)&amp;=v_0 e^{-\gamma t}+\int_0^t e^{-\gamma (t-t')}f(t')\,dt'.\\
 <section id="mean-square-displacement" class="level3" data-number="9.2.4">
 <h3 data-number="9.2.4" class="anchored" data-anchor-id="mean-square-displacement"><span class="header-section-number">9.2.4</span> Mean-square displacement</h3>
 <p>We now integrate <span class="math inline">\(v(t)\)</span> again to get position <span class="math inline">\(x(t)\)</span> (with <span class="math inline">\(m = 1\)</span>):</p>
-<p>Using the result above and substituting <span class="math inline">\(\Gamma = 2\gamma k_B T\)</span>, we find:</p>
+<p>Using the result above and substituting <span class="math inline">\(\Gamma = 2\gamma k_B T\)</span>, one finds (after integrating twice and some algebra):</p>
 <p><span class="math display">\[
 \langle [x(t) - x_0]^2 \rangle = \frac{(v_0^2 - k_B T)}{\gamma^2} (1 - e^{-\gamma t})^2 + \frac{2 k_B T}{\gamma} \left[ t - \frac{1 - e^{-\gamma t}}{\gamma} \right]
 \]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivation (non-examinable)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The displacement over time <span class="math inline">\(t\)</span> is</p>
+<p><span class="math display">\[
+\Delta x(t) = x(t) - x(0) = \int_0^t v(t_1)\,dt_1.
+\]</span></p>
+<p>Hence, the mean-squared displacement (MSD) is</p>
+<p><span class="math display">\[
+\langle \Delta x^2(t) \rangle
+= \Big\langle \int_0^t dt_1 \int_0^t dt_2\, v(t_1)v(t_2) \Big\rangle.
+\]</span></p>
+<p>Substituting the expression for <span class="math inline">\(v(t)\)</span> and averaging, we obtain (after some algebra)</p>
+<p><span class="math display">\[
+\langle v(t_1)v(t_2)\rangle = \frac{k_B T}{m}\, e^{-\gamma|t_1 - t_2|}.
+\]</span></p>
+<p>Inserting this result into the MSD expression gives</p>
+<p><span class="math display">\[
+\langle \Delta x^2(t) \rangle
+= \frac{2k_B T}{m} \int_0^t dt_1 \int_0^{t_1} dt_2\, e^{-\gamma (t_1 - t_2)}.
+\]</span></p>
+<p>Evaluating the inner integral first:</p>
+<p><span class="math display">\[
+\int_0^{t_1} e^{-\gamma (t_1 - t_2)}\,dt_2
+= \frac{1 - e^{-\gamma t_1}}{\gamma}.
+\]</span></p>
+<p>Then the outer integral becomes</p>
+<p><span class="math display">\[
+\int_0^t \frac{1 - e^{-\gamma t_1}}{\gamma}\,dt_1
+= \frac{t}{\gamma} - \frac{1 - e^{-\gamma t}}{\gamma^2}.
+\]</span></p>
+<p>Therefore, the mean-squared displacement is</p>
+<p><span class="math display">\[
+\boxed{
+\langle \Delta x^2(t)\rangle
+= 2\frac{k_B T}{m}
+\left(\frac{t}{\gamma} - \frac{1 - e^{-\gamma t}}{\gamma^2}\right)
+= 2\frac{k_B T}{m\gamma^2}\big(\gamma t - 1 + e^{-\gamma t}\big).
+}
+\]</span></p>
+</div>
+</div>
+</div>
 <p>Limiting behaviours:</p>
 <ul>
 <li><p>Short times: (<span class="math inline">\(\gamma t \ll 1\)</span>):</p>
@@ -635,7 +687,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="57895e8e" class="cell" data-execution_count="1">
+<div id="b0bfb611" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

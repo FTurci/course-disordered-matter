@@ -302,6 +302,14 @@ window.Quarto = {
   <li><a href="#landau-theory" id="toc-landau-theory" class="nav-link" data-scroll-target="#landau-theory">8. Landau theory</a></li>
   <li><a href="#scaling-equation-of-state" id="toc-scaling-equation-of-state" class="nav-link" data-scroll-target="#scaling-equation-of-state">9. Scaling equation of state</a></li>
   <li><a href="#scaling-laws" id="toc-scaling-laws" class="nav-link" data-scroll-target="#scaling-laws">10. Scaling laws</a></li>
+  <li><a href="#classical-nucleation-theory" id="toc-classical-nucleation-theory" class="nav-link" data-scroll-target="#classical-nucleation-theory">11. Classical nucleation theory</a></li>
+  <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">12. Colloidal diffusion</a></li>
+  <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</a>
+  <ul class="collapse">
+  <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">14. Master equation</a></li>
+  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">15. Detailed balance</a></li>
+  <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">16. Jump processes</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -691,6 +699,301 @@ F(t,h)=&amp;h^{1/b}F(h^{-a/b}t,1)\\
 \end{aligned}\]</span> so when <span class="math inline">\(t=0\)</span>, we get <span class="math inline">\(m(0,h)\)</span> and can identify <span class="math inline">\(\boxed{\delta=b/(1-b)}\)</span>.</p>
 <p>To derive the relationships (``scaling laws’’) among the critical exponents, we eliminate <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from the boxed scaling relations. Setting <span class="math inline">\(a=(2-\alpha)^{-1}\)</span> in the first scaling relation, we find <span class="math inline">\(b=1-\beta/(2-\alpha)\)</span>. Substituting this into the second scaling relation gives the second of the two scaling laws quoted in the notes. Substituting into the 4th scaling relation gives the first scaling law.</p>
 <hr>
+</section>
+<section id="classical-nucleation-theory" class="level3">
+<h3 class="anchored" data-anchor-id="classical-nucleation-theory">11. Classical nucleation theory</h3>
+<p><strong>(a)</strong> To find the critical radius <span class="math inline">\(r^*\)</span>, we differentiate <span class="math inline">\(\Delta G(r)\)</span> with respect to <span class="math inline">\(r\)</span> and set the derivative equal to zero:</p>
+<p><span class="math display">\[
+\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \gamma = 0
+\]</span></p>
+<p>This gives</p>
+<p><span class="math display">\[
+r^* = -\frac{2\gamma}{\Delta G_v}
+\]</span></p>
+<p>Since <span class="math inline">\(\Delta G_v &lt; 0\)</span>, <span class="math inline">\(r^*\)</span> is positive, as expected.</p>
+<p><strong>(b)</strong> To obtain the critical barrier height:</p>
+<p>Substitute <span class="math inline">\(r^*\)</span> into the expression for <span class="math inline">\(\Delta G(r)\)</span>:</p>
+<p><span class="math display">\[
+\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\gamma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\gamma^2}{\Delta G_v^2}\right) \gamma
+\]</span></p>
+<p>which simplifies to</p>
+<p><span class="math display">\[
+\Delta G^* = -\frac{32\pi \gamma^3}{3 \Delta G_v^2} + \frac{16\pi \gamma^3}{\Delta G_v^2} = \frac{16\pi \gamma^3}{3 \Delta G_v^2}
+\]</span></p>
+<p><strong>(c)</strong> The free energy change per unit volume is approximately proportional to the undercooling:</p>
+<p><span class="math display">\[
+\Delta G_v \propto \Delta T
+\]</span></p>
+<p>From part (b), the nucleation barrier is:</p>
+<p><span class="math display">\[
+\Delta G^* \propto \frac{\gamma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
+\]</span></p>
+<p>Thus, as <span class="math inline">\(\Delta T\)</span> increases, <span class="math inline">\(\Delta G^*\)</span> decreases rapidly. A smaller energy barrier means nucleation becomes more probable. Therefore, the nucleation rate increases sharply with undercooling.</p>
+<p>Note, however, that at very high undercooling, atomic mobility may decrease due to low temperature, which can limit nucleation despite the small barrier.</p>
+<hr>
+</section>
+<section id="colloidal-diffusion" class="level3">
+<h3 class="anchored" data-anchor-id="colloidal-diffusion">12. Colloidal diffusion</h3>
+<p>We start from the given formal solution of the Langevin equation for the velocity:</p>
+<p><span class="math display">\[
+u(t) = u_0 e^{-\gamma t} + \frac{e^{-\gamma t}}{M} \int_{0}^{t} e^{\gamma t'} F(t') \, dt'.
+\]</span></p>
+<p>with a goal to compute the mean square velocity <span class="math inline">\(\langle u^2(t)\rangle\)</span>.</p>
+<p>Let <span class="math display">\[
+A = u_0 e^{-\gamma t},
+\qquad
+B = \frac{e^{-\gamma t}}{M} \int_{0}^{t} e^{\gamma t'} F(t') \, dt'.
+\]</span> Then <span class="math display">\[
+\langle u^2(t)\rangle = \langle (A + B)^2 \rangle
+= \langle A^2 \rangle + 2\langle A B \rangle + \langle B^2 \rangle.
+\]</span></p>
+<ol type="1">
+<li><span class="math inline">\(\langle A^2 \rangle = u_0^2 e^{-2\gamma t}.\)</span><br>
+</li>
+<li><span class="math inline">\(\langle A B \rangle = u_0 \frac{e^{-\gamma t}}{M} \, e^{-\gamma t} \int_0^t e^{\gamma t'} \langle F(t')\rangle \, dt' = 0\)</span><br>
+(since we assume <span class="math inline">\(\langle F(t)\rangle = 0\)</span>).<br>
+</li>
+<li>For the noise term, assume <span class="math display">\[\langle F(t)F(t')\rangle = q \,\delta(t - t').\]</span><br>
+Then <span class="math display">\[
+\langle B^2 \rangle
+= \frac{e^{-2\gamma t}}{M^2} \int_{0}^{t}\int_{0}^{t}
+  e^{\gamma t'} e^{\gamma t''} \langle F(t')F(t'')\rangle \, dt' dt''
+= \frac{e^{-2\gamma t}}{M^2}\,q \int_{0}^{t} e^{2\gamma t'} \, dt'
+= \frac{q}{2\gamma M^2} \bigl(1 - e^{-2\gamma t}\bigr).
+\]</span></li>
+</ol>
+<p>Putting these together yields <span class="math display">\[
+\boxed{
+\langle u^2(t)\rangle
+= u_0^2 e^{-2\gamma t}
+\;+\;
+\frac{q}{2\gamma M^2}\,\bigl(1 - e^{-2\gamma t}\bigr).
+}
+\]</span></p>
+<p>Now relate the noise strength <span class="math inline">\(q\)</span> to temperature</p>
+<p>At long times <span class="math inline">\(t\to\infty\)</span> the particle reaches thermal equilibrium, so by equipartition <span class="math display">\[
+\tfrac12 M \langle u^2 \rangle_{\infty}
+= \tfrac12 kT
+\;\Longrightarrow\;
+\langle u^2 \rangle_{\infty}
+= \frac{kT}{M}
+= \frac{q}{2\gamma M^2}
+\;\Longrightarrow\;
+q = 2\gamma\,M kT.
+\]</span></p>
+<p>Substituting back gives the full time‐dependent result:</p>
+<p><span class="math display">\[
+\boxed{
+\langle u^2(t)\rangle
+= \frac{kT}{M}
+\;+\;\Bigl(u_0^2 - \frac{kT}{M}\Bigr)\,e^{-2\gamma t}.
+}
+\]</span></p>
+<hr>
+</section>
+<section id="einsteins-expression-for-the-diffusion-coefficient" class="level2">
+<h2 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</h2>
+<p>We have</p>
+<p><span class="math display">\[
+X(t) - X(0) = \int_0^t u(t') dt'
+\]</span></p>
+<p>and substituting this into the definition of <span class="math inline">\(D\)</span>, we find:</p>
+<p><span class="math display">\[
+D = \lim_{t \to \infty} \frac{1}{2t} \int_0^t dt_1 \int_0^t dt_2 \langle u(t_1) u(t_2) \rangle
+\]</span></p>
+<p>Note: the use of different dummy variables <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_2\)</span> allows us to write the square as a product. Now change variables <span class="math inline">\(t_2 = t_1 + \tau\)</span>:</p>
+<p><span class="math display">\[
+D = \lim_{t \to \infty} \frac{1}{t} \int_0^t dt_1 \int_0^{t - t_1} d\tau \langle u(t_1) u(t_1 + \tau) \rangle
+\]</span></p>
+<p>In thermal equilibrium the process is stationary, so the two‐time correlation depends only on the time‐difference:</p>
+<p><span class="math display">\[
+\langle u(t_1) u(t_1 + \tau) \rangle = \langle u(t_0) u(t_0 + \tau) \rangle
+\]</span> for any arbitrary <span class="math inline">\(t_0\)</span>.</p>
+<p>Doing the integral with respect to <span class="math inline">\(t_1\)</span> we find:</p>
+<p><span class="math display">\[
+D = \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle dt,
+\]</span></p>
+<p>where we renamed <span class="math inline">\(\tau \to t\)</span> and assume that <span class="math inline">\(\langle u u \rangle\)</span> will fall off so fast that the upper limit doesn’t matter.</p>
+<hr>
+<section id="master-equation" class="level3">
+<h3 class="anchored" data-anchor-id="master-equation">14. Master equation</h3>
+<p>The rates of change of <span class="math inline">\(n_+\)</span> and <span class="math inline">\(n_-\)</span> are given by the master equations:</p>
+<p><span class="math display">\[
+\frac{dn_+}{dt} = -n_+ \lambda_{+-} + n_- \lambda_{-+};
+\]</span></p>
+<p><span class="math display">\[
+\frac{dn_-}{dt} = n_+ \lambda_{+-} - n_- \lambda_{-+}.
+\]</span> where since the particles are independent we have written <span class="math inline">\(n_i=Np_i\)</span>.</p>
+<p>At equilibrium the right-hand sides of the above master equations must vanish. Hence the ratio of the transition probabilities is given by:</p>
+<p><span class="math display">\[
+\left. \frac{\lambda_{-+}}{\lambda_{+-}} = \frac{n_+}{n_-} \right|_{\text{eq}} = e^{-2\beta \varepsilon}.
+\]</span></p>
+<p>with <span class="math inline">\(\beta = 1/k_BT\)</span>, as usual.</p>
+<p>Following the lead in the question, we define <span class="math inline">\(n = n_- - n_+\)</span>. Subtracting one of the above master equations from the other, we obtain:</p>
+<p><span class="math display">\[
+\frac{dn}{dt} = 2n_+ \lambda_{+-} - 2n_- \lambda_{-+}
+\]</span></p>
+<p>Then, noting that <span class="math inline">\(N = n_- + n_+\)</span>, we have that:</p>
+<p><span class="math display">\[
+n_- = \frac{N + n}{2} \quad \text{and} \quad n_+ = \frac{N - n}{2},
+\]</span></p>
+<p>allowing to rewrite as:</p>
+<p><span class="math display">\[
+\frac{dn}{dt} = -n(\lambda_{+-} + \lambda_{-+}) + N(\lambda_{+-} - \lambda_{-+})
+\]</span></p>
+<p>The equilibrium value of <span class="math inline">\(n(t)\)</span> follows by setting <span class="math inline">\(\frac{dn}{dt}=0\)</span> to find</p>
+<p><span class="math display">\[
+n_{\text{eq}} = N \frac{\lambda_{+-} - \lambda_{-+}}{\lambda_{+-} + \lambda_{-+}}.
+\]</span></p>
+<p>Rewrite the differential equation in the suggestive form:</p>
+<p><span class="math display">\[
+\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - \frac{N(\lambda_{+-} - \lambda_{-+})}{\lambda_{+-} + \lambda_{-+}} \right]
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+\tau = \frac{1}{\lambda_{+-} + \lambda_{-+}}.
+\]</span></p>
+<p>Inserting the result (above) for <span class="math inline">\(n_{\text{eq}}\)</span> yields</p>
+<p><span class="math display">\[
+\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - n_{\text{eq}} \right],
+\]</span></p>
+<p>Making a change of variables and separating variables in the standard way, one finds the solution to be:</p>
+<p><span class="math display">\[
+n(t) = n_{\text{eq}} + e^{-t/\tau} [n(0) - n_{\text{eq}}].
+\]</span></p>
+<p>You should note the behaviour of this solution as <span class="math inline">\(t \to 0\)</span> and <span class="math inline">\(t \to \infty\)</span>.</p>
+<hr>
+</section>
+<section id="detailed-balance" class="level3">
+<h3 class="anchored" data-anchor-id="detailed-balance">15. Detailed balance</h3>
+<p><strong>(a)</strong> For individual states, the rates of transition are:</p>
+<p><span class="math display">\[
+1 \rightarrow 2 \quad = \quad v_{12} p_1
+\]</span></p>
+<p><span class="math display">\[
+2 \rightarrow 1 \quad = \quad v_{21} p_2
+\]</span></p>
+<p>Define groups of states:<br>
+Group A: <span class="math inline">\(\alpha = 1, \cdots, N\)</span><br>
+Group B: <span class="math inline">\(\beta = 1, \cdots, M\)</span></p>
+<p>Then</p>
+<p><span class="math display">\[
+\sum_{\alpha=1}^N p_\alpha = p_A \quad ; \quad \sum_{\beta=1}^M p_\beta = p_B
+\]</span></p>
+<p>(Note: <span class="math inline">\(p_A \ne p_B\)</span>)</p>
+<p><strong>Overall rate</strong></p>
+<p><span class="math display">\[
+A \rightarrow B = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\alpha \beta} p_\alpha
+\]</span></p>
+<p><strong>Overall rate</strong></p>
+<p><span class="math display">\[
+B \rightarrow A = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\beta \alpha} p_\beta
+\]</span></p>
+<p>where<br>
+<span class="math inline">\(v_{\alpha \beta} = v_{\beta \alpha}\)</span> : jump rate symmetry<br>
+<span class="math inline">\(p_\alpha = p_\beta\)</span> : principle of equal <em>a priori</em> probabilities (for microstates)</p>
+<p>Hence:</p>
+<p><span class="math display">\[
+\text{rate}(A \rightarrow B) \equiv v_{AB} p_A^{eq}
+\]</span></p>
+<p><span class="math display">\[
+\text{rate}(B \rightarrow A) \equiv v_{BA} p_B^{eq}
+\]</span></p>
+<p>are equal in equilibrium.</p>
+<p><strong>(b)</strong></p>
+<p>he probability <span class="math inline">\(p_A\)</span> of a group of states <span class="math inline">\(A\)</span> is given by</p>
+<p><span class="math display">\[
+p_A = \frac{e^{-\beta F_A}}{Z},
+\]</span></p>
+<p>for the canonical ensemble, and a similar result may be written for group <span class="math inline">\(B\)</span>.</p>
+<p>As this system is in the canonical ensemble, we can assume that it is in a large heat bath, with the ‘system + heat bath’ being treated as ‘isolated’.</p>
+<p>Take <span class="math inline">\(A\)</span> to be the microstate <span class="math inline">\(i\)</span> of the system + any state of the heat bath, such that</p>
+<p><span class="math display">\[
+E_{system} + E_{reservoir} = E \, \text{(fixed)}.
+\]</span></p>
+<p>For a large reservoir,</p>
+<p><span class="math display">\[
+p_i = \frac{e^{-\beta E_i}}{z} = \textrm{``$p_A$''},
+\]</span></p>
+<p>with a similar result for <span class="math inline">\(B\)</span>.</p>
+<p>Hence the result of part (a), that</p>
+<p><span class="math display">\[
+\text{Rate}(A \rightarrow B) = \text{Rate}(B \rightarrow A)
+\]</span></p>
+<p>means here that</p>
+<p><span class="math display">\[
+v_{ij} p_i = v_{ji} p_j,
+\]</span></p>
+<p>even though, for states of different system energy <span class="math inline">\(E_i\)</span>,</p>
+<p><span class="math display">\[
+p_i \ne p_j \quad \text{and} \quad v_{ij} \ne v_{ji}.
+\]</span></p>
+<p>This implies:</p>
+<p><span class="math display">\[
+\frac{v_{ij}}{v_{ji}} = \frac{p_j}{p_i} = e^{\beta(E_j - E_i)}
+\]</span></p>
+<p>This result has important implications for Monte Carlo simulation</p>
+<hr>
+</section>
+<section id="jump-processes" class="level3">
+<h3 class="anchored" data-anchor-id="jump-processes">16. Jump processes</h3>
+<p><strong>(a)</strong> Label by <span class="math inline">\(p_i(t)\)</span> the probability to be in state <span class="math inline">\(i\)</span> at time <span class="math inline">\(t\)</span>. From the question:</p>
+<ul>
+<li>From state 1 one can only jump to 2 with rate <span class="math inline">\(\lambda_0\)</span>.</li>
+<li>From state 2 one can jump to 1 or to 3, each with rate <span class="math inline">\(\lambda_0\)</span>.</li>
+<li>From state 3 one can only jump to 2 with rate <span class="math inline">\(\lambda_0\)</span>.</li>
+</ul>
+<p>Hence the gain–loss equations are <span class="math display">\[
+\begin{aligned}
+\dot p_1 &amp;= -\lambda_0\,p_1 + \lambda_0\,p_2,\\
+\dot p_2 &amp;= \lambda_0\,p_1 - 2\lambda_0\,p_2 + \lambda_0\,p_3,\\
+\dot p_3 &amp;= \lambda_0\,p_2 - \lambda_0\,p_3.
+\end{aligned}
+\]</span></p>
+<p>Writing <span class="math inline">\(\mathbf p=(p_1,p_2,p_3)^{\!T}\)</span>, one checks immediately that <span class="math display">\[
+\dot{\mathbf p}
+\;=\;
+\lambda_0
+\begin{pmatrix}
+-1 &amp; 1 &amp; 0\\
+1 &amp; -2 &amp; 1\\
+0 &amp; 1 &amp; -1
+\end{pmatrix}
+\mathbf p
+\;=\;M\,\mathbf p,
+\]</span> as claimed. Note that the columns of <span class="math inline">\(M\)</span> sum to zero, ensuring <span class="math inline">\(\sum_i\dot p_i=0\)</span> (probability conservation).</p>
+<p><strong>(b)</strong> An equilibrium state <span class="math inline">\(\mathbf p^\textrm{ eq}\)</span> satisfies <span class="math display">\[
+M\,\mathbf p^\textrm{ eq}=0,
+\quad
+\sum_{i=1}^3 p^\textrm{ eq}_i=1.
+\]</span> From the first row of <span class="math inline">\(M\,\mathbf p=0\)</span> we get <span class="math display">\[
+-\,p^\textrm{ eq}_1 + p^\textrm{ eq}_2 =0
+\;\Longrightarrow\;
+p^\textrm{ eq}_1 = p^\textrm{ eq}_2.
+\]</span> From the third row, <span class="math display">\[
+p^\textrm{ eq}_2 - p^\textrm{ eq}_3=0
+\;\Longrightarrow\;
+p^\textrm{ eq}_2 = p^\textrm{ eq}_3.
+\]</span> Hence all three components are equal. Normalizing, <span class="math display">\[
+p^\textrm{ eq}_1 = p^\textrm{ eq}_2 = p^\textrm{ eq}_3 = \tfrac13,
+\]</span> i.e.&nbsp; <span class="math display">\[
+\mathbf p^\textrm{ eq} = \bigl(\tfrac13,\tfrac13,\tfrac13\bigr).
+\]</span></p>
+<p><strong>(c)</strong></p>
+<p>We have <span class="math display">\[
+M = \lambda_0
+\begin{pmatrix}
+-1 &amp; 1 &amp; 0\\
+1 &amp; -2 &amp; 1\\
+0 &amp; 1 &amp; -1
+\end{pmatrix}.
+\]</span> Its characteristic polynomial is <span class="math display">\[
+\det(M -\mu I)
+=-\mu(\mu+\lambda_0)(\mu+3\lambda_0),
+\]</span> so the eigenvalues are <span class="math display">\[
+\mu_1=0,\quad \mu_2=-\lambda_0,\quad \mu_3=-3\lambda_0.
+\]</span> Since the zero‐eigenvalue has multiplicity one, the null space of <span class="math inline">\(M\)</span> is one-dimensional. Imposing <span class="math inline">\(\sum_i p_i=1\)</span> picks out a unique vector in that null space. Hence the equilibrium <span class="math inline">\((\tfrac13,\tfrac13,\tfrac13)\)</span> is the only steady-state probability vector.</p>
+<hr>
 
 
 <script type="ojs-module-contents">
@@ -707,6 +1010,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 </section>
 
 </main> <!-- /main -->
