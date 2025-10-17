@@ -52,7 +52,7 @@ book:
          - text: "Solutions to problems"
            href: phase-transitions/Solutions_to_problems.qmd             
          - text: "Notes as pdf" 
-           href: index.pdf
+           href: notes.pdf
          - text: "First coursework assignment"   
            href: phase-transitions/assignment_October2025.qmd                   
 #          - href: phase-transitions/live-test.qmd
