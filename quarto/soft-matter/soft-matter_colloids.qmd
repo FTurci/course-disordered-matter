@@ -64,9 +64,9 @@ where $R$ is the radius of the colloid respectively, $g$ is the acceleration due
 
 A colloidal dispersion is said to be **stable** if it is able to remain dispersed and Brownian for a long time (typically, significantly longer than the experimental observation time). Unstable colloids undergo aggregation or sedimentation due to the dominance of internal *attractive forces* or external fields such as gravity.
 
-For example, consider a colloidal suspension like milk. Milk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins. If lemon juice[^1] is added, the dispersion medium (water) changes, the pH drops, and the emulsion is *destabilised*. This causes the proteins to coagulate, leading to the separation of curds (solid) and whey (liquid).
+For example, consider a colloidal suspension like milk. Milk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins. If lemon juice[^soft-matter_colloids-1] is added, the dispersion medium (water) changes, the pH drops, and the emulsion is *destabilised*. This causes the proteins to coagulate, leading to the separation of curds (solid) and whey (liquid).
 
-[^1]: The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative of the logarithm of the concentration of hydrogen atoms.
+[^soft-matter_colloids-1]: The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative of the logarithm of the concentration of hydrogen atoms.
 
 ![Curds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)](figs/Curds_and_whey.jpg)
 
@@ -76,9 +76,9 @@ It is clear from this example that the nature of the dispersed phase and the dis
 
 At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro- (and occasionally magneto-) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect, for a non-magnetic colloid (which is the vast majority of colloidal systems), only electrostatic forces are fundamentally important.
 
-However, colloidal dispersions consist of large particles that carry many charges both in the dispersed phase and the surrounding medium, arranged in a disordered manner at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is that of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale occur, and we can consider taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^2].
+However, colloidal dispersions consist of large particles that carry many charges both in the dispersed phase and the surrounding medium, arranged in a disordered manner at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is that of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale occur, and we can consider taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-2].
 
-[^2]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
+[^soft-matter_colloids-2]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
 
 This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic spatial fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
@@ -117,7 +117,7 @@ The resulting $r^{-6}$ dependence is also referred to as the **London dispersion
 We can then assume to take two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the collodial spheres **Van der Waals attractive potential** in the form
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
-$$W_{wdW}(h)=-\dfrac{A-H}{g}f(h/R)$$
+$$W_{wdW}(h)=-\dfrac{A_H}{g}f(h/R)$$
 :::
 
 where $A_H$ is the **Hamaker constant** and $f(h/R)$ is
@@ -181,7 +181,7 @@ Colloids are often charged. The solution they are immersed also has an **inhomog
 
 These two different concentrations of oppositely charged ions form what is called a **double layer** and its properties (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
 
-Suppose we now have two colloids of the same size and total charge in the solvent. The charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions* or **double layer repulsion.** We are not going to derive it, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
+Suppose we now have two colloids of the same size and total charge in the solvent. The charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions*) or **double layer repulsion.** We are not going to derive it here, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -191,9 +191,9 @@ $$
 
 where $\lambda_D$ is called the **Debye length** $$
 \lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
-$$ while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the characteristic distance at which two elementary charges have energy $k_B T$ [^3]
+$$ while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the characteristic distance at which two elementary charges have energy $k_B T$ [^soft-matter_colloids-3]
 
-[^3]: As you see, scaling by $k_B T$ is a recurrent energy scale of soft matter. $$
+[^soft-matter_colloids-3]: As you see, scaling by $k_B T$ is a recurrent energy scale of soft matter. $$
     \lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
     $$
 
@@ -203,7 +203,7 @@ The coefficient $B$ is a material property that depends on the surface potential
 
 From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign
 
--   a van der Waals components, typically attractive and emergent from induced dipole -dipole ineractions emerging from quantum fluctuations of the electronic clouds
+-   a van der Waals component, typically attractive and emergent from induced dipole -dipole interactions emerging from quantum fluctuations of the electronic clouds
 
 -   a double layer component, repulsive in nature, and resulting from the electrostatic repulsions induced by ions and counterions
 
@@ -259,7 +259,7 @@ plt.show()
 Modify the script above and test graphically that:
 
 1.  When the salt concentration is low, the double layer repulsion dominates the DVLO interaction
-2.  There are salt concentrations where two minima occur in the DLVO potential: on at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$ . This minimum can lead to weak aggregation of colloids
+2.  There are salt concentrations where two minima occur in the DLVO potential: one at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$ . This minimum can lead to weak aggregation of colloids
 3.  Large salt concentrations depress the DVLO maximum altogether and eventually the Van der Waals interaction dominates.
 :::
 
@@ -269,9 +269,9 @@ We have seen that quantum fluctuations from the uncertainty principle can be rec
 
 Another fundamental quantum principle—Pauli's **exclusion principle**—also plays a key role in generating effective interactions that can be understood in a semi-classical framework. Specifically, the main consequence of the exclusion principle is that, since electrons cannot occupy the same quantum state, there are minimum distances below which atoms cannot be brought together.
 
-This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces that emerge from the overlapping electron clouds, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^4].
+This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces that emerge from the overlapping electron clouds, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^soft-matter_colloids-4].
 
-[^4]: From the Greek στερεός, "solid, three-dimensional".
+[^soft-matter_colloids-4]: From the Greek στερεός, "solid, three-dimensional".
 
 These fundamentally repulsive interactions mean that , in a system with $N$ colloids, an additional $N+1$th colloid does not have access to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids.
 
@@ -504,7 +504,13 @@ $$
 
 This model captures the essential physics of **excluded volume** which, as we said earlier, fundamentally emerges from Pauli's exclusion principle (electrons cannot occupy the same quantum state so electronic clouds of different atoms *exclude* each other).
 
-<svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg"><!-- Axes --><line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text></svg>
+<svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
+
+<!-- Axes -->
+
+<line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
+
+</svg>
 
 #### Phase behaviour of hard spheres {.unnumbered}
 
