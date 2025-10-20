@@ -557,13 +557,13 @@ into the 4th scaling relation gives the first scaling law.
 **(a)** To find the critical radius $r^*$, we differentiate $\Delta G(r)$ with respect to $r$ and set the derivative equal to zero:
 
 $$
-\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \gamma = 0
+\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \sigma = 0
 $$
 
 This gives 
 
 $$
-r^* = -\frac{2\gamma}{\Delta G_v}
+r^* = -\frac{2\sigma}{\Delta G_v}
 $$
 
 Since $\Delta G_v < 0$, $r^*$ is positive, as expected.
@@ -574,13 +574,13 @@ Substitute $r^*$ into the expression for $\Delta G(r)$:
 
 
 $$
-\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\gamma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\gamma^2}{\Delta G_v^2}\right) \gamma
+\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\sigma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\sigma^2}{\Delta G_v^2}\right) \sigma
 $$
 
 which simplifies to 
 
 $$
-\Delta G^* = -\frac{32\pi \gamma^3}{3 \Delta G_v^2} + \frac{16\pi \gamma^3}{\Delta G_v^2} = \frac{16\pi \gamma^3}{3 \Delta G_v^2}
+\Delta G^* = -\frac{32\pi \sigma^3}{3 \Delta G_v^2} + \frac{16\pi \sigma^3}{\Delta G_v^2} = \frac{16\pi \sigma^3}{3 \Delta G_v^2}
 $$
 
 **(c)** The free energy change per unit volume is approximately proportional to the undercooling:
@@ -592,7 +592,7 @@ $$
 From part (b), the nucleation barrier is:
 
 $$
-\Delta G^* \propto \frac{\gamma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
+\Delta G^* \propto \frac{\sigma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
 $$
 
 Thus, as $\Delta T$ increases, $\Delta G^*$ decreases rapidly. A smaller energy barrier means nucleation becomes more probable. 

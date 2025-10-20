@@ -226,16 +226,16 @@ A supercooled liquid metal is undergoing solidification. According to classical 
 $\Delta G$ for forming a spherical solid nucleus of radius $r$ in the liquid is given by:
 
 $$
-\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \gamma
+\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \sigma
 $$
-where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\gamma > 0$ is the interfacial energy between the solid and liquid phases.
+where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\sigma > 0$ is the interfacial energy between the solid and liquid phases.
 
 **(a)** Derive the expression for the critical radius $r^*$ at which the nucleus becomes stable and begins to grow.
 
 **(b)** Show that the critical energy barrier for nucleation $\Delta G^*$ is given by:
 
 $$
-\Delta G^* = \frac{16\pi \gamma^3}{3 (\Delta G_v)^2}
+\Delta G^* = \frac{16\pi \sigma^3}{3 (\Delta G_v)^2}
 $$
 
 **(c)** Explain qualitatively how the degree of undercooling $\Delta T$ affects the rate of nucleation. You may use the fact that $\Delta G_v \propto \Delta T$ to support your answer.
