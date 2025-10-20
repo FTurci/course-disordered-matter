@@ -673,8 +673,7 @@ $$
 
 --- 
 
-## 13.  Einstein’s expression for the diffusion coefficient
-
+## 13.  Einstein’s expression for the diffusion coefficient 
 We have
 
 $$
@@ -842,7 +841,7 @@ are equal in equilibrium.
 
 **(b)** 
 
-he probability $p_A$ of a group of states $A$ is given by
+The probability $p_A$ of a group of states $A$ is given by
 
 $$
 p_A = \frac{e^{-\beta F_A}}{Z},
@@ -861,7 +860,7 @@ $$
 For a large reservoir,
 
 $$
-p_i = \frac{e^{-\beta E_i}}{z} = \textrm{``$p_A$''},
+p_i = \frac{e^{-\beta E_i}}{Z} = \textrm{``$p_A$''},
 $$
 
 with a similar result for $B$.

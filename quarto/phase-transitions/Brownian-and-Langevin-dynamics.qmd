@@ -103,7 +103,9 @@ $$
 x(t) - x_0 = \int_0^t \eta(t')\, dt'
 $$
 
-Taking ensemble averages:
+
+
+Taking ensemble averages, i.e. averaging over all possible realisations of the noise:
 
 * Mean displacement:
   $$
@@ -195,12 +197,12 @@ $$
 v(t) = v_0 e^{-\gamma t} + \int_0^t e^{-\gamma (t - t')} f(t')\, dt'
 $$
 
-Taking the average:
+We now averaging over all possible realisations of the random force, i.e we imagine repeating the Brownian motion experiment infinitely many times, each with a different random sequence of microscopic kicks $f(t)$. Then
+
 
 $$
 \langle v(t) \rangle = v_0 e^{-\gamma t}
 $$
-
 where we have used the fact that $f(t)$ is random with  $\langle f(t)\rangle=0$.
 Thus:
 
@@ -210,7 +212,7 @@ Thus:
 
 ### Mean-square velocity
 
-We now compute (do it as an exercise):
+We now compute (try it as an exercise):
 
 $$
 \langle v(t)^2 \rangle = v_0^2 e^{-2\gamma t} + \Gamma \int_0^t e^{-2\gamma (t - t')} dt' = v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma} \left(1 - e^{-2\gamma t} \right)
@@ -333,6 +335,7 @@ $$
 }
 $$
 
+
 :::
 
 Limiting behaviours:
@@ -352,6 +355,61 @@ Limiting behaviours:
   $$
 
   (corresponding to *diffusive motion*)
+
+::: {.callout-caution collapse="true"}
+## why?
+To get the short and long time behaviour note that
+
+\textbf{Short times} ($\gamma t \ll 1$):
+
+$$
+\begin{aligned}
+e^{-\gamma t} &\approx 1 - \gamma t + \tfrac{1}{2}\gamma^2 t^2 + \cdots, \\[4pt]
+1 - e^{-\gamma t} &\approx \gamma t - \tfrac{1}{2}\gamma^2 t^2, \\[4pt]
+(1 - e^{-\gamma t})^2 &\approx (\gamma t)^2.
+\end{aligned}
+$$
+
+Substituting into the MSD expression:
+$$
+\begin{aligned}
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&\approx (v_0^2 - k_B T)t^2, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&\approx \frac{2k_B T}{\gamma}\left(\tfrac{1}{2}\gamma t^2\right)
+= k_B T t^2.
+\end{aligned}
+$$
+
+Adding both contributions:
+$$
+\boxed{\langle [x(t) - x_0]^2 \rangle \approx v_0^2 t^2,}
+$$
+which corresponds to ballistic motion (distance travelled is proportional to time).
+
+
+\textbf{Long times} ($\gamma t \gg 1$):
+
+$$
+\begin{aligned}
+e^{-\gamma t} &\to 0, \\[4pt]
+\frac{(v_0^2 - k_B T)}{\gamma^2}(1 - e^{-\gamma t})^2
+&\to \frac{(v_0^2 - k_B T)}{\gamma^2}, \\[6pt]
+\frac{2k_B T}{\gamma}\left[t - \frac{1 - e^{-\gamma t}}{\gamma}\right]
+&\to \frac{2k_B T}{\gamma}\left(t - \frac{1}{\gamma}\right)
+= \frac{2k_B T}{\gamma}t - \frac{2k_B T}{\gamma^2}.
+\end{aligned}
+$$
+
+Neglecting constant terms at large $t$ gives:
+$$
+\boxed{\langle [x(t) - x_0]^2 \rangle \simeq \frac{2k_B T}{\gamma}\, t,}
+$$
+which corresponds to \textit{diffusive motion} (distance travelled is proportional to $\sqrt{t}$) with diffusion constant
+$D = \tfrac{k_B T}{\gamma}$.
+
+
+:::
 
 <!-- 
 ![Schematic plot of the crossover from ballistic to diffusive motion for a colloid in a fluid.](Figs/brownian_crossover.png){#fig-browniancross
