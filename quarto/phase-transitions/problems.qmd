@@ -228,7 +228,7 @@ $\Delta G$ for forming a spherical solid nucleus of radius $r$ in the liquid is 
 $$
 \Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \sigma
 $$
-where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\sigma > 0$ is the interfacial energy between the solid and liquid phases.
+where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\sigma > 0$ is the interfacial free energy ("surface tension") between the solid and liquid phases.
 
 **(a)** Derive the expression for the critical radius $r^*$ at which the nucleus becomes stable and begins to grow.
 
