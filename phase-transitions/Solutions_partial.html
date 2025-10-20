@@ -793,27 +793,52 @@ q = 2\gamma\,M kT.
 </section>
 <section id="einsteins-expression-for-the-diffusion-coefficient" class="level2">
 <h2 class="anchored" data-anchor-id="einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</h2>
-<p>We have</p>
+<p>Start from Einstein’s definition</p>
 <p><span class="math display">\[
-X(t) - X(0) = \int_0^t u(t') dt'
+D = \lim_{t \to \infty} \frac{1}{2t} \langle [X(t) - X(0)]^2 \rangle,
+\qquad
+X(t) - X(0) = \int_0^t u(t')dt'.
 \]</span></p>
-<p>and substituting this into the definition of <span class="math inline">\(D\)</span>, we find:</p>
+<p>Hence</p>
 <p><span class="math display">\[
-D = \lim_{t \to \infty} \frac{1}{2t} \int_0^t dt_1 \int_0^t dt_2 \langle u(t_1) u(t_2) \rangle
+\langle [X(t) - X(0)]^2 \rangle
+= \int_0^t  \int_0^t \langle u(t_1) u(t_2) \rangle\, dt_1 dt_2
+= \int_0^t \int_0^t C(|t_1 - t_2|)\, dt_1 dt_2,
 \]</span></p>
-<p>Note: the use of different dummy variables <span class="math inline">\(t_2\)</span> and <span class="math inline">\(t_2\)</span> allows us to write the square as a product. Now change variables <span class="math inline">\(t_2 = t_1 + \tau\)</span>:</p>
+<p>where <span class="math inline">\(C(\tau) = \langle u(t_0) u(t_0 + \tau) \rangle\)</span> is the stationary (ie. equilibrium) velocity autocorrelation function which depends solely on the lag <span class="math inline">\(\tau=|t_1-t_2|\)</span>. The modulus is because in equilibirum the velocity autocorrelation is time symmetric i.e.&nbsp;flipping the sign of time doesn’t change the average of the correlation of velocities.</p>
+<div id="fig-triangles" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/triangles_argument.png" class="img-fluid figure-img" style="width:40.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-triangles-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Change of variables from <span class="math inline">\(t1,t@\)</span> to the lad <span class="math inline">\(\tau=|t1-t2|\)</span>
+</figcaption>
+</figure>
+</div>
+<p>Now for fixed <span class="math inline">\(\tau = |t_1 - t_2|\)</span>, the square <span class="math inline">\([0,t]^2\)</span> splits into two equal triangles: one where <span class="math inline">\(t_1 &gt; t_2\)</span> and one where <span class="math inline">\(t_2 &gt; t_1\)</span>.</p>
+<p>For each <span class="math inline">\(\tau\)</span>, the allowable range of <span class="math inline">\(t_1\)</span> (or <span class="math inline">\(t_2\)</span>) is <span class="math inline">\(t - \tau\)</span> (because if <span class="math inline">\(t_1 \in [\tau, t]\)</span>, then <span class="math inline">\(t_2 = t_1 - \tau \in [0, t - \tau]\)</span>).</p>
+<p>Therefore,</p>
 <p><span class="math display">\[
-D = \lim_{t \to \infty} \frac{1}{t} \int_0^t dt_1 \int_0^{t - t_1} d\tau \langle u(t_1) u(t_1 + \tau) \rangle
+\int_0^t \int_0^t C(|t_1 - t_2|)\, dt_1 dt_2
+= 2 \int_0^t (t - \tau) C(\tau)\, d\tau.
 \]</span></p>
-<p>In thermal equilibrium the process is stationary, so the two‐time correlation depends only on the time‐difference:</p>
+<p>The factor of <span class="math inline">\(2\)</span> comes from the two triangles, and the <span class="math inline">\((t - \tau)\)</span> is the length of each diagonal slice corresponding to lag <span class="math inline">\(\tau\)</span>.</p>
+<p>For <span class="math inline">\(t\)</span> much larger than the correlation time of <span class="math inline">\(C(\tau)\)</span>, we can approximate <span class="math inline">\((t - \tau) \approx t\)</span>, and set the upper limit to <span class="math inline">\(\infty\)</span> giving</p>
 <p><span class="math display">\[
-\langle u(t_1) u(t_1 + \tau) \rangle = \langle u(t_0) u(t_0 + \tau) \rangle
-\]</span> for any arbitrary <span class="math inline">\(t_0\)</span>.</p>
-<p>Doing the integral with respect to <span class="math inline">\(t_1\)</span> we find:</p>
-<p><span class="math display">\[
-D = \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle dt,
+\langle [X(t) - X(0)]^2 \rangle \approx 2t \int_0^\infty C(\tau)\, d\tau,
 \]</span></p>
-<p>where we renamed <span class="math inline">\(\tau \to t\)</span> and assume that <span class="math inline">\(\langle u u \rangle\)</span> will fall off so fast that the upper limit doesn’t matter.</p>
+<p>so that</p>
+<p><span class="math display">\[
+D = \int_0^\infty \langle u(t_0) u(t_0 + \tau) \rangle\, d\tau.
+\]</span></p>
+<p>Finally, from <span class="math inline">\(D = \mu kT\)</span> and <span class="math inline">\(\mu = 1 / \gamma\)</span>, we have</p>
+<p><span class="math display">\[
+\mu = \frac{D}{kT}
+= \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle, dt,
+\qquad
+\gamma = \frac{kT}{D}.
+\]</span></p>
 <hr>
 <section id="master-equation" class="level3">
 <h3 class="anchored" data-anchor-id="master-equation">14. Master equation</h3>
