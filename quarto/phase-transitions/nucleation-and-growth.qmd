@@ -216,7 +216,7 @@ Here are schematic illustrations of domain growth for:
 Schematic illustrations of domain morphology resulting from spinodal decomposition or late-time domain growth for non-conserved and conserved dynamics.
 :::
 
-### Dynamics Scaling Hypothesis
+### Dynamic Scaling Hypothesis
 
 
 At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by $L(t)$.
