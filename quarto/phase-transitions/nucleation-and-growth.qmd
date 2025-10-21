@@ -120,7 +120,9 @@ The nature of spinodal decomposition and late-time domain growth depends sensiti
 ### Non-Conserved Order Parameter Dynamics (Model A)
 
 In systems with a non-conserved order parameter, such as the Ising model with single spin flip (so called Glauber) 
-dynamics, the order parameter can relax locally without constraint. This leads to curvature-driven motion of interfaces.
+dynamics, the order parameter can relax locally without constraint. Motion of interfaces is driven by local chemical potential differences. 
+In the jargon of the field, this is called 'model A' dynamics.
+
 
 The typical domain size $L(t)$ grows algebraically with time:
 
@@ -128,8 +130,9 @@ $$
 L(t) \sim t^{1/2},
 $$
 
-corresponding to a dynamic exponent $z = 2$, where in general $L(t)\sim t^{1/z}$. The growth is driven by reduction of the total interfacial area—regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
-
+corresponding to a dynamic exponent $z = 2$, where in general $L(t)\sim t^{1/z}$. 
+The local chemical potential difference across a domain wall depends on its curvature. 
+Thus regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
 
 Let is aassume that domain walls move with velocity proportional to curvature:
   $$
@@ -148,8 +151,9 @@ It turns out that the detailed evolution of the coarse-grained order parameter f
 $$
 \frac{\partial \phi}{\partial t} = - \frac{\delta F[\phi]}{\delta \phi},
 $$
+where the derivative on the RHS is the local chemical potential. 
 
-where $F[\phi]$ is a coarse-grained Ginzburg–Landau free energy functional:
+$F[\phi]$ is a coarse-grained Ginzburg–Landau free energy functional:
 
 $$
 F[\phi] = \int d^d x \left[ \frac{1}{2} (\nabla \phi)^2 + V(\phi) \right],
@@ -163,7 +167,7 @@ with $V(\phi)$ typically a double-well potential such as $V(\phi) = \frac{1}{4}(
 
 For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model 
 with spin-swap (so called 'Kawasaki') dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. 
-This imposes a diffusive constraint on the dynamics.
+This imposes a diffusive constraint on the dynamics (so-called 'model B' dynamics).
 
 The domain size again grows algebraically, but with a different exponent:
 

@@ -226,16 +226,16 @@ A supercooled liquid metal is undergoing solidification. According to classical 
 $\Delta G$ for forming a spherical solid nucleus of radius $r$ in the liquid is given by:
 
 $$
-\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \gamma
+\Delta G(r) = \frac{4}{3}\pi r^3 \Delta G_v + 4\pi r^2 \sigma
 $$
-where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\gamma > 0$ is the interfacial energy between the solid and liquid phases.
+where $\Delta G_v < 0$ is the free energy change per unit volume due to the phase change, and $\sigma > 0$ is the interfacial free energy ("surface tension") between the solid and liquid phases.
 
 **(a)** Derive the expression for the critical radius $r^*$ at which the nucleus becomes stable and begins to grow.
 
 **(b)** Show that the critical energy barrier for nucleation $\Delta G^*$ is given by:
 
 $$
-\Delta G^* = \frac{16\pi \gamma^3}{3 (\Delta G_v)^2}
+\Delta G^* = \frac{16\pi \sigma^3}{3 (\Delta G_v)^2}
 $$
 
 **(c)** Explain qualitatively how the degree of undercooling $\Delta T$ affects the rate of nucleation. You may use the fact that $\Delta G_v \propto \Delta T$ to support your answer.
@@ -253,10 +253,10 @@ $$
 where $u_0$ is the velocity at $t = 0$, show that for long times the velocity of the particle satisfies the relation
 
 $$
-\langle u^2 \rangle = \frac{kT}{M} + \left( u_0^2 - \frac{kT}{M} \right) e^{-2\gamma t},
+\langle u^2 \rangle = \frac{k_BT}{M} + \left( u_0^2 - \frac{k_BT}{M} \right) e^{-2\gamma t},
 $$
 
-where $k$ is the Boltzmann constant and $T$ is the absolute temperature.
+where $k_B$ is the Boltzmann constant and $T$ is the absolute temperature.
 
 State clearly any assumptions that you make.
 
@@ -282,7 +282,7 @@ Use the fact that $X(t) - X(0)
 = \int_{0}^{t} u(t')\,\mathrm{d}t'$  to show that the Einstein relation may be written as
 
 $$
-\gamma = \frac{1}{\mu} = \frac{D}{kT} = \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle \, dt,
+\mu = \frac{1}{\gamma} = \frac{D}{kT} = \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle \, dt,
 $$
 
 where $\mu$ is known as the mobility of the particle and $t_0$ is any arbitrarily chosen time.

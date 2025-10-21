@@ -557,13 +557,13 @@ into the 4th scaling relation gives the first scaling law.
 **(a)** To find the critical radius $r^*$, we differentiate $\Delta G(r)$ with respect to $r$ and set the derivative equal to zero:
 
 $$
-\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \gamma = 0
+\frac{d\Delta G}{dr} = 4\pi r^2 \Delta G_v + 8\pi r \sigma = 0
 $$
 
 This gives 
 
 $$
-r^* = -\frac{2\gamma}{\Delta G_v}
+r^* = -\frac{2\sigma}{\Delta G_v}
 $$
 
 Since $\Delta G_v < 0$, $r^*$ is positive, as expected.
@@ -574,13 +574,13 @@ Substitute $r^*$ into the expression for $\Delta G(r)$:
 
 
 $$
-\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\gamma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\gamma^2}{\Delta G_v^2}\right) \gamma
+\Delta G^* = \frac{4}{3} \pi \left(-\frac{8\sigma^3}{\Delta G_v^3}\right) \Delta G_v + 4\pi \left(\frac{4\sigma^2}{\Delta G_v^2}\right) \sigma
 $$
 
 which simplifies to 
 
 $$
-\Delta G^* = -\frac{32\pi \gamma^3}{3 \Delta G_v^2} + \frac{16\pi \gamma^3}{\Delta G_v^2} = \frac{16\pi \gamma^3}{3 \Delta G_v^2}
+\Delta G^* = -\frac{32\pi \sigma^3}{3 \Delta G_v^2} + \frac{16\pi \sigma^3}{\Delta G_v^2} = \frac{16\pi \sigma^3}{3 \Delta G_v^2}
 $$
 
 **(c)** The free energy change per unit volume is approximately proportional to the undercooling:
@@ -592,7 +592,7 @@ $$
 From part (b), the nucleation barrier is:
 
 $$
-\Delta G^* \propto \frac{\gamma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
+\Delta G^* \propto \frac{\sigma^3}{(\Delta G_v)^2} \propto \frac{1}{\Delta T^2}
 $$
 
 Thus, as $\Delta T$ increases, $\Delta G^*$ decreases rapidly. A smaller energy barrier means nucleation becomes more probable. 
@@ -674,38 +674,69 @@ $$
 --- 
 
 ## 13.  Einstein’s expression for the diffusion coefficient 
-We have
+
+Start from Einstein’s definition
 
 $$
-X(t) - X(0) = \int_0^t u(t') dt'
+D = \lim_{t \to \infty} \frac{1}{2t} \langle [X(t) - X(0)]^2 \rangle,
+\qquad
+X(t) - X(0) = \int_0^t u(t')dt'.
 $$
 
-and substituting this into the definition of $D$, we find:
+Hence
 
 $$
-D = \lim_{t \to \infty} \frac{1}{2t} \int_0^t dt_1 \int_0^t dt_2 \langle u(t_1) u(t_2) \rangle
+\langle [X(t) - X(0)]^2 \rangle
+= \int_0^t  \int_0^t \langle u(t_1) u(t_2) \rangle\, dt_1 dt_2
+= \int_0^t \int_0^t C(|t_1 - t_2|)\, dt_1 dt_2,
 $$
 
-Note: the use of different dummy variables $t_2$ and $t_2$ allows us to write the square as a product. Now change variables $t_2 = t_1 + \tau$:
+where $C(\tau) = \langle u(t_0) u(t_0 + \tau) \rangle$ is the stationary (ie. equilibrium) velocity autocorrelation function which depends solely on the lag $\tau=|t_1-t_2|$. The modulus is because in equilibirum the velocity autocorrelation is time symmetric i.e. flipping the sign of time doesn't change the average of the correlation of velocities.
+
+
+![Change of variables from $t1,t@$ to the lad $\tau=|t1-t2|$](Figs/triangles_argument.png){width=40% #fig-triangles}
+
+Now for fixed $\tau = |t_1 - t_2|$, the square $[0,t]^2$ splits into two equal triangles:
+one where $t_1 > t_2$ and one where $t_2 > t_1$.
+
+For each $\tau$, the allowable range of $t_1$ (or $t_2$) is $t - \tau$
+(because if $t_1 \in [\tau, t]$, then $t_2 = t_1 - \tau \in [0, t - \tau]$).
+
+Therefore,
 
 $$
-D = \lim_{t \to \infty} \frac{1}{t} \int_0^t dt_1 \int_0^{t - t_1} d\tau \langle u(t_1) u(t_1 + \tau) \rangle
+\int_0^t \int_0^t C(|t_1 - t_2|)\, dt_1 dt_2
+= 2 \int_0^t (t - \tau) C(\tau)\, d\tau.
 $$
 
-In thermal equilibrium the process is stationary, so the two‐time correlation depends only on the time‐difference:
+The factor of $2$ comes from the two triangles, and the $(t - \tau)$
+is the length of each diagonal slice corresponding to lag $\tau$.
+
+
+For $t$ much larger than the correlation time of $C(\tau)$, we can approximate
+$(t - \tau) \approx t$, and set the upper limit to $\infty$ giving
 
 $$
-\langle u(t_1) u(t_1 + \tau) \rangle = \langle u(t_0) u(t_0 + \tau) \rangle
-$$
-for any arbitrary $t_0$.
-
-Doing the integral with respect to $t_1$ we find:
-
-$$
-D = \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle dt,
+\langle [X(t) - X(0)]^2 \rangle \approx 2t \int_0^\infty C(\tau)\, d\tau,
 $$
 
-where we renamed $\tau \to t$ and assume that $\langle u u \rangle$ will fall off so fast that the upper limit doesn’t matter.
+so that
+
+$$
+D = \int_0^\infty \langle u(t_0) u(t_0 + \tau) \rangle\, d\tau.
+$$
+
+
+
+Finally, from $D = \mu kT$ and $\mu = 1 / \gamma$, we have
+
+$$
+\mu = \frac{D}{kT}
+= \frac{1}{kT} \int_0^\infty \langle u(t_0) u(t_0 + t) \rangle, dt,
+\qquad
+\gamma = \frac{kT}{D}.
+$$
+
 
 ---
 
