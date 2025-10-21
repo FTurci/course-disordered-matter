@@ -438,7 +438,7 @@ Figure&nbsp;4.2: (a) Schematic of an Ising chain at <span class="math inline">\(
 <p><span class="math display">\[\beta f\equiv \beta F/(N-1)=-\ln Z_1=-\beta J-\ln(1+e^{-\beta\Delta})\]</span></p>
 <p>The first term on the RHS is simply the energy per spin of the ferromagnetic (ordered) phase, while the second term arises from the free energy of domain walls. Clearly for any finite temperature (ie. for <span class="math inline">\(\beta&lt;\infty\)</span>), this second term is finite and negative. Hence the free energy will always be lowered by having a finite concentration of domain walls in the system. Since these domain walls disorder the system, leading to a zero average magnetisation, the 1D system is paramagnetic for all finite temperatures. <em>Exercise</em>: Explain why this argument works only in 1D.</p>
 <p>The animation below lets you see qualitatively how the typical number of domain walls varies with temperature. If you’d lke to explore more quantitatively, a python code performing a Monte Carlo simulation is available. You will learn about Monte Carlo simulation in the coursework and in later parts of the course.</p>
-<div id="935e5f6f" class="cell" data-execution_count="1">
+<div id="b7e40a31" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Monte Carlo simulation of the 1d Ising chain with periodic bounary conditions</span></span>
