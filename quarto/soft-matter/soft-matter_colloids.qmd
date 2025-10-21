@@ -353,23 +353,23 @@ Even if the force is statistical, it is not less real: in this simplified case, 
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
 
-The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at thistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
+The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at this stage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
 
-This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by
+This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potential is given by
 
-$$\mu = k_BT \ln rho_p^r$$ {#eq-ideal-mu}
+$$\mu_p = k_BT \ln \rho_p^r$$ {#eq-ideal-mu}
 
-where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction \$\phi\_p\^r=\rho\_p v_p = \frac{\pi}{6} \rho\_p\^r \sigma\_p\^3 \$, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
+where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction \$\phi\_p^r=\rho\_p v_p = \frac{\pi}{6} \rho\_p^r \sigma_p^3 \$, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
 The grand potential for such ideal polymers is given by
 
-$$\Omega = -k_BT e^{\mu/k_B T}V_{\rm accessible}$$
+$$\Omega = -k_BT e^{\mu_p/k_B T}V_{\rm accessible}$$
 
 where $V_{\rm accessible}$ is the accessible volume. In the absence of the colloids, the entire volume $V$ is accessible.
 
-Let's image to intrudce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid: $$
+Let's image to introduce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid: $$
 \begin{aligned}
 V_{\rm exclusion}& = V_{\rm outer}-V_{\rm inner}\\
 &= \dfrac{4\pi}{3}\left((R+\delta)^3-R^3\right)
@@ -378,7 +378,7 @@ $$ Changing the separation between the two colloids but maintaining $r>2R_d$ doe
 
 Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of the figure above). Its volume can be calculated simply from geometrical considerations, and it is $$
 V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
-$$ {#eq-voverlap} The new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as $$
+$$ {#eq-voverlap} The new accessible volume is $$V_{\rm accessible}^\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as $$
 \begin{aligned}
 W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
 & = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
@@ -469,8 +469,10 @@ Integrating the force yields the interaction potential.
 :::
 ::::
 
+
 ::: callout-note
-# Summary of main colloid-colloid interactions
+
+## Summary of main colloid-colloid interactions
 
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 | Interaction Type | Description                                                                                   | Range                |
