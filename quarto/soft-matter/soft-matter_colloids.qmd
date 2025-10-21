@@ -565,7 +565,7 @@ $$ The phase behaviour is encoded in the **equation of state** (the equation tha
 
 $$P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}$$
 
-This expression can be simplified (do it as an exercise) to obtain the quation of state
+This expression can be simplified (do it as an exercise) to obtain the equation of state
 
 $$Z_{\rm comp}= \dfrac{PV}{Nk_BT}=\dfrac{1}{1-4\phi} \quad (\phi\ll 1)$$
 
