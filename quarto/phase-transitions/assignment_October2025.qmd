@@ -214,13 +214,13 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 - *The program calculates the average form of the 2d structure factor $S(\mathbf{k})$. Using this, obtain and plot the radially averaged structure 1d factor $S(|k|)$. *
   **[6 marks]**
 
-- *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.2, above.*  
+- *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.3, above.*  
   **[5 marks]**
 
 
 ## 3.4 Computational investigations of correlations on the approach to criticality
 
-- *Perform simulations at several (six or seven) temperatures within the super critical range $T_c \le T \lesssim 2T_c$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated* **[4 marks]**
+- *Perform simulations at several (six or seven) temperatures within the super-critical range $T_c \le T \lesssim 2T_c$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated* **[4 marks]**
 
 * *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(\mathbf{k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[4 marks]**
 
@@ -231,7 +231,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.5 Temperature and system size dependence of the specific heat
 
-*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g $T_c/2<T<2T_c$). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.  **[4 marks]**
+*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g $T_c/2<T<2T_c$). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.*  **[4 marks]**
 
 *Repeat the analysis that you performed for the $L=50$ system, for system sizes $L=20$ and $L=35$. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.* **[4 marks]**
 

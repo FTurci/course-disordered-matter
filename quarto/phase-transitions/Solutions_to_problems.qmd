@@ -694,7 +694,7 @@ $$
 where $C(\tau) = \langle u(t_0) u(t_0 + \tau) \rangle$ is the stationary (ie. equilibrium) velocity autocorrelation function which depends solely on the lag $\tau=|t_1-t_2|$. The modulus is because in equilibirum the velocity autocorrelation is time symmetric i.e. flipping the sign of time doesn't change the average of the correlation of velocities.
 
 
-![Change of variables from $t1,t@$ to the lad $\tau=|t1-t2|$](Figs/triangles_argument.png){width=40% #fig-triangles}
+![Change of variables from $t1,t@$ to the lad $\tau=|t1-t2|$](Figs/triangles_argument.png){width=30% #fig-triangles}
 
 Now for fixed $\tau = |t_1 - t_2|$, the square $[0,t]^2$ splits into two equal triangles:
 one where $t_1 > t_2$ and one where $t_2 > t_1$.
