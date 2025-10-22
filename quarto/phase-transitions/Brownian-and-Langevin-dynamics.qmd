@@ -154,7 +154,7 @@ In principle the random forces are correlated in time since the molecular collis
 
 Let us assume that there is some correlation time $t_c$ over which $\langle f(t_1) f(t_2) \rangle = g(t_1 - t_2)$ decays rapidly as shown in the sketch below:
 
-![Sketch of $g(t1−t2)$ against $|t1− t2|$](Figs/autocorrelate.png){#fig-autocorrelate
+![Sketch of $g(t_1−t_2)$ against $|t_1− t_2|$](Figs/autocorrelate.png){#fig-autocorrelate
 width=60%} 
 
 Then as long as we consider timescales $\gg t_c$ we can safely replace $g(t_1 - t_2)$ by a delta function. Thus we can make the approximation of white noise
@@ -238,7 +238,7 @@ $$
 &= v_0^2 e^{-2\gamma t}
 + \Gamma \int_0^t e^{-2\gamma (t-t')}\,dt'\\
 &= v_0^2 e^{-2\gamma t}
-+ \Gamma\left[\,-\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
++ \Gamma\left[\,\frac{1}{2\gamma}e^{-2\gamma (t-t')}\,\right]_{t'=0}^{t'=t}\\
 &= v_0^2 e^{-2\gamma t} + \frac{\Gamma}{2\gamma}\bigl(1-e^{-2\gamma t}\bigr).
 \end{aligned}
 $$

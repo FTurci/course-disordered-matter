@@ -54,7 +54,7 @@ $$
 \Delta F(R) = \sigma \, S_d \, R^{d-1} - |\Delta f| \, V_d \, R^d,
 $$
 
-where $V_d$ is another dimension-dependent constant. This expression (@fig-cnt-schem) exhibits a characteristic maximum at a critical droplet radius $R_c$, obtained by extremizing $\Delta F(R)$ with respect to $R$:
+where $V_d$ is another dimension-dependent constant (eg. $4\pi/3$ for $d=3$). This expression (@fig-cnt-schem) exhibits a characteristic maximum at a critical droplet radius $R_c$, obtained by extremizing $\Delta F(R)$ with respect to $R$:
 
 $$
 \frac{d \Delta F}{dR} = 0 \quad \Rightarrow \quad R_c = \frac{(d-1)\sigma S_d}{d |\Delta f| V_d}.
@@ -134,7 +134,7 @@ corresponding to a dynamic exponent $z = 2$, where in general $L(t)\sim t^{1/z}$
 The local chemical potential difference across a domain wall depends on its curvature. 
 Thus regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
 
-Let is aassume that domain walls move with velocity proportional to curvature:
+Let is assume that domain walls move with velocity proportional to curvature:
   $$
   v \sim \frac{1}{L}
   $$
@@ -159,7 +159,7 @@ $$
 F[\phi] = \int d^d x \left[ \frac{1}{2} (\nabla \phi)^2 + V(\phi) \right],
 $$
 
-with $V(\phi)$ typically a double-well potential such as $V(\phi) = \frac{1}{4}(\phi^2 - 1)^2$.
+with $V(\phi)$ typically a double-well potential such as $V(\phi) = \frac{1}{4}(\phi^2 - 1)^2$.n The squared gradient term serves to penalise interfaces in the system.
 
 ---
 
