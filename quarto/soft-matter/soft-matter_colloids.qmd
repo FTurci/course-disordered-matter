@@ -353,19 +353,19 @@ Even if the force is statistical, it is not less real: in this simplified case, 
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
 
-The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at thistage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
+The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at this stage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
 
-This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potnetial is given by
+This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potential is given by
 
-$$\mu = k_BT \ln rho_p^r$$ {#eq-ideal-mu}
+$$\mu_p = k_BT \ln \rho_p^r$$ {#eq-ideal-mu}
 
-where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction \$\phi\_p\^r=\rho\_p v_p = \frac{\pi}{6} \rho\_p\^r \sigma\_p\^3 \$, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
+where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction $\phi_p\^r=\rho_p v_p = \frac{\pi}{6} \rho_p^r \sigma_p^3 $, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
 The grand potential for such ideal polymers is given by
 
-$$\Omega = -k_BT e^{\mu/k_B T}V_{\rm accessible}$$
+$$\Omega = -k_BT e^{\mu_p/k_B T}V_{\rm accessible}$$
 
 where $V_{\rm accessible}$ is the accessible volume. In the absence of the colloids, the entire volume $V$ is accessible.
 
@@ -565,7 +565,7 @@ $$ The phase behaviour is encoded in the **equation of state** (the equation tha
 
 $$P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}$$
 
-This expression can be simplified (do it as an exercise) to obtain the quation of state
+This expression can be simplified (do it as an exercise) to obtain the equation of state
 
 $$Z_{\rm comp}= \dfrac{PV}{Nk_BT}=\dfrac{1}{1-4\phi} \quad (\phi\ll 1)$$
 
