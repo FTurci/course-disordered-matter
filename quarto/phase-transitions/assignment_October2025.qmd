@@ -154,7 +154,7 @@ $$
 
 where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations use for sampling.
 
-Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (cf. problem set) is 
+Other observables (those which are second derivatives of the free energy) such as the heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the heat capacity (cf. problem set) is 
 
 $$
 C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
