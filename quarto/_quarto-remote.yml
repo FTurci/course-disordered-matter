@@ -54,8 +54,7 @@ book:
            href: phase-transitions/problems.qmd
          - text: "Lecture slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
-         - text: "Notes as pdf" 
-           href: notes.pdf
+
          - text: "Solutions to problems"
            href: phase-transitions/Solutions_partial.qmd    
    #      - text: "Preparation for first coursework assignment"
@@ -71,14 +70,12 @@ book:
         - href: experimental/part2.ipynb
           text: "Real-space measurements"
 
-    # - part: "Complex disordered systems"
-    #   chapters:
-    #     # - href: soft-matter/soft-matter_plan.qmd
-    #     #   text: "Plan"
-    #     - href: soft-matter/soft-matter_intro.qmd
-    #       text: "Entropy matters"
-    #     - href: soft-matter/soft-matter_colloids.qmd
-    #       text: "Colloids"
+    - part: "Complex disordered systems"
+      chapters:
+        - href: soft-matter/soft-matter_intro.qmd
+          text: "Entropy matters"
+        - href: soft-matter/soft-matter_colloids.qmd
+          text: "Colloids"
     #     - href: soft-matter/soft-matter_polymers.qmd
     #       text: "Polymers"
     #     - href: soft-matter/soft-matter_liquidcrystals.qmd
@@ -93,8 +90,9 @@ book:
     #       # text: "Readings"
     #     - href: soft-matter/soft-matter_problems.qmd
     #       text: "Problems"
-    # - part: "Experimental techniques"
-
+    - part: "Experimental techniques"
+    # - text: "Notes as pdf" 
+      href: notes.pdf
   # appendices:
   #   - href: revision_guide.qmd
   #     text: "Revision guide"
