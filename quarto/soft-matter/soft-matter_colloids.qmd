@@ -359,7 +359,7 @@ This assumption yield a great simplification: the polymers, on their own, are an
 
 $$\mu_p = k_BT \ln \rho_p^r$$ {#eq-ideal-mu}
 
-where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction $\phi_p\^r=\rho_p v_p = \frac{\pi}{6} \rho_p^r \sigma_p^3 $, with $v_p= \dfrac{pi}{6}\sigma_p^3$.
+where $\rho_p$ is the number density of polymers in the ideal reservoir related to their volume fraction $\phi_p^{r}=\rho_p v_p = \frac{\pi}{6} \rho_p^{r} \sigma_p^{3}$, with $v_p= \dfrac{\pi}{6}\sigma_p^{3}$.
 
 We assume also to work in an ensemble at fixed volume $V$, temperature $T$ and chemical potential $\mu$: this is the **grand canonical ensemble**. This means that we imagine that there is some ideal reservoir with which we can exchange polymers in order to maintain the chemical potential constant.
 
@@ -451,24 +451,6 @@ $$ Notice the negative sign, chosen to reflect the fact that the force is attarc
 Integrating the force yields the interaction potential.
 :::
 
-::: cell
-```{=live-html}
-![Animation of two dimensional colloids in a sea of ideal polymers. Notice how the initially separated colloids ultimately come close to each other](figs/aoanimation.gif){format: live-html}
-```
-:::
-
-::: cell
-```{=latex}
-% Skip this GIF in PDF
-```
-:::
-
-:::: column-margin
-::: {.content-visible when-format="live-html"}
-![Fumio Oosawa (front) and Sho Asakura at Oosawa's 88th birthday (from @kurihara2021discovery )](figs/aobirthday.png)
-:::
-::::
-
 ::: callout-note
 # Summary of main colloid-colloid interactions
 
@@ -484,6 +466,7 @@ Integrating the force yields the interaction potential.
 | Depletion        | Typically attractive interactions emerging from purely entropic interactions                  | Short range          |
 +------------------+-----------------------------------------------------------------------------------------------+----------------------+
 :::
+
 
 ## Colloids as big atoms
 
@@ -505,11 +488,8 @@ $$
 This model captures the essential physics of **excluded volume** which, as we said earlier, fundamentally emerges from Pauli's exclusion principle (electrons cannot occupy the same quantum state so electronic clouds of different atoms *exclude* each other).
 
 <svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
-
 <!-- Axes -->
-
 <line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
-
 </svg>
 
 #### Phase behaviour of hard spheres {.unnumbered}
@@ -575,6 +555,7 @@ also known as the **compressibility factor** $Z_{\rm comp}$. Since $\phi$ is ver
 The choice of the letter "Z" is unfortunate. Do not confuse the compressibility factor with the partition function!
 :::
 
+
 $$Z_{\rm comp} = 1+4\phi+O(\phi^2)$$
 
 This expression makes it apparent that the first term linear in $\phi$ is a *correction* to the ideal gas law. This is example (to very low order) of what is called the **virial expansion**. This, in general takes the form
@@ -618,8 +599,7 @@ Experiments of this sort have been performed historically, leveraging for exampl
 
 A simple **cell model** can help us rationalise what is taking place. When the spheres are packed within their FCC cell, they can move very little beyond their own diameter $\sigma$. Assume that the volume per particle again is $v$ and the (geometrically constrained) close packed volume is $v_{cp}$.
 
-The maximum displacement is $$
-\delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
+The maximum displacement is $$\delta=\frac{\sigma}{\sqrt{2}}\left(\left(\frac{v}{v_{c p}}\right)^{1 / 3}-1\right)
 $$ The corresponding free volume is then $v_f=\frac{4 \pi}{3} \delta^3$ from which we can calculate the entropy $$
 S = -N k_B T \ln \left(v_f / \Lambda^3\right)
 $$ and the resulting pressure $$
@@ -927,9 +907,11 @@ where $\rho(\mathbf{r},t)$ is the probability of finding a particle at position 
 D = \frac{k_B T}{\gamma}
 $$ where $k_B$ is Boltzmann's constant, $T$ is temperature, and $\gamma$ is the friction (drag) coefficient.
 
-It is easy to show (see below) that in 1 dimension the general solution is $$
-\rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)
-$$ ::: {.callout-note collapse="true"} \# Solution of the diffusion equation using Laplace transform
+It is easy to show (see below) that in 1 dimension the general solution is $$\rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)$$ 
+
+::: {.callout-note collapse="true"} 
+
+# Solution of the diffusion equation using Laplace transform
 
 The 1D diffusion equation is: $$
 \frac{\partial \rho(x, t)}{\partial t} = D \frac{\partial^2 \rho(x, t)}{\partial x^2}
@@ -973,7 +955,8 @@ $$ Invert the Laplace transform (using tables or convolution theorem): $$
 \rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)
 $$
 
-This is the fundamental solution (Green's function) of the diffusion equation. :::
+This is the fundamental solution (Green's function) of the diffusion equation. 
+:::
 
 The diffusion equation can also be read as a simple consequence of two requirements:
 
@@ -1047,7 +1030,6 @@ plt.show()
 
 The slowing down due to collisions eventually dominates the ohysics of hard spheres at high densities. This is more broadly true also for generic dense colloidal suspensions, where the short range interactions dominate on other mechanisms of motion (including the hydrodynamics). Eventually, for very dense packings one observes the emergence of a new physical regime where relaxation becomes anomalous and non-diffusive: this is the glassy regime, which we will revisit in a following chapter.
 
-<!-- short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist.  -->
 
 ### Stokes-Einstein relation
 
@@ -1312,8 +1294,6 @@ return container.node();
 }
 ```
 
-<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-13.jpg?height=291&width=619&top_left_y=1597&top_left_x=466) -->
-
 In the case of gravity, this leads to a sedimentation equilibrium. (a) Flux due to external force, $J_{F}$
 
 The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=F / \xi$ which defines the friction coefficient $\xi$. Hence
@@ -1363,14 +1343,6 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 -   Colloidal systems serve as accessible models for studying fundamental concepts in soft matter and statistical mechanics.
 :::
 
-<!-- ![Feynamnn schematic of a sensitive light-beam galvanometer.](https://www.feynmanlectures.caltech.edu/img/FLP_I/f41-01/f41-01_tc_big_a.svg) -->
 
-```{=html}
-<!-- ### Particle dynamics
-
-#### Hard-spheres
-
-We are interested in the mean-square displacement $\left\langle\underline{r}^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The meansquare displacement $\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$ as already seen earlier. Above $\phi \sim 0.3$, however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant $D_{s}$. This is determined from the short time limit and is smaller than the $D_{0}$ measured for $\phi \rightarrow 0$. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant. While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-18.jpg?height=391&width=432&top_left_y=368&top_left_x=1351) with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e. we still have $\left\langle\underline{r}^{2}(t)>\propto t\right.$, when the particles undergo large-scale random-walk diffusion through many cages. However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant $D_{L}$. ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-19.jpg?height=777&width=1086&top_left_y=868&top_left_x=539) short time: $<r^{2}(t)>=6 D_{S} t$ short-time self diff. coeff. $D_{S}<D_{0}$ purely because of hydrodyn. interactions theoretical predictions exist intermediate time: some theory long time: $<r^{2}(t)>=6 D_{L} t$ long-time self diff. coeff. $D_{L}<D_{S}\left(<D_{0}\right)$ because of hydrodyn. and direct interactions theory very complicated, but some predictions exist. -->
-```
 
 ## References {.unnumbered}

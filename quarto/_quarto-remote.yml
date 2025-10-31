@@ -90,8 +90,7 @@ book:
     #       # text: "Readings"
     #     - href: soft-matter/soft-matter_problems.qmd
     #       text: "Problems"
-    - part: "Experimental techniques"
-    # - text: "Notes as pdf" 
+    - text: "Notes as pdf" 
       href: notes.pdf
   # appendices:
   #   - href: revision_guide.qmd
