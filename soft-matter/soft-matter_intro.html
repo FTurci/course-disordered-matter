@@ -357,8 +357,38 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_liquidcrystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../soft-matter/slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lecture slides</span></span></a>
+ <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -513,7 +543,7 @@ Coarse graining
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="f0793d64" class="cell" data-execution_count="1">
+<div id="84db5329" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -524,8 +554,8 @@ Coarse graining
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_17622039374416451" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_17622039374416451" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_1762208044345763" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_1762208044345763" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -556,18 +586,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_17622039374416451 = null;
-var warn = document.getElementById("3dmolwarning_17622039374416451");
+var viewer_1762208044345763 = null;
+var warn = document.getElementById("3dmolwarning_1762208044345763");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_17622039374416451 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17622039374416451"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_17622039374416451, {}, function() {
-viewer_17622039374416451.zoomTo();
-    viewer_17622039374416451.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_17622039374416451.setBackgroundColor("white");
-viewer_17622039374416451.render();
+viewer_1762208044345763 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1762208044345763"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_1762208044345763, {}, function() {
+viewer_1762208044345763.zoomTo();
+    viewer_1762208044345763.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_1762208044345763.setBackgroundColor("white");
+viewer_1762208044345763.render();
 })
 });
 </script>
