@@ -265,7 +265,7 @@ Modify the script above and test graphically that:
 
 ### Steric interactions and depletion interactions
 
-We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle -- Paulis's **exclusion principle** -- is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together. We have observed that quantum fluctuations arising from the uncertainty principle can be reformulated through a semi-classical approach into effective short-range interactions (van-der Waals).
+We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle -- Pauli's **exclusion principle** -- is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together. We have observed that quantum fluctuations arising from the uncertainty principle can be reformulated through a semi-classical approach into effective short-range interactions (van-der Waals).
 
 Another fundamental quantum principle—Pauli's **exclusion principle**—also plays a key role in generating effective interactions that can be understood in a semi-classical framework. Specifically, the main consequence of the exclusion principle is that, since electrons cannot occupy the same quantum state, there are minimum distances below which atoms cannot be brought together.
 
@@ -378,7 +378,15 @@ $$ Changing the separation between the two colloids but maintaining $r>2R_d$ doe
 
 Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of the figure above). Its volume can be calculated simply from geometrical considerations, and it is $$
 V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
-$$ {#eq-voverlap} The new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as $$
+$$ {#eq-voverlap} 
+
+This can also be written as
+
+$$
+V_{\text {overlap }}(r)=\frac{\pi\left(4 (R+\delta)+r\right)\left(2 (R+\delta)-r\right)^2}{12}
+$$
+
+The new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as $$
 \begin{aligned}
 W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
 & = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
@@ -407,7 +415,7 @@ import matplotlib.pyplot as plt
 # Parameters (change to explore)
 R = 1.0           # Colloid radius
 delta = 0.2       # Polymer radius
-rho_p = 0.1       # Polymer density 
+eta_p = 0.1       # Polymer packing fraction
 kBT = 1.0         # Set kBT=1 for reduced units
 
 # Depletion radius
@@ -416,7 +424,7 @@ Rd = R + delta
 # r values: from contact (2R) up to 3(R+delta)
 r = np.linspace(2*R, 3*Rd, 500)
 
-def AO_potential(r, R, delta, eta_p, kBT):
+def AO_potential(r, R, delta, rho_p, kBT):
     Rd = R + delta
     # Only defined for 2R <= r < 2Rd
     W = np.zeros_like(r)
@@ -779,7 +787,7 @@ We can compare this with arrangements of hard spheres
 from src import hardspheres
 
 sigma = 1.0
-L = 5.*sigma #take a small value
+L = 3.*sigma #take a small value
 phi = 0.2 # packing fraction
 N = int(phi/(np.pi/6*sigma**3)*L**3)
 
@@ -792,7 +800,7 @@ for positions in trajectory:
     _r, _g = radial_distr(positions, L)
     gs.append(_g)
 plt.plot(r, np.mean(gs,axis=0), 'b-', label=rf"Hard spheres, rf$\phi={phi}$")
-plt.set(xlabel="r", ylabel="g(r)", ylim= (0,2))
+plt.gca().set(xlabel="r", ylabel="g(r)", ylim= (0,2))
 plt.legend()
 plt.show()
 
@@ -801,7 +809,7 @@ plt.show()
 The radial distribution function is the central object of much of **liquid state theory**, which aims to predict the shape of the correlation functions (such as $g(r)$) from the sole knowledge of the interaction potential between the elementary particles (see @santos2016concise for a gentle introduction to the topic). In particular, one can imagine the correlations between two particles $1$ and $2$ in a fluid to have two possible origins
 
 -   a **direct** correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.
--   an **indirect correlation**, mediated by other particle sin the fluid
+-   an **indirect correlation**, mediated by other particles in the fluid
 
 The $g(r)$ contains both direct and indirect correlations. We can assume that a suitable function $c(r)$ exists to express the direct correlations. In such case, for two-body interactions, we can write a hierarchy of equations via a central result of liquid state theory, the **Ornestein-Zernicke** (OZ) equation
 
@@ -811,7 +819,7 @@ $$ {#eq-oz}
 
 where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes an algebraic equation $$
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
-$$ Since both $h(r)$ and $c(r)$ an additional relationship is known called a **closure**. These constructed through phsyical arguments. A common one is the so-called Percus-Yevick closure
+$$ Since both $h(r)$ and $c(r)$ are unknown , an additional relationship is needed, called a **closure**. This is constructed through phsyical arguments. A common one is the so-called Percus-Yevick closure
 
 $$
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]

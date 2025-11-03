@@ -1,11 +1,91 @@
----
-title: "Problems"
+# Complex disordered systems: Problems {#problems-complex .unnumbered}
 
----
+## Colloids
 
-## Relaxation time in atomic fluids
+### Interaction of two charged colloidal spheres
 
-Spherical colloidal particles of radius 30 nm and density $1.35 \mathrm{~g} \mathrm{~cm}^{-3}$ are suspended in water (temperature $25^{\circ} \mathrm{C}$, density $1.0 \mathrm{~g} \mathrm{~cm}^{-3}$, viscosity $1.0 \times 10^{-3}$ Pa s ). Calculate the average distance from the origin along a given axis travelled by a particle in 1 minute due to Brownian motion and sedimentation, respectively. What are the displacements after 1 hour?
+> Adapted from J Dhont, K, Kang (1996) *An Introduction to Dynamics of Colloids*. Elsevier.
+
+Consider a colloidal particle of total charge $Q$ located at the origin, immersed in a solvent of permittivity $\varepsilon = \varepsilon_0 \varepsilon_r$. The solvent contains a symmetric electrolyte with two mobile ionic species:
+
+-   Cations of charge $+ze$ and bulk concentration $n_0$,
+-   Anions of charge $-ze$ and bulk concentration $n_0$.
+
+1.  Show that The mean electrostatic potential $\phi(\mathbf{r})$ satisfies Poisson’s equation: $$
+    \nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
+    $$
+
+    Assuming the ions form an ideal gas in thermal equilibrium, their local densities follow Boltzmann distributions: $$
+    n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad
+    n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})], $$ where $\beta = 1/(k_B T)$.
+
+2.  Use these expressions to obtain the (simplified) *nonlinear Poisson–Boltzmann equation* : $$
+    \nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+    $$
+
+3.  Find physical conditions to linearise the equation.
+
+4.  Solve the resulting linear equation for spherical symmetry to obtain the screened Coulomb (Debye–Hückel) potential: $$
+    \phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r},
+    \qquad \kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+    $$
+
+The parameter $\kappa^{-1}$ is the Debye screening length, and the solution shows that ionic screening converts the long-range Coulomb potential into a short-range Yukawa potential.
+
+The following real to Fourier spcace mappings may be useful
+
+| Real space                      | Fourier space               |
+|---------------------------------|-----------------------------|
+| $f(\mathbf{r})$                 | $f(\mathbf{k})$             |
+| $\nabla^2 f(\mathbf{r})$        | $-k^2 f(\mathbf{k})$        |
+| $\delta(\mathbf{r})$            | $1$                         |
+| $\dfrac{e^{-\kappa r}}{4\pi r}$ | $\dfrac{1}{k^2 + \kappa^2}$ |
+
+### Second virial coefficient for depletion interactions
+
+Consider a dilute suspension of spherical colloidal particles of radius $R_c$ in a solution of small ideal polymer coils of radius $R_p \ll R_c$. The polymers are non-adsorbing and behave as an ideal gas outside the colloids. The colloids interact via the **Asakura–Oosawa depletion potential** $U_{\rm AO}(r)$:
+
+$$
+U_{\rm AO}(r) =
+\begin{cases}
+\infty, & r < 2 R_c \\[2mm]
+-\Pi\, V_{\rm overlap}(r), & 2 R_c \le r \le 2 R_c + 2 R_p \\[1mm]
+0, & r > 2 R_c + 2 R_p
+\end{cases}
+$$
+
+where $r$ is the center-to-center distance, $\Pi = n_p k_B T$ is the so called *osmotic pressure* of the polymer solution, and $V_{\rm overlap}(r)$ is the overlap volume of the depletion zones, given by
+
+$$
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12},
+$$
+
+with $R_{eff} = R_c+R_p$.
+
+1.  Write the expression for the *second virial coefficient* $B_2$ in terms of the interaction potential:
+
+    $$
+     B_2 = -2 \pi \int_0^\infty \left( e^{-\beta U_{\rm AO}(r)} - 1 \right) r^2 dr
+     $$
+
+2.  Assuming the polymer-induced attraction is *weak* ($\beta |U_{\rm AO}(r)| \ll 1$) and that the polymers are much smaller than the colloids, expand the exponential to first order and simplify the integral.
+
+3.  Express the resulting $B_2$ in terms of $R_c$, $R_p$, and the polymer osmotic pressure $\Pi$.
+
+4.  Discuss qualitatively how $B_2$ depends on polymer concentration and size, and explain what a **negative** $B_2$ implies for colloidal aggregation.
+
+------------------------------------------------------------------------
+
+```{=html}
+<!---
+### Brownian motion and sedimentation
+
+Spherical colloidal particles of radius 30 nm and density $1.35 \mathrm{~g} \mathrm{~cm}^{-3}$ are suspended in water (temperature $25^{\circ} \mathrm{C}$, density $1.0 \mathrm{~g} \mathrm{~cm}^{-3}$, viscosity $1.0 \times 10^{-3}$ Pa s ). 
+
+The di
+
+Calculate the average distance from the origin along a given axis traveled by a particle in 1 minute due to Brownian motion and sedimentation, respectively. What are the displacements after 1 hour?
+
 
 ## Equipartition
 
@@ -13,13 +93,13 @@ The equipartition theorem states that in thermal equilibrium each generalised co
 
 ## Gravitational length
 
-(a) Find the typical length scale ('gravitational length') of the distribution of polystyrene particles (density $\rho_{\mathrm{p}}=1.05 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$ ) of radius 50 nm and $1 \mu \mathrm{~m}$ respectively, suspended in water (density $\rho_{\mathrm{w}}=1.00 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$, viscosity $1.0 \times 10^{-3} \mathrm{~Pa} \mathrm{~s}$ ) at room temperature. Hint: The gravitational length is the height at which the concentration falls to $1 / \mathrm{e}$ of its greatest value.
-(b) If a container of height $\mathrm{H}=4 \mathrm{~cm}$ contains a dilute suspension of these particles at an average concentration of $n_{a}$ particles per unit volume, what are the actual concentrations (in terms of $n_{a}$ ) at the top and bottom of the sample when sedimentation equilibrium has been reached.
-(c) If the above sample is shaken up to give an initially uniform concentration and then left undisturbed, estimate how long it will take the concentration profile to reach its equilibrium state (A surprisingly long time!)
+1. Find the typical length scale ('gravitational length') of the distribution of polystyrene particles (density $\rho_{\mathrm{p}}=1.05 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$ ) of radius 50 nm and $1 \mu \mathrm{~m}$ respectively, suspended in water (density $\rho_{\mathrm{w}}=1.00 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$, viscosity $1.0 \times 10^{-3} \mathrm{~Pa} \mathrm{~s}$ ) at room temperature. Hint: The gravitational length is the height at which the concentration falls to $1 / \mathrm{e}$ of its greatest value.
+2. If a container of height $\mathrm{H}=4 \mathrm{~cm}$ contains a dilute suspension of these particles at an average concentration of $n_{a}$ particles per unit volume, what are the actual concentrations (in terms of $n_{a}$ ) at the top and bottom of the sample when sedimentation equilibrium has been reached.
+3. If the above sample is shaken up to give an initially uniform concentration and then left undisturbed, estimate how long it will take the concentration profile to reach its equilibrium state (A surprisingly long time!)
 
 ## Peclet number
 
-A definition of a colloid is a particle small enough that its Brownian motion is not dominated by gravity. Thus if the particle is raised a distance equal to its radius, the increase in its gravitational potential energy must be less than the thermal energy $(3 / 2) \mathrm{k}_{\mathrm{B}} T$. Another measure of the relative importance of the effects of Brownian motion and gravity, is the Peclet number $\mathrm{Pe}=\tau_{R} / \tau_{\text {sed }}$. Here $\tau_{\mathrm{R}}$ is the time taken by a particle to diffuse a distance equal to its radius, and $\tau_{\text {sed }}$ is the time taken by it to sediment the same distance. When $\mathrm{Pe} \ll 1$, Brownian motion dominates; when $\mathrm{Pe} \gg 1$, gravity dominates. Show that the
+A definition of a colloid is a particle small enough that its Brownian motion is not dominated by gravity. Thus if the particle is raised a distance equal to its radius, the increase in its gravitational potential energy must be less than the thermal energy $(3 / 2) \mathrm{k}_{\mathrm{B}} T$. Another measure of the relative importance of the effects of Brownian motion and gravity, is the Peclet number $\mathrm{Pe}=\tau_{R} / \tau_{\text {sed }}$. Here $\tau_{\mathrm{R}}$ is the time taken tau_{\text {sed }}$ is the time taken by it to sediment the same distance. When $\mathrm{Pe} \ll 1$, Brownian motion dominates; when $\mathrm{Pe} \gg 1$, gravity dominates. Show that the
 condition $\mathrm{Pe}<1$ is more or less equivalent to the definition of a colloid given above.
 
 ## Diffusion equation
@@ -91,3 +171,5 @@ $$
 Where $\tau_{0}, \mathrm{~B}=710$ and $T_{0}=50^{\circ} \mathrm{C}$ are constants. A value of the experimental glass transition temperature is measured with an experiment carried out at an effective timescale $\tau_{\text {exp }}=1000$ s and found to be $101.4^{\circ} \mathrm{C}$.
 (a) Another experiment is carried out at an effective timescale of $10^{5} \mathrm{~s}$. What is the value of the glass transition temperature obtained from this experiment?
 (b) On what timescale must an experiment be carried out if it is to measure a glass transition temperature within $10^{\circ} \mathrm{C}$ of the Vogel-Fulcher temperature $T_{0}$. Is this practically possible?
+-->
+```
