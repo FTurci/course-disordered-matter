@@ -948,5 +948,27 @@
       "Complex disordered systems",
       "<span class='chapter-number'>14</span>  <span class='chapter-title'>Colloids</span>"
     ]
+  },
+  {
+    "objectID": "soft-matter/soft-matter_problems.html",
+    "href": "soft-matter/soft-matter_problems.html",
+    "title": "15  Problems",
+    "section": "",
+    "text": "15.1 Colloids",
+    "crumbs": [
+      "Complex disordered systems",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Problems</span>"
+    ]
+  },
+  {
+    "objectID": "soft-matter/soft-matter_problems.html#colloids",
+    "href": "soft-matter/soft-matter_problems.html#colloids",
+    "title": "15  Problems",
+    "section": "",
+    "text": "15.1.1 Interaction of two charged colloidal spheres\n\nAdapted from J Dhont, K, Kang (1996) An Introduction to Dynamics of Colloids. Elsevier.\n\nConsider a colloidal particle of total charge \\(Q\\) located at the origin, immersed in a solvent of permittivity \\(\\varepsilon = \\varepsilon_0 \\varepsilon_r\\). The solvent contains a symmetric electrolyte with two mobile ionic species:\n\nCations of charge \\(+ze\\) and bulk concentration \\(n_0\\),\nAnions of charge \\(-ze\\) and bulk concentration \\(n_0\\).\n\n\nShow that The mean electrostatic potential \\(\\phi(\\mathbf{r})\\) satisfies Poisson’s equation: \\[\n\\nabla^2 \\phi(\\mathbf{r}) = -\\frac{1}{\\varepsilon} \\left[ z e\\, n_+(\\mathbf{r}) - z e\\, n_-(\\mathbf{r}) + Q \\delta(\\mathbf{r}) \\right].\n\\]\nAssuming the ions form an ideal gas in thermal equilibrium, their local densities follow Boltzmann distributions: \\[\nn_+(\\mathbf{r}) = n_0 \\exp[-\\beta z e\\, \\phi(\\mathbf{r})], \\qquad\nn_-(\\mathbf{r}) = n_0 \\exp[+\\beta z e\\, \\phi(\\mathbf{r})], \\] where \\(\\beta = 1/(k_B T)\\).\nUse these expressions to obtain the (simplified) nonlinear Poisson–Boltzmann equation : \\[\n\\nabla^2 \\phi(\\mathbf{r}) = \\frac{2 z e n_0}{\\varepsilon} \\sinh\\big(\\beta z e\\, \\phi(\\mathbf{r})\\big) - \\frac{Q}{\\varepsilon}\\delta(\\mathbf{r}).\n\\]\nFind physical conditions to linearise the equation.\nSolve the resulting linear equation for spherical symmetry to obtain the screened Coulomb (Debye–Hückel) potential: \\[\n\\phi(r) = \\frac{Q}{4\\pi \\varepsilon} \\frac{e^{-\\kappa r}}{r},\n\\qquad \\kappa^2 = \\frac{2 n_0 z^2 e^2}{\\varepsilon k_B T}.\n\\]\n\nThe parameter \\(\\kappa^{-1}\\) is the Debye screening length, and the solution shows that ionic screening converts the long-range Coulomb potential into a short-range Yukawa potential.\nThe following real to Fourier spcace mappings may be useful\n\n\n\nReal space\nFourier space\n\n\n\n\n\\(f(\\mathbf{r})\\)\n\\(f(\\mathbf{k})\\)\n\n\n\\(\\nabla^2 f(\\mathbf{r})\\)\n\\(-k^2 f(\\mathbf{k})\\)\n\n\n\\(\\delta(\\mathbf{r})\\)\n\\(1\\)\n\n\n\\(\\dfrac{e^{-\\kappa r}}{4\\pi r}\\)\n\\(\\dfrac{1}{k^2 + \\kappa^2}\\)\n\n\n\n\n\n15.1.2 Second virial coefficient for depletion interactions\nConsider a dilute suspension of spherical colloidal particles of radius \\(R_c\\) in a solution of small ideal polymer coils of radius \\(R_p \\ll R_c\\). The polymers are non-adsorbing and behave as an ideal gas outside the colloids. The colloids interact via the Asakura–Oosawa depletion potential \\(U_{\\rm AO}(r)\\):\n\\[\nU_{\\rm AO}(r) =\n\\begin{cases}\n\\infty, & r &lt; 2 R_c \\\\[2mm]\n-\\Pi\\, V_{\\rm overlap}(r), & 2 R_c \\le r \\le 2 R_c + 2 R_p \\\\[1mm]\n0, & r &gt; 2 R_c + 2 R_p\n\\end{cases}\n\\]\nwhere \\(r\\) is the center-to-center distance, \\(\\Pi = n_p k_B T\\) is the so called osmotic pressure of the polymer solution, and \\(V_{\\rm overlap}(r)\\) is the overlap volume of the depletion zones, given by\n\\[\nV_{\\text {overlap }}(r)=\\frac{\\pi\\left(4 R_{\\mathrm{eff}}+r\\right)\\left(2 R_{\\mathrm{eff}}-r\\right)^2}{12},\n\\]\nwith \\(R_{eff} = R_c+R_p\\).\n\nWrite the expression for the second virial coefficient \\(B_2\\) in terms of the interaction potential:\n\\[\nB_2 = -2 \\pi \\int_0^\\infty \\left( e^{-\\beta U_{\\rm AO}(r)} - 1 \\right) r^2 dr\n\\]\nAssuming the polymer-induced attraction is weak (\\(\\beta |U_{\\rm AO}(r)| \\ll 1\\)) and that the polymers are much smaller than the colloids, expand the exponential to first order and simplify the integral.\nExpress the resulting \\(B_2\\) in terms of \\(R_c\\), \\(R_p\\), and the polymer osmotic pressure \\(\\Pi\\).\nDiscuss qualitatively how \\(B_2\\) depends on polymer concentration and size, and explain what a negative \\(B_2\\) implies for colloidal aggregation.",
+    "crumbs": [
+      "Complex disordered systems",
+      "<span class='chapter-number'>15</span>  <span class='chapter-title'>Problems</span>"
+    ]
   }
 ]
