@@ -88,6 +88,8 @@ book:
     #       text: "Active matter"
     #     # - href: soft-matter/soft-matter_readings.qmd
     #       # text: "Readings"
+        - Lecture slides:
+            href: soft-matter/slides.qmd
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
     - text: "Notes as pdf" 
