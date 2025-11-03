@@ -328,7 +328,7 @@ We can analyse this a little more in detail by considering the characteristic fe
 
 Indeed, it can be shown. (see below) that teh mean squared displacement for active Browninan particles displays three regimes:
 $$
-\mathrm{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right).
+\operatorname{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
 $$
 
 where:
@@ -337,7 +337,11 @@ where:
 This clearly shows thhat there are three main regimes: 
 
 - a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
-- an intermediate regime around the reorientation time $\tau_R$ $\operatorname{MSD}(\tau)=4 D_{\mathrm{T}} \tau+2 v^2 \tau^2 $ leading to **super-diffusive** motion (ballistic)
+- an intermediate regime around the reorientation time $\tau_R$: 
+    $$
+    \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + 2 v^2 \tau^2
+    $$
+    leading to **super-diffusive** (ballistic) motion
 - a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
 
 ::: {.callout-note collapse="true"}
