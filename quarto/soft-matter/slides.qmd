@@ -1,0 +1,12 @@
+# Complex Disordered Systems : Slides {#slides-complex .unnumbered}
+
+
+## Introduction
+
+- Introduction to Disordered Systems [PDF](./lecture-slides/pdfs/slides-intro.pdf){target=_blank} [HTML](./lecture-slides/html/soft-matter_intro.html){target=_blank}
+
+## Colloids
+
+- Interactions [PDF](./lecture-slides/pdfs/slides-colloids1.pdf){target=_blank}[HTML](./lecture-slides/html/soft-matter_colloids1.html){target=_blank}
+
+- Phase behaviour [PDF](./lecture-slides/pdfs/slides-colloids2.pdf){target=_blank}[HTML](./lecture-slides/html/soft-matter_colloids2.html){target=_blank}
