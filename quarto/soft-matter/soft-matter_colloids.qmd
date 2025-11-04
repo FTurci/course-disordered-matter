@@ -52,13 +52,13 @@ Clearly, colloidal materials form an incredibly diverse class, and surround us i
 
 ![First row: opal, paint, smoke. Middle row: ice-cream (*gelato*), milk, fog. Bottom row: expanded polystyrene and foam. Source: unsplash.com](figs/colloids.png)
 
-The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**, which is approximately 1nm to 1µm.
+The [IUPAC definition of colloids](https://goldbook.iupac.org/terms/view/C01172) is based on the idea that the particles are dispersed in a medium, creating a *subdivision* at the **colloidal scale**, which is approximately 1 nm to 1 µm.
 
-The small size of colloids means that they are constantly subject to collisions with the atoms/molecules/particles of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $1 k_B T$ (the reference energy scale of soft matter). This energy can be compared with the potential energy associated with a displacement of a particle radius to produce a dimensionless number, the **gravitational Péclet number**
+The small size of colloids means that they are constantly subject to collisions with the atoms/molecules/particles of the medium, triggered by thermal fluctuations. Due to this, the colloids undergo [Brownian motion](../phase-transitions/Brownian-and-Langevin-dynamics.qmd). For each particle, the amount of energy received from the medium is of the order of $k_B T$ (the reference energy scale of soft matter). This energy can be compared with the potential energy associated with a displacement of a particle radius to produce a dimensionless number, the **gravitational Péclet number**
 
 $${\rm Pe}_g = \dfrac{\Delta m g R}{k_B T}$$
 
-where $R$ is the radius of the colloid respectively, $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only *marginally* perturbed by the effects of gravity.
+where $R$ is the radius of the colloid, $g$ is the acceleration due to gravity, and $\Delta m$ is the *buoyant mass*, which for a spherical colloid is expressed as $\Delta m = \dfrac{4\pi}{3}\Delta\rho R^3$, with $\Delta \rho$ being the density difference between the particle and the dispersion medium (the *solvent*). We have a colloidal suspension only when ${\rm Pe}_g \lesssim 1$, i.e. when Brownian motion is only *marginally* perturbed by the effects of gravity.
 
 ## Stability of colloids and colloid-colloid interactions
 
@@ -66,7 +66,7 @@ A colloidal dispersion is said to be **stable** if it is able to remain disperse
 
 For example, consider a colloidal suspension like milk. Milk is an emulsion where droplets of fat are dispersed in water and stabilised by proteins. If lemon juice[^soft-matter_colloids-1] is added, the dispersion medium (water) changes, the pH drops, and the emulsion is *destabilised*. This causes the proteins to coagulate, leading to the separation of curds (solid) and whey (liquid).
 
-[^soft-matter_colloids-1]: The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative of the logarithm of the concentration of hydrogen atoms.
+[^soft-matter_colloids-1]: The citric acid in lemon juice lowers the pH of the water, making it more acidic. The pH is simply the negative logarithm of the concentration of hydrogen ions.
 
 ![Curds and whey resulting from the destabilisation of milk, a colloidal emulsion. (Wikimedia)](figs/Curds_and_whey.jpg)
 
@@ -76,9 +76,9 @@ It is clear from this example that the nature of the dispersed phase and the dis
 
 At the colloidal scales, only two kinds of fundamental forces are relevant: gravity and electro- (and occasionally magneto-) static forces. As we have seen above, when a system is truly colloidal, gravitational contributions are assumed to be small, so in effect, for a non-magnetic colloid (which is the vast majority of colloidal systems), only electrostatic forces are fundamentally important.
 
-However, colloidal dispersions consist of large particles that carry many charges both in the dispersed phase and the surrounding medium, arranged in a disordered manner at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is that of time-scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale occur, and we can consider taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-2].
+However, colloidal dispersions consist of large particles that carry many charges both in the dispersed phase and the surrounding medium, arranged in a disordered manner at the atomic scale. This makes a microscopic description of all charges and the resulting electrostatic fields not only unfeasible but also ineffective for understanding colloidal systems in terms of key characteristics such as particle size, density, and spatial distribution. The fundamental issue is that of time scales: the motion of colloids is much slower than the motion of individual ions or molecules. Over such longer timescales, many interactions at the **microscopic** atomistic scale occur, and we can consider taking averages to extract **macroscopic**, **effective** interactions at the colloidal scale [^soft-matter_colloids-2].
 
-[^soft-matter_colloids-2]: This is clearly an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
+[^soft-matter_colloids-2]: This is an instance of the idea of **coarse graining** that we have introduced [earlier](soft-matter_intro.qmd).
 
 This is especially important due to **quantum fluctuations**: the uncertainty principle means that electron clouds around atoms are not fixed but exhibit intrinsic spatial fluctuations in their charge distribution. Perturbative approaches allow us to capture the effective forces resulting from such fluctuations.
 
@@ -102,7 +102,7 @@ $$U \propto -\frac{\mu_1 \mu_2}{r^3}$$
 :::
 ::::
 
-The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarisabilities $\alpha_1$ and $\alpha_2$ of the two particles:
+The dipole moments fluctuate due to quantum mechanical effects. The average interaction energy is derived using perturbation theory and is proportional to the polarizabilities $\alpha_1$ and $\alpha_2$ of the two particles:
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -110,14 +110,14 @@ $$
 $$
 :::
 
-where $C \propto \alpha_1 \alpha_2$ depends on the polarisabilities and ionization energies of the particles.
+where $C \propto \alpha_1 \alpha_2$ depends on the polarizabilities and ionization energies of the particles.
 
 The resulting $r^{-6}$ dependence is also referred to as the **London dispersion force**, which can be derived within quantum-mechanical perturbation theory [@london1937general].
 
-We can then assume to take two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the collodial spheres **Van der Waals attractive potential** in the form
+We can then assume two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the colloidal spheres' **Van der Waals attractive potential** in the form
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
-$$W_{wdW}(h)=-\dfrac{A_H}{g}f(h/R)$$
+$$W_{vdW}(h)=-\dfrac{A_H}{6}f(h/R)$$
 :::
 
 where $A_H$ is the **Hamaker constant** and $f(h/R)$ is
@@ -169,19 +169,19 @@ W_vdW = van_der_waals_potential(h, R, A_H)
 plotting.simple_plot(h,W_vdW)
 ```
 
-Van der Waals interactions are regarded as **short-range** forces because their decay rate (e.g., London's $1/r^6$) is much faster than that of Coulombic interactions ($1/r$). Importantly, since their origin lies in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully accurately account for many-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
+Van der Waals interactions are regarded as **short-range** forces because their decay rate (e.g., London's $1/r^6$) is much faster than that of Coulombic interactions ($1/r$). Importantly, since their origin lies in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully account for many-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
 
 ### Double-layer interaction
 
-Colloids are often charged. The solution they are immersed also has an **inhomogeneous** distribution of ions. There will be
+Colloids are often charged. The solution they are immersed in also has an **inhomogeneous** distribution of ions. There will be
 
 -   **co-ions** (same charge as the colloid) that will be pushed away from the colloid surface, while
 
 -   **counter-ions** (opposite charge) will accumulate at the surface.
 
-These two different concentrations of oppositely charged ions form what is called a **double layer** and its properties (such as its width) are obviously controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
+These two different concentrations of oppositely charged ions form what is called a **double layer** and its properties (such as its width) are controlled by the number of ions in the solvent, which can be tuned by adding or removing, for example, salts.
 
-Suppose we now have two colloids of the same size and total charge in the solvent. The charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions*) or **double layer repulsion.** We are not going to derive it here, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can approximated by an exponential decay
+Suppose we now have two colloids of the same size and total charge in the solvent. The charges in their double layers will interact giving rise to a **repulsive interaction**. This interaction is referred to as **screened-Coulomb** (as the electrostatic interaction is *screened by the presence of the ions*) or **double layer repulsion.** We are not going to derive it here, but it can be shown that, for a colloid of radius $R$ in solvent with salt density $n_s$ it can be approximated by an exponential decay
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -201,11 +201,11 @@ The coefficient $B$ is a material property that depends on the surface potential
 
 ------------------------------------------------------------------------
 
-From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign
+From our point of view, what matters is that identical colloids in solution appear to have two interactions of opposite sign:
 
--   a van der Waals component, typically attractive and emergent from induced dipole -dipole interactions emerging from quantum fluctuations of the electronic clouds
+-   a van der Waals component, typically attractive and emergent from induced dipole–dipole interactions resulting from quantum fluctuations of the electronic clouds;
 
--   a double layer component, repulsive in nature, and resulting from the electrostatic repulsions induced by ions and counterions
+-   a double layer component, repulsive in nature, resulting from the electrostatic repulsions induced by ions and counterions.
 
 The **sum** of the two gives rise to the **DLVO** (Derjaguin–Landau–Verwey–Overbeek) **interaction** which is an elementary model for colloid stability and aggregation.
 
@@ -247,7 +247,7 @@ DLVO = W_vdW+W_DR
 import plotting
 plotting.multi_plot(h, W_vdW, W_DR,DLVO,
     xlabel="h [µm]", ylabel="Interaction strength [kBT]")
-# nicer cliping
+# nicer clipping
 ylim  = max(DLVO.max(),0.5)
 plt.ylim(-ylim*1.1, ylim*1.1)
 plt.show()
@@ -258,30 +258,28 @@ plt.show()
 
 Modify the script above and test graphically that:
 
-1.  When the salt concentration is low, the double layer repulsion dominates the DVLO interaction
-2.  There are salt concentrations where two minima occur in the DLVO potential: one at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$ . This minimum can lead to weak aggregation of colloids
-3.  Large salt concentrations depress the DVLO maximum altogether and eventually the Van der Waals interaction dominates.
+1.  When the salt concentration is low, the double layer repulsion dominates the DLVO interaction.
+2.  There are salt concentrations where two minima occur in the DLVO potential: one at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$. This minimum can lead to weak aggregation of colloids.
+3.  Large salt concentrations depress the DLVO maximum altogether and eventually the Van der Waals interaction dominates.
 :::
 
 ### Steric interactions and depletion interactions
 
-We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van-der Waals). Another fundamental quantum principle -- Pauli's **exclusion principle** -- is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together. We have observed that quantum fluctuations arising from the uncertainty principle can be reformulated through a semi-classical approach into effective short-range interactions (van-der Waals).
-
-Another fundamental quantum principle—Pauli's **exclusion principle**—also plays a key role in generating effective interactions that can be understood in a semi-classical framework. Specifically, the main consequence of the exclusion principle is that, since electrons cannot occupy the same quantum state, there are minimum distances below which atoms cannot be brought together.
+We have seen that quantum fluctuations from the uncertainty principle can be recast via a semi-classical approach into effective short-range interactions (van der Waals). Another fundamental quantum principle—Pauli's **exclusion principle**—is also at the source of key effective interactions that can be understood in a semi-classical picture. Indeed, the main consequence of the exclusion principle is that since electrons cannot occupy the same quantum state, there are minimal distances below which atoms cannot be brought together.
 
 This simply means that as we take a pair of atoms, below a certain distance they **repel** each other with very strong forces that emerge from the overlapping electron clouds, even in the absence of double layer interactions. These **repulsive interactions** can be approximated in various ways: their strength depends on the details of the atoms and hence, in the case of colloids, on the details of the materials composing the colloids. We call these excluded volume interactions **steric interactions**[^soft-matter_colloids-4].
 
 [^soft-matter_colloids-4]: From the Greek στερεός, "solid, three-dimensional".
 
-These fundamentally repulsive interactions mean that , in a system with $N$ colloids, an additional $N+1$th colloid does not have access to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids.
+These fundamentally repulsive interactions mean that, in a system with $N$ colloids, an additional $(N+1)$th colloid does not have access to the entire configuration space: there is a large **excluded volume** due to the presence of the other colloids.
 
-What is intriguing of these interactions is that, even if they are purely repulsive, they can collectively give rise to *effective* attractive interactions: **attraction through repulsion**. The origin of this effect is purely statistical and hence generic.
+What is intriguing about these interactions is that, even if they are purely repulsive, they can collectively give rise to *effective* attractive interactions: **attraction through repulsion**. The origin of this effect is purely statistical and hence generic.
 
 #### A simple example: particles in a one-dimensional line (*hard rods*)
 
-As an introductory example, let us consider a very simple, idealised system of purely repulsive objects. Let us confine them along a one dimensional line, bounded by hard (repulsive and impenetrable) walls seperated by the distance $L$. Assume the objects to be $N$ spheres of diameter $d$, or (equivalently) *hard rods* of length $d$. They cannot overlap so, once they are placed along the line, their order cannot change.
+As an introductory example, let us consider a very simple, idealised system of purely repulsive objects. Let us confine them along a one-dimensional line, bounded by hard (repulsive and impenetrable) walls separated by the distance $L$. Assume the objects to be $N$ spheres of diameter $d$, or (equivalently) *hard rods* of length $d$. They cannot overlap so, once they are placed along the line, their order cannot change.
 
-What we want to know is how these hard objects, that interact solely via repulsive interactions, distribute themselves along the line. The problem is a classic of statistical mechanics and thanks to its one-dimensional nature can be addrssed extensively using analytical methods.
+What we want to know is how these hard objects, that interact solely via repulsive interactions, distribute themselves along the line. The problem is a classic of statistical mechanics and thanks to its one-dimensional nature can be addressed extensively using analytical methods.
 
 Here we take a more algorithmic approach, and directly sample the probability density distribution $\rho(x)$ of finding a particle center at position $x$.
 
@@ -293,12 +291,12 @@ To do so, we do the following:
 1.  position the particles in a valid configuration (no overlaps with other particles or the walls)
 2.  pick a particle at random
 3.  move it slightly along the line
-4.  test the if the new position is valid (no overlaps)
+4.  test if the new position is valid (no overlaps)
 5.  if valid, accept the move otherwise, reject
 6.  go back to (2)
 :::
 
-This very simple algorithm is based on a **trial** move and an **acception/rejection** step. This is the heart of a very popular molecular simulation method, named **Metropolis Monte-Carlo Chain method**.
+This very simple algorithm is based on a **trial** move and an **acceptance/rejection** step. This is the heart of a very popular molecular simulation method, named **Metropolis Monte-Carlo Chain method**.
 
 Here below you have a very simple implementation in `python`.
 
@@ -329,7 +327,7 @@ for step in range(steps):
     move = np.random.uniform(-delta, delta)
     new_pos = pos.copy()
     new_pos[i] += move
-    # sprting allows ot only check for consecutive particles
+    # sorting allows us to only check for consecutive particles
     new_pos.sort()
     if valid(new_pos):
         pos = new_pos
@@ -343,19 +341,19 @@ plt.title("Histogram of particle positions")
 plt.show()
 ```
 
-The code should produce a final probability distribution along the $x$ axis. The main control parameter here is the **packing fraction**, i.e. $\phi = \dfrac{dN}{L}$, the coverage of the line. If you take high values for the packing fraction you will obserbve an interesting effect: the distribution $\rho(x)$ displays distinctive modulations. Surely, these reflect the layering of the particles along the line, due to their hard-core interactions. However, the oscillations are even more interesting as we observe that the particles are morelikely to be found near the walls than away from them.
+The code should produce a final probability distribution along the $x$ axis. The main control parameter here is the **packing fraction**, i.e. $\phi = \dfrac{dN}{L}$, the coverage of the line. If you take high values for the packing fraction you will observe an interesting effect: the distribution $\rho(x)$ displays distinctive modulations. These reflect the layering of the particles along the line, due to their hard-core interactions. However, the oscillations are even more interesting as we observe that the particles are more likely to be found near the walls than away from them.
 
-Reflect on this point. In the complete absence of any attractive interactions, we find that the hard particles are *preferentially* located close to the walls. It is *as if* the walls exerted an *attractive force* capable of pulling the particles close to them. In reality, the force is purely statistical in nature. It is merely the result of the **entropic** advantage that the **entire** system acquire when the particles are closer to the walls: simply put,if the first (and last) particles are close to the walls, there is more space for the particles in the middle, hence a larger number of configurations and hence larger **configurational entropy**.
+Reflect on this point. In the complete absence of any attractive interactions, we find that the hard particles are *preferentially* located close to the walls. It is *as if* the walls exerted an *attractive force* capable of pulling the particles close to them. In reality, the force is purely statistical in nature. It is merely the result of the **entropic** advantage that the **entire** system acquires when the particles are closer to the walls: simply put, if the first (and last) particles are close to the walls, there is more space for the particles in the middle, hence a larger number of configurations and hence larger **configurational entropy**.
 
-Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idiealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called **depletion interactions**.
+Even if the force is statistical, it is not less real: in this simplified case, it leads to the layering of the density profile. Its generalisation to less idealised conditions leads to a family of forces that are essential for the aggregation of soft matter which are called **depletion interactions**.
 
 ### Asakura-Oosawa depletion potential {#sec-ao-potential}
 
 ![Mixture of colloids (yellow) and polymers (squiggly lines inside red circles). The depletion layers are as thick as the polymer radius (red circles) and are indicated with the dashes around the colloids. When the two layers do not overlap, the osmotic pressure due to the polymers on the colloids is balanced. When there is overlap, there is a region inaccessible to the polymers (purple) and the pressure is unbalanced, leading to aggregation.](figs/depletion.svg)
 
-The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at this stage to know the details of such polymeric structures. We will ignore their internal structure and we wil also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
+The simple unidimensional scenario can be extended to a more interesting situation of hard-core colloidal particles dispersed in a medium where other smaller, repulsive particles (e.g. coiled polymers) are also dispersed. It is not important at this stage to know the details of such polymeric structures. We will ignore their internal structure and we will also ignore their mutual interactions. We will only consider for the moment how they interact with the colloids and how this mediates an interaction *between* the colloids. We call these idealised polymers *penetrable hard spheres*.
 
-This assumption yield a great simplification: the polymers, on their own, are an ideal gas. Their chemical potential is given by
+This assumption yields a great simplification: the polymers, on their own, are an ideal gas. Their chemical potential is given by
 
 $$\mu_p = k_BT \ln \rho_p^r$$ {#eq-ideal-mu}
 
@@ -369,7 +367,7 @@ $$\Omega = -k_BT e^{\mu_p/k_B T}V_{\rm accessible}$$
 
 where $V_{\rm accessible}$ is the accessible volume. In the absence of the colloids, the entire volume $V$ is accessible.
 
-Let's image to intrudce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid: $$
+Let's imagine to introduce two colloids at separation $r$. For all $r> 2(R+\delta)=R_d$, the accessible volume is $V_{\rm accessible}^{\infty}=V-2V_{\rm exclusion}$, where $R_d$ is the **depletion radius** and $V_{\rm exclusion}$ is the inaccessible region due to the colloid-polymer interaction around each colloid: $$
 \begin{aligned}
 V_{\rm exclusion}& = V_{\rm outer}-V_{\rm inner}\\
 &= \dfrac{4\pi}{3}\left((R+\delta)^3-R^3\right)
@@ -386,7 +384,7 @@ $$
 V_{\text {overlap }}(r)=\frac{\pi\left(4 (R+\delta)+r\right)\left(2 (R+\delta)-r\right)^2}{12}
 $$
 
-The new accessible volume is $$V_{\rm accessible}\prime=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy adgvantage is called **potential of mean force** $W(r)$. It is expressed as $$
+The new accessible volume is $$V_{\rm accessible}'=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy advantage is called **potential of mean force** $W(r)$. It is expressed as $$
 \begin{aligned}
 W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
 & = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
@@ -443,18 +441,19 @@ plt.show()
 ::: {.callout-note collapse="true"}
 # Force-based derivation of the AO interaction
 
-When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to an *uniform* distribution of polymers which results in an pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called **osmotic**.
+When the colloids are so close the polymers cannot enter the lens-shaped region between the two colloids. This gap leads therefore to a *uniform* distribution of polymers which results in a pressure difference: the outer polymers push the colloids together, producing an effective attractive force. Such pressure resulting from an uncompensated concentration gradient is called **osmotic**.
 
 The lens-shaped overlap region between the two colloids consists of two identical spherical caps, each subtending an angle $\theta_0$ at the center of the colloid. From the given geometry, the angle is such that $$\cos\theta_0 = \dfrac{r}{2R_d}.$$
 
 The uncompensated pressure acts on such surface.
 
-For symmetry reasons, only the forces along the axis connecting the wto spheres contribute to the total force. For a given angle $\theta$ the components is proportional to $P\cos\theta$ where $P$ is the pressure exerted by the ideal gas of polymers is simply $P=\eta_p^r kT$ where $\eta_p^r$ is the polymer concentration. The surface element on which this pressure acts for a small increment $d\theta$ is $$dS = 2\pi R_d^2\sin\theta d\theta$$. Integrating over the range $[0,\theta_0]$ yields the total force $F_d$ $$
+For symmetry reasons, only the forces along the axis connecting the two spheres contribute to the total force. For a given angle $\theta$ the component is proportional to $P\cos\theta$ where $P$ is the pressure exerted by the ideal gas of polymers: $P=\eta_p^r k_B T$ where $\eta_p^r$ is the polymer concentration. The surface element on which this pressure acts for a small increment $d\theta$ is $$dS = 2\pi R_d^2\sin\theta d\theta$$. Integrating over the range $[0,\theta_0]$ yields the total force $F_d$:
+$$
 \begin{aligned}
 F_d(r) &= -2\pi \eta_p^r k_B T R_d^2 \int_0^{\theta_0} \sin\theta \cos\theta \, d\theta \\
 &= -\pi R_d^2 \eta_p^r k_B T \left[1 - \left(\frac{r}{2R_d}\right)^2\right]
 \end{aligned}
-$$ Notice the negative sign, chosen to reflect the fact that the force is attarctive.
+$$ Notice the negative sign, chosen to reflect the fact that the force is attractive.
 
 Integrating the force yields the interaction potential.
 :::
@@ -478,11 +477,11 @@ Integrating the force yields the interaction potential.
 
 ## Colloids as big atoms
 
-Colloids can be viewed as "big atoms": they are large particles suspended in a medium, exhibiting thermal motion and interactions in various ways analogous to atoms, but at much larger length and time scales. As we have seen above, the interactions can have statistical or even quanto-mechanical origin, but are ultimately cast in a classical form that is amenable to a classical treatment. At the same time, the large scales of colloids mean that via dedicated microscopy techniques one is able to identify individual colloids, study their arrangements in detail, and follow their dynamics.
+Colloids can be viewed as "big atoms": they are large particles suspended in a medium, exhibiting thermal motion and interactions in various ways analogous to atoms, but at much larger length and time scales. As we have seen above, the interactions can have statistical or even quantum-mechanical origin, but are ultimately cast in a classical form that is amenable to a classical treatment. At the same time, the large scales of colloids mean that via dedicated microscopy techniques one is able to identify individual colloids, study their arrangements in detail, and follow their dynamics.
 
 As mentioned earlier, there is a huge variety of colloids and a vast literature characterising their properties but also producing theoretical and computational models.
 
-Here we focus on the most elementary model of a colloid. The simplest such example is the purely repulsive hard-sphere colloid. While an idealisation, quasi-hard-sphere colloids can be prepared in the laboratory by various techniques (see @royall2024colloidal ). This includes by synthesizing a spheres of bundled polymers (you will learn about polymers in the next chapter) such as polymethyl methacrylate (PMMA), but also simply silica (small sphere of non-crystalline $\rm Si O_2$) micron-sized beads carefully treated to screen and minimize the electrostatic interactions that would lead to DLVO-like contributions.
+Here we focus on the most elementary model of a colloid. The simplest such example is the purely repulsive hard-sphere colloid. While an idealisation, quasi-hard-sphere colloids can be prepared in the laboratory by various techniques (see @royall2024colloidal). This includes synthesizing spheres of bundled polymers (you will learn about polymers in the next chapter) such as polymethyl methacrylate (PMMA), but also simply silica (small spheres of non-crystalline $\rm SiO_2$) micron-sized beads carefully treated to screen and minimize the electrostatic interactions that would lead to DLVO-like contributions.
 
 ### The archetype: hard-spheres {#sec-hard-spheres}
 
@@ -502,12 +501,12 @@ This model captures the essential physics of **excluded volume** which, as we sa
 
 #### Phase behaviour of hard spheres {.unnumbered}
 
-Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is **always zero**. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they always are at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any $T>0$, **entropic** contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are *the only* contribution to the free energy.
+Since the interaction potential is only based on excluded volume, the energy of hard spheres is trivial: it is **always zero**. A naive interpretation of such trivial energetics may lead to conclude that nothing interesting happens to a collection of hard spheres, since they are always at their energy minimum (namely, zero). However, it is clear from the earlier discussion of depletion forces that the interaction energy is only a part of the picture for systems subject to thermal fluctuations: indeed, for any $T>0$, **entropic** contributions to the free energy are always present. In the specific case of a fixed number of hard spheres in a fixed volume, they are *the only* contribution to the free energy.
 
-In this sense, hard-spheres are completely **entropy-driven** system. For a collection of identical (**monodisperse**) hard spheres the entropy is solely **configurational** and corresponds to the number of possible arrangements. This constrained only by the accessible volume, of which we have seen an instance when considering the depletion interactions. Notice that changing the temperature does not really affect the statistics of the configurations: the Boltzmann factor $e^{U(\mathbf{r}^N)/k_BT}$ is always $1$ for all valid configurations. The only way we can change the state of the system is by varying the accessible volume. For a system of $N$ identical hard spheres in a volume $V$ this can only be done in two ways
+In this sense, hard-spheres are completely **entropy-driven** systems. For a collection of identical (**monodisperse**) hard spheres the entropy is solely **configurational** and corresponds to the number of possible arrangements. This is constrained only by the accessible volume, of which we have seen an instance when considering the depletion interactions. Notice that changing the temperature does not really affect the statistics of the configurations: the Boltzmann factor $e^{U(\mathbf{r}^N)/k_BT}$ is always $1$ for all valid configurations. The only way we can change the state of the system is by varying the accessible volume. For a system of $N$ identical hard spheres in a volume $V$ this can only be done in two ways
 
 -   by adding more spheres (of the same kind)
--   by varying the volume V
+-   by varying the volume $V$
 
 The two routes essentially amount to varying one single parameter, which is the **packing fraction** (also called, *volume fraction*) of the system, defined as
 
@@ -515,15 +514,15 @@ $$\phi = N\dfrac{v_{\rm sphere}}{V} = \dfrac{\pi \sigma^6 N}{6V}$$
 
 which can also be expressed in terms of the **number density** $\rho=N/V$ as $\phi=\pi\sigma^3\rho/6$.
 
-To change the phase behaviour of hard spheres we have a **single control parameter**, $\phi$ meaning that (differently from fluids like water) we are bound to have **one-dimensional** phase diagram.
+To change the phase behaviour of hard spheres we have a **single control parameter**, $\phi$, meaning that (differently from fluids like water) we are bound to have a **one-dimensional** phase diagram.
 
 We explore the phase behaviour of hard spheres by considering different regimes of packing fraction.
 
 #### Low packing fractions {.unnumbered}
 
-The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is $\sigma$ such **excluded volume** per particle is simply $v_{\rm ex} =4\pi\sigma^3/3$ and it is much larger than the volume pert particle $v= V/N$. A collection of $N$ hard spheres has a total excluded volume $V_{\rm ex}\neq N v_{\rm ex}$ simply because the excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.
+The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is $\sigma$ such **excluded volume** per particle is simply $v_{\rm ex} =4\pi\sigma^3/3$ and it is much larger than the volume per particle $v= V/N$. A collection of $N$ hard spheres has a total excluded volume $V_{\rm ex}\neq N v_{\rm ex}$ simply because the excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.
 
-At very low densities, most hard spheres isolated. So, in this case, we can approximate the roral excluded volume as $V_{\rm ex} \rm N v_{\rm ex}$ so that the accessible volume (the volume not occupied by the spheres) is
+At very low densities, most hard spheres are isolated. So, in this case, we can approximate the total excluded volume as $V_{\rm ex} \approx N v_{\rm ex}$ so that the accessible volume (the volume not occupied by the spheres) is
 
 $$V_{\rm accessible} = V-Nv_{\rm ex}$$
 
@@ -531,9 +530,9 @@ We use this to perform an appropriate statistical mechanical calculation for the
 \mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N
 $$ where $\Lambda$ is the thermal de Broglie wavelength
 
-$$\Lambda = h/\sqrt{2\pi mk_B T},$$ and originates from the integration over the Maxwell-Boltzmann disribution of momenta for particles of mass $m$, while $h$ is Planck's constant.
+$$\Lambda = h/\sqrt{2\pi mk_B T},$$ and originates from the integration over the Maxwell-Boltzmann distribution of momenta for particles of mass $m$, while $h$ is Planck's constant.
 
-For hard spheres, the integral is over all configurations where no two spheres overlap (i.e., $|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma$ for all $i \neq j$), and $V_{\rm accessible}$ is the total accessible volume. The results is that
+For hard spheres, the integral is over all configurations where no two spheres overlap (i.e., $|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma$ for all $i \neq j$), and $V_{\rm accessible}$ is the total accessible volume. The result is that
 
 $$\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},$$
 
@@ -549,7 +548,7 @@ $$
 
 which reads $$
 S = N k_B \left[ \ln\left( \frac{V - N v_{\rm ex}/2}{N \Lambda^3} \right) + 1 \right]
-$$ The phase behaviour is encoded in the **equation of state** (the equation that links the three thermodynamics variables $P,T$ and $\phi$). To obtain it, we calculate the pressure
+$$ The phase behaviour is encoded in the **equation of state** (the equation that links the three thermodynamic variables $P,T$ and $\phi$). To obtain it, we calculate the pressure
 
 $$P = -\left(\dfrac{\partial F}{\partial V}\right)_{N,T} =T\left(\dfrac{\partial S}{\partial V}\right)_{N,T}= \dfrac{k_B T }{v-v_{\rm ex}/2}$$
 
@@ -566,7 +565,7 @@ The choice of the letter "Z" is unfortunate. Do not confuse the compressibility 
 
 $$Z_{\rm comp} = 1+4\phi+O(\phi^2)$$
 
-This expression makes it apparent that the first term linear in $\phi$ is a *correction* to the ideal gas law. This is example (to very low order) of what is called the **virial expansion**. This, in general takes the form
+This expression makes it apparent that the first term linear in $\phi$ is a *correction* to the ideal gas law. This is an example (to very low order) of what is called the **virial expansion**. This, in general takes the form
 
 $$Z_{\rm comp}= 1 + B_2 \rho + B_3 \rho^2+ \dots$$
 
@@ -585,7 +584,7 @@ $$ which is exactly what is predicted by the equation of state above, once you r
 Exercise: check this calculation.
 :::
 
-Higher-order coefficients become increasingly complex to compute and reflect more complex many-body corelations that can be established even if the interaction potential is purely twobody (as in the case of hard spheres). The higher order coefficients become mor eand more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.
+Higher-order coefficients become increasingly complex to compute and reflect more complex many-body correlations that can be established even if the interaction potential is purely two-body (as in the case of hard spheres). The higher order coefficients become more and more important as the packing fraction is increased. Eventually something surprising occurs at a sufficiently high volume fraction.
 
 #### Dense packing: metastability and crystalisation {.unnumbered}
 
@@ -601,7 +600,7 @@ In contrast, **random close packing** (the densest disordered arrangement of sph
 -   compress them gradually to high and higher packing fraction, taking care to monitor the systems so that time correlations decay and the system is at thermal equilibrium
 -   measure the resulting packing fraction
 
-Experiments of this sort have been performed historically, leveraging for example the **slow sedimentation** of colloids, which on long time scales leads to the accumulation of dense packings of spheres. Such experiments reveal that beyond the so-called **freezing packing fraction** $\phi_{f}=0.494$ the system spontaneously forms small regions of crystals mixed with the fluid. At a the high **melting packing fraction** $\phi_{m}=0.545$ the entirety of the system is then crystalline and its optical properties consequently change.
+Experiments of this sort have been performed historically, leveraging for example the **slow sedimentation** of colloids, which on long time scales leads to the accumulation of dense packings of spheres. Such experiments reveal that beyond the so-called **freezing packing fraction** $\phi_{f}=0.494$ the system spontaneously forms small regions of crystals mixed with the fluid. At the high **melting packing fraction** $\phi_{m}=0.545$ the entirety of the system is then crystalline and its optical properties consequently change.
 
 ![Phase behaviour of hard-sphere colloids from @pusey2009hard](figs/rsta20090181f01.jpg)
 
@@ -614,11 +613,11 @@ $$ and the resulting pressure $$
 P=\frac{N k_B T}{v_{c p}} \frac{\left(v / v_{c p}\right)^{-2 / 3}}{\left(v / v_{c p}\right)^{1 / 3}-1}
 $$ Rearranging and expressing everything in terms of packing fraction $\phi = \dfrac{\pi\sigma^3}{6v}$ yields $$
 Z_{\rm comp}=\frac{1}{1-\left(\phi / \phi_{c p}\right)^{1 / 3}}
-$$ What is notable here is that the expression we have obtained is a completely different functional form compared to the low density fluid regime. This is indicative of a **discontinuous**, **first-order** phase transition between the fluid and the crystalline phases. First order phase transitions are characterised by coexisting regions where the system can be found in partial fluid and partial crystaline state, as illustrated in the experiments above. This also means that we can prepare a disordered packing at very high density: this will not be its equilibrium state (global minimum of the free energy), but will still be stable for some (finite) time. This *local equilibrium state* is called a \***metastable state**.
+$$ What is notable here is that the expression we have obtained is a completely different functional form compared to the low density fluid regime. This is indicative of a **discontinuous**, **first-order** phase transition between the fluid and the crystalline phases. First order phase transitions are characterised by coexisting regions where the system can be found in partial fluid and partial crystalline state, as illustrated in the experiments above. This also means that we can prepare a disordered packing at very high density: this will not be its equilibrium state (global minimum of the free energy), but will still be stable for some (finite) time. This *local equilibrium state* is called a **metastable state**.
 
 ![Schematic free energy for hard spheres compressed at high pressures: the fluid branch becomes metastable and the free energy minimum is located in the crystal phase](figs/metastable.png)
 
-But where does the free energy advantage of the crystal over the disordered fluid come from? From the discussion above the answer is obvious: crystals can accommodate higher packings, meaning that they use the available volume more efficiently. This in fact means that (on average) every hard sphere has more available volume if it arranged in the crystalline state compared to the fluid phase: the increased volume (available for thermal fluctuations and random particle displacements) is translated into an **increased entropy**. So, in fact the ordered, crystalline state has overall a higher entropy than the disordered fluid. This is important instance in which the conventional storytelling, where entropy is just **disorder**, simply does not hold. As we have seen with depletion forces earlier, entropy can lead to structure: in the case of hard spheres, it si the only mechanism leading to structure, and such structure is the most orderly one can think of: long-range, crystalline order.
+But where does the free energy advantage of the crystal over the disordered fluid come from? From the discussion above the answer is obvious: crystals can accommodate higher packings, meaning that they use the available volume more efficiently. This in fact means that (on average) every hard sphere has more available volume if it arranged in the crystalline state compared to the fluid phase: the increased volume (available for thermal fluctuations and random particle displacements) is translated into an **increased entropy**. So, in fact the ordered, crystalline state has overall a higher entropy than the disordered fluid. This is an important instance in which the conventional storytelling, where entropy is just **disorder**, simply does not hold. As we have seen with depletion forces earlier, entropy can lead to structure: in the case of hard spheres, it is the only mechanism leading to structure, and such structure is the most orderly one can think of: long-range, crystalline order.
 
 The video below shows instead the results of a Monte-Carlo simulation at packing $\phi=0.493$ for a small system of 32 particles. Small systems have enhanced fluctuations, and since the overall packing fraction is very close to the freezing line, we see spontaneous freezing and unfreezing of the small system (wait until second 14 in the movie).
 
@@ -636,11 +635,11 @@ $$ where $\epsilon$ sets the depth of the potential well (interaction strength) 
 
 The Lennard-Jones fluid exhibits rich phase behavior: at low temperatures and densities, it forms a gas; at intermediate conditions, a liquid; and at high densities, a solid. The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.
 
-In the phase diagram below these different phases have been highlighted. It is clear that, compared to hard spheres which only display a fluid and a crystalline solid phase, systems like the Lennard-Jones fluid display an additional phase, the **liquid**. This phase emerges from the presence of the attractive well in the interaction potential. This allows for short-range attractive interactions that case a region of the phase diagram in the same class of universality of the [**Ising model**](../phase-transitions/Ising-model.qmd) and the [**lattice gas**](../phase-transitions/lattice-gas.qmd).
+In the phase diagram below these different phases have been highlighted. It is clear that, compared to hard spheres which only display a fluid and a crystalline solid phase, systems like the Lennard-Jones fluid display an additional phase, the **liquid**. This phase emerges from the presence of the attractive well in the interaction potential. This allows for short-range attractive interactions that cause a region of the phase diagram in the same class of universality of the [**Ising model**](../phase-transitions/Ising-model.qmd) and the [**lattice gas**](../phase-transitions/lattice-gas.qmd).
 
 ![Phase diagram of the Lennard-Jones Fluid, adapted from Wikimedia.](figs/LJPhaseDiagram.png)
 
-The Lennard-Jones interaction was designed to model noble gases (e.g. Argon) but has over time been used to model many other systems due to its simplicity and computational convenince: in particular it is used to construct coarse-grained models of macromolecules, as well as colloids and nanoparticles. It belongs to a wider class of classical, effective **pair-wise** interaction models used extensively to calculate properties and phase diagrams of a variety of condensed matter systems. These are useful because they allow one to, for example, long molecular simulations that are normally unreachable when considering atomistic calculations.
+The Lennard-Jones interaction was designed to model noble gases (e.g. Argon) but has over time been used to model many other systems due to its simplicity and computational convenience: in particular it is used to construct coarse-grained models of macromolecules, as well as colloids and nanoparticles. It belongs to a wider class of classical, effective **pair-wise** interaction models used extensively to calculate properties and phase diagrams of a variety of condensed matter systems. These are useful because they allow one to, for example, long molecular simulations that are normally unreachable when considering atomistic calculations.
 
 The following table provides you with a few example potentials and their functional forms:
 
@@ -667,24 +666,24 @@ Here below, we briefly account of some main approaches to characterise these two
 
 ### Structural properties: the radial distribution function
 
-Structural features of disordered (but also ordered) systems are described in terms of **correlation functions**. The underlying idea is that we are provided with an ensemble of stochastic variables (the positions of the colloids) which have a characteristic spatial distribution. for $N$ particles we have an N-body probability distribution function $\rho_N(\mathbf{r}^N)$ which contains all the necessary statistical mechanical information to describe the thermodynamics of the system. However, this is very difficult to access directly. In experiments or theoretical calculations we typically only have access to some lower order *marginalisation* of the distribution, in terms of few-body distributions.
+Structural features of disordered (but also ordered) systems are described in terms of **correlation functions**. The underlying idea is that we are provided with an ensemble of stochastic variables (the positions of the colloids) which have a characteristic spatial distribution. For $N$ particles we have an N-body probability distribution function $\rho_N(\mathbf{r}^N)$ which contains all the necessary statistical mechanical information to describe the thermodynamics of the system. However, this is very difficult to access directly. In experiments or theoretical calculations we typically only have access to some lower order *marginalisation* of the distribution, in terms of few-body distributions.
 
 One of the simplest assumptions we can make when we describe a system is that its potential energy is expressed in terms of purely pairwise additive potential, meaning that
 
-$$ U_N (\mathbf{r}^N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^N V(r_ij) = \dfrac{1}{2}\sum_{i\neq j}V(r_{ij})$$
+$$ U_N (\mathbf{r}^N)=\sum_{i=1}^{N-1}\sum_{j=i+1}^N V(r_{ij}) = \dfrac{1}{2}\sum_{i\neq j}V(r_{ij})$$
 
-where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = \mathbf{r}_i-\mathbf{r}_j$.
+where $V(r_{ij})$ is the pairwise, radial interaction potential that only depends on the distance between particle centres $r_{ij} = |\mathbf{r}_i-\mathbf{r}_j|$.
 
-For system with pairwise interactions, the natural spatial correlation function is a two-body correlation $g(\mathbf{r}_i, \mathbf{r}_j)$, where $\mathbf{r}_i$ and $\mathbf{r}_j$ are two randomly chosen particles. In the case of non-crystalline, disordered systems the correlation function has to be
+For systems with pairwise interactions, the natural spatial correlation function is a two-body correlation $g(\mathbf{r}_i, \mathbf{r}_j)$, where $\mathbf{r}_i$ and $\mathbf{r}_j$ are two randomly chosen particles. In the case of non-crystalline, disordered systems the correlation function has to be
 
--   translationally invariant , so that it only depends on the difference $\mathbf{r}_i-\mathbf{r}_j$
+-   translationally invariant, so that it only depends on the difference $\mathbf{r}_i-\mathbf{r}_j$
 -   rotationally invariant, so that there is no angular component and hence only the distance $r_{ij} =| \mathbf{r}_i-\mathbf{r}_j|$ matters
 
-This function $g(r)$ is called the **radial distribution function** and plays a crucial role in the characterisation of fluids, crystals, glasses and much more. For system with two-body interactions only, it contains in principle all the thermodynamic information necessary to reconstruct the free energy, as one can write $$
+This function $g(r)$ is called the **radial distribution function** and plays a crucial role in the characterisation of fluids, crystals, glasses and much more. For systems with two-body interactions only, it contains in principle all the thermodynamic information necessary to reconstruct the free energy, as one can write $$
 \frac{F_{\mathrm{ex}}}{k_B T}=2 \pi \rho N \int_0^{\infty}[g(r) \ln g(r)-g(r)+1] r^2 d r+\frac{\rho N}{2 k_B T} \int V(r) g(r) d^3 r
-$$ where the first term represent the entropic contributions and the second term represents the energetic contribution.
+$$ where the first term represents the entropic contributions and the second term represents the energetic contribution.
 
-But how is it calculated? very simply. You can think of constructing a histogram of the distances between all of the particles and suitably normalising such histogram by the density of the system. Mathematically this reads as
+But how is it calculated? Very simply. You can think of constructing a histogram of the distances between all of the particles and suitably normalising such histogram by the density of the system. Mathematically this reads as
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
@@ -709,7 +708,7 @@ $$
 S(k) = 1 + 4\pi \rho \int_0^\infty r^2 [g(r) - 1] \frac{\sin(kr)}{kr} dr
 $$
 
-Experimentally, on can measure $S(k)$ can be measured using scattering techniques or $g(r)$ via direct imaging in colloidal systems. They provide insight into short-range order, local structure, and phase transitions in soft matter.
+Experimentally, one can measure $S(k)$ using scattering techniques or $g(r)$ via direct imaging in colloidal systems. They provide insight into short-range order, local structure, and phase transitions in soft matter.
 
 ::: {.callout-important appearance="simple"}
 The radial distribution function $g(r)$ has two possible interpretations
@@ -783,7 +782,7 @@ We can compare this with arrangements of hard spheres
 
 ```{pyodide}
 #| caption: "Radial distribution function for a hard sphere configuration [press ctrl/cmd [ENTER] to run]"
-# now try with hard spheres, using a custom libarry you will find in the course pages
+# now try with hard spheres, using a custom library you will find in the course pages
 from src import hardspheres
 
 sigma = 1.0
@@ -799,7 +798,7 @@ gs = []
 for positions in trajectory:
     _r, _g = radial_distr(positions, L)
     gs.append(_g)
-plt.plot(r, np.mean(gs,axis=0), 'b-', label=rf"Hard spheres, rf$\phi={phi}$")
+plt.plot(r, np.mean(gs,axis=0), 'b-', label=rf"Hard spheres, $\phi={phi}$")
 plt.gca().set(xlabel="r", ylabel="g(r)", ylim= (0,2))
 plt.legend()
 plt.show()
@@ -811,7 +810,7 @@ The radial distribution function is the central object of much of **liquid state
 -   a **direct** correlation between the two particles, mediated by direct interactions (e.g. collisions) between 1 and 2.
 -   an **indirect correlation**, mediated by other particles in the fluid
 
-The $g(r)$ contains both direct and indirect correlations. We can assume that a suitable function $c(r)$ exists to express the direct correlations. In such case, for two-body interactions, we can write a hierarchy of equations via a central result of liquid state theory, the **Ornestein-Zernicke** (OZ) equation
+The $g(r)$ contains both direct and indirect correlations. We can assume that a suitable function $c(r)$ exists to express the direct correlations. In such case, for two-body interactions, we can write a hierarchy of equations via a central result of liquid state theory, the **Ornstein-Zernike** (OZ) equation
 
 $$
 h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(r_{32}\right) d \mathbf{r}_3
@@ -819,7 +818,7 @@ $$ {#eq-oz}
 
 where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equation is an integral equation. In Fourier space (assuming the isotropicity of a fluid) it becomes an algebraic equation $$
 \tilde{h}(k)=\frac{\tilde{c}(k)}{1-\rho \tilde{c}(k)}
-$$ Since both $h(r)$ and $c(r)$ are unknown , an additional relationship is needed, called a **closure**. This is constructed through phsyical arguments. A common one is the so-called Percus-Yevick closure
+$$ Since both $h(r)$ and $c(r)$ are unknown, an additional relationship is needed, called a **closure**. This is constructed through physical arguments. A common one is the so-called Percus-Yevick closure
 
 $$
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
@@ -913,9 +912,7 @@ $$\frac{\partial \rho(\mathbf{r}, t)}{\partial t} = D \nabla^2 \rho(\mathbf{r}, 
 
 where $\rho(\mathbf{r},t)$ is the probability of finding a particle at position $\mathbf{r}$ at time $t$ with diffusivity $D$. The diffusivity $D$ is related to the microscopic Langevin equation parameters via the fluctuation-dissipation relation (or Einstein relation) $$
 D = \frac{k_B T}{\gamma}
-$$ where $k_B$ is Boltzmann's constant, $T$ is temperature, and $\gamma$ is the friction (drag) coefficient.
-
-It is easy to show (see below) that in 1 dimension the general solution is $$\rho(x, t) = \frac{1}{\sqrt{4\pi D t}} \exp\left(-\frac{x^2}{4Dt}\right)$$ 
+$$ where $k_B$ is Boltzmann's constant, $T$ is temperature, and $\gamma$ is the friction (drag) coefficient. 
 
 ::: {.callout-note collapse="true"} 
 
@@ -972,13 +969,13 @@ The diffusion equation can also be read as a simple consequence of two requireme
     \frac{\partial \rho(\mathbf{r}, t)}{\partial t} + \nabla \cdot \mathbf{J}(\mathbf{r}, t) = 0
     $$ where the divergence $\nabla \cdot \mathbf{J}(\mathbf{r}, t)$ represents the net outflow of particles from a given region due to the flux $\mathbf{J}$.
 
--   the flux of particles is assumed to be proportional to the gradient in the density (or concnetration of the particles). This can be taken as an empirical assumption, a reasonable approximation (i.e. a perturbative approach) or a consequence of underlying Brownian dynamics. It is known as Fick's law:
+-   the flux of particles is assumed to be proportional to the gradient in the density (or concentration of the particles). This can be taken as an empirical assumption, a reasonable approximation (i.e. a perturbative approach) or a consequence of underlying Brownian dynamics. It is known as Fick's law:
 
 $$
 \mathbf{J}(\mathbf{r}, t) = -D \nabla \rho(\mathbf{r}, t)
 $$
 
-The diffusivity constant $D$ is therefore central for the diffusion. It is possible to link the microscopic motion of the particles to the collective behaviour of the density distribution $\rho(x,t)$ by exploting the connection provided bt the **mean squared displacement**, which is simply the variance of the distributione $\rho(x,t)$ at time $t$.
+The diffusivity constant $D$ is therefore central for the diffusion. It is possible to link the microscopic motion of the particles to the collective behaviour of the density distribution $\rho(x,t)$ by exploiting the connection provided by the **mean squared displacement**, which is simply the variance of the distribution $\rho(x,t)$ at time $t$.
 
 As discussed earlier, in $d$ dimensions this is equal to $$\langle r(t)^2\rangle-\langle r(t)\rangle^2 = 2d D t$$
 
@@ -986,7 +983,7 @@ Hence, measuring the average squared displacements is sufficient to recover the 
 
 #### Diffusion and interactions
 
-We have up to now considered the dilute (or non-nteracting) limit, where collisions between the colloids are ignored. Let's now consider instead simple colloids (again, hard spheres) and their dynamics.
+We have up to now considered the dilute (or non-interacting) limit, where collisions between the colloids are ignored. Let's now consider instead simple colloids (again, hard spheres) and their dynamics.
 
 We are interested in the mean squared displacement $\left\langle r^{2}(t)\right\rangle$ as a function of time for different volume fractions. At low volume fractions, the particles undergo Brownian motion (random-walk diffusion) due to collisions with liquid molecules. The mean squared displacement (in three dimensions) is $$\left\langle\underline{r}^{2}(t)\right\rangle=6 D_{0} t$$ where the meaning of the subscript 0 will be apparent shortly.
 
@@ -1036,7 +1033,7 @@ plt.show()
 
 ```
 
-The slowing down due to collisions eventually dominates the ohysics of hard spheres at high densities. This is more broadly true also for generic dense colloidal suspensions, where the short range interactions dominate on other mechanisms of motion (including the hydrodynamics). Eventually, for very dense packings one observes the emergence of a new physical regime where relaxation becomes anomalous and non-diffusive: this is the glassy regime, which we will revisit in a following chapter.
+The slowing down due to collisions eventually dominates the physics of hard spheres at high densities. This is more broadly true also for generic dense colloidal suspensions, where the short range interactions dominate over other mechanisms of motion (including the hydrodynamics). Eventually, for very dense packings one observes the emergence of a new physical regime where relaxation becomes anomalous and non-diffusive: this is the glassy regime, which we will revisit in a following chapter.
 
 
 ### Stokes-Einstein relation

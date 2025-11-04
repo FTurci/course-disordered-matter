@@ -10,7 +10,7 @@ bibliography: references.bib
 
 ---
 
-In these chapters we have been considering systems implicitly (or explicitly) in thermal equilibrium with a surrounding environment. This is typically some kind of dispersion medium (a solvent). But we also also been more demanding: we have required that the dispersed phase (the colloids, the polymers the anisotropic particles of liquid crystals) have explored exhaustively their free energy options and that they are truly in some macrostate corresponding to a global, stable thermal equilibrium state.
+In these chapters we have been considering systems implicitly (or explicitly) in thermal equilibrium with a surrounding environment. This is typically some kind of dispersion medium (a solvent). But we have also been more demanding: we have required that the dispersed phase (the colloids, the polymers the anisotropic particles of liquid crystals) have explored exhaustively their free energy options and that they are truly in some macrostate corresponding to a global, stable thermal equilibrium state.
 
 Equilibrium signifies time reversibility.
 
@@ -74,7 +74,7 @@ It is only as we decrease the temperature further that the metabasins can be def
 
 $$S = S_{\rm conf}+S_{\rm vib}$$
 
-where $S_{\rm vib}$ is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuatiosn. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g. FCC, HCP, BCC etc.).
+where $S_{\rm vib}$ is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuations. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g. FCC, HCP, BCC etc.).
 
 
 ## Glasses
@@ -93,9 +93,9 @@ There exist numerous types of glassformers: these include atomic glasses (such a
 | Sugar glass         | Molecular (sucrose, glucose)  | Brittle, water soluble, low thermal stability   |
 | Chalcogenide glass  | Atomic (S, Se, Te atoms)  | Infrared transparency, phase-change memory      |
 
-All of them are **amorphous**, in teh sense that they are disordered and do not posses long range positional or orientational order. all of them are different, but they are often formed following a similar protocol.
+All of them are **amorphous**, in the sense that they are disordered and do not posses long range positional or orientational order. all of them are different, but they are often formed following a similar protocol.
 
-How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is **hindred** (or in other words, **frustrated**): this can be because of  the overall composition (silicate glasses, i.e. window glasses, have many components) ore because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).
+How are glasses formed? The figure below illustrates the standard route. First of all, one selects systems for which crystal formation (via nucleation and growth) is **hindered** (or in other words, **frustrated**): this can be because of  the overall composition (silicate glasses, i.e. window glasses, have many components) or because of competing interactions (binary mixtures may have interactions between the A and B components that favour mixing without crystallisation).
 
 
 Then, for a chosen composition, one cools down the liquid across the temperature where in principle (if given enough time) the system would crystallise (dubbed $T_m$). The liquid becomes a so-called **supercooled liquid** which is a state of local equilibrium that has access to many disordered basins, but not the crystaline one (see energy landscape picture above).
@@ -179,7 +179,7 @@ This proportionality holds in the regime where the relaxation is dominated by st
 
 This dramatic increase in relaxation time is a hallmark of glassy dynamics and underlies the kinetic arrest observed in glasses.
 
-Presently, we do not have a single unified theory of the glass transition: there is no universal law capable to predict the viscosity (or the relaxation times) of glassy systems from specific micrscopic parameters. To date, the origin of the glass transition remains one of the [major unsolved problems condensed matter physics](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics#Condensed_matter_physics).
+Presently, we do not have a single unified theory of the glass transition: there is no universal law capable to predict the viscosity (or the relaxation times) of glassy systems from specific microscopic parameters. To date, the origin of the glass transition remains one of the [major unsolved problems condensed matter physics](https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics#Condensed_matter_physics).
 
 First steps are typically phenomenological: glasses are classified as **strong** or **fragile** based on how their viscosity (or relaxation time) increases as temperature decreases toward the glass transition temperature $T_g$. We have seen earlier in @sec-cnt that activated process are often governed by what are called Arrhenius laws, with a rate $R\propto \exp\left[-\Delta E/k_B T\right]$ where $\Delta E$ is an energy barrier. Viscosity curves can be fitted by empirical models inspired the activated picture:
 
@@ -198,7 +198,7 @@ First steps are typically phenomenological: glasses are classified as **strong**
 
 The distinction is visualized in the so-called **Angell plot**, where strong glasses show nearly linear behavior, while fragile glasses show a dramatic upturn as $T \to T_g$.
 
-These models are suggestive of a **thermodynamic** origin of the glass transition. Indeed, it is possible to thinkto think of the emerging barrier $E_A$ and $B$ as the result of some free energy expression from the sampling of the energy landscapes in various basins. 
+These models are suggestive of a **thermodynamic** origin of the glass transition. Indeed, it is possible to think of the emerging barrier $E_A$ and $B$ as the result of some free energy expression from the sampling of the energy landscapes in various basins. 
 
 
 ### Connection between VFT and configurational entropy: the Adam-Gibbs model
@@ -237,7 +237,7 @@ $$
 
 where $J$ is an energy scale and $T_0$ is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite $T$ but still captures the super-Arrhenius growth of relaxation times. 
 
-Interestingly, both the two perspective fit the viscosity data wall within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).
+Interestingly, both the two perspective fit the viscosity data well within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).
 
 
 Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see @hasyim2024emergent for more details.
@@ -249,7 +249,7 @@ Here below is a the visual representation of the time evolution of the magnitude
 
 The word *gel* signifies many different things to different scientific communities. In the context of soft matter physics, a physical gel is typically understood as a system in which the constituent particles or polymers are connected via reversible, non-covalent bonds to form a percolating network that spans the entire sample. This network imparts solid-like mechanical properties to the material, even though the underlying structure remains disordered and fluid-like on a microscopic scale. 
 
-Physical gels differ from chemical gels, where the network is formed by *irreversible* covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of oder $1 k_BT$, allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are **reversible** systems and often are known as thermoreversible gels. reversible linking is typically achieved by the formation of dense local regions (e.g. microscystalline or glassy) that act as *cross-links* to form a spanning network. 
+Physical gels differ from chemical gels, where the network is formed by *irreversible* covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of order $1 k_BT$, allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are **reversible** systems and often are known as thermoreversible gels. reversible linking is typically achieved by the formation of dense local regions (e.g. microscystalline or glassy) that act as *cross-links* to form a spanning network. 
 
 Examples include gelatin desserts, agarose gels, and  colloidal suspensions such as yoghurt, paint, inks where attractive interactions lead to network formation, see @Zaccarelli2007 for a comprehensive review.
 
@@ -261,7 +261,7 @@ The transition from a fluid to a gel state is often associated with the appearan
 
 Percolation is the study of an apparently innocent mathematical problem: take a square grid if $L\times L$ sites and randomly label $N$ of them; how does the likelihood of forming a cluster that spans across the grid (i.e. *percolates*) depend on the probability $p=N/L^2$ of having a labelled square?
 
-The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiologu and ecology. It is a meaneable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transitions is **continuous**, i.e. second order.
+The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transitions is **continuous**, i.e. second order.
 
 Analytically, percolation is tractable and exhibits universal critical exponents near $p_c$, making it a cornerstone of statistical physics and network theory.
 
@@ -332,7 +332,7 @@ plt.title('Percolation transition in 2D')
 plt.show()
 ```
 
-The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical $p_c$, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparitively smaller fraction of the system is require in order to find a percolating path.
+The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical $p_c$, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is require in order to find a percolating path.
 
 | Lattice Type    | Dimension | Coordination $z$ | $p_c^{site}$ | $p_c^{bond}$ |
 | --------------- | --------- | ---------------- | ------------ | ------------ |
@@ -382,7 +382,7 @@ When the colloids are significantly larger than the polymers, the resulting depl
 The resulting phase diagrams different significantly for the ones of simple liquids (e.g., Lennard-Jones interactions): the liquid-gas coexistence curve (the binodal) becomes metastable.
 
 
-![Phase diagrams of colloid-polymer mixtures for different values of the size ratio parameter $q=\sigma_{\rm polymer}/\sigma_{\rm colloid}$. Left: very small size ratio make the gas liquid binodal (enclosing the yellow fluid-fluid region) metastable to gas-solid phase separation. Centre: as we increase the size ratio, the liquid pocket at high density starts developing. Right: for almost equal sizes the phase diagram is reminiscent of the one of simple fluids (e.g. Lennard-Jones) after noticing that the polymer reservoir packing fraction plays a role inverse to the temeprature. Adapted from @dijkstra1999phase.)](./figs/colloid-polymers.svg)
+![Phase diagrams of colloid-polymer mixtures for different values of the size ratio parameter $q=\sigma_{\rm polymer}/\sigma_{\rm colloid}$. Left: very small size ratio make the gas liquid binodal (enclosing the yellow fluid-fluid region) metastable to gas-solid phase separation. Centre: as we increase the size ratio, the liquid pocket at high density starts developing. Right: for almost equal sizes the phase diagram is reminiscent of the one of simple fluids (e.g. Lennard-Jones) after noticing that the polymer reservoir packing fraction plays a role inverse to the temperature. Adapted from @dijkstra1999phase.)](./figs/colloid-polymers.svg)
 
 Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential (see @sec-ao-potential) using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the **square-well** model,
 
@@ -475,7 +475,7 @@ In many situation, pair-wise correlation functions are sufficient to capture gel
 
 The radial distribution function $g(r)$ has best statistics at short distances, capturing the features of the clusters that form the branched network.
 
-![The changes in the radial distribution fucntion $g(r)$ as time evolves and the frozen structure of a simulated colloidal gel emerges. The systems is at an overall dilute concetration, so clusters appear as very sharp peaks at short distances, and their structure in terms of nearest and second-nearest neighbour shells are reflected in the first few peaks. From @griffiths2017local ](./figs/grtime.svg){width=60%}
+![The changes in the radial distribution function $g(r)$ as time evolves and the frozen structure of a simulated colloidal gel emerges. The systems is at an overall dilute concentration, so clusters appear as very sharp peaks at short distances, and their structure in terms of nearest and second-nearest neighbour shells are reflected in the first few peaks. From @griffiths2017local ](./figs/grtime.svg){width=60%}
 
 
 In gels near the percolation threshold, the structure factor $S(q)$ exhibits **scale-free (power-law) behavior** at low $q$:
@@ -490,7 +490,7 @@ where $D_f$ is the **fractal dimension** of the gel network. This power-law regi
 - For intermediate $q$, $S(q) \sim q^{-D_f}$, indicating fractal geometry.
 - For large $q$, $S(q)$ reflects local (non-fractal) structure.
 
-![The same changes of the previous figures as seen in changes in the structure factor $S(q)$ as time evolves and the frozen structure of a colloidal gel emerges. At small q, a chracteristic power law behaviour emerges, while at higher q the mistructure changes are subtly capture by the reorganisation or splitting of the peaks.  ](./figs/sq_time.svg){width=60%}
+![The same changes of the previous figures as seen in changes in the structure factor $S(q)$ as time evolves and the frozen structure of a colloidal gel emerges. At small q, a characteristic power law behaviour emerges, while at higher q the microstructure changes are subtly capture by the reorganisation or splitting of the peaks.  ](./figs/sq_time.svg){width=60%}
 
 The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. Typical values for percolation clusters in 3D are $D_f \approx 2.5$.
 
@@ -583,7 +583,7 @@ But how do colloidal gels come about? A viable scenario is the so-called **arres
 
 This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, "frozen in" by the arrest of particle motion.
 
-For the arested spinodal scenario to hold, the system evolves following these steps:
+For the arrested spinodal scenario to hold, the system evolves following these steps:
 
 - The system is quenched inside the spinodal region, where spontaneous fluctuations grow.
 - Domains of different densities form, but the dense domains become dynamically arrested before macroscopic phase separation completes.
@@ -592,7 +592,7 @@ For the arested spinodal scenario to hold, the system evolves following these st
 
 
 
-![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids), adapted from  @Zaccarelli2007. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (where phase separation is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conbentional threshold, e.g. 100 seconds). If a system is cooled rapidly down from the fluid to the coexistence region, two scenari are possible: the fluid spontneusly phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, the cooling is so rapid that proper quilibrium phases cannot be formed and the systems separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenariocorresponds to physical gel formation via spinodal decomposition.](./figs/arrestedSpinodal.svg){ width=70%}
+![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids), adapted from  @Zaccarelli2007. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (where phase separation is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conventional threshold, e.g. 100 seconds). If a system is cooled rapidly down from the fluid to the coexistence region, two scenarios are possible: the fluid spontaneously phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, the cooling is so rapid that proper equilibrium phases cannot be formed and the systems separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenario corresponds to physical gel formation via spinodal decomposition.](./figs/arrestedSpinodal.svg){ width=70%}
 
 For more details, see @Zaccarelli2007.
 

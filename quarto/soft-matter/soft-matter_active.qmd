@@ -26,9 +26,9 @@ We could, at this stage, say that these interactions and the behaviour emerging 
 [^cavagna-footnote]: Andrea Cavagna, a complex system physicist, describes "biological surprise" as the extent to which observed behaviour cannot be explained by physical interactions alone.
 
 
-To do so we need to understand how systems that dissipate energy locally to produced self-propelled motionm can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g. colloidal fluids) or are slowwly relaxing towards it (e.g. glasses and gels). 
+To do so we need to understand how systems that dissipate energy locally to produce self-propelled motion can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g. colloidal fluids) or are slowly relaxing towards it (e.g. glasses and gels). 
 
-The field of reserach that studies such systems is called physics of **active matter** and in this chapter we will describe some reference model systems and main results.
+The field of research that studies such systems is called physics of **active matter** and in this chapter we will describe some reference model systems and main results.
 
 
 ## Life-inspired motion: *run and tumble*
@@ -164,7 +164,7 @@ viewof simulation = {
 
 <!-- ### Dynamical rules -->
 
-The model is deisgned to encode a **minimal set of ingredients** that make the characteristic trajectories of the bacteria quite different fro an ordinary random walk. We can formulate this kind of model via a simple algorithm.
+The model is designed to encode a **minimal set of ingredients** that make the characteristic trajectories of the bacteria quite different from an ordinary random walk. We can formulate this kind of model via a simple algorithm.
 
 1. **Run Phase**:
     During a run, the particle moves in a straight line with constant velocity $v_0$:
@@ -181,7 +181,7 @@ The model is deisgned to encode a **minimal set of ingredients** that make the c
     During a tumble, the particle randomly reorients. The new direction $\hat{\mathbf{n}}(t)$ is chosen from a uniform distribution over the unit sphere (in 3D) or circle (in 2D).
 
 
-We can the imagine a schematic algorithm:
+We can imagine a schematic algorithm:
     - Initialize the particle's position $\mathbf{r}(0)$ and direction $\hat{\mathbf{n}}(0)$.
     - For each time step $\Delta t$:
         - With probability $\lambda \Delta t$, perform a tumble (randomize $\hat{\mathbf{n}}$).
@@ -321,12 +321,12 @@ The dynamics of an ABP can be described by the following equations:
     $$
     where $\eta_\theta(t)$ is a scalar Gaussian white noise term.
 
-We can analyse this a little more in detail by considering the characteristic features of the displacements of (dilute or noninteracting) active Brrownian particles.
+We can analyse this a little more in detail by considering the characteristic features of the displacements of (dilute or noninteracting) active Brownian particles.
 
 
 ### Mean squared displacement of Active Brownian Particles
 
-Indeed, it can be shown. (see below) that teh mean squared displacement for active Browninan particles displays three regimes:
+Indeed, it can be shown (see below) that the mean squared displacement for active Brownian particles displays three regimes:
 $$
 \operatorname{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
 $$
@@ -334,7 +334,7 @@ $$
 where:
 - $D_{\mathrm{eff}} = \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient,
 
-This clearly shows thhat there are three main regimes: 
+This clearly shows that there are three main regimes: 
 
 - a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
 - an intermediate regime around the reorientation time $\tau_R$: 
@@ -402,7 +402,7 @@ $$
 I(\tau) = 2 \tau_R \int_0^\tau \left(1 - e^{-s/\tau_R}\right) ds = 2 \tau_R \left[ \tau - \int_0^\tau e^{-s/\tau_R} ds \right].
 $$
 
-By integratingthe exponential we get
+By integrating the exponential we get
 
 $$
 \int_0^\tau e^{-s/\tau_R} ds = \tau_R \left(1 - e^{-\tau/\tau_R}\right).
@@ -499,17 +499,17 @@ plt.show()
 
 ### Interacting ABPs and motility induced phase separation
 
-When teh active Brownian particles are actually inetarcting with each other, they can give rise to an exceptional nnequilibrium phenomenon of self organisation called **motility-induced phase separation** (MIPS).
+When the active Brownian particles are actually interacting with each other, they can give rise to an exceptional nonequilibrium phenomenon of self organisation called **motility-induced phase separation** (MIPS).
 
-The idea is to cosnider purely repulsive particles (i.e hard spheres) obeying the ABP dynamics. This means that, in equilibrium (i.e. in the absence of self-propulsion) no liquid-gas phase separation is possible (see @sec-hard-spheres). 
+The idea is to consider purely repulsive particles (i.e hard spheres) obeying the ABP dynamics. This means that, in equilibrium (i.e. in the absence of self-propulsion) no liquid-gas phase separation is possible (see @sec-hard-spheres). 
 
 However, as we reduce the rotational diffusion, the persistent motion becomes more important, the system becomes more out of equilibrium and new physics comes to play. 
 
 In particular, the collision between particles are no longer leading to quick decorrelation: on the contrary, head-to-head collisions between the particles mean that there is a finite residence time for a pair of particles to stay in each other neighborhoods. This effect is amplified by multiple collisions, leading to many-body caging effects that promote density heterogeneities in the fluid.
 
-The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of equilibrium systems. Before reaching this regime, the fluid also displays a critical like phenomenology, with enhcanced fluctuations terminating a critical point. 
+The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of equilibrium systems. Before reaching this regime, the fluid also displays a critical like phenomenology, with enhanced fluctuations terminating a critical point. 
 
-This has been examined in detail in coputer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situtation of colloid-polymer mixtures due to the very short range nature of the effective interactions between active particles).
+This has been examined in detail in computer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situation of colloid-polymer mixtures due to the very short range nature of the effective interactions between active particles).
 
 
 

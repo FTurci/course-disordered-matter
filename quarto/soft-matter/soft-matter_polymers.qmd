@@ -99,7 +99,7 @@ Many polymers are highly flexible and are coiled up in solution. In a simple mod
 
 The momomers are located at positions $\mathbf{R}_{\mathrm{j}}$ and connected by bonds $\mathbf{r}_{j}=\mathbf{R}_{j}-\mathbf{R}_{j-1}$ of length $\left|\mathbf{r}_{j}\right|=b_{0}$.
 
-The **end-to-end vector** $\mathbf{R}$ is then simply the vector linking the head to the tail fo the chain:
+The **end-to-end vector** $\mathbf{R}$ is then simply the vector linking the head to the tail of the chain:
 
 $$\mathbf{R} = \mathbf{r}_1+\mathbf{r}_2+\dots+\mathbf{r}_N = \sum_{j=1}^N \mathbf{r}_j.$$
 
@@ -148,7 +148,7 @@ HTML(fig.to_html(include_plotlyjs="cdn"))
 
 #### End-to-end vector {.unnumbered}
 
- In time, the various segments undergo Brownian motion and the polymer fluctuates between all possible configurations of the random walk. Rememebr however that it does this with fixed inter-monomer distance.
+ In time, the various segments undergo Brownian motion and the polymer fluctuates between all possible configurations of the random walk. Remember however that it does this with fixed inter-monomer distance.
 
 The mean squared end-to-end distance is then simply 
 $$\begin{aligned}\langle\mathbf{R}^2\rangle &= \left\langle \left( \sum_{i=1}^N \mathbf{r}_i\right) \cdot  \left( \sum_{j=1}^N \mathbf{r}_j\right) \right\rangle\\
@@ -164,7 +164,7 @@ where the second term simply encodes the covariances between the (random) variab
 
 $$\langle \mathbf{R}^2\rangle = Nb_0^2$$
 
-This is essentially the same result as for the mean squared displacement of a random walk, provided that we recognise that the number of monomers has taken the role played by time inbthe case of the wal. We had ${\rm MSD}\propto t$ and here we have
+This is essentially the same result as for the mean squared displacement of a random walk, provided that we recognise that the number of monomers has taken the role played by time in the case of the walk. We had ${\rm MSD}\propto t$ and here we have
 
 $$\langle \mathbf{R}^2\rangle\propto N$$
 
@@ -215,9 +215,9 @@ $$
 R_g^2 = \mathrm{Tr}(\mathbf{S}) = S_{xx} + S_{yy} + S_{zz}
 $$
 
-The eigenvalues and eigenvectors of $\mathbf{S}$ provide information about the principal axes and shape anisotropy of the polymer coil. The **tensor of gyration** correspondss to the **covariance matrix** of the positions $\mathbf{R}_j$.
+The eigenvalues and eigenvectors of $\mathbf{S}$ provide information about the principal axes and shape anisotropy of the polymer coil. The **tensor of gyration** corresponds to the **covariance matrix** of the positions $\mathbf{R}_j$.
 
-The radius of gyration is direcly proportional to the end-to-end vector.
+The radius of gyration is directly proportional to the end-to-end vector.
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
@@ -409,7 +409,7 @@ $$\therefore\left\langle R^{2}\right\rangle \ll N b_{0}^{2}$$
 </div>
 This corresponds to the opposite limit, where the chain is compact and forms a globular, collapsed assembly. Examples include:
 
-    - polypeptides (the co  nstituents of amino acids) with strong hydrophobic interactions (e.g. alanine, leucine, methionine)
+    - polypeptides (the constituents of amino acids) with strong hydrophobic interactions (e.g. alanine, leucine, methionine)
     - polystyrene in water
     - chromatin (the genetic information *condensed* in the nucleus of cells)
 
@@ -606,7 +606,7 @@ fig.show()
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-26.jpg?height=487&width=441&top_left_y=239&top_left_x=405) -->
 
 ::: column-margin
-This visualisation doesn't strictly satisfy the equal length requirement we set out above, but satisfies the equal end-to-ende vector for the sake of visualisation. The Kuhn length should be thought of as a *statistical* quantity and teh coarse-graiend chain as a polymer with the equivalent statistical propeeties to a chain of subunits of the original chain.
+This visualisation doesn't strictly satisfy the equal length requirement we set out above, but satisfies the equal end-to-end vector for the sake of visualisation. The Kuhn length should be thought of as a *statistical* quantity and the coarse-grained chain as a polymer with the equivalent statistical properties to a chain of subunits of the original chain.
 :::
 
 ### Excluded volume effects
@@ -633,7 +633,7 @@ $$\therefore \frac{V_{N}}{V_{\text {coil }}}=\frac{N b^{3}}{(4 \pi / 3) N^{3 / 2
 
 This means that for $N=10^{4}$ monomers occupy only about $1 \%$ of the whole coil volume.
 
-The overall chain size as estimated by the rafdius of gyration $\langle R_{g}^{2}\rangle^{1 / 2}$ is determined by the competition of two effects: 
+The overall chain size as estimated by the radius of gyration $\langle R_{g}^{2}\rangle^{1 / 2}$ is determined by the competition of two effects: 
 
  1. **Entropy** (and chain connectivity) favour a **compact chain** and avoid the more unlikely stretched configurations
  2. Repulsive **excluded volume** interactions want to **expand the chain** to avoid overlap. 
@@ -798,7 +798,7 @@ For example, polystyrene with $M=10^{6} \mathrm{~g} \mathrm{~mol}^{-1}$ in a goo
 
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-30.jpg?height=361&width=361&top_left_y=522&top_left_x=291) -->
 
-The concentration is larger than the overlap concentration $\mathrm{c}^{*}$, but still much smaller than the bulk density. The coils interpenetrate and entangle, but the solution is still mostly solvent
+The concentration is larger than the overlap concentration $\mathrm{c}^{*}$, but still much smaller than the bulk density. The coils interpenetrate and entangle, but the solution is still mostly solvent.     
 
 
 #### Concentrated 

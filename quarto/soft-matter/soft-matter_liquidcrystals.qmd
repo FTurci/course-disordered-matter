@@ -41,7 +41,7 @@ There are many kinds of anisotropic particles. The table below contains a non-ex
 The additional orientational degrees of freedom makes opens up the possibilities of phases that do not normally exist for spherical, isotropic particles.  We progress from the most disordered to the most ordered phase:
 
 - **Isotropic fluid**: this phase is not very different from the ordinary fluid phase of spherical particles. There is no long-range positional or orientational order and all correlations decay rapidly and on short lengthscales.
-- **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of te molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
+- **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of the molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
 - **smectic phase**: in this phase, particles not only align along a common direction (as in the nematic phase) but also exhibit partial translational order. The centers of mass of the particles tend to form well-defined layers, with orientational order within each layer. However, within a layer, the positions of the particles remain disordered, similar to a liquid. Smectic phases can be further classified (e.g., smectic A, smectic C) depending on the relative orientation of the director with respect to the layer normal.
 - **Columnar phase**: here, anisotropic particles (often disc-like) stack into columns, which then arrange themselves into a two-dimensional lattice. There is long-range positional order in two directions (within the plane perpendicular to the columns) and orientational order along the column axis.
 - **Crystal**: the most ordered phase, where both positional and orientational order are long-ranged in all directions, forming a true three-dimensional periodic lattice.
@@ -274,7 +274,7 @@ The angle $\psi$ represents the director’s orientation modulo $\pi$.
 
 Let us consider the uniaxial 3D case, which is the most commonly discussed case (this focuses on nematic order, excluding cholesteric and smectic order) and attempt to construct a Landau theory centred on the order parameter in the spirit of what we saw in @sec-landau-theory. If the system is uniaxial, then the order is characterized by a single director  and the $\mathbf{Q}$ must be symmetric and traceless with a preferred axis $\mathbf{n}$.
 
-The tensorial order parameter can be rewritten levaraging that the scalar order parameter is an eigenvalue of the director. i.e. $\mathbf{Qn} = S\mathbf{n}$. The result is that 
+The tensorial order parameter can be rewritten leveraging that the scalar order parameter is an eigenvalue of the director. i.e. $\mathbf{Qn} = S\mathbf{n}$. The result is that 
 
 
 $$
@@ -297,7 +297,7 @@ We can now make an extra step by considering how to express the scalar order par
 
 As often in physics, we need to make a symmetry observation, and remark that the nematic phase has full **cylindrical symmetry** around the director. This means that, for us $p(\Omega)=p(\theta, \phi)$ is in fact independent of The azimuthal angle $\phi$ and only depends on the deviation from the director $\theta$. 
 
-We also note that the expression for the nematic order parameter satisfies head-tail symmetry bt employing the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
+We also note that the expression for the nematic order parameter satisfies head-tail symmetry by employing the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
 
 $$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle$$
 
@@ -543,7 +543,7 @@ $$\psi = \dfrac{1}{2} {\rm atan2}(\langle \sin(2\theta)\rangle, \langle \cos(2\t
 
 ## Splay, twist and bend 
 
-In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from teh average over a large number of particlesion a single volume).
+In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from the average over a large number of particles in a single volume).
 
 
 The Frank free energy density for distortions of the director field is
@@ -571,9 +571,9 @@ The formulation allows one to model the behaviour of liquid crystals with finite
 
 ## Topological defects
 
-The continuum limit description of liqudi crystals allows us to anhance their description with the notion of **topological defectes**.
+The continuum limit description of liquid crystals allows us to enhance their description with the notion of **topological defects**.
 
-Topological defects are singularities in the director field that can not be removed by a continuous deformation of the director field: they are **topolgically protected**. We can see this with a few examples in 2d by drawing lines of the director (remember that the head-tail symmetry means that the lines do not have any preferential direction but indicate local orientation):
+Topological defects are singularities in the director field that can not be removed by a continuous deformation of the director field: they are **topologically protected**. We can see this with a few examples in 2d by drawing lines of the director (remember that the head-tail symmetry means that the lines do not have any preferential direction but indicate local orientation):
 
 ```{python}
 #| code-fold: true
@@ -595,7 +595,7 @@ def plot_defect(ax, charge, title):
     # Normalize for nematic symmetry (director, not vector)
     U2 = np.where(U < 0, -U, U)
     V2 = np.where(U < 0, -V, V)
-    # Plot director field as dashed lineså
+    # Plot director field as dashed lines
     ax.quiver(X, Y, U2, V2, pivot='middle', color='k', scale=11, headwidth=0, headlength=0, headaxislength=0, linewidth=0.85, linestyle='dashed')
     # Defect core
     ax.plot(0, 0, 'o', color='orange', markersize=14)
@@ -690,12 +690,12 @@ plt.show()
 
 Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2}$ and $s = \pm 1$. For example, a $+1/2$ disclination corresponds to a director field that rotates by $+\pi$ as one encircles the defect, while a $-1/2$ disclination rotates by $-\pi$.
 
-When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engendre a complete loss of orientational order at the singularity point, which costs energy by itslef.
+When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engenders a complete loss of orientational order at the singularity point, which costs energy by itself.
 
 In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 
 
-The classification of disclination in 3D involves the rotation group **SO(3)*** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**.
+The classification of disclination in 3D involves the rotation group **SO(3)** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**.
 
 You can read more about liquid crystal's defects and their coupling to the material properties in @jones2002soft.
 

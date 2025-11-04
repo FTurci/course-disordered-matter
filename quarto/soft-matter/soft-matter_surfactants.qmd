@@ -38,18 +38,18 @@ In this chapter we discuss the behaviour of a special class of molecules. In the
 
 ![Schematic model of a surfactant ([adapted](https://phys.libretexts.org/Courses/University_of_California_Davis/Biophysics_241%3A_Membrane_Biology/04%3A_Membrane-Protein_Interactions/4.06%3A_Non-Membrane_Lipid_Assemblies)).](./figs/amphiphile.svg)
 
-For very small solutes (a few atoms) the traditional picture of hydro-phobicity/philicity is that the energetic advantage due to hydrogen bonding favors configurations that minimally disrupt the local structure of water, and this means that multiple apolar solutes tend to come together to minimise such disruption since they cannot form such bonds. However, for larger molecules (such as large proteins or longer macromolecular chains) interfaces between the bulk water and the solutes are formed, to which we can associate characteristic density fluctuations and surface tensions. Phase separation between a local vapor-like layer and the bulk water becomes then important and aggregation due to hydrophobicty becomes very much a a many-body effect. This is an active topic of current research (even by some of us, see @wildingturciPRR2025 ) and demonstrates how even very foundational concepts in soft matter remain to be explored.
+For very small solutes (a few atoms) the traditional picture of hydro-phobicity/philicity is that the energetic advantage due to hydrogen bonding favors configurations that minimally disrupt the local structure of water, and this means that multiple apolar solutes tend to come together to minimise such disruption since they cannot form such bonds. However, for larger molecules (such as large proteins or longer macromolecular chains) interfaces between the bulk water and the solutes are formed, to which we can associate characteristic density fluctuations and surface tensions. Phase separation between a local vapor-like layer and the bulk water becomes then important and aggregation due to hydrophobicty becomes very much a many-body effect. This is an active topic of current research (even by some of us, see @wildingturciPRR2025 ) and demonstrates how even very foundational concepts in soft matter remain to be explored.
 
 In the rest of the chapter, we will look mostly phenomenologically at the structure of surfactants and how they collectively come together to form meso-scale structures via the process of **self-assembly**, and assume that there exist solvent-mediated interactions such as hydrophobicity that control the free energies of these assemblies.
 
 
-A few chemical structures are shown below. They illustrates that the hydrophobic tail usually consits of hydrocarbon chains of different lengths
+A few chemical structures are shown below. They illustrate that the hydrophobic tail usually consists of hydrocarbon chains of different lengths
 
 
 
 #### SDS (dodecyl sulfate) {.unnumbered}
 
-In SDS (sodium dodecyl sulfate) the head is the hydrophilic sulfate group (${\rm –OSO_3}$), which is negatively charged and water-attracting whil the tail is  the long hydrophobic 12-carbon alkyl chain (dodecyl group), which is water-repelling.
+In SDS (sodium dodecyl sulfate) the head is the hydrophilic sulfate group (${\rm –OSO_3}$), which is negatively charged and water-attracting while the tail is  the long hydrophobic 12-carbon alkyl chain (dodecyl group), which is water-repelling.
 
 
 {{< mol-url ./figs/SDS.pdb >}}
@@ -71,7 +71,7 @@ The hydrocarbon chains are insoluble in water. The molecules are thus preferenti
 
 ## Self-assembled structures
 
-**Self-assembly** is a fundamental property of surfactant molecules in solution. It also a highlight feature of soft-matter systems: under the influence of thermal fluctuations (typically mediated by a solvent), the constituents of soft matter systems self-organise into more complex, meso or macroscopic structures. This is typically due to driving thermodynamic forces that make initially unform systems find (local ord global) minima of their free energy which distinctive structural features. In this sense, soft matter systems explore **free energy landscapes** whose complexity is tuned by the strength of thermal fluctuations.
+**Self-assembly** is a fundamental property of surfactant molecules in solution. It also a highlight feature of soft-matter systems: under the influence of thermal fluctuations (typically mediated by a solvent), the constituents of soft matter systems self-organise into more complex, meso or macroscopic structures. This is typically due to driving thermodynamic forces that make initially uniform systems find (local ord global) minima of their free energy which distinctive structural features. In this sense, soft matter systems explore **free energy landscapes** whose complexity is tuned by the strength of thermal fluctuations.
 
 In many ways, we have already seen various forms of self assembly: crystallisation of colloids is itself self-organised but so is also the phase transition between the gasous and the liquid phase, or the isotropic-nematic transition in liquid crystals. 
 
@@ -104,7 +104,7 @@ Call $\mu_1 $ and $\mu_N$ the chemical potential of isolated particles and aggre
 Let's focus on an aggregate of size $N$. We can express $\mu$ in terms of 
 
 - the interaction energy from being in the aggregate ($\epsilon_N$)
-- the (translational) entropy of the aggregate as a whole ($\propto {\rm number of aggregates}\times \ln {\rm number fo aggregates}$)
+- the (translational) entropy of the aggregate as a whole ($\propto {\rm number of aggregates}\times \ln {\rm number of aggregates}$)
 
 Assume an overall volume fraction of surfactants $\phi$. Call the volume fraction of surfactants in an aggregate with $N$ molecules $X_N$, so that $\sum_N X_N = \phi$. The numbers of aggregates of size $N$ is then simply $X_N/N$. This means that we can write the uniform chemical potential as 
 
@@ -125,7 +125,7 @@ This  means that knowning the form of $\epsilon_N$ allows us to predict the aggr
 
 $$\epsilon_N = \dfrac{G_N}{N} = \epsilon_\infty  +\dfrac{1}{N}\gamma r^2 =\epsilon_\infty +\gamma\left(\dfrac{v^2}{N}\right)^{1/3}$$
 
-which is a **monotonically decreasing** function of $N$. By defininit $\alpha k_B T = \gamma v^{2/3}$ we can extract a relation between $X_N$ and $X_1$ parametrised solely by $\alpha$, i.e.
+which is a **monotonically decreasing** function of $N$. By defining $\alpha k_B T = \gamma v^{2/3}$ we can extract a relation between $X_N$ and $X_1$ parametrised solely by $\alpha$, i.e.
 
 $$\text{number of aggregates of size N per unit volume} = \dfrac{X_N}{N}\sim (X_1 e^{\alpha})^N$$
  
@@ -215,9 +215,9 @@ Below the lower limit cylindrical micelles are formed.
 
 ## A simple on-lattice model for micelle formation
 
-Aggregation of surfactants has been studied in various ways, including numerical simulations. One can employ extremely realistic, all-atom molecular dynamics to glean the microscopic details or construct more coarse-grained, statistical mechanics models using for exmaple on lattice interactions.
+Aggregation of surfactants has been studied in various ways, including numerical simulations. One can employ extremely realistic, all-atom molecular dynamics to glean the microscopic details or construct more coarse-grained, statistical mechanics models using for example on lattice interactions.
 
-Here below you can find a Javascript implementation of a lattice-gas-like model where surfactants are representes by chains of 3 sites on a lattice, with one site for the solvophilic head and two for the solvophobic tail.  Each lattice site is occupied by either an amphiphile segment or a solvent molecule.
+Here below you can find a Javascript implementation of a lattice-gas-like model where surfactants are represented by chains of 3 sites on a lattice, with one site for the solvophilic head and two for the solvophobic tail.  Each lattice site is occupied by either an amphiphile segment or a solvent molecule.
 
 There are only nearest-neighbor interactions and the hamiltonian is simply
 
