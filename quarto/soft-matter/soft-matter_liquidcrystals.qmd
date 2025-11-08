@@ -675,7 +675,7 @@ def plot_charge_steps(ax, charge, step_frac, title=None):
     ax.set_ylim(-1.1, 1.1)
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 3, figsize=(11, 3.5))
+fig, axs = plt.subplots(1, 3, figsize=(9.5, 3.5))
 steps = [1/6, 0.5, 1.0]
 titles = [
     "Start winding: $0 \\to \\pi/3$",

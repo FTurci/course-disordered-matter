@@ -1327,7 +1327,7 @@ $$
 
 The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\xi=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein (and Sutherland) relation.
 
--   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the 'fluctuation' part. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
+-   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the response to the 'fluctuations' $k_B T $. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
 
 -   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example from the [Feynman Lectures](https://www.feynmanlectures.caltech.edu/I_41.html):
 

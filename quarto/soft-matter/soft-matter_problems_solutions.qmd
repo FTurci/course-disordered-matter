@@ -4,7 +4,47 @@ title: "Problems - Solutions"
 
 ## Colloids
 
-### Interactions of two charged spheres - solution
+:::{.callout-note}
+### Interaction of two charged colloidal spheres - Problem setting
+
+Consider a colloidal particle of total charge $Q$ located at the origin, immersed in a solvent of permittivity $\varepsilon = \varepsilon_0 \varepsilon_r$. The solvent contains a symmetric electrolyte with two mobile ionic species:
+
+-   Cations of charge $+ze$ and bulk concentration $n_0$,
+-   Anions of charge $-ze$ and bulk concentration $n_0$.
+
+1.  Show that The mean electrostatic potential $\phi(\mathbf{r})$ satisfies Poisson’s equation: $$
+    \nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
+    $$
+
+    Assuming the ions form an ideal gas in thermal equilibrium, their local densities follow Boltzmann distributions: $$
+    n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad
+    n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})], $$ where $\beta = 1/(k_B T)$.
+
+2.  Use these expressions to obtain the (simplified) *nonlinear Poisson–Boltzmann equation* : $$
+    \nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+    $$
+
+3.  Find physical conditions to linearise the equation.
+
+4.  Solve the resulting linear equation for spherical symmetry to obtain the screened Coulomb (Debye–Hückel) potential: $$
+    \phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r},
+    \qquad \kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+    $$
+
+The parameter $\kappa^{-1}$ is the Debye screening length, and the solution shows that ionic screening converts the long-range Coulomb potential into a short-range Yukawa potential.
+
+The following real to Fourier spcace mappings may be useful
+
+| Real space                      | Fourier space               |
+|---------------------------------|-----------------------------|
+| $f(\mathbf{r})$                 | $f(\mathbf{k})$             |
+| $\nabla^2 f(\mathbf{r})$        | $-k^2 f(\mathbf{k})$        |
+| $\delta(\mathbf{r})$            | $1$                         |
+| $\dfrac{e^{-\kappa r}}{4\pi r}$ | $\dfrac{1}{k^2 + \kappa^2}$ |
+
+:::
+
+###  Solution
 
 We start by considering a single colloidal particle of total charge $Q$ located at the origin, immersed in a solvent characterized by a permittivity $\varepsilon = \varepsilon_0 \varepsilon_r$. The solvent contains a symmetric electrolyte composed of two mobile ionic species: cations of charge $+ze$ and bulk concentration $n_0$, and anions of charge $-ze$ with the same bulk concentration $n_0$. The overall system is globally electroneutral in the bulk, so the net ionic charge far from the colloid is zero. The presence of the charged colloid generates an electrostatic potential $\phi(\mathbf{r})$ in the surrounding medium.
 
@@ -69,7 +109,44 @@ $$
 
 It is easy to identify the field the mass and the source with the respective static potential field, the Debye screening parameter and the point charge. The Yukawa potential is then simply the **propagator** (the Green's function).
 
-### Second virial coefficient for depletion interactions - solution
+
+::: {.callout-note}
+
+### Second virial coefficient for depletion interactions - Problem setting
+
+Consider a dilute suspension of spherical colloidal particles of radius $R_c$ in a solution of small ideal polymer coils of radius $R_p \ll R_c$. The polymers are non-adsorbing and behave as an ideal gas outside the colloids. The colloids interact via the **Asakura–Oosawa depletion potential** $U_{\mathrm AO}(r)$:
+
+$$
+U_{\mathrm AO}(r) =
+\begin{cases}
+\infty, & r < 2 R_c \\[2mm]
+-\Pi\, V_{\mathrm overlap}(r), & 2 R_c \le r \le 2 R_c + 2 R_p \\[1mm]
+0, & r > 2 R_c + 2 R_p
+\end{cases}
+$$
+
+where $r$ is the center-to-center distance, $\Pi = n_p k_B T$ is the so called *osmotic pressure* of the polymer solution, and $V_{\mathrm overlap}(r)$ is the overlap volume of the depletion zones, given by
+
+$$
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12},
+$$
+
+with $R_{eff} = R_c+R_p$.
+
+1.  Write the expression for the *second virial coefficient* $B_2$ in terms of the interaction potential:
+
+    $$
+     B_2 = -2 \pi \int_0^\infty \left( e^{-\beta U_{\mathrm AO}(r)} - 1 \right) r^2 dr
+     $$
+
+2.  Assuming the polymer-induced attraction is *weak* ($\beta |U_{\mathrm AO}(r)| \ll 1$) and that the polymers are much smaller than the colloids, expand the exponential to first order and simplify the integral.
+
+3.  Express the resulting $B_2$ in terms of $R_c$, $R_p$, and the polymer osmotic pressure $\Pi$.
+
+4.  Discuss qualitatively how $B_2$ depends on polymer concentration and size, and explain what a **negative** $B_2$ implies for colloidal aggregation.
+:::
+
+### Solution
 
 The second virial coefficient $B_2$ measures the effective two-body contribution to the pressure of a dilute colloidal suspension, following the virial expansion. It is defined for a pairwise potential $U(r)$ as:
 
@@ -150,20 +227,42 @@ $$
 So together
 
 $$
-V_{\mathrm overlap}(r) = \dfrac{\pi(6R_c+4R_p+x)(2R_p-x)^2}{12}
+V_{\mathrm overlap}(x) = \dfrac{\pi(6R_c+4R_p+x)(2R_p-x)^2}{12}
 $$
 
 dropping subleading contributions leads to $$
-V_{\mathrm overlap}(r) \approx \dfrac{6\pi R_c(2R_p-x)^2}{12}
+V_{\mathrm overlap}(x) \approx \dfrac{6\pi R_c(2R_p-x)^2}{12}
 $$
 
-Then, by applying the same expansion to the integral, the integral becomes
+Then, we rewrite 
+
+$$\int_{2R_c}^{2R_c + 2R_p} V_{\mathrm{overlap}}(r)\, r^2 dr$$
+
+as
+$$\int_{0}^{2R_p} V_{\mathrm{overlap}}(x)\, (2R_c+x)^2  dx$$
+
+and approximate as 
+$$ \approx (2 R_c)^2 \int_{0}^{2R_p } V_{\mathrm{overlap}}(x)dx$$
+
+and then
 
 $$
 B_2\approx  \frac{16\pi}{3} R_c^3  -2 \pi \beta \Pi\left(2 R_c\right)^2 \int_0^{2  R_p} \frac{\pi}{2} R_c\left(2 R_p-x\right)^2 d x
 $$
 
-which should lead to
+So we finally integrate 
+
+$$
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x
+$$
+
+via a change of variable $y=2 R_p-x$
+
+$$
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x=\int_{2 R_p}^0 y^2(-d y)=\int_0^{2 R_p} y^2 d y=\frac{\left(2 R_p\right)^3}{3}=\frac{8 R_p^3}{3}
+$$
+
+which leads to
 
 $$
 B_2 \approx\frac{16\pi}{3} R_c^3 -\frac{32 \pi^2}{3} \beta \Pi R_c^3 R_p^3

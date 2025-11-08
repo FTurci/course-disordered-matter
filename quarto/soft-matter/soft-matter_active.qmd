@@ -431,8 +431,7 @@ $$
 
 :::
 
-```{pyodide}
-#| autorun: true
+
 - $\tau_p = 1/D_r$ is the persistence time.
 
 **Short times ($t \ll \tau_p$):**  
@@ -448,6 +447,9 @@ $$
 $$
 
 This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs.
+
+```{pyodide}
+#| autorun: true
 import numpy as np
 import matplotlib.pyplot as plt
 
