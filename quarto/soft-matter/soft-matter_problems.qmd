@@ -1,6 +1,13 @@
+---
+resources: 
+    - soft-matter_problems_solutions.pdf
+---
+
 # Complex disordered systems: Problems {#problems-complex .unnumbered}
 
 ## Colloids
+
+- [Solutions](soft-matter_problems_solutions.pdf)
 
 ### Interaction of two charged colloidal spheres
 
