@@ -10,3 +10,7 @@
 - Interactions [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids1.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids1.html){target=_blank}
 
 - Phase behaviour [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids2.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids2.html){target=_blank}
+
+- Phase behaviour [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids2.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids2.html){target=_blank}
+
+- Static and dynamic correlations[[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids3.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids3.html){target=_blank}
