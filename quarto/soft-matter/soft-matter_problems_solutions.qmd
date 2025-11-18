@@ -276,8 +276,19 @@ where $R_c$ is the colloid radius, $R_p$ is the polymer radius, $\Pi$ is the osm
 -   When the depletion attraction is strong enough, $B_2$ can become **negative**, which signals that attractive interactions dominate over repulsion.
 -   Negative $B_2$ implies a tendency for **colloidal aggregation** or even phase separation, because the effective interaction favuors close approach of colloids.
 
+{{< pagebreak >}}
 
-### Colloids and sedimentation
+
+:::{.callout-note}
+### Colloids and sedimentation - Problem setting
+
+A particle suspended in a liquid can be defined as *colloidal* if the kinetic energy of its thermally-driven Brownian motion is large enough to prevent it from settling completely to the bottom of the container under the influence of gravity. 
+
+A second definition of a colloid is a particle whose gravitational Peclet number Pe is significantly smaller than 1. (The gravitational Peclet number is the ratio of the time taken by a particle to diffuse a distance equal to its radius to the time taken by it to sediment the same distance under gravity.) 
+
+Show that these two definitions of a colloid are essentially equivalent. 	
+:::
+### Solution
 
 
 To show the equivalence between these two definitions, we need to establish the relationship between thermal energy dominating over gravitational settling and the gravitational Peclet number being much less than 1.
@@ -322,8 +333,43 @@ But this is exactly the condition $\text{Pe} \ll 1$ from the second definition.
 Therefore, the two definitions are mathematically equivalent: thermal energy dominance over gravitational settling occurs precisely when the gravitational Peclet number is much smaller than unity. Both conditions ensure that Brownian motion prevents complete sedimentation, which is the hallmark of colloidal behavior.
 
 
+:::{.callout-note}
 
-### 💡 Hard Rods and Cavity Function
+
+### 💡 Hard Rods and Cavity Function - Problem setting
+
+Consider a 1-dimensional (1D) system of **Hard Rods** of length $\sigma$. The number density is $\rho$, and the equation of state is exactly known as  (Tonks equation): $Z_{\mathrm comp} = \frac{1}{1 - \rho \sigma}$.
+
+The potential is:
+$$
+u(x) =
+\begin{cases}
+\infty, & x < \sigma \\
+0, & x \ge \sigma
+\end{cases}
+$$
+
+The **pair distribution function at contact**, $g(\sigma^+)$, is known to be directly related to the equation of state by the 1D virial theorem (see lecture notes):
+$$
+Z = 1 + \rho \sigma g(\sigma^+)
+$$
+
+
+
+1.  Calculate $g(\sigma^+)$ for the 1D hard rod system using the Tonks equation of state and the 1D virial theorem.
+
+2.  Determine the value of the Boltzmann factor, $e^{-\beta u(\sigma)}$, at contact.
+
+3.  Determine the value of the cavity Function, $y(\sigma)= e^{\beta U(r)}g(r)$, at contact.
+
+4.  Explain the physical meaning of $y(\sigma)$. How does it differ from $g(\sigma^+)$ in its interpretation?
+
+5. Derive the full $g(r)$ by maximising the (Shannon) entropy$$
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+$$ for the probability to find a gap of length $l$. Assume that the gaps are independent for simplicity and see that the $g(r0)$ you obtain matches the previous assumptions.
+
+
+:::
 
 1.  *Calculate $g(\sigma^+)$*
 
@@ -385,10 +431,110 @@ In this 1D case, $g(\sigma^+)$ and $y(\sigma)$ are equal.
 
 4. Explain the meaning of $y(\sigma)$
 
-* **$g(\sigma^+)$ (Pair Distribution Function):** This is the **total probability** of finding a particle exactly one rod length ($\sigma$) away from another particle, given the direct physical repulsion ($\sigma^-$ region) *and* the indirect correlations (the rest of the fluid). It is an **experimental, measurable** quantity directly linked to pressure via the virial theorem.
+Let's think of the direct correlation function
 
-* **$y(\sigma)$ (Cavity Function):** This is the probability of finding a particle at distance $\sigma$ **if the direct, instantaneous repulsive interaction $u(x)$ were suddenly removed** (i.e., if $u(\sigma)$ was momentarily zero). It represents the correlation due **only to the structure induced by the surrounding fluid**.
+It is useful to think about the Pecus Yevick apprximation for the direct correlation function
 
-In the hard-sphere (or hard-rod) problem at contact, the direct repulsion $e^{-\beta u(\sigma)}$ is exactly $1$, meaning the potential is locally zero. Since the instantaneous interaction is zero, the total correlation $g(\sigma^+)$ is entirely due to the structure/arrangement of the surrounding fluid, making $y(\sigma)$ equal to $g(\sigma^+)$. This confirms $y(r)$ is a smooth function representing the total correlation *minus* the immediate repulsive core.
+$$c(r) = (1-e^{+\beta u(r)}) (h(r)+1)$$
 
+(see lecture notes).
+
+This can be rewritten as 
+
+
+$$c(r) = (1-e^{+\beta u(r)}) g(r) = (1-e^{+\beta u(r)}) y(r)e^{-\beta u(r)}$$
+
+and then 
+
+$$c(r) = (e-{\beta u(r)}-1) y(r)= f(r) y(r)$$
+
+where we used the Mayer f-function. Both $f(r)$ and $y(r)$ are continuous and differentiable, making solving the Ornstein Zernicke problem a tractable problem. In particular, $y(r)$ allows us to remove the discontinuities cause by the potential at short distances and focus on the correlations produced outside of the core.
+
+The $g(r)$ is the **total probability** of finding a particle exactly one rod length ($\sigma$) away from another particle, given the direct physical repulsion ($\sigma^-$ region) *and* the indirect correlations (the rest of the fluid). It is an **experimental, measurable** quantity directly linked to pressure via the virial theorem.
+
+The cavity function $y(r)$ is the probability of finding a particle at distance $\sigma$ **if the direct, instantaneous repulsive interaction $u(x)$ were suddenly removed** (i.e., if $u(\sigma)$ was momentarily zero). It represents the correlation due **only to the structure induced by the surrounding fluid**.
+
+We can reread the PY appoximation in this light
+
+$$c(r) = g_{\mathrm total}- g_{\mathrm indirect}$$
+
+We assume that there is a potential of mean force $w(r)$ generating the correlations, such that
+
+$$g(r) = g_{\mathrm total} (r)= e^{-beta w(r)}$$
+
+and then we decide to **approximate** the indirect but by **removing** the interparticle potential from the potential of mean force
+
+$$ g_{\mathrm indirect} = e^{-\beta (w(r)=u(r))}$$
+
+Then the PY approximation with the $c(r) =f(r) y(r)$ comes about.
+
+
+5. *Derivation *
+
+ Hard rods **cannot overlap**, so:
+$$
+   g(r)=0\quad(r<\sigma).
+$$
+
+ Let the free gap between rods be 
+ 
+ $$l = r-\sigma \ge 0$$.
+
+We use the maximum entropy principle to find $p(l)$.
+
+We want to maximise 
+
+$$
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+$$
+
+subject to
+
+$$
+\int_0^{\infty} p(l) d l=1, \quad \int_0^{\infty} l p(l) d l=\lambda
+$$
+
+where the mean free gap is
+
+
+$$\lambda=\frac{1-\rho\sigma}{\rho}$$
+
+Via Lagrange multipliers
+
+$$
+\delta\left[-\int p \ln p d l+\alpha\left(\int p d l-1\right)+\gamma\left(\int l p d l-\lambda\right)\right]=0
+$$
+
+and then 
+
+$$
+p(l)=\frac{1}{\lambda} e^{-l/\lambda}
+$$
+
+and $$
+\gamma=-\frac{1}{\lambda}, \quad \alpha=1-\ln \lambda
+$$
+
+We then convert from gap probability to pair correlation.
+
+The pair correlation is the probability to find the particle as some position $r$ scaled by the density:
+$$
+g(r)=\frac{p(r-\sigma)}{\rho}.
+$$
+
+   Substitute $p(l)$ and $\lambda$:
+
+$$
+g(r)=\frac{1}{(1-\rho\sigma)}\exp\left[-\frac{\rho(r-\sigma)}{1-\rho\sigma}\right].
+$$
+
+Checks:
+$$
+g(\sigma^+) = \frac{1}{1-\rho\sigma}.
+$$
+
+Matches the 1D hard-rod equation of state:
+$$
+P = \frac{\rho k_BT}{1-\rho\sigma}.
+$$
 

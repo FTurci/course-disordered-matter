@@ -288,7 +288,7 @@ The **valence angle** (also called the bond angle) is the angle formed between t
 
 
 
-Indeed, the potential energy of a polymer configuration depends on the valence (dihedral) angle.
+Indeed, the potential energy of a polymer configuration depends on the dihedral angle.
 
 ![Potential energy of the above conformers](figs/butdihed.png)
 
@@ -306,10 +306,17 @@ We start with a fixed configuration of $\mathbf{r}_{l}$, $\mathbf{r}_{2}, \ldots
 $$\langle \mathbf{r}_{j} \rangle_{\mathbf{r}, \mathbf{r}_{2}, \ldots, \mathbf{r}_{j-1}\quad {\rm fixed}}=\cos \theta \mathbf{r}_{j-1}$$
 
 
+Multiplying both sides by $\mathbf{r}_k$ and averaging over all configurations gives
 
-For the calculation of $\left\langle R^{2}\right\rangle$ we also need $\left\langle\mathbf{r}_{j} \cdot \mathbf{r}_{k}\right\rangle$,
-which we obtain by multiplying both sides with $\mathbf{r}_{k}$ and taking the average: 
-$\left\langle r_{j} \mathbf{x}_{k}\right\rangle=\cos \theta\left\langle r_{j-1} \mathbf{x}_{k}\right\rangle=\cos ^{2} \theta\left\langle r_{j-2} \mathbf{\Sigma}_{k}\right\rangle=\ldots=\left(\cos ^{|j-k|} \theta\right)\left\langle r_{k}{\mathbf{x_{k}}}\right\rangle=\left(\cos ^{|j-k|} \theta\right) b_{0}^{2}$$
+$$
+\left\langle\mathbf{r}_j \cdot \mathbf{r}_k\right\rangle=\cos \theta\left\langle\mathbf{r}_{j-1} \cdot \mathbf{r}_k\right\rangle .
+$$
+
+Applying this relation recursively leads to
+
+$$
+\left\langle\mathbf{r}_j \cdot \mathbf{r}_k\right\rangle=b_0^2(\cos \theta)^{|j-k|}
+$$
 
 Since $\cos \theta<1$, correlations between $\mathbf{r}_{j}$ and $\mathbf{r}_{k}$ decrease with increasing distance $|j-k|$ between the links and the orientations of distant links become uncorrelated.
 
@@ -469,9 +476,7 @@ fig.show()
 
 These are ideal conditions, where the random walk model of the free-jointed chain works exactly.
 
-<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-25.jpg?height=247&width=289&top_left_y=1533&top_left_x=1420) -->
-
-Again, we get $\left\langle R^{2}\right\rangle \propto N$, which suggests that a long freely-rotating chain can be represented by an *effective* freely-jointed chain with $N'$ segments of length $b$. 
+Again, we get $\left\langle R^{2}\right\rangle \propto N$, which suggests that a generic long freely-rotating chain can be represented by an *effective* freely-jointed chain with $N'$ segments of length $b$. 
 
 ::: column-margin
 This is another example of **coarse-graining**.
@@ -655,7 +660,7 @@ $$
 where for a given end-to-end vector $\mathbf{R}$ the number of configurations is expected to be proportional to
 
 $$
-P(\mathbf{R})=\left(\frac{3}{2 \pi<R^{2}>}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2<R^{2}>}}
+P(\mathbf{R})=\left(\frac{3}{2 \pi\langle R^{2}\rangle}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2\langle R^{2}\rangle}}
 $$
 
 and hence
@@ -774,7 +779,7 @@ The most important regimes of concentration are:
 The polymer coils are well-separated on average. Call $c$ the concentration expressed as mass per unit volume, then it satisfies
 
 $$ \dfrac{c}{M}N_A \times \dfrac{4\pi}{3}R_g^3\ll 1$$
-
+where $N_A$ is Avogadro's number, $M$ is the molar mass of a single chain and $R_g$ is the radius of gyration of the chain.
 
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=478&width=803&top_left_y=1343&top_left_x=1009) -->
 -  **Overlap concentration $c*$**

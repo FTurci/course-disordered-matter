@@ -288,7 +288,7 @@ Show that these two definitions of a colloid are essentially equivalent.
 
 
 
-### 💡 Hard Rods and Cavity Function
+### Hard Rods and Cavity Function
 
 Consider a 1-dimensional (1D) system of **Hard Rods** of length $\sigma$. The number density is $\rho$, and the equation of state is exactly known as  (Tonks equation): $Z_{\rm comp} = \frac{1}{1 - \rho \sigma}$.
 
@@ -315,3 +315,7 @@ $$
 3.  Determine the value of the cavity Function, $y(\sigma)= e^{\beta U(r)}g(r)$, at contact.
 
 4.  Explain the physical meaning of $y(\sigma)$. How does it differ from $g(\sigma^+)$ in its interpretation?
+
+5. Derive the full $g(r)$ by maximising the (Shannon) entropy$$
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+$$ for the probability to find a gap of length $l$. Assume that the gaps are independent for simplicity and see that the $g(r0)$ you obtain matches the previous assumptions.
