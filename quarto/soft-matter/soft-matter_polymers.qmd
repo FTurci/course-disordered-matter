@@ -772,7 +772,7 @@ The most important regimes of concentration are:
 
 
 
-#### Dilute regime
+### Dilute regime
 
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-29.jpg?height=375&width=366&top_left_y=1206&top_left_x=288) -->
 
@@ -799,18 +799,18 @@ $$
 
 For example, polystyrene with $M=10^{6} \mathrm{~g} \mathrm{~mol}^{-1}$ in a good solvent ( $v=0.6$ ) and $B=0.028 \mathrm{~nm}\left(\mathrm{~g} \mathrm{~mol}^{-1}\right)^{-0.6}$ leads to $\mathrm{c}^{*}=0.29 \mathrm{~kg} \mathrm{~m}^{-3}=0.29 \mathrm{mg} / \mathrm{ml}$. With the density of polystyrene $\rho=1050 \mathrm{~kg} \mathrm{~m}^{-3}$, the volume fraction of monomers is $\mathrm{c}^{*} / \rho=0.28 \times 10^{-3} . \mathrm{c}^{*}$ can be very small for large polymers.
 
-#### Semi-dilute
+### Semi-dilute
 
 <!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-30.jpg?height=361&width=361&top_left_y=522&top_left_x=291) -->
 
 The concentration is larger than the overlap concentration $\mathrm{c}^{*}$, but still much smaller than the bulk density. The coils interpenetrate and entangle, but the solution is still mostly solvent.     
 
 
-#### Concentrated 
+### Concentrated 
 
 In this case the concentration is very close to the bulk density and the polymer monomers occupy a significant fraction of the total volume.
 
-#### Bulk polymers
+### Bulk polymers
 
 A **bulk polymer** refers to a polymeric material in which the polymer chains occupy a significant fraction of the total volume, with little or no solvent present. In this regime, the properties of the material are dominated by polymer-polymer interactions rather than polymer-solvent interactions. Bulk polymers can be amorphous, semi-crystalline, or crystalline, and their mechanical, thermal, and optical properties are determined by the arrangement and mobility of the polymer chains.
 

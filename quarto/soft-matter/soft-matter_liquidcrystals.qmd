@@ -134,6 +134,7 @@ $$
 where $d$ is the dimensionality. The removed $\dfrac{1}{d}\mathbf{I}$ term ensures that the tensor is traceless and does not include isotropic components.
 
 The analysis of the tensor yield the main characteristics of the orientation of the system:
+
 - the largest eigenvalue of $\mathbf{Q}$ is the **scalar nematic order parameter** $\mathcal{S}$
 - the eigenvector corresponding to the largest eigenvalues is called the **director** $\mathbf{n}$ and corresponds to the main collective orientation of the system.
 
