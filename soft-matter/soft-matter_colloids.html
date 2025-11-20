@@ -771,7 +771,7 @@ V_{\rm overlap}(r) = \frac{\pi}{12 r} , \big( 2(R+\delta) - r \big)^2
 \]</span></p>
 <p>which gives the <strong>exact Asakura-Oosawa potential</strong>:</p>
 <p><span class="math display">\[
-W_{\rm AO}(r) = - k_B T , \rho_p , V_{\rm overlap}(r).
+W_{\rm AO}(r) = - k_B T \rho_p V_{\rm overlap}(r).
 \]</span></p>
 <p>The <em>approximate</em> form commonly used for small polymer-to-colloid size ratios <span class="math inline">\(q = \delta / R \ll 1\)</span> is obtained by expanding the overlap volume as a cubic polynomial in <span class="math inline">\(r/(R+\delta)\)</span>:</p>
 <p><span class="math display">\[
@@ -784,7 +784,7 @@ V_{\rm overlap}(r) \approx \frac{4 \pi}{3} (R+\delta)^3
 W_{\rm AO}(r) \approx - \frac{4 \pi \rho_p k_B T}{3} (R+\delta)^3
 \left[ 1 - \frac{3}{4}\frac{r}{R+\delta} + \frac{1}{16}\left(\frac{r}{R+\delta}\right)^3 \right].
 \]</span></p>
-<p>This cubic polynomial approximation is valid for small <span class="math inline">\(q \ll 1\)</span> and for center-to-center distances near contact. For larger polymers or separations near the interaction cutoff <span class="math inline">\(2(R+\delta\)</span>, the exact formula should be used.</p>
+<p>This cubic polynomial approximation is valid for small <span class="math inline">\(q \ll 1\)</span> and for center-to-center distances near contact. For larger polymers or separations near the interaction cutoff <span class="math inline">\(2(R+\delta)\)</span>, the exact formula should be used.</p>
 <div>
 <div id="pyodide-6" class="exercise-cell">
 
@@ -1135,7 +1135,7 @@ h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 \]</span> where the pairwise interaction enters explicitly.</p>
 <p>Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.</p>
-<div id="d5676952" class="cell" data-execution_count="1">
+<div id="3c910cc7" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1224,7 +1224,7 @@ D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = 0
 <p>For sufficiently dense hard spheres (e.g.&nbsp;above <span class="math inline">\(\phi \sim 0.3\)</span>), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant.</p>
 <p>While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math display">\[\langle r^{2}(t)\rangle \propto t\]</span> when the particles undergo large-scale random-walk diffusion through many cages.</p>
 <p>However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>.</p>
-<div id="5b06b665" class="cell" data-execution_count="2">
+<div id="95a27ff0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
