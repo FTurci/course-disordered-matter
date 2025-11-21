@@ -666,6 +666,34 @@ B_2 \approx\frac{16\pi}{3} R_c^3 -\frac{32 \pi^2}{3} \beta \Pi R_c^3 R_p^3
 <p>A particle suspended in a liquid can be defined as <em>colloidal</em> if the kinetic energy of its thermally-driven Brownian motion is large enough to prevent it from settling completely to the bottom of the container under the influence of gravity.</p>
 <p>A second definition of a colloid is a particle whose gravitational Peclet number Pe is significantly smaller than 1. (The gravitational Peclet number is the ratio of the time taken by a particle to diffuse a distance equal to its radius to the time taken by it to sediment the same distance under gravity.)</p>
 <p>Show that these two definitions of a colloid are essentially equivalent.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To show the equivalence between these two definitions, we need to establish the relationship between thermal energy dominating over gravitational settling and the gravitational Peclet number being much less than 1.</p>
+<p>For the first definiton, a spherical particle of radius <span class="math inline">\(a\)</span> and density <span class="math inline">\(\rho_p\)</span> in a fluid of density <span class="math inline">\(\rho_f\)</span>, the gravitational force is: <span class="math display">\[F_g = \frac{4\pi a^3}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>The gravitational potential energy difference over a distance equal to the particle radius is: <span class="math display">\[U_g = F_g \cdot a = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>For thermal motion to dominate, we require: <span class="math display">\[k_B T \gg U_g = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>For th second definition, the gravitational Peclet number is defined as: <span class="math display">\[\text{Pe} = \frac{t_{\text{diffusion}}}{t_{\text{sedimentation}}}\]</span></p>
+<p>For diffusion over distance <span class="math inline">\(a\)</span>: <span class="math display">\[t_{\text{diffusion}} = \frac{a^2}{D}\]</span> where <span class="math inline">\(D\)</span> is the diffusion coefficient given by the Einstein relation: <span class="math inline">\(D = \frac{k_B T}{6\pi\eta a}\)</span>.</p>
+<p>For sedimentation over distance <span class="math inline">\(a\)</span> under Stokes drag: <span class="math display">\[t_{\text{sedimentation}} = \frac{a}{v_s}\]</span> where the sedimentation velocity is: <span class="math inline">\(v_s = \frac{F_g}{6\pi\eta a} = \frac{2a^2(\rho_p - \rho_f)g}{9\eta}\)</span>.</p>
+<p>Therefore: <span class="math display">\[\text{Pe} = \frac{a^2/D}{a/v_s} = \frac{a v_s}{D} = \frac{a \cdot \frac{2a^2(\rho_p - \rho_f)g}{9\eta}}{\frac{k_B T}{6\pi\eta a}}\]</span></p>
+<p>Simplifying: <span class="math display">\[\text{Pe} = \frac{2a^3(\rho_p - \rho_f)g \cdot 6\pi\eta a}{9\eta \cdot k_B T} = \frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T}\]</span></p>
+<p>From the first definition, colloidal behavior requires: <span class="math display">\[k_B T \gg \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>This is equivalent to: <span class="math display">\[\frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T} \ll 1\]</span></p>
+<p>But this is exactly the condition <span class="math inline">\(\text{Pe} \ll 1\)</span> from the second definition.</p>
+<p>Therefore, the two definitions are mathematically equivalent: thermal energy dominance over gravitational settling occurs precisely when the gravitational Peclet number is much smaller than unity. Both conditions ensure that Brownian motion prevents complete sedimentation, which is the hallmark of colloidal behavior.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="hard-rods-and-cavity-function" class="level3">
 <h3 class="anchored" data-anchor-id="hard-rods-and-cavity-function">Hard Rods and Cavity Function</h3>
@@ -689,6 +717,122 @@ Z = 1 + \rho \sigma g(\sigma^+)
 S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
 \]</span> for the probability to find a gap of length <span class="math inline">\(l\)</span>. Assume that the gaps are independent for simplicity and see that the <span class="math inline">\(g(r0)\)</span> you obtain matches the previous assumptions.</p></li>
 </ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><em>Calculate <span class="math inline">\(g(\sigma^+)\)</span></em></li>
+</ol>
+<p>We use the Tonks equation and the virial theorem: <span class="math display">\[
+Z_{\mathrm comp} = \frac{1}{1 - \rho \sigma}
+\]</span></p>
+<p><span class="math display">\[
+Z_{\mathrm comp} = 1 + \rho \sigma g(\sigma^+)
+\]</span> Setting the two expressions for <span class="math inline">\(Z\)</span> equal: <span class="math display">\[
+1 + \rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+\]</span> Isolating <span class="math inline">\(g(\sigma^+)\)</span>: <span class="math display">\[
+\rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma} - 1
+\]</span> Combine the right side using a common denominator: <span class="math display">\[
+\rho \sigma g(\sigma^+) = \frac{1 - (1 - \rho \sigma)}{1 - \rho \sigma} = \frac{\rho \sigma}{1 - \rho \sigma}
+\]</span> Dividing by <span class="math inline">\(\rho \sigma\)</span>: <span class="math display">\[
+g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+\]</span> This is the exact, analytic expression for the contact value for 1D hard rods.</p>
+<ol start="2" type="1">
+<li><em>Determine <span class="math inline">\(e^{-\beta u(\sigma)}\)</span></em></li>
+</ol>
+<p>The Boltzmann factor <span class="math inline">\(e^{-\beta u(x)}\)</span> at contact <span class="math inline">\(x = \sigma\)</span> is determined by the potential <span class="math inline">\(u(x)\)</span>: <span class="math display">\[
+e^{-\beta u(\sigma)} = e^{-\beta (0)} = 1
+\]</span></p>
+<p>Since the potential is zero for <span class="math inline">\(x \ge \sigma\)</span>, the particles are not interacting via the direct core repulsion precisely at <span class="math inline">\(\sigma^+\)</span>.</p>
+<ol start="3" type="1">
+<li><em>Determine <span class="math inline">\(y(\sigma)\)</span></em></li>
+</ol>
+<p>The cavity function <span class="math inline">\(y(x)\)</span> is related to <span class="math inline">\(g(x)\)</span> and the Boltzmann factor: <span class="math display">\[
+g(x) = e^{-\beta u(x)} y(x)
+\]</span> At contact, <span class="math inline">\(x = \sigma\)</span>: <span class="math display">\[
+g(\sigma^+) = e^{-\beta u(\sigma)} y(\sigma)
+\]</span> Substituting the results from (1) and (2): <span class="math display">\[
+\frac{1}{1 - \rho \sigma} = (1) \cdot y(\sigma)
+\]</span> Therefore, the cavity function at contact is: <span class="math display">\[
+y(\sigma) = \frac{1}{1 - \rho \sigma}
+\]</span> In this 1D case, <span class="math inline">\(g(\sigma^+)\)</span> and <span class="math inline">\(y(\sigma)\)</span> are equal.</p>
+<ol start="4" type="1">
+<li>Explain the meaning of <span class="math inline">\(y(\sigma)\)</span></li>
+</ol>
+<p>Let’s think of the direct correlation function</p>
+<p>It is useful to think about the Pecus Yevick apprximation for the direct correlation function</p>
+<p><span class="math display">\[c(r) = (1-e^{+\beta u(r)}) (h(r)+1)\]</span></p>
+<p>(see lecture notes).</p>
+<p>This can be rewritten as</p>
+<p><span class="math display">\[c(r) = (1-e^{+\beta u(r)}) g(r) = (1-e^{+\beta u(r)}) y(r)e^{-\beta u(r)}\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[c(r) = (e-{\beta u(r)}-1) y(r)= f(r) y(r)\]</span></p>
+<p>where we used the Mayer f-function. Both <span class="math inline">\(f(r)\)</span> and <span class="math inline">\(y(r)\)</span> are continuous and differentiable, making solving the Ornstein Zernicke problem a tractable problem. In particular, <span class="math inline">\(y(r)\)</span> allows us to remove the discontinuities cause by the potential at short distances and focus on the correlations produced outside of the core.</p>
+<p>The <span class="math inline">\(g(r)\)</span> is the <strong>total probability</strong> of finding a particle exactly one rod length (<span class="math inline">\(\sigma\)</span>) away from another particle, given the direct physical repulsion (<span class="math inline">\(\sigma^-\)</span> region) <em>and</em> the indirect correlations (the rest of the fluid). It is an <strong>experimental, measurable</strong> quantity directly linked to pressure via the virial theorem.</p>
+<p>The cavity function <span class="math inline">\(y(r)\)</span> is the probability of finding a particle at distance <span class="math inline">\(\sigma\)</span> <strong>if the direct, instantaneous repulsive interaction <span class="math inline">\(u(x)\)</span> were suddenly removed</strong> (i.e., if <span class="math inline">\(u(\sigma)\)</span> was momentarily zero). It represents the correlation due <strong>only to the structure induced by the surrounding fluid</strong>.</p>
+<p>We can reread the PY appoximation in this light</p>
+<p><span class="math display">\[c(r) = g_{\mathrm total}- g_{\mathrm indirect}\]</span></p>
+<p>We assume that there is a potential of mean force <span class="math inline">\(w(r)\)</span> generating the correlations, such that</p>
+<p><span class="math display">\[g(r) = g_{\mathrm total} (r)= e^{-beta w(r)}\]</span></p>
+<p>and then we decide to <strong>approximate</strong> the indirect but by <strong>removing</strong> the interparticle potential from the potential of mean force</p>
+<p><span class="math display">\[ g_{\mathrm indirect} = e^{-\beta (w(r)=u(r))}\]</span></p>
+<p>Then the PY approximation with the <span class="math inline">\(c(r) =f(r) y(r)\)</span> comes about.</p>
+<ol start="5" type="1">
+<li><em>Derivation </em></li>
+</ol>
+<p>Hard rods <strong>cannot overlap</strong>, so: <span class="math display">\[
+   g(r)=0\quad(r&lt;\sigma).
+\]</span></p>
+<p>Let the free gap between rods be</p>
+<p><span class="math display">\[l = r-\sigma \ge 0\]</span>.</p>
+<p>We use the maximum entropy principle to find <span class="math inline">\(p(l)\)</span>.</p>
+<p>We want to maximise</p>
+<p><span class="math display">\[
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+\]</span></p>
+<p>subject to</p>
+<p><span class="math display">\[
+\int_0^{\infty} p(l) d l=1, \quad \int_0^{\infty} l p(l) d l=\lambda
+\]</span></p>
+<p>where the mean free gap is</p>
+<p><span class="math display">\[\lambda=\frac{1-\rho\sigma}{\rho}\]</span></p>
+<p>Via Lagrange multipliers</p>
+<p><span class="math display">\[
+\delta\left[-\int p \ln p d l+\alpha\left(\int p d l-1\right)+\gamma\left(\int l p d l-\lambda\right)\right]=0
+\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[
+p(l)=\frac{1}{\lambda} e^{-l/\lambda}
+\]</span></p>
+<p>and <span class="math display">\[
+\gamma=-\frac{1}{\lambda}, \quad \alpha=1-\ln \lambda
+\]</span></p>
+<p>We then convert from gap probability to pair correlation.</p>
+<p>The pair correlation is the probability to find the particle as some position <span class="math inline">\(r\)</span> scaled by the density: <span class="math display">\[
+g(r)=\frac{p(r-\sigma)}{\rho}.
+\]</span></p>
+<p>Substitute <span class="math inline">\(p(l)\)</span> and <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[
+g(r)=\frac{1}{(1-\rho\sigma)}\exp\left[-\frac{\rho(r-\sigma)}{1-\rho\sigma}\right].
+\]</span></p>
+<p>Checks: <span class="math display">\[
+g(\sigma^+) = \frac{1}{1-\rho\sigma}.
+\]</span></p>
+<p>Matches the 1D hard-rod equation of state: <span class="math display">\[
+P = \frac{\rho k_BT}{1-\rho\sigma}.
+\]</span></p>
+</div>
+</div>
+</div>
 
 
 <script type="ojs-module-contents">
