@@ -1366,5 +1366,16 @@
       "Complex disordered systems",
       "Problems"
     ]
+  },
+  {
+    "objectID": "soft-matter/soft-matter_problems.html#polymers",
+    "href": "soft-matter/soft-matter_problems.html#polymers",
+    "title": "Complex disordered systems: Problems",
+    "section": "Polymers",
+    "text": "Polymers\n\nPolymer in theta solvent\nConsider a polymeric molecule initially a solvent at temperature \\(T_1=\\Theta\\) (i.e. at the so-called theta temperature of the solvent). It is composed of \\(N=10^5\\) identical monomers of size \\(b=0.2 \\text{nm}\\).\n\nEstimate its root-mean-square end-to-end distance.\nProvide a second estimet at a second temperature \\(T_2\\gg \\Theta\\)",
+    "crumbs": [
+      "Complex disordered systems",
+      "Problems"
+    ]
   }
 ]
