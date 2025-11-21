@@ -369,6 +369,7 @@ window.Quarto = {
   <li><a href="#polymers" id="toc-polymers" class="nav-link" data-scroll-target="#polymers">Polymers</a>
   <ul class="collapse">
   <li><a href="#polymer-in-theta-solvent" id="toc-polymer-in-theta-solvent" class="nav-link" data-scroll-target="#polymer-in-theta-solvent">Polymer in theta solvent</a></li>
+  <li><a href="#flory-exponent-for-a-polymer-globule" id="toc-flory-exponent-for-a-polymer-globule" class="nav-link" data-scroll-target="#flory-exponent-for-a-polymer-globule">Flory exponent for a polymer globule</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -847,6 +848,26 @@ P = \frac{\rho k_BT}{1-\rho\sigma}.
 <ol type="1">
 <li>Estimate its root-mean-square end-to-end distance.</li>
 <li>Provide a second estimate at a second temperature <span class="math inline">\(T_2\gg \Theta\)</span></li>
+</ol>
+</section>
+<section id="flory-exponent-for-a-polymer-globule" class="level3">
+<h3 class="anchored" data-anchor-id="flory-exponent-for-a-polymer-globule">Flory exponent for a polymer globule</h3>
+<p>Consider a single flexible polymer of <span class="math inline">\(N\)</span> monomers, each of size <span class="math inline">\(b\)</span>, in a poor solvent (i.e., <span class="math inline">\(T &lt; \Theta\)</span>), so that the polymer collapses into a dense globule.</p>
+<ol type="1">
+<li>The entropic contribution for the chain can be approximated (see notes) with</li>
+</ol>
+<p><span class="math display">\[
+S = \frac{-3 k_B R^2}{2 N b^2}
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the radius of the globule (essentially proportional to the root means quared distance of the end to ened vector).</p>
+<p>Try to figure out why this leads to what is called as the “elastic” free energy of the chain.</p>
+<ol start="2" type="1">
+<li>The globule is dense. Write the interaction free energy using the virial expansion, noting that <span class="math inline">\(\rho=N/R^3\)</span> stopping at order three.</li>
+</ol>
+<p>We state that the second virial drives the collapse (attraction) while the third virial is repulsive and prevents complete collapse.</p>
+<ol start="3" type="1">
+<li><p>Minimise the total free energy to obtain a function <span class="math inline">\(f(R)=0\)</span>. Show that if we assume that <span class="math inline">\(R\)</span> grows with N more slowly than in the theta conditions, the entropic part of the resulting function of R can beneglected.</p></li>
+<li><p>Proceed with the approximation and extract the Flory exponent <span class="math inline">\(\nu\)</span> for the globule, defined by <span class="math inline">\(R \sim N^\nu\)</span>: how is it different for other solvent conditions?</p></li>
 </ol>
 
 
