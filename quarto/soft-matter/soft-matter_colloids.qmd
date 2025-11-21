@@ -374,35 +374,41 @@ V_{\rm exclusion}& = V_{\rm outer}-V_{\rm inner}\\
 \end{aligned}
 $$ Changing the separation between the two colloids but maintaining $r>2R_d$ does not change the grand potential: there is no free energy advantage and hence no effective interaction.
 
-Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. When $r<2R_d$ (and, obviously, $r>2R$) an overlap region is formed (the lens-shaped region of the figure above). Its volume can be calculated simply from geometrical considerations, and it is $$
-V_{\mathrm{overlap}}(r)=\dfrac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right]
-$$ {#eq-voverlap} 
-
-This can also be written as
+Instead, it is only when we take the colloids *closer* than $2R_d$ that we see a free energy difference. For $2R < r < 2R_d$, an overlap region (lens-shaped) is formed. Its volume can be calculated geometrically as
 
 $$
-V_{\text {overlap }}(r)=\frac{\pi\left(4 (R+\delta)+r\right)\left(2 (R+\delta)-r\right)^2}{12}
+V_{\text{overlap}}(r)
+=\frac{\pi}{12}\,
+\bigl(4(R+\delta)+r\bigr)\,
+\bigl(2(R+\delta)-r\bigr)^{2},
+\qquad
+2R \le r \le 2(R+\delta),
 $$
 
-The new accessible volume is $$V_{\rm accessible}'=V-2V_{\rm exclusion}+V_{\mathrm{overlap}}$$. The interaction between the two colloids resulting from the free energy advantage is called **potential of mean force** $W(r)$. It is expressed as $$
-\begin{aligned}
-W_{\rm AO}(r) = \Omega(r)-\Omega^{\infty} & =-k_BT e^{\mu/k_B T}\left(V_{\rm accessible}(r)-V_{\rm accessible}(\infty)\right)\\
-& = -k_BT e^{\mu/k_B T}\left[V-2V_{\rm exclusion}+V_{\mathrm{overlap}}(r)-(V-2V_{\rm exclusion})\right]\\
-& = -k_BT e^{\mu/k_B T} V_{\mathrm{overlap}(r)}\\
-& = -k_B T \rho_p V_{\mathrm{overlap}(r)}
-\end{aligned}
-$$ We can now re-use the ideal polymer chemical potential definition @eq-ideal-mu and the geometrical expression for $V_{\mathrm{overlap}}$ in @eq-voverlap to finally write the **Asakura-Oosawa** potential
+which gives the **exact Asakura-Oosawa potential**:
+
+$$
+W_{\rm AO}(r) = - k_B T \rho_p V_{\rm overlap}(r).
+$$
+
+The *approximate* form commonly used for small polymer-to-colloid size ratios $q = \delta / R \ll 1$ is obtained by expanding the overlap volume as a cubic polynomial in $r/(R+\delta)$:
+
+$$
+V_{\rm overlap}(r) \approx \frac{4 \pi}{3} (R+\delta)^3
+\left[ 1 - \frac{3}{4}\frac{r}{R+\delta} + \frac{1}{16}\left(\frac{r}{R+\delta}\right)^3 \right],
+\quad 2R \le r < 2(R+\delta),
+$$
+
+which yields the **approximate AO potential**:
+
+$$
+W_{\rm AO}(r) \approx - \frac{4 \pi \rho_p k_B T}{3} (R+\delta)^3
+\left[ 1 - \frac{3}{4}\frac{r}{R+\delta} + \frac{1}{16}\left(\frac{r}{R+\delta}\right)^3 \right].
+$$
+
+This cubic polynomial approximation is valid for small $q \ll 1$ and for center-to-center distances near contact. For larger polymers or separations near the interaction cutoff $2(R+\delta)$, the exact formula should be used.
 
 
-::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
-$$
-W_{\rm AO} (r) = - \dfrac{4 \pi \rho_p^r k_B T}{3} (R+\delta)^3\left[1-\dfrac{3}{4} \dfrac{r}{R+\delta}+\frac{1}{16}\left(\dfrac{r}{R+\delta}\right)^3\right] \quad 2R\leq r< 2R+2\delta
-$$
-:::
-
-taking $q = \delta / R$ (the polymer-to-colloid size ratio), so $R+\delta = R(1+q)$ and $r/(R+\delta) = r/[R(1+q)]$ the AO potential can also be rewritten as: $$
-W_{\rm AO}(r) = -\frac{4\pi \rho_p^r k_B T}{3} [R(1+q)]^3 \left[1 - \frac{3}{4} \frac{r}{R(1+q)} + \frac{1}{16} \left(\frac{r}{R(1+q)}\right)^3 \right] \quad 2R \leq r < 2R(1+q)
-$$
 
 ```{pyodide}
 #| caption: "Asakura-Oosawa potential [press ctrl/cmd [ENTER] to run]"
@@ -438,6 +444,7 @@ plt.plot(r, W_AO)
 plt.gca().set(xlabel="Separation $r/R$", ylabel="$W_{AO}(r)$", title="Asakura-Oosawa Depletion Potential")
 plt.show()
 ```
+
 
 ::: {.callout-note collapse="true"}
 # Force-based derivation of the AO interaction
