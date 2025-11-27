@@ -502,7 +502,7 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <p>where <span class="math inline">\(C_V\)</span> is the heat capacity at constant volume and <span class="math inline">\(T_0\)</span> is a reference temperature. For a fluid like a gas, only the total entropy is well defined. Even for a liquid at high temperature this is the case, because there are no meaningful metabasins in the free energy profile.</p>
 <p>It is only as we decrease the temperature further that the metabasins can be defined (via <em>coarse-graining</em>). These reference conformations can be used to split the total entropy into two contributions</p>
 <p><span class="math display">\[S = S_{\rm conf}+S_{\rm vib}\]</span></p>
-<p>where <span class="math inline">\(S_{\rm vib}\)</span> is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuations. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g.&nbsp;FCC, HCP, BCC etc.).</p>
+<p>where <span class="math inline">\(S_{\rm vib}\)</span> is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuations. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crystalline packings (e.g.&nbsp;FCC, HCP, BCC etc.).</p>
 </section>
 <section id="glasses" class="level2 page-columns page-full" data-number="18.2">
 <h2 data-number="18.2" class="anchored" data-anchor-id="glasses"><span class="header-section-number">18.2</span> Glasses</h2>
@@ -649,7 +649,14 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <h3 data-number="18.3.1" class="anchored" data-anchor-id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model"><span class="header-section-number">18.3.1</span> Connection between VFT and configurational entropy: the Adam-Gibbs model</h3>
 <p>A key theoretical link between the dramatic slowdown of dynamics (as described by the VFT law) and the underlying thermodynamics is provided by the <strong>Adam-Gibbs model</strong>, details in <span class="citation" data-cites="bouchaud2004adam">Bouchaud and Biroli (<a href="#ref-bouchaud2004adam" role="doc-biblioref">2004</a>)</span>.</p>
 <p>This model proposes that the structural relaxation time <span class="math inline">\(\tau_\alpha\)</span> is controlled by the <strong>configurational entropy</strong> <span class="math inline">\(S_{\rm conf}\)</span>, which counts the number of distinct amorphous basins available to the system.</p>
-<p>The Adam-Gibbs relation reads: <span class="math display">\[
+<p>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together to explore a new metabasin in the energy landscape.</p>
+<p>The sketch of the theory is the following: we split the system into <span class="math inline">\(M_{CRR}\)</span> independent cooperatively rearranging regions of size <span class="math inline">\(n_{CRR}\)</span> particles each. The total number of particles is <span class="math inline">\(N = M_{CRR} n_{CRR}\)</span>.</p>
+<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">\(s_{conf}\)</span>, irrespective of its size</p>
+<p><span class="math inline">\(S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*\)</span></p>
+<p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">\(S_{conf}/N\)</span>: <span class="math display">\[n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}\]</span></p>
+<p>We then assume that the activation free energy <span class="math inline">\(\Delta G\)</span> required for a CRR to rearrange is proportional to its size:</p>
+<p><span class="math display">\[\Delta G(T) \propto n_{CRR}(T)\]</span></p>
+<p>By assuming activated dynamics, the Adam-Gibbs relation follows: <span class="math display">\[
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
 \]</span> where <span class="math inline">\(A\)</span> is a constant. As temperature decreases, <span class="math inline">\(S_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>. If <span class="math inline">\(S_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form: <span class="math display">\[
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
@@ -658,7 +665,8 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <section id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law" class="level3" data-number="18.3.2">
 <h3 data-number="18.3.2" class="anchored" data-anchor-id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law"><span class="header-section-number">18.3.2</span> Alternative perspective: Dynamical facilitation and the parabolic law</h3>
 <p>While thermodynamic models like Adam-Gibbs relate the glass transition to configurational entropy, a radical alternative approach is the <strong>dynamical facilitation theory</strong>, see <span class="citation" data-cites="chandler2010dynamics">Chandler and Garrahan (<a href="#ref-chandler2010dynamics" role="doc-biblioref">2010</a>)</span> for more details. This framework emphasizes that glassy slowdown arises from the dynamics themselves, rather than underlying thermodynamic changes.</p>
-<p>In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility “facilitates” further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.</p>
+<p>Here the central observation is that the dynamics of all glassy systems is highly hetogeneous in space and time: some regions are very mobile, while others are essentially frozen. This <strong>dynamic heterogeneity</strong> is a hallmark of glassy dynamics.</p>
+<p>In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility <em>facilitates</em> further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.</p>
 <p>A schematic illustration:</p>
 <ul>
 <li>At high <span class="math inline">\(T\)</span>, mobile regions are abundant and relaxation is fast.</li>
@@ -892,7 +900,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="77cc35e9" class="cell" data-execution_count="1">
+<div id="81780e1d" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -906,7 +914,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="0abeb09c" class="cell" data-execution_count="2">
+<div id="1f86c665" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -966,7 +974,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="ce405432" class="cell" data-execution_count="3">
+<div id="84db05e8" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
