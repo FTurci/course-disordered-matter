@@ -1399,5 +1399,16 @@
       "Complex disordered systems",
       "Problems"
     ]
+  },
+  {
+    "objectID": "soft-matter/soft-matter_problems.html#liquid-crystals",
+    "href": "soft-matter/soft-matter_problems.html#liquid-crystals",
+    "title": "Complex disordered systems: Problems",
+    "section": "Liquid crystals",
+    "text": "Liquid crystals\n\nLinearising Maier-Saupe\nIn the Maier-Saupe mean-field theory of nematic liquid crystals, the orientation distribution function of rod-like molecules is given by\n\\[\np(\\theta)=\\frac{1}{Z}\\exp\\big(\\lambda P_2(\\cos\\theta)\\big),\\qquad\nZ=\\int_0^\\pi \\exp\\big(\\lambda P_2(\\cos\\theta)\\big)\\sin\\theta\\,d\\theta,\n\\] where \\(\\lambda=uS/(k_BT)\\) and \\[\nS=\\langle P_2(\\cos\\theta)\\rangle\n=\\frac{\\int_0^\\pi P_2(\\cos\\theta)p(\\theta)\\sin\\theta\\,d\\theta}{\\int_0^\\pi p(\\theta)\\sin\\theta\\,d\\theta}.\n\\]\nThis leads to the implicit (“self-consistent”) relation \\[\nS=\\frac{\\int_0^\\pi P_2(\\cos\\theta)e^{\\lambda P_2(\\cos\\theta)}\\sin\\theta\\,d\\theta}{\\int_0^\\pi e^{\\lambda P_2(\\cos\\theta)}\\sin\\theta\\,d\\theta}.\n\\]\nYou may use \\[\n\\int_0^\\pi P_2(\\cos\\theta)\\sin\\theta\\,d\\theta=0,\\qquad\n\\int_0^\\pi [P_2(\\cos\\theta)]^2\\sin\\theta\\,d\\theta=\\frac{2}{5} .\n\\]\n\nExplain why the above equation is implicit and why it means to linearise it near the isotropic phase.\nAssuming \\(\\lambda\\) is small, expand \\[\ne^{\\lambda P_2(\\cos\\theta)}\n\\] to first order in \\(\\lambda\\).\nUsing your expansion derive the linearised relation between \\(S\\) and \\(\\lambda\\).\nUsing \\(\\lambda=uS/(k_BT)\\), determine the value of \\(k_BT/u\\) at which a non-zero solution for \\(S\\) first appears.",
+    "crumbs": [
+      "Complex disordered systems",
+      "Problems"
+    ]
   }
 ]

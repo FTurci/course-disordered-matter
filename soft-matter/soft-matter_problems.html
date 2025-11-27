@@ -371,6 +371,10 @@ window.Quarto = {
   <li><a href="#polymer-in-theta-solvent" id="toc-polymer-in-theta-solvent" class="nav-link" data-scroll-target="#polymer-in-theta-solvent">Polymer in theta solvent</a></li>
   <li><a href="#flory-exponent-for-a-polymer-globule" id="toc-flory-exponent-for-a-polymer-globule" class="nav-link" data-scroll-target="#flory-exponent-for-a-polymer-globule">Flory exponent for a polymer globule</a></li>
   </ul></li>
+  <li><a href="#liquid-crystals" id="toc-liquid-crystals" class="nav-link" data-scroll-target="#liquid-crystals">Liquid crystals</a>
+  <ul class="collapse">
+  <li><a href="#linearising-maier-saupe" id="toc-linearising-maier-saupe" class="nav-link" data-scroll-target="#linearising-maier-saupe">Linearising Maier-Saupe</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -868,6 +872,35 @@ S = \frac{-3 k_B R^2}{2 N b^2}
 <ol start="3" type="1">
 <li><p>Minimise the total free energy to obtain a function <span class="math inline">\(f(R)=0\)</span>. Show that if we assume that <span class="math inline">\(R\)</span> grows with N more slowly than in the theta conditions, the entropic part of the resulting function of R can beneglected.</p></li>
 <li><p>Proceed with the approximation and extract the Flory exponent <span class="math inline">\(\nu\)</span> for the globule, defined by <span class="math inline">\(R \sim N^\nu\)</span>: how is it different for other solvent conditions?</p></li>
+</ol>
+</section>
+</section>
+<section id="liquid-crystals" class="level2">
+<h2 class="anchored" data-anchor-id="liquid-crystals">Liquid crystals</h2>
+<section id="linearising-maier-saupe" class="level3">
+<h3 class="anchored" data-anchor-id="linearising-maier-saupe">Linearising Maier-Saupe</h3>
+<p>In the Maier-Saupe mean-field theory of nematic liquid crystals, the orientation distribution function of rod-like molecules is given by</p>
+<p><span class="math display">\[
+p(\theta)=\frac{1}{Z}\exp\big(\lambda P_2(\cos\theta)\big),\qquad
+Z=\int_0^\pi \exp\big(\lambda P_2(\cos\theta)\big)\sin\theta\,d\theta,
+\]</span> where <span class="math inline">\(\lambda=uS/(k_BT)\)</span> and <span class="math display">\[
+S=\langle P_2(\cos\theta)\rangle
+=\frac{\int_0^\pi P_2(\cos\theta)p(\theta)\sin\theta\,d\theta}{\int_0^\pi p(\theta)\sin\theta\,d\theta}.
+\]</span></p>
+<p>This leads to the implicit (“self-consistent”) relation <span class="math display">\[
+S=\frac{\int_0^\pi P_2(\cos\theta)e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}{\int_0^\pi e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}.
+\]</span></p>
+<p>You may use <span class="math display">\[
+\int_0^\pi P_2(\cos\theta)\sin\theta\,d\theta=0,\qquad
+\int_0^\pi [P_2(\cos\theta)]^2\sin\theta\,d\theta=\frac{2}{5} .
+\]</span></p>
+<ol type="1">
+<li><p>Explain why the above equation is implicit and why it means to linearise it near the isotropic phase.</p></li>
+<li><p>Assuming <span class="math inline">\(\lambda\)</span> is small, expand <span class="math display">\[
+e^{\lambda P_2(\cos\theta)}
+\]</span> to first order in <span class="math inline">\(\lambda\)</span>.</p></li>
+<li><p>Using your expansion derive the linearised relation between <span class="math inline">\(S\)</span> and <span class="math inline">\(\lambda\)</span>.</p></li>
+<li><p>Using <span class="math inline">\(\lambda=uS/(k_BT)\)</span>, determine the value of <span class="math inline">\(k_BT/u\)</span> at which a non-zero solution for <span class="math inline">\(S\)</span> first appears.</p></li>
 </ol>
 
 
