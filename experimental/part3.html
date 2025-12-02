@@ -554,23 +554,11 @@ window.Quarto = {
 </table>
 <p>The concentrations of the germanium and oxygen atoms are <span class="math inline">\(c_{Ge}=1/2\)</span> and <span class="math inline">\(c_O=2/3\)</span> so the relative weightings of the three partial structure factors in <span class="math inline">\(F^N\)</span> are different for the differently isotopically labelled samples so that the diffaction pattern observed will be different for each case. We can express the difference in matrix form</p>
 <center>
-$ (
-<span class="math display">\[\begin{matrix} 0.074&amp;0.150&amp;0.211\\0.110&amp;0.150&amp;0.256\\0.030&amp;0.150&amp;0.133\\\end{matrix}\]</span>
-)(
-<span class="math display">\[\begin{matrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\\\end{matrix}\]</span>
-)=(
-<span class="math display">\[\begin{matrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\\\end{matrix}\]</span>
-)$
+<span class="math display">\[\begin{pmatrix} 0.074&amp;0.150&amp;0.211\\0.110&amp;0.150&amp;0.256\\0.030&amp;0.150&amp;0.133\end{pmatrix}\begin{pmatrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\end{pmatrix}=\begin{pmatrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\end{pmatrix}\]</span>
 </center>
-<p>from which we can see that we have three measurements (the <span class="math inline">\(F^N(Q)\)</span> for the different isotope compositions) and three unknowns (the partial <span class="math inline">\(S_{\alpha\beta}(Q)\)</span>, Hence, we can determine <span class="math inline">\(S_{GeGe}(Q)\)</span>,<span class="math inline">\(S_{OO}(Q)\)</span> and <span class="math inline">\(S_{GeO}{Q}\)</span> by multiplying the left and right side of this equation by the inverse matrix to obtain,</p>
+<p>from which we can see that we have three measurements (the <span class="math inline">\(F^N(Q)\)</span> for the different isotope compositions) and three unknowns (the partial <span class="math inline">\(S_{\alpha\beta}(Q)\)</span>). Hence, we can determine <span class="math inline">\(S_{GeGe}(Q)\)</span>, <span class="math inline">\(S_{OO}(Q)\)</span> and <span class="math inline">\(S_{GeO}(Q)\)</span> by multiplying the left and right side of this equation by the inverse matrix to obtain,</p>
 <center>
-$ (
-<span class="math display">\[\begin{matrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\\\end{matrix}\]</span>
-)=(
-<span class="math display">\[\begin{matrix} -171&amp;108&amp;63\\-65&amp;34&amp;38\\111&amp;-62&amp;-49\\\end{matrix}\]</span>
-)(
-<span class="math display">\[\begin{matrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\\\end{matrix}\]</span>
-)$
+<span class="math display">\[\begin{pmatrix}S_{GeGe}(Q)\\S_{OO}(Q)\\S_{GeO}(Q)\end{pmatrix}=\begin{pmatrix} -171&amp;108&amp;63\\-65&amp;34&amp;38\\111&amp;-62&amp;-49\end{pmatrix}\begin{pmatrix}F^N_{nat}(Q)\\F^N_{70}(Q)\\F^N_{73}(Q)\end{pmatrix}\]</span>
 </center>
 <p>The figures below show the measured <span class="math inline">\(F^N(Q)\)</span> for these isotopically labelled glasses and the partial structure factors obtained by this matrix inversion. The <span class="math inline">\(g_{\alpha\beta}(r)\)</span> obtained by fourier transform of the partial structure is shown below in addition to the total <span class="math inline">\(G(r)\)</span> for the natural sample.</p>
 <center>
