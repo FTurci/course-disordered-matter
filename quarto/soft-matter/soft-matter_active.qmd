@@ -503,6 +503,8 @@ plt.show()
 
 When the active Brownian particles are actually interacting with each other, they can give rise to an exceptional nonequilibrium phenomenon of self organisation called **motility-induced phase separation** (MIPS).
 
+![Motility induced phase separation in a 3D system of active Brownian particles. As the persistence of the motion increases (i.e. the rotational diffusion decreases), the system phase separates into a dense and a dilute phase, akin to a liquid-gas phase separation in equilibrium systems. Adapted from @PhysRevLett.126.038002](./figs/mips.png){#fig-mips width="70%"}
+
 The idea is to consider purely repulsive particles (i.e hard spheres) obeying the ABP dynamics. This means that, in equilibrium (i.e. in the absence of self-propulsion) no liquid-gas phase separation is possible (see @sec-hard-spheres). 
 
 However, as we reduce the rotational diffusion, the persistent motion becomes more important, the system becomes more out of equilibrium and new physics comes to play. 

@@ -93,6 +93,12 @@ book:
            
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
+    - part: "Second experimental interlude"
+      chapters:
+        - href: experimental/part3.ipynb
+          text: "Reciprocal-space measurements"
+        - href: experimental/part4.ipynb
+          text: "Structure and dynamics"
     - text: "Notes as pdf" 
       href: notes.pdf
   # appendices:

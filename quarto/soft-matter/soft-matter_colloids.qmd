@@ -391,22 +391,19 @@ $$
 W_{\rm AO}(r) = - k_B T \rho_p V_{\rm overlap}(r).
 $$
 
-The *approximate* form commonly used for small polymer-to-colloid size ratios $q = \delta / R \ll 1$ is obtained by expanding the overlap volume as a cubic polynomial in $r/(R+\delta)$:
+The form can be expressed in terms of  $q = \delta / R $ by using
 
 $$
-V_{\rm overlap}(r) \approx \frac{4 \pi}{3} (R+\delta)^3
+V_{\rm overlap}(r) = \frac{4 \pi}{3} (R+\delta)^3
 \left[ 1 - \frac{3}{4}\frac{r}{R+\delta} + \frac{1}{16}\left(\frac{r}{R+\delta}\right)^3 \right],
 \quad 2R \le r < 2(R+\delta),
 $$
 
-which yields the **approximate AO potential**:
+which yields the **AO potential**:
 
 $$
-W_{\rm AO}(r) \approx - \frac{4 \pi \rho_p k_B T}{3} (R+\delta)^3
-\left[ 1 - \frac{3}{4}\frac{r}{R+\delta} + \frac{1}{16}\left(\frac{r}{R+\delta}\right)^3 \right].
+W_{\mathrm{AO}}(r)=-\frac{4 \pi \rho_p k_B T}{3} R^3(1+q)^3\left[1-\frac{3}{4} \frac{r}{R(1+q)}+\frac{1}{16}\left(\frac{r}{R(1+q)}\right)^3\right]
 $$
-
-This cubic polynomial approximation is valid for small $q \ll 1$ and for center-to-center distances near contact. For larger polymers or separations near the interaction cutoff $2(R+\delta)$, the exact formula should be used.
 
 
 

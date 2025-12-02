@@ -74,7 +74,7 @@ It is only as we decrease the temperature further that the metabasins can be def
 
 $$S = S_{\rm conf}+S_{\rm vib}$$
 
-where $S_{\rm vib}$ is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuations. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crustalline packings (e.g. FCC, HCP, BCC etc.).
+where $S_{\rm vib}$ is the vibrational entropy around the reference conformations, and is mainly due to thermal fluctuations. In this sense, we are describing the thermodynamics of a disordered system in a way closer to what we would do for a crystal, where the reference conformations are provided by the crystalline packings (e.g. FCC, HCP, BCC etc.).
 
 
 ## Glasses
@@ -207,7 +207,22 @@ A key theoretical link between the dramatic slowdown of dynamics (as described b
 
 This model proposes that the structural relaxation time $\tau_\alpha$ is controlled by the **configurational entropy** $S_{\rm conf}$, which counts the number of distinct amorphous basins available to the system.
 
-The Adam-Gibbs relation reads:
+The key idea is the existence of **cooperatively rearranging regions** (CRRs): to relax, particles need to move together to explore a new metabasin in the energy landscape.
+
+The sketch of the theory is the following: we split the system into $M_{CRR}$ independent cooperatively rearranging regions of size $n_{CRR}$ particles each. The total number of particles is $N = M_{CRR} n_{CRR}$.
+
+We **assume** that the total configurational entropy is additive and that each CRR contributes a constant amount $s_{conf}$, irrespective of its size
+
+$S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*$
+
+Rearranging gives the size of a CRR as a function of the configurational entropy per particle $S_{conf}/N$:
+$$n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}$$
+
+We then assume that the activation free energy $\Delta G$ required for a CRR to rearrange is proportional to its size: 
+
+$$\Delta G(T) \propto n_{CRR}(T)$$
+
+By assuming activated dynamics, the Adam-Gibbs relation follows:
 $$
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
 $$
@@ -221,7 +236,10 @@ with $T_0 \approx T_K$. Thus, the Adam-Gibbs model provides a thermodynamic inte
 
 While thermodynamic models like Adam-Gibbs relate the glass transition to configurational entropy, a radical alternative approach is the **dynamical facilitation theory**, see @chandler2010dynamics for more details. This framework emphasizes that glassy slowdown arises from the dynamics themselves, rather than underlying thermodynamic changes.
 
-In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility "facilitates" further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.
+Here the central observation is that the dynamics of all glassy systems is highly hetogeneous in space and time: some regions are very mobile, while others are essentially frozen. This **dynamic heterogeneity** is a hallmark of glassy dynamics. It corresponds to a **dynamical coexistence** between fast-relaxing and slow relaxing region that can be formalised as a **dynamical phase transition**.
+
+
+In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility *facilitates* further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.
 
 A schematic illustration:
 
