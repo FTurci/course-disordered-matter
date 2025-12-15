@@ -58,7 +58,7 @@ Now, as stated in @sec-background, the free energy provides the route to all
 thermodynamic functions of interest. An expression for the magnetisation
 can be obtained simply by taking the field derivative of $F$ (cf. @fig-thermo)
 
-$$m(t,h)=-t^{(1-b)/a}m(1,t^{-b/a}h)
+$$m(t,h)=(-t)^{(1-b)/a}m(1,t^{-b/a}h)
 $${#eq-magscale}
 
 In zero applied field $h=0$, this reduces to

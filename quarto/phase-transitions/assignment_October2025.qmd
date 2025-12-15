@@ -154,10 +154,10 @@ $$
 
 where $O_n$ is the value measured in configuration $C_n$, and ${\cal N}$ is the total number of configurations use for sampling.
 
-Other observables (those which are second derivatives of the free energy) such as the heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the heat capacity (cf. problem set) is 
+Other observables (those which are second derivatives of the free energy) such as the heat capacity can't be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat capacity (cf. problem set) is 
 
 $$
-C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
+C=\frac{1}{l^dk_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{L^dk_BT^2}
 $$
 
 
@@ -198,8 +198,7 @@ $$
     s_i=2c_i-1;~~~~ J=\frac{\epsilon}{4};~~~~
     h=\frac{\epsilon q+2\mu}{4}.
 $$
-*where $q$ is the lattice coordination number ($q=4$ in 2-dimensions and $q=6$ in 3d).*  
-(Hint: Note that when doing sums over bonds $\sum_{\langle i,j\rangle}$ for a lattice of coordination $q$ there are $q/2$ bonds per site since each bond is shared between two sites.) **[4 marks]**
+*where $q$ is the lattice coordination number ($q=4$ in 2-dimensions and $q=6$ in 3d).*   **[4 marks]**
 
 *Given that the critical temperature of the 2d Ising model is $T_c\approx 2.269\: J/k_B$, use the above mapping to find the value of the critical temperature of the 2d lattice gas model in units of $\epsilon/k_B$*. **[2 marks]**
 
@@ -211,7 +210,7 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 - *Review the program thoroughly and gain a clear understanding of its functionality.*
 
-- *The program calculates the average form of the 2d structure factor $S(\mathbf{k})$. Using this, obtain and plot the radially averaged structure 1d factor $S(|k|)$. *
+- *The program calculates the average form of the 2d structure factor $S(\mathbf{k})$. Using this, obtain and plot an example of the radially averaged structure 1d factor $S(|k|)$. *
   **[6 marks]**
 
 - *Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.3, above.*  
@@ -220,20 +219,20 @@ In this implementation, the particle density is fixed at $\rho = \rho_c = 0.5$. 
 
 ## 3.4 Computational investigations of correlations on the approach to criticality
 
-- *Perform simulations at several (six or seven) temperatures within the super-critical range $T_c \le T \lesssim 2T_c$. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated* **[4 marks]**
+- *Perform simulations at several (six or seven) temperatures within the super-critical range $T_c \le T \lesssim 2T_c$. For each temperature, show the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated* **[4 marks]**
 
-* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(\mathbf{k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[4 marks]**
+* *Plot and compare the radial distribution function $g(r)$ and the structure factor $S(\mathbf{k})$, and its radially averaged form, $S(|k|)$ at each temperature*. **[3 marks]**
 
-* *Interpret the peak structure in $g(r)$ and $S(|k|)$ and discuss the relationship to clustering or ordering*. **[3 marks]**
+* *Interpret the peak structure in $g(r)$ and $S(|k|)$ and discuss the relationship to clustering or ordering. Interpret also the spikes in g(r).*  **[4 marks]**
 
-* *The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length $\xi$ through $\xi=1/FWHM$. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
+* *The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length $\xi$ through $\xi= 1/FWHM$. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of $\xi$ and comment on its behaviour*. **[4 marks]**
 
 
 ## 3.5 Temperature and system size dependence of the specific heat
 
-*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g $T_c/2<T<2T_c$). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.*  **[4 marks]**
+*Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g $T_c/2<T<2T_c$). Plot and describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.*  **[4 marks]**
 
-*Repeat the analysis that you performed for the $L=50$ system, for system sizes $L=20$ and $L=35$. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.* **[4 marks]**
+*Repeat the analysis that you performed for the $L=50$ system, for system sizes $L=20$ and $L=35$. Calculate error bars for all data point, describing how you did this. Compare the results for all three system size and highlight any observed differences.  Discuss possible explanations for these size-dependent effects.* **[4 marks]**
 
 ## 4.0 Your report
 

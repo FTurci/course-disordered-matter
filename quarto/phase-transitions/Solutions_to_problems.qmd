@@ -169,7 +169,7 @@ van-der Waals loop.
 To find the compressibility critical exponent $\gamma$, we recall that
 
 $$
-\kappa_T=\frac{-1}{V}\left(\frac{\partial V}{\partial P}\right)_T=\frac{-1}{p_cv}\left(\frac{\partial v}{\partial p}\right)_t\propto \tilde{t}^{-\gamma}
+\kappa_T=\frac{-1}{V}\left(\frac{\partial V}{\partial P}\right)_T=\frac{-1}{P_cv}\left(\frac{\partial v}{\partial p}\right)_t\propto \tilde{t}^{-\gamma}
 $$
 with $\tilde{t}=(T-T_c)/T_c$ small.
 
@@ -207,7 +207,7 @@ $$
 \:                =& \frac{3NqJt}{2}\\
 \:                =& \frac{3Nk_B(T-T_c)}{2}
 \end{aligned}
-$$ while $\langle E \rangle= \textrm{ constant}$ for $T>T_c$.
+$$ while $\langle E \rangle= \textrm{ constant}$ (zero) for $T>T_c$ because $m=0$.
 
 Hence differentiating, we find
 $$
