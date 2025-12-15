@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../phase-transitions/mean-field-theory.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bd99fce104e3297f9650d28217f11d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -89,7 +88,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -131,8 +130,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -423,7 +421,7 @@ g(u,v)=v^{1/b}g(\frac{u}{v^{a/b}},1)\]</span></p>
 <p>Without loss of generality, we can set <span class="math inline">\(\lambda^a=t^{-1}\)</span>, implying <span class="math inline">\(\lambda=t^{-1/a}\)</span> and <span class="math inline">\(\lambda^b=t^{-b/a}\)</span>.</p>
 <p>Then <span class="math display">\[F(t,h)=t^{1/a}F(1,t^{-b/a}h)\]</span> where our choice of <span class="math inline">\(\lambda\)</span> ensures that <span class="math inline">\(F\)</span> on the rhs is now a function of a single variable <span class="math inline">\(t^{-b/a}h\)</span>.</p>
 <p>Now, as stated in <a href="background.html" class="quarto-xref"><span>Chapter 2</span></a>, the free energy provides the route to all thermodynamic functions of interest. An expression for the magnetisation can be obtained simply by taking the field derivative of <span class="math inline">\(F\)</span> (cf. <a href="background.html#fig-thermo" class="quarto-xref">Figure&nbsp;<span>2.1</span></a>)</p>
-<p><span id="eq-magscale"><span class="math display">\[m(t,h)=-t^{(1-b)/a}m(1,t^{-b/a}h)
+<p><span id="eq-magscale"><span class="math display">\[m(t,h)=(-t)^{(1-b)/a}m(1,t^{-b/a}h)
 \tag{6.1}\]</span></span></p>
 <p>In zero applied field <span class="math inline">\(h=0\)</span>, this reduces to</p>
 <p><span class="math display">\[m(t,0)=(-t)^{(1-b)/a}m(1,0)\]</span> where the r.h.s. is a power law in <span class="math inline">\(t\)</span>. <a href="approach-to-criticality.html#eq-mag" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> then allows identification of the exponent <span class="math inline">\(\beta\)</span> in terms of the scaling parameters <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
@@ -550,14 +548,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

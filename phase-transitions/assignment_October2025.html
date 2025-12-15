@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,15 +34,14 @@ ul.task-list li input[type="checkbox"] {
 <link href="../phase-transitions/Solutions_partial.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bd99fce104e3297f9650d28217f11d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -89,7 +88,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -131,8 +130,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -464,12 +462,12 @@ Figure&nbsp;1.1: Phase diagram of the lattice gas model in the density-temperatu
 </div>
 <p>In the <span class="math inline">\(\mu-T\)</span> plane there is a line of first order phase transitions terminating at a critical point which has density <span class="math inline">\(\rho_c=0.5\)</span>. The first order line means that if <span class="math inline">\(T&lt;T_c\)</span> and starting from the gas phase we smoothly increase the chemical potential through the coexistence value of <span class="math inline">\(\mu\)</span>, the average number density of particles on our lattice <span class="math inline">\(\rho=N/L^d\)</span> jumps discontinuously from a low value <span class="math inline">\(\rho_\textrm{gas}\)</span> to a high value <span class="math inline">\(\rho_\textrm{liquid}\)</span>. This is the gas-liquid phase transition. The values of <span class="math inline">\(\rho_\textrm{gas}\)</span> and <span class="math inline">\(\rho_\textrm{liquid}\)</span> merge at <span class="math inline">\(T_c\)</span>, the gas-liquid critical temperature. At higher temperatures, the distinction between the phases disappears.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>1.3 Aside on Real Fluids
+1.3 Aside on Real Fluids
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -549,9 +547,9 @@ e^{-\beta \Delta E} &amp; \text{otherwise}.
 \overline O \approx \frac{1}{{\cal N}} \sum_{n=0}^{\cal N} O_n,
 \]</span></p>
 <p>where <span class="math inline">\(O_n\)</span> is the value measured in configuration <span class="math inline">\(C_n\)</span>, and <span class="math inline">\({\cal N}\)</span> is the total number of configurations use for sampling.</p>
-<p>Other observables (those which are second derivatives of the free energy) such as the specific heat capacity can’t be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat (cf.&nbsp;problem set) is</p>
+<p>Other observables (those which are second derivatives of the free energy) such as the heat capacity can’t be calculated as simple averages. Instead they are calculated as a variance. The formula for the specific heat capacity (cf.&nbsp;problem set) is</p>
 <p><span class="math display">\[
-C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{k_BT^2}
+C=\frac{1}{l^dk_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta E)^2}{L^dk_BT^2}
 \]</span></p>
 </section>
 </section>
@@ -584,8 +582,7 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 <p><span class="math display">\[
     s_i=2c_i-1;~~~~ J=\frac{\epsilon}{4};~~~~
     h=\frac{\epsilon q+2\mu}{4}.
-\]</span> <em>where <span class="math inline">\(q\)</span> is the lattice coordination number (<span class="math inline">\(q=4\)</span> in 2-dimensions and <span class="math inline">\(q=6\)</span> in 3d).</em><br>
-(Hint: Note that when doing sums over bonds <span class="math inline">\(\sum_{\langle i,j\rangle}\)</span> for a lattice of coordination <span class="math inline">\(q\)</span> there are <span class="math inline">\(q/2\)</span> bonds per site since each bond is shared between two sites.) <strong>[4 marks]</strong></p>
+\]</span> <em>where <span class="math inline">\(q\)</span> is the lattice coordination number (<span class="math inline">\(q=4\)</span> in 2-dimensions and <span class="math inline">\(q=6\)</span> in 3d).</em> <strong>[4 marks]</strong></p>
 <p><em>Given that the critical temperature of the 2d Ising model is <span class="math inline">\(T_c\approx 2.269\: J/k_B\)</span>, use the above mapping to find the value of the critical temperature of the 2d lattice gas model in units of <span class="math inline">\(\epsilon/k_B\)</span></em>. <strong>[2 marks]</strong></p>
 </section>
 <section id="code-modification-tasks" class="level2">
@@ -594,7 +591,7 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 <p>In this implementation, the particle density is fixed at <span class="math inline">\(\rho = \rho_c = 0.5\)</span>. This choice ensures that the system approaches the critical point as the temperature is lowered within the supercritical regime. For convenience, the program uses dimensionless units by setting <span class="math inline">\(\epsilon = k_B = 1\)</span>. The linear system size is intially set to <span class="math inline">\(L=50\)</span> lattice units.</p>
 <ul>
 <li><p><em>Review the program thoroughly and gain a clear understanding of its functionality.</em></p></li>
-<li><p><em>The program calculates the average form of the 2d structure factor <span class="math inline">\(S(\mathbf{k})\)</span>. Using this, obtain and plot the radially averaged structure 1d factor <span class="math inline">\(S(|k|)\)</span>. </em> <strong>[6 marks]</strong></p></li>
+<li><p><em>The program calculates the average form of the 2d structure factor <span class="math inline">\(S(\mathbf{k})\)</span>. Using this, obtain and plot an example of the radially averaged structure 1d factor <span class="math inline">\(S(|k|)\)</span>. </em> <strong>[6 marks]</strong></p></li>
 <li><p><em>Add a function to calculate and print the dimensionless total energy and specific heat of the system. For the latter you will need the expression given in section 2.3, above.</em><br>
 <strong>[5 marks]</strong></p></li>
 </ul>
@@ -602,16 +599,16 @@ C=\frac{1}{k_BT^2} \left[\overline{E^2} - \overline{E}^2\right] = \frac{(\Delta 
 <section id="computational-investigations-of-correlations-on-the-approach-to-criticality" class="level2">
 <h2 class="anchored" data-anchor-id="computational-investigations-of-correlations-on-the-approach-to-criticality">3.4 Computational investigations of correlations on the approach to criticality</h2>
 <ul>
-<li><p><em>Perform simulations at several (six or seven) temperatures within the super-critical range <span class="math inline">\(T_c \le T \lesssim 2T_c\)</span>. For each temperature, save the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated</em> <strong>[4 marks]</strong></p></li>
-<li><p><em>Plot and compare the radial distribution function <span class="math inline">\(g(r)\)</span> and the structure factor <span class="math inline">\(S(\mathbf{k})\)</span>, and its radially averaged form, <span class="math inline">\(S(|k|)\)</span> at each temperature</em>. <strong>[4 marks]</strong></p></li>
-<li><p><em>Interpret the peak structure in <span class="math inline">\(g(r)\)</span> and <span class="math inline">\(S(|k|)\)</span> and discuss the relationship to clustering or ordering</em>. <strong>[3 marks]</strong></p></li>
-<li><p><em>The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length <span class="math inline">\(\xi\)</span> through <span class="math inline">\(\xi=1/FWHM\)</span>. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of <span class="math inline">\(\xi\)</span> and comment on its behaviour</em>. <strong>[4 marks]</strong></p></li>
+<li><p><em>Perform simulations at several (six or seven) temperatures within the super-critical range <span class="math inline">\(T_c \le T \lesssim 2T_c\)</span>. For each temperature, show the final configuration and describe how the overall structural characteristics evolve with temperature. Consider how you can be sure that your final configuration is equilibrated</em> <strong>[4 marks]</strong></p></li>
+<li><p><em>Plot and compare the radial distribution function <span class="math inline">\(g(r)\)</span> and the structure factor <span class="math inline">\(S(\mathbf{k})\)</span>, and its radially averaged form, <span class="math inline">\(S(|k|)\)</span> at each temperature</em>. <strong>[3 marks]</strong></p></li>
+<li><p><em>Interpret the peak structure in <span class="math inline">\(g(r)\)</span> and <span class="math inline">\(S(|k|)\)</span> and discuss the relationship to clustering or ordering. Interpret also the spikes in g(r).</em> <strong>[4 marks]</strong></p></li>
+<li><p><em>The full width at half maximum (FWHM) of the radially averaged structure factor can be used to estimate the correlation length <span class="math inline">\(\xi\)</span> through <span class="math inline">\(\xi= 1/FWHM\)</span>. For each temperature studied, estimate this quantity from your data. Plot the temperature dependence of <span class="math inline">\(\xi\)</span> and comment on its behaviour</em>. <strong>[4 marks]</strong></p></li>
 </ul>
 </section>
 <section id="temperature-and-system-size-dependence-of-the-specific-heat" class="level2">
 <h2 class="anchored" data-anchor-id="temperature-and-system-size-dependence-of-the-specific-heat">3.5 Temperature and system size dependence of the specific heat</h2>
-<p><em>Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g <span class="math inline">\(T_c/2&lt;T&lt;2T_c\)</span>). Describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.</em> <strong>[4 marks]</strong></p>
-<p><em>Repeat the analysis that you performed for the <span class="math inline">\(L=50\)</span> system, for system sizes <span class="math inline">\(L=20\)</span> and <span class="math inline">\(L=35\)</span>. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.</em> <strong>[4 marks]</strong></p>
+<p><em>Examine how the specific heat capacity varies with dimensionless temperature over a broad range, including both subcritical and supercritical regimes (e.g <span class="math inline">\(T_c/2&lt;T&lt;2T_c\)</span>). Plot and describe the overall behavior of the specific heat across this temperature range and offer an explanation for its form. Describe how you checked that your sampling was from reasonably well equilibrated configurations.</em> <strong>[4 marks]</strong></p>
+<p><em>Repeat the analysis that you performed for the <span class="math inline">\(L=50\)</span> system, for system sizes <span class="math inline">\(L=20\)</span> and <span class="math inline">\(L=35\)</span>. Calculate error bars for all data point, describing how you did this. Compare the results for all three system size and highlight any observed differences. Discuss possible explanations for these size-dependent effects.</em> <strong>[4 marks]</strong></p>
 </section>
 <section id="your-report" class="level2">
 <h2 class="anchored" data-anchor-id="your-report">4.0 Your report</h2>
@@ -716,14 +713,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
