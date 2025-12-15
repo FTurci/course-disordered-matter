@@ -408,7 +408,7 @@ window.Quarto = {
   <li><a href="#non-conserved-order-parameter-dynamics-model-a" id="toc-non-conserved-order-parameter-dynamics-model-a" class="nav-link" data-scroll-target="#non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.4.1</span> Non-Conserved Order Parameter Dynamics (Model A)</a></li>
   <li><a href="#conserved-order-parameter-dynamics-model-b" id="toc-conserved-order-parameter-dynamics-model-b" class="nav-link" data-scroll-target="#conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.4.2</span> Conserved Order Parameter Dynamics (Model B)</a></li>
   <li><a href="#schematic-of-domain-growth-in-2d-ising-model" id="toc-schematic-of-domain-growth-in-2d-ising-model" class="nav-link" data-scroll-target="#schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">10.4.3</span> Schematic of Domain Growth in 2D Ising model</a></li>
-  <li><a href="#dynamics-scaling-hypothesis" id="toc-dynamics-scaling-hypothesis" class="nav-link" data-scroll-target="#dynamics-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamics Scaling Hypothesis</a></li>
+  <li><a href="#dynamic-scaling-hypothesis" id="toc-dynamic-scaling-hypothesis" class="nav-link" data-scroll-target="#dynamic-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamic Scaling Hypothesis</a></li>
   <li><a href="#summary-of-growth-laws" id="toc-summary-of-growth-laws" class="nav-link" data-scroll-target="#summary-of-growth-laws"><span class="header-section-number">10.4.5</span> Summary of Growth Laws</a></li>
   </ul></li>
   </ul>
@@ -464,7 +464,7 @@ window.Quarto = {
 <p><span class="math display">\[
 \Delta F(R) = \sigma \, S_d \, R^{d-1} - |\Delta f| \, V_d \, R^d,
 \]</span></p>
-<p>where <span class="math inline">\(V_d\)</span> is another dimension-dependent constant. This expression (<a href="#fig-cnt-schem" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>) exhibits a characteristic maximum at a critical droplet radius <span class="math inline">\(R_c\)</span>, obtained by extremizing <span class="math inline">\(\Delta F(R)\)</span> with respect to <span class="math inline">\(R\)</span>:</p>
+<p>where <span class="math inline">\(V_d\)</span> is another dimension-dependent constant (eg. <span class="math inline">\(4\pi/3\)</span> for <span class="math inline">\(d=3\)</span>). This expression (<a href="#fig-cnt-schem" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>) exhibits a characteristic maximum at a critical droplet radius <span class="math inline">\(R_c\)</span>, obtained by extremizing <span class="math inline">\(\Delta F(R)\)</span> with respect to <span class="math inline">\(R\)</span>:</p>
 <p><span class="math display">\[
 \frac{d \Delta F}{dR} = 0 \quad \Rightarrow \quad R_c = \frac{(d-1)\sigma S_d}{d |\Delta f| V_d}.
 \]</span></p>
@@ -523,13 +523,13 @@ Figure&nbsp;10.2: Schematic phase diagram for a magnet showing the regions in wh
 <hr>
 <section id="non-conserved-order-parameter-dynamics-model-a" class="level3" data-number="10.4.1">
 <h3 data-number="10.4.1" class="anchored" data-anchor-id="non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.4.1</span> Non-Conserved Order Parameter Dynamics (Model A)</h3>
-<p>In systems with a non-conserved order parameter, such as the Ising model with single spin flip (so called Glauber) dynamics, the order parameter can relax locally without constraint. This leads to curvature-driven motion of interfaces.</p>
+<p>In systems with a non-conserved order parameter, such as the Ising model with single spin flip (so called Glauber) dynamics, the order parameter can relax locally without constraint. Motion of interfaces is driven by local chemical potential differences. In the jargon of the field, this is called ‘model A’ dynamics.</p>
 <p>The typical domain size <span class="math inline">\(L(t)\)</span> grows algebraically with time:</p>
 <p><span class="math display">\[
 L(t) \sim t^{1/2},
 \]</span></p>
-<p>corresponding to a dynamic exponent <span class="math inline">\(z = 2\)</span>, where in general <span class="math inline">\(L(t)\sim t^{1/z}\)</span>. The growth is driven by reduction of the total interfacial area—regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.</p>
-<p>Let is aassume that domain walls move with velocity proportional to curvature: <span class="math display">\[
+<p>corresponding to a dynamic exponent <span class="math inline">\(z = 2\)</span>, where in general <span class="math inline">\(L(t)\sim t^{1/z}\)</span>. The local chemical potential difference across a domain wall depends on its curvature. Thus regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.</p>
+<p>Let is assume that domain walls move with velocity proportional to curvature: <span class="math display">\[
   v \sim \frac{1}{L}
   \]</span> Then with the typical domain size being <span class="math inline">\(L(t)\)</span> it follows that</p>
 <p><span class="math display">\[
@@ -539,17 +539,17 @@ L(t) \sim t^{1/2},
 <p>It turns out that the detailed evolution of the coarse-grained order parameter field <span class="math inline">\(\phi(\mathbf{r}, t)\)</span> is governed by the <strong>Allen–Cahn equation</strong>:</p>
 <p><span class="math display">\[
 \frac{\partial \phi}{\partial t} = - \frac{\delta F[\phi]}{\delta \phi},
-\]</span></p>
-<p>where <span class="math inline">\(F[\phi]\)</span> is a coarse-grained Ginzburg–Landau free energy functional:</p>
+\]</span> where the derivative on the RHS is the local chemical potential.</p>
+<p><span class="math inline">\(F[\phi]\)</span> is a coarse-grained Ginzburg–Landau free energy functional:</p>
 <p><span class="math display">\[
 F[\phi] = \int d^d x \left[ \frac{1}{2} (\nabla \phi)^2 + V(\phi) \right],
 \]</span></p>
-<p>with <span class="math inline">\(V(\phi)\)</span> typically a double-well potential such as <span class="math inline">\(V(\phi) = \frac{1}{4}(\phi^2 - 1)^2\)</span>.</p>
+<p>with <span class="math inline">\(V(\phi)\)</span> typically a double-well potential such as <span class="math inline">\(V(\phi) = \frac{1}{4}(\phi^2 - 1)^2\)</span>.n The squared gradient term serves to penalise interfaces in the system.</p>
 <hr>
 </section>
 <section id="conserved-order-parameter-dynamics-model-b" class="level3" data-number="10.4.2">
 <h3 data-number="10.4.2" class="anchored" data-anchor-id="conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.4.2</span> Conserved Order Parameter Dynamics (Model B)</h3>
-<p>For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model with spin-swap (so called ‘Kawasaki’) dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. This imposes a diffusive constraint on the dynamics.</p>
+<p>For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model with spin-swap (so called ‘Kawasaki’) dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. This imposes a diffusive constraint on the dynamics (so-called ‘model B’ dynamics).</p>
 <p>The domain size again grows algebraically, but with a different exponent:</p>
 <p><span class="math display">\[
 L(t) \sim t^{1/3},
@@ -607,8 +607,8 @@ Figure&nbsp;10.3: Schematic illustrations of domain morphology resulting from sp
 </figure>
 </div>
 </section>
-<section id="dynamics-scaling-hypothesis" class="level3" data-number="10.4.4">
-<h3 data-number="10.4.4" class="anchored" data-anchor-id="dynamics-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamics Scaling Hypothesis</h3>
+<section id="dynamic-scaling-hypothesis" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="dynamic-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamic Scaling Hypothesis</h3>
 <p>At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by <span class="math inline">\(L(t)\)</span>.</p>
 <p>For example, the equal-time two-point correlation function satisfies</p>
 <p><span class="math display">\[

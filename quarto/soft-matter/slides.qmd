@@ -1,0 +1,37 @@
+# Complex Disordered Systems: Slides {#slides-complex .unnumbered}
+
+
+## Introduction
+
+- Introduction to Disordered Systems [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-intro.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_intro.html){target=_blank}
+
+## Colloids
+
+- Interactions [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids1.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids1.html){target=_blank}
+
+- Phase behaviour [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids2.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids2.html){target=_blank}
+
+
+- Static and dynamic correlations [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-colloids3.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_colloids3.html){target=_blank}
+
+
+## Polymers
+
+- Definitions and models [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-polymers1.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_polymers1.html){target=_blank}
+- Polymers and solvents [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-polymers2.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_polymers2.html){target=_blank}
+
+## Liquid Crystals
+
+- Anisotropy and orientational order [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-liquidx1.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_liquidx1.html){target=_blank}
+- Maier-Saupe Theory, Lebwohl-Lasher Model, Frank Elasticity, Topological Defects [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-liquidx2.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_liquidx2.html){target=_blank}
+
+## Surfactants
+
+- Aggregation and micelles [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-surfactants1.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_surfactants1.html){target=_blank}
+
+
+## Arrested states
+
+- Equilibration and glassiness [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-glasses.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_glasses.html){target=_blank}
+
+- Gelation and jamming [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-gels.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_gels.html){target=_blank}

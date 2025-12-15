@@ -3,20 +3,20 @@ title: "Entropy matters"
 bibliography: references.bib
 ---
 
-Most of the matter around us does not simply fit within the idealised pictures of crystalline solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
+Most of the matter around us does not simply fit within the idealized pictures of crystalline solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
 
-This means that cellular **life itself** (the very constituents that make us) obeys to principles that go beyond the standard patters of conventional solid-state physics.
+This means that cellular **life itself** (the very constituents that make us) obeys principles that go beyond the standard patterns of conventional solid-state physics.
 
-This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**. Specifically, *sof matter* refers to an area of condensed matter focused on systems that can be *easily deformed*. 
+This branch of physics is called **soft condensed matter physics**, or **macromolecular** physics, or the physics of **complex fluids**. Specifically, *soft matter* refers to an area of condensed matter focused on systems that can be *easily deformed*. 
 
 In this course, we will emphasize the fact that many such systems are not crystalline: thermal noise and disordered configurations play a key role in their phase behavior, and hence we think of them as **complex disordered systems**.
 
-While we often think about problems in physics as a matter of energy minimisation, in soft-matter physics a key role is played by the **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
+While we often think about problems in physics as a matter of energy minimization, in soft-matter physics a key role is played by **fluctuations**. Typically (but not exclusively) these are **thermal fluctuations**. This means that **entropy** and not only the energy from the interactions plays a key role.
 
 ::: {.column-margin} 
 ::: {.content-visible when-format="live-html"}
 
-![Pierre-Gilles de Gennes (1932-2007), 1991 Nobel laureate whose contributions where central to the recognition of *soft matter* as a distinctive field (Wikimedia).](figs/Pierre-Gilles_crop.jpg){fig-align="left"}
+![Pierre-Gilles de Gennes (1932-2007), 1991 Nobel laureate whose contributions were central to the recognition of *soft matter* as a distinctive field (Wikimedia).](figs/Pierre-Gilles_crop.jpg){fig-align="left"}
 :::
 :::
 
@@ -30,13 +30,13 @@ In other words, **fluctuations of the internal energy** are on the same scale as
 
 $$\Delta U \sim k_BT $$
 
-where $k_B$ is the Bolztmann constant and $\Delta U$ indicates standard deviations from the average internal energy.
+where $k_B$ is the Boltzmann constant and $\Delta U$ indicates standard deviations from the average internal energy.
 
 
 ::: {.callout-note collapse="true"}
 # The Physics of Entropy
 
-Soft matter physics is fundamentally the physics of **entropy**. Unlike traditional systems where interaction energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behaviour of the system. The interplay between entropy and intermolecular energy leads to the rich and diverse phenomena observed in soft matter systems.
+Soft matter physics is fundamentally the physics of **entropy**. Unlike
 :::
 
 

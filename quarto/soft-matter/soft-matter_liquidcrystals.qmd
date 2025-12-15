@@ -41,7 +41,7 @@ There are many kinds of anisotropic particles. The table below contains a non-ex
 The additional orientational degrees of freedom makes opens up the possibilities of phases that do not normally exist for spherical, isotropic particles.  We progress from the most disordered to the most ordered phase:
 
 - **Isotropic fluid**: this phase is not very different from the ordinary fluid phase of spherical particles. There is no long-range positional or orientational order and all correlations decay rapidly and on short lengthscales.
-- **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of te molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
+- **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of the molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
 - **smectic phase**: in this phase, particles not only align along a common direction (as in the nematic phase) but also exhibit partial translational order. The centers of mass of the particles tend to form well-defined layers, with orientational order within each layer. However, within a layer, the positions of the particles remain disordered, similar to a liquid. Smectic phases can be further classified (e.g., smectic A, smectic C) depending on the relative orientation of the director with respect to the layer normal.
 - **Columnar phase**: here, anisotropic particles (often disc-like) stack into columns, which then arrange themselves into a two-dimensional lattice. There is long-range positional order in two directions (within the plane perpendicular to the columns) and orientational order along the column axis.
 - **Crystal**: the most ordered phase, where both positional and orientational order are long-ranged in all directions, forming a true three-dimensional periodic lattice.
@@ -134,6 +134,7 @@ $$
 where $d$ is the dimensionality. The removed $\dfrac{1}{d}\mathbf{I}$ term ensures that the tensor is traceless and does not include isotropic components.
 
 The analysis of the tensor yield the main characteristics of the orientation of the system:
+
 - the largest eigenvalue of $\mathbf{Q}$ is the **scalar nematic order parameter** $\mathcal{S}$
 - the eigenvector corresponding to the largest eigenvalues is called the **director** $\mathbf{n}$ and corresponds to the main collective orientation of the system.
 
@@ -274,7 +275,7 @@ The angle $\psi$ represents the director’s orientation modulo $\pi$.
 
 Let us consider the uniaxial 3D case, which is the most commonly discussed case (this focuses on nematic order, excluding cholesteric and smectic order) and attempt to construct a Landau theory centred on the order parameter in the spirit of what we saw in @sec-landau-theory. If the system is uniaxial, then the order is characterized by a single director  and the $\mathbf{Q}$ must be symmetric and traceless with a preferred axis $\mathbf{n}$.
 
-The tensorial order parameter can be rewritten levaraging that the scalar order parameter is an eigenvalue of the director. i.e. $\mathbf{Qn} = S\mathbf{n}$. The result is that 
+The tensorial order parameter can be rewritten leveraging that the scalar order parameter is an eigenvalue of the director. i.e. $\mathbf{Qn} = S\mathbf{n}$. The result is that 
 
 
 $$
@@ -297,7 +298,7 @@ We can now make an extra step by considering how to express the scalar order par
 
 As often in physics, we need to make a symmetry observation, and remark that the nematic phase has full **cylindrical symmetry** around the director. This means that, for us $p(\Omega)=p(\theta, \phi)$ is in fact independent of The azimuthal angle $\phi$ and only depends on the deviation from the director $\theta$. 
 
-We also note that the expression for the nematic order parameter satisfies head-tail symmetry bt employing the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
+We also note that the expression for the nematic order parameter satisfies head-tail symmetry by employing the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
 
 $$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle$$
 
@@ -365,10 +366,15 @@ Phenomenologically, we can put these two together assuming a form for the energe
 
 $$f = f_0 - u\dfrac{S^2}{2}+k_BT \int_0^\pi p(\theta) \ln (4\pi p(\theta)) \sin\theta d\theta$$
 
-where the $4\pi$ term assumes that $p(\theta)$ is correctly normalised on the sphere and $\sin\theta d\theta$ is the usual Jacobian. The two terms above identify two simple contributions:
+where:
+
+- $u$ is the coupling strength parameter that quantifies the energetic preference for orientational alignment (higher $u$ favors stronger nematic order),
+- the $4\pi$ term assumes that $p(\theta)$ is correctly normalised on the sphere and $\sin\theta d\theta$ is the usual Jacobian.
+
+The two terms above identify two simple contributions:
 
 - an energetic contribution that is a simple quadratic function of the order parameter (more order, lower energy, with the isotropic phase paying the highest cost). Near the isotropic phase the free energy needs to be even due to the head-tail symmetry. 
-- a generic entropic contribution of the form $k_B\int p(\theta)\ln p(\theta) d\theta$ using the [Gibbs entropy formula](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula){target="_blank"}.
+- a generic entropic contribution of the form $k_B\int p(\Omega)\ln p(\Omega) d\Omega$ using the [Gibbs entropy formula](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula){target="_blank"}.
 
 The minimization of the free energy with respect to $p(\theta)$, under the normalization constraint $\int_0^\pi p(\theta) \sin\theta d\theta = 1$, is performed using a Lagrange multiplier $\lambda$. The variational problem is:
 
@@ -403,30 +409,32 @@ The transition is **weakly-first** order, as two separate basins of stability (s
 ```{pyodide}
 #| autorun: true
 #| caption: "Free energy profile of the Maier-Saupe model for various values of the coupling parameter u"
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-for u in np.linspace(1,10,10):
-    λ = np.linspace(0.1, 100.0, 1000)
-    thetas = np.linspace(0, np.pi, 100)
-    T = 1.0 ## CHANGE T TO SEE WHAT HAPPENS: CAN YOU EXPLAIN WHY?
-    legendre_weight = (1.5 * np.cos(thetas)**2 - 0.5) * np.sin(thetas)
-    S = []
-    F = []
-    for l in λ:
-        p_theta = np.exp(l *legendre_weight)  # p(θ; λ)
-        p_theta /= np.trapezoid(p_theta * np.sin(thetas), thetas)  # Normalize p(θ)
-        S_l = np.trapezoid(p_theta * legendre_weight, thetas)
-        f = -0.5*u*S_l**2+T*np.trapezoid(p_theta * np.log(4*np.pi*p_theta)*np.sin(thetas), thetas)
-        S.append(S_l)
-        F.append(f)
-    S = np.array(S)
-    F = np.array(F)
-    plt.plot(S,F-F[0], label=str(u))
-plt.legend(frameon=False,title="u")
-plt.gca().set(xlabel="Order parameter S", ylabel="free energy density / kBT" )
+thetas = np.linspace(0, np.pi, 200)
+P2 = 0.5*(3*np.cos(thetas)**2 - 1)
+
+for u in np.linspace(1, 10, 10):
+    λ_vals = np.linspace(0.01, 20, 500)
+    S_list = []
+    F_list = []
+    for l in λ_vals:
+        p_theta = np.exp(l * P2)
+        p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)
+        S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
+        f = -0.5*u*S_l**2 + np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
+        S_list.append(S_l)
+        F_list.append(f)
+    S_array = np.array(S_list)
+    F_array = np.array(F_list)
+    plt.plot(S_array, F_array - F_array[0], label=f"u={u:.1f}")
+
+plt.xlabel("Order parameter S")
+plt.ylabel("Free energy density / k_BT")
+plt.legend(frameon=False, title="u")
 plt.show()
+
 ```
 
 These profiles are example of simple **free energy landscapes**. We will see more about this later in  @sec-energy-landscapes.
@@ -543,7 +551,7 @@ $$\psi = \dfrac{1}{2} {\rm atan2}(\langle \sin(2\theta)\rangle, \langle \cos(2\t
 
 ## Splay, twist and bend 
 
-In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from teh average over a large number of particlesion a single volume).
+In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from the average over a large number of particles in a single volume).
 
 
 The Frank free energy density for distortions of the director field is
@@ -571,51 +579,64 @@ The formulation allows one to model the behaviour of liquid crystals with finite
 
 ## Topological defects
 
-The continuum limit description of liqudi crystals allows us to anhance their description with the notion of **topological defectes**.
+The continuum limit description of liquid crystals allows us to enhance their description with the notion of **topological defects**.
 
-Topological defects are singularities in the director field that can not be removed by a continuous deformation of the director field: they are **topolgically protected**. We can see this with a few examples in 2d by drawing lines of the director (remember that the head-tail symmetry means that the lines do not have any preferential direction but indicate local orientation):
+Topological defects are singularities in the director field that can not be removed by a continuous deformation of the director field: they are **topologically protected**. We can see this with a few examples in 2d by drawing lines of the director (remember that the head-tail symmetry means that the lines do not have any preferential direction but indicate local orientation):
 
 ```{python}
 #| code-fold: true
 import numpy as np
-
 import matplotlib.pyplot as plt
 
-def plot_defect(ax, charge, title):
+def plot_half_defect(ax, charge, title):
     # Grid
-    x = np.linspace(-1, 1, 10)
-    y = np.linspace(-1, 1, 10)
+    x = np.linspace(-1, 1, 21)
+    y = np.linspace(-1, 1, 21)
     X, Y = np.meshgrid(x, y)
+
     # Polar coordinates
     theta = np.arctan2(Y, X)
-    # Director angle: n = [cos(q*theta/2), sin(q*theta/2)]
-    phi = charge * theta / 2
+
+    # Director angle for nematic disclination
+    # Only ±1/2 defects
+    phi = charge * theta  # charge = +0.5 or -0.5
+
+    # Director vectors (head-tail symmetry)
     U = np.cos(phi)
     V = np.sin(phi)
-    # Normalize for nematic symmetry (director, not vector)
-    U2 = np.where(U < 0, -U, U)
-    V2 = np.where(U < 0, -V, V)
-    # Plot director field as dashed lineså
-    ax.quiver(X, Y, U2, V2, pivot='middle', color='k', scale=11, headwidth=0, headlength=0, headaxislength=0, linewidth=0.85, linestyle='dashed')
+    mask = U < 0
+    U[mask] *= -1
+    V[mask] *= -1
+
+    # Plot director field as short lines
+    ax.quiver(
+        X, Y, U, V,
+        pivot='middle', color='black',
+        scale=18, headwidth=0, headlength=0, headaxislength=0
+    )
+
     # Defect core
-    ax.plot(0, 0, 'o', color='orange', markersize=14)
-    ax.set_title(title, fontsize=11)
+    ax.plot(0, 0, 'o', color='orange', markersize=12)
+
+    ax.set_title(title, fontsize=12)
     ax.set_aspect('equal')
-    ax.set_xticks([])
-    ax.set_yticks([])
     ax.set_xlim(-1.1, 1.1)
     ax.set_ylim(-1.1, 1.1)
+    ax.set_xticks([])
+    ax.set_yticks([])
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 4, figsize=(8, 8))
-charges = [1, -1, 0.5, -0.5]
-titles = [r"Topological charge $+1$", r"Topological charge $-1$", r"Topological charge $+\frac{1}{2}$", r"Topological charge $-\frac{1}{2}$"]
+# Plotting
+fig, axs = plt.subplots(1, 4, figsize=(8, 3))
+charges = [0.5, -0.5, +1, -1]
+titles = ["+1/2 defect", "-1/2 defect", "+1 defect",  "-1 defect"]
 
-for ax, charge, title in zip(axs.flat, charges, titles):
-    plot_defect(ax, charge, title)
+for ax, charge, title in zip(axs, charges, titles):
+    plot_half_defect(ax, charge, title)
 
 plt.tight_layout()
 plt.show()
+
 ```
 
 These topological defects are places where the orientation changes discontinuously and are also called **disclinations**.
@@ -675,7 +696,7 @@ def plot_charge_steps(ax, charge, step_frac, title=None):
     ax.set_ylim(-1.1, 1.1)
     ax.axis('off')
 
-fig, axs = plt.subplots(1, 3, figsize=(11, 3.5))
+fig, axs = plt.subplots(1, 3, figsize=(9.5, 3.5))
 steps = [1/6, 0.5, 1.0]
 titles = [
     "Start winding: $0 \\to \\pi/3$",
@@ -690,12 +711,12 @@ plt.show()
 
 Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2}$ and $s = \pm 1$. For example, a $+1/2$ disclination corresponds to a director field that rotates by $+\pi$ as one encircles the defect, while a $-1/2$ disclination rotates by $-\pi$.
 
-When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engendre a complete loss of orientational order at the singularity point, which costs energy by itslef.
+When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engenders a complete loss of orientational order at the singularity point, which costs energy by itself.
 
 In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 
 
-The classification of disclination in 3D involves the rotation group **SO(3)*** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**.
+The classification of disclination in 3D involves the rotation group **SO(3)** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**.
 
 You can read more about liquid crystal's defects and their coupling to the material properties in @jones2002soft.
 

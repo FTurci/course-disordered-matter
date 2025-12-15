@@ -1,93 +1,765 @@
----
-title: "Problems"
+# Complex disordered systems: Problems {#problems-complex .unnumbered}
 
----
+## Colloids
 
-## Relaxation time in atomic fluids
+### Interaction of two charged colloidal spheres
 
-Spherical colloidal particles of radius 30 nm and density $1.35 \mathrm{~g} \mathrm{~cm}^{-3}$ are suspended in water (temperature $25^{\circ} \mathrm{C}$, density $1.0 \mathrm{~g} \mathrm{~cm}^{-3}$, viscosity $1.0 \times 10^{-3}$ Pa s ). Calculate the average distance from the origin along a given axis travelled by a particle in 1 minute due to Brownian motion and sedimentation, respectively. What are the displacements after 1 hour?
+> Adapted from J Dhont, K, Kang (1996) *An Introduction to Dynamics of Colloids*. Elsevier.
 
-## Equipartition
+Consider a colloidal particle of total charge $Q$ located at the origin, immersed in a solvent of permittivity $\varepsilon = \varepsilon_0 \varepsilon_r$. The solvent contains a symmetric electrolyte with two mobile ionic species:
 
-The equipartition theorem states that in thermal equilibrium each generalised co-ordinate which occurs in the total system energy only as a quadratic term contributes $(1 / 2) \mathrm{k}_{\mathrm{B}} \mathrm{T}$ to the mean energy of the system. Use the theorem to estimate the typical time it rakes atoms (or small molecules) in an atomic liquid to move distances of the order of their own size, i.e. estimate the relaxation time.
+-   Cations of charge $+ze$ and bulk concentration $n_0$,
+-   Anions of charge $-ze$ and bulk concentration $n_0$.
 
-## Gravitational length
+1.  Show that The mean electrostatic potential $\phi(\mathbf{r})$ satisfies Poisson’s equation: $$
+    \nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
+    $$
 
-(a) Find the typical length scale ('gravitational length') of the distribution of polystyrene particles (density $\rho_{\mathrm{p}}=1.05 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$ ) of radius 50 nm and $1 \mu \mathrm{~m}$ respectively, suspended in water (density $\rho_{\mathrm{w}}=1.00 \times 10^{3} \mathrm{~kg} \mathrm{~m}^{-3}$, viscosity $1.0 \times 10^{-3} \mathrm{~Pa} \mathrm{~s}$ ) at room temperature. Hint: The gravitational length is the height at which the concentration falls to $1 / \mathrm{e}$ of its greatest value.
-(b) If a container of height $\mathrm{H}=4 \mathrm{~cm}$ contains a dilute suspension of these particles at an average concentration of $n_{a}$ particles per unit volume, what are the actual concentrations (in terms of $n_{a}$ ) at the top and bottom of the sample when sedimentation equilibrium has been reached.
-(c) If the above sample is shaken up to give an initially uniform concentration and then left undisturbed, estimate how long it will take the concentration profile to reach its equilibrium state (A surprisingly long time!)
+    Assuming the ions form an ideal gas in thermal equilibrium, their local densities follow Boltzmann distributions: $$
+    n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad
+    n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})], $$ where $\beta = 1/(k_B T)$.
 
-## Peclet number
+2.  Use these expressions to obtain the (simplified) *nonlinear Poisson–Boltzmann equation* : $$
+    \nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+    $$
 
-A definition of a colloid is a particle small enough that its Brownian motion is not dominated by gravity. Thus if the particle is raised a distance equal to its radius, the increase in its gravitational potential energy must be less than the thermal energy $(3 / 2) \mathrm{k}_{\mathrm{B}} T$. Another measure of the relative importance of the effects of Brownian motion and gravity, is the Peclet number $\mathrm{Pe}=\tau_{R} / \tau_{\text {sed }}$. Here $\tau_{\mathrm{R}}$ is the time taken by a particle to diffuse a distance equal to its radius, and $\tau_{\text {sed }}$ is the time taken by it to sediment the same distance. When $\mathrm{Pe} \ll 1$, Brownian motion dominates; when $\mathrm{Pe} \gg 1$, gravity dominates. Show that the
-condition $\mathrm{Pe}<1$ is more or less equivalent to the definition of a colloid given above.
+3.  Find physical conditions to linearise the equation.
 
-## Diffusion equation
+4.  Solve the resulting linear equation for spherical symmetry to obtain the screened Coulomb (Debye–Hückel) potential: $$
+    \phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r},
+    \qquad \kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+    $$
 
-Prove by direct substitution that $n(x, t)=C(4 \pi D t)^{-1 / 2} \exp \left(-x^{2} / 4 D t\right)$ is indeed a solution to the 1 D diffusion equation $\partial n / \partial t=D^{\partial^{2} n} / \partial x^{2}$.
-Discuss the meaning of the constant C .
+The parameter $\kappa^{-1}$ is the Debye screening length, and the solution shows that ionic screening converts the long-range Coulomb potential into a short-range Yukawa potential.
 
-## Mean square displacement
+The following real to Fourier spcace mappings may be useful
 
-Starting from the diffusion equation, deduce the mean square displacement, $\left\langle x^{2}\right\rangle=2 D t$, without using the full solution to the diffusion equation.
-Note that $n(x, t)$ is the number density, from which the probability density of finding a particle in the region $[\mathrm{x}, \mathrm{x}+\mathrm{dx}]$ during the time interval $[\mathrm{t}, \mathrm{t}+\mathrm{dt}]$, can be obtained by normalising with $\int n(x, t) d x=N$ (the total number of particles). Having this in mind, the mean square displacement is
-$\left\langle x^{2}(t)\right\rangle=\frac{\int_{-\infty}^{\infty} x^{2} n(x, t) d x}{\int_{-\infty}^{\infty} n(x, t) d x}=\frac{1}{N} \int_{-\infty}^{\infty} x^{2} n(x, t) d x$
-Hint: Multiply both sides of the 1D diffusion equation by $x^{2}$ and integrate by parts over $x$ to get an o.d.e for $\left\langle x^{2}\right\rangle$ with t as the independent variable.
+| Real space                      | Fourier space               |
+|---------------------------------|-----------------------------|
+| $f(\mathbf{r})$                 | $f(\mathbf{k})$             |
+| $\nabla^2 f(\mathbf{r})$        | $-k^2 f(\mathbf{k})$        |
+| $\delta(\mathbf{r})$            | $1$                         |
+| $\dfrac{e^{-\kappa r}}{4\pi r}$ | $\dfrac{1}{k^2 + \kappa^2}$ |
 
-## Relaxation time in colloidal suspensions
+::: {.callout-note collapse="true"}
+## Solution
 
-Use $\left\langle\underline{r}^{2}\right\rangle=6 D t$ and the Stokes-Einstein relation to show that the time $\tau_{\mathrm{R}}$ for a particle to diffuse its own radius $R$, scales as $R^{3}$. The relaxation time $\tau_{R}$ is a good estimate for the time taken to return to equilibrium after a disturbance. Estimate $\tau_{\mathrm{R}}$ for a suspension of spheres of radius $\mathrm{R} \approx 1 \mu \mathrm{~m}$, i.e. at the upper limit of the colloidal size range.
+We start by considering a single colloidal particle of total charge $Q$ located at the origin, immersed in a solvent characterized by a permittivity $\varepsilon = \varepsilon_0 \varepsilon_r$. The solvent contains a symmetric electrolyte composed of two mobile ionic species: cations of charge $+ze$ and bulk concentration $n_0$, and anions of charge $-ze$ with the same bulk concentration $n_0$. The overall system is globally electroneutral in the bulk, so the net ionic charge far from the colloid is zero. The presence of the charged colloid generates an electrostatic potential $\phi(\mathbf{r})$ in the surrounding medium.
 
-## Colloidal crystals
-
-Colloidal crystals are observed for volume fractions $\phi$ between 0.545 and 0.74 . Show that the upper limit of $\phi=0.74$ corresponds to the closest packing in a fcc crystal. What is the average distance between the colloidal particles for the lower limit $\phi=0.545$ ? Hint: to get the average consider a simple cubic lattice of the same volume fraction
-
-## Lagrange's expression for the radius of gyration
-
-For N equal point masses at positions $\left\{\underline{R}_{j}\right\}$, the radius of gyration is defined by $R_{g}^{2}=\frac{1}{N} \sum_{j=1}^{N}\left(\underline{R}_{j}-\underline{R}_{G}\right)^{2}$ where $\underline{R}_{G}=\frac{1}{N} \sum_{j=1}^{N} \underline{R}_{j}$ is the position of the centre of mass. Show that
-
-$$
-R_{g}^{2}=\frac{1}{2 N^{2}} \sum_{j=1}^{N} \sum_{k=1}^{N}\left(\underline{R}_{j}-\underline{R}_{k}\right)^{2}
-$$
-
-Hint: Note that $\frac{1}{N} \sum_{j=1}^{N} 1=1$
-
-## Mean length
-
-Calculate the mean end-to end length of a freely jointed polymer consisting of $10^{5}$ monomers of length $4.322 \AA$. How does the end-to-end length change if the valence angle of the chain is fixed at $108^{\circ}$ ?
-
-## Real data
-
-Light scattering measurements on dilute solutions of polystyrene, of different molar masses M , at the theta temperature give the following results for the mean square radius of gyration $\left\langle R_{g}^{2}\right\rangle$ :
-
-| $\mathrm{M}\left(10^{6} \mathrm{~g} \mathrm{~mol}^{-1}\right)$ | 4.04 | 1.56 | 1.20 | 1.06 | 0.626 | 0.394 |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| $<R_{g}^{2}>\left(\mathrm{nm}^{2}\right)$ | 3260 | 1210 | 928 | 770 | 484 | 305 |
-
-(a) Show that these results are consistent with $\left\langle R_{g}^{2}\right\rangle^{1 / 2}=B M^{1 / 2} \quad\left(M=N M_{M}\right.$ where $N$ is the number of monomers in the chain and $M_{M}$ is the molar mass of one monomer; $M_{M}=100 \mathrm{~g} \mathrm{~mol}^{-1}$ ) and estimate the value of $B$.
-(b) Given that the 'size' of a styrene monomer is about $\mathrm{b}_{0}=0.23 \mathrm{~nm}$, calculate the factor $C$ which represents the effect of restricted bond angles in $\left\langle R^{2}\right\rangle=C N b_{0}^{2}$. From $C$, calculate the bond angle $\theta$ which would apply if polystyrene can be represented by a freely-rotating chain. [Remember $\left.\left\langle R_{g}^{2}\right\rangle=\frac{1}{6}<R^{2}\right\rangle$ ]
-(c) Calculate $\left.<R_{g}^{2}\right\rangle^{1 / 2}$ for a polystyrene chain of molar mass $1 \times 10^{7} \mathrm{~g} \mathrm{~mol}^{-1}$ at the theta temperature.
-(d) For the chain of (c), estimate the fraction of the volume $\left.(4 \pi / 3)<R_{g}^{2}\right\rangle^{3 / 2}$ which is actually occupied by styrene monomers (assume that the density of
-styrene when polymerised is about $1 \mathrm{~g} \mathrm{~cm}^{-3}$ ). What is the overlap concentration $c^{*}$ (in mass per volume)? How do you expect $c^{*}$ to change upon an increase (decrease) in temperature?
-
-## Micelles
-
-The volume of a linear hydrocarbon chain with $n$ carbon atoms is given by $v=(27.4+26.9 n) \times 10^{-3} \mathrm{~nm}^{3}$, and its critical chain length is $l_{c}=(0.154+0.1265 n)$ $n m$. An amphiphile has an anionic head group with an optimum head group area in aqueous solution of $a_{0}=0.65 \mathrm{~nm}^{2}$.
-(i) What shape micelles are formed by amphiphiles with linear hydrocarbon chains having $\mathrm{n}=10$ ?
-(ii) What is the average size and aggregation number of each micelle?
-
-## Viscosity
-
-For polystyrene, the variation of viscosity with temperature follows the Vogel-Fulcher law $B=710$ and $T_{0}=50^{\circ} \mathrm{C}$. Plot the function $\eta / \eta_{0}$ in the temperature range $80-150^{\circ} \mathrm{C}$. By what factor does the viscosity and relaxation time vary between the temperatures of $100-140^{\circ} \mathrm{C}$ ?
-
-## The glass transition
-
-For polystyrene, a relaxation time associated with configurational rearrangements, $\tau_{\text {config, }}$, follows a Vogel-Fulcher law,
-
-$$
-\tau_{\text {confg }}=\tau_{0} \exp \left(\frac{B}{T-T_{0}}\right)
+The mean electrostatic potential satisfies Poisson’s equation, which relates the divergence of the electric field to the local charge density. In this system, the total charge density consists of the fixed colloidal charge, represented by $Q \delta(\mathbf{r})$, and the contribution from the mobile ions, which depends on their local concentrations. This gives $$
+\nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
 $$
 
-Where $\tau_{0}, \mathrm{~B}=710$ and $T_{0}=50^{\circ} \mathrm{C}$ are constants. A value of the experimental glass transition temperature is measured with an experiment carried out at an effective timescale $\tau_{\text {exp }}=1000$ s and found to be $101.4^{\circ} \mathrm{C}$.
-(a) Another experiment is carried out at an effective timescale of $10^{5} \mathrm{~s}$. What is the value of the glass transition temperature obtained from this experiment?
-(b) On what timescale must an experiment be carried out if it is to measure a glass transition temperature within $10^{\circ} \mathrm{C}$ of the Vogel-Fulcher temperature $T_{0}$. Is this practically possible?
+To relate the ionic densities to the electrostatic potential, we assume the ions behave as an ideal gas in thermal equilibrium. Each ion experiences a potential energy proportional to its charge times the local potential, $U_\pm(\mathbf{r}) = \pm z e \phi(\mathbf{r})$. In equilibrium, the number density of each species follows the Boltzmann distribution, so the cation and anion densities are $$
+n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})],
+$$ where $\beta = 1/(k_B T)$ is the inverse thermal energy. This captures the intuitive fact that cations are repelled by positive potentials and attracted to negative potentials, while anions behave oppositely.
+
+Substituting these expressions for $n_+$ and $n_-$ into Poisson’s equation yields $$
+\nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \Big[ z e n_0 e^{-\beta z e \phi} - z e n_0 e^{\beta z e \phi} + Q \delta(\mathbf{r}) \Big].
+$$ The difference of exponentials can be written as twice a hyperbolic sine, leading to the nonlinear Poisson–Boltzmann equation $$
+\nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+$$ This equation describes how the potential generated by the colloid is screened by the surrounding ions. The nonlinearity arises because the ionic response depends exponentially on the potential itself.
+
+The equation can be linearized under the condition that the potential is small compared to the thermal voltage, specifically when $|\beta z e \phi(\mathbf{r})| \ll 1$. In this limit, the hyperbolic sine can be approximated by its argument
+
+$$\sinh(\beta z e \phi) \approx \beta z e \phi.$$
+
+The Poisson–Boltzmann equation then reduces to a **linear** differential equation
+
+$$
+\nabla^2 \phi(\mathbf{r}) - \kappa^2 \phi(\mathbf{r}) = -\frac{Q}{\varepsilon} \delta(\mathbf{r}),
+$$
+
+where the inverse Debye length $\kappa$ is defined by
+
+$$
+\kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+$$
+
+This linearized equation is known as the Debye–Hückel equation and describes the potential around a point charge in a screening medium.
+
+This can be solved in Fourier space using the relations:
+
+| Real space                      | Fourier space               |
+|---------------------------------|-----------------------------|
+| $f(\mathbf{r})$                 | $f(\mathbf{k})$             |
+| $\nabla^2 f(\mathbf{r})$        | $-k^2 f(\mathbf{k})$        |
+| $\delta(\mathbf{r})$            | $1$                         |
+| $\dfrac{e^{-\kappa r}}{4\pi r}$ | $\dfrac{1}{k^2 + \kappa^2}$ |
+
+This gives
+
+$$
+\phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r}.
+$$ At short distances ($r \ll \kappa^{-1}$), the potential reduces to the familiar Coulomb form, while at larger distances it decays exponentially due to ionic screening. The characteristic decay length $\kappa^{-1}$ is the Debye screening length, which increases with decreasing ionic strength and temperature. This solution illustrates how the electrolyte effectively screens the electrostatic interactions between colloidal particles, converting the long-range Coulomb potential into a short-range interaction that governs the stability and dynamics of colloidal suspensions.
+
+**Note.** In the linearised regime, the Poisson-Boltzmann equation reads
+
+$$
+\nabla^2 \phi-\kappa^2 \phi=-\frac{Q}{\varepsilon} \delta(\mathbf{r})
+$$
+
+A similar equation exists in field theory for a massive scalar field $\Phi(\mathbf{r})$: it is the Klein-Gordon equation in Euclidean space
+
+$$
+\left(-\nabla^2+m^2\right) \Phi(\mathbf{r})=J(\mathbf{r})
+$$
+
+It is easy to identify the field the mass and the source with the respective static potential field, the Debye screening parameter and the point charge. The Yukawa potential is then simply the **propagator** (the Green's function).
+
+
+:::
+
+### Second virial coefficient for depletion interactions
+
+Consider a dilute suspension of spherical colloidal particles of radius $R_c$ in a solution of small ideal polymer coils of radius $R_p \ll R_c$. The polymers are non-adsorbing and behave as an ideal gas outside the colloids. The colloids interact via the **Asakura–Oosawa depletion potential** $U_{\rm AO}(r)$:
+
+$$
+U_{\rm AO}(r) =
+\begin{cases}
+\infty, & r < 2 R_c \\[2mm]
+-\Pi\, V_{\rm overlap}(r), & 2 R_c \le r \le 2 R_c + 2 R_p \\[1mm]
+0, & r > 2 R_c + 2 R_p
+\end{cases}
+$$
+
+where $r$ is the center-to-center distance, $\Pi = n_p k_B T$ is the so called *osmotic pressure* of the polymer solution, and $V_{\rm overlap}(r)$ is the overlap volume of the depletion zones, given by
+
+$$
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12},
+$$
+
+with $R_{eff} = R_c+R_p$.
+
+1.  Write the expression for the *second virial coefficient* $B_2$ in terms of the interaction potential:
+
+    $$
+     B_2 = -2 \pi \int_0^\infty \left( e^{-\beta U_{\rm AO}(r)} - 1 \right) r^2 dr
+     $$
+
+2.  Assuming the polymer-induced attraction is *weak* ($\beta |U_{\rm AO}(r)| \ll 1$) and that the polymers are much smaller than the colloids, expand the exponential to first order and simplify the integral.
+
+3.  Express the resulting $B_2$ in terms of $R_c$, $R_p$, and the polymer osmotic pressure $\Pi$.
+
+4.  Discuss qualitatively how $B_2$ depends on polymer concentration and size, and explain what a **negative** $B_2$ implies for colloidal aggregation.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+The second virial coefficient $B_2$ measures the effective two-body contribution to the pressure of a dilute colloidal suspension, following the virial expansion. It is defined for a pairwise potential $U(r)$ as:
+
+$$
+B_2 = -2\pi \int_0^\infty \left( e^{-\beta U(r)} - 1 \right) r^2 dr.
+$$
+
+Here, $U(r) = U_{\mathrm{ AO}}(r)$ is the Asakura–Oosawa depletion potential.
+
+1.  Rewrite $B_2$
+
+    The AO potential has three regions:
+
+    -   Hard-core region ($r < 2 R_c$), where $U = \infty \rightarrow e^{-\beta U} = 0$. The integrand becomes $-1$, giving contribution:
+
+    $$
+    B_2^{\mathrm HC} = -2\pi \int_0^{2R_c} (-1) r^2 dr = 2\pi \int_0^{2R_c} r^2 dr = \frac{16\pi}{3} R_c^3,
+    $$
+
+    which is just the hard-sphere contribution.
+
+    -   Depletion region ($2R_c \le r \le 2R_c + 2 R_p$), where $U(r) = -\Pi V_{\mathrm overlap}(r)$.
+
+    -   No interaction ($r > 2R_c + 2 R_p$), where $U = 0 \rightarrow e^{-\beta U} - 1 = 0$.
+
+The overlap is written as (lecture notes) $$
+V_{\text {overlap }}(r)=\frac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right], \quad r \leq R_d=2R_c+2R_p
+$$
+
+and can be shown to be equivalent to
+
+$$
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12}
+$$
+
+So the integral reduces to contributions from $r < 2R_c$ (hard core) and $2R_c \le r \le 2R_c + 2R_p$ (depletion).
+
+2.  Linearize the exponential. For weak polymer-induced attraction, $\beta |U| = \beta \Pi V_{\mathrm overlap} \ll 1$, we can expand:
+
+$$
+e^{-\beta U(r)} \approx 1 - \beta U(r) = 1 + \beta \Pi V_{\mathrm overlap}(r).
+$$
+
+Then the integrand in the depletion region becomes:
+
+$$
+-(e^{-\beta U} - 1) \approx -\beta \Pi V_{\mathrm overlap}(r).
+$$
+
+So the contribution to $B_2$ from the depletion region is:
+
+$$
+B_2^{\mathrm dep} = -2\pi \int_{2R_c}^{2R_c + 2R_p} \big( e^{-\beta U} - 1 \big) r^2 dr \approx -2\pi \beta \Pi \int_{2R_c}^{2R_c + 2R_p} V_{\mathrm overlap}(r) r^2 dr.
+$$
+
+3.  Express $B_2$ in terms of $R_c$, $R_p$, $\Pi$
+
+Combining the hard-core and depletion contributions, the second virial coefficient is
+
+$$
+B_2 = \frac{16\pi}{3} R_c^3 - 2\pi \beta \Pi \int_{2R_c}^{2R_c + 2R_p} V_{\mathrm{overlap}}(r)\, r^2 dr
+$$
+
+We then calculate the second integral we just need to choose how to represent the overlap. We use the second expression above and leverage the fact that $R_p \ll R_c$ and that then the integral runs over $r=2R_C+x$ with $x\in[0,2R_p]$, so with $x$ clearly subleading
+
+So, then
+
+$$
+4R_{\mathrm eff}+r = 6 R_c+4 R_p+x
+$$
+
+and
+
+$$
+2R_{\mathrm eff}-r = 2R_c+2R_p-2R_c-x= 2R_p-x
+$$
+
+So together
+
+$$
+V_{\mathrm overlap}(x) = \dfrac{\pi(6R_c+4R_p+x)(2R_p-x)^2}{12}
+$$
+
+dropping subleading contributions leads to $$
+V_{\mathrm overlap}(x) \approx \dfrac{6\pi R_c(2R_p-x)^2}{12}
+$$
+
+Then, we rewrite 
+
+$$\int_{2R_c}^{2R_c + 2R_p} V_{\mathrm{overlap}}(r)\, r^2 dr$$
+
+as
+$$\int_{0}^{2R_p} V_{\mathrm{overlap}}(x)\, (2R_c+x)^2  dx$$
+
+and approximate as 
+$$ \approx (2 R_c)^2 \int_{0}^{2R_p } V_{\mathrm{overlap}}(x)dx$$
+
+and then
+
+$$
+B_2\approx  \frac{16\pi}{3} R_c^3  -2 \pi \beta \Pi\left(2 R_c\right)^2 \int_0^{2  R_p} \frac{\pi}{2} R_c\left(2 R_p-x\right)^2 d x
+$$
+
+So we finally integrate 
+
+$$
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x
+$$
+
+via a change of variable $y=2 R_p-x$
+
+$$
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x=\int_{2 R_p}^0 y^2(-d y)=\int_0^{2 R_p} y^2 d y=\frac{\left(2 R_p\right)^3}{3}=\frac{8 R_p^3}{3}
+$$
+
+which leads to
+
+$$
+B_2 \approx\frac{16\pi}{3} R_c^3 -\frac{32 \pi^2}{3} \beta \Pi R_c^3 R_p^3
+$$
+
+where $R_c$ is the colloid radius, $R_p$ is the polymer radius, $\Pi$ is the osmotic pressure of the polymer solution, and $V_{\mathrm{overlap}}(r)$ is the overlap volume between two colloids at separation $r$. This formula shows how $B_2$ depends explicitly on $R_c$, $R_p$, and $\Pi$.
+
+4.  Physical interpretation
+
+-   $B_2$ **decreases** with increasing polymer concentration (via $\Pi$) and polymer size ($R_p$).
+-   When the depletion attraction is strong enough, $B_2$ can become **negative**, which signals that attractive interactions dominate over repulsion.
+-   Negative $B_2$ implies a tendency for **colloidal aggregation** or even phase separation, because the effective interaction favuors close approach of colloids.
+:::
+
+
+### Colloids and sedimentation
+
+A particle suspended in a liquid can be defined as *colloidal* if the kinetic energy of its thermally-driven Brownian motion is large enough to prevent it from settling completely to the bottom of the container under the influence of gravity. 
+
+A second definition of a colloid is a particle whose gravitational Peclet number Pe is significantly smaller than 1. (The gravitational Peclet number is the ratio of the time taken by a particle to diffuse a distance equal to its radius to the time taken by it to sediment the same distance under gravity.) 
+
+Show that these two definitions of a colloid are essentially equivalent. 	
+
+
+::: {.callout-note collapse="true"}
+## Solution
+
+
+To show the equivalence between these two definitions, we need to establish the relationship between thermal energy dominating over gravitational settling and the gravitational Peclet number being much less than 1.
+
+
+For the first definiton, a spherical particle of radius $a$ and density $\rho_p$ in a fluid of density $\rho_f$, the gravitational force is:
+$$F_g = \frac{4\pi a^3}{3}(\rho_p - \rho_f)g$$
+
+The gravitational potential energy difference over a distance equal to the particle radius is:
+$$U_g = F_g \cdot a = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g$$
+
+For thermal motion to dominate, we require:
+$$k_B T \gg U_g = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g$$
+
+
+
+For th second definition, the gravitational Peclet number is defined as:
+$$\text{Pe} = \frac{t_{\text{diffusion}}}{t_{\text{sedimentation}}}$$
+
+For diffusion over distance $a$:
+$$t_{\text{diffusion}} = \frac{a^2}{D}$$
+where $D$ is the diffusion coefficient given by the Einstein relation: $D = \frac{k_B T}{6\pi\eta a}$.
+
+For sedimentation over distance $a$ under Stokes drag:
+$$t_{\text{sedimentation}} = \frac{a}{v_s}$$
+where the sedimentation velocity is: $v_s = \frac{F_g}{6\pi\eta a} = \frac{2a^2(\rho_p - \rho_f)g}{9\eta}$.
+
+Therefore:
+$$\text{Pe} = \frac{a^2/D}{a/v_s} = \frac{a v_s}{D} = \frac{a \cdot \frac{2a^2(\rho_p - \rho_f)g}{9\eta}}{\frac{k_B T}{6\pi\eta a}}$$
+
+Simplifying:
+$$\text{Pe} = \frac{2a^3(\rho_p - \rho_f)g \cdot 6\pi\eta a}{9\eta \cdot k_B T} = \frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T}$$
+
+From the first definition, colloidal behavior requires:
+$$k_B T \gg \frac{4\pi a^4}{3}(\rho_p - \rho_f)g$$
+
+This is equivalent to:
+$$\frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T} \ll 1$$
+
+But this is exactly the condition $\text{Pe} \ll 1$ from the second definition.
+
+Therefore, the two definitions are mathematically equivalent: thermal energy dominance over gravitational settling occurs precisely when the gravitational Peclet number is much smaller than unity. Both conditions ensure that Brownian motion prevents complete sedimentation, which is the hallmark of colloidal behavior.
+
+
+:::
+
+
+
+### Hard Rods and Cavity Function
+
+Consider a 1-dimensional (1D) system of **Hard Rods** of length $\sigma$. The number density is $\rho$, and the equation of state is exactly known as  (Tonks equation): $Z_{\rm comp} = \frac{1}{1 - \rho \sigma}$.
+
+The potential is:
+$$
+u(x) =
+\begin{cases}
+\infty, & x < \sigma \\
+0, & x \ge \sigma
+\end{cases}
+$$
+
+The **pair distribution function at contact**, $g(\sigma^+)$, is known to be directly related to the equation of state by the 1D virial theorem (see lecture notes):
+$$
+Z = 1 + \rho \sigma g(\sigma^+)
+$$
+
+
+
+1.  Calculate $g(\sigma^+)$ for the 1D hard rod system using the Tonks equation of state and the 1D virial theorem.
+
+2.  Determine the value of the Boltzmann factor, $e^{-\beta u(\sigma)}$, at contact.
+
+3.  Determine the value of the cavity Function, $y(\sigma)= e^{\beta U(r)}g(r)$, at contact.
+
+4.  Explain the physical meaning of $y(\sigma)$. How does it differ from $g(\sigma^+)$ in its interpretation?
+
+5. Derive the full $g(r)$ by maximising the (Shannon) entropy$$
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+$$ for the probability to find a gap of length $l$. Assume that the gaps are independent for simplicity and see that the $g(r)$ you obtain matches the previous assumptions.
+
+::: {.callout-note collapse="true"}
+## Solution
+
+1.  *Calculate $g(\sigma^+)$*
+
+We use the Tonks equation and the virial theorem:
+$$
+Z_{\mathrm comp} = \frac{1}{1 - \rho \sigma}
+$$
+
+
+$$
+Z_{\mathrm comp} = 1 + \rho \sigma g(\sigma^+)
+$$
+Setting the two expressions for $Z$ equal:
+$$
+1 + \rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+$$
+Isolating $g(\sigma^+)$:
+$$
+\rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma} - 1
+$$
+Combine the right side using a common denominator:
+$$
+\rho \sigma g(\sigma^+) = \frac{1 - (1 - \rho \sigma)}{1 - \rho \sigma} = \frac{\rho \sigma}{1 - \rho \sigma}
+$$
+Dividing by $\rho \sigma$:
+$$
+g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+$$
+This is the exact, analytic expression for the contact value for 1D hard rods.
+
+2. *Determine $e^{-\beta u(\sigma)}$*
+
+The Boltzmann factor $e^{-\beta u(x)}$ at contact $x = \sigma$ is determined by the potential $u(x)$:
+$$
+e^{-\beta u(\sigma)} = e^{-\beta (0)} = 1
+$$
+
+Since the potential is zero for $x \ge \sigma$, the particles are not interacting via the direct core repulsion precisely at $\sigma^+$.
+
+3. *Determine $y(\sigma)$*
+
+The cavity function $y(x)$ is related to $g(x)$ and the Boltzmann factor:
+$$
+g(x) = e^{-\beta u(x)} y(x)
+$$
+At contact, $x = \sigma$:
+$$
+g(\sigma^+) = e^{-\beta u(\sigma)} y(\sigma)
+$$
+Substituting the results from (1) and (2):
+$$
+\frac{1}{1 - \rho \sigma} = (1) \cdot y(\sigma)
+$$
+Therefore, the cavity function at contact is:
+$$
+y(\sigma) = \frac{1}{1 - \rho \sigma}
+$$
+In this 1D case, $g(\sigma^+)$ and $y(\sigma)$ are equal.
+
+4. Explain the meaning of $y(\sigma)$
+
+Let's think of the direct correlation function
+
+It is useful to think about the Pecus Yevick apprximation for the direct correlation function
+
+$$c(r) = (1-e^{+\beta u(r)}) (h(r)+1)$$
+
+(see lecture notes).
+
+This can be rewritten as 
+
+
+$$c(r) = (1-e^{+\beta u(r)}) g(r) = (1-e^{+\beta u(r)}) y(r)e^{-\beta u(r)}$$
+
+and then 
+
+$$c(r) = (e-{\beta u(r)}-1) y(r)= f(r) y(r)$$
+
+where we used the Mayer f-function. Both $f(r)$ and $y(r)$ are continuous and differentiable, making solving the Ornstein Zernicke problem a tractable problem. In particular, $y(r)$ allows us to remove the discontinuities cause by the potential at short distances and focus on the correlations produced outside of the core.
+
+The $g(r)$ is the **total probability** of finding a particle exactly one rod length ($\sigma$) away from another particle, given the direct physical repulsion ($\sigma^-$ region) *and* the indirect correlations (the rest of the fluid). It is an **experimental, measurable** quantity directly linked to pressure via the virial theorem.
+
+The cavity function $y(r)$ is the probability of finding a particle at distance $\sigma$ **if the direct, instantaneous repulsive interaction $u(x)$ were suddenly removed** (i.e., if $u(\sigma)$ was momentarily zero). It represents the correlation due **only to the structure induced by the surrounding fluid**.
+
+We can reread the PY appoximation in this light
+
+$$c(r) = g_{\mathrm total}- g_{\mathrm indirect}$$
+
+We assume that there is a potential of mean force $w(r)$ generating the correlations, such that
+
+$$g(r) = g_{\mathrm total} (r)= e^{-beta w(r)}$$
+
+and then we decide to **approximate** the indirect but by **removing** the interparticle potential from the potential of mean force
+
+$$ g_{\mathrm indirect} = e^{-\beta (w(r)=u(r))}$$
+
+Then the PY approximation with the $c(r) =f(r) y(r)$ comes about.
+
+
+5. *Derivation *
+
+ Hard rods **cannot overlap**, so:
+$$
+   g(r)=0\quad(r<\sigma).
+$$
+
+ Let the free gap between rods be 
+ 
+ $$l = r-\sigma \ge 0$$.
+
+We use the maximum entropy principle to find $p(l)$.
+
+We want to maximise 
+
+$$
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+$$
+
+subject to
+
+$$
+\int_0^{\infty} p(l) d l=1, \quad \int_0^{\infty} l p(l) d l=\lambda
+$$
+
+where the mean free gap is
+
+
+$$\lambda=\frac{1-\rho\sigma}{\rho}$$
+
+Via Lagrange multipliers
+
+$$
+\delta\left[-\int p \ln p d l+\alpha\left(\int p d l-1\right)+\gamma\left(\int l p d l-\lambda\right)\right]=0
+$$
+
+and then 
+
+$$
+p(l)=\frac{1}{\lambda} e^{-l/\lambda}
+$$
+
+and $$
+\gamma=-\frac{1}{\lambda}, \quad \alpha=1-\ln \lambda
+$$
+
+We then convert from gap probability to pair correlation.
+
+The pair correlation is the probability to find the particle as some position $r$ scaled by the density:
+$$
+g(r)=\frac{p(r-\sigma)}{\rho}.
+$$
+
+   Substitute $p(l)$ and $\lambda$:
+
+$$
+g(r)=\frac{1}{(1-\rho\sigma)}\exp\left[-\frac{\rho(r-\sigma)}{1-\rho\sigma}\right].
+$$
+
+Checks:
+$$
+g(\sigma^+) = \frac{1}{1-\rho\sigma}.
+$$
+
+Matches the 1D hard-rod equation of state:
+$$
+P = \frac{\rho k_BT}{1-\rho\sigma}.
+$$
+:::
+
+
+
+## Polymers
+
+### Polymer in theta solvent
+
+Consider a polymeric molecule initially a solvent at temperature $T_1=\Theta$ (i.e. at the so-called *theta temperature* of the solvent). It is composed of $N=10^5$ identical monomers of size $b=0.2 \text{nm}$. 
+
+1. Estimate its root-mean-square end-to-end distance.
+2. Provide a second estimate at a second temperature $T_2\gg \Theta$
+
+:::{ .callout-note collapse="true"}
+## Solution
+The problem simply requires us to remember the following:
+
+1. The temperature $\Theta$ is the one at which the freeley-jointed chain model is most suitable. In such case $R_{rms} = \sqrt{\langle R^2\rangle} = b N^{1/2}\approx 63 \text{nm}$
+2. For temepratures much higher than $\Theta$ the chain is swollen and excluded volumes effects dominate, so that $R_{rms} = \sqrt{\langle R^2\rangle} = b N^{3/5}=200 \text{nm}$
+:::
+
+### Flory exponent for a polymer globule
+
+Consider a single flexible polymer of $N$ monomers, each of size $b$, in a poor solvent (i.e., $T < \Theta$), so that the polymer collapses into a dense globule.
+
+1. The entropic contribution for the chain can be approximated (see notes) with
+
+$$
+S = \frac{-3 k_B R^2}{2 N b^2}
+$$
+
+where $R$ is the radius of the globule (essentially proportional to the root means quared distance of the end to ened vector).
+
+Try to figure out why this leads to  what is called as the "elastic"  free energy of the chain.
+
+2. The globule is dense. Write the interaction free energy using the virial expansion, noting that $\rho=N/R^3$ stopping at order three.
+
+We state that the second virial drives the collapse (attraction) while the third virial is repulsive and prevents complete collapse. 
+
+3. Minimise the total free energy to obtain a function $f(R)=0$. Show that if we assume that $R$ grows with N more slowly than in the theta conditions, the entropic part of the resulting function of R can beneglected.
+
+4. Proceed with the approximation and extract the Flory exponent $\nu$ for the globule, defined by $R \sim N^\nu$: how is it different for other solvent conditions?
+
+
+::: {.callout-note collapse="true"}
+## Solution
+
+1. For the entropy $$
+S = \frac{-3 k_B R^2}{2 N b^2}
+$$
+
+then the entropic free energy contribution is
+$$F_{\text{ent}} = -T S = \frac{3 k_B T R^2}{2 N b^2}$$
+
+which is quadratic in $R$ likre an elastic energy.
+
+2.  We can write
+
+$$
+\frac{F_{\text {int }}}{k_B T} \sim B_2 \rho^2+B_3 \rho^3
+$$
+
+or 
+
+$$
+F_{\mathrm{int}}(R) \sim k_B T\left(\frac{v N^2}{R^3}+\frac{w N^3}{R^6}\right) .
+$$
+
+where we renamed the second virial coefficient $B_2 = v$ and the third virial coefficient $B_3 = w$.
+
+3. Sum the two entropic and interacting contributions:
+$$
+F(R) \sim k_B T\left[\frac{3 R^2}{2 N b^2}+\frac{v N^2}{R^3}+\frac{w N^3}{R^6}\right]
+$$
+
+ At equilibrium, the free energy is minimised with respect to $R$.
+
+Set $\frac{dF}{dR} = 0$:
+$$
+\dfrac{dF}{dR}= k_BT  \left(\dfrac{3R}{Nb^2}-3vN^2 R^{-4}-6 w N^3 R^{-7}\right)=0
+$$
+
+Multiply by $NR^7$
+
+$$
+ \dfrac{3R^8}{b^2}-3vN^3 R^{3}-6 w N^4 =0
+$$
+
+If $R\sim N^\nu$ with $\nu < 1/2$ (i.e., the chain is more collapsed than in theta conditions) then the first term scales as $N^{8\nu}$, the second as $N^{3+3\nu}$ and the third as $N^{4}$.
+
+For $\nu=1/2$ the first term scales as $N^{4}$, the second as $N^{4.5}$ and the third as $N^{4}$.
+
+For smaller $\nu$ the first term becomes subleading with respect to the other two.
+
+
+4.
+
+So we approximate the minimisation condition as 
+
+$$-3vN^3 R^{3}-6 w N^4  = 0$$
+
+and get 
+$$
+R \propto N^{1/3}
+$$
+
+Thus, for a collapsed globule:
+$$
+R \sim N^{1/3}
+$$
+
+So the Flory exponent is $\nu = 1/3$ for a globule (dense sphere).
+
+- For a theta solvent (ideal chain): $\nu = 1/2$
+- For a good solvent (swollen coil): $\nu \approx 3/5$
+
+In a poor solvent, the polymer collapses into a dense globule with $R \sim N^{1/3}$ (something you could have guessed even without the calculation...).
+
+
+:::
+
+## Liquid crystals
+
+### Linearising Maier-Saupe
+
+In the Maier-Saupe mean-field theory of nematic liquid crystals, the orientation distribution function of rod-like molecules is given by
+
+$$
+p(\theta)=\frac{1}{Z}\exp\big(\lambda P_2(\cos\theta)\big),\qquad
+Z=\int_0^\pi \exp\big(\lambda P_2(\cos\theta)\big)\sin\theta\,d\theta,
+$$
+where $\lambda=uS/(k_BT)$ and
+$$
+S=\langle P_2(\cos\theta)\rangle
+=\frac{\int_0^\pi P_2(\cos\theta)p(\theta)\sin\theta\,d\theta}{\int_0^\pi p(\theta)\sin\theta\,d\theta}.
+$$
+
+This leads to the implicit ("self-consistent") relation
+$$
+S=\frac{\int_0^\pi P_2(\cos\theta)e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}{\int_0^\pi e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}.
+$$
+
+You may use
+$$
+\int_0^\pi P_2(\cos\theta)\sin\theta\,d\theta=0,\qquad
+\int_0^\pi [P_2(\cos\theta)]^2\sin\theta\,d\theta=\frac{2}{5} .
+$$
+
+1. Explain why the above equation is implicit and why it means to linearise it near the isotropic phase.
+
+2. Assuming $\lambda$ is small, expand
+$$
+e^{\lambda P_2(\cos\theta)}
+$$
+to first order in $\lambda$.
+
+3.  Using your expansion derive the linearised relation between $S$ and $\lambda$.
+
+4. Using $\lambda=uS/(k_BT)$, determine the value of $k_BT/u$ at which a non-zero solution for $S$ first appears.
+
+
+::: {.callout-note collapse="true"}
+## Solution
+1. **Why the equation is implicit and what linearization means**
+
+The equation is implicit because $S$ appears on both sides: explicitly on the left side, and implicitly on the right side through $\lambda = uS/(k_BT)$. To solve for $S$, we need to find values that satisfy this self-consistency condition.
+
+Linearization near the isotropic phase means we expand around $S = 0$ (the isotropic state where there's no preferred orientation) and keep only first-order terms in small parameters. This allows us to find the critical temperature where nematic order first appears.
+
+2. **Expand the exponential to first order**
+
+For small $\lambda$, we expand:
+$$
+e^{\lambda P_2(\cos\theta)} \approx 1 + \lambda P_2(\cos\theta)
+$$
+
+3. **Derive the linearized relation**
+
+Substituting the expansion into the self-consistent equation:
+
+**Numerator:**
+$$
+\int_0^\pi P_2(\cos\theta)[1 + \lambda P_2(\cos\theta)]\sin\theta\,d\theta = \int_0^\pi P_2(\cos\theta)\sin\theta\,d\theta + \lambda\int_0^\pi [P_2(\cos\theta)]^2\sin\theta\,d\theta
+$$
+
+Using the given integrals:
+$$
+= 0 + \lambda \cdot \frac{2}{5} = \frac{2\lambda}{5}
+$$
+
+**Denominator:**
+$$
+\int_0^\pi [1 + \lambda P_2(\cos\theta)]\sin\theta\,d\theta = \int_0^\pi \sin\theta\,d\theta + \lambda\int_0^\pi P_2(\cos\theta)\sin\theta\,d\theta
+$$
+$$
+= 2 + \lambda \cdot 0 = 2
+$$
+
+Therefore, the linearized relation is:
+$$
+S = \frac{2\lambda/5}{2} = \frac{\lambda}{5}
+$$
+
+4. **Find the critical temperature**
+
+Substituting $\lambda = uS/(k_BT)$:
+$$
+S = \frac{uS}{5k_BT}
+$$
+
+For a non-trivial solution ($S \neq 0$), we can divide both sides by $S$:
+$$
+1 = \frac{u}{5k_BT}
+$$
+
+Therefore:
+$$
+\frac{k_BT}{u} = \frac{1}{5}
+$$
+
+The critical value is $k_BT_c/u = 1/5$, which is the point at which the instability to the order parameter fluctuations sets in and corresponds therefore to the spinodal point of the isotropic phase.
+
+Let's think for a moment however about what we have done: we have assumed to stay in the isotropic phase and looked at small perturbations around it that satisfy the self-consistent equation. We have found that trivially the isotropic phase is always a solution. However we have also found that at $k_BT/u=1/5$ we can change any value of S (provided that it is small enough for the linearisation to hold) into a solution of the self-consistent equation. 
+
+This means that at such temperature the isotropic phase becomes marginally stable: any small perturbation in S will not be restored back to zero. This is the definition of a spinodal point.
+
+:::
