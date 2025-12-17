@@ -35,3 +35,7 @@
 - Equilibration and glassiness [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-glasses.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_glasses.html){target=_blank}
 
 - Gelation and jamming [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-gels.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_gels.html){target=_blank}
+
+## Active matter
+
+- Overview of active matter [[PDF]](https://fturci.github.io/course-disordered-matter-slides/pdfs/slides-active.pdf){target=_blank} [[HTML]](https://fturci.github.io/course-disordered-matter-slides/soft-matter_active.html){target=_blank}
