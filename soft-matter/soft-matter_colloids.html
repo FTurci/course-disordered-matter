@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <link href="../soft-matter/soft-matter_intro.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-bd99fce104e3297f9650d28217f11d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
@@ -145,7 +146,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -187,7 +188,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -610,12 +612,12 @@ fire-extinguisher foam</td>
 <p>where <span class="math inline">\(A_H\)</span> is the <strong>Hamaker constant</strong> and <span class="math inline">\(f(h/R)\)</span> is</p>
 <p><span class="math display">\[f(h/R) = \left[ \frac{2R^2}{h^2 - 4R^2} + \frac{2R^2}{h^2} + \ln\left( \frac{h^2 - 4R^2}{h^2} \right) \right]\]</span></p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Sketch of a derivation of colloid-colloid Van der Waals potential
+<span class="screen-reader-only">Note</span>Sketch of a derivation of colloid-colloid Van der Waals potential
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -702,7 +704,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImNhcHRpb24iOiJETFZPIHBvdGVudGlhbCBbcHJlc3MgY3Ry
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Activity
+<span class="screen-reader-only">Important</span>Activity
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -733,7 +735,7 @@ Activity
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Algorithm
+<span class="screen-reader-only">Note</span>Algorithm
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -816,12 +818,12 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImNhcHRpb24iOiJBc2FrdXJhLU9vc2F3YSBwb3RlbnRpYWwg
 </script>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Force-based derivation of the AO interaction
+<span class="screen-reader-only">Note</span>Force-based derivation of the AO interaction
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -846,7 +848,7 @@ F_d(r) &amp;= -2\pi \eta_p^r k_B T R_d^2 \int_0^{\theta_0} \sin\theta \cos\theta
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Summary of main colloid-colloid interactions
+<span class="screen-reader-only">Note</span>Summary of main colloid-colloid interactions
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1157,7 +1159,7 @@ h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 \]</span> where the pairwise interaction enters explicitly.</p>
 <p>Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.</p>
-<div id="7c60746d" class="cell" data-execution_count="1">
+<div id="7281416e" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1177,12 +1179,12 @@ m \frac{d \vec{v}}{d t}=-\gamma\vec{v}+\vec{\eta}(t)
 D = \frac{k_B T}{\gamma}
 \]</span> where <span class="math inline">\(k_B\)</span> is Boltzmann’s constant, <span class="math inline">\(T\)</span> is temperature, and <span class="math inline">\(\gamma\)</span> is the friction (drag) coefficient.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution of the diffusion equation using Laplace transform
+<span class="screen-reader-only">Note</span>Solution of the diffusion equation using Laplace transform
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1246,7 +1248,7 @@ D \frac{\partial^2 \tilde{\rho}}{\partial x^2} - s\tilde{\rho} = 0
 <p>For sufficiently dense hard spheres (e.g.&nbsp;above <span class="math inline">\(\phi \sim 0.3\)</span>), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant.</p>
 <p>While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math display">\[\langle r^{2}(t)\rangle \propto t\]</span> when the particles undergo large-scale random-walk diffusion through many cages.</p>
 <p>However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>.</p>
-<div id="73dbda47" class="cell" data-execution_count="2">
+<div id="898ff6a0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1266,7 +1268,7 @@ n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\rig
 \]</span></p>
 <p>where we assumed a constant force <span class="math inline">\(F\)</span> in the last equation. In the case of gravity <span class="math inline">\(F=m_{B} g\)</span> with <span class="math inline">\(m_{B}\)</span> the buoyant mass. <span class="math inline">\(n(x)\)</span> results from the balance between the motion of the particles due to the external force setting up a concentration gradient, and the resultant diffusion given by Fick’s law.</p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1055" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1054;"><span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>{</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="1055" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1054;"><span id="cb1-1055"><a href="#cb1-1055" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb1-1056"><a href="#cb1-1056" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> width <span class="op">=</span> <span class="dv">600</span><span class="op">;</span></span>
 <span id="cb1-1057"><a href="#cb1-1057" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> height <span class="op">=</span> <span class="dv">400</span><span class="op">;</span></span>
 <span id="cb1-1058"><a href="#cb1-1058" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> numCircles <span class="op">=</span> <span class="dv">300</span><span class="op">;</span></span>
@@ -1514,7 +1516,7 @@ n(x)=n_{0} \exp \left(-U(x) / k_{B} T\right)=n_{0} \exp \left(-F x / k_{B} T\rig
 <span id="cb1-1300"><a href="#cb1-1300" aria-hidden="true" tabindex="-1"></a>container<span class="op">.</span><span class="fu">node</span>()<span class="op">.</span><span class="fu">appendChild</span>(controls<span class="op">.</span><span class="fu">node</span>())<span class="op">;</span></span>
 <span id="cb1-1301"><a href="#cb1-1301" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-1302"><a href="#cb1-1302" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> container<span class="op">.</span><span class="fu">node</span>()<span class="op">;</span></span>
-<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-1303"><a href="#cb1-1303" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="expression">
 
@@ -1552,7 +1554,7 @@ D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Check your understanding
+<span class="screen-reader-only">Important</span>Check your understanding
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1689,13 +1691,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
