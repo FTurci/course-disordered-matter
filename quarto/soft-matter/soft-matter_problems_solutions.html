@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Problems - Solutions</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="soft-matter_problems_solutions_files/libs/clipboard/clipboard.min.js"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/popper.min.js"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="soft-matter_problems_solutions_files/libs/quarto-html/anchor.min.js"></script>
+<link href="soft-matter_problems_solutions_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="soft-matter_problems_solutions_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="soft-matter_problems_solutions_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="soft-matter_problems_solutions_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="soft-matter_problems_solutions_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Problems - Solutions</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="colloids" class="level2">
+<h2 class="anchored" data-anchor-id="colloids">Colloids</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Interaction of two charged colloidal spheres - Problem setting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a colloidal particle of total charge <span class="math inline">\(Q\)</span> located at the origin, immersed in a solvent of permittivity <span class="math inline">\(\varepsilon = \varepsilon_0 \varepsilon_r\)</span>. The solvent contains a symmetric electrolyte with two mobile ionic species:</p>
+<ul>
+<li>Cations of charge <span class="math inline">\(+ze\)</span> and bulk concentration <span class="math inline">\(n_0\)</span>,</li>
+<li>Anions of charge <span class="math inline">\(-ze\)</span> and bulk concentration <span class="math inline">\(n_0\)</span>.</li>
+</ul>
+<ol type="1">
+<li><p>Show that The mean electrostatic potential <span class="math inline">\(\phi(\mathbf{r})\)</span> satisfies Poisson’s equation: <span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
+\]</span></p>
+<p>Assuming the ions form an ideal gas in thermal equilibrium, their local densities follow Boltzmann distributions: <span class="math display">\[
+n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad
+n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})], \]</span> where <span class="math inline">\(\beta = 1/(k_B T)\)</span>.</p></li>
+<li><p>Use these expressions to obtain the (simplified) <em>nonlinear Poisson–Boltzmann equation</em> : <span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+\]</span></p></li>
+<li><p>Find physical conditions to linearise the equation.</p></li>
+<li><p>Solve the resulting linear equation for spherical symmetry to obtain the screened Coulomb (Debye–Hückel) potential: <span class="math display">\[
+\phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r},
+\qquad \kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+\]</span></p></li>
+</ol>
+<p>The parameter <span class="math inline">\(\kappa^{-1}\)</span> is the Debye screening length, and the solution shows that ionic screening converts the long-range Coulomb potential into a short-range Yukawa potential.</p>
+<p>The following real to Fourier spcace mappings may be useful</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Real space</th>
+<th>Fourier space</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(f(\mathbf{k})\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nabla^2 f(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(-k^2 f(\mathbf{k})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\dfrac{e^{-\kappa r}}{4\pi r}\)</span></td>
+<td><span class="math inline">\(\dfrac{1}{k^2 + \kappa^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<p>We start by considering a single colloidal particle of total charge <span class="math inline">\(Q\)</span> located at the origin, immersed in a solvent characterized by a permittivity <span class="math inline">\(\varepsilon = \varepsilon_0 \varepsilon_r\)</span>. The solvent contains a symmetric electrolyte composed of two mobile ionic species: cations of charge <span class="math inline">\(+ze\)</span> and bulk concentration <span class="math inline">\(n_0\)</span>, and anions of charge <span class="math inline">\(-ze\)</span> with the same bulk concentration <span class="math inline">\(n_0\)</span>. The overall system is globally electroneutral in the bulk, so the net ionic charge far from the colloid is zero. The presence of the charged colloid generates an electrostatic potential <span class="math inline">\(\phi(\mathbf{r})\)</span> in the surrounding medium.</p>
+<p>The mean electrostatic potential satisfies Poisson’s equation, which relates the divergence of the electric field to the local charge density. In this system, the total charge density consists of the fixed colloidal charge, represented by <span class="math inline">\(Q \delta(\mathbf{r})\)</span>, and the contribution from the mobile ions, which depends on their local concentrations. This gives <span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \left[ z e\, n_+(\mathbf{r}) - z e\, n_-(\mathbf{r}) + Q \delta(\mathbf{r}) \right].
+\]</span></p>
+<p>To relate the ionic densities to the electrostatic potential, we assume the ions behave as an ideal gas in thermal equilibrium. Each ion experiences a potential energy proportional to its charge times the local potential, <span class="math inline">\(U_\pm(\mathbf{r}) = \pm z e \phi(\mathbf{r})\)</span>. In equilibrium, the number density of each species follows the Boltzmann distribution, so the cation and anion densities are <span class="math display">\[
+n_+(\mathbf{r}) = n_0 \exp[-\beta z e\, \phi(\mathbf{r})], \qquad n_-(\mathbf{r}) = n_0 \exp[+\beta z e\, \phi(\mathbf{r})],
+\]</span> where <span class="math inline">\(\beta = 1/(k_B T)\)</span> is the inverse thermal energy. This captures the intuitive fact that cations are repelled by positive potentials and attracted to negative potentials, while anions behave oppositely.</p>
+<p>Substituting these expressions for <span class="math inline">\(n_+\)</span> and <span class="math inline">\(n_-\)</span> into Poisson’s equation yields <span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) = -\frac{1}{\varepsilon} \Big[ z e n_0 e^{-\beta z e \phi} - z e n_0 e^{\beta z e \phi} + Q \delta(\mathbf{r}) \Big].
+\]</span> The difference of exponentials can be written as twice a hyperbolic sine, leading to the nonlinear Poisson–Boltzmann equation <span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) = \frac{2 z e n_0}{\varepsilon} \sinh\big(\beta z e\, \phi(\mathbf{r})\big) - \frac{Q}{\varepsilon}\delta(\mathbf{r}).
+\]</span> This equation describes how the potential generated by the colloid is screened by the surrounding ions. The nonlinearity arises because the ionic response depends exponentially on the potential itself.</p>
+<p>The equation can be linearized under the condition that the potential is small compared to the thermal voltage, specifically when <span class="math inline">\(|\beta z e \phi(\mathbf{r})| \ll 1\)</span>. In this limit, the hyperbolic sine can be approximated by its argument</p>
+<p><span class="math display">\[\sinh(\beta z e \phi) \approx \beta z e \phi.\]</span></p>
+<p>The Poisson–Boltzmann equation then reduces to a <strong>linear</strong> differential equation</p>
+<p><span class="math display">\[
+\nabla^2 \phi(\mathbf{r}) - \kappa^2 \phi(\mathbf{r}) = -\frac{Q}{\varepsilon} \delta(\mathbf{r}),
+\]</span></p>
+<p>where the inverse Debye length <span class="math inline">\(\kappa\)</span> is defined by</p>
+<p><span class="math display">\[
+\kappa^2 = \frac{2 n_0 z^2 e^2}{\varepsilon k_B T}.
+\]</span></p>
+<p>This linearized equation is known as the Debye–Hückel equation and describes the potential around a point charge in a screening medium.</p>
+<p>This can be solved in Fourier space using the relations:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Real space</th>
+<th>Fourier space</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(f(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(f(\mathbf{k})\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nabla^2 f(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(-k^2 f(\mathbf{k})\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\delta(\mathbf{r})\)</span></td>
+<td><span class="math inline">\(1\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\dfrac{e^{-\kappa r}}{4\pi r}\)</span></td>
+<td><span class="math inline">\(\dfrac{1}{k^2 + \kappa^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This gives</p>
+<p><span class="math display">\[
+\phi(r) = \frac{Q}{4\pi \varepsilon} \frac{e^{-\kappa r}}{r}.
+\]</span> At short distances (<span class="math inline">\(r \ll \kappa^{-1}\)</span>), the potential reduces to the familiar Coulomb form, while at larger distances it decays exponentially due to ionic screening. The characteristic decay length <span class="math inline">\(\kappa^{-1}\)</span> is the Debye screening length, which increases with decreasing ionic strength and temperature. This solution illustrates how the electrolyte effectively screens the electrostatic interactions between colloidal particles, converting the long-range Coulomb potential into a short-range interaction that governs the stability and dynamics of colloidal suspensions.</p>
+<p><strong>Note.</strong> In the linearised regime, the Poisson-Boltzmann equation reads</p>
+<p><span class="math display">\[
+\nabla^2 \phi-\kappa^2 \phi=-\frac{Q}{\varepsilon} \delta(\mathbf{r})
+\]</span></p>
+<p>A similar equation exists in field theory for a massive scalar field <span class="math inline">\(\Phi(\mathbf{r})\)</span>: it is the Klein-Gordon equation in Euclidean space</p>
+<p><span class="math display">\[
+\left(-\nabla^2+m^2\right) \Phi(\mathbf{r})=J(\mathbf{r})
+\]</span></p>
+<p>It is easy to identify the field the mass and the source with the respective static potential field, the Debye screening parameter and the point charge. The Yukawa potential is then simply the <strong>propagator</strong> (the Green’s function).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Second virial coefficient for depletion interactions - Problem setting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a dilute suspension of spherical colloidal particles of radius <span class="math inline">\(R_c\)</span> in a solution of small ideal polymer coils of radius <span class="math inline">\(R_p \ll R_c\)</span>. The polymers are non-adsorbing and behave as an ideal gas outside the colloids. The colloids interact via the <strong>Asakura–Oosawa depletion potential</strong> <span class="math inline">\(U_{\mathrm AO}(r)\)</span>:</p>
+<p><span class="math display">\[
+U_{\mathrm AO}(r) =
+\begin{cases}
+\infty, &amp; r &lt; 2 R_c \\[2mm]
+-\Pi\, V_{\mathrm overlap}(r), &amp; 2 R_c \le r \le 2 R_c + 2 R_p \\[1mm]
+0, &amp; r &gt; 2 R_c + 2 R_p
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(r\)</span> is the center-to-center distance, <span class="math inline">\(\Pi = n_p k_B T\)</span> is the so called <em>osmotic pressure</em> of the polymer solution, and <span class="math inline">\(V_{\mathrm overlap}(r)\)</span> is the overlap volume of the depletion zones, given by</p>
+<p><span class="math display">\[
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12},
+\]</span></p>
+<p>with <span class="math inline">\(R_{eff} = R_c+R_p\)</span>.</p>
+<ol type="1">
+<li><p>Write the expression for the <em>second virial coefficient</em> <span class="math inline">\(B_2\)</span> in terms of the interaction potential:</p>
+<p><span class="math display">\[
+B_2 = -2 \pi \int_0^\infty \left( e^{-\beta U_{\mathrm AO}(r)} - 1 \right) r^2 dr
+\]</span></p></li>
+<li><p>Assuming the polymer-induced attraction is <em>weak</em> (<span class="math inline">\(\beta |U_{\mathrm AO}(r)| \ll 1\)</span>) and that the polymers are much smaller than the colloids, expand the exponential to first order and simplify the integral.</p></li>
+<li><p>Express the resulting <span class="math inline">\(B_2\)</span> in terms of <span class="math inline">\(R_c\)</span>, <span class="math inline">\(R_p\)</span>, and the polymer osmotic pressure <span class="math inline">\(\Pi\)</span>.</p></li>
+<li><p>Discuss qualitatively how <span class="math inline">\(B_2\)</span> depends on polymer concentration and size, and explain what a <strong>negative</strong> <span class="math inline">\(B_2\)</span> implies for colloidal aggregation.</p></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="solution-1" class="level3">
+<h3 class="anchored" data-anchor-id="solution-1">Solution</h3>
+<p>The second virial coefficient <span class="math inline">\(B_2\)</span> measures the effective two-body contribution to the pressure of a dilute colloidal suspension, following the virial expansion. It is defined for a pairwise potential <span class="math inline">\(U(r)\)</span> as:</p>
+<p><span class="math display">\[
+B_2 = -2\pi \int_0^\infty \left( e^{-\beta U(r)} - 1 \right) r^2 dr.
+\]</span></p>
+<p>Here, <span class="math inline">\(U(r) = U_{\mathrm{ AO}}(r)\)</span> is the Asakura–Oosawa depletion potential.</p>
+<ol type="1">
+<li><p>Rewrite <span class="math inline">\(B_2\)</span></p>
+<p>The AO potential has three regions:</p>
+<ul>
+<li>Hard-core region (<span class="math inline">\(r &lt; 2 R_c\)</span>), where <span class="math inline">\(U = \infty \rightarrow e^{-\beta U} = 0\)</span>. The integrand becomes <span class="math inline">\(-1\)</span>, giving contribution:</li>
+</ul>
+<p><span class="math display">\[
+B_2^{\mathrm HC} = -2\pi \int_0^{2R_c} (-1) r^2 dr = 2\pi \int_0^{2R_c} r^2 dr = \frac{16\pi}{3} R_c^3,
+\]</span></p>
+<p>which is just the hard-sphere contribution.</p>
+<ul>
+<li><p>Depletion region (<span class="math inline">\(2R_c \le r \le 2R_c + 2 R_p\)</span>), where <span class="math inline">\(U(r) = -\Pi V_{\mathrm overlap}(r)\)</span>.</p></li>
+<li><p>No interaction (<span class="math inline">\(r &gt; 2R_c + 2 R_p\)</span>), where <span class="math inline">\(U = 0 \rightarrow e^{-\beta U} - 1 = 0\)</span>.</p></li>
+</ul></li>
+</ol>
+<p>The overlap is written as (lecture notes) <span class="math display">\[
+V_{\text {overlap }}(r)=\frac{4 \pi}{3} R_d^3\left[1-\frac{3}{4} \frac{r}{R_d}+\frac{1}{16}\left(\frac{r}{R_d}\right)^3\right], \quad r \leq R_d=2R_c+2R_p
+\]</span></p>
+<p>and can be shown to be equivalent to</p>
+<p><span class="math display">\[
+V_{\text {overlap }}(r)=\frac{\pi\left(4 R_{\mathrm{eff}}+r\right)\left(2 R_{\mathrm{eff}}-r\right)^2}{12}
+\]</span></p>
+<p>So the integral reduces to contributions from <span class="math inline">\(r &lt; 2R_c\)</span> (hard core) and <span class="math inline">\(2R_c \le r \le 2R_c + 2R_p\)</span> (depletion).</p>
+<ol start="2" type="1">
+<li>Linearize the exponential. For weak polymer-induced attraction, <span class="math inline">\(\beta |U| = \beta \Pi V_{\mathrm overlap} \ll 1\)</span>, we can expand:</li>
+</ol>
+<p><span class="math display">\[
+e^{-\beta U(r)} \approx 1 - \beta U(r) = 1 + \beta \Pi V_{\mathrm overlap}(r).
+\]</span></p>
+<p>Then the integrand in the depletion region becomes:</p>
+<p><span class="math display">\[
+-(e^{-\beta U} - 1) \approx -\beta \Pi V_{\mathrm overlap}(r).
+\]</span></p>
+<p>So the contribution to <span class="math inline">\(B_2\)</span> from the depletion region is:</p>
+<p><span class="math display">\[
+B_2^{\mathrm dep} = -2\pi \int_{2R_c}^{2R_c + 2R_p} \big( e^{-\beta U} - 1 \big) r^2 dr \approx -2\pi \beta \Pi \int_{2R_c}^{2R_c + 2R_p} V_{\mathrm overlap}(r) r^2 dr.
+\]</span></p>
+<ol start="3" type="1">
+<li>Express <span class="math inline">\(B_2\)</span> in terms of <span class="math inline">\(R_c\)</span>, <span class="math inline">\(R_p\)</span>, <span class="math inline">\(\Pi\)</span></li>
+</ol>
+<p>Combining the hard-core and depletion contributions, the second virial coefficient is</p>
+<p><span class="math display">\[
+B_2 = \frac{16\pi}{3} R_c^3 - 2\pi \beta \Pi \int_{2R_c}^{2R_c + 2R_p} V_{\mathrm{overlap}}(r)\, r^2 dr
+\]</span></p>
+<p>We then calculate the second integral we just need to choose how to represent the overlap. We use the second expression above and leverage the fact that <span class="math inline">\(R_p \ll R_c\)</span> and that then the integral runs over <span class="math inline">\(r=2R_C+x\)</span> with <span class="math inline">\(x\in[0,2R_p]\)</span>, so with <span class="math inline">\(x\)</span> clearly subleading</p>
+<p>So, then</p>
+<p><span class="math display">\[
+4R_{\mathrm eff}+r = 6 R_c+4 R_p+x
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+2R_{\mathrm eff}-r = 2R_c+2R_p-2R_c-x= 2R_p-x
+\]</span></p>
+<p>So together</p>
+<p><span class="math display">\[
+V_{\mathrm overlap}(x) = \dfrac{\pi(6R_c+4R_p+x)(2R_p-x)^2}{12}
+\]</span></p>
+<p>dropping subleading contributions leads to <span class="math display">\[
+V_{\mathrm overlap}(x) \approx \dfrac{6\pi R_c(2R_p-x)^2}{12}
+\]</span></p>
+<p>Then, we rewrite</p>
+<p><span class="math display">\[\int_{2R_c}^{2R_c + 2R_p} V_{\mathrm{overlap}}(r)\, r^2 dr\]</span></p>
+<p>as <span class="math display">\[\int_{0}^{2R_p} V_{\mathrm{overlap}}(x)\, (2R_c+x)^2  dx\]</span></p>
+<p>and approximate as <span class="math display">\[ \approx (2 R_c)^2 \int_{0}^{2R_p } V_{\mathrm{overlap}}(x)dx\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[
+B_2\approx  \frac{16\pi}{3} R_c^3  -2 \pi \beta \Pi\left(2 R_c\right)^2 \int_0^{2  R_p} \frac{\pi}{2} R_c\left(2 R_p-x\right)^2 d x
+\]</span></p>
+<p>So we finally integrate</p>
+<p><span class="math display">\[
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x
+\]</span></p>
+<p>via a change of variable <span class="math inline">\(y=2 R_p-x\)</span></p>
+<p><span class="math display">\[
+\int_0^{2 R_p}\left(2 R_p-x\right)^2 d x=\int_{2 R_p}^0 y^2(-d y)=\int_0^{2 R_p} y^2 d y=\frac{\left(2 R_p\right)^3}{3}=\frac{8 R_p^3}{3}
+\]</span></p>
+<p>which leads to</p>
+<p><span class="math display">\[
+B_2 \approx\frac{16\pi}{3} R_c^3 -\frac{32 \pi^2}{3} \beta \Pi R_c^3 R_p^3
+\]</span></p>
+<p>where <span class="math inline">\(R_c\)</span> is the colloid radius, <span class="math inline">\(R_p\)</span> is the polymer radius, <span class="math inline">\(\Pi\)</span> is the osmotic pressure of the polymer solution, and <span class="math inline">\(V_{\mathrm{overlap}}(r)\)</span> is the overlap volume between two colloids at separation <span class="math inline">\(r\)</span>. This formula shows how <span class="math inline">\(B_2\)</span> depends explicitly on <span class="math inline">\(R_c\)</span>, <span class="math inline">\(R_p\)</span>, and <span class="math inline">\(\Pi\)</span>.</p>
+<ol start="4" type="1">
+<li>Physical interpretation</li>
+</ol>
+<ul>
+<li><span class="math inline">\(B_2\)</span> <strong>decreases</strong> with increasing polymer concentration (via <span class="math inline">\(\Pi\)</span>) and polymer size (<span class="math inline">\(R_p\)</span>).</li>
+<li>When the depletion attraction is strong enough, <span class="math inline">\(B_2\)</span> can become <strong>negative</strong>, which signals that attractive interactions dominate over repulsion.</li>
+<li>Negative <span class="math inline">\(B_2\)</span> implies a tendency for <strong>colloidal aggregation</strong> or even phase separation, because the effective interaction favuors close approach of colloids.</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Colloids and sedimentation - Problem setting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A particle suspended in a liquid can be defined as <em>colloidal</em> if the kinetic energy of its thermally-driven Brownian motion is large enough to prevent it from settling completely to the bottom of the container under the influence of gravity.</p>
+<p>A second definition of a colloid is a particle whose gravitational Peclet number Pe is significantly smaller than 1. (The gravitational Peclet number is the ratio of the time taken by a particle to diffuse a distance equal to its radius to the time taken by it to sediment the same distance under gravity.)</p>
+<p>Show that these two definitions of a colloid are essentially equivalent.</p>
+</div>
+</div>
+</section>
+<section id="solution-2" class="level3">
+<h3 class="anchored" data-anchor-id="solution-2">Solution</h3>
+<p>To show the equivalence between these two definitions, we need to establish the relationship between thermal energy dominating over gravitational settling and the gravitational Peclet number being much less than 1.</p>
+<p>For the first definiton, a spherical particle of radius <span class="math inline">\(a\)</span> and density <span class="math inline">\(\rho_p\)</span> in a fluid of density <span class="math inline">\(\rho_f\)</span>, the gravitational force is: <span class="math display">\[F_g = \frac{4\pi a^3}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>The gravitational potential energy difference over a distance equal to the particle radius is: <span class="math display">\[U_g = F_g \cdot a = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>For thermal motion to dominate, we require: <span class="math display">\[k_B T \gg U_g = \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>For th second definition, the gravitational Peclet number is defined as: <span class="math display">\[\text{Pe} = \frac{t_{\text{diffusion}}}{t_{\text{sedimentation}}}\]</span></p>
+<p>For diffusion over distance <span class="math inline">\(a\)</span>: <span class="math display">\[t_{\text{diffusion}} = \frac{a^2}{D}\]</span> where <span class="math inline">\(D\)</span> is the diffusion coefficient given by the Einstein relation: <span class="math inline">\(D = \frac{k_B T}{6\pi\eta a}\)</span>.</p>
+<p>For sedimentation over distance <span class="math inline">\(a\)</span> under Stokes drag: <span class="math display">\[t_{\text{sedimentation}} = \frac{a}{v_s}\]</span> where the sedimentation velocity is: <span class="math inline">\(v_s = \frac{F_g}{6\pi\eta a} = \frac{2a^2(\rho_p - \rho_f)g}{9\eta}\)</span>.</p>
+<p>Therefore: <span class="math display">\[\text{Pe} = \frac{a^2/D}{a/v_s} = \frac{a v_s}{D} = \frac{a \cdot \frac{2a^2(\rho_p - \rho_f)g}{9\eta}}{\frac{k_B T}{6\pi\eta a}}\]</span></p>
+<p>Simplifying: <span class="math display">\[\text{Pe} = \frac{2a^3(\rho_p - \rho_f)g \cdot 6\pi\eta a}{9\eta \cdot k_B T} = \frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T}\]</span></p>
+<p>From the first definition, colloidal behavior requires: <span class="math display">\[k_B T \gg \frac{4\pi a^4}{3}(\rho_p - \rho_f)g\]</span></p>
+<p>This is equivalent to: <span class="math display">\[\frac{4\pi a^4(\rho_p - \rho_f)g}{3k_B T} \ll 1\]</span></p>
+<p>But this is exactly the condition <span class="math inline">\(\text{Pe} \ll 1\)</span> from the second definition.</p>
+<p>Therefore, the two definitions are mathematically equivalent: thermal energy dominance over gravitational settling occurs precisely when the gravitational Peclet number is much smaller than unity. Both conditions ensure that Brownian motion prevents complete sedimentation, which is the hallmark of colloidal behavior.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>💡 Hard Rods and Cavity Function - Problem setting
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a 1-dimensional (1D) system of <strong>Hard Rods</strong> of length <span class="math inline">\(\sigma\)</span>. The number density is <span class="math inline">\(\rho\)</span>, and the equation of state is exactly known as (Tonks equation): <span class="math inline">\(Z_{\mathrm comp} = \frac{1}{1 - \rho \sigma}\)</span>.</p>
+<p>The potential is: <span class="math display">\[
+u(x) =
+\begin{cases}
+\infty, &amp; x &lt; \sigma \\
+0, &amp; x \ge \sigma
+\end{cases}
+\]</span></p>
+<p>The <strong>pair distribution function at contact</strong>, <span class="math inline">\(g(\sigma^+)\)</span>, is known to be directly related to the equation of state by the 1D virial theorem (see lecture notes): <span class="math display">\[
+Z = 1 + \rho \sigma g(\sigma^+)
+\]</span></p>
+<ol type="1">
+<li><p>Calculate <span class="math inline">\(g(\sigma^+)\)</span> for the 1D hard rod system using the Tonks equation of state and the 1D virial theorem.</p></li>
+<li><p>Determine the value of the Boltzmann factor, <span class="math inline">\(e^{-\beta u(\sigma)}\)</span>, at contact.</p></li>
+<li><p>Determine the value of the cavity Function, <span class="math inline">\(y(\sigma)= e^{\beta U(r)}g(r)\)</span>, at contact.</p></li>
+<li><p>Explain the physical meaning of <span class="math inline">\(y(\sigma)\)</span>. How does it differ from <span class="math inline">\(g(\sigma^+)\)</span> in its interpretation?</p></li>
+<li><p>Derive the full <span class="math inline">\(g(r)\)</span> by maximising the (Shannon) entropy<span class="math display">\[
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+\]</span> for the probability to find a gap of length <span class="math inline">\(l\)</span>. Assume that the gaps are independent for simplicity and see that the <span class="math inline">\(g(r0)\)</span> you obtain matches the previous assumptions.</p></li>
+</ol>
+</div>
+</div>
+<ol type="1">
+<li><em>Calculate <span class="math inline">\(g(\sigma^+)\)</span></em></li>
+</ol>
+<p>We use the Tonks equation and the virial theorem: <span class="math display">\[
+Z_{\mathrm comp} = \frac{1}{1 - \rho \sigma}
+\]</span></p>
+<p><span class="math display">\[
+Z_{\mathrm comp} = 1 + \rho \sigma g(\sigma^+)
+\]</span> Setting the two expressions for <span class="math inline">\(Z\)</span> equal: <span class="math display">\[
+1 + \rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+\]</span> Isolating <span class="math inline">\(g(\sigma^+)\)</span>: <span class="math display">\[
+\rho \sigma g(\sigma^+) = \frac{1}{1 - \rho \sigma} - 1
+\]</span> Combine the right side using a common denominator: <span class="math display">\[
+\rho \sigma g(\sigma^+) = \frac{1 - (1 - \rho \sigma)}{1 - \rho \sigma} = \frac{\rho \sigma}{1 - \rho \sigma}
+\]</span> Dividing by <span class="math inline">\(\rho \sigma\)</span>: <span class="math display">\[
+g(\sigma^+) = \frac{1}{1 - \rho \sigma}
+\]</span> This is the exact, analytic expression for the contact value for 1D hard rods.</p>
+<ol start="2" type="1">
+<li><em>Determine <span class="math inline">\(e^{-\beta u(\sigma)}\)</span></em></li>
+</ol>
+<p>The Boltzmann factor <span class="math inline">\(e^{-\beta u(x)}\)</span> at contact <span class="math inline">\(x = \sigma\)</span> is determined by the potential <span class="math inline">\(u(x)\)</span>: <span class="math display">\[
+e^{-\beta u(\sigma)} = e^{-\beta (0)} = 1
+\]</span></p>
+<p>Since the potential is zero for <span class="math inline">\(x \ge \sigma\)</span>, the particles are not interacting via the direct core repulsion precisely at <span class="math inline">\(\sigma^+\)</span>.</p>
+<ol start="3" type="1">
+<li><em>Determine <span class="math inline">\(y(\sigma)\)</span></em></li>
+</ol>
+<p>The cavity function <span class="math inline">\(y(x)\)</span> is related to <span class="math inline">\(g(x)\)</span> and the Boltzmann factor: <span class="math display">\[
+g(x) = e^{-\beta u(x)} y(x)
+\]</span> At contact, <span class="math inline">\(x = \sigma\)</span>: <span class="math display">\[
+g(\sigma^+) = e^{-\beta u(\sigma)} y(\sigma)
+\]</span> Substituting the results from (1) and (2): <span class="math display">\[
+\frac{1}{1 - \rho \sigma} = (1) \cdot y(\sigma)
+\]</span> Therefore, the cavity function at contact is: <span class="math display">\[
+y(\sigma) = \frac{1}{1 - \rho \sigma}
+\]</span> In this 1D case, <span class="math inline">\(g(\sigma^+)\)</span> and <span class="math inline">\(y(\sigma)\)</span> are equal.</p>
+<ol start="4" type="1">
+<li>Explain the meaning of <span class="math inline">\(y(\sigma)\)</span></li>
+</ol>
+<p>Let’s think of the direct correlation function</p>
+<p>It is useful to think about the Pecus Yevick apprximation for the direct correlation function</p>
+<p><span class="math display">\[c(r) = (1-e^{+\beta u(r)}) (h(r)+1)\]</span></p>
+<p>(see lecture notes).</p>
+<p>This can be rewritten as</p>
+<p><span class="math display">\[c(r) = (1-e^{+\beta u(r)}) g(r) = (1-e^{+\beta u(r)}) y(r)e^{-\beta u(r)}\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[c(r) = (e-{\beta u(r)}-1) y(r)= f(r) y(r)\]</span></p>
+<p>where we used the Mayer f-function. Both <span class="math inline">\(f(r)\)</span> and <span class="math inline">\(y(r)\)</span> are continuous and differentiable, making solving the Ornstein Zernicke problem a tractable problem. In particular, <span class="math inline">\(y(r)\)</span> allows us to remove the discontinuities cause by the potential at short distances and focus on the correlations produced outside of the core.</p>
+<p>The <span class="math inline">\(g(r)\)</span> is the <strong>total probability</strong> of finding a particle exactly one rod length (<span class="math inline">\(\sigma\)</span>) away from another particle, given the direct physical repulsion (<span class="math inline">\(\sigma^-\)</span> region) <em>and</em> the indirect correlations (the rest of the fluid). It is an <strong>experimental, measurable</strong> quantity directly linked to pressure via the virial theorem.</p>
+<p>The cavity function <span class="math inline">\(y(r)\)</span> is the probability of finding a particle at distance <span class="math inline">\(\sigma\)</span> <strong>if the direct, instantaneous repulsive interaction <span class="math inline">\(u(x)\)</span> were suddenly removed</strong> (i.e., if <span class="math inline">\(u(\sigma)\)</span> was momentarily zero). It represents the correlation due <strong>only to the structure induced by the surrounding fluid</strong>.</p>
+<p>We can reread the PY appoximation in this light</p>
+<p><span class="math display">\[c(r) = g_{\mathrm total}- g_{\mathrm indirect}\]</span></p>
+<p>We assume that there is a potential of mean force <span class="math inline">\(w(r)\)</span> generating the correlations, such that</p>
+<p><span class="math display">\[g(r) = g_{\mathrm total} (r)= e^{-beta w(r)}\]</span></p>
+<p>and then we decide to <strong>approximate</strong> the indirect but by <strong>removing</strong> the interparticle potential from the potential of mean force</p>
+<p><span class="math display">\[ g_{\mathrm indirect} = e^{-\beta (w(r)=u(r))}\]</span></p>
+<p>Then the PY approximation with the <span class="math inline">\(c(r) =f(r) y(r)\)</span> comes about.</p>
+<ol start="5" type="1">
+<li><em>Derivation </em></li>
+</ol>
+<p>Hard rods <strong>cannot overlap</strong>, so: <span class="math display">\[
+   g(r)=0\quad(r&lt;\sigma).
+\]</span></p>
+<p>Let the free gap between rods be</p>
+<p><span class="math display">\[l = r-\sigma \ge 0\]</span>.</p>
+<p>We use the maximum entropy principle to find <span class="math inline">\(p(l)\)</span>.</p>
+<p>We want to maximise</p>
+<p><span class="math display">\[
+S[p]=-\int_0^{\infty} p(l) \ln p(l) d l
+\]</span></p>
+<p>subject to</p>
+<p><span class="math display">\[
+\int_0^{\infty} p(l) d l=1, \quad \int_0^{\infty} l p(l) d l=\lambda
+\]</span></p>
+<p>where the mean free gap is</p>
+<p><span class="math display">\[\lambda=\frac{1-\rho\sigma}{\rho}\]</span></p>
+<p>Via Lagrange multipliers</p>
+<p><span class="math display">\[
+\delta\left[-\int p \ln p d l+\alpha\left(\int p d l-1\right)+\gamma\left(\int l p d l-\lambda\right)\right]=0
+\]</span></p>
+<p>and then</p>
+<p><span class="math display">\[
+p(l)=\frac{1}{\lambda} e^{-l/\lambda}
+\]</span></p>
+<p>and <span class="math display">\[
+\gamma=-\frac{1}{\lambda}, \quad \alpha=1-\ln \lambda
+\]</span></p>
+<p>We then convert from gap probability to pair correlation.</p>
+<p>The pair correlation is the probability to find the particle as some position <span class="math inline">\(r\)</span> scaled by the density: <span class="math display">\[
+g(r)=\frac{p(r-\sigma)}{\rho}.
+\]</span></p>
+<p>Substitute <span class="math inline">\(p(l)\)</span> and <span class="math inline">\(\lambda\)</span>:</p>
+<p><span class="math display">\[
+g(r)=\frac{1}{(1-\rho\sigma)}\exp\left[-\frac{\rho(r-\sigma)}{1-\rho\sigma}\right].
+\]</span></p>
+<p>Checks: <span class="math display">\[
+g(\sigma^+) = \frac{1}{1-\rho\sigma}.
+\]</span></p>
+<p>Matches the 1D hard-rod equation of state: <span class="math display">\[
+P = \frac{\rho k_BT}{1-\rho\sigma}.
+\]</span></p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="polymer-in-theta-solvent" class="level3">
+<h3 class="anchored" data-anchor-id="polymer-in-theta-solvent">Polymer in theta solvent</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a polymeric molecule initially a solvent at temperature <span class="math inline">\(T_1=\Theta\)</span> (i.e.&nbsp;at the so-called <em>theta temperature</em> of the solvent). It is composed of <span class="math inline">\(N=10^5\)</span> identical monomers of size <span class="math inline">\(b=0.2 \text{nm}\)</span>.</p>
+<ol type="1">
+<li>Estimate its root-mean-square end-to-end distance.</li>
+<li>Provide a second estimet at a second temperature <span class="math inline">\(T_2\gg \Theta\)</span></li>
+</ol>
+</div>
+</div>
+<p>The problem simply requires us to remember the following:</p>
+<ol type="1">
+<li>The temperature <span class="math inline">\(\Theta\)</span> is the one at which the freeley-jointed chain model is most suitable. In such case <span class="math inline">\(R_{rms} = \sqrt{\langle R^2\rangle} = b N^{1/2}\approx 63 \text{nm}\)</span></li>
+<li>For temepratures much higher than <span class="math inline">\(\Theta\)</span> the chain is swollen and excluded volumes effects dominate, so that <span class="math inline">\(R_{rms} = \sqrt{\langle R^2\rangle} = b N^{3/5}=200 \text{nm}\)</span></li>
+</ol>
+</section>
+<section id="flory-exponent-for-a-polymer-globule" class="level3">
+<h3 class="anchored" data-anchor-id="flory-exponent-for-a-polymer-globule">Flory exponent for a polymer globule</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a single flexible polymer of <span class="math inline">\(N\)</span> monomers, each of size <span class="math inline">\(b\)</span>, in a poor solvent (i.e., <span class="math inline">\(T &lt; \Theta\)</span>), so that the polymer collapses into a dense globule.</p>
+<ol type="1">
+<li>The entropic contribution for the chain can be approximated (see notes) with</li>
+</ol>
+<p><span class="math display">\[
+S = \frac{-3 k_B R^2}{2 N b^2}
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> is the radius of the globule (essentially proportional to the root means quared distance of the end to ened vector).</p>
+<p>Try to figure out why this leads to what is called as the “elastic” free energy of the chain.</p>
+<ol start="2" type="1">
+<li>The globule is dense. Write the interaction free energy using the virial expansion, noting that <span class="math inline">\(\rho=N/R^3\)</span> stopping at order three.</li>
+</ol>
+<p>We state that the second virial drives the collapse (attraction) while the third virial is repulsive and prevents complete collapse.</p>
+<ol start="3" type="1">
+<li><p>Minimise the total free energy to obtain a function <span class="math inline">\(f(R)=0\)</span>. Show that if we assume that <span class="math inline">\(R\)</span> grows with N more slowly than in the theta conditions, the entropic part of the resulting function of R can beneglected.</p></li>
+<li><p>Proceed with the approximation and extract the Flory exponent <span class="math inline">\(\nu\)</span> for the globule, defined by <span class="math inline">\(R \sim N^\nu\)</span>: how is it different for other solvent conditions?</p></li>
+</ol>
+</div>
+</div>
+<ol type="1">
+<li>For the entropy <span class="math display">\[
+S = \frac{-3 k_B R^2}{2 N b^2}
+\]</span></li>
+</ol>
+<p>then the entropic free energy contribution is <span class="math display">\[F_{\text{ent}} = -T S = \frac{3 k_B T R^2}{2 N b^2}\]</span></p>
+<p>which is quadratic in <span class="math inline">\(R\)</span> likre an elastic energy.</p>
+<ol start="2" type="1">
+<li>We can write</li>
+</ol>
+<p><span class="math display">\[
+\frac{F_{\text {int }}}{k_B T} \sim B_2 \rho^2+B_3 \rho^3
+\]</span></p>
+<p>or</p>
+<p><span class="math display">\[
+F_{\mathrm{int}}(R) \sim k_B T\left(\frac{v N^2}{R^3}+\frac{w N^3}{R^6}\right) .
+\]</span></p>
+<p>where we renamed the second virial coefficient <span class="math inline">\(B_2 = v\)</span> and the third virial coefficient <span class="math inline">\(B_3 = w\)</span>.</p>
+<ol start="3" type="1">
+<li>Sum the two entropic and interacting contributions: <span class="math display">\[
+F(R) \sim k_B T\left[\frac{3 R^2}{2 N b^2}+\frac{v N^2}{R^3}+\frac{w N^3}{R^6}\right]
+\]</span></li>
+</ol>
+<p>At equilibrium, the free energy is minimised with respect to <span class="math inline">\(R\)</span>.</p>
+<p>Set <span class="math inline">\(\frac{dF}{dR} = 0\)</span>: <span class="math display">\[
+\dfrac{dF}{dR}= k_BT  \left(\dfrac{3R}{Nb^2}-3vN^2 R^{-4}-6 w N^3 R^{-7}\right)=0
+\]</span></p>
+<p>Multiply by <span class="math inline">\(NR^7\)</span></p>
+<p><span class="math display">\[
+\dfrac{3R^8}{b^2}-3vN^3 R^{3}-6 w N^4 =0
+\]</span></p>
+<p>If <span class="math inline">\(R\sim N^\nu\)</span> with <span class="math inline">\(\nu &lt; 1/2\)</span> (i.e., the chain is more collapsed than in theta conditions) then the first term scales as <span class="math inline">\(N^{8\nu}\)</span>, the second as <span class="math inline">\(N^{3+3\nu}\)</span> and the third as <span class="math inline">\(N^{4}\)</span>.</p>
+<p>For <span class="math inline">\(\nu=1/2\)</span> the first term scales as <span class="math inline">\(N^{4}\)</span>, the second as <span class="math inline">\(N^{4.5}\)</span> and the third as <span class="math inline">\(N^{4}\)</span>.</p>
+<p>For smaller <span class="math inline">\(\nu\)</span> the first term becomes subleading with respect to the other two.</p>
+<ol start="5" type="1">
+<li></li>
+</ol>
+<p>So we approximate the minimisation condition as</p>
+<p><span class="math display">\[-3vN^3 R^{3}-6 w N^4  = 0\]</span></p>
+<p>and get <span class="math display">\[
+R \propto N^{1/3}
+\]</span></p>
+<p>Thus, for a collapsed globule: <span class="math display">\[
+R \sim N^{1/3}
+\]</span></p>
+<p>So the Flory exponent is <span class="math inline">\(\nu = 1/3\)</span> for a globule (dense sphere).</p>
+<ul>
+<li>For a theta solvent (ideal chain): <span class="math inline">\(\nu = 1/2\)</span></li>
+<li>For a good solvent (swollen coil): <span class="math inline">\(\nu \approx 3/5\)</span></li>
+</ul>
+<p>In a poor solvent, the polymer collapses into a dense globule with <span class="math inline">\(R \sim N^{1/3}\)</span> (something you could have guessed even without the calculation…).</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -55,12 +55,12 @@ book:
          - text: "Lecture slides" 
            href: phase-transitions/Lecture Slides/Slides.pdf
 
-         - text: "Solutions to problems"
-           href: phase-transitions/Solutions_partial.qmd    
+        #  - text: "Solutions to problems"
+          #  href: phase-transitions/Solutions_partial.qmd    
    #      - text: "Preparation for first coursework assignment"
    #        href: phase-transitions/assignment_prep.qmd      
-         - text: "First coursework assignment"     
-           href: phase-transitions/assignment_October2025.qmd                    
+        #  - text: "First coursework assignment"     
+          #  href: phase-transitions/assignment_October2025.qmd                    
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
     - part: "First experimental interlude"
@@ -91,8 +91,8 @@ book:
         - href: soft-matter/slides.qmd
           text: "Lecture slides"
            
-        - href: soft-matter/soft-matter_problems.qmd
-          text: "Problems"
+        # - href: soft-matter/soft-matter_problems.qmd
+          # text: "Problems"
     - part: "Second experimental interlude"
       chapters:
         - href: experimental/part3.ipynb
