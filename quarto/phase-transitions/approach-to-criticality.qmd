@@ -43,7 +43,7 @@ this unfortunately is the standard notation.)
 Finally, as a function of magnetic field:
 
 $$m \propto h^{1/\delta} ~~~~ (T = T_c,\: |H|>0) .$${#eq-field}
-with $h=(H-H_c)/H_c$, the reduced magnetic field.
+with $h=(H-H_c)/H_c$, the reduced magnetic field (though note that in cases where $H_c=0$ such as the Ising model considered later, we use instead $h=H-H_c$).
 
 As examples, the behaviour of the magnetisation and correlation length
 are plotted in @fig-sing  as a function of $t$.
