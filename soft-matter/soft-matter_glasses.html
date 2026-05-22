@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.25">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>18&nbsp; Arrested states</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -59,7 +62,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -89,15 +91,14 @@ div.csl-indent {
 <link href="../soft-matter/soft-matter_surfactants.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-bd99fce104e3297f9650d28217f11d95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
@@ -133,7 +134,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -380,6 +381,12 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problems</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -479,7 +486,7 @@ window.Quarto = {
 <li><strong>Yield stress</strong>: They can support a certain amount of stress before yielding or flowing, a property absent in equilibrium fluids.</li>
 <li><strong>Vibrational density of states</strong>: Amorphous solids display a characteristic “boson peak” in their vibrational spectrum, distinct from the phonon modes of crystals.</li>
 </ul>
-<p>These features highlight that rigidity and solidity do not require crystalline order; amorphous materials like gels and glasses can be mechanically solid while remaining structurally disordered. Indeed, the border between solidity and fluidity has been questioned in recent research work, emphasizing how this depends on observational timescales and the notion of metastability, see <span class="citation" data-cites="sausset2010solids">Sausset, Biroli, and Kurchan (<a href="#ref-sausset2010solids" role="doc-biblioref">2010</a>)</span>.</p>
+<p>These features highlight that rigidity and solidity do not require crystalline order; amorphous materials like gels and glasses can be mechanically solid while remaining structurally disordered. Indeed, the border between solidity and fluidity has been questioned in recent research work, emphasizing how this depends on observational timescales and the notion of metastability, see <span class="citation" data-cites="sausset2010solids">Sausset et al. (<a href="#ref-sausset2010solids" role="doc-biblioref">2010</a>)</span>.</p>
 <section id="sec-energy-landscapes" class="level2" data-number="18.1">
 <h2 data-number="18.1" class="anchored" data-anchor-id="sec-energy-landscapes"><span class="header-section-number">18.1</span> Energy landscapes</h2>
 <p>The <strong>free energy landscape</strong> is a conceptual framework used to describe the multitude of possible configurations (microstates) of a system and their associated free energies. Each point in this high-dimensional landscape corresponds to a particular arrangement of all the particles in the system, and the height at that point represents the free energy of that configuration. In particular, the landscapes is characterised by the presence of free energy <strong>minima</strong> (valleys) which correspond to stable or metastable states—configurations where the system tends to reside and local maxima (barrier) between the valleys, representing the so-called <strong>transition states</strong>.</p>
@@ -594,7 +601,7 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./figs/fskt.png" class="img-fluid figure-img" style="width:80.0%"></p>
-<figcaption>Intermediate scattering functions for molecular dynamics simulations of a standard glassformer (a coarse grained metallic binary mixture) for various reduced temperatures. From <span class="citation" data-cites="coslovich2018dynamic">Coslovich, Ozawa, and Kob (<a href="#ref-coslovich2018dynamic" role="doc-biblioref">2018</a>)</span>. One can identify the initial relaxation (<span class="math inline">\(\beta\)</span>) followed by a long plateau which is itself followed by the complete relaxation (<span class="math inline">\(\alpha\)</span>). Notice the logarithmic scale of the horizontal axis (in reduced time units).</figcaption>
+<figcaption>Intermediate scattering functions for molecular dynamics simulations of a standard glassformer (a coarse grained metallic binary mixture) for various reduced temperatures. From <span class="citation" data-cites="coslovich2018dynamic">Coslovich et al. (<a href="#ref-coslovich2018dynamic" role="doc-biblioref">2018</a>)</span>. One can identify the initial relaxation (<span class="math inline">\(\beta\)</span>) followed by a long plateau which is itself followed by the complete relaxation (<span class="math inline">\(\alpha\)</span>). Notice the logarithmic scale of the horizontal axis (in reduced time units).</figcaption>
 </figure>
 </div>
 <p>As the supercooled liquid gets colder and colder, the relaxation time increases rapidly, eventually of many orders of magnitude. At some <em>experimentally determined</em> temperature the relaxation time is larger than the observation time, i.e.</p>
@@ -685,7 +692,7 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <p>where <span class="math inline">\(J\)</span> is an energy scale and <span class="math inline">\(T_0\)</span> is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
 <p>Interestingly, both the two perspective fit the viscosity data well within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).</p>
 <p>Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see <span class="citation" data-cites="hasyim2024emergent">Hasyim and Mandadapu (<a href="#ref-hasyim2024emergent" role="doc-biblioref">2024</a>)</span> for more details.</p>
-<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video></div>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video></div>
 </section>
 </section>
 <section id="physical-gels" class="level2" data-number="18.4">
@@ -891,7 +898,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./figs/colloid-polymers.svg" class="img-fluid figure-img"></p>
-<figcaption>Phase diagrams of colloid-polymer mixtures for different values of the size ratio parameter <span class="math inline">\(q=\sigma_{\rm polymer}/\sigma_{\rm colloid}\)</span>. Left: very small size ratio make the gas liquid binodal (enclosing the yellow fluid-fluid region) metastable to gas-solid phase separation. Centre: as we increase the size ratio, the liquid pocket at high density starts developing. Right: for almost equal sizes the phase diagram is reminiscent of the one of simple fluids (e.g.&nbsp;Lennard-Jones) after noticing that the polymer reservoir packing fraction plays a role inverse to the temperature. Adapted from <span class="citation" data-cites="dijkstra1999phase">Dijkstra, Brader, and Evans (<a href="#ref-dijkstra1999phase" role="doc-biblioref">1999</a>)</span>.)</figcaption>
+<figcaption>Phase diagrams of colloid-polymer mixtures for different values of the size ratio parameter <span class="math inline">\(q=\sigma_{\rm polymer}/\sigma_{\rm colloid}\)</span>. Left: very small size ratio make the gas liquid binodal (enclosing the yellow fluid-fluid region) metastable to gas-solid phase separation. Centre: as we increase the size ratio, the liquid pocket at high density starts developing. Right: for almost equal sizes the phase diagram is reminiscent of the one of simple fluids (e.g.&nbsp;Lennard-Jones) after noticing that the polymer reservoir packing fraction plays a role inverse to the temperature. Adapted from <span class="citation" data-cites="dijkstra1999phase">Dijkstra et al. (<a href="#ref-dijkstra1999phase" role="doc-biblioref">1999</a>)</span>.)</figcaption>
 </figure>
 </div>
 <p>Given the very short range of the interactions, models of colloid polymer mixtures can approximate the Asakura-Oosawa potential (see <a href="soft-matter_colloids.html#sec-ao-potential" class="quarto-xref"><span>Section 14.2.5</span></a>) using even simpler pair-wise interactions. For example, for Monte-Carlo simulations qand theoretical calculations one often uses the <strong>square-well</strong> model,</p>
@@ -905,7 +912,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="ee22dbd2" class="cell" data-execution_count="1">
+<div id="62b33945" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -919,7 +926,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="3abba055" class="cell" data-execution_count="2">
+<div id="afb23066" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -935,7 +942,7 @@ U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./figs/grtime.svg" class="img-fluid figure-img" style="width:60.0%"></p>
-<figcaption>The changes in the radial distribution function <span class="math inline">\(g(r)\)</span> as time evolves and the frozen structure of a simulated colloidal gel emerges. The systems is at an overall dilute concentration, so clusters appear as very sharp peaks at short distances, and their structure in terms of nearest and second-nearest neighbour shells are reflected in the first few peaks. From <span class="citation" data-cites="griffiths2017local">Griffiths, Turci, and Royall (<a href="#ref-griffiths2017local" role="doc-biblioref">2017</a>)</span></figcaption>
+<figcaption>The changes in the radial distribution function <span class="math inline">\(g(r)\)</span> as time evolves and the frozen structure of a simulated colloidal gel emerges. The systems is at an overall dilute concentration, so clusters appear as very sharp peaks at short distances, and their structure in terms of nearest and second-nearest neighbour shells are reflected in the first few peaks. From <span class="citation" data-cites="griffiths2017local">Griffiths et al. (<a href="#ref-griffiths2017local" role="doc-biblioref">2017</a>)</span></figcaption>
 </figure>
 </div>
 <p>In gels near the percolation threshold, the structure factor <span class="math inline">\(S(q)\)</span> exhibits <strong>scale-free (power-law) behavior</strong> at low <span class="math inline">\(q\)</span>:</p>
@@ -979,7 +986,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="5df58caa" class="cell" data-execution_count="3">
+<div id="d4a2d85f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1090,7 +1097,7 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bouchaud2004adam" class="csl-entry" role="listitem">
 Bouchaud, Jean-Philippe, and Giulio Biroli. 2004. <span>“On the Adam-Gibbs-Kirkpatrick-Thirumalai-Wolynes Scenario for the Viscosity Increase in Glasses.”</span> <em>The Journal of Chemical Physics</em> 121 (15): 7347–54. <a href="https://bris.on.worldcat.org/oclc/110636005">https://bris.on.worldcat.org/oclc/110636005</a>.
 </div>
