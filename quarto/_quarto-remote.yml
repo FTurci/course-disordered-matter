@@ -80,8 +80,8 @@ book:
           text: "Polymers"
         - href: soft-matter/soft-matter_liquidcrystals.qmd
           text: "Liquid crystals"
-        - href: soft-matter/soft-matter_surfactants.qmd
-          text: "Surfactants"
+        # - href: soft-matter/soft-matter_surfactants.qmd
+        #   text: "Surfactants"
         - href: soft-matter/soft-matter_glasses.qmd
           text: "Arrested states"
         - href: soft-matter/soft-matter_active.qmd
