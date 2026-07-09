@@ -360,20 +360,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -402,13 +396,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
   </div>
 </li>
       </ul>
@@ -557,7 +551,7 @@ window.Quarto = {
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="8d7602bb" class="cell" data-execution_count="1">
+<div id="6f4a9350" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -568,8 +562,8 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_1779446323850306" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_1779446323850306" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_178359127864671" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_178359127864671" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -600,18 +594,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_1779446323850306 = null;
-var warn = document.getElementById("3dmolwarning_1779446323850306");
+var viewer_178359127864671 = null;
+var warn = document.getElementById("3dmolwarning_178359127864671");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_1779446323850306 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1779446323850306"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_1779446323850306, {}, function() {
-viewer_1779446323850306.zoomTo();
-    viewer_1779446323850306.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_1779446323850306.setBackgroundColor("white");
-viewer_1779446323850306.render();
+viewer_178359127864671 = $3Dmol.createViewer(document.getElementById("3dmolviewer_178359127864671"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_178359127864671, {}, function() {
+viewer_178359127864671.zoomTo();
+    viewer_178359127864671.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_178359127864671.setBackgroundColor("white");
+viewer_178359127864671.render();
 })
 });
 </script>
