@@ -193,7 +193,7 @@ For convenience, let's write $\mathbf{Q}$ in terms of its components:
 
 $$\mathbf{Q} = \begin{pmatrix} Q_{xx} & Q_{xy} \\ Q_{yx} & -Q_{xx} \end{pmatrix}$$
 
-where we enforced that the trace is zero. The componets are given by
+where we enforced that the trace is zero. The components are given by
 
 $$Q_{xx} = \langle 2\cos^2 \theta_i - 1 \rangle = \langle \cos 2\theta_i \rangle$$
 
@@ -215,7 +215,7 @@ $$
 $$
 which gives the characteristic polynomial in terms of the components of Q:
 
-$$-Q_{xx}^2-Q_{xy}^2-\lambda^2=0$$
+$$-Q_{xx}^2-Q_{xy}^2+\lambda^2=0$$
 
 So the eigenvalues are $\lambda = \pm \sqrt{Q_{xx}^2 + Q_{xy}^2}$, and the largest eigenvalue is the positive one, which we define as the nematic order parameter 
 
@@ -223,21 +223,41 @@ $$\mathcal{S} = \sqrt{Q_{xx}^2 + Q_{xy}^2}$$
 
 The director $\mathbf{n}$ is the eigenvector of the alignment tensor $\mathbf{Q}$ corresponding to the largest eigenvalue $\mathcal{S}$.
 
-The eigenvector is found by solving the linear system
+Since $\mathbf{Q}$ is symmetric and traceless, it can be diagonalised using a rotation that aligns the director with the x-axis.
+
+
 $$
-(\mathbf{Q}-\mathcal{S} \mathbf{I}) \mathbf{n} = 0.
+\mathbf{Q}=\mathbf{R}(\psi)\left(\begin{array}{cc}
+\mathcal{S} & 0 \\
+0 & -\mathcal{S}
+\end{array}\right) \mathbf{R}(\psi)^T
 $$
 
-It yields 
+where 
 
-$$\mathbf{n} = \begin{pmatrix} \cos \psi \\ \sin \psi \end{pmatrix}$$
+$$
+\mathbf{R}(\psi)=\left(\begin{array}{cc}
+\cos \psi & -\sin \psi \\
+\sin \psi & \cos \psi
+\end{array}\right) .
+$$
 
-where the angle $\psi$ is given by
-$$\psi = \arctan\left(\frac{Q_{xy}}{Q_{xx}}\right)$$
+is a rotation of angle $\psi$ that aligns the director with the x-axis. The angle $\psi$ is the orientation of the director!
 
-Since it is an arctangent, its periodicity is $\pi$ and not $2\pi$, which is consistent with the head-tail symmetry of the nematic phase.
+Carrying out the matrix multiplication explicitly yields the components in terms of the director:
 
-This means that there is an angle $\alpha = 2\psi$ which is unique and represents the orientation of the director in the nematic phase.
+$$
+\begin{aligned}
+&Q_{x x}=\mathcal{S}\left(\cos ^2 \psi-\sin ^2 \psi\right)=\mathcal{S} \cos (2 \psi)\\
+&Q_{x y}=\mathcal{S}(2 \sin \psi \cos \psi)=\mathcal{S} \sin (2 \psi)
+\end{aligned}
+$$
+
+Taking the ratio of the two components gives the angle of the director:
+$$\tan(2\psi) = \frac{Q_{xy}}{Q_{xx}}$$
+
+Notice that the double angle comes out naturally, and reflects the head tail symmetry.
+
 
 This lends itself to a complex plane representation of the director and the order parameter:
 
