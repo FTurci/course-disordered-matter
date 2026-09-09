@@ -121,13 +121,13 @@ While for the spherical colloids we focused on positional correlation functions 
 
 Suppose we have $N$ rod-like particles, each with an orientation angle $\theta_i$ (in 2D) or a unit vector $\mathbf{u}_i$ (in 3D). We want to determine the director, i.e. the average direction of the long molecular axes of all molecules in the liquid crystal.
 
-The rods are head-tail symmetric, so, we cannot truly distinguish which one is the head or the tail (e.g. an orientation of $\  theta$ in 2D is the same as an orientation of $\theta+\pi$). We cannot therefore just take the average of the vectors to extract the common orientation of the various vectors, otherwise we would incur into a cancellation.
+The rods are head-tail symmetric, so, we cannot truly distinguish which one is the head or the tail (e.g. an orientation of $\theta$ in 2D is the same as an orientation of $\theta+\pi$). We cannot therefore just take the average of the vectors to extract the common orientation of the various vectors, otherwise we would incur into a cancellation.
 
 Instead, we construct a second moment tensor called the **alignment tensor**
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
-\mathbf{Q}=\dfrac{d}{2}\left\langle\mathbf{u}_i \otimes \mathbf{n}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
+\mathbf{Q}=\dfrac{d}{d-1}\left\langle\mathbf{u}_i \otimes \mathbf{u}_i-\dfrac{1}{d}\mathbf{I}\right\rangle
 $$
 </div>
 
