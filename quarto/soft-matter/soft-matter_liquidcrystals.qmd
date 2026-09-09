@@ -174,99 +174,78 @@ $$
 \mathbf{u}_i = \begin{pmatrix} \cos \theta_i \\ \sin \theta_i \end{pmatrix},
 $$
 
-and the alignment tensor is defined as
+
+
+To start constructing Q, we take the outer (tensorial) product of the unit vector with itself:
+
 
 $$
-\mathbf{Q} = 2\left\langle \mathbf{u}_i \otimes \mathbf{u}_i \right\rangle -\mathbf{I}= 2\begin{pmatrix}
-\langle \cos^2 \theta_i \rangle & \langle \cos \theta_i \sin \theta_i \rangle \\
-\langle \cos \theta_i \sin \theta_i \rangle & \langle \sin^2 \theta_i \rangle
-\end{pmatrix}.
+\mathbf{u}_i \otimes \mathbf{u}_i = \begin{pmatrix} \cos^2 \theta_i & \cos \theta_i \sin \theta_i \\ \cos \theta_i \sin \theta_i & \sin^2 \theta_i \end{pmatrix}.
 $$
 
-Using double-angle trigonometric identities,
+The resulting matrix is clearly symmetric and has obviously trace equale to 1 because $\cos^2 \theta_i + \sin^2 \theta_i = 1$.  Angled brackets $\langle \cdot \rangle$ denote the average over all particles in the system. The alignment tensor is then defined as
+$$
+Q = 2\left\langle \mathbf{u}_i \otimes \mathbf{u}_i \right\rangle -\mathbf{I}
+$$
+where we used the identity matrix to zero out the trace. The factor 2 is a geometric normalisation, and we see in the following that it is convenient when looking at the magnitude of Q.
+
+For convenience, let's write $\mathbf{Q}$ in terms of its components:
+
+$$\mathbf{Q} = \begin{pmatrix} Q_{xx} & Q_{xy} \\ Q_{yx} & -Q_{xx} \end{pmatrix}$$
+
+where we enforced that the trace is zero. The componets are given by
+
+$$Q_{xx} = \langle 2\cos^2 \theta_i - 1 \rangle = \langle \cos 2\theta_i \rangle$$
+
+$$Q_{xy} = \langle 2\cos \theta_i \sin \theta_i \rangle = \langle \sin 2\theta_i \rangle$$
+
+where we used the double angle trigonometric identities $\cos 2\theta = 2\cos^2 \theta - 1$ and $\sin 2\theta = 2\sin \theta \cos \theta$.
+
+
+The magnitude of Q is denoted by $\mathcal{S}$ and defined as the largest eigenvalue of Q, and the corresponding eigenvector is the director. The eigenvalue problem is formally
 
 $$
-\cos^2 \theta = \frac{1 + \cos 2\theta}{2}, \quad \sin^2 \theta = \frac{1 - \cos 2\theta}{2}, \quad \cos \theta \sin \theta = \frac{1}{2} \sin 2\theta,
+\mathbf{Q} \mathbf{n} = \mathcal{S} \mathbf{n} 
 $$
 
-we rewrite $\mathbf{Q}$ as
+By taking the determinant we have
 
 $$
-\mathbf{Q} = \frac{1}{2} \begin{pmatrix}
-1 + C & D \\
-D & 1 - C
-\end{pmatrix},
+\operatorname{det}(\mathbf{Q}-\lambda \mathbf{I})=0,
+$$
+which gives the characteristic polynomial in terms of the components of Q:
+
+$$-Q_{xx}^2-Q_{xy}^2-\lambda^2=0$$
+
+So the eigenvalues are $\lambda = \pm \sqrt{Q_{xx}^2 + Q_{xy}^2}$, and the largest eigenvalue is the positive one, which we define as the nematic order parameter 
+
+$$\mathcal{S} = \sqrt{Q_{xx}^2 + Q_{xy}^2}$$
+
+The director $\mathbf{n}$ is the eigenvector of the alignment tensor $\mathbf{Q}$ corresponding to the largest eigenvalue $\mathcal{S}$.
+
+The eigenvector is found by solving the linear system
+$$
+(\mathbf{Q}-\mathcal{S} \mathbf{I}) \mathbf{n} = 0.
 $$
 
-where
+It yields 
 
-$$
-C = \langle \cos 2\theta_i \rangle, \quad D = \langle \sin 2\theta_i \rangle.
-$$
+$$\mathbf{n} = \begin{pmatrix} \cos \psi \\ \sin \psi \end{pmatrix}$$
 
-To find the eigenvalues $\lambda$, solve
+where the angle $\psi$ is given by
+$$\psi = \arctan\left(\frac{Q_{xy}}{Q_{xx}}\right)$$
 
-$$
-\det(\mathbf{Q} - \lambda \mathbf{I}) = 0,
-$$
+Since it is an arctangent, its periodicity is $\pi$ and not $2\pi$, which is consistent with the head-tail symmetry of the nematic phase.
 
-which yields the largest eigenvalue
+This means that there is an angle $\alpha = 2\psi$ which is unique and represents the orientation of the director in the nematic phase.
 
-$$
-\lambda_{\max} = \frac{1}{2} + \frac{S}{2},
-$$
+This lends itself to a complex plane representation of the director and the order parameter:
 
-with the scalar nematic order parameter
-
-$$
-\mathcal{S} = \sqrt{C^2 + D^2}.
-$$
-
-Where $\mathcal{S} \to 1$ indicates strong alignment and $\mathcal{S} \to 0$ indicates isotropic order.
-
-The director $\mathbf{n}$ is the eigenvector corresponding to $\lambda_{\max}$, satisfying
-
-$$
-(\mathbf{Q} - \lambda_{\max} \mathbf{I}) \mathbf{v} = 0,
-$$
-
-which gives
-
-$$
-\mathbf{Q} - \lambda_{\max} \mathbf{I} = \frac{1}{2} \begin{pmatrix}
-C - S & D \\
-D & -C - S
-\end{pmatrix}.
-$$
-
-The eigenvector is
-
-$$
-\mathbf{v} \propto \begin{pmatrix} 1 \\ \frac{S - C}{D} \end{pmatrix}.
-$$
-
-Normalizing $\mathbf{v}$ gives the director $\mathbf{n}$.
+- The director is simply $\mathbf{n} = e^{i\psi}$
+- the order parameter Q can be mapped to a complex number $Q = Q_{xx} + i Q_{xy} = \mathcal{S} e^{i2\psi}$ where the 2 in the exponent reflects the head-tail symmetry of the nematic phase.
 
 
-The director angle $\psi$ is given by
 
-$$
-\tan \psi = \frac{S - C}{D}.
-$$
-
-This simplifies to
-
-$$
-\tan \psi = \frac{D}{S + C}.
-$$
-
-Using the double-angle formula,
-
-$$
-\psi = \frac{1}{2} \operatorname{atan2}(D, C).
-$$
-
-The angle $\psi$ represents the director’s orientation modulo $\pi$.
 :::
 
 
