@@ -63,44 +63,44 @@ book:
           #  href: phase-transitions/assignment_October2025.qmd                    
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
-    - part: "First experimental interlude"
-      chapters:
-        - href: experimental/part1.ipynb
-          text: "Macroscopic measurements"
-        - href: experimental/part2.ipynb
-          text: "Real-space measurements"
+    # - part: "First experimental interlude"
+    #   chapters:
+    #     - href: experimental/part1.ipynb
+    #       text: "Macroscopic measurements"
+    #     - href: experimental/part2.ipynb
+    #       text: "Real-space measurements"
 
-    - part: "Complex disordered systems"
-      chapters:
-        - href: soft-matter/soft-matter_intro.qmd
-          text: "Entropy matters"
-        - href: soft-matter/soft-matter_colloids.qmd
-          text: "Colloids"
-        - href: soft-matter/soft-matter_polymers.qmd
-          text: "Polymers"
-        - href: soft-matter/soft-matter_liquidcrystals.qmd
-          text: "Liquid crystals"
-        # - href: soft-matter/soft-matter_surfactants.qmd
-        #   text: "Surfactants"
-        - href: soft-matter/soft-matter_glasses.qmd
-          text: "Arrested states"
-        - href: soft-matter/soft-matter_active.qmd
-          text: "Active matter"
-    #     # - href: soft-matter/soft-matter_readings.qmd
-    #       # text: "Readings"
-        - href: soft-matter/slides.qmd
-          text: "Lecture slides"
+    # - part: "Complex disordered systems"
+    #   chapters:
+    #     - href: soft-matter/soft-matter_intro.qmd
+    #       text: "Entropy matters"
+    #     - href: soft-matter/soft-matter_colloids.qmd
+    #       text: "Colloids"
+    #     - href: soft-matter/soft-matter_polymers.qmd
+    #       text: "Polymers"
+    #     - href: soft-matter/soft-matter_liquidcrystals.qmd
+    #       text: "Liquid crystals"
+    #     # - href: soft-matter/soft-matter_surfactants.qmd
+    #     #   text: "Surfactants"
+    #     - href: soft-matter/soft-matter_glasses.qmd
+    #       text: "Arrested states"
+    #     - href: soft-matter/soft-matter_active.qmd
+    #       text: "Active matter"
+    # #     # - href: soft-matter/soft-matter_readings.qmd
+    # #       # text: "Readings"
+    #     - href: soft-matter/slides.qmd
+    #       text: "Lecture slides"
            
-        - href: soft-matter/soft-matter_problems.qmd
-          text: "Problems"
-    - part: "Second experimental interlude"
-      chapters:
-        - href: experimental/part3.ipynb
-          text: "Reciprocal-space measurements"
-        - href: experimental/part4.ipynb
-          text: "Structure and dynamics"
-    - text: "Notes as pdf" 
-      href: notes.pdf
+    #     - href: soft-matter/soft-matter_problems.qmd
+    #       text: "Problems"
+    # - part: "Second experimental interlude"
+    #   chapters:
+    #     - href: experimental/part3.ipynb
+    #       text: "Reciprocal-space measurements"
+    #     - href: experimental/part4.ipynb
+    #       text: "Structure and dynamics"
+    # - text: "Notes as pdf" 
+    #   href: notes.pdf
   # appendices:
   #   - href: revision_guide.qmd
   #     text: "Revision guide"
