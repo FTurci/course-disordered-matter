@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>18&nbsp; Active matter</title>
+<title>19&nbsp; Active matter</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -62,6 +59,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -95,10 +93,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -132,7 +130,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -145,7 +143,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -172,7 +170,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_active.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_active.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -187,8 +185,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -297,6 +294,18 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/assignment_October2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -357,14 +366,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -393,13 +408,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
   </div>
 </li>
       </ul>
@@ -420,13 +435,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#beyond-thermal-systems" id="toc-beyond-thermal-systems" class="nav-link active" data-scroll-target="#beyond-thermal-systems"><span class="header-section-number">18.1</span> Beyond thermal systems</a></li>
-  <li><a href="#life-inspired-motion-run-and-tumble" id="toc-life-inspired-motion-run-and-tumble" class="nav-link" data-scroll-target="#life-inspired-motion-run-and-tumble"><span class="header-section-number">18.2</span> Life-inspired motion: <em>run and tumble</em></a></li>
-  <li><a href="#coloured-noise" id="toc-coloured-noise" class="nav-link" data-scroll-target="#coloured-noise"><span class="header-section-number">18.3</span> Coloured noise</a></li>
-  <li><a href="#active-brownian-particle-and-motility-induced-phase-separation" id="toc-active-brownian-particle-and-motility-induced-phase-separation" class="nav-link" data-scroll-target="#active-brownian-particle-and-motility-induced-phase-separation"><span class="header-section-number">18.4</span> Active Brownian particle and motility-induced phase separation</a>
+  <li><a href="#beyond-thermal-systems" id="toc-beyond-thermal-systems" class="nav-link active" data-scroll-target="#beyond-thermal-systems"><span class="header-section-number">19.1</span> Beyond thermal systems</a></li>
+  <li><a href="#life-inspired-motion-run-and-tumble" id="toc-life-inspired-motion-run-and-tumble" class="nav-link" data-scroll-target="#life-inspired-motion-run-and-tumble"><span class="header-section-number">19.2</span> Life-inspired motion: <em>run and tumble</em></a></li>
+  <li><a href="#coloured-noise" id="toc-coloured-noise" class="nav-link" data-scroll-target="#coloured-noise"><span class="header-section-number">19.3</span> Coloured noise</a></li>
+  <li><a href="#active-brownian-particle-and-motility-induced-phase-separation" id="toc-active-brownian-particle-and-motility-induced-phase-separation" class="nav-link" data-scroll-target="#active-brownian-particle-and-motility-induced-phase-separation"><span class="header-section-number">19.4</span> Active Brownian particle and motility-induced phase separation</a>
   <ul class="collapse">
-  <li><a href="#mean-squared-displacement-of-active-brownian-particles" id="toc-mean-squared-displacement-of-active-brownian-particles" class="nav-link" data-scroll-target="#mean-squared-displacement-of-active-brownian-particles"><span class="header-section-number">18.4.1</span> Mean squared displacement of Active Brownian Particles</a></li>
-  <li><a href="#interacting-abps-and-motility-induced-phase-separation" id="toc-interacting-abps-and-motility-induced-phase-separation" class="nav-link" data-scroll-target="#interacting-abps-and-motility-induced-phase-separation"><span class="header-section-number">18.4.2</span> Interacting ABPs and motility induced phase separation</a></li>
+  <li><a href="#mean-squared-displacement-of-active-brownian-particles" id="toc-mean-squared-displacement-of-active-brownian-particles" class="nav-link" data-scroll-target="#mean-squared-displacement-of-active-brownian-particles"><span class="header-section-number">19.4.1</span> Mean squared displacement of Active Brownian Particles</a></li>
+  <li><a href="#interacting-abps-and-motility-induced-phase-separation" id="toc-interacting-abps-and-motility-induced-phase-separation" class="nav-link" data-scroll-target="#interacting-abps-and-motility-induced-phase-separation"><span class="header-section-number">19.4.2</span> Interacting ABPs and motility induced phase separation</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -434,9 +449,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_active.html"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_active.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></h1>
+<h1 class="title"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></h1>
 </div>
 
 
@@ -453,8 +468,8 @@ window.Quarto = {
 </header>
 
 
-<section id="beyond-thermal-systems" class="level2" data-number="18.1">
-<h2 data-number="18.1" class="anchored" data-anchor-id="beyond-thermal-systems"><span class="header-section-number">18.1</span> Beyond thermal systems</h2>
+<section id="beyond-thermal-systems" class="level2" data-number="19.1">
+<h2 data-number="19.1" class="anchored" data-anchor-id="beyond-thermal-systems"><span class="header-section-number">19.1</span> Beyond thermal systems</h2>
 <p>All the system we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.</p>
 <p>However, many systems in nature and technology are driven out of equilibrium by continuous energy consumption at the microscopic scale. These are known as <strong>active matter</strong> systems. Here, each constituent (such as a bacterium, a synthetic microswimmer, or a molecular motor) converts energy from its surroundings into a variety of mechanisms:</p>
 <ul>
@@ -468,8 +483,8 @@ window.Quarto = {
 <p>To do so we need to understand how systems that dissipate energy locally to produce self-propelled motion can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g.&nbsp;colloidal fluids) or are slowly relaxing towards it (e.g.&nbsp;glasses and gels).</p>
 <p>The field of research that studies such systems is called physics of <strong>active matter</strong> and in this chapter we will describe some reference model systems and main results.</p>
 </section>
-<section id="life-inspired-motion-run-and-tumble" class="level2" data-number="18.2">
-<h2 data-number="18.2" class="anchored" data-anchor-id="life-inspired-motion-run-and-tumble"><span class="header-section-number">18.2</span> Life-inspired motion: <em>run and tumble</em></h2>
+<section id="life-inspired-motion-run-and-tumble" class="level2" data-number="19.2">
+<h2 data-number="19.2" class="anchored" data-anchor-id="life-inspired-motion-run-and-tumble"><span class="header-section-number">19.2</span> Life-inspired motion: <em>run and tumble</em></h2>
 <p>The run-and-tumble model describes the motion of active particles, such as bacteria, that alternate between two types of movement: “runs” (straight-line motion) and “tumbles” (random reorientation). This model captures the behavior of microorganisms like <em>E. coli</em>.</p>
 <div id="fig-escherichia" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -477,14 +492,14 @@ window.Quarto = {
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/b9P8uPkeKmc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-escherichia-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18.1: Swimming Escherichia coli bacteria with fluorescently-labeled flagellar filaments, showing individual run-and-tumble events with flagellar filaments unbundling, cells turning, and flagellar filaments rejoining the bundle. The details of the experimental procedure are given in <span class="citation" data-cites="turner2000real">Turner et al. (<a href="#ref-turner2000real" role="doc-biblioref">2000</a>)</span>.
+Figure&nbsp;19.1: Swimming Escherichia coli bacteria with fluorescently-labeled flagellar filaments, showing individual run-and-tumble events with flagellar filaments unbundling, cells turning, and flagellar filaments rejoining the bundle. The details of the experimental procedure are given in <span class="citation" data-cites="turner2000real">Turner, Ryu, and Berg (<a href="#ref-turner2000real" role="doc-biblioref">2000</a>)</span>.
 </figcaption>
 </figure>
 </div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" data-startfrom="48" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 47;"><span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>viewof simulation <span class="op">=</span> {</span>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="48" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 47;"><span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>viewof simulation <span class="op">=</span> {</span>
 <span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> n <span class="op">=</span> <span class="dv">100</span><span class="op">,</span> W <span class="op">=</span> <span class="dv">1000</span><span class="op">,</span> H <span class="op">=</span> <span class="dv">300</span><span class="op">,</span> dt <span class="op">=</span> <span class="fl">0.5</span><span class="op">,</span> v0 <span class="op">=</span> <span class="fl">1.5</span><span class="op">;</span></span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="kw">const</span> tumbleSlider <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">range</span>([<span class="fl">0.01</span><span class="op">,</span> <span class="fl">1.0</span></span>
@@ -596,7 +611,7 @@ Figure&nbsp;18.1: Swimming Escherichia coli bacteria with fluorescently-labeled 
 <span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>        <span class="kw">yield</span> container<span class="op">;</span></span>
 <span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>        <span class="cf">await</span> Promises<span class="op">.</span><span class="fu">delay</span>(<span class="dv">16</span>)<span class="op">;</span></span>
 <span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div id="fig-ojs-cell-1" class="cell-output cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -606,7 +621,7 @@ Figure&nbsp;18.1: Swimming Escherichia coli bacteria with fluorescently-labeled 
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ojs-cell-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18.2: Non-interacting run and tumble particles.
+Figure&nbsp;19.2: Non-interacting run and tumble particles.
 </figcaption>
 </figure>
 </div>
@@ -648,8 +663,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 </script>
 </div>
 </section>
-<section id="coloured-noise" class="level2" data-number="18.3">
-<h2 data-number="18.3" class="anchored" data-anchor-id="coloured-noise"><span class="header-section-number">18.3</span> Coloured noise</h2>
+<section id="coloured-noise" class="level2" data-number="19.3">
+<h2 data-number="19.3" class="anchored" data-anchor-id="coloured-noise"><span class="header-section-number">19.3</span> Coloured noise</h2>
 <p>Coloured noise introduces temporal correlations into the random forces acting on a particle, unlike white noise, which is uncorrelated. This is often modeled using an Ornstein-Uhlenbeck process for the noise term.</p>
 <p>In the context of active matter, coloured noise can be used to describe the dynamics of active particles, where the noise term <span class="math inline">\(\boldsymbol{\eta}(t)\)</span> evolves as: <span class="math display">\[
 \frac{d\boldsymbol{\eta}(t)}{dt} = -\frac{\boldsymbol{\eta}(t)}{\tau_c} + \sqrt{\frac{2D_c}{\tau_c}} \boldsymbol{\xi}(t),
@@ -665,8 +680,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 \]</span> where <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> is the direction of self-propulsion.</p>
 <p>The coloured noise description of active matter is a generalisation of the run and tumble dynamics. The run phase corresponds to the persistence of <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> over time, governed by the correlation time <span class="math inline">\(\tau_c\)</span>, whereas the tumble phase is analogous to a rapid decorrelation of <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span>, which can be modeled by resetting <span class="math inline">\(\boldsymbol{\eta}(t)\)</span> or introducing a large noise term.</p>
 </section>
-<section id="active-brownian-particle-and-motility-induced-phase-separation" class="level2" data-number="18.4">
-<h2 data-number="18.4" class="anchored" data-anchor-id="active-brownian-particle-and-motility-induced-phase-separation"><span class="header-section-number">18.4</span> Active Brownian particle and motility-induced phase separation</h2>
+<section id="active-brownian-particle-and-motility-induced-phase-separation" class="level2" data-number="19.4">
+<h2 data-number="19.4" class="anchored" data-anchor-id="active-brownian-particle-and-motility-induced-phase-separation"><span class="header-section-number">19.4</span> Active Brownian particle and motility-induced phase separation</h2>
 <p>Active Brownian particles (ABPs) are a minimal model for self-propelled colloids, such as Janus particles, which move due to chemical reactions at their surfaces. For example, a colloid half-coated with platinum can catalyze the decomposition of hydrogen peroxide in solution, generating local gradients that propel the particle forward.</p>
 <p>The ABP model captures the essential physics of these systems. Each particle moves with a constant speed in a direction that undergoes rotational diffusion. This leads to persistent motion at short times and diffusive behavior at long times, similar to the run-and-tumble model but with continuous reorientation.</p>
 <p>The dynamics of an ABP can be described by the following equations:</p>
@@ -694,8 +709,8 @@ In 2D, the orientation <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> 
 \]</span> where <span class="math inline">\(\eta_\theta(t)\)</span> is a scalar Gaussian white noise term.</li>
 </ol>
 <p>We can analyse this a little more in detail by considering the characteristic features of the displacements of (dilute or noninteracting) active Brownian particles.</p>
-<section id="mean-squared-displacement-of-active-brownian-particles" class="level3" data-number="18.4.1">
-<h3 data-number="18.4.1" class="anchored" data-anchor-id="mean-squared-displacement-of-active-brownian-particles"><span class="header-section-number">18.4.1</span> Mean squared displacement of Active Brownian Particles</h3>
+<section id="mean-squared-displacement-of-active-brownian-particles" class="level3" data-number="19.4.1">
+<h3 data-number="19.4.1" class="anchored" data-anchor-id="mean-squared-displacement-of-active-brownian-particles"><span class="header-section-number">19.4.1</span> Mean squared displacement of Active Brownian Particles</h3>
 <p>Indeed, it can be shown (see below) that the mean squared displacement for active Brownian particles displays three regimes: <span class="math display">\[
 \operatorname{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
 \]</span></p>
@@ -709,7 +724,7 @@ In 2D, the orientation <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> 
 <li>a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e.&nbsp;<span class="math inline">\(\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau\)</span> but with a new diffusion constant.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -798,8 +813,8 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 </script>
 </div>
 </section>
-<section id="interacting-abps-and-motility-induced-phase-separation" class="level3" data-number="18.4.2">
-<h3 data-number="18.4.2" class="anchored" data-anchor-id="interacting-abps-and-motility-induced-phase-separation"><span class="header-section-number">18.4.2</span> Interacting ABPs and motility induced phase separation</h3>
+<section id="interacting-abps-and-motility-induced-phase-separation" class="level3" data-number="19.4.2">
+<h3 data-number="19.4.2" class="anchored" data-anchor-id="interacting-abps-and-motility-induced-phase-separation"><span class="header-section-number">19.4.2</span> Interacting ABPs and motility induced phase separation</h3>
 <p>When the active Brownian particles are actually interacting with each other, they can give rise to an exceptional nonequilibrium phenomenon of self organisation called <strong>motility-induced phase separation</strong> (MIPS).</p>
 <div id="fig-mips" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -807,7 +822,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 <img src="./figs/mips.png" class="img-fluid figure-img" style="width:70.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-mips-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;18.3: Motility induced phase separation in a 3D system of active Brownian particles. As the persistence of the motion increases (i.e.&nbsp;the rotational diffusion decreases), the system phase separates into a dense and a dilute phase, akin to a liquid-gas phase separation in equilibrium systems. Adapted from <span class="citation" data-cites="PhysRevLett.126.038002">Turci and Wilding (<a href="#ref-PhysRevLett.126.038002" role="doc-biblioref">2021</a>)</span>
+Figure&nbsp;19.3: Motility induced phase separation in a 3D system of active Brownian particles. As the persistence of the motion increases (i.e.&nbsp;the rotational diffusion decreases), the system phase separates into a dense and a dilute phase, akin to a liquid-gas phase separation in equilibrium systems. Adapted from <span class="citation" data-cites="PhysRevLett.126.038002">Turci and Wilding (<a href="#ref-PhysRevLett.126.038002" role="doc-biblioref">2021</a>)</span>
 </figcaption>
 </figure>
 </div>
@@ -835,12 +850,12 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 <script type="vfs-file">
 W10=
 </script>
-<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-PhysRevLett.126.038002" class="csl-entry" role="listitem">
 Turci, Francesco, and Nigel B. Wilding. 2021. <span>“Phase Separation and Multibody Effects in Three-Dimensional Active Brownian Particles.”</span> <em>Phys. Rev. Lett.</em> 126 (January): 038002. <a href="https://doi.org/10.1103/PhysRevLett.126.038002">https://doi.org/10.1103/PhysRevLett.126.038002</a>.
 </div>
 <div id="ref-turner2000real" class="csl-entry" role="listitem">
-Turner, Linda, William S Ryu, and Howard C Berg. 2000. <span>“Real-Time Imaging of Fluorescent Flagellar Filaments.”</span> <em>Journal of Bacteriology</em> 182 (10): 2793–801.
+Turner, Linda, William S Ryu, and Howard C Berg. 2000. <span>“Real-Time Imaging of Fluorescent Flagellar Filaments.”</span> <em>Journal of Bacteriology</em> 182 (10): 2793–2801.
 </div>
 </div>
 </section>
@@ -915,14 +930,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1267,7 +1281,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../soft-matter/soft-matter_glasses.html" class="pagination-link" aria-label="Arrested states">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Arrested states</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

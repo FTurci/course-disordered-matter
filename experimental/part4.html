@@ -2,16 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>20&nbsp; Measurement of structure and dynamics</title>
+<title>21&nbsp; Measurement of structure and dynamics</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -41,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -78,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -91,7 +88,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -118,7 +115,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part3.html">Second experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part4.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part3.html">Second experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part4.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -133,8 +130,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -243,6 +239,18 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/assignment_October2025.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -303,14 +311,20 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -339,13 +353,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../experimental/part4.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
   </div>
 </li>
       </ul>
@@ -366,23 +380,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">20.1</span> Introduction</a></li>
-  <li><a href="#dynamics-in-colloidal-systems" id="toc-dynamics-in-colloidal-systems" class="nav-link" data-scroll-target="#dynamics-in-colloidal-systems"><span class="header-section-number">20.2</span> Dynamics in colloidal systems</a></li>
-  <li><a href="#dynamical-correlation-functions" id="toc-dynamical-correlation-functions" class="nav-link" data-scroll-target="#dynamical-correlation-functions"><span class="header-section-number">20.3</span> Dynamical correlation functions</a></li>
-  <li><a href="#the-dynamical-structure-factor-sqomega" id="toc-the-dynamical-structure-factor-sqomega" class="nav-link" data-scroll-target="#the-dynamical-structure-factor-sqomega"><span class="header-section-number">20.4</span> The dynamical structure factor <span class="math inline">\(S(Q,\omega)\)</span></a></li>
-  <li><a href="#the-intermediate-scattering-factor-iqt" id="toc-the-intermediate-scattering-factor-iqt" class="nav-link" data-scroll-target="#the-intermediate-scattering-factor-iqt"><span class="header-section-number">20.5</span> The intermediate scattering factor <span class="math inline">\(I(Q,t)\)</span></a></li>
-  <li><a href="#the-role-of-hydrogen-in-inelastic-neutron-scattering" id="toc-the-role-of-hydrogen-in-inelastic-neutron-scattering" class="nav-link" data-scroll-target="#the-role-of-hydrogen-in-inelastic-neutron-scattering"><span class="header-section-number">20.6</span> The role of hydrogen in inelastic neutron scattering</a></li>
-  <li><a href="#n.m.r" id="toc-n.m.r" class="nav-link" data-scroll-target="#n.m.r"><span class="header-section-number">20.7</span> N.M.R</a></li>
-  <li><a href="#other-techniques" id="toc-other-techniques" class="nav-link" data-scroll-target="#other-techniques"><span class="header-section-number">21</span> Other techniques</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">21.1</span> Introduction</a></li>
+  <li><a href="#dynamics-in-colloidal-systems" id="toc-dynamics-in-colloidal-systems" class="nav-link" data-scroll-target="#dynamics-in-colloidal-systems"><span class="header-section-number">21.2</span> Dynamics in colloidal systems</a></li>
+  <li><a href="#dynamical-correlation-functions" id="toc-dynamical-correlation-functions" class="nav-link" data-scroll-target="#dynamical-correlation-functions"><span class="header-section-number">21.3</span> Dynamical correlation functions</a></li>
+  <li><a href="#the-dynamical-structure-factor-sqomega" id="toc-the-dynamical-structure-factor-sqomega" class="nav-link" data-scroll-target="#the-dynamical-structure-factor-sqomega"><span class="header-section-number">21.4</span> The dynamical structure factor <span class="math inline">\(S(Q,\omega)\)</span></a></li>
+  <li><a href="#the-intermediate-scattering-factor-iqt" id="toc-the-intermediate-scattering-factor-iqt" class="nav-link" data-scroll-target="#the-intermediate-scattering-factor-iqt"><span class="header-section-number">21.5</span> The intermediate scattering factor <span class="math inline">\(I(Q,t)\)</span></a></li>
+  <li><a href="#the-role-of-hydrogen-in-inelastic-neutron-scattering" id="toc-the-role-of-hydrogen-in-inelastic-neutron-scattering" class="nav-link" data-scroll-target="#the-role-of-hydrogen-in-inelastic-neutron-scattering"><span class="header-section-number">21.6</span> The role of hydrogen in inelastic neutron scattering</a></li>
+  <li><a href="#n.m.r" id="toc-n.m.r" class="nav-link" data-scroll-target="#n.m.r"><span class="header-section-number">21.7</span> N.M.R</a></li>
+  <li><a href="#other-techniques" id="toc-other-techniques" class="nav-link" data-scroll-target="#other-techniques"><span class="header-section-number">22</span> Other techniques</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part3.html">Second experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part4.html"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part3.html">Second experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part4.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Measurement of structure and dynamics</span></h1>
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Measurement of structure and dynamics</span></h1>
 </div>
 
 
@@ -399,17 +413,17 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="20.1">
-<h2 data-number="20.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">20.1</span> Introduction</h2>
+<section id="introduction" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">21.1</span> Introduction</h2>
 <p>In the previous sections we have discussed the physical properties of materials, their structure as observed in real space and the relationship between real-space structure <span class="math inline">\(g(r)\)</span> and the reciprocal space structure <span class="math inline">\(S(Q)\)</span> as observed, in for example, diffraction experiments. It is quite straightforward to distinguish between for example crystals and glasses in a diffraction pattern, indeed the transition between a liquid and crystal can be observed in simple experiments. Similarly, second order phase transitions can be studied easily, for example in small angle scattering experiments where the increase in correlation length near the transition gives rise to a strong small angle scattering signal and critical opalescence. In comparison, <strong>the transition from a liquid to glass and vice versa can be almost impossible to observe in diffraction experiments alone</strong>. Furthermore, theoretical approaches to understand the glass transition highlight the importance of the changes in the <strong>atomic dynamics</strong> on passing through the transition.</p>
 <p>So how do we look at the dynamics - the motion of particles around each other?</p>
 </section>
-<section id="dynamics-in-colloidal-systems" class="level2" data-number="20.2">
-<h2 data-number="20.2" class="anchored" data-anchor-id="dynamics-in-colloidal-systems"><span class="header-section-number">20.2</span> Dynamics in colloidal systems</h2>
+<section id="dynamics-in-colloidal-systems" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="dynamics-in-colloidal-systems"><span class="header-section-number">21.2</span> Dynamics in colloidal systems</h2>
 <p>In part II we saw how the structure of colloidal systems consisting of micro- and nano-sized particles could be studied using confocal microscopy. In essence, the idea was that you could take a ‘snap shot’ of the atom positions, determine their positions and hence work out properties such as <span class="math inline">\(g(r)\)</span> for example. As we mentioned above, from these snapshots it is not easy to decide whether the material is a liquid, where the particles may diffuse freely from their initial positions, or a glass, where the particles will oscillate around a fixed position in space but not diffuse. In other words, <strong>if we wish to establish whether we have a liquid or a glass we need to track the particles</strong>. The study of the dynamics in colloidal systems has progressed rapidly through the development of confocal microscopy and high speed digital imaging. The atomic dynamics is then obtained using sophisticated particle tracking software. For example, at the glass transition there is a noticeable change and separation of the long timescale motion (for example diffusion) of the particles (the so called <strong><span class="math inline">\(\alpha\)</span> relaxation</strong>) and the ‘rattling’ of the particles as they are temporarily trapped in the cages formed by their nearest neighbours (the so called <strong><span class="math inline">\(\beta\)</span> relaxation</strong>). The separation of these motions underpins theories of the glass transition and careful analysis of the motions is used to validate the theory. Needless to say, a universal theory of the glass transition is far from being achieved at the current time.</p>
 </section>
-<section id="dynamical-correlation-functions" class="level2" data-number="20.3">
-<h2 data-number="20.3" class="anchored" data-anchor-id="dynamical-correlation-functions"><span class="header-section-number">20.3</span> Dynamical correlation functions</h2>
+<section id="dynamical-correlation-functions" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="dynamical-correlation-functions"><span class="header-section-number">21.3</span> Dynamical correlation functions</h2>
 <p>The theoretical quantity that is used to describe the structure and the dynamics is <strong><span class="math inline">\(G(r,t)\)</span></strong> that is similar to <span class="math inline">\(g(r)\)</span> except it describes how the system evolves with time. In simple words we may say it describes the probability of finding a particle that was at position <span class="math inline">\(r\)</span> at <span class="math inline">\(t=0\)</span> to finding it at <span class="math inline">\(r\)</span> at some time <span class="math inline">\(t\)</span> later. Note: this also applies to our particle at the origin. Hence we see that <span class="math inline">\(G(r,t)\)</span> tells us not only about the particle positions but their movement (i.e.&nbsp;if a particle is diffusing it never returns to its initial position, if it is vibrating it will oscillate about a mean position etc). We will not go into any detail about the theoretical predictions for these correlation functions and what they characterise but rather briefly explore the methods by which we can measure them.</p>
 <p>Firstly we can extend the relationship we found between <span class="math inline">\(g(r)\)</span> (real space) and <span class="math inline">\(S(Q)\)</span> (reciprocal space) to their functions coupled with time <span class="math inline">\(t\)</span> (‘real time’) to reciprocal time (frequency <span class="math inline">\(\omega\)</span>). The process involves the <strong>double application of the Fourier transform</strong>, one transforming <span class="math inline">\(x\rightarrow k\)</span> and the other <span class="math inline">\(t\rightarrow \omega\)</span>. This could be done in different orders and the functions obtained after the first transform are indicated by <span class="math inline">\(I\)</span> and <span class="math inline">\(I'\)</span> below,</p>
 <p><span class="math display">\[G(r,t) \leftrightarrow I(Q,t) \leftrightarrow S(Q,\omega)\]</span></p>
@@ -418,25 +432,25 @@ window.Quarto = {
 <p>where <span class="math inline">\(\leftrightarrow\)</span> is a Fourier transform operation. <span class="math inline">\(I\)</span> and <span class="math inline">\(I'\)</span> are known as the <strong>intermediate scattering functions</strong>.</p>
 <p>The experimentally important correlation functions (the ones we can measure) are <span class="math inline">\(G(r,t)\)</span> for which we have described experimental measurement via imaging in colloidal systems already, <span class="math inline">\(I(Q,t)\)</span> and <span class="math inline">\(S(Q,\omega)\)</span>. We will concentrate on how these quantities may be measured rather than any details of how they may be interpreted for specific systems. I am not aware of any direct measurements of <span class="math inline">\(I'(r,\omega)\)</span>. If you find any please let me know!</p>
 </section>
-<section id="the-dynamical-structure-factor-sqomega" class="level2" data-number="20.4">
-<h2 data-number="20.4" class="anchored" data-anchor-id="the-dynamical-structure-factor-sqomega"><span class="header-section-number">20.4</span> The dynamical structure factor <span class="math inline">\(S(Q,\omega)\)</span></h2>
+<section id="the-dynamical-structure-factor-sqomega" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="the-dynamical-structure-factor-sqomega"><span class="header-section-number">21.4</span> The dynamical structure factor <span class="math inline">\(S(Q,\omega)\)</span></h2>
 <p>In our consideration of diffraction we saw the intensity was measured as a function of scattering angle. We then convert to <span class="math inline">\(Q\)</span> with the relation <span class="math inline">\(Q=4\pi\sin \theta/\lambda\)</span>. In our simple description of diffraction we also assumed the scattering was elastic (we covered up a lot in this simple assumption!). However, if our incident quantum (X-ray, neutron, …) can exchange energy with the material by inelastic collisions or excitation or destruction of e.g.&nbsp;vibrational modes we will see a distribution of energies of our quanta in our detector. The usual assumption for diffraction experiments (and a danger lies here, especially for neutron scattering from hydrogenous materials) is that these energy exchanges are small (i.e.&nbsp;<span class="math inline">\(\lambda\)</span> for the scattered quantum is approximately the same as the incident <span class="math inline">\(\lambda\)</span>) so our definition of <span class="math inline">\(Q\)</span> holds. We generally also assume our detectors are not sensitive to energy of the quantum detected (that is they are ‘black’). To be precise, rather than assuming elastic scattering we are treating the scattering in the <strong>‘static approximation’</strong>. Another, informal way of expressing this, is that the positions of the atoms have not moved significantly during the time in which the quantum is being scattered. For the case of X-rays, that have energies of the order of 10s of keV (compared to typical vibrational energies of <span class="math inline">\(&lt;\)</span> an eV), and move at the speed of light across the sample, the static approximation works well. However, <strong>thermal neutrons</strong> (from for example a nuclear reactor) have an energy of typically <span class="math inline">\(k_BT\)</span> or <span class="math inline">\(\sim\)</span> 25 meV (but depending on the moderator source used) that is of the same order of typical vibrations in our material. Their speed is also about <span class="math inline">\(2000~\text{m}\cdot\text{s}^{-1}\)</span> that is another way of saying the atoms are moving significantly over the timescale in which the neutron is passing. This deviation from the static approximation means care needs to be taken when analysing diffraction data from hydrogenous samples (as the neutron and proton have similar mass giving rise to a significant recoil). However, it also means that it is relatively easy to construct neutron scattering instruments that can analyse the energy of the scattered neutrons and hence to measure <span class="math inline">\(S(Q,\omega)\)</span> directly. There are two typical methods by which this is done: inserting a crystal analyser (that uses the Bragg scattering from an oriented crystal to separate the neutron energies by the angle they scatter from the crystal) or by using pulses of incident neutrons and measuring the time of flight to the detector (in this case if the energy of the neutron is increased it will arrive earlier than an elastically scattered neutron or if it loses energy it will arrive later). These instruments are known as <strong>triple axis</strong> and <strong>time of flight spectrometers</strong> respectively. Triple axis spectrometers are most often used for looking at excitations (phonons, magnetic etc.) in crystalline materials whereas the time of flight spectrometers are more often used for studying molecular vibrations, rotation and diffusion in hydrogenous materials.</p>
 <p>The majority of neutron scattering instruments are designed and built to measure <span class="math inline">\(S(Q,\omega)\)</span>. None can cover the whole of ‘<span class="math inline">\(Q,\omega\)</span> space’ and the choice of instrument depends on the phenomenon studied and where it manifests itself. This is why neutron sources such as the ILL have upwards of 30 different instruments optimised for different types of experiment.</p>
 </section>
-<section id="the-intermediate-scattering-factor-iqt" class="level2" data-number="20.5">
-<h2 data-number="20.5" class="anchored" data-anchor-id="the-intermediate-scattering-factor-iqt"><span class="header-section-number">20.5</span> The intermediate scattering factor <span class="math inline">\(I(Q,t)\)</span></h2>
+<section id="the-intermediate-scattering-factor-iqt" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="the-intermediate-scattering-factor-iqt"><span class="header-section-number">21.5</span> The intermediate scattering factor <span class="math inline">\(I(Q,t)\)</span></h2>
 <p>There is one neutron technique that is rather unique and specialised but I mention it here as one of the key areas it has been used is in the study of polymers and glassy polymers. It is known as <strong>Neutron Spin Echo (NSE)</strong> and relies crucially on the neutron magnetic moment and the effect on its precession after scattering. I will not attempt to explain the theory here but information on the IN15 spin-echo spectrometer may be found at the ILL website <href>https://www.ill.eu/for-ill-users/instruments/instruments-list/in15/description/instrument-layout</href>. The key point about the technique is that <strong>it measures directly <span class="math inline">\(I(Q,t)\)</span> rather than <span class="math inline">\(S(Q,\omega)\)</span></strong>.</p>
 </section>
-<section id="the-role-of-hydrogen-in-inelastic-neutron-scattering" class="level2" data-number="20.6">
-<h2 data-number="20.6" class="anchored" data-anchor-id="the-role-of-hydrogen-in-inelastic-neutron-scattering"><span class="header-section-number">20.6</span> The role of hydrogen in inelastic neutron scattering</h2>
+<section id="the-role-of-hydrogen-in-inelastic-neutron-scattering" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="the-role-of-hydrogen-in-inelastic-neutron-scattering"><span class="header-section-number">21.6</span> The role of hydrogen in inelastic neutron scattering</h2>
 <p>By a quirk of nature <strong>the scattering of neutrons from hydrogen atoms is almost perfectly incoherent</strong>. The reason is the weighted spin-up and spin-down scattering lengths are equal and opposite. As the spin orientation is random on the hydrogen atoms in a material the consequence is we get no overall interference effect. Hence even for a crystalline hydrogenous material you would not expect to see any Bragg peaks due to the hydrogen atoms. Another example of an incoherent scatterer is crystalline Vanadium that shows no (almost) Bragg peaks in its diffraction pattern. It might appear that this is a disadvantage. However, in inelastic scattering it means that the scattering from the hydrogen is intimately linked with the dynamical motion of the individual hydrogen atoms (freely diffusing, caged …) making it especially useful for studying polymers etc. In contrast, <strong>deuterium is an almost perfectly coherent scatterer</strong> meaning you can get the best of both worlds! (Although, mistakes have been made in assuming hydrogenated and deuterated samples behave in exactly the same way). The exploitation of the hydrogen incoherency is mostly used in quasi-elastic neutron scattering measurements.</p>
 </section>
-<section id="n.m.r" class="level2" data-number="20.7">
-<h2 data-number="20.7" class="anchored" data-anchor-id="n.m.r"><span class="header-section-number">20.7</span> N.M.R</h2>
+<section id="n.m.r" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="n.m.r"><span class="header-section-number">21.7</span> N.M.R</h2>
 <p>We have already mentioned that Nuclear Magnetic Resonance may be used to infer the local structure around active ions in materials. However, the relaxation rates observed in N.M.R. experiments (there is a simple apparatus that shows this in the third year MSci lab) depend on the local environment of the active nucleus and the motion of neighbouring atoms. As a consequence, measurements of N.M.R. relaxation rates may also be used to obtain information about the dynamics. In contrast to the neutron scattering measurements, where typical timescales for the motion observed are of the order of nanoseconds, the N.M.R. relaxation rates are closer to microseconds. Proton NMR is used extensively for studying hydrogenated materials and as for the neutron case the use of selective deuteration of the systems under study enables a focus on a particular section of a molecule to be obtained. In contrast to neutron scattering methods, N.M.R. spectrometers can fit in a normal lab, making them more accessible, although they can still cost millions of pounds.</p>
 </section>
-<section id="other-techniques" class="level1" data-number="21">
-<h1 data-number="21"><span class="header-section-number">21</span> Other techniques</h1>
+<section id="other-techniques" class="level1" data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> Other techniques</h1>
 <p>As I explained earlier, a comprehensive summary of all the techniques one might use is virtually impossible to give. Other techniques I have not mentioned include:</p>
 <ul>
 <li>Electron Microscopy and Diffraction,</li>
@@ -523,14 +537,13 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -875,7 +888,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../experimental/part3.html" class="pagination-link" aria-label="Reciprocal-space measurements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
