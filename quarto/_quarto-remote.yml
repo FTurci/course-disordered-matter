@@ -65,6 +65,8 @@ book:
 #            text: "Coding"  
     # - part: "First experimental interlude"
     #   chapters:
+    #     - href: experimental/part0.ipynb
+    #       text: "Preparing your computer for the first experimental interlude"
     #     - href: experimental/part1.ipynb
     #       text: "Real-space measurements"
     #     - href: experimental/part2.ipynb
