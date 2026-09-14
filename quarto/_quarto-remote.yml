@@ -66,9 +66,9 @@ book:
     # - part: "First experimental interlude"
     #   chapters:
     #     - href: experimental/part1.ipynb
-    #       text: "Macroscopic measurements"
-    #     - href: experimental/part2.ipynb
     #       text: "Real-space measurements"
+    #     - href: experimental/part2.ipynb
+    #       text: "Reciprocal-space measurements"
 
     # - part: "Complex disordered systems"
     #   chapters:
@@ -96,9 +96,9 @@ book:
     # - part: "Second experimental interlude"
     #   chapters:
     #     - href: experimental/part3.ipynb
-    #       text: "Reciprocal-space measurements"
+    #       text: "Experimental link between Diffusion and Brownian Motion"
     #     - href: experimental/part4.ipynb
-    #       text: "Structure and dynamics"
+    #       text: "Practical Image Analysis session"
     # - text: "Notes as pdf" 
     #   href: notes.pdf
   # appendices:
