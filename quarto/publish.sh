@@ -1,0 +1,1 @@
+quarto publish --profile remote

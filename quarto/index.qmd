@@ -18,7 +18,7 @@ This course is organized into three interconnected parts, each offering a distin
 
 * **Part 1: Unifying concepts** (Nigel Wilding) introduces the theoretical framework for rationalising complex disordered matter which is grounded in statistical mechanics and thermodynamics. We emphasize the theory of phase transitions, thermal fluctuations, critical phenomena, and stochastic dynamics—providing the essential theoretical tools needed to describe and predict the behavior of soft and disordered systems.  
 * **Part 2: Complex disordered matter** (Francesco Turci) explores the phenomenology of key examples of complex disordered soft matter systems, including colloids, polymers, liquid crystals, glasses, gels, and active matter. These systems will be analyzed using the theoretical concepts introduced in Part 1, highlighting how disorder, interactions, and fluctuations shape their macroscopic behavior.  
-* **Part 3: Experimental techniques** (Adrian Barnes) focuses on the methods of microscopy, and scattering via x-rays, neutrons and light that are used to study  complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
+* **Part 3: Experimental techniques** (Alexis Darras) focuses on the experimetal methods of microscopy, and scattering via x-rays, neutrons and light that are used to study complex disordered matter, offering insight into how their properties are measured and understood in real-world contexts.
 
 In addition to theory and experiment, computer simulation plays a central role in soft matter research. This course includes a substantial coursework component consisting of a computational project. This exercise will allow you to apply state-of-the-art simulation techniques to investigate the complex behavior of disordered systems, bridging theory and observation through hands-on exploration.
 
@@ -58,7 +58,7 @@ The course will be taught by
 
 - Prof Nigel B. Wilding (unit director): nigel.wilding@bristol.ac.uk
 - Dr Francesco Turci: F.Turci@bristol.ac.uk
-- Dr Adrian Barnes: a.c.barnes@bristol.ac.uk
+- Dr Alexis Darras: alexis.darras@bristol.ac.uk
 
 ## Questions and comments{.unnumbered}
 If you have any questions about the course, please don’t hesitate to contact the relevant lecturer, either by email (see above) or in a problems class.
