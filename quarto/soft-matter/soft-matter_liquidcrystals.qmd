@@ -341,7 +341,7 @@ We can also construct a more microscopically motivated theory. We can start by l
 
 The nematic phase has full **cylindrical symmetry** around the director, meaning $p(\theta, \phi)$ is independent of the azimuthal angle $\phi$ and depends only on the deviation $\theta$. Accounting for head-tail symmetry via the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$, the scalar order parameter is defined as:
 
-$$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle = 2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
+$$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle = \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
 
 
 A complementary approach to the macroscopic free energy picture of Landau-de Gennes is to  consider the minimal physical ingredients that lead to the transition itself. As in the case of the colloids, we have essentially two classes
