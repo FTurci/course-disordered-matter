@@ -23,7 +23,7 @@ This is what is typically performed by many living organisms: by consuming energ
 
 We could, at this stage, say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
 
-[^cavagna-footnote]: Andrea Cavagna, a complex system physicist, describes "biological surprise" as the extent to which observed behaviour cannot be explained by physical interactions alone.
+[^cavagna-footnote]: Andrea Cavagna, a complex system physicist, [describes "biological surprise"](https://www.phys.ens.fr/~tmora/Physique/CavagnaGiardina18.pdf) as the extent to which observed behaviour cannot be explained by physical interactions alone.
 
 
 To do so we need to understand how systems that dissipate energy locally to produce self-propelled motion can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g. colloidal fluids) or are slowly relaxing towards it (e.g. glasses and gels). 
@@ -201,7 +201,7 @@ The mean squared displacement (MSD) of run-and-tumble particles exhibits a chara
 2. **Diffusive regime (long times):**  
     At times much longer than the average run time ($t \gg 1/\lambda$), the direction of motion has been randomized many times, and the motion becomes diffusive:
     $$
-    \langle \Delta r^2(t) \rangle \sim 2 D_{\text{eff}} t
+    \langle \Delta r^2(t) \rangle \sim 4 D_{\text{eff}} t
     $$
     where $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ in 2D.
 
@@ -246,7 +246,7 @@ t_diffusive = 10 / lambda_tumble
 # Plot
 plt.loglog(time, msd, label="Simulated MSD")
 plt.loglog(time, (v0*time)**2, '--', label=r"Ballistic: $v_0^2 t^2$")
-plt.loglog(time, 2*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $2D_\mathrm{eff} t$")
+plt.loglog(time, 4*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $4D_\mathrm{eff} t$")
 plt.xlim(1*dt,time.max())
 plt.tick_params(axis='both', labelsize=8, pad=15)
 plt.tight_layout()
@@ -339,7 +339,7 @@ This clearly shows that there are three main regimes:
 - a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
 - an intermediate regime around the reorientation time $\tau_R$: 
     $$
-    \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + 2 v^2 \tau^2
+    \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + v^2 \tau^2
     $$
     leading to **super-diffusive** (ballistic) motion
 - a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
