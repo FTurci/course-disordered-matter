@@ -38,7 +38,7 @@ There are many kinds of anisotropic particles. The table below contains a non-ex
 
 ## Liquid crystal phases
 
-The additional orientational degrees of freedom makes opens up the possibilities of phases that do not normally exist for spherical, isotropic particles.  We progress from the most disordered to the most ordered phase:
+The additional orientational degrees of freedom opens up the possibilities of phases that do not normally exist for spherical, isotropic particles.  We progress from the most disordered to the most ordered phase:
 
 - **Isotropic fluid**: this phase is not very different from the ordinary fluid phase of spherical particles. There is no long-range positional or orientational order and all correlations decay rapidly and on short lengthscales.
 - **Nematic phase**: still without translational order, the constituents arrange themselves spontaneously in a preferential, average direction, called the **director**. Since there is no positional order, the transition from isotropic to nematic can only be detected by taking into account the *relative orientations* between the constituents, as the individual centres of mass are as disordered in the nematic as they are in the isotropic. If the particles are themselves chiral (i.e., the particle differs from its mirror image) the director tends to form a helix due to the propensity of the molecules to align at some angle between each other. This leads to so called chiral nematic phase (also known as **cholesteric**).
@@ -272,7 +272,7 @@ $$
 \mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{3} \mathbf{I}\right)
 $$
 
-for some scalar value $\mathcal{S}$ (the order parameter between 0 for the isotropic and 1 for the nematic). Adopting this standard form allows us to construct the Landau-de Gennes free energy functional using its classic, canonical coefficients.
+for some scalar value $\mathcal{S}$ (the order parameter between 0 for the isotropic and 1 for the nematic). Notice that this is slighlty different from the general definition above, but it is equivalent up to a multiplicative factor. We will work with this definition because it consistently produces the standard Landau-de Gennes free energy functional without further manipulations.
 
 If we choose now the $z$ axis along $\mathbf{n}$ we can write this explicitly as 
 
@@ -285,19 +285,6 @@ $$
 $$
 
 with $\mathcal{S}=\frac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle$ as defined earlier.
-
-We can now make an extra step by considering how to express the scalar order parameter in terms of the **probability distribution** $p(\Omega)$ of finding a rod with pair of polar angles $\Omega=(\theta,\phi)$ in a coordinates system with polar axis along $\mathbf{n}$ (which is the reference frame we have just chosen). The infinitesimal probability is $p(\Omega)d\Omega$.
-
-As often in physics, we need to make a symmetry observation, and remark that the nematic phase has full **cylindrical symmetry** around the director. This means that, for us $p(\Omega)=p(\theta, \phi)$ is in fact independent of The azimuthal angle $\phi$ and only depends on the deviation from the director $\theta$. 
-
-We also note that the expression for the nematic order parameter satisfies head-tail symmetry by employing the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$ as 
-
-$$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle$$
-
-In terms of the probability distribution this is 
-
-
-$$\mathcal{S}=2\pi \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
 
 
 The Landau free energy density for the isotropic-nematic transition is constructed by scalar combinations of the tensor $\mathbf{Q}$.
@@ -349,7 +336,15 @@ where $T^{\ast}$ is a material dependent temperature, identifying where the quad
 ## Maier-Saupe theory
 
 The Landau-de Gennes theory illustrates how the simple existence of a suitably defined nematic order is compatible with the construction of a theory that predicts a first order phase transition.
-A complementary approach is to consider the minimal physical ingredients that lead to the transition itself. As in the case of the colloids, we have essentially two classes
+
+We can also construct a more microscopically motivated theory. We can start by linking the scalar order parameter in terms of the **probability distribution** $p(\Omega)$ of finding a rod with polar angles $\Omega=(\theta,\phi)$ in a coordinate system with its polar axis along the director $\mathbf{n}$. The infinitesimal probability is $p(\Omega)d\Omega$.
+
+The nematic phase has full **cylindrical symmetry** around the director, meaning $p(\theta, \phi)$ is independent of the azimuthal angle $\phi$ and depends only on the deviation $\theta$. Accounting for head-tail symmetry via the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$, the scalar order parameter is defined as:
+
+$$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle = \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
+
+
+A complementary approach to the macroscopic free energy picture of Landau-de Gennes is to  consider the minimal physical ingredients that lead to the transition itself. As in the case of the colloids, we have essentially two classes
 
 1. attractive interactions that can favour the new symmetries (e.g. the nematic order)
 2. entropic contributions that make it easier to pack the rods in the new symmetry (i.e. when they are aligned)
@@ -394,7 +389,7 @@ $$
 
 This is the Maier-Saupe self-consistent equation for the orientational distribution in the mean-field theory of nematic liquid crystals. In the code below, we can see how this leads to a non trivial energy profile which corresponds to the emergence of a ordered state (a minimum at high $\mathcal{S}$) corresponding to the nematic phase.
 
-The transition is **weakly-first** order, as two separate basins of stability (separated typicaly by a small barrier) are formed.
+The transition is **weakly-first** order, as two separate basins of stability (separated typically by a small barrier) are formed.
 
 
 
@@ -703,7 +698,7 @@ plt.show()
 
 Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2}$ and $s = \pm 1$. For example, a $+1/2$ disclination corresponds to a director field that rotates by $+\pi$ as one encircles the defect, while a $-1/2$ disclination rotates by $-\pi$.
 
-When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the dirctor field on long distances, leading to a deformation cost, and they also engenders a complete loss of orientational order at the singularity point, which costs energy by itself.
+When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the director field on long distances, leading to a deformation cost, and they also engenders a complete loss of orientational order at the singularity point, which costs energy by itself.
 
 In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 

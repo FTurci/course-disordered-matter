@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: _site-local  # Uncomment if you want to specify output directory
+  output-dir: ../docs  # Uncomment if you want to specify output directory
 
 book:
   page-navigation: true
@@ -29,77 +29,85 @@ book:
            href: phase-transitions/Ising-model.qmd            
          - text: "Mean field theory"
            href:  phase-transitions/mean-field-theory.qmd
+          #  keep commented
 #        - text: "The lattice gas"
-#≈ß           href: phase-transitions/lattice-gas.qmd
+#           href: phase-transitions/lattice-gas.qmd
+# end of kee commented
+
          - text: "The static scaling hypothesis"
            href: phase-transitions/scaling.qmd
          - text: "Universality and renormalization group theory"
            href:  phase-transitions/rg.qmd
-#         - text: "RG- the effective coupling viewpoint"
-#           href: phase-transitions/rg-effective-coupling.qmd
+        #   - text: "RG- the effective coupling viewpoint"
+        #     href: phase-transitions/rg-effective-coupling.qmd 
          - text: "Introduction to stochastic processes"  
            href: phase-transitions/master-equation-and-diffusion.qmd
          - text: "Langevin and Brownian dynamics"
            href: phase-transitions/Brownian-and-Langevin-dynamics.qmd
          - text: "Nucleation, growth and spinodal decomposition"
-           href: phase-transitions/nucleation-and-growth.qmd  
-         - text: "Dynamics of fluctuations (non-examinable)"
-           href: phase-transitions/dynamics-of-fluctuations.qmd  
+           href: phase-transitions/nucleation-and-growth.qmd 
+        #   - text: "Dynamics of fluctuations (non-examinable)"
+        #    href: phase-transitions/dynamics-of-fluctuations.qmd  
          - text: "Precourse reading and revision"
            href: phase-transitions/precourse-reading.qmd
          - text: "Problems" 
            href: phase-transitions/problems.qmd
-         - text: "Solutions to problems"
-           href: phase-transitions/Solutions_to_problems.qmd             
-         - text: "Notes as pdf" 
-           href: notes.pdf
-         - text: "First coursework assignment"   
-           href: phase-transitions/assignment_October2025.qmd                   
+         - text: "Lecture slides" 
+           href: phase-transitions/Lecture Slides/Slides.pdf
+
+        #  - text: "Solutions to problems"
+          #  href: phase-transitions/Solutions_partial.qmd    
+   #      - text: "Preparation for first coursework assignment"
+   #        href: phase-transitions/assignment_prep.qmd      
+        #  - text: "First coursework assignment"     
+          #  href: phase-transitions/assignment_October2025.qmd                    
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
     - part: "First experimental interlude"
       chapters:
+        - href: experimental/part0.ipynb
+          text: "Preparing your computer for the first experimental interlude"
         - href: experimental/part1.ipynb
-          text: "Macroscopic measurements"
-        - href: experimental/part2.ipynb
           text: "Real-space measurements"
+    #     - href: experimental/part2.ipynb
+    #       text: "Reciprocal-space measurements"
 
-    - part: "Complex disordered systems"
-      chapters:
-        # - href: soft-matter/soft-matter_plan.qmd
-        #   text: "Plan"
-        - href: soft-matter/soft-matter_intro.qmd
-          text: "Entropy matters"
-        - href: soft-matter/soft-matter_colloids.qmd
-          text: "Colloids"
-        - href: soft-matter/soft-matter_polymers.qmd
-          text: "Polymers"
-        - href: soft-matter/soft-matter_liquidcrystals.qmd
-          text: "Liquid crystals"
-        - href: soft-matter/soft-matter_surfactants.qmd
-          text: "Surfactants"
-        - href: soft-matter/soft-matter_glasses.qmd
-          text: "Arrested states"
-        - href: soft-matter/soft-matter_active.qmd
-          text: "Active matter"
-        # - href: soft-matter/soft-matter_readings.qmd
-          # text: "Readings"
-        - href: soft-matter/soft-matter_problems.qmd
-          text: "Problems"
-
-    - part: "Second experimental interlude"
-      chapters:
-        - href: experimental/part3.ipynb
-          text: "Reciprocal-space measurements"
-        - href: experimental/part4.ipynb
-          text: "Structure and dynamics"
-        
-
-  appendices:
-    - href: revision_guide.qmd
-      text: "Revision guide"
-    - href: phase-transitions/concepts_map.qmd
-      text: "Concept maps"    
+    # - part: "Complex disordered systems"
+    #   chapters:
+    #     - href: soft-matter/soft-matter_intro.qmd
+    #       text: "Entropy matters"
+    #     - href: soft-matter/soft-matter_colloids.qmd
+    #       text: "Colloids"
+    #     - href: soft-matter/soft-matter_polymers.qmd
+    #       text: "Polymers"
+    #     - href: soft-matter/soft-matter_liquidcrystals.qmd
+    #       text: "Liquid crystals"
+    #     # - href: soft-matter/soft-matter_surfactants.qmd
+    #     #   text: "Surfactants"
+    #     - href: soft-matter/soft-matter_glasses.qmd
+    #       text: "Arrested states"
+    #     - href: soft-matter/soft-matter_active.qmd
+    #       text: "Active matter"
+    # #     # - href: soft-matter/soft-matter_readings.qmd
+    # #       # text: "Readings"
+    #     - href: soft-matter/slides.qmd
+    #       text: "Lecture slides"
+           
+    #     - href: soft-matter/soft-matter_problems.qmd
+    #       text: "Problems"
+    # - part: "Second experimental interlude"
+    #   chapters:
+    #     - href: experimental/part3.ipynb
+    #       text: "Experimental link between Diffusion and Brownian Motion"
+    #     - href: experimental/part4.ipynb
+    #       text: "Practical Image Analysis session"
+    # - text: "Notes as pdf" 
+    #   href: notes.pdf
+  # appendices:
+  #   - href: revision_guide.qmd
+  #     text: "Revision guide"
+  #   - href: phase-transitions/concepts_map.qmd
+  #     text: "Concept maps"    
 format:
   live-html:
     theme: cosmo
@@ -115,18 +123,18 @@ format:
           autorun: true
 
   # pdf:
-  #   documentclass: report
-  #   classoption: [enabledeprecatedfontcommands]
-  #   # papersize: a4paper
-  #   mainfont: "Helvetica" 
-  #   bibliography:
-  #     - soft-matter/references.bib
-  #   geometry:
-  #     - top=2cm
-  #     - left=2cm
-  #     - right=5cm
-  #   execute:
-  #     echo: false      # don’t show code
-  #     warning: false
-  #     error: false
-  #     eval: false      # completely skip execution
+  #    documentclass: report
+  #    classoption: [enabledeprecatedfontcommands]
+  #    # papersize: a4paper
+  #    mainfont: "Helvetica" 
+  #    bibliography:
+  #      - soft-matter/references.bib
+  #    geometry:
+  #      - top=2cm
+  #      - left=2cm
+  #      - right=5cm
+  #    execute:
+  #      echo: false      # don’t show code
+  #      warning: false
+  #      error: false
+  #      eval: false      # completely skip execution
