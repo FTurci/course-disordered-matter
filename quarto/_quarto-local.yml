@@ -69,7 +69,7 @@ book:
           text: "Preparing your computer for the first experimental interlude"
         - href: experimental/part1.ipynb
           text: "Real-space measurements"
-    #     - href: experimental/part2.ipynb
+    #     - href: experimental/part2New.ipynb
     #       text: "Reciprocal-space measurements"
 
     # - part: "Complex disordered systems"
