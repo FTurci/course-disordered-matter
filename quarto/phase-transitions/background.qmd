@@ -172,7 +172,7 @@ $$
 \langle x(\tau) x(\tau + t) \rangle
 $$
 
-In equilibrium, the correlation function must be independent of the starting time $\tau$. Therefore, we define:
+In equilibrium, the correlation function does not evolve with time, so must be independent of the starting time $\tau$. Therefore, we define:
 
 $$
 \langle x(\tau) x(\tau + t) \rangle = M_{xx}(t)
