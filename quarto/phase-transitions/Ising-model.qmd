@@ -372,3 +372,11 @@ Onsager in 1940. The solution is extremely complicated and is regarded
 as one of the pinnacles of statistical mechanics. In 3D no exact
 solution is known.
 
+
+More about the scientists mentioned in this chapter:
+
+[Lars Onsager](https://en.wikipedia.org/wiki/Lars_Onsager)
+
+[Ernst Ising](https://en.wikipedia.org/wiki/Ernst_Ising)
+
+
