@@ -262,9 +262,18 @@ window.Quarto = {
   <li><a href="#near-critical-scaling" id="toc-near-critical-scaling" class="nav-link" data-scroll-target="#near-critical-scaling"><span class="header-section-number">7.4</span> Near critical scaling</a></li>
   <li><a href="#sec-unipics" id="toc-sec-unipics" class="nav-link" data-scroll-target="#sec-unipics"><span class="header-section-number">7.5</span> Universality classes</a></li>
   <li><a href="#critical-exponents" id="toc-critical-exponents" class="nav-link" data-scroll-target="#critical-exponents"><span class="header-section-number">7.6</span> Critical exponents</a></li>
-  <li><a href="#sec-fss" id="toc-sec-fss" class="nav-link" data-scroll-target="#sec-fss"><span class="header-section-number">7.7</span> Finite-size scaling</a></li>
+  <li><a href="#sec-fss" id="toc-sec-fss" class="nav-link" data-scroll-target="#sec-fss"><span class="header-section-number">7.7</span> Finite-size scaling</a>
+  <ul class="collapse">
+  <li><a href="#finite-size-scaling-of-the-susceptibility" id="toc-finite-size-scaling-of-the-susceptibility" class="nav-link" data-scroll-target="#finite-size-scaling-of-the-susceptibility"><span class="header-section-number">7.7.1</span> Finite-size scaling of the susceptibility</a></li>
+  <li><a href="#finite-size-scaling-of-the-order-parameter" id="toc-finite-size-scaling-of-the-order-parameter" class="nav-link" data-scroll-target="#finite-size-scaling-of-the-order-parameter"><span class="header-section-number">7.7.2</span> Finite-size scaling of the order parameter</a></li>
+  </ul></li>
   <li><a href="#summary-of-main-points" id="toc-summary-of-main-points" class="nav-link" data-scroll-target="#summary-of-main-points"><span class="header-section-number">7.8</span> Summary of main points</a></li>
-  <li><a href="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</a></li>
+  <li><a href="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</a>
+  <ul class="collapse">
+  <li><a href="#notes-for-those-interested-in-a-different-perspective-on-rg-theory" id="toc-notes-for-those-interested-in-a-different-perspective-on-rg-theory" class="nav-link" data-scroll-target="#notes-for-those-interested-in-a-different-perspective-on-rg-theory"><span class="header-section-number">7.9.1</span> Notes for those interested in a different perspective on RG theory</a></li>
+  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example"><span class="header-section-number">7.9.2</span> A simple example</a></li>
+  <li><a href="#universality-and-scaling-1" id="toc-universality-and-scaling-1" class="nav-link" data-scroll-target="#universality-and-scaling-1"><span class="header-section-number">7.9.3</span> Universality and scaling</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -576,89 +585,88 @@ Figure&nbsp;7.4: Snapshot configurations of the 2D critical Ising model (left) a
 </section>
 <section id="critical-exponents" class="level2" data-number="7.6">
 <h2 data-number="7.6" class="anchored" data-anchor-id="critical-exponents"><span class="header-section-number">7.6</span> Critical exponents</h2>
-<p>We consider now how the critical exponents, may be computed via the coarse-graining procedure. In what follows we will refer only to the behaviour of a single typical coarse grained variable, which we shall denote <span class="math inline">\(S(L)\)</span>. We suppose that <span class="math inline">\(t\)</span> is sufficiently small that <span class="math inline">\(\xi \gg
-L_\textrm{ min}\)</span>. Universality and scaling may be expressed in the claim that, for <em>any</em> <span class="math inline">\(L\)</span> and <span class="math inline">\(t\)</span>, scale factors <span class="math inline">\(a(L)\)</span> and <span class="math inline">\(b(L)\)</span> may be found such that the probability distribution <span class="math inline">\(p(S(L),t)\)</span> can be written in the form</p>
-<p><span id="eq-blocks"><span class="math display">\[
-p(S(L),t)=b(L)\tilde{p}(b(L)S(L),a(L)t)
-\tag{7.2}\]</span></span> where <span class="math inline">\(\tilde{p}\)</span> is a function unique to a universality class. The role of the scale factors <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is to absorb the basic non-universal scales identified in <a href="#sec-rgmethod" class="quarto-xref"><span>Section 7.2</span></a>. The critical exponents are implicit in the <span class="math inline">\(L\)</span>-dependence of these scale factors. Specifically one finds:</p>
+<p>We have seen that at the critical point the coarse-grained configurations become statistically similar when viewed on sufficiently large length scales. We now relate this scale invariance to the critical exponents.</p>
+<p>Recall the bulk critical behaviour, where <span class="math inline">\(t=(T-T_c)/T_c\)</span>:</p>
+<p><span class="math display">\[
+\xi\sim |t|^{-\nu},\qquad
+Q\sim (-t)^\beta\quad (t&lt;0),\qquad
+\chi\sim |t|^{-\gamma}.
+\]</span></p>
+<p>Here <span class="math inline">\(Q\)</span> is the order parameter, and <span class="math inline">\(\chi\)</span> is its susceptibility. The exponents describe how these quantities change as the critical point is approached. The essential RG idea is that the same exponents also characterise how the system changes under coarse-graining.</p>
+<p>Recall that <span class="math inline">\(L\)</span> denotes the <em>coarse-graining length</em>: a block contains <span class="math inline">\(L^d\)</span> microscopic sites. At a temperature close to <span class="math inline">\(T_c\)</span>, the appearance of a coarse-grained configuration depends on the ratio <span class="math inline">\(\xi/L\)</span>. Since <span class="math inline">\(\xi\sim |t|^{-\nu}\)</span>, the corresponding dimensionless measure of the distance from criticality is <span class="math inline">\(tL^{1/\nu}\)</span> (apart from a non-universal constant). Thus increasing <span class="math inline">\(L\)</span> at fixed <span class="math inline">\(t\)</span> makes the system appear further from criticality. At <span class="math inline">\(t=0\)</span>, by contrast, there is no finite correlation length to provide such a cutoff.</p>
+<p>The typical magnitude of the coarse-grained ordering variable also changes with block size. At criticality it decreases as <span class="math inline">\(L^{-\beta/\nu}\)</span>. In the notation used for RG scale factors, these two effects can be summarised as</p>
 <p><span id="eq-scalefacs"><span class="math display">\[
 \begin{aligned}
-a(L) &amp; =a_0L^{1/\nu} \\
-b(L) &amp; =b_0L^{\beta/\nu}
+a(L)&amp;=a_0 L^{1/\nu},\\
+b(L)&amp;=b_0 L^{\beta/\nu}.
 \end{aligned}
-\tag{7.3}\]</span></span> where the amplitudes <span class="math inline">\(a_0\)</span> and <span class="math inline">\(b_0\)</span> are system specific (non-universal) constants.</p>
-<p>These results state that the critical exponents (in the form <span class="math inline">\(1/\nu\)</span> and <span class="math inline">\(\beta/\nu\)</span>) characterize the ways in which the configuration spectrum evolves under coarse-graining. Consider, first the exponent ratio <span class="math inline">\(\beta/\nu\)</span>. Precisely at the critical point, there is only one way in which the coarse-grained configurations change with <span class="math inline">\(L\)</span>: the overall scale of the coarse-grained variable (the black-white contrast in our grey scale representation) is eroded with increasing <span class="math inline">\(L\)</span>. Thus the configurations of coarse-graining length <span class="math inline">\(L_1\)</span> match those of a larger coarse-graining length <span class="math inline">\(L_2\)</span> only if the variable scale in the latter configurations is amplified. The required amplification follows from <a href="#eq-blocks" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> and and <a href="#eq-scalefacs" class="quarto-xref">Equation&nbsp;<span>7.3</span></a>: it is</p>
-<p><span class="math display">\[
-\frac{b(L_2)}{b(L_1)}=\left(\frac{L_2}{L_1}\right)^{\beta/\nu}\:.
-\]</span> The exponent ratio <span class="math inline">\(\beta/\nu\)</span> thus controls the rate at which the scale of the ordering variable decays with increasing coarse-graining length.</p>
-<p>Consider now the exponent <span class="math inline">\(1/\nu\)</span>. For small but non-zero reduced temperature (large but finite <span class="math inline">\(\xi\)</span>) there is second way in which the configuration spectrum evolves with <span class="math inline">\(L\)</span>. As noted previously, coarse graining reduces the ratio of correlation length to coarse-graining length, and results in configurations with a less critical appearance. More precisely, we see from <a href="#eq-blocks" class="quarto-xref">Equation&nbsp;<span>7.2</span></a> that increasing the coarse graining length from <span class="math inline">\(L_1\)</span> to <span class="math inline">\(L_2\)</span> while keeping the reduced temperature constant has the same effect on the configuration spectrum as keeping coarse-graining length constant which amplifying the reduced temperature <span class="math inline">\(t\)</span> by a factor</p>
-<p><span class="math display">\[
-\frac{a(L_2)}{a(L_1)}=\left(\frac{L_2}{L_1}\right)^{1/\nu}\:.
-\]</span> One may think of the combination <span class="math inline">\(a(L)t\)</span> as a measure of the effective reduced temperature of the physical system viewed with resolution length <span class="math inline">\(L\)</span>. The exponent <span class="math inline">\(1/\nu\)</span> controls the rate at which the effective reduced temperature flows with increasing coarse-graining length.</p>
+\tag{7.2}\]</span></span></p>
+<p>The constants <span class="math inline">\(a_0\)</span> and <span class="math inline">\(b_0\)</span> depend on microscopic details, whereas the exponents are universal within a universality class. We will not need the full probability distribution of the block variables to use these results.</p>
 </section>
 <section id="sec-fss" class="level2" data-number="7.7">
 <h2 data-number="7.7" class="anchored" data-anchor-id="sec-fss"><span class="header-section-number">7.7</span> Finite-size scaling</h2>
-<p>We can exploit the fact that the scale factors <span class="math inline">\(a(L)\)</span> and <span class="math inline">\(b(L)\)</span> depend on critical exponents to estimate the values of these exponents using computer simulation. Consider the average of the block variable <span class="math inline">\(S(L)\)</span>. Consideration of <a href="#eq-blkvar" class="quarto-xref">Equation&nbsp;<span>7.1</span></a> shows that this is non other than the value of the order parameter <span class="math inline">\(Q\)</span>, measured over a block of side <span class="math inline">\(L\)</span>. Thus from the definition of an average</p>
+<p>An infinite system can have a diverging correlation length and susceptibility at a continuous phase transition. A simulation, however, has a finite linear size, which we denote by <span class="math inline">\(L_{\mathrm{sys}}\)</span> to distinguish it from the coarse-graining length <span class="math inline">\(L\)</span>.</p>
+<p>As the critical point is approached, <span class="math inline">\(\xi\)</span> grows until it becomes comparable to <span class="math inline">\(L_{\mathrm{sys}}\)</span>. Beyond this point the finite system cannot reproduce the growth of correlations that would occur in the thermodynamic limit. The critical singularities are therefore rounded. The temperature range over which finite-size effects become important can be estimated from</p>
 <p><span class="math display">\[
-Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)
-\]</span> where <span class="math inline">\(p(S(L))\)</span> is the probability distribution of <span class="math inline">\(S(L)\)</span>.</p>
-<p>Making use of the representation of <a href="#eq-blocks" class="quarto-xref">Equation&nbsp;<span>7.2</span></a>, we then have that</p>
-<p><span class="math display">\[Q
-(L,t) = \int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)dS(L)
+\xi\sim |t|^{-\nu}\sim L_{\mathrm{sys}},
+\qquad\text{giving}\qquad
+|t|\sim L_{\mathrm{sys}}^{-1/\nu}.
 \]</span></p>
-<p>To integrate this we need to change the integration variable from <span class="math inline">\(S(L)\)</span> to <span class="math inline">\(b(L)S(L)\)</span>. We have <span class="math inline">\(d(b(L)S(L))=b(L)dS(L)\)</span> since <span class="math inline">\(b(L)\)</span> does not fluctuate. Thus <span class="math display">\[
-\begin{aligned}
-Q(L,t)  &amp; =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
-        &amp; =  b^{-1}(L)f(a(L)t)\nonumber\\
-       &amp; =  b_0^{-1}L^{-\beta/\nu}f(a_0L^{1/\nu}t)
-\end{aligned}
+<p>This is the basis of <em>finite-size scaling</em>. Near the critical point, the dependence of an observable on temperature and system size can be expressed through the combination <span class="math inline">\(tL_{\mathrm{sys}}^{1/\nu}\)</span>, apart from non-universal scale factors and corrections to scaling.</p>
+<section id="finite-size-scaling-of-the-susceptibility" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="finite-size-scaling-of-the-susceptibility"><span class="header-section-number">7.7.1</span> Finite-size scaling of the susceptibility</h3>
+<p>In the bulk critical region we have</p>
+<p><span class="math display">\[
+\chi\sim |t|^{-\gamma},\qquad
+\xi\sim |t|^{-\nu}.
 \]</span></p>
-<p>where <span class="math inline">\(f\)</span> is a universal function (defined as the first moment of <span class="math inline">\(\tilde{p}(x,y)\)</span> with respect to <span class="math inline">\(y\)</span>).</p>
-<p>The above results provide a method for determining the critical exponent ratios <span class="math inline">\(\beta/\nu\)</span> and <span class="math inline">\(1/\nu\)</span> via computer simulations of near critical systems. For instance, at the critical point (<span class="math inline">\(t=0\)</span>) and for finite block size, <span class="math inline">\(Q(L,0)\)</span> will not be zero (the <span class="math inline">\(T\)</span> at which Q vanishes for finite <span class="math inline">\(L\)</span> is above the true <span class="math inline">\(T_c\)</span>, cf. <a href="scaling.html#sec-compsim" class="quarto-xref"><span>Section 6.2</span></a>. However, we know that its value must vanish in the limit of infinite <span class="math inline">\(L\)</span>; it does so like</p>
-<p><span class="math display">\[Q(L,0)=b_0L^{-\beta/\nu}f(0)\equiv Q_0L^{-\beta/\nu}\]</span></p>
-<p>Thus by studying the critical point <span class="math inline">\(L\)</span> dependence of <span class="math inline">\(Q\)</span> we can estimate <span class="math inline">\(\beta/\nu\)</span>. A similar approach in which we study two block sizes <span class="math inline">\(L\)</span>, and tune <span class="math inline">\(t\)</span> separately in each case so that the results for <span class="math inline">\(QL^{\beta/\nu}\)</span> are identical provides information on the value of <span class="math inline">\(1/\nu\)</span>.</p>
+<p>Eliminating <span class="math inline">\(|t|\)</span> gives</p>
+<p><span class="math display">\[
+\chi\sim \xi^{\gamma/\nu}.
+\]</span></p>
+<p>In a finite system the growth of <span class="math inline">\(\xi\)</span> is cut off when <span class="math inline">\(\xi\)</span> becomes of order <span class="math inline">\(L_{\mathrm{sys}}\)</span>. The maximum susceptibility therefore scales as</p>
+<p><span id="eq-chimax"><span class="math display">\[
+\chi_{\max}(L_{\mathrm{sys}})\sim L_{\mathrm{sys}}^{\gamma/\nu}.
+\tag{7.3}\]</span></span></p>
+<p>This result is especially useful in simulations. By measuring the maximum susceptibility for several system sizes, a log–log plot of <span class="math inline">\(\chi_{\max}\)</span> against <span class="math inline">\(L_{\mathrm{sys}}\)</span> has an asymptotic slope <span class="math inline">\(\gamma/\nu\)</span>.</p>
+<p>More generally, the susceptibility has the finite-size scaling form</p>
+<p><span id="eq-fsschi"><span class="math display">\[
+\chi(L_{\mathrm{sys}},t)
+  =L_{\mathrm{sys}}^{\gamma/\nu}
+   f_\chi(tL_{\mathrm{sys}}^{1/\nu}),
+\tag{7.4}\]</span></span></p>
+<p>where <span class="math inline">\(f_\chi\)</span> is a scaling function. Thus susceptibility curves for different sizes can be compared by plotting <span class="math inline">\(\chi L_{\mathrm{sys}}^{-\gamma/\nu}\)</span> against <span class="math inline">\(tL_{\mathrm{sys}}^{1/\nu}\)</span>. Close to criticality, data for sufficiently large systems should collapse onto a common curve when the correct critical temperature and exponents are used.</p>
+</section>
+<section id="finite-size-scaling-of-the-order-parameter" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="finite-size-scaling-of-the-order-parameter"><span class="header-section-number">7.7.2</span> Finite-size scaling of the order parameter</h3>
+<p>The corresponding scaling form for the magnitude of the order parameter is</p>
+<p><span id="eq-fssm"><span class="math display">\[
+\langle |m|\rangle
+  =L_{\mathrm{sys}}^{-\beta/\nu}
+   f_m(tL_{\mathrm{sys}}^{1/\nu}).
+\tag{7.5}\]</span></span></p>
+<p>For a finite Ising system in zero applied field, <span class="math inline">\(\langle m\rangle=0\)</span> by spin-reversal symmetry. This is why we use <span class="math inline">\(\langle |m|\rangle\)</span> (or, equivalently for scaling purposes, <span class="math inline">\(\sqrt{\langle m^2\rangle}\)</span>) rather than <span class="math inline">\(\langle m\rangle\)</span> in this relation. At the critical temperature it follows that</p>
+<p><span class="math display">\[
+\langle |m|\rangle_{T_c}
+  \sim L_{\mathrm{sys}}^{-\beta/\nu}.
+\]</span></p>
+<p>Finite-size scaling therefore provides a practical way to estimate critical exponents from simulations even though no finite system has a true thermodynamic singularity.</p>
+</section>
 </section>
 <section id="summary-of-main-points" class="level2" data-number="7.8">
 <h2 data-number="7.8" class="anchored" data-anchor-id="summary-of-main-points"><span class="header-section-number">7.8</span> Summary of main points</h2>
-<p>As this is quite a long chapter let us summarise the main points:</p>
 <ul>
-<li><p><strong>Limitations of conventional theories</strong>: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.</p></li>
-<li><p><strong>Critical region characteristics</strong>: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.</p></li>
-<li><p><strong>Relevant length scales</strong>:</p>
-<ol type="1">
-<li>Correlation length (<span class="math inline">\(\xi\)</span>)</li>
-<li>Minimum microscopic scale (<span class="math inline">\(L_\textrm{min}\)</span>)</li>
-<li>Macroscopic system size (<span class="math inline">\(L_\textrm{max}\)</span>)</li>
-</ol></li>
-<li><p><strong>Window Condition for criticality</strong>: The true critical regime satisfies <span class="math inline">\(L_\textrm{max} \gg \xi \gg L_\textrm{min}\)</span>, encompassing a broad range of scales where complex, often fractal-like, structures are present.</p></li>
-<li><p><strong>Renormalisation Group (RG) methodology</strong>: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, <span class="math inline">\(L\)</span>, represents the resolution at which the system is described.</p></li>
-<li><p><strong>Effect of coarse-graining</strong>: Coarse-graining changes the effective reduced temperature, captured by the relation <span class="math inline">\(a(L)t\)</span>, where <span class="math inline">\(a(L)\)</span> scales with <span class="math inline">\(L\)</span> as <span class="math inline">\(L^{1/\nu}\)</span>. This helps describe how critical configurations evolve with resolution.</p></li>
-<li><p><strong>Universality</strong>:</p>
-<ul>
-<li>Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.</li>
-<li>The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.</li>
-<li>Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.</li>
-</ul></li>
-<li><p><strong>Finite-Size scaling</strong>:</p>
-<ul>
-<li>The average block variable <span class="math inline">\(Q(L,t)\)</span> is related to block size <span class="math inline">\(L\)</span> and reduced temperature <span class="math inline">\(t\)</span> through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents.</li>
-</ul></li>
+<li>Close to criticality, correlations extend over a wide range of length scales. This is why mean-field theory cannot reproduce the full critical behaviour.</li>
+<li>RG progressively coarse-grains the microscopic degrees of freedom. At a critical fixed point, the large-scale statistics are unchanged by further coarse-graining.</li>
+<li>Systems with different microscopic details can belong to the same universality class. Important distinguishing features include the dimensionality, the symmetry of the order parameter and the range of interactions.</li>
+<li>The exponents <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\beta\)</span> describe, respectively, the change in the effective distance from criticality and the scale of the ordering variable under coarse-graining.</li>
+<li>Finite systems cannot support a correlation length much larger than <span class="math inline">\(L_{\mathrm{sys}}\)</span>. In particular, <span class="math inline">\(\chi_{\max}\sim L_{\mathrm{sys}}^{\gamma/\nu}\)</span> and <span class="math inline">\(\langle |m|\rangle_{T_c}\sim L_{\mathrm{sys}}^{-\beta/\nu}\)</span>. These relations allow critical exponents to be estimated from simulations.</li>
 </ul>
 </section>
 <section id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="level2" data-number="7.9">
 <h2 data-number="7.9" class="anchored" data-anchor-id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</h2>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Notes for those interested in a different perspective on RG theory.
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
+<section id="notes-for-those-interested-in-a-different-perspective-on-rg-theory" class="level3" data-number="7.9.1">
+<h3 data-number="7.9.1" class="anchored" data-anchor-id="notes-for-those-interested-in-a-different-perspective-on-rg-theory"><span class="header-section-number">7.9.1</span> Notes for those interested in a different perspective on RG theory</h3>
 <p>Let us begin by returning to our fundamental <a href="background.html#eq-probs" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>, which we rewrite as</p>
 <p><span class="math display">\[p = Z^{-1}e^{-{\cal H}}\]</span> where <span class="math inline">\({\cal H}\equiv E/k_BT\)</span>.</p>
 <p>The first step is then to imagine that we generate, by a computer simulation procedure for example, a sequence of configurations with relative probability <span class="math inline">\(\exp(-{\cal H})\)</span>. We next adopt some coarse-graining procedure which produces from these original configurations a set of coarse-grained configurations. We then ask the question: what is the energy function <span class="math inline">\({\cal H}^\prime\)</span> of the coarse-grained variables which would produce these coarse-grained configurations with the correct relative probability <span class="math inline">\(\exp(-{\cal H}^\prime)\)</span>? Clearly the form of <span class="math inline">\({\cal H}^\prime\)</span> depends on the form of <span class="math inline">\({\cal H}\)</span> thus we can write symbolically</p>
@@ -672,10 +680,11 @@ Notes for those interested in a different perspective on RG theory.
 </blockquote>
 <p>Now consider the coarse-graining procedure. Let us suppose that this procedure takes the form of a ‘majority rule’ operation in which the new spins are assigned values <span class="math inline">\(+1\)</span> or <span class="math inline">\(-1\)</span> according to the signs of the magnetic moments of the blocks with which they are associated. The new energy function <span class="math inline">\({\cal H}^\prime\)</span> will be expressible in terms of some new coupling strengths <span class="math inline">\(K^\prime\)</span> describing the interactions amongst the new spin variables (and thus, in effect, the interactions between blocks of the original spin variables). The RGT simply states that these new couplings depend on the old couplings: <span class="math inline">\(K_1^\prime\)</span> is some function <span class="math inline">\(f_1\)</span> of all the original couplings, and generally</p>
 <p><span id="eq-rgt"><span class="math display">\[K^\prime_a=f_a(K_1,K_2,\dots) =f_a(\mathbf {K}),\quad a= 1, 2,\dots
-\tag{7.4}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
-<section id="a-simple-example" class="level3" data-number="7.9.1">
-<h3 data-number="7.9.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">7.9.1</span> A simple example</h3>
-<p>This example illustrates how one can perform the RG transformation <a href="#eq-rgt" class="quarto-xref">Equation&nbsp;<span>7.4</span></a> directly, without recourse to a ‘sequence of typical configurations’. The calculation involves a very crude approximation which has the advantage that it simplifies the subsequent analysis.</p>
+\tag{7.6}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
+</section>
+<section id="a-simple-example" class="level3" data-number="7.9.2">
+<h3 data-number="7.9.2" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">7.9.2</span> A simple example</h3>
+<p>This example illustrates how one can perform the RG transformation <a href="#eq-rgt" class="quarto-xref">Equation&nbsp;<span>7.6</span></a> directly, without recourse to a ‘sequence of typical configurations’. The calculation involves a very crude approximation which has the advantage that it simplifies the subsequent analysis.</p>
 <div id="fig-rglat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-rglat-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -689,14 +698,14 @@ Figure&nbsp;7.5: Coarse graining by decimation. The spins on the original lattic
 <p>Consider an Ising model in two dimensions, with only nearest neighbour interactions as shown in <a href="#fig-rglat" class="quarto-xref">Figure&nbsp;<span>7.5</span></a>. We have divided the spins into two sets, the spins <span class="math inline">\(\{s^\prime\}\)</span> form a square lattice of spacing <span class="math inline">\(2\)</span>, the others being denoted by <span class="math inline">\(\{\tilde{s}\}\)</span>. One then defines an effective energy function <span class="math inline">\({\cal H^\prime}\)</span> for the <span class="math inline">\(s^\prime\)</span> spins by performing an average over all the possible arrangements of the <span class="math inline">\(\tilde{s}\)</span> spins</p>
 <p><span id="eq-decimate"><span class="math display">\[
 \exp(-{\cal H}^\prime)=\sum_{\{\tilde {s}\}} \exp(-{\cal H}).
-\tag{7.5}\]</span></span></p>
-<p>This particular coarse-graining scheme is called ‘decimation’ because a certain fraction (not necessarily one-tenth!) of spins on the lattice is eliminated. This formulation of a new energy function realizes two basic aims of the RG method: the long-distance physics of the ‘original’ system, described by <span class="math inline">\({\cal H}\)</span>, is contained in that of the ‘new’ system, described by <span class="math inline">\({\cal H}^\prime\)</span> (indeed the partition functions are the same as one can see by summing both sides over <span class="math inline">\(s^\prime\)</span>) and the new system is further from critically because the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing (‘minimum length scale’) has been reduced by a factor of <span class="math inline">\(1/2\)</span> (the ratio of the lattice spacings of the two systems). We must now face the question of how to perform the configuration sum in <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.5</span></a>. This cannot in general be done exactly, so we must resort to some approximation scheme. The particular approximation which we invoke is the high temperature series expansion. In its simplest mathematical form, since <span class="math inline">\({\cal H}\)</span> contains a factor <span class="math inline">\(1/k_BT\)</span>, it involves the expansion of <span class="math inline">\(\exp(-{\cal H})\)</span> as a power series:</p>
+\tag{7.7}\]</span></span></p>
+<p>This particular coarse-graining scheme is called ‘decimation’ because a certain fraction (not necessarily one-tenth!) of spins on the lattice is eliminated. This formulation of a new energy function realizes two basic aims of the RG method: the long-distance physics of the ‘original’ system, described by <span class="math inline">\({\cal H}\)</span>, is contained in that of the ‘new’ system, described by <span class="math inline">\({\cal H}^\prime\)</span> (indeed the partition functions are the same as one can see by summing both sides over <span class="math inline">\(s^\prime\)</span>) and the new system is further from critically because the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing (‘minimum length scale’) has been reduced by a factor of <span class="math inline">\(1/2\)</span> (the ratio of the lattice spacings of the two systems). We must now face the question of how to perform the configuration sum in <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.7</span></a>. This cannot in general be done exactly, so we must resort to some approximation scheme. The particular approximation which we invoke is the high temperature series expansion. In its simplest mathematical form, since <span class="math inline">\({\cal H}\)</span> contains a factor <span class="math inline">\(1/k_BT\)</span>, it involves the expansion of <span class="math inline">\(\exp(-{\cal H})\)</span> as a power series:</p>
 <p><span class="math display">\[\exp(-{\cal H}/k_BT)=1-{\cal H}/k_BT +\frac{1}{2!}({\cal H}/k_BT)^2+.....\]</span></p>
-<p>We substitute this expansion into the right hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.5</span></a> and proceed to look for terms which depend on the <span class="math inline">\(s^\prime\)</span> spins after the sum over the possible arrangements of the <span class="math inline">\(\tilde{s}\)</span> spins is performed. This sum extends over all the possible (<span class="math inline">\(\pm 1\)</span>) values of all the <span class="math inline">\(\tilde{s}\)</span> spins. The first term (the 1) in the expansion of the exponential is clearly independent of the values of the <span class="math inline">\(s^\prime\)</span> spins. The second term (<span class="math inline">\({\cal H}\)</span>) is a function of the <span class="math inline">\(s^\prime\)</span> spins, but gives zero when the sum over the <span class="math inline">\(s^\prime\)</span> spins is performed because only a single factor of any <span class="math inline">\(s^\prime\)</span> ever appears, and <span class="math inline">\(+ 1 - 1 = 0\)</span>. The third term (<span class="math inline">\({\cal H}^2/2\)</span>) does contribute. If one writes out explicitly the form of <span class="math inline">\({\cal H}^2/2\)</span> one finds terms of the form <span class="math inline">\(K^2s_1^\prime\tilde{s}\tilde{s}s_2^\prime=K^2s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(s_1^\prime\)</span> and <span class="math inline">\(s_2^\prime\)</span> denote two spins at nearest neighbour sites on the lattice of <span class="math inline">\(s^\prime\)</span> spins and <span class="math inline">\(\tilde{s}\)</span> is the spin (in the other set) which lies between them. Now, in the corresponding expansion of the left hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.5</span></a>, we find terms of the form <span class="math inline">\(K^\prime s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(K^\prime\)</span> is the nearest neighbour coupling for the <span class="math inline">\(s^\prime\)</span> spins. We conclude (with a little more thought than we detail here) that</p>
+<p>We substitute this expansion into the right hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.7</span></a> and proceed to look for terms which depend on the <span class="math inline">\(s^\prime\)</span> spins after the sum over the possible arrangements of the <span class="math inline">\(\tilde{s}\)</span> spins is performed. This sum extends over all the possible (<span class="math inline">\(\pm 1\)</span>) values of all the <span class="math inline">\(\tilde{s}\)</span> spins. The first term (the 1) in the expansion of the exponential is clearly independent of the values of the <span class="math inline">\(s^\prime\)</span> spins. The second term (<span class="math inline">\({\cal H}\)</span>) is a function of the <span class="math inline">\(s^\prime\)</span> spins, but gives zero when the sum over the <span class="math inline">\(s^\prime\)</span> spins is performed because only a single factor of any <span class="math inline">\(s^\prime\)</span> ever appears, and <span class="math inline">\(+ 1 - 1 = 0\)</span>. The third term (<span class="math inline">\({\cal H}^2/2\)</span>) does contribute. If one writes out explicitly the form of <span class="math inline">\({\cal H}^2/2\)</span> one finds terms of the form <span class="math inline">\(K^2s_1^\prime\tilde{s}\tilde{s}s_2^\prime=K^2s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(s_1^\prime\)</span> and <span class="math inline">\(s_2^\prime\)</span> denote two spins at nearest neighbour sites on the lattice of <span class="math inline">\(s^\prime\)</span> spins and <span class="math inline">\(\tilde{s}\)</span> is the spin (in the other set) which lies between them. Now, in the corresponding expansion of the left hand side of <a href="#eq-decimate" class="quarto-xref">Equation&nbsp;<span>7.7</span></a>, we find terms of the form <span class="math inline">\(K^\prime s_1^\prime s_2^\prime\)</span>, where <span class="math inline">\(K^\prime\)</span> is the nearest neighbour coupling for the <span class="math inline">\(s^\prime\)</span> spins. We conclude (with a little more thought than we detail here) that</p>
 <p><span id="eq-rgdec"><span class="math display">\[
 K^\prime=K^2
-\tag{7.6}\]</span></span></p>
-<p>Of course many other terms and couplings are generated by the higher orders of the high temperature expansion and it is necssary to include these if one wishes reliable values for the critical temperature and exponents, However, our aim here is to use this simple calculation to illustrate the RG method. Let us therefore close our eyes, forget about the higher order terms and show how the RGT <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a> can be used to obtain information on the phase transition.</p>
+\tag{7.8}\]</span></span></p>
+<p>Of course many other terms and couplings are generated by the higher orders of the high temperature expansion and it is necssary to include these if one wishes reliable values for the critical temperature and exponents, However, our aim here is to use this simple calculation to illustrate the RG method. Let us therefore close our eyes, forget about the higher order terms and show how the RGT <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a> can be used to obtain information on the phase transition.</p>
 <div id="fig-flow1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-flow1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -707,12 +716,12 @@ Figure&nbsp;7.6: Coupling flow under the decimation transformation described in 
 </figcaption>
 </figure>
 </div>
-<p>The first point to note is that that mathematically <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a> has the fixed point <span class="math inline">\(K^*= 1\)</span>; if <span class="math inline">\(K= 1\)</span> then the new effective coupling <span class="math inline">\(K^\prime\)</span> has the same value <span class="math inline">\(1\)</span>. Further, if <span class="math inline">\(K\)</span> is just larger than <span class="math inline">\(1\)</span>, then <span class="math inline">\(K^\prime\)</span> is larger than <span class="math inline">\(K\)</span>, i.e.&nbsp;further away from <span class="math inline">\(1\)</span>. Similarly, if <span class="math inline">\(K\)</span> is less than <span class="math inline">\(1\)</span>, <span class="math inline">\(K^\prime\)</span> is less than <span class="math inline">\(K\)</span>. We say that the fixed point is unstable: the flow of couplings under repeated iteration of <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a> is away from the fixed point, as illustrated in <a href="#fig-flow1" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>. The physical significance of this is as follows: suppose that the original system is at its critical point so that the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing is infinite. After one application of the decimation transformation, the effective lattice spacing has increased by a factor of two, but this ratio remains infinite; the new system is therefore also at its critical point. Within the approximations inherent in <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a>, the original system is an Ising model with nearest neighbour coupling <span class="math inline">\(K\)</span> and the new system is an Ising model with nearest neighbour coupling <span class="math inline">\(K^\prime\)</span>. If these two systems are going to be at a common critically, we must identify <span class="math inline">\(K^\prime=
+<p>The first point to note is that that mathematically <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a> has the fixed point <span class="math inline">\(K^*= 1\)</span>; if <span class="math inline">\(K= 1\)</span> then the new effective coupling <span class="math inline">\(K^\prime\)</span> has the same value <span class="math inline">\(1\)</span>. Further, if <span class="math inline">\(K\)</span> is just larger than <span class="math inline">\(1\)</span>, then <span class="math inline">\(K^\prime\)</span> is larger than <span class="math inline">\(K\)</span>, i.e.&nbsp;further away from <span class="math inline">\(1\)</span>. Similarly, if <span class="math inline">\(K\)</span> is less than <span class="math inline">\(1\)</span>, <span class="math inline">\(K^\prime\)</span> is less than <span class="math inline">\(K\)</span>. We say that the fixed point is unstable: the flow of couplings under repeated iteration of <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a> is away from the fixed point, as illustrated in <a href="#fig-flow1" class="quarto-xref">Figure&nbsp;<span>7.6</span></a>. The physical significance of this is as follows: suppose that the original system is at its critical point so that the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing is infinite. After one application of the decimation transformation, the effective lattice spacing has increased by a factor of two, but this ratio remains infinite; the new system is therefore also at its critical point. Within the approximations inherent in <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a>, the original system is an Ising model with nearest neighbour coupling <span class="math inline">\(K\)</span> and the new system is an Ising model with nearest neighbour coupling <span class="math inline">\(K^\prime\)</span>. If these two systems are going to be at a common critically, we must identify <span class="math inline">\(K^\prime=
 K\)</span>. The fixed point <span class="math inline">\(K^*= 1\)</span> is therefore a candidate for the critical point <span class="math inline">\(K_c\)</span>, where the phase transition occurs. This interpretation is reinforced by considering the case where the original system is close to, but not at, criticality. Then <span class="math inline">\(\xi\)</span> is finite and the new system is further from critically because the ratio of <span class="math inline">\(\xi\)</span> to lattice spacing is reduced by a factor of two. This instability of a fixed point to deviations of <span class="math inline">\(K\)</span> from <span class="math inline">\(K^*\)</span> is a further necessary condition for its interpretation as a critical point of the system. In summary then we make the prediction</p>
 <p><span id="eq-Kc"><span class="math display">\[
 K_c=J/k_BT_c=1
-\tag{7.7}\]</span></span></p>
-<p>We can obtain further information about the behaviour of the system close to its critical point. In order to do so, we rewrite the transformation (<a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a>) in terms of the deviation of the coupling from its fixed point value. A Taylor expansion of the function <span class="math inline">\(K^\prime=K^2\)</span> yields</p>
+\tag{7.9}\]</span></span></p>
+<p>We can obtain further information about the behaviour of the system close to its critical point. In order to do so, we rewrite the transformation (<a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a>) in terms of the deviation of the coupling from its fixed point value. A Taylor expansion of the function <span class="math inline">\(K^\prime=K^2\)</span> yields</p>
 <p><span class="math display">\[
 \begin{aligned}
 K^\prime =&amp; (K^*)^2 +(K-K^*)\left.\frac{\partial K^\prime}{\partial K}\right|_{K=K^*}+\frac{1}{2}(K-K^*)^2\left.\frac{\partial^2 K^\prime}{\partial K^2}\right|_{K=K^*}+\ldots\nonumber\\
@@ -727,10 +736,10 @@ K^\prime - K^* =&amp; 2 (K - K^*)+ (K - K^*)^2
 <p>Thus, when we double <span class="math inline">\(t\)</span>, we halve <span class="math inline">\(\xi\)</span>, implying that</p>
 <p><span class="math display">\[\xi\propto t^{-1}\]</span></p>
 <p>for <span class="math inline">\(T\)</span> close to <span class="math inline">\(T_c\)</span>. Thus we see that the RGT predicts scaling behaviour with calculable critical exponents. In this simple calculation we estimate the critical exponent <span class="math inline">\(\nu=1\)</span> for the square lattice Ising model. This prediction is actually in agreement with the exactly established value. The agreement is fortuitous- the prediction in Eq.&nbsp;refeq:Kc for <span class="math inline">\(K_c\)</span>, is larger than the exactly established value by a factor of more than two. In order to obtain reliable estimates more sophisticated and systematic methods must be used.</p>
-<p>The crude approximation in the calculation above produced a transformation, <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.6</span></a>, involving only the nearest neighbour coupling, with the subsequent advantages of simple algebra. We pay a penalty for this simplicity in two ways: the results obtained for critical properties are in rather poor agreement with accepted values, and we gain no insight into the origin of universality.</p>
+<p>The crude approximation in the calculation above produced a transformation, <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a>, involving only the nearest neighbour coupling, with the subsequent advantages of simple algebra. We pay a penalty for this simplicity in two ways: the results obtained for critical properties are in rather poor agreement with accepted values, and we gain no insight into the origin of universality.</p>
 </section>
-<section id="universality-and-scaling-1" class="level3" data-number="7.9.2">
-<h3 data-number="7.9.2" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">7.9.2</span> Universality and scaling</h3>
+<section id="universality-and-scaling-1" class="level3" data-number="7.9.3">
+<h3 data-number="7.9.3" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">7.9.3</span> Universality and scaling</h3>
 <p>In order to expose how universality can arise, we should from the start allow for several different kinds of coupling <span class="math inline">\(J_a\)</span>, and show how the systems with <em>different</em> <span class="math inline">\(J_a\)</span> can have the <em>same</em> critical behaviour.</p>
 <div id="fig-flow2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -752,10 +761,6 @@ K^{(1)}\to\dots\to K^{(n)}\)</span> where the superscript (<span class="math inl
 <p>By contrast, consider the same magnet as before, now at temperature <span class="math inline">\(T\)</span> just greater than <span class="math inline">\(T_c\)</span>, its couplings <span class="math inline">\(K_a\)</span>, will be close to the first red dot (in fact they will be slightly smaller) and so will the effective couplings <span class="math inline">\(K_a^{(1)},K_2^{(2)},\dots\)</span> of the corresponding coarse-grained systems. The new flow will therefore appear initially to follow the red dots towards the same fixed point. However, the flow must eventually move away from the fixed point because each coarse-graining now produces a model further from criticality. The resulting flow is represented schematically by one set of black dots. The other set of black dots shows the expected flow starting from the same magnet slightly below its critical temperature.</p>
 <p>We are now in a position to understand both universality and scaling within this framework. We will suppose that there exists a single fixed point in the critical surface which sucks in all flows starting from a point in that surface. Then any system at its critical point will exhibit large-length scale physics (large-block spin behaviour) described by the single set of fixed point coupling constants. The uniqueness of this limiting set of coupling constants is the essence of critical point universality. It is, of course, the algebraic counterpart of the unique limiting spectrum of coarse-grained configurations, discussed in <a href="#sec-unipics" class="quarto-xref"><span>Section 7.5</span></a>. Similarly the scale-invariance of the critical point configuration spectrum (viewed on large enough length scales) is expressed in the invariance of the couplings under iteration of the transformation (after a number of iterations large enough to secure convergence to the fixed point).</p>
 <p>To understand the behaviour of systems near but not precisely at critically we must make a further assumption (again widely justified by explicit studies). The flow line stemming from any such system will, we have argued, be borne towards the fixed point before ultimately deviating from it after a number of iterations large enough to expose the system’s noncritical character. We assume that (as indicated schematically in the streams of red and blue lines in <a href="#fig-flow2" class="quarto-xref">Figure&nbsp;<span>7.7</span></a> the deviations lie along a single line through the fixed point, the direction followed along this line differing according to the sign of the temperature deviation <span class="math inline">\(T-T_c\)</span>. Since any two sets of coupling constants on the line (on the same side of the fixed point) are related by a suitable coarse-graining operation, this picture implies that the large-length-scale physics of all near- critical systems differs only in the matter of a length scale. This is the essence of near-critical point universality.</p>
-</section>
-</div>
-</div>
-</div>
 
 
 <script type="ojs-module-contents">
@@ -772,6 +777,7 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
+</section>
 </section>
 
 </main> <!-- /main -->
