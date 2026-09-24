@@ -268,12 +268,7 @@ window.Quarto = {
   <li><a href="#finite-size-scaling-of-the-order-parameter" id="toc-finite-size-scaling-of-the-order-parameter" class="nav-link" data-scroll-target="#finite-size-scaling-of-the-order-parameter"><span class="header-section-number">7.7.2</span> Finite-size scaling of the order parameter</a></li>
   </ul></li>
   <li><a href="#summary-of-main-points" id="toc-summary-of-main-points" class="nav-link" data-scroll-target="#summary-of-main-points"><span class="header-section-number">7.8</span> Summary of main points</a></li>
-  <li><a href="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</a>
-  <ul class="collapse">
-  <li><a href="#notes-for-those-interested-in-a-different-perspective-on-rg-theory" id="toc-notes-for-those-interested-in-a-different-perspective-on-rg-theory" class="nav-link" data-scroll-target="#notes-for-those-interested-in-a-different-perspective-on-rg-theory"><span class="header-section-number">7.9.1</span> Notes for those interested in a different perspective on RG theory</a></li>
-  <li><a href="#a-simple-example" id="toc-a-simple-example" class="nav-link" data-scroll-target="#a-simple-example"><span class="header-section-number">7.9.2</span> A simple example</a></li>
-  <li><a href="#universality-and-scaling-1" id="toc-universality-and-scaling-1" class="nav-link" data-scroll-target="#universality-and-scaling-1"><span class="header-section-number">7.9.3</span> Universality and scaling</a></li>
-  </ul></li>
+  <li><a href="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" id="toc-addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="nav-link" data-scroll-target="#addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</a></li>
   </ul>
 </nav>
     </div>
@@ -665,8 +660,18 @@ b(L)&amp;=b_0 L^{\beta/\nu}.
 </section>
 <section id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable" class="level2" data-number="7.9">
 <h2 data-number="7.9" class="anchored" data-anchor-id="addendum-the-effective-coupling-viewpoint-of-the-renormalization-group-non-examinable"><span class="header-section-number">7.9</span> Addendum: The effective coupling viewpoint of the renormalization group (non examinable)</h2>
-<section id="notes-for-those-interested-in-a-different-perspective-on-rg-theory" class="level3" data-number="7.9.1">
-<h3 data-number="7.9.1" class="anchored" data-anchor-id="notes-for-those-interested-in-a-different-perspective-on-rg-theory"><span class="header-section-number">7.9.1</span> Notes for those interested in a different perspective on RG theory</h3>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notes for those interested in a different perspective on RG theory.
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
 <p>Let us begin by returning to our fundamental <a href="background.html#eq-probs" class="quarto-xref">Equation&nbsp;<span>2.1</span></a>, which we rewrite as</p>
 <p><span class="math display">\[p = Z^{-1}e^{-{\cal H}}\]</span> where <span class="math inline">\({\cal H}\equiv E/k_BT\)</span>.</p>
 <p>The first step is then to imagine that we generate, by a computer simulation procedure for example, a sequence of configurations with relative probability <span class="math inline">\(\exp(-{\cal H})\)</span>. We next adopt some coarse-graining procedure which produces from these original configurations a set of coarse-grained configurations. We then ask the question: what is the energy function <span class="math inline">\({\cal H}^\prime\)</span> of the coarse-grained variables which would produce these coarse-grained configurations with the correct relative probability <span class="math inline">\(\exp(-{\cal H}^\prime)\)</span>? Clearly the form of <span class="math inline">\({\cal H}^\prime\)</span> depends on the form of <span class="math inline">\({\cal H}\)</span> thus we can write symbolically</p>
@@ -681,9 +686,8 @@ b(L)&amp;=b_0 L^{\beta/\nu}.
 <p>Now consider the coarse-graining procedure. Let us suppose that this procedure takes the form of a ‘majority rule’ operation in which the new spins are assigned values <span class="math inline">\(+1\)</span> or <span class="math inline">\(-1\)</span> according to the signs of the magnetic moments of the blocks with which they are associated. The new energy function <span class="math inline">\({\cal H}^\prime\)</span> will be expressible in terms of some new coupling strengths <span class="math inline">\(K^\prime\)</span> describing the interactions amongst the new spin variables (and thus, in effect, the interactions between blocks of the original spin variables). The RGT simply states that these new couplings depend on the old couplings: <span class="math inline">\(K_1^\prime\)</span> is some function <span class="math inline">\(f_1\)</span> of all the original couplings, and generally</p>
 <p><span id="eq-rgt"><span class="math display">\[K^\prime_a=f_a(K_1,K_2,\dots) =f_a(\mathbf {K}),\quad a= 1, 2,\dots
 \tag{7.6}\]</span></span> where <strong>K</strong> is shorthand for the set <span class="math inline">\(K_1, K_2,\dots\)</span></p>
-</section>
-<section id="a-simple-example" class="level3" data-number="7.9.2">
-<h3 data-number="7.9.2" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">7.9.2</span> A simple example</h3>
+<section id="a-simple-example" class="level3" data-number="7.9.1">
+<h3 data-number="7.9.1" class="anchored" data-anchor-id="a-simple-example"><span class="header-section-number">7.9.1</span> A simple example</h3>
 <p>This example illustrates how one can perform the RG transformation <a href="#eq-rgt" class="quarto-xref">Equation&nbsp;<span>7.6</span></a> directly, without recourse to a ‘sequence of typical configurations’. The calculation involves a very crude approximation which has the advantage that it simplifies the subsequent analysis.</p>
 <div id="fig-rglat" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -738,8 +742,8 @@ K^\prime - K^* =&amp; 2 (K - K^*)+ (K - K^*)^2
 <p>for <span class="math inline">\(T\)</span> close to <span class="math inline">\(T_c\)</span>. Thus we see that the RGT predicts scaling behaviour with calculable critical exponents. In this simple calculation we estimate the critical exponent <span class="math inline">\(\nu=1\)</span> for the square lattice Ising model. This prediction is actually in agreement with the exactly established value. The agreement is fortuitous- the prediction in Eq.&nbsp;refeq:Kc for <span class="math inline">\(K_c\)</span>, is larger than the exactly established value by a factor of more than two. In order to obtain reliable estimates more sophisticated and systematic methods must be used.</p>
 <p>The crude approximation in the calculation above produced a transformation, <a href="#eq-rgdec" class="quarto-xref">Equation&nbsp;<span>7.8</span></a>, involving only the nearest neighbour coupling, with the subsequent advantages of simple algebra. We pay a penalty for this simplicity in two ways: the results obtained for critical properties are in rather poor agreement with accepted values, and we gain no insight into the origin of universality.</p>
 </section>
-<section id="universality-and-scaling-1" class="level3" data-number="7.9.3">
-<h3 data-number="7.9.3" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">7.9.3</span> Universality and scaling</h3>
+<section id="universality-and-scaling-1" class="level3" data-number="7.9.2">
+<h3 data-number="7.9.2" class="anchored" data-anchor-id="universality-and-scaling-1"><span class="header-section-number">7.9.2</span> Universality and scaling</h3>
 <p>In order to expose how universality can arise, we should from the start allow for several different kinds of coupling <span class="math inline">\(J_a\)</span>, and show how the systems with <em>different</em> <span class="math inline">\(J_a\)</span> can have the <em>same</em> critical behaviour.</p>
 <div id="fig-flow2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -761,6 +765,10 @@ K^{(1)}\to\dots\to K^{(n)}\)</span> where the superscript (<span class="math inl
 <p>By contrast, consider the same magnet as before, now at temperature <span class="math inline">\(T\)</span> just greater than <span class="math inline">\(T_c\)</span>, its couplings <span class="math inline">\(K_a\)</span>, will be close to the first red dot (in fact they will be slightly smaller) and so will the effective couplings <span class="math inline">\(K_a^{(1)},K_2^{(2)},\dots\)</span> of the corresponding coarse-grained systems. The new flow will therefore appear initially to follow the red dots towards the same fixed point. However, the flow must eventually move away from the fixed point because each coarse-graining now produces a model further from criticality. The resulting flow is represented schematically by one set of black dots. The other set of black dots shows the expected flow starting from the same magnet slightly below its critical temperature.</p>
 <p>We are now in a position to understand both universality and scaling within this framework. We will suppose that there exists a single fixed point in the critical surface which sucks in all flows starting from a point in that surface. Then any system at its critical point will exhibit large-length scale physics (large-block spin behaviour) described by the single set of fixed point coupling constants. The uniqueness of this limiting set of coupling constants is the essence of critical point universality. It is, of course, the algebraic counterpart of the unique limiting spectrum of coarse-grained configurations, discussed in <a href="#sec-unipics" class="quarto-xref"><span>Section 7.5</span></a>. Similarly the scale-invariance of the critical point configuration spectrum (viewed on large enough length scales) is expressed in the invariance of the couplings under iteration of the transformation (after a number of iterations large enough to secure convergence to the fixed point).</p>
 <p>To understand the behaviour of systems near but not precisely at critically we must make a further assumption (again widely justified by explicit studies). The flow line stemming from any such system will, we have argued, be borne towards the fixed point before ultimately deviating from it after a number of iterations large enough to expose the system’s noncritical character. We assume that (as indicated schematically in the streams of red and blue lines in <a href="#fig-flow2" class="quarto-xref">Figure&nbsp;<span>7.7</span></a> the deviations lie along a single line through the fixed point, the direction followed along this line differing according to the sign of the temperature deviation <span class="math inline">\(T-T_c\)</span>. Since any two sets of coupling constants on the line (on the same side of the fixed point) are related by a suitable coarse-graining operation, this picture implies that the large-length-scale physics of all near- critical systems differs only in the matter of a length scale. This is the essence of near-critical point universality.</p>
+</section>
+</div>
+</div>
+</div>
 
 
 <script type="ojs-module-contents">
@@ -777,7 +785,6 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
 </section>
 
 </main> <!-- /main -->
