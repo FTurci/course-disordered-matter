@@ -31,7 +31,7 @@ Then $$\begin{aligned}
 =&-J\sum_{<i,j>}[m^2+m(s_i-m)+m(s_j-m)+\delta s_i\delta s_j]-H\sum_i s_i\nonumber\\
 =&-J\sum_{i}(qms_i-qm^2/2)-H\sum_i s_i-J\sum_{<i,j>}\delta s_i\delta s_j 
 \end{aligned}$$ {#eq-mfa}
-where in the last line we trnsformed from a sum over bonds to a sum over sites. Doing so makes use of the fact that when
+where in the last line we transformed from a sum over bonds to a sum over sites. Doing so makes use of the fact that when
 for each site $i$ we perform the sum $\sum_{<i,j>}$ over bonds of a
 quantity which is independent of $s_j$, then the result is just the
 number of bonds per site times that quantity. Since the number of bonds
@@ -514,3 +514,7 @@ range correlations.
 :::
 
 ::::
+
+More about the scientists mentioned in this chapter:
+
+[Lev D. Landau](https://en.wikipedia.org/wiki/Lev_D._Landau)

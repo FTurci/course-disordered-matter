@@ -1,0 +1,162 @@
+---
+pagetitle: "PHYSM0071 Coursework 1 - Model report"
+documentclass: article
+fontsize: 11pt
+papersize: a4
+geometry:
+  - top=1.65cm
+  - bottom=1.65cm
+  - left=1.75cm
+  - right=1.75cm
+colorlinks: true
+header-includes:
+  - \usepackage{booktabs}
+  - \usepackage{float}
+  - \usepackage{microtype}
+  - \usepackage{titlesec}
+  - \setlength{\parindent}{0pt}
+  - \setlength{\parskip}{0.35em}
+  - \setlength{\abovecaptionskip}{3pt}
+  - \setlength{\belowcaptionskip}{0pt}
+  - \titlespacing*{\section}{0pt}{0.65em}{0.25em}
+  - \titlespacing*{\subsection}{0pt}{0.45em}{0.2em}
+---
+
+\begin{center}
+{\Large\bfseries PHYSM0071: Coursework 1}\\[-1mm]
+{\large Correlations and fluctuations in a two-dimensional lattice gas}\\[1mm]
+{\bfseries Model report for marking}\quad (base seed 2468135)
+\end{center}
+
+# Mapping and predictions
+
+Let \(V=L^2\), let the square-lattice coordination number be \(q=4\), and write \(c_i=(1+s_i)/2\). Since there are \(qV/2\) bonds,
+\[
+\sum_{\langle ij\rangle}c_ic_j=
+\frac14\sum_{\langle ij\rangle}s_is_j+
+\frac q4\sum_i s_i+\frac{qV}{8},
+\qquad
+N=\frac V2+\frac12\sum_i s_i .
+\]
+The grand-canonical Hamiltonian therefore becomes
+\[
+E-\mu N=-\frac{\epsilon}{4}\sum_{\langle ij\rangle}s_is_j
+-\left(\frac{q\epsilon}{4}+\frac{\mu}{2}\right)\sum_i s_i
+-\frac{qV\epsilon}{8}-\frac{\mu V}{2}.
+\]
+Comparison with \({\cal H}_{I}=-J\sum_{\langle ij\rangle}s_is_j-H\sum_i s_i\) gives \(J=\epsilon/4\), \(H=q\epsilon/4+\mu/2\), and the configuration-independent term \(C=-qV\epsilon/8-\mu V/2\). The factor \(\exp(-\beta C)\) cancels from normalised probabilities, so $C$ does not affect configurational averages or phase behaviour, although it is required when relating the two partition functions. Coexistence corresponds to Ising zero field, so \(\mu_{\rm coex}=-q\epsilon/2=-2\epsilon\). Also
+\[
+\rho=\frac{1+m}{2},\qquad
+k_{\rm B}T_c=\frac{2J}{\ln(1+\sqrt2)}
+=\frac{\epsilon}{2\ln(1+\sqrt2)}=0.567296\,\epsilon .
+\]
+Mean-field theory gives \(m=\tanh[\beta(qJm+H)]\), hence \(k_{\rm B}T_c^{\rm MF}=qJ=\epsilon\). It overestimates \(T_c\) because it replaces the fluctuating local environment by its mean and neglects spatial correlations.
+
+For a trial flip, put \(\delta=1-2c_i=\Delta N\) and let \(n_i\) be the number of occupied neighbours. Then
+\[
+\Delta E=-\epsilon\delta n_i,\qquad
+\Delta(E-\mu N)=-\delta(\epsilon n_i+\mu).
+\]
+These are respectively `delta_E`, `delta_N` and `delta_K` in `local_grand_energy_change`.
+
+# Validation
+
+After 2000 equilibration sweeps, 12,000 measurements separated by five sweeps gave:
+
+| \(\mu\) | \(\langle N\rangle\), simulation | exact | \({\rm var}(N)\), simulation | exact |
+|---:|---:|---:|---:|---:|
+| \(-1\) | \(107.522(85)\) | 107.577 | \(78.83(99)\) | 78.64 |
+| \(0\)  | \(200.056(91)\) | 200.000 | \(99.43(1.28)\) | 100.00 |
+| \(1\)  | \(292.360(80)\) | 292.423 | \(77.49(91)\) | 78.64 |
+
+Uncertainties are standard errors from block means (or block variances), using 20-measurement blocks; the measured integrated autocorrelation times were only \(0.50\)--\(0.52\) measurement intervals. The stationary trace and full \(P(N)\) at \(\mu=-1\) agree with the binomial law (Fig. 1).
+
+At \(T=0.8\), \(\langle\rho\rangle_{-2.4}=0.095389(232)\), while \(1-\langle\rho\rangle_{-1.6}=0.095104(213)\). Their difference, \(0.000285(315)\), is below one standard error and confirms particle-hole symmetry.
+
+![**Validation.** (a) Representative noninteracting density trace after equilibration. (b) The complete measured distribution at \(\mu=-1\) and the exact binomial result.](figures/figure1_validation.pdf){width=92%}
+
+\newpage
+
+# Equation of state and density response
+
+The two equations of state are antisymmetric about \((\mu_{\rm coex},\rho)=(-2,1/2)\) (Fig. 2a). Paired densities satisfy \(\rho(-2+\Delta\mu)+\rho(-2-\Delta\mu)=1\) within uncertainty: the largest standardised deviation is $2.0$, consistent with the expected scatter among several comparisons. The response becomes much steeper on approaching \(T_c\).
+
+At coexistence the three response estimates were:
+
+| \(T/T_c\) | finite difference | \(\beta V{\rm var}(\rho)\) | \(\beta S(0)\) |
+|---:|---:|---:|---:|
+| 1.5 | \(1.994(55)\), \(h=0.01\) | \(2.002(30)\) | \(2.002(30)\) |
+| 1.15 | \(13.06(52)\), \(h=0.005\) | \(13.44(37)\) | \(13.44(37)\) |
+
+At \(1.5T_c\), a central difference is stable for \(h=0.01\)--0.02 and agrees with the fluctuation result. At \(1.15T_c\), the estimates for \(h=0.05,0.02,0.01,0.005\) are \(6.43,10.25,11.77,13.06\). Thus a broad equation-of-state grid still underestimates the derivative, but the finest estimate agrees with the fluctuation result within the combined uncertainty. The variance and \(S(0)\) estimates coincide because, with the program's normalization, \(S(0)={\rm var}(N)/V=V{\rm var}(\rho)\); this is an exact normalization check rather than an independent measurement.
+
+![**Equation of state and response.** (a) Density against chemical potential; error bars are mostly smaller than the symbols. (b) Convergence of the symmetric finite-difference derivative as its half-width \(h\) is reduced. Dashed horizontal lines are the fluctuation estimates.](figures/figure2_equation_of_state.pdf){width=95%}
+
+\newpage
+
+# Spatial correlations
+
+The configurations develop progressively larger domains as \(T_c\) is approached (Fig. 3a--d), accompanied by a pronounced enhancement of \(S(k)\) at small \(k\). The returned two-dimensional connected structure factor was averaged over exact square-lattice shells,
+\[
+k=\frac{2\pi}{L}\sqrt{n_x^2+n_y^2}.
+\]
+Six independent runs were averaged at each temperature. Fits to \(S(k)=A/[1+(k\xi)^2]\) used the first six shells, \(0\leq k\leq0.7405\); independent-run bootstrap errors and the range obtained by changing \(k_{\max}\) are:
+
+| \(T/T_c\) | \(\xi\) | bootstrap s.e. | range for \(k_{\max}=0.55\)--0.95 |
+|---:|---:|---:|---:|
+| 1.50 | 1.459 | 0.010 | 1.440--1.461 |
+| 1.25 | 2.606 | 0.012 | 2.574--2.612 |
+| 1.10 | 5.801 | 0.073 | 5.736--5.824 |
+| 1.05 | 9.968 | 0.058 | 9.792--10.108 |
+
+The final point has \(\xi\) comparable with \(L/2\), and its reduced fit statistic rises to 3.8, signalling finite-size and non-Ornstein--Zernike corrections. A log--log fit gives an effective \(\nu_{\rm eff}=0.84(1)\); changing \(k_{\max}\) moves it only between 0.838 and 0.845. The statistical precision is therefore misleading: finite-size effects, corrections to scaling and the short temperature interval dominate. The growth is appreciably stronger than the mean-field \(t^{-1/2}\) prediction and is qualitatively closer to the Ising \(t^{-1}\) form, but these data do not justify a precise exponent.
+
+![**Spatial correlations.** (a--d) Representative equilibrated configurations. (e) Radially averaged connected structure factors and the fitted low-\(k\) forms. (f) Extracted correlation lengths with exact and mean-field guide slopes. (g) Sensitivity to the upper fit limit.](figures/figure3_correlations.pdf){width=100%}
+
+\newpage
+
+# Density distributions and finite-size effects
+
+At \(1.2T_c\), \(P_L(\rho)\) is a single broad peak centred at \(1/2\); the total-variation distance from its reflected form is 0.045. At \(T_c\), the distribution is broad and double peaked. A 160,000-measurement run gives \(\langle\rho\rangle=0.460\) and a reflection distance 0.114: the peak shapes agree well, but slow order-parameter reversals leave imperfect relative sector weights. Below \(T_c\), the two peaks become narrow and lie near \(\rho\simeq0.05\) and \(0.95\). The low-start run changed sector three times, whereas the high-start run did not. Residence times are therefore not an equilibrium measure of the weights. Figure 4f uses the exact particle-hole symmetry to reflect the well-sampled high-density sector and assign the two peaks equal weight.
+
+An equilibrium average \(\langle\rho\rangle=1/2\) below \(T_c\) would consequently describe an equal mixture of low- and high-density states, not typical homogeneous configurations at density \(1/2\). Individual configurations reside overwhelmingly in one phase; the mean lies between the peaks because it averages over phase identity.
+
+![**Evolution of the density distribution.** (a--c) Density histories at coexistence. The subcritical low-start run makes one long excursion into the high-density sector; the high-start run remains trapped. (d,e) Measured distributions and their particle-hole reflections. (f) Subcritical two-peak estimate constructed with the symmetry-justified 1:1 weights.](figures/figure4_density_distributions.pdf){width=100%}
+
+\newpage
+
+At criticality, the peaks of \(P_L(\rho)\) move towards \(1/2\) and the distribution narrows as \(L\) increases (Fig. 5a). Two independent 40,000-measurement runs for each size give:
+
+| \(L\) | \(U_4\) | block-bootstrap s.e. |
+|---:|---:|---:|
+| 12 | 0.61064 | 0.00114 |
+| 16 | 0.61131 | 0.00144 |
+| 20 | 0.61110 | 0.00171 |
+| 24 | 0.61110 | 0.00218 |
+
+All values agree with \(U_4^*=0.61069\); any finite-size drift is smaller than the present sampling uncertainty. Since $U_4$ measures dimensionless distribution shape, its approximate independence of $L$ is evidence of scale invariance. In real space this means that critical configurations have no characteristic domain size: density fluctuations occur over a broad range of scales, up to the system size. The uncertainty grows with \(L\) because the dynamics slows. For the extended \(L=24\) diagnostic run, \(\tau_m=463\) measurement intervals \(=2.31\times10^3\) sweeps, whereas \(\tau_{m^2}=17.7\) intervals; even moments such as \(U_4\) therefore converge much sooner than the relative sign-sector weights. Both sectors were sampled (1355 crossings); first- and second-half distributions differ by only 0.022 in total variation and have means 0.440 and 0.449. The run is adequate for the even moments and distribution shape, but not for a high-precision estimate of the odd quantity \(\langle m\rangle=0\).
+
+![**Critical finite-size behaviour.** (a) Order-parameter distributions. (b) Binder cumulants and the periodic-square reference. (c) First/second-half comparison for the extended \(L=24\) run; inset: its density history.](figures/figure5_critical_finite_size.pdf){width=98%}
+
+\newpage
+
+**Production-run record.** All seeds are \(s=(2468135+104729\,r)\bmod(2^{32}-1)\), where \(r\) is the run ID. The detailed individual record is supplied in `production_run_table.csv`; the complete grouped record used above is:
+
+\small
+
+| Purpose; run IDs | \(L,T,\mu,\epsilon\); initial density | equilibration; interval; measurements | seed range; acceptance |
+|---|---|---|---|
+| ideal validation; 1--3 | \(20,1,\{-1,0,1\},0\); exact \(p\) | 2000; 5; 12000 | 2572864--2782322; 0.538--1.000 |
+| particle-hole; 4--5 | \(20,0.8,\{-2.4,-1.6\},1\); 0.15/0.85 | 5000; 5; 12000 | 2887051--2991780; 0.184 |
+| equation of state; 10--31 | \(24,\{1.5,1.15\}T_c,-2+\Delta\mu,1\); 0.15/0.5/0.85 | 6000; 5; 12000 | 3515425--5714734; 0.050--0.533 |
+| fine response; 40--51 | as above, \(\Delta\mu=\pm.02,\pm.01,\pm.005\) | 6000--8000; 5; 12000--20000 | 6657295--7809314; 0.324--0.532 |
+| correlations; 100--123 | \(24,\{1.50,1.25,1.10,1.05\}T_c,-2,1\); 0.5; six replicas | 8000; 5; 10000 | 12941035--15349802; 0.262--0.534 |
+| distribution evolution; 200,202--203 | \(20,\{1.2,0.9\}T_c,-2,1\); 0.5/0.1/0.9 | 6000--10000; 5; 30000 | 23413935--23728122; 0.090--0.394 |
+| critical sizes; 300--307 | \(L=12,16,20,24,T_c,-2,1\); 0.5; two replicas | 12000; 5; 40000 | 33886835--34619938; 0.181--0.191 |
+| extended critical; 320--321 | \(L=20,24,T_c,-2,1\); 0.5 | 12000; 5; 160000/200000 | 35981415--36086144; 0.189--0.190 |
+
+\normalsize
+
+Errors for ordinary means and variances were obtained from blocks at least ten estimated autocorrelation times long. Correlation-length errors resample the six independent runs; \(U_4\) errors use a blocked bootstrap of the two required independent trajectories. Raw trajectories were retained for every entry.
+
+> **Marking-template note:** this model solution was generated for use in marking and therefore does not reproduce the student's required signed AI-use declaration.

@@ -260,7 +260,7 @@ plt.show()
 
 Generally speaking one-dimensional systems lend themselves to a degree
 of analytic tractability not found in most higher dimensional models.
-Indeed for the case of a 1-d assembly of $N$ spins each having $m$
+Indeed for the case of a 1-d assembly of $N$ spins each having $n$
 discrete energy states, and in the presence of a magnetic field, it is
 possible to reduce the evaluation of the partition function to the
 calculation of the eigenvalues of a matrix--the so called transfer
@@ -284,11 +284,11 @@ $$\begin{aligned}
 Z_N =& \sum_{\{s\}}\exp\left(-\beta {\cal H}(\{s\})\right)\nonumber \\
  =&\sum_{\{s\}}\exp\left(-\beta[E(s_1,s_2)+E(s_2,s_3)+....E(s_N,s_1)]\right) \nonumber\\
  =&\sum_{\{s\}}\exp\left(-\beta E(s_1,s_2)\right)\exp\left(-\beta E(s_2,s_3)\right)....\exp\left(-\beta E(s_N,s_1)\right) \nonumber\\
-=&\sum_{i,j,...,l=1}^m V_{ij}V_{jk}...V_{li} 
+=&\sum_{i,j,...,l=1}^n V_{ij}V_{jk}...V_{li} 
 \end{aligned}$${#eq-Vs}
 
 where the $V_{ij}=\exp(-\beta E_{ij})$ are elements of
-an $m \times m$ matrix $\mathbf{V}$, known as the transfer matrix ($i,j,k$
+an $n \times n$ matrix $\mathbf{V}$, known as the transfer matrix ($i,j,k$
 etc are dummy indices that run over the matrix elements). You should see
 that the sum over the product of matrix elements picks up all the terms
 in the partition function and therefore @eq-Vs is an alternative way of writing the partition function.

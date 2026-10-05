@@ -32,15 +32,15 @@ scales, namely
 1.  The correlation length, $\xi$, ie the size of correlated
     microstructure.
 
-2.  Minimum length scale $L_\textrm{ min}$, i.e. the smallest length in the
+2.  Minimum length scale $L_\textrm{min}$, i.e. the smallest length in the
     microscopics of the problem, e.g. lattice spacing of a magnet or the
     particle size in a fluid.
 
-3.  Macroscopic size $L_{max}$ eg. size of the system.
+3.  Macroscopic size $L_{\textrm{max}}$ eg. size of the system.
 
 The authentic critical region is defined by a window condition:
 
-$$L_\textrm{ max} \gg \xi \gg L_\textrm{ min}$$
+$$L_\textrm{max} \gg \xi \gg L_\textrm{min}$$
 
 The physics of this regime is hard to tackle by analytic theory because
 it is characterized by configurational structure on all scales between
@@ -342,151 +342,174 @@ exponents as the Ising model and fluid.
 
 ## Critical exponents
 
-We consider now how the critical exponents, may be computed via the
-coarse-graining procedure. In what follows we will refer only to the
-behaviour of a single typical coarse grained variable, which we shall
-denote $S(L)$. We suppose that $t$ is sufficiently small that $\xi \gg
-L_\textrm{ min}$. Universality and scaling may be expressed in the claim
-that, for *any* $L$ and $t$, scale factors $a(L)$ and $b(L)$ may be
-found such that the probability distribution $p(S(L),t)$ can be written
-in the form
+We have seen that at the critical point the coarse-grained configurations
+become statistically similar when viewed on sufficiently large length
+scales. We now relate this scale invariance to the critical exponents.
+
+Recall the bulk critical behaviour, where $t=(T-T_c)/T_c$:
 
 $$
-p(S(L),t)=b(L)\tilde{p}(b(L)S(L),a(L)t)
-$${#eq-blocks}
-where $\tilde{p}$ is a function unique to a universality class. 
-The role of the scale factors $a$ and $b$ is to
-absorb the basic non-universal scales identified in
-@sec-rgmethod. The critical exponents are implicit in the
-$L$-dependence of these scale factors. Specifically one finds:
+\xi\sim |t|^{-\nu},\qquad
+Q\sim (-t)^\beta\quad (t<0),\qquad
+\chi\sim |t|^{-\gamma}.
+$$
+
+Here $Q$ is the order parameter, and $\chi$ is its susceptibility. The
+exponents describe how these quantities change as the critical point is
+approached. The essential RG idea is that the same exponents also
+characterise how the system changes under coarse-graining.
+
+Recall that $L$ denotes the *coarse-graining length*: a block contains
+$L^d$ microscopic sites. At a temperature close to $T_c$, the appearance
+of a coarse-grained configuration depends on the ratio $\xi/L$. Since
+$\xi\sim |t|^{-\nu}$, the corresponding dimensionless measure of the
+distance from criticality is $tL^{1/\nu}$ (apart from a non-universal
+constant). Thus increasing $L$ at fixed $t$ makes the system appear
+further from criticality. At $t=0$, by contrast, there is no finite
+correlation length to provide such a cutoff.
+
+The typical magnitude of the coarse-grained ordering variable also
+changes with block size. At criticality it decreases as
+$L^{-\beta/\nu}$. In the notation used for RG scale factors, these two
+effects can be summarised as
 
 $$
 \begin{aligned}
-a(L) & =a_0L^{1/\nu} \\
-b(L) & =b_0L^{\beta/\nu}
-\end{aligned} 
+a(L)&=a_0 L^{1/\nu},\\
+b(L)&=b_0 L^{\beta/\nu}.
+\end{aligned}
 $${#eq-scalefacs}
-where the amplitudes $a_0$ and $b_0$ are system specific (non-universal) constants.
 
-These results state that the critical exponents (in the form $1/\nu$ and
-$\beta/\nu$) characterize the ways in which the configuration spectrum
-evolves under coarse-graining. Consider, first the exponent ratio
-$\beta/\nu$. Precisely at the critical point, there is only one way in
-which the coarse-grained configurations change with $L$: the overall
-scale of the coarse-grained variable (the black-white contrast in our
-grey scale representation) is eroded with increasing $L$. Thus the
-configurations of coarse-graining length $L_1$ match those of a larger
-coarse-graining length $L_2$ only if the variable scale in the latter
-configurations is amplified. The required amplification follows from
-@eq-blocks and and @eq-scalefacs: it is
-
-$$
-\frac{b(L_2)}{b(L_1)}=\left(\frac{L_2}{L_1}\right)^{\beta/\nu}\:.
-$$
-The exponent ratio $\beta/\nu$ thus controls the rate at which the scale
-of the ordering variable decays with increasing coarse-graining length.
-
-Consider now the exponent $1/\nu$. For small but non-zero reduced
-temperature (large but finite $\xi$) there is second way in which the
-configuration spectrum evolves with $L$. As noted previously, coarse
-graining reduces the ratio of correlation length to coarse-graining
-length, and results in configurations with a less critical appearance.
-More precisely, we see from @eq-blocks that increasing the coarse graining length from
-$L_1$ to $L_2$ while keeping the reduced temperature constant has the
-same effect on the configuration spectrum as keeping coarse-graining
-length constant which amplifying the reduced temperature $t$ by a factor
-
-$$
-\frac{a(L_2)}{a(L_1)}=\left(\frac{L_2}{L_1}\right)^{1/\nu}\:.
-$$ One
-may think of the combination $a(L)t$ as a measure of the effective
-reduced temperature of the physical system viewed with resolution length
-$L$. The exponent $1/\nu$ controls the rate at which the effective
-reduced temperature flows with increasing coarse-graining length.
+The constants $a_0$ and $b_0$ depend on microscopic details, whereas
+the exponents are universal within a universality class. We will not
+need the full probability distribution of the block variables to use
+these results.
 
 ## Finite-size scaling {#sec-fss}
 
-We can exploit the fact that the scale factors $a(L)$ and $b(L)$ depend
-on critical exponents to estimate the values of these exponents using
-computer simulation. Consider the average of the block variable $S(L)$.
-Consideration of @eq-blkvar shows that this is non other than the value of
-the order parameter $Q$, measured over a block of side $L$. Thus from
-the definition of an average
+An infinite system can have a diverging correlation length and
+susceptibility at a continuous phase transition. A simulation,
+however, has a finite linear size, which we denote by $L_{\mathrm{max}}$ to
+distinguish it from the coarse-graining length $L$.
+
+As the critical point is approached, $\xi$ grows until it becomes
+comparable to $L_{\mathrm{max}}$. Beyond this point the finite system cannot
+reproduce the growth of correlations that would occur in the
+thermodynamic limit. The critical singularities are therefore rounded.
+The temperature range over which finite-size effects become important
+can be estimated from
 
 $$
-Q(L,t)=\bar {S}(L,t)=\int S(L)p(S(L),t)dS(L)
-$$ where $p(S(L))$ is the
-probability distribution of $S(L)$.
-
-Making use of the representation of @eq-blocks, we then have that
-
-$$Q
-(L,t) = \int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)dS(L)
+\xi\sim |t|^{-\nu}\sim L_{\mathrm{max}},
+\qquad\text{giving}\qquad
+|t|\sim L_{\mathrm{max}}^{-1/\nu}.
 $$
 
-To integrate this we need to change the integration variable from $S(L)$
-to $b(L)S(L)$. We have $d(b(L)S(L))=b(L)dS(L)$ since $b(L)$ does not
-fluctuate. Thus
+This is the basis of *finite-size scaling*. Near the critical point,
+the dependence of an observable on temperature and system size can be
+expressed through the combination $tL_{\mathrm{max}}^{1/\nu}$, apart from
+non-universal scale factors and corrections to scaling.
+
+### Finite-size scaling of the susceptibility
+
+In the bulk critical region we have
+
 $$
-\begin{aligned}
-Q(L,t)  & =  b^{-1}(L)\int b(L)S(L)\tilde{p}(b(L)S(L),a(L)t)d(b(L)S(L))\nonumber\\
-        & =  b^{-1}(L)f(a(L)t)\nonumber\\
-       & =  b_0^{-1}L^{-\beta/\nu}f(a_0L^{1/\nu}t)
-\end{aligned}
+\chi\sim |t|^{-\gamma},\qquad
+\xi\sim |t|^{-\nu}.
 $$
 
-where $f$ is a universal function (defined as the first
-moment of $\tilde{p}(x,y)$ with respect to $y$).
+Eliminating $|t|$ gives
 
-The above results provide a method for determining the critical exponent
-ratios $\beta/\nu$ and $1/\nu$ via computer simulations of near critical
-systems. For instance, at the critical point ($t=0$) and for finite
-block size, $Q(L,0)$ will not be zero (the $T$ at which Q vanishes for
-finite $L$ is above the true $T_c$, cf. @sec-compsim.
-However, we know that its value must vanish in the limit of infinite
-$L$; it does so like
+$$
+\chi\sim \xi^{\gamma/\nu}.
+$$
 
-$$Q(L,0)=b_0L^{-\beta/\nu}f(0)\equiv Q_0L^{-\beta/\nu}$$
+In a finite system the growth of $\xi$ is cut off when
+$\xi$ becomes of order $L_{\mathrm{max}}$. The maximum susceptibility
+therefore scales as
 
-Thus by studying the critical point $L$ dependence of $Q$ we can
-estimate $\beta/\nu$. A similar approach in which we study two block
-sizes $L$, and tune $t$ separately in each case so that the results for
-$QL^{\beta/\nu}$ are identical provides information on the value of
-$1/\nu$.
+$$
+\chi_{\max}(L_{\mathrm{max}})\sim L_{\mathrm{max}}^{\gamma/\nu}.
+$${#eq-chimax}
+
+This result is especially useful in simulations. By measuring the
+maximum susceptibility for several system sizes, a log--log plot of
+$\chi_{\max}$ against $L_{\mathrm{max}}$ has an asymptotic slope
+$\gamma/\nu$.
+
+More generally, the susceptibility has the finite-size scaling form
+
+$$
+\chi(L_{\mathrm{max}},t)
+  =L_{\mathrm{max}}^{\gamma/\nu}
+   f_\chi(tL_{\mathrm{max}}^{1/\nu}),
+$${#eq-fsschi}
+
+where $f_\chi$ is a scaling function. Thus susceptibility curves for
+different sizes can be compared by plotting
+$\chi L_{\mathrm{max}}^{-\gamma/\nu}$ against
+$tL_{\mathrm{max}}^{1/\nu}$. Close to criticality, data for sufficiently
+large systems should collapse onto a common curve when the correct
+critical temperature and exponents are used.
+
+![Collapse of simulation data for the susceptibility $\chi$ on to a master curve under finite-size scaling.](Figs/susceptibility%20scaling.png){#fig-fmcoarse width=80%}
+
+
+
+### Finite-size scaling of the order parameter
+
+The corresponding scaling form for the magnitude of the order
+parameter is
+
+$$
+\langle |m|\rangle
+  =L_{\mathrm{max}}^{-\beta/\nu}
+   f_m(tL_{\mathrm{max}}^{1/\nu}).
+$${#eq-fssm}
+
+For a finite Ising system in zero applied field,
+$\langle m\rangle=0$ by spin-reversal symmetry. This is why we use
+$\langle |m|\rangle$ (or, equivalently for scaling purposes,
+$\sqrt{\langle m^2\rangle}$) rather than $\langle m\rangle$ in this
+relation. At the critical temperature it follows that
+
+$$
+\langle |m|\rangle_{T_c}
+  \sim L_{\mathrm{max}}^{-\beta/\nu}.
+$$
+
+Finite-size scaling therefore provides a practical way to estimate
+critical exponents from simulations even though no finite system has
+a true thermodynamic singularity.
 
 ## Summary of main points
-As this is quite a long chapter let us summarise the main points: 
 
-
-- **Limitations of conventional theories**: Mean field theories and the scaling hypothesis are insufficient in the critical region due to their neglect of correlations across all relevant length scales.
-
-- **Critical region characteristics**: Near-critical systems exhibit correlated microstructure on all length scales up to the correlation length. The complexity of this structure makes both analytical and computational study challenging.
-
-- **Relevant length scales**:
-  1. Correlation length ($\xi$)
-  2. Minimum microscopic scale ($L_\textrm{min}$)
-  3. Macroscopic system size ($L_\textrm{max}$)
-
-- **Window Condition for criticality**: The true critical regime satisfies $L_\textrm{max} \gg \xi \gg L_\textrm{min}$, encompassing a broad range of scales where complex, often fractal-like, structures are present.
-
-- **Renormalisation Group (RG) methodology**: RG involves the stepwise elimination of degrees of freedom by coarse-graining the system over increasing length scales. A fourth scale, $L$, represents the resolution at which the system is described.
-
-- **Effect of coarse-graining**: Coarse-graining changes the effective reduced temperature, captured by the relation $a(L)t$, where $a(L)$ scales with $L$ as $L^{1/\nu}$. This helps describe how critical configurations evolve with resolution.
-
-- **Universality**:
-  - Coarse-graining reveals that microscopically different systems can exhibit identical critical behavior when observed at large scales.
-  - The concept of universality explains why disparate systems, such as magnets and fluids, can show the same critical exponents and scaling laws.
-  - Critical behavior depends primarily on general features like dimensionality and symmetry, rather than microscopic details.
-
-
-- **Finite-Size scaling**:
-  - The average block variable $Q(L,t)$ is related to block size $L$ and reduced temperature $t$ through scaling relations. Computer simulations exploit this to extract scaling functions and the values of critical exponents. 
-    
+- Close to criticality, correlations extend over a wide range of
+  length scales. This is why mean-field theory cannot reproduce the
+  full critical behaviour.
+- RG progressively coarse-grains the microscopic degrees of freedom.
+  At a critical fixed point, the large-scale statistics are unchanged
+  by further coarse-graining.
+- Systems with different microscopic details can belong to the same
+  universality class. Important distinguishing features include the
+  dimensionality, the symmetry of the order parameter and the range
+  of interactions.
+- The exponents $\nu$ and $\beta$ describe, respectively, the change
+  in the effective distance from criticality and the scale of the
+  ordering variable under coarse-graining.
+- Finite systems cannot support a correlation length much larger
+  than $L_{\mathrm{max}}$. In particular,
+  $\chi_{\max}\sim L_{\mathrm{max}}^{\gamma/\nu}$ and
+  $\langle |m|\rangle_{T_c}\sim L_{\mathrm{max}}^{-\beta/\nu}$.
+  These relations allow critical exponents to be estimated from
+  simulations.
 
 ## Addendum: The effective coupling viewpoint of the renormalization group (non examinable) 
 
 ::: {.callout-caution collapse="true"}
 ## Notes for those interested in a different perspective on RG theory.
+
 
 Let us begin by returning to our fundamental @eq-probs,
 which we rewrite as
@@ -838,6 +861,4 @@ large-length-scale physics of all near- critical systems differs only in
 the matter of a length scale. This is the essence of near-critical point
 universality.
 
-
 :::
-
