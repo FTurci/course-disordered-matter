@@ -274,6 +274,12 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/New coursework/PHYSM0071_course-work_assignment-1-prep.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparation for first coursework assignment</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -368,7 +374,17 @@ An aside on entropy production
 </section>
 <section id="from-the-master-equation-to-the-diffusion-equation" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="from-the-master-equation-to-the-diffusion-equation"><span class="header-section-number">8.2</span> From the Master Equation to the Diffusion Equation</h2>
-<p>Now consider the situation where the state index <span class="math inline">\(i\)</span> corresponds to a position in space, <span class="math inline">\(x_i = i a\)</span>, ie a one-dimensional lattice with lattice spacing <span class="math inline">\(a\)</span>, and transitions only occur between neighboring lattice sites.</p>
+<p>Now consider the situation where the state index <span class="math inline">\(i\)</span> corresponds to a position in space, <span class="math inline">\(x_i = i a\)</span>, ie a one-dimensional lattice with lattice spacing <span class="math inline">\(a\)</span>, and transitions only occur between neighboring lattice sites. The situation is illustrated schematically in <a href="#fig-random-walk" class="quarto-xref">Figure&nbsp;<span>8.1</span></a>.</p>
+<div id="fig-random-walk" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-random-walk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/1D_random_walk_lattice_diagram.png" class="img-fluid figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-random-walk-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8.1: Schematic of the one-dimensional lattice random walk with nearest-neighbour transitions at rate <span class="math inline">\(\nu\)</span>.
+</figcaption>
+</figure>
+</div>
 <p>We assume:</p>
 <ul>
 <li><p>Transition rates are symmetric: <span class="math inline">\(\nu_{i, i+1} = \nu_{i, i-1} = \nu\)</span>,</p></li>
@@ -405,7 +421,7 @@ p(x,t) = (4 \pi D t)^{-1/2} \exp\left[-\frac{x^2}{4 D t}\right]
 <p>We explicitly see the arrow of time by examining this Gaussian solution at various times <span class="math inline">\(t\)</span>. As <span class="math inline">\(t\)</span> increases, the Gaussian “bell-shaped” curve spreads out. Its width grows according to <span class="math inline">\(\langle x^2 \rangle^{1/2} \sim t^{1/2}\)</span>. This is known as “diffusive scaling,” and it implies that, after time <span class="math inline">\(t\)</span>, a particle will typically be found at a distance roughly proportional to <span class="math inline">\(t^{1/2}\)</span> from its starting point. Conversely, exploring a region of size <span class="math inline">\(L\)</span> typically requires a time of order <span class="math inline">\(O(L^2)\)</span>.</p>
 <p>The evolution of the solution to the 1d diffusion equation in a spatial region <span class="math inline">\(x=[0,1]\)</span> as a function of times are shown in the movie below. The diffusion constant is <span class="math inline">\(D=0.01\)</span>. The movie corresponds to a particle initialised at <span class="math inline">\(x=0.5\)</span>. One sees how the probability density spreads out over the range as time increases. This can be used to model the diffusion of particles down a concentration gradient as you will see in the next part of the course.</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/diffusion_evolution.mp4"></video></div>
-<div id="df2e47ac" class="cell" data-execution_count="1">
+<div id="41ff9a07" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

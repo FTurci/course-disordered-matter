@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Key concepts for phase transitions</title>
+<title>PHYSM0071: Coursework 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,29 +20,62 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<link href="../phase-transitions/approach-to-criticality.html" rel="next">
-<link href="../phase-transitions/introduction.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-64bf98b9c4f550222d6b78498c405ba7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
-<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../phase-transitions/Lecture Slides/Slides.pdf" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-64bf98b9c4f550222d6b78498c405ba7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,8 +103,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
-<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -114,7 +147,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/background.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../../phase-transitions/New coursework/PHYSM0071_course-work_assignment-1-prep.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparation for first coursework assignment</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -128,8 +161,8 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
-      <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -141,13 +174,13 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Overview</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../reading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../reading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recommended texts</span></a>
   </div>
 </li>
@@ -162,85 +195,85 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Precourse reading and revision</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Lecture Slides/Slides.pdf" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/Lecture Slides/Slides.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/New coursework/PHYSM0071_course-work_assignment-1-prep.html" class="sidebar-item-text sidebar-link">
+  <a href="../../phase-transitions/New coursework/PHYSM0071_course-work_assignment-1-prep.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparation for first coursework assignment</span></span></a>
   </div>
 </li>
@@ -256,11 +289,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#observables-and-expectation-values" id="toc-observables-and-expectation-values" class="nav-link active" data-scroll-target="#observables-and-expectation-values"><span class="header-section-number">2.1</span> Observables and expectation values</a></li>
-  <li><a href="#sec-correlations" id="toc-sec-correlations" class="nav-link" data-scroll-target="#sec-correlations"><span class="header-section-number">2.2</span> Correlations</a>
+  <li><a href="#physical-background" id="toc-physical-background" class="nav-link active" data-scroll-target="#physical-background"><span class="header-section-number">11.1</span> 2. Physical background</a>
   <ul class="collapse">
-  <li><a href="#spatial-correlations" id="toc-spatial-correlations" class="nav-link" data-scroll-target="#spatial-correlations"><span class="header-section-number">2.2.1</span> Spatial correlations</a></li>
-  <li><a href="#temporal-correlations" id="toc-temporal-correlations" class="nav-link" data-scroll-target="#temporal-correlations"><span class="header-section-number">2.2.2</span> Temporal correlations</a></li>
+  <li><a href="#the-lattice-gas" id="toc-the-lattice-gas" class="nav-link" data-scroll-target="#the-lattice-gas"><span class="header-section-number">11.1.1</span> 2.1 The lattice gas</a></li>
+  <li><a href="#phase-behaviour" id="toc-phase-behaviour" class="nav-link" data-scroll-target="#phase-behaviour"><span class="header-section-number">11.1.2</span> 2.2 Phase behaviour</a></li>
+  <li><a href="#grand-canonical-monte-carlo" id="toc-grand-canonical-monte-carlo" class="nav-link" data-scroll-target="#grand-canonical-monte-carlo"><span class="header-section-number">11.1.3</span> 2.3 Grand-canonical Monte Carlo</a></li>
+  </ul></li>
+  <li><a href="#carrying-out-the-computational-work" id="toc-carrying-out-the-computational-work" class="nav-link" data-scroll-target="#carrying-out-the-computational-work"><span class="header-section-number">11.2</span> 3. Carrying out the computational work</a>
+  <ul class="collapse">
+  <li><a href="#preparatory-work-in-noteable" id="toc-preparatory-work-in-noteable" class="nav-link" data-scroll-target="#preparatory-work-in-noteable"><span class="header-section-number">11.2.1</span> 3.1 Preparatory work in Noteable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -268,9 +305,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/background.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../../phase-transitions/New coursework/PHYSM0071_course-work_assignment-1-prep.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparation for first coursework assignment</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-background" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Key concepts for phase transitions</span></span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">1. Aim</span></h1>
 </div>
 
 
@@ -287,116 +324,92 @@ window.Quarto = {
 </header>
 
 
-<section id="observables-and-expectation-values" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="observables-and-expectation-values"><span class="header-section-number">2.1</span> Observables and expectation values</h2>
-<p>In seeking to describe phase transition and critical phenomena, it is useful to have a quantitative measure of the difference between the phases: this is the role of the <em>order parameter</em>, <span class="math inline">\(Q\)</span>. In the case of the fluid, the order parameter is taken as the difference between the densities of the liquid and vapour phases. In the ferromagnet it is taken as the magnetisation. As its name suggest, the order parameter serves as a measure of the kind of orderliness that sets in when the temperature is cooled below a critical temperature.</p>
-<p>Our first task is to give some feeling for the principles which underlie the ordering process. Referring back to <a href="precourse-reading.html#sec-canonical" class="quarto-xref"><span>Section 1.2</span></a>, the probability <span class="math inline">\(p_a\)</span> that a physical system at temperature <span class="math inline">\(T\)</span> will have a particular microscopic arrangement (alternatively referred to as a ‘configuration’ or ‘state’), labelled <span class="math inline">\(a\)</span>, of energy <span class="math inline">\(E_a\)</span> is</p>
-<p><span id="eq-probs"><span class="math display">\[
-p_a=\frac{1}{Z}e^{-E_a/k_BT}
-\tag{2.1}\]</span></span></p>
-<p>The prefactor <span class="math inline">\(Z^{-1}\)</span> is the <em>partition function</em>: since the system must always have <em>some</em> specific arrangement, the sum of the probabilities <span class="math inline">\(p_a\)</span> must be unity, implying that</p>
-<p><span id="eq-partition"><span class="math display">\[
-Z=\sum_ae^{-E_a/k_BT}
-\tag{2.2}\]</span></span> where the sum extends over all possible microscopic arrangements.</p>
-<p>These equations assume that physical system evolves rapidly (on the timescale of typical observations) amongst all its allowed arrangements, sampling them with the probabilities&nbsp;<a href="#eq-probs" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> the expectation value of any physical observable <span class="math inline">\(O\)</span> will thus be given by averaging <span class="math inline">\(O\)</span> over all the arrangements <span class="math inline">\(a\)</span>, weighting each contribution by the appropriate probability:</p>
-<p><span id="eq-observable"><span class="math display">\[\overline {O}=\frac{1}{Z}\sum_a O_a e^{-E_a/k_BT}
-\tag{2.3}\]</span></span></p>
-<p>Sums like <a href="#eq-observable" class="quarto-xref">Equation&nbsp;<span>2.3</span></a> are not easily evaluated because the number of terms grows exponentially in the system size. Nevertheless, some important insights follow painlessly. Consider the case where the observable of interest is the order parameter, or more specifically the magnetisation of a ferromagnet.</p>
-<p><span id="eq-op"><span class="math display">\[
-Q=\frac{1}{Z}\sum_a Q_a e^{-E_a/k_BT}
-\tag{2.4}\]</span></span></p>
-<p>It is clear from <a href="#eq-probs" class="quarto-xref">Equation&nbsp;<span>2.1</span></a> that at very low temperature the system will be overwhelmingly likely to be found in its minimum energy arrangements (ground states). For the ferromagnet, these are the fully ordered spin arrangements having magnetisation <span class="math inline">\(+1\)</span>, or <span class="math inline">\(-1\)</span>.</p>
-<p>Now consider the high temperature limit. The enhanced weight that the fully ordered arrangement carries in the sum of <a href="#eq-op" class="quarto-xref">Equation&nbsp;<span>2.4</span></a> by virtue of its low energy, is now no longer sufficient to offset the fact that arrangements in which <span class="math inline">\(Q_a\)</span> has some intermediate value, though each carry a smaller weight, are vastly greater in number. A little thought shows that the arrangements which have essentially zero magnetisation (equal populations of up and down spins) are by far the most numerous. At high temperature, these disordered arrangements dominate the sum in <a href="#eq-op" class="quarto-xref">Equation&nbsp;<span>2.4</span></a> and the order parameter is zero.</p>
-<p>The competition between energy-of-arrangements weighting (or simply ‘energy’) and the ‘number of arrangements’ weighting (or ‘entropy’) is then the key principle at work here. The distinctive feature of a system with a critical point is that, in the course of this competition, the system is forced to choose amongst a number of macroscopically different sets of microscopic arrangements.</p>
-<p>Finally in this section, we note that the probabilistic (statistical mechanics) approach to thermal systems outlined above is completely compatible with classical thermodynamics. Specifically, the bridge between the two disciplines is provided by the following equation</p>
-<p><span id="eq-free"><span class="math display">\[
-F=-k_BT \ln Z
-\tag{2.5}\]</span></span></p>
-<p>where <span class="math inline">\(F\)</span> is the “Helmholtz free energy”. All thermodynamic observables, for example the order parameter <span class="math inline">\(Q\)</span>, and response functions such as the specific heat or magnetic susceptibility are obtainable as appropriate derivatives of the free energy. For instance, utilizing <a href="#eq-partition" class="quarto-xref">Equation&nbsp;<span>2.2</span></a>, one can readily verify (try it as an exercise!) that the average internal energy is given by</p>
-<p><span class="math display">\[\overline{E}=-\frac{\partial \ln Z}{\partial \beta},\]</span></p>
-<p>where <span class="math inline">\(\beta=(k_BT)^{-1}\)</span>.</p>
-<p>The relationship between other thermodynamic quantities and derivatives of the free energy are given in fig. <a href="#fig-thermo" class="quarto-xref">Figure&nbsp;<span>2.1</span></a></p>
-<div id="fig-thermo" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<h1 style="font-size: 2em; line-height: 1.15; margin-bottom: 0.25em;">
+PHYSM0071: Coursework 1
+</h1>
+<p><em>Correlations and fluctuations in a two-dimensional lattice gas</em></p>
+<p>Use grand-canonical Monte Carlo simulation to investigate the two-dimensional square-lattice gas. Its mapping to the Ising model predicts the phase behaviour; the simulations then probe the equation of state, density response, spatial correlations and density distribution.</p>
+<p>The Monte Carlo algorithm is supplied. You must write short Python programs to run the required state points, analyse the measurements and produce the figures, but the assessment focuses on the physical analysis and interpretation rather than programming technique.</p>
+<section id="physical-background" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="physical-background"><span class="header-section-number">11.1</span> 2. Physical background</h2>
+<section id="the-lattice-gas" class="level3" data-number="11.1.1">
+<h3 data-number="11.1.1" class="anchored" data-anchor-id="the-lattice-gas"><span class="header-section-number">11.1.1</span> 2.1 The lattice gas</h3>
+<p>Each site of an <span class="math inline">\(L\times L\)</span> square lattice is occupied <span class="math inline">\((c_i=1)\)</span> or vacant <span class="math inline">\((c_i=0)\)</span>, with periodic boundaries. The number of lattice sites is <span class="math inline">\(V=L^2\)</span>. Define</p>
+<p><span class="math display">\[
+N=\sum_i c_i,\qquad \rho=\frac{N}{V},
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+E=-\epsilon\sum_{\langle i,j\rangle}c_i c_j .
+\]</span></p>
+<p>Here <span class="math inline">\(\epsilon&gt;0\)</span> is the nearest-neighbour attraction and <span class="math inline">\(\langle i,j\rangle\)</span> denotes each distinct nearest-neighbour pair once. The grand-canonical probability of a configuration is</p>
+<p><span class="math display">\[
+P(\{c_i\})\propto
+\exp[-\beta(E-\mu N)],
+\qquad
+\beta=(k_{\rm B}T)^{-1}.
+\]</span></p>
+<p>Here <span class="math inline">\(\mu\)</span> is the chemical potential, <span class="math inline">\(T\)</span> is the temperature and <span class="math inline">\(k_{\rm B}\)</span> is Boltzmann’s constant. All simulations use <span class="math inline">\(\epsilon=k_{\rm B}=1\)</span> unless stated otherwise.</p>
+</section>
+<section id="phase-behaviour" class="level3" data-number="11.1.2">
+<h3 data-number="11.1.2" class="anchored" data-anchor-id="phase-behaviour"><span class="header-section-number">11.1.2</span> 2.2 Phase behaviour</h3>
+<p>The phase diagram is shown below in the temperature–density plane. Below the critical temperature, the two branches of the curve give the coexisting low- and high-density phases. Mean densities between these branches lie in the two-phase region. The branches meet at <span class="math inline">\(\rho_c=1/2\)</span> and <span class="math inline">\(T=T_c\)</span>.</p>
+<div id="fig-lattgas" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-thermo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/thermo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+<div aria-describedby="fig-lattgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="lattice_gas_phase_diagram.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:45.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-thermo-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.1: Relationships between the partition function and thermodynamic observables
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lattgas-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;11.1: Phase diagram of the lattice-gas model in the density–temperature plane.
 </figcaption>
 </figure>
 </div>
+<p>In the thermodynamic limit, coexistence is a line in the chemical-potential–temperature plane. At fixed <span class="math inline">\(T&lt;T_c\)</span>, the equilibrium density changes discontinuously as this line is crossed; above <span class="math inline">\(T_c\)</span>, it changes continuously. Particle–hole symmetry makes the two coexistence densities symmetric about <span class="math inline">\(\rho=1/2\)</span>. You will derive the coexistence chemical potential and the value of <span class="math inline">\(T_c\)</span> in the mapping exercise.</p>
 </section>
-<section id="sec-correlations" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sec-correlations"><span class="header-section-number">2.2</span> Correlations</h2>
-<section id="spatial-correlations" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="spatial-correlations"><span class="header-section-number">2.2.1</span> Spatial correlations</h3>
-<p>The two-point connected correlation function measures how fluctuations at two spatial points are statistically related. For a scalar field <span class="math inline">\(\phi(\vec{R})\)</span>, which could represent eg. the local magnetisation <span class="math inline">\(m\)</span> in a magnet at position vector <span class="math inline">\(\vec{R}\)</span>, or the local particle number density <span class="math inline">\(\rho\)</span> in a fluid, it is defined as:</p>
+<section id="grand-canonical-monte-carlo" class="level3" data-number="11.1.3">
+<h3 data-number="11.1.3" class="anchored" data-anchor-id="grand-canonical-monte-carlo"><span class="header-section-number">11.1.3</span> 2.3 Grand-canonical Monte Carlo</h3>
+<p>The simulation samples configurations with probability</p>
 <p><span class="math display">\[
-C(r) = \langle \phi(\vec{R}) \phi(\vec{R} + \vec{r}) \rangle - \langle \phi(\vec{R}) \rangle^2,
+P(\{c_i\})\propto\exp[-\beta(E-\mu N)].
 \]</span></p>
-<p>where <span class="math inline">\(\langle \cdot \rangle\)</span> denotes an ensemble or spatial average over all <span class="math inline">\(\vec{R}\)</span>, and <span class="math inline">\(r = |\vec{r}|\)</span> is the spatial separation between the two points.</p>
-<p><span class="math inline">\(C(r)\)</span> quantifies the spatial extent over which field values are correlated and in homogeneous and isotropic systems, it depends only on the separation <span class="math inline">\(r\)</span>.</p>
-<p>If <span class="math inline">\(C(r)\)</span> decays quickly, we say that correlations are short-ranged. Typically this occurs well away from criticality and takes the form of exponential decay</p>
-<p><span class="math display">\[
-  C(r) \sim e^{-r/\xi}
-  \]</span> where the correlation length <span class="math inline">\(\xi\)</span> is the characteristic scale over which correlations decay.</p>
-<p>Near a critical point <span class="math inline">\(C(r)\)</span> decays more slowly - in a power-law fashion - and correlations are long-ranged.</p>
-<p><span class="math display">\[
-  C(r) \sim r^{-(d - 2 + \eta)}
-  \]</span> where <span class="math inline">\(d\)</span> is the spatial dimension and <span class="math inline">\(\eta\)</span> is a critical exponent.</p>
-<p>In isotropic fluids and particle systems, a closely related and more directly measurable quantity (particularly in simulations) is the <strong>radial distribution function</strong> <span class="math inline">\(g(r)\)</span>, which describes how particle density varies as a function of distance from a reference particle. For such systems, the two-point correlation function of the number density field <span class="math inline">\(\rho(\vec{r})\)</span> is related to <span class="math inline">\(g(r)\)</span> as follows:</p>
-<p><span class="math display">\[
-g(r) = 1+\frac{C(r)}{\rho^2},
-\]</span> where <span class="math inline">\(\rho\)</span> is the average number density. This relation shows that <span class="math inline">\(g(r)\)</span> encodes the same spatial correlations as <span class="math inline">\(C(r)\)</span>, but in a form that is more natural for discrete particle systems. Note that by definition <span class="math inline">\(g(r)\to 1\)</span> in the absence of correlations ie. when <span class="math inline">\(C(r)=0\)</span>. This is typically the case for <span class="math inline">\(r\gg\xi\)</span>.</p>
-<p>Experimentally one doesn’t typically have direct access to <span class="math inline">\(C(r)\)</span>, but rather its Fourier transform known as the <strong>structure factor</strong></p>
-<p><span class="math display">\[
-S(k) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r),
-\]</span> where <span class="math inline">\(k\)</span> is the scattering wavevector and <span class="math inline">\(d^dr\)</span> refers to the elemental volume (eg. <span class="math inline">\(d^3r\)</span> in three dimensions).</p>
-<p>In equilibrium:</p>
-<ul>
-<li><p>For short-range correlations (finite <span class="math inline">\(\xi\)</span>), <span class="math inline">\(S(k)\)</span> typically has a Lorentzian form: <span class="math display">\[
-S(k) \sim \frac{1}{k^2 + \xi^{-2}}.
-\]</span></p></li>
-<li><p>At criticality (where <span class="math inline">\(\xi \to \infty\)</span>), <span class="math inline">\(S(k)\)</span> follows a power law: <span class="math display">\[
-S(k) \sim k^{-2 + \eta}.
-\]</span></p></li>
-</ul>
-<p>This relation enables the extraction of <span class="math inline">\(\xi\)</span> from experimental or simulation data, especially via scattering techniques.</p>
+<p>One grand-canonical Metropolis trial consists of:</p>
+<ol type="1">
+<li>choosing a lattice site uniformly at random;</li>
+<li>proposing to insert a particle if it is vacant, or remove it if it is occupied;</li>
+<li>calculating <span class="math inline">\(\Delta E\)</span>, <span class="math inline">\(\Delta N\)</span>, and hence <span class="math inline">\(\Delta(E-\mu N)=\Delta E-\mu\Delta N\)</span>;</li>
+<li>accepting the move with probability <span class="math display">\[
+p_{\rm acc}=\min\{1,\exp[-\beta\Delta(E-\mu N)]\}.
+\]</span></li>
+</ol>
+<p>One Monte Carlo sweep is <span class="math inline">\(L^2\)</span> such trials. In a simulation, an initial equilibration period is discarded before measurements are taken. Successive measurements are generally correlated, and this must be allowed for when estimating uncertainties.</p>
 </section>
-<section id="temporal-correlations" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="temporal-correlations"><span class="header-section-number">2.2.2</span> Temporal correlations</h3>
-<p>Consider a thermodynamic variable <span class="math inline">\(x\)</span> with zero mean that fluctuates over time. Examples include the local magnetization in a magnetic system or the local density in a fluid. Here, <span class="math inline">\(x\)</span> represents a deviation from the average value — a fluctuation.</p>
-<p>We’re interested in how such fluctuations are correlated over time when the system is in thermal equilibrium. For instance, if <span class="math inline">\(x\)</span> is positive at some time <span class="math inline">\(t\)</span>, it’s more likely to remain positive shortly after.</p>
-<p>These temporal correlations are characterized by the two-time correlation function (also known as an auto-correlation function):</p>
-<p><span class="math display">\[
-\langle x(\tau) x(\tau + t) \rangle
-\]</span></p>
-<p>In equilibrium, the correlation function does not evolve with time, so must be independent of the starting time <span class="math inline">\(\tau\)</span>. Therefore, we define:</p>
-<p><span class="math display">\[
-\langle x(\tau) x(\tau + t) \rangle = M_{xx}(t)
-\]</span></p>
-<p>That is, <span class="math inline">\(M_{xx}(t)\)</span> depends only on the time difference <span class="math inline">\(t\)</span>.</p>
-<p>We typically expect <span class="math inline">\(M_{xx}(t)\)</span> to decay exponentially over a characteristic correlation time <span class="math inline">\(t_c\)</span>:</p>
-<p><span class="math display">\[
-M_{xx}(t) \sim \exp(-t / t_c)
-\]</span></p>
-<div id="fig-Mxx" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-Mxx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Figs/Mxx(t).png" class="img-fluid figure-img" style="width:60.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Mxx-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2.2: Sketch of <span class="math inline">\(M_{xx}(t)\)</span> against <span class="math inline">\(t\)</span>
-</figcaption>
-</figure>
-</div>
-<p>This exponential decay reflects how the memory of fluctuations fades with time.</p>
-<p>Now consider two different fluctuating variables, <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> (e.g., local magnetizations at different positions). Their cross-correlation function is defined as:</p>
-<p><span class="math display">\[
-\langle x(\tau) y(\tau + t) \rangle = M_{xy}(t)
-\]</span></p>
-<p>This defines the elements of a dynamic correlation matrix, of which <span class="math inline">\(M_{xx}(t)\)</span> is the diagonal.</p>
+</section>
+<section id="carrying-out-the-computational-work" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="carrying-out-the-computational-work"><span class="header-section-number">11.2</span> 3. Carrying out the computational work</h2>
+<section id="preparatory-work-in-noteable" class="level3" data-number="11.2.1">
+<h3 data-number="11.2.1" class="anchored" data-anchor-id="preparatory-work-in-noteable"><span class="header-section-number">11.2.1</span> 3.1 Preparatory work in Noteable</h3>
+<p>Complete this setup during the week before the exercises in Section 4 are released. It is not assessed; its purpose is to identify any access or software problems before you begin the coursework.</p>
+<ol type="1">
+<li><p>On the PHYSM0071 Blackboard page, open <strong>Resources and tools</strong>, scroll to <strong>Noteable</strong>, and launch it. If you are working off campus, connect to the University VPN first.</p></li>
+<li><p>Select the <strong>Jupyter Notebook (Legacy)</strong> server option.</p></li>
+<li><p>When Noteable opens, click <strong>+GitRepo</strong>, enter</p>
+<pre class="text"><code>https://github.com/nbwilding/Lattice-gas-coursework</code></pre>
+<p>and press <strong>Clone</strong> (no username or password is required). This creates a folder called <code>Lattice-gas-coursework</code> containing <code>Full_lattice_gas_GCE.py</code>.</p></li>
+<li><p>Open a terminal in Noteable (dropdown menu “New”), change into the downloaded folder,</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> Lattice-gas-coursework</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and run the following short test, replacing <code>1234567</code> with your own seven-digit student number:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> Full_lattice_gas_GCE.py <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">--L</span> 12 <span class="dt">\</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">--temperatures</span> 1.0 <span class="dt">\</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">--chemical-potentials</span> <span class="at">-2.0</span> <span class="dt">\</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">--equilibration-sweeps</span> 100 <span class="dt">\</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">--sweeps-per-measurement</span> 2 <span class="dt">\</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">--measurements</span> 100 <span class="dt">\</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">--seed</span> 1234567 <span class="dt">\</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">--output</span> test_output</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Check that the command finishes without an error and creates the <code>test_output</code> folder. The first run may pause briefly while Numba compiles the simulation functions.</p></li>
+</ol>
+<p>This is only a setup check; its results are not used in the report. Do not modify <code>Full_lattice_gas_GCE.py</code>. Once Section 4 is released, put your own simulation driver and analysis code in separate files. Report any problem with cloning or running the program before the exercises are released, including the full error message.</p>
 
 
 <script type="ojs-module-contents">
@@ -422,9 +435,9 @@ eyJjb250ZW50cyI6W119
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
-window._ojs.paths.runtimeToDoc = "../../phase-transitions";
+window._ojs.paths.runtimeToDoc = "../../phase-transitions/New coursework";
 window._ojs.paths.runtimeToRoot = "../..";
-window._ojs.paths.docToRoot = "..";
+window._ojs.paths.docToRoot = "../..";
 window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
@@ -847,14 +860,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../phase-transitions/introduction.html" class="pagination-link" aria-label="Introduction to phase behaviour">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span>
+      <a href="../../phase-transitions/Lecture Slides/Slides.pdf" class="pagination-link" aria-label="Lecture slides">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture slides</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../phase-transitions/approach-to-criticality.html" class="pagination-link" aria-label="The approach to criticality">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
