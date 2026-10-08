@@ -295,16 +295,16 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">Aim</a></li>
-  <li><a href="#physical-background" id="toc-physical-background" class="nav-link" data-scroll-target="#physical-background">Physical background</a>
+  <li><a href="#aim" id="toc-aim" class="nav-link active" data-scroll-target="#aim">1 Aim</a></li>
+  <li><a href="#physical-background" id="toc-physical-background" class="nav-link" data-scroll-target="#physical-background">2 Physical background</a>
   <ul class="collapse">
-  <li><a href="#the-lattice-gas" id="toc-the-lattice-gas" class="nav-link" data-scroll-target="#the-lattice-gas">The lattice gas</a></li>
-  <li><a href="#phase-behaviour" id="toc-phase-behaviour" class="nav-link" data-scroll-target="#phase-behaviour">Phase behaviour</a></li>
-  <li><a href="#grand-canonical-monte-carlo" id="toc-grand-canonical-monte-carlo" class="nav-link" data-scroll-target="#grand-canonical-monte-carlo">Grand-canonical Monte Carlo</a></li>
+  <li><a href="#the-lattice-gas" id="toc-the-lattice-gas" class="nav-link" data-scroll-target="#the-lattice-gas">2.1 The lattice gas</a></li>
+  <li><a href="#phase-behaviour" id="toc-phase-behaviour" class="nav-link" data-scroll-target="#phase-behaviour">2.2 Phase behaviour</a></li>
+  <li><a href="#grand-canonical-monte-carlo" id="toc-grand-canonical-monte-carlo" class="nav-link" data-scroll-target="#grand-canonical-monte-carlo">2.3 Grand-canonical Monte Carlo</a></li>
   </ul></li>
-  <li><a href="#carrying-out-the-computational-work" id="toc-carrying-out-the-computational-work" class="nav-link" data-scroll-target="#carrying-out-the-computational-work">Carrying out the computational work</a>
+  <li><a href="#carrying-out-the-computational-work" id="toc-carrying-out-the-computational-work" class="nav-link" data-scroll-target="#carrying-out-the-computational-work">3 Carrying out the computational work</a>
   <ul class="collapse">
-  <li><a href="#preparatory-work-in-noteable" id="toc-preparatory-work-in-noteable" class="nav-link" data-scroll-target="#preparatory-work-in-noteable">Preparatory work in Noteable</a></li>
+  <li><a href="#preparatory-work-in-noteable" id="toc-preparatory-work-in-noteable" class="nav-link" data-scroll-target="#preparatory-work-in-noteable">3.1 Preparatory work in Noteable</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -333,14 +333,14 @@ window.Quarto = {
 
 <p><em>Correlations and fluctuations in a two-dimensional lattice gas</em></p>
 <section id="aim" class="level1">
-<h1>Aim</h1>
+<h1>1 Aim</h1>
 <p>Use grand-canonical Monte Carlo simulation to investigate the two-dimensional square-lattice gas. Its mapping to the Ising model predicts the phase behaviour; the simulations then probe the equation of state, density response, spatial correlations and density distribution.</p>
 <p>The Monte Carlo algorithm is supplied. You must write short Python programs to run the required state points, analyse the measurements and produce the figures, but the assessment focuses on the physical analysis and interpretation rather than programming technique.</p>
 </section>
 <section id="physical-background" class="level1">
-<h1>Physical background</h1>
+<h1>2 Physical background</h1>
 <section id="the-lattice-gas" class="level2">
-<h2 class="anchored" data-anchor-id="the-lattice-gas">The lattice gas</h2>
+<h2 class="anchored" data-anchor-id="the-lattice-gas">2.1 The lattice gas</h2>
 <p>Each site of an <span class="math inline">\(L\times L\)</span> square lattice is occupied <span class="math inline">\((c_i=1)\)</span> or vacant <span class="math inline">\((c_i=0)\)</span>, with periodic boundaries. The number of lattice sites is <span class="math inline">\(V=L^2\)</span>. Define</p>
 <p><span class="math display">\[
 N=\sum_i c_i,\qquad \rho=\frac{N}{V},
@@ -359,7 +359,7 @@ P(\{c_i\})\propto
 <p>Here <span class="math inline">\(\mu\)</span> is the chemical potential, <span class="math inline">\(T\)</span> is the temperature and <span class="math inline">\(k_{\rm B}\)</span> is Boltzmann’s constant. All simulations use <span class="math inline">\(\epsilon=k_{\rm B}=1\)</span> unless stated otherwise.</p>
 </section>
 <section id="phase-behaviour" class="level2">
-<h2 class="anchored" data-anchor-id="phase-behaviour">Phase behaviour</h2>
+<h2 class="anchored" data-anchor-id="phase-behaviour">2.2 Phase behaviour</h2>
 <p>The phase diagram is shown below in the temperature–density plane. Below the critical temperature, the two branches of the curve give the coexisting low- and high-density phases. Mean densities between these branches lie in the two-phase region. The branches meet at <span class="math inline">\(\rho_c=1/2\)</span> and <span class="math inline">\(T=T_c\)</span>.</p>
 <div id="fig-lattgas" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -374,7 +374,7 @@ Figure&nbsp;2.1: Phase diagram of the lattice-gas model in the density–tempera
 <p>In the thermodynamic limit, coexistence is a line in the chemical-potential–temperature plane. At fixed <span class="math inline">\(T&lt;T_c\)</span>, the equilibrium density changes discontinuously as this line is crossed; above <span class="math inline">\(T_c\)</span>, it changes continuously. Particle–hole symmetry makes the two coexistence densities symmetric about <span class="math inline">\(\rho=1/2\)</span>. You will derive the coexistence chemical potential and the value of <span class="math inline">\(T_c\)</span> in the mapping exercise.</p>
 </section>
 <section id="grand-canonical-monte-carlo" class="level2">
-<h2 class="anchored" data-anchor-id="grand-canonical-monte-carlo">Grand-canonical Monte Carlo</h2>
+<h2 class="anchored" data-anchor-id="grand-canonical-monte-carlo">2.3 Grand-canonical Monte Carlo</h2>
 <p>The simulation samples configurations with probability</p>
 <p><span class="math display">\[
 P(\{c_i\})\propto\exp[-\beta(E-\mu N)].
@@ -392,9 +392,9 @@ p_{\rm acc}=\min\{1,\exp[-\beta\Delta(E-\mu N)]\}.
 </section>
 </section>
 <section id="carrying-out-the-computational-work" class="level1">
-<h1>Carrying out the computational work</h1>
+<h1>3 Carrying out the computational work</h1>
 <section id="preparatory-work-in-noteable" class="level2">
-<h2 class="anchored" data-anchor-id="preparatory-work-in-noteable">Preparatory work in Noteable</h2>
+<h2 class="anchored" data-anchor-id="preparatory-work-in-noteable">3.1 Preparatory work in Noteable</h2>
 <p>Complete this setup during the week before the exercises in Section 4 are released. It is not assessed; its purpose is to identify any access or software problems before you begin the coursework.</p>
 <ol type="1">
 <li><p>On the PHYSM0071 Blackboard page, open <strong>Resources and tools</strong>, scroll to <strong>Noteable</strong>, and launch it. If you are working off campus, connect to the University VPN first.</p></li>
