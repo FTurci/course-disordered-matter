@@ -386,25 +386,20 @@ Solution
 </div>
 </div>
 </div>
-<p>The steps <span class="math inline">\(\Delta x(t)\)</span> are uncorrelated across time.</p>
-<p>To take the continuum limit, we let both <span class="math inline">\(a \to 0\)</span> and <span class="math inline">\(\Delta t \to 0\)</span>, while keeping the diffusion constant <span class="math display">\[
-D = \nu a^2
-\]</span> fixed. This requirement implies that we need <span class="math inline">\(\nu\propto a^{-2}\)</span>, which is satisfied if <span class="math display">\[
-a \propto \sqrt{\Delta t}.
-\]</span></p>
-<p>Hence the step size must shrink as the square root of the time step. Only under this scaling does the random walk converge to a well-defined continuum process with finite diffusion constant, namely Brownian motion or the Langevin equation.</p>
-<p>In this limit, we obtain the <strong>Langevin equation</strong>:</p>
+<p>The steps <span class="math inline">\(\Delta x(t)\)</span> are independent over different time intervals. In the continuum limit we represent these random increments by a noise <span class="math inline">\(\eta(t)\)</span>:</p>
 <p><span class="math display">\[
-\dot{x}(t) = \eta(t)
+\dot{x}(t)=\eta(t).
 \]</span></p>
-<p>where <span class="math inline">\(\eta(t)\equiv\frac{\Delta x(t)}{\Delta t}\)</span> is a stochastic noise satisfying:</p>
+<p>Since the increments are independent, the noise is uncorrelated at different times:</p>
 <p><span class="math display">\[
-\langle \eta(t) \rangle = 0
+\langle \eta(t) \rangle = 0,
 \]</span></p>
 <p><span class="math display">\[
-\langle \eta(t) \eta(t') \rangle = \Gamma \delta(t - t')
+\langle \eta(t)\eta(t')\rangle
+=
+\Gamma\,\delta(t-t').
 \]</span></p>
-<p>This <span class="math inline">\(\eta(t)\)</span> is known as white noise — it has zero mean and is uncorrelated at different times. <span class="math inline">\(\Gamma\)</span> measures its amplitude.</p>
+<p>This is called <em>white noise</em>. The amplitude <span class="math inline">\(\Gamma\)</span> will be related below to the diffusion constant <span class="math inline">\(D\)</span>.</p>
 <p>The Langevin equation tells us that the velocity <span class="math inline">\(\dot{x}(t)\)</span> is purely driven by noise. We can formally integrate it:</p>
 <p><span class="math display">\[
 x(t) - x_0 = \int_0^t \eta(t')\, dt'
@@ -705,7 +700,7 @@ m \dot{v} = -\gamma v + qE
 <section id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension" class="level3" data-number="9.2.6">
 <h3 data-number="9.2.6" class="anchored" data-anchor-id="molecular-dynamics-simulation-of-brownian-motion-for-a-colloid-particle-in-a-liquid-suspension"><span class="header-section-number">9.2.6</span> Molecular Dynamics simulation of Brownian motion for a colloid particle in a liquid suspension</h3>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="Movies/brownian_colloid.mp4"></video></div>
-<div id="21064576" class="cell" data-execution_count="1">
+<div id="6f57bb2d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Show python code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
