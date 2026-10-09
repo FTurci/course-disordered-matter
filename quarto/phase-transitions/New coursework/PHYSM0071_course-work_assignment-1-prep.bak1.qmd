@@ -3,7 +3,7 @@ format:
   html:
     toc: true
     toc-depth: 3
-    number-sections: false
+    number-sections: true
     embed-resources: true
 ---
 
@@ -11,15 +11,15 @@ format:
 
 *Correlations and fluctuations in a two-dimensional lattice gas*
 
-# 1 Aim
+#  Aim 
 
 Use grand-canonical Monte Carlo simulation to investigate the two-dimensional square-lattice gas. Its mapping to the Ising model predicts the phase behaviour; the simulations then probe the equation of state, density response, spatial correlations and density distribution.
 
 The Monte Carlo algorithm is supplied. You must write short Python programs to run the required state points, analyse the measurements and produce the figures, but the assessment focuses on the physical analysis and interpretation rather than programming technique.
 
-# 2 Physical background
+#  Physical background
 
-## 2.1 The lattice gas
+##  The lattice gas
 
 Each site of an $L\times L$ square lattice is occupied $(c_i=1)$ or vacant $(c_i=0)$, with periodic boundaries. The number of lattice sites is $V=L^2$. Define
 
@@ -44,7 +44,7 @@ $$
 
 Here $\mu$ is the chemical potential, $T$ is the temperature and $k_{\rm B}$ is Boltzmann's constant. All simulations use $\epsilon=k_{\rm B}=1$ unless stated otherwise.
 
-## 2.2 Phase behaviour
+## Phase behaviour
 
 The phase diagram is shown below in the temperature--density plane. Below the critical temperature, the two branches of the curve give the coexisting low- and high-density phases. Mean densities between these branches lie in the two-phase region. The branches meet at $\rho_c=1/2$ and $T=T_c$.
 
@@ -52,7 +52,7 @@ The phase diagram is shown below in the temperature--density plane. Below the cr
 
 In the thermodynamic limit, coexistence is a line in the chemical-potential--temperature plane. At fixed $T<T_c$, the equilibrium density changes discontinuously as this line is crossed; above $T_c$, it changes continuously. Particle--hole symmetry makes the two coexistence densities symmetric about $\rho=1/2$. You will derive the coexistence chemical potential and the value of $T_c$ in the mapping exercise.
 
-## 2.3 Grand-canonical Monte Carlo
+## Grand-canonical Monte Carlo
 
 The simulation samples configurations with probability
 
@@ -72,9 +72,9 @@ One grand-canonical Metropolis trial consists of:
 
 One Monte Carlo sweep is $L^2$ such trials. In a simulation, an initial equilibration period is discarded before measurements are taken. Successive measurements are generally correlated, and this must be allowed for when estimating uncertainties.
 
-# 3 Carrying out the computational work
+#  Carrying out the computational work
 
-## 3.1 Preparatory work in Noteable
+## Preparatory work in Noteable
 
 Complete this setup during the week before the exercises in Section 4 are released. It is not assessed; its purpose is to identify any access or software problems before you begin the coursework.
 

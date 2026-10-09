@@ -1,26 +1,23 @@
 ---
-pagetitle: "PHYSM0071: Coursework 1"
 format:
   html:
     toc: true
-    toc-depth: 2
+    toc-depth: 3
     number-sections: false
     embed-resources: true
 ---
 
-<h1 style="font-size: 2em; line-height: 1.15; margin-bottom: 0.25em;">PHYSM0071: Coursework 1</h1>
+# PHYSM0071: Coursework 1 {.unnumbered}
 
 *Correlations and fluctuations in a two-dimensional lattice gas*
 
-## 1. Aim
+# 1. Aim
 
-Use grand-canonical Monte Carlo simulation to investigate the two-dimensional square-lattice gas. Its mapping to the Ising model predicts the phase behaviour; the simulations then probe the equation of state, density response, spatial correlations and density distribution.
+Use grand-canonical Monte Carlo simulation to investigate the two-dimensional square-lattice gas, including its equation of state, density response, spatial correlations and density distribution. The Monte Carlo algorithm is supplied; you will write short Python programs to run and analyse it, but assessment focuses on the physics rather than programming technique.
 
-The Monte Carlo algorithm is supplied. You must write short Python programs to run the required state points, analyse the measurements and produce the figures, but the assessment focuses on the physical analysis and interpretation rather than programming technique.
+# 2. Physical background
 
-## 2. Physical background
-
-### 2.1 The lattice gas
+## 2.1 The lattice gas
 
 Each site of an $L\times L$ square lattice is occupied $(c_i=1)$ or vacant $(c_i=0)$, with periodic boundaries. The number of lattice sites is $V=L^2$. Define
 
@@ -45,23 +42,17 @@ $$
 
 Here $\mu$ is the chemical potential, $T$ is the temperature and $k_{\rm B}$ is Boltzmann's constant. All simulations use $\epsilon=k_{\rm B}=1$ unless stated otherwise.
 
-### 2.2 Phase behaviour
+## 2.2 Phase behaviour
 
-The phase diagram is shown below in the temperature--density plane. Below the critical temperature, the two branches of the curve give the coexisting low- and high-density phases. Mean densities between these branches lie in the two-phase region. The branches meet at $\rho_c=1/2$ and $T=T_c$.
+The phase diagram below shows the coexisting low- and high-density branches, which meet at $\rho_c=1/2$ and $T=T_c$. Mean densities between the branches lie in the two-phase region.
 
 ![Phase diagram of the lattice-gas model in the density--temperature plane.](lattice_gas_phase_diagram.png){width=45% fig-align="center" #fig-lattgas}
 
-In the thermodynamic limit, coexistence is a line in the chemical-potential--temperature plane. At fixed $T<T_c$, the equilibrium density changes discontinuously as this line is crossed; above $T_c$, it changes continuously. Particle--hole symmetry makes the two coexistence densities symmetric about $\rho=1/2$. You will derive the coexistence chemical potential and the value of $T_c$ in the mapping exercise.
+In the thermodynamic limit, the density changes discontinuously across coexistence for $T<T_c$ and continuously for $T>T_c$. Particle--hole symmetry makes the two coexistence densities symmetric about $\rho=1/2$. You will derive the coexistence chemical potential and $T_c$.
 
-### 2.3 Grand-canonical Monte Carlo
+## 2.3 Grand-canonical Monte Carlo
 
-The simulation samples configurations with probability
-
-$$
-P(\{c_i\})\propto\exp[-\beta(E-\mu N)].
-$$
-
-One grand-canonical Metropolis trial consists of:
+The simulation samples the grand-canonical probability above. One Metropolis trial consists of:
 
 1. choosing a lattice site uniformly at random;
 2. proposing to insert a particle if it is vacant, or remove it if it is occupied;
@@ -73,9 +64,9 @@ One grand-canonical Metropolis trial consists of:
 
 One Monte Carlo sweep is $L^2$ such trials. In a simulation, an initial equilibration period is discarded before measurements are taken. Successive measurements are generally correlated, and this must be allowed for when estimating uncertainties.
 
-## 3. Carrying out the computational work
+# 3. Carrying out the computational work
 
-### 3.1 Preparatory work in Noteable
+## 3.1 Preparatory work in Noteable
 
 Complete this setup during the week before the exercises in Section 4 are released. It is not assessed; its purpose is to identify any access or software problems before you begin the coursework.
 
@@ -110,11 +101,11 @@ Complete this setup during the week before the exercises in Section 4 are releas
 
 5. Check that the command finishes without an error and creates the `test_output` folder. The first run may pause briefly while Numba compiles the simulation functions.
 
-This is only a setup check; its results are not used in the report. Do not modify `Full_lattice_gas_GCE.py`. Once Section 4 is released, put your own simulation driver and analysis code in separate files. Report any problem with cloning or running the program before the exercises are released, including the full error message.
+This is only a setup check; do not use its results in the report or modify `Full_lattice_gas_GCE.py`. Once Section 4 is released, put your simulation driver and analysis code in separate files. Report setup problems before the exercises are released, including the full error message.
 
-### 3.2 What the supplied program does
+## 3.2 Using and analysing the supplied program
 
-`Full_lattice_gas_GCE.py` implements the Monte Carlo moves, energy bookkeeping, Fourier transforms and radial shell averaging. It uses Numba automatically in the teaching environment; the first call may be slower while the functions are compiled.
+`Full_lattice_gas_GCE.py` implements the Monte Carlo moves, energy bookkeeping, Fourier transforms and radial shell averaging. It uses Numba automatically in the Notable environment; the first call may be slower while the functions are compiled.
 
 The program may be imported and called as follows:
 
@@ -142,18 +133,16 @@ result = lg.simulate_state_point(
 )
 ```
 
-The returned dictionary contains:
+The returned dictionary entries needed here are:
 
 | Entry | Contents |
 |---|---|
 | `lattice` | final $L\times L$ occupancy array |
-| `energy_samples` | energy measured after each sampling interval |
 | `particle_samples` | particle number measured after each sampling interval |
 | `structure_factor` | connected $S(k_x,k_y)$ averaged over the complete run |
-| `correlation` | connected real-space correlation function averaged over the complete run |
 | `acceptance_equilibration`, `acceptance_sampling` | acceptance fractions during the two parts of the run |
 
-The example run lengths above are illustrative only. Choose equilibration and sampling lengths from evidence.
+The run lengths above are illustrative; choose final lengths from evidence.
 
 Taking the lattice spacing as one, the program defines
 
@@ -165,39 +154,20 @@ S(\mathbf k)=\frac{1}{V}
 -|\langle n_{\mathbf k}\rangle|^2\right].
 $$
 
-Here $\mathbf r_j$ is the position of site $j$ and the allowed wavevectors are $\mathbf k=(2\pi/L)(n_x,n_y)$, with integer $n_x,n_y$. Thus $S(0)=\operatorname{var}(N)/V$. A radial average groups wavevectors having the same magnitude $k=|\mathbf k|$.
+Here $\mathbf r_j$ is the position of site $j$ and the allowed wavevectors are $\mathbf k=(2\pi/L)(n_x,n_y)$, with integer $n_x,n_y$.  A radial average groups wavevectors having the same magnitude $k=|\mathbf k|$.
 
-`radial_shell_average()` converts a two-dimensional field into a radial average. `save_state_point_results()` saves the raw and processed data and basic diagnostic figures; running the program from the command line also saves these outputs.
+`radial_shell_average()` converts a two-dimensional field into a radial average, while `save_state_point_results()` saves the raw and processed data and basic diagnostic figures.
 
-If you run the program from the command line, supply your student number as the base seed using `--seed`. For example:
+Write a short Python program to:
 
-```bash
-python Full_lattice_gas_GCE.py \
-  --L 24 \
-  --temperatures 0.65 \
-  --chemical-potentials -2.2 -2.0 -1.8 \
-  --seed 1234567
-```
+* call `simulate_state_point()`, normally using loops for parameter grids;
+* assign reproducible seeds and record each production run;
+* extract the measurements and calculate the requested statistics, uncertainties and fits;
+* produce the report figures and run summary.
 
-Replace `1234567` with your own student number. The program uses consecutive seeds for successive state points in the same command.
+You need not modify the Monte Carlo algorithm, implement Fourier transforms or write a radial-averaging routine. NumPy, Matplotlib and SciPy may be used. Programming style is not marked, but the submitted code must reproduce the results.
 
-### 3.3 Programming expected from you
-
-You are expected to write a short analysis program that:
-
-* calls `simulate_state_point()`, normally using loops for parameter grids;
-* assigns reproducible seeds and records each production run;
-* extracts or reloads the measurements;
-* calculates the requested statistics, uncertainties and fits;
-* produces the report figures and run summary.
-
-You are not expected to modify the Monte Carlo algorithm, implement Fourier transforms or write a radial-averaging routine. NumPy, Matplotlib and SciPy may be used. Programming style is not marked, but the submitted code must reproduce the reported results.
-
-Use your seven-digit student number as the base seed and give every independent run a distinct integer identifier, as illustrated by `seed_for()` above. Do not repeat runs merely until a preferred result is obtained.
-
-### 3.4 Extracting and saving measurements
-
-The following entries and conversions will be useful:
+Use your seven-digit student number as the base seed and give every independent run a distinct integer identifier, as illustrated by `seed_for()` above. If running from the command line, provide the student number through `--seed`. Do not repeat runs merely until a preferred result is obtained. The following conversions will be useful:
 
 ```{python}
 #| eval: false
@@ -208,14 +178,13 @@ rho = N / V
 S2d = result["structure_factor"]
 shell, S_radial, degeneracy = lg.radial_shell_average(S2d)
 k = 2 * np.pi * shell / L
-S0 = S2d[L // 2, L // 2]
 ```
 
 For every production run, save the time series, parameters, seed, averaged structure factor, final configuration and acceptance fractions. The supplied saving function may be used. Retain these files until marking is complete.
 
-### 3.5 Equilibration and uncertainties
+## 3.3 Equilibration and uncertainties
 
-Use short exploratory runs to choose the equilibration period and sampling interval. Check equilibration using different portions of a run or initial densities. The following values are reasonable starting points, rather than guaranteed requirements:
+Use short exploratory runs to choose the equilibration period and sampling interval, checking different parts of a run or initial densities. Reasonable starting points are:
 
 | Work | Equilibration sweeps | Sweeps between measurements | Number of measurements |
 |---|---:|---:|---:|
@@ -223,19 +192,17 @@ Use short exploratory runs to choose the equilibration period and sampling inter
 | Section 4.4 | $10\,000$ | 10 | $10\,000$ per independent run |
 | Section 4.5 | $20\,000$ | 10 | $20\,000$--$40\,000$ per independent run |
 
-Near $T_c$, especially for the larger systems in Section 4.5, critical slowing down can make both equilibration and sampling substantially slower. Extend the runs if the two halves disagree, both density sectors are not adequately represented, or block uncertainties have not stabilised. Increasing only the spacing between measurements is not a substitute for increasing the total production length.
+Critical slowing down may require longer runs near $T_c$, especially for larger systems in Section 4.5. Extend a run if its halves disagree, both density sectors are poorly represented, or block uncertainties have not stabilised; increasing only the measurement spacing does not increase the total sampling.
 
-Estimate uncertainties from independent runs or blocks of a stationary time series, increasing the block length until the estimate is reasonably stable. Uncertainties are required for $\langle N\rangle$, $\operatorname{var}(N)$, $\langle\rho\rangle$, $\chi_\rho$, $\xi$ and $U_4$, but not for every probability-distribution bin.
+Estimate uncertainties from independent runs or blocks of a stationary time series. They are required for $\langle N\rangle$, $\operatorname{var}(N)$, $\langle\rho\rangle$, $\chi_\rho$, $\xi$ and $U_4$, but not for every distribution bin. Since `structure_factor` is a whole-run average, estimate the uncertainty in $\xi$ by fitting independent runs separately.
 
-Because `structure_factor` is a whole-run average, estimate the uncertainty in $\xi$ from separate fits to independent runs. Density quantities can instead be blocked using `particle_samples`.
-
-## 4. The exercises
+# 4. The exercises
 
 **Presentation convention.** Within each exercise, the tasks you are required to carry out are set in *italics*. Background, definitions, reference information and hints remain in normal type.
 
-### 4.1 Mapping and predictions [6 marks]
+## 4.1 Mapping and predictions [6 marks]
 
-The lattice gas maps exactly onto the Ising model: the two models are *isomorphic*. The mapping allows known Ising results to locate lattice-gas coexistence and criticality, while the magnetisation becomes a measure of particle density. It provides the theoretical basis for the simulations below.
+The lattice gas is exactly isomorphic to the Ising model. This identifies its coexistence and critical point and relates magnetisation to density.
 
 The grand partition function can be written as
 
@@ -282,7 +249,7 @@ $$
 \sum_{\langle i,j\rangle}(s_i+s_j)=q\sum_i s_i.
 $$
 
-Collect the pair, field and constant terms separately. Coexistence corresponds to $H=0$. For mean-field theory, linearize $m=\tanh[\beta(qJm+H)]$ about $m=0$. For a trial move, write $\delta c=1-2c_i$ and count the occupied neighbours; search the program for `delta_K`. See lecture-note [Chapter 4](https://fturci.github.io/course-disordered-matter/phase-transitions/Ising-model.html) for the Ising model and [Chapter 5](https://fturci.github.io/course-disordered-matter/phase-transitions/mean-field-theory.html) for mean-field theory.
+Collect the pair, field and constant terms separately. Coexistence has $H=0$. For mean-field theory, linearize $m=\tanh[\beta(qJm+H)]$ about $m=0$. For a trial move, use $\delta c=1-2c_i$, count occupied neighbours and search the program for `delta_K`. See lecture-note [Chapter 4](https://fturci.github.io/course-disordered-matter/phase-transitions/Ising-model.html) for the Ising model and [Chapter 5](https://fturci.github.io/course-disordered-matter/phase-transitions/mean-field-theory.html) for mean-field theory.
 
 For reference, the zero-field square-lattice Ising critical temperature is
 
@@ -309,9 +276,9 @@ $$
 
 *Use these values in the remaining exercises even if your mapping gives a different result.*
 
-### 4.2 Validation [8 marks]
+## 4.2 Validation [6 marks]
 
-#### Noninteracting lattice gas
+### Noninteracting lattice gas
 
 For $\epsilon=0$, the sites are independent, with
 
@@ -337,31 +304,9 @@ $$
 * *At $\mu=-1$, compare the complete measured $P(N)$ with the binomial distribution.*
 * *For the same $\mu=-1$ run, show the density time series and use it to justify the equilibration and sampling choices.*
 
-**Hint.** Use `np.bincount(N, minlength=V+1)` to include unvisited values over $N=0,\ldots,V$. Estimate the variance separately in blocks or independent runs to obtain its uncertainty.
+**Hint.** Use `np.bincount(N, minlength=V+1)` to include unvisited values over $N=0,\ldots,V$. Estimate the variance separately in blocks or independent runs to obtain its uncertainty. Do not evaluate the factorials in the binomial coefficient directly- the exact distribution can be calculated safely using `scipy.stats.binom.pmf(N, V, p)`
 
-#### Particle-hole symmetry
-
-*For $\epsilon=1$, $L=20$, $T=0.8$, simulate at*
-
-$$
-\mu=\mu_{\rm coex}-0.4,\qquad
-\mu=\mu_{\rm coex}+0.4.
-$$
-
-Particle--hole symmetry predicts
-
-$$
-\langle\rho\rangle_{\mu_{\rm coex}+\Delta\mu}
-=1-\langle\rho\rangle_{\mu_{\rm coex}-\Delta\mu}
-$$
-
-for $\Delta\mu=0.4$.
-
-*Test quantitatively whether this relation holds within uncertainty, and investigate any significant discrepancy.*
-
-**Hint.** Test whether the sum of the two measured densities differs significantly from one, using their combined uncertainty.
-
-### 4.3 Equation of state and density response [8 marks]
+## 4.3 Equation of state and density response [10 marks]
 
 *Use $L=24$ at*
 
@@ -371,7 +316,14 @@ $$
 
 *At both temperatures use the same grid of at least five chemical potentials, distributed symmetrically about $\mu_{\rm coex}$ and spanning the low- and high-density regimes.*
 
-*Plot the two equations of state $\langle\rho\rangle(\mu)$ together. Discuss their particle--hole symmetry and the change in slope on approaching $T_c$.*
+*Plot the two equations of state $\langle\rho\rangle(\mu)$ together. Discuss their particle--hole symmetry and the change in slope on approaching $T_c$. For at least one pair of points equidistant from coexistence, test quantitatively whether*
+
+$$
+\langle\rho\rangle_{\mu_{\rm coex}+\Delta\mu}
+=1-\langle\rho\rangle_{\mu_{\rm coex}-\Delta\mu}
+$$
+
+*within the combined uncertainty.*
 
 Near coexistence, define the density response by
 
@@ -389,9 +341,9 @@ $$
    [\langle\rho^2\rangle-\langle\rho\rangle^2];
    $$
 
-*Also verify that $\chi_\rho=\beta S(0)$ reproduces the fluctuation result, using the structure-factor convention of the supplied program. Compare the finite-difference and fluctuation estimates with uncertainties, and investigate any disagreement.*
+*Also verify that $\chi_\rho=\beta S(0)$ reproduces the fluctuation result, using the structure-factor convention of the supplied program. Compare the finite-difference and fluctuation estimates, including their uncertainties, and comment on the likely cause of any disagreement.*
 
-**Hints.** A grid suitable for displaying the equation of state may be too coarse for its derivative. Use additional points near coexistence in the central difference
+**Hint.** A grid suitable for displaying the equation of state may be too coarse for estimating its derivative. Use additional points near coexistence in the central difference
 
 $$
 \chi_\rho(h)\simeq
@@ -399,16 +351,9 @@ $$
 -\langle\rho\rangle_{\mu_{\rm coex}-h}}{2h}.
 $$
 
-Vary $h$ and propagate the uncertainties in the two densities. With the program's convention,
+Vary $h$ and propagate the density uncertainties.
 
-$$
-S(0)=\frac{\operatorname{var}(N)}{V}
-=V\operatorname{var}(\rho).
-$$
-
-The fluctuation and $S(0)$ routes use the same samples and should agree apart from roundoff. This checks the structure-factor normalization; it is not a third independent estimate.
-
-### 4.4 Spatial correlations [8 marks]
+## 4.4 Spatial correlations [8 marks]
 
 *At $L=24$ and $\mu=\mu_{\rm coex}$, study the following temperatures, using independent production runs at each temperature so that the uncertainty in $\xi$ can be estimated:*
 
@@ -430,7 +375,7 @@ $$
 
 Here $A$ is an amplitude and $\xi$ is the correlation length, which characterises the distance over which density fluctuations are correlated.
 
-*Fit the small-$k$ data to this form. Show the fitted data and curve, identify the included wavevectors, quote an uncertainty in $\xi$, and test sensitivity to the upper limit of the fit range. Plot the final $\xi$ estimates against*
+*Fit the small-$k$ data to this form. Show the fitted data and curve, identify the included wavevectors, and quote an uncertainty in $\xi$. At $T=1.05T_c$, test sensitivity to the upper limit of the fit range. Plot the final $\xi$ estimates against*
 
 $$
 t=\frac{T-T_c}{T_c}.
@@ -440,9 +385,11 @@ Near the critical point the expected growth is $\xi\propto t^{-\nu}$. The exact 
 
 *Discuss whether the available data distinguish these behaviours, without assuming that an accurate exponent can be obtained from this limited range.*
 
-**Hints.** `radial_shell_average` groups modes with the same $n_x^2+n_y^2$, where $k=(2\pi/L)\sqrt{n_x^2+n_y^2}$. Fit the low-$k$ range, vary its upper limit, and fit independent runs separately to estimate the uncertainty in $\xi$. When $\xi$ approaches $L$, finite size limits the exponent test. See lecture-note [Section 2.2](https://fturci.github.io/course-disordered-matter/phase-transitions/background.html#correlations) for $S(k)$ and $\xi$, and [Chapter 3](https://fturci.github.io/course-disordered-matter/phase-transitions/approach-to-criticality.html) for critical growth.
+**Fitting hint.** Treat $A$ and $\xi$ as free parameters and fit the stated form directly to $S(k)$, for example using `scipy.optimize.curve_fit`. Begin with $k=0$ and the first few nonzero shells. Apply the same fit procedure to each independent run and use the variation in the fitted $\xi$ values to estimate its uncertainty. At $1.05T_c$, repeat the fit after adding or removing the largest-$k$ shell to test the fit-range sensitivity.
 
-### 4.5 Density distributions and finite-size effects [10 marks]
+**Other hints.** `radial_shell_average` groups modes with the same $n_x^2+n_y^2$, where $k=(2\pi/L)\sqrt{n_x^2+n_y^2}$. When $\xi$ approaches $L$, finite size limits the exponent test. See lecture-note [Section 2.2](https://fturci.github.io/course-disordered-matter/phase-transitions/background.html#correlations) for $S(k)$ and $\xi$, and [Chapter 3](https://fturci.github.io/course-disordered-matter/phase-transitions/approach-to-criticality.html) for critical growth.
+
+## 4.5 Density distributions and finite-size effects [10 marks]
 
 Let $P_L(\rho)$ denote the probability of observing the instantaneous density $\rho=N/V$ in a system of linear size $L$, normalised so that $\sum_N P_L(N/V)=1$. Define
 
@@ -450,7 +397,7 @@ $$
 m=2\rho-1.
 $$
 
-#### Evolution of $P_L(\rho)$
+### Evolution of $P_L(\rho)$
 
 *At $L=20$ and $\mu=\mu_{\rm coex}$, measure $P_L(\rho)$ at the following temperatures:*
 
@@ -458,13 +405,13 @@ $$
 \frac{T}{T_c}=1.20,\quad 1.00,\quad 0.90.
 $$
 
-*For each temperature, show the density time series and the normalised distribution or distributions actually measured. Compare them with their particle--hole reflections and explain their evolution.*
+*For each temperature, show the density time series and the normalised distribution or distributions actually measured, and explain their evolution.*
 
-*Below $T_c$, perform independent runs from low- and high-density initial states and determine whether either run changes density sector. If the runs remain trapped, show the two sector-conditioned distributions separately. You may additionally construct an equal-weight symmetric distribution using the exact particle--hole symmetry, but label it clearly as constructed rather than directly sampled. Explain why $\langle\rho\rangle\simeq1/2$ does not imply that typical configurations are homogeneous states of density $1/2$.*
+*Below $T_c$, perform independent runs from low- and high-density initial states and determine whether either run changes density sector. If the runs remain trapped, show the two sector-conditioned distributions separately and compare them after applying the particle--hole reflection $\rho\to1-\rho$. Explain why $\langle\rho\rangle\simeq1/2$ does not imply that typical configurations are homogeneous states of density $1/2$.*
 
 **Hints.** Use the common grid $N=0,\ldots,V$; particle--hole reflection reverses the probability array. Changes in the sign of $m$ show movement between density sectors.
 
-#### Critical distribution and Binder cumulant
+### Critical distribution and Binder cumulant
 
 *At $T=T_c$ and $\mu=\mu_{\rm coex}$, use the following system sizes:*
 
@@ -472,7 +419,7 @@ $$
 L=12,\quad16,\quad20,\quad24,
 $$
 
-*with at least two independent runs for each size.* The fourth-order Binder cumulant is a dimensionless measure of the shape of a distribution:
+*Use one sufficiently long production run for each size and a second independent run for $L=24$.* The fourth-order Binder cumulant is a dimensionless measure of the shape of a distribution:
 
 $$
 U_4(L)=
@@ -492,11 +439,11 @@ At criticality, the infinite system has no finite correlation length; in a finit
 
 *Use the size dependence of $U_4(L)$ to comment on scale invariance at criticality, and explain what this implies about the range of density-fluctuation or domain sizes in typical critical configurations.*
 
-*For at least one critical run, justify that the sampling is adequate using an autocorrelation or block-error check, agreement between the first and second halves, and sampling of both signs of $m$.*
+*For at least one critical run, justify that the sampling is adequate by showing that the block uncertainty is reasonably stable, the first and second halves agree, and both signs of $m$ are sampled.*
 
-**Hints.** Calculate $U_4$ within each block or run to retain the correlation between $\langle m^2\rangle$ and $\langle m^4\rangle$. See lecture-note [Section 2.2.2](https://fturci.github.io/course-disordered-matter/phase-transitions/background.html#temporal-correlations) for temporal correlations and [Section 6.2](https://fturci.github.io/course-disordered-matter/phase-transitions/scaling.html#computer-simulation) for finite-size scaling.
+**Hints.** Calculate $U_4$ within each block or run to retain the correlation between $\langle m^2\rangle$ and $\langle m^4\rangle$. See lecture-note [Section 2.2.2](https://fturci.github.io/course-disordered-matter/phase-transitions/background.html#temporal-correlations) for temporal correlations and [Section 7](https://fturci.github.io/course-disordered-matter/phase-transitions/rg.html) for finite-size scaling.
 
-## 5. Your report
+# 5. Your report
 
 * Produce a report of no more than **6 sides of A4**, including figures and tables, using at least 11-point font and normal margins. Focus on results and their physical interpretation. Marks will be deducted for exceeding the limit.
 
@@ -514,16 +461,7 @@ At criticality, the infinite system has no finite correlation length; in a finit
 
 * Use labelled axes, informative captions and multi-panel figures where helpful. Include uncertainties and explain how time correlations were allowed for.
 
-* Include a compact table giving the following information for every production run used in the report:
-
-  | Run information | What to give |
-  |---|---|
-  | Purpose and state point | Run identifier, $L,T,\mu,\epsilon$ |
-  | Initialisation | Seed and initial density |
-  | Sampling | Equilibration sweeps, measurement interval and number of measurements |
-  | Diagnostic | `acceptance_sampling` |
-
-  Regular parameter grids and independent repeats may be grouped if their parameters and seeds are unambiguous. Do not list unused exploratory runs.
+* Include a compact production-run summary giving, for each run or grouped set of runs, the state points $(L,T,\mu,\epsilon)$, run identifiers or seeds, initial density, equilibration length, measurement interval and number of measurements. Regular parameter grids and independent repeats may be grouped where the information remains unambiguous. Do not include unused exploratory runs.*
 
 * Include the following declaration at the end of the report:
 
