@@ -443,7 +443,7 @@ p_{\rm acc}=\min\{1,\exp[-\beta\Delta(E-\mu N)]\}.
 <h2 class="anchored" data-anchor-id="using-and-analysing-the-supplied-program">3.2 Using and analysing the supplied program</h2>
 <p><code>Full_lattice_gas_GCE.py</code> implements the Monte Carlo moves, energy bookkeeping, Fourier transforms and radial shell averaging. It uses Numba automatically in the Notable environment; the first call may be slower while the functions are compiled.</p>
 <p>The program may be imported and called as follows:</p>
-<div id="ee8637bb" class="cell" data-execution_count="1">
+<div id="55e45c1f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> Full_lattice_gas_GCE <span class="im">as</span> lg</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -516,7 +516,7 @@ S(\mathbf k)=\frac{1}{V}
 </ul>
 <p>You need not modify the Monte Carlo algorithm, implement Fourier transforms or write a radial-averaging routine. NumPy, Matplotlib and SciPy may be used. Programming style is not marked, but the submitted code must reproduce the results.</p>
 <p>Use your seven-digit student number as the base seed and give every independent run a distinct integer identifier, as illustrated by <code>seed_for()</code> above. If running from the command line, provide the student number through <code>--seed</code>. Do not repeat runs merely until a preferred result is obtained. The following conversions will be useful:</p>
-<div id="711acafe" class="cell" data-execution_count="2">
+<div id="f4d7dc6f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>V <span class="op">=</span> L<span class="op">**</span><span class="dv">2</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> result[<span class="st">"particle_samples"</span>]</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>rho <span class="op">=</span> N <span class="op">/</span> V</span>
