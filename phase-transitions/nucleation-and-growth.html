@@ -2,23 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>10&nbsp; Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -38,16 +32,15 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../phase-transitions/precourse-reading.html" rel="next">
 <link href="../phase-transitions/Brownian-and-Langevin-dynamics.html" rel="prev">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f22b733819789c3b94469819c4966741.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-64bf98b9c4f550222d6b78498c405ba7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -81,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -94,7 +87,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+      if (mathElements[i].tagName == "SPAN") {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -112,7 +105,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar docked quarto-light">
+<body class="nav-sidebar docked">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,8 +129,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
-      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -246,33 +238,22 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">First experimental interlude</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part0.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparing your computer for the first experimental interlude</span></span></a>
+  <a href="../phase-transitions/PDF_notes/notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part2New.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
+  <a href="../phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
   </div>
 </li>
       </ul>
@@ -288,10 +269,7 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</a></li>
-  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
-  <ul class="collapse">
-  <li><a href="#interpretation-and-scaling-behaviour" id="toc-interpretation-and-scaling-behaviour" class="nav-link" data-scroll-target="#interpretation-and-scaling-behaviour"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behaviour</a></li>
-  </ul></li>
+  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a></li>
   <li><a href="#domain-growth" id="toc-domain-growth" class="nav-link" data-scroll-target="#domain-growth"><span class="header-section-number">10.3</span> Domain growth</a></li>
   <li><a href="#spinodal-decomposition" id="toc-spinodal-decomposition" class="nav-link" data-scroll-target="#spinodal-decomposition"><span class="header-section-number">10.4</span> Spinodal decomposition</a>
   <ul class="collapse">
@@ -375,7 +353,7 @@ window.Quarto = {
 <p>The total free-energy change is therefore</p>
 <p><span class="math display">\[
 \Delta F(R)=\sigma S_dR^{d-1}-\Delta f\,V_dR^d.
-\]</span></p>
+\]</span> (here for clarity we have not made the temperature dependence explicit, but both the surface tension <span class="math inline">\(\sigma\)</span> and the bulk free-energy density difference <span class="math inline">\(\Delta f\)</span> generally depend on <span class="math inline">\(T\)</span>.)</p>
 <p>For small droplets the surface term dominates, so increasing the droplet size raises the free energy. For sufficiently large droplets the bulk term dominates and further growth lowers the free energy. The resulting free-energy barrier is shown schematically in <a href="#fig-cnt-schem" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>.</p>
 <p>The maximum occurs at the critical droplet radius <span class="math inline">\(R_c\)</span>, obtained from</p>
 <p><span class="math display">\[
@@ -407,8 +385,7 @@ Figure&nbsp;10.1: Free-energy barrier <span class="math inline">\(\Delta F(R)\)<
 I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
 \]</span></p>
 <p>where <span class="math inline">\(I_0\)</span> is a prefactor determined by microscopic kinetics.</p>
-<section id="interpretation-and-scaling-behaviour" class="level3" data-number="10.2.1">
-<h3 data-number="10.2.1" class="anchored" data-anchor-id="interpretation-and-scaling-behaviour"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behaviour</h3>
+<p><strong>Interpretation and Scaling Behaviour</strong></p>
 <p>Several key features follow immediately:</p>
 <ul>
 <li><strong>Critical radius</strong>: <span class="math inline">\(R_c\sim\sigma/\Delta f\)</span>, so the critical droplet becomes very large as <span class="math inline">\(\Delta f\to0\)</span>.</li>
@@ -416,7 +393,6 @@ I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
 <li><strong>Moving away from coexistence</strong>: Increasing the bulk driving force <span class="math inline">\(\Delta f\)</span> (or equivalently <span class="math inline">\(\Delta\mu\)</span>) reduces both <span class="math inline">\(R_c\)</span> and the barrier, making nucleation easier.</li>
 </ul>
 <p>Thus homogeneous nucleation is governed by a competition between the bulk thermodynamic driving force and the interfacial free-energy cost. Close to coexistence the bulk driving force is weak and nucleation can be extremely slow.</p>
-</section>
 </section>
 <section id="domain-growth" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="domain-growth"><span class="header-section-number">10.3</span> Domain growth</h2>
@@ -524,12 +500,12 @@ L(t)\sim t^{1/2},
 \]</span></p>
 <p>corresponding to a dynamic exponent <span class="math inline">\(z=2\)</span>. Small, highly curved domains disappear while the typical domain size grows.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Caution</span>Why is the interface velocity proportional to curvature? (non examinable)
+Why is the interface velocity proportional to curvature? (non examinable)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -577,6 +553,54 @@ v\sim\frac{1}{L}.
 <p><span class="math display">\[
 \Delta\mu\sim\frac{\sigma}{L}.
 \]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why does the chemical-potential difference scale as <span class="math inline">\(1/L\)</span>? (non-examinable)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A curved interface raises the chemical potential of material in a finite domain. For a domain of typical size <span class="math inline">\(L\)</span>, the interfacial free energy scales as</p>
+<p><span class="math display">\[
+F_{\mathrm{int}} \sim \sigma L^{d-1},
+\]</span></p>
+<p>while the amount of material in the domain scales as</p>
+<p><span class="math display">\[
+N \sim L^d.
+\]</span></p>
+<p>The excess chemical potential associated with the interface is therefore of order</p>
+<p><span class="math display">\[
+\Delta \mu
+\sim
+\frac{dF_{\mathrm{int}}}{dN}
+=
+\frac{dF_{\mathrm{int}}/dL}{dN/dL}.
+\]</span></p>
+<p>Using</p>
+<p><span class="math display">\[
+\frac{dF_{\mathrm{int}}}{dL}
+\sim
+\sigma L^{d-2},
+\qquad
+\frac{dN}{dL}
+\sim
+L^{d-1},
+\]</span></p>
+<p>gives</p>
+<p><span class="math display">\[
+\Delta \mu
+\sim
+\frac{\sigma}{L}.
+\]</span></p>
+<p>Thus small, highly curved domains have a higher chemical potential than larger ones.</p>
+</div>
+</div>
+</div>
 <p>This is a curvature-induced chemical-potential difference. It should not be confused with the bulk <span class="math inline">\(\Delta\mu\)</span> introduced earlier as the driving force for nucleation. At late times the bulk phases are already close to coexistence; the remaining driving force comes mainly from interfaces.</p>
 <p>Material diffuses down gradients in chemical potential. The flux is therefore</p>
 <p><span class="math display">\[
@@ -625,6 +649,7 @@ L(t)\sim t^{1/3}.
         margin-bottom: 25px;
         flex-wrap: wrap;
     }
+
     .sim-panel {
         background: white;
         padding: 15px;
@@ -632,17 +657,31 @@ L(t)\sim t^{1/3}.
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         text-align: center;
     }
-    .sim-title { margin-top: 0; font-size: 1.2rem; font-weight: bold; }
-    .sim-law { font-size: 0.9rem; color: #0066cc; font-weight: bold; margin-bottom: 10px; }
+
+    .sim-title {
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .sim-law {
+        font-size: 0.9rem;
+        color: #0066cc;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
     .sim-canvas {
         background: #000;
         border-radius: 4px;
         display: block;
     }
+
     .sim-controls {
         text-align: center;
         margin-top: 20px;
     }
+
     .sim-btn {
         background-color: #0071e3;
         color: white;
@@ -654,9 +693,18 @@ L(t)\sim t^{1/3}.
         margin: 0 10px;
         font-weight: 500;
     }
-    .sim-btn:hover { background-color: #0077ed; }
-    .sim-btn-secondary { background-color: #86868b; }
-    .sim-btn-secondary:hover { background-color: #98989d; }
+
+    .sim-btn:hover {
+        background-color: #0077ed;
+    }
+
+    .sim-btn-secondary {
+        background-color: #86868b;
+    }
+
+    .sim-btn-secondary:hover {
+        background-color: #98989d;
+    }
 </style>
 
 <div class="sim-container">
@@ -679,118 +727,223 @@ L(t)\sim t^{1/3}.
 </div>
 
 <script>
-    (function() {
-        const N = 128;
-        const canvasA = document.getElementById("canvasA");
-        const canvasB = document.getElementById("canvasB");
-        const ctxA = canvasA.getContext("2d");
-        const ctxB = canvasB.getContext("2d");
+(function() {
+    const N = 128;
 
-        const dtA = 0.1;       
-        const dtB = 0.01;      
-        const modelB_substeps = 40; 
+    const canvasA = document.getElementById("canvasA");
+    const canvasB = document.getElementById("canvasB");
 
-        let phiA = new Float32Array(N * N);
-        let phiB = new Float32Array(N * N);
-        let nextPhi = new Float32Array(N * N);
-        let mu = new Float32Array(N * N); 
+    const ctxA = canvasA.getContext("2d");
+    const ctxB = canvasB.getContext("2d");
 
-        let isRunning = true;
+    const dtA = 0.1;
+    const dtB = 0.01;
+    const modelB_substeps = 40;
 
-        function idx(x, y) {
-            return ((x + N) % N) + ((y + N) % N) * N;
+    let phiA = new Float32Array(N * N);
+    let phiB = new Float32Array(N * N);
+    let nextPhi = new Float32Array(N * N);
+    let mu = new Float32Array(N * N);
+
+    let isRunning = true;
+    let animationFrameId = null;
+    let elapsedRunning = 0;
+    let lastTimestamp = null;
+    const autoPauseAfter = 12000; // milliseconds
+
+    function idx(x, y) {
+        return ((x + N) % N) + ((y + N) % N) * N;
+    }
+
+    function initGrids() {
+        for (let i = 0; i < N * N; i++) {
+            const val = (Math.random() - 0.5) * 0.2;
+            phiA[i] = val;
+            phiB[i] = val;
         }
+    }
 
-        function initGrids() {
-            for (let i = 0; i < N * N; i++) {
-                const val = (Math.random() - 0.5) * 0.2; 
-                phiA[i] = val;
-                phiB[i] = val;
+    function laplacian(grid, x, y) {
+        const center = grid[idx(x, y)];
+
+        return (
+            grid[idx(x - 1, y)] +
+            grid[idx(x + 1, y)] +
+            grid[idx(x, y - 1)] +
+            grid[idx(x, y + 1)] -
+            4 * center
+        );
+    }
+
+    function stepModelA() {
+        for (let y = 0; y < N; y++) {
+            for (let x = 0; x < N; x++) {
+                const i = idx(x, y);
+                const p = phiA[i];
+
+                nextPhi[i] =
+                    p +
+                    dtA * (
+                        laplacian(phiA, x, y) +
+                        (p - p * p * p)
+                    );
             }
         }
 
-        function laplacian(grid, x, y) {
-            const center = grid[idx(x, y)];
-            return grid[idx(x - 1, y)] + grid[idx(x + 1, y)] + grid[idx(x, y - 1)] + grid[idx(x, y + 1)] - 4 * center;
-        }
+        let temp = phiA;
+        phiA = nextPhi;
+        nextPhi = temp;
+    }
 
-        function stepModelA() {
+    function stepModelB() {
+        for (let sub = 0; sub < modelB_substeps; sub++) {
+
             for (let y = 0; y < N; y++) {
                 for (let x = 0; x < N; x++) {
                     const i = idx(x, y);
-                    const p = phiA[i];
-                    nextPhi[i] = p + dtA * (laplacian(phiA, x, y) + (p - p * p * p));
+                    const p = phiB[i];
+
+                    mu[i] =
+                        -laplacian(phiB, x, y)
+                        - p
+                        + p * p * p;
                 }
             }
-            let temp = phiA; phiA = nextPhi; nextPhi = temp;
-        }
 
-        function stepModelB() {
-            for (let sub = 0; sub < modelB_substeps; sub++) {
-                for (let y = 0; y < N; y++) {
-                    for (let x = 0; x < N; x++) {
-                        const i = idx(x, y);
-                        const p = phiB[i];
-                        mu[i] = -laplacian(phiB, x, y) - p + p * p * p;
-                    }
+            for (let y = 0; y < N; y++) {
+                for (let x = 0; x < N; x++) {
+                    const i = idx(x, y);
+
+                    nextPhi[i] =
+                        phiB[i] +
+                        dtB * laplacian(mu, x, y);
                 }
-                for (let y = 0; y < N; y++) {
-                    for (let x = 0; x < N; x++) {
-                        const i = idx(x, y);
-                        nextPhi[i] = phiB[i] + dtB * laplacian(mu, x, y);
-                    }
-                }
-                let temp = phiB; phiB = nextPhi; nextPhi = temp;
+            }
+
+            let temp = phiB;
+            phiB = nextPhi;
+            nextPhi = temp;
+        }
+    }
+
+    function draw(grid, ctx, imgData) {
+        const data = imgData.data;
+        const cWidth = ctx.canvas.width;
+        const cHeight = ctx.canvas.height;
+
+        const scaleX = cWidth / N;
+        const scaleY = cHeight / N;
+
+        for (let y = 0; y < cHeight; y++) {
+            const srcY = Math.floor(y / scaleY);
+
+            for (let x = 0; x < cWidth; x++) {
+                const srcX = Math.floor(x / scaleX);
+
+                let norm = Math.floor(
+                    (grid[srcX + srcY * N] + 1) * 127.5
+                );
+
+                norm = Math.max(0, Math.min(255, norm));
+
+                const pIdx = (x + y * cWidth) * 4;
+
+                data[pIdx] = norm;
+                data[pIdx + 1] = norm;
+                data[pIdx + 2] = norm;
+                data[pIdx + 3] = 255;
             }
         }
 
-        function draw(grid, ctx, imgData) {
-            const data = imgData.data;
-            const cWidth = canvasA.width;
-            const scale = cWidth / N;
-            for (let y = 0; y < cWidth; y++) {
-                const srcY = Math.floor(y / scale);
-                for (let x = 0; x < cWidth; x++) {
-                    const srcX = Math.floor(x / scale);
-                    let norm = Math.floor((grid[srcX + srcY * N] + 1) * 127.5);
-                    norm = Math.max(0, Math.min(255, norm));
-                    const pIdx = (x + y * cWidth) * 4;
-                    data[pIdx] = data[pIdx+1] = data[pIdx+2] = norm;
-                    data[pIdx+3] = 255;
-                }
-            }
-            ctx.putImageData(imgData, 0, 0);
+        ctx.putImageData(imgData, 0, 0);
+    }
+
+    const imgDataA =
+        ctxA.createImageData(canvasA.width, canvasA.height);
+
+    const imgDataB =
+        ctxB.createImageData(canvasB.width, canvasB.height);
+
+    function update(timestamp) {
+        if (!isRunning) {
+            animationFrameId = null;
+            return;
         }
 
-        const imgDataA = ctxA.createImageData(canvasA.width, canvasA.height);
-        const imgDataB = ctxB.createImageData(canvasB.width, canvasB.height);
+        if (lastTimestamp === null) {
+            lastTimestamp = timestamp;
+        }
 
-        function update() {
+        elapsedRunning += timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        stepModelA();
+        stepModelB();
+
+        draw(phiA, ctxA, imgDataA);
+        draw(phiB, ctxB, imgDataB);
+
+        if (elapsedRunning >= autoPauseAfter) {
+            isRunning = false;
+            animationFrameId = null;
+            document.getElementById("btnPause").innerText = "Resume";
+            return;
+        }
+
+        animationFrameId = requestAnimationFrame(update);
+    }
+
+    function startAnimation() {
+        if (isRunning && animationFrameId === null) {
+            lastTimestamp = null;
+            animationFrameId = requestAnimationFrame(update);
+        }
+    }
+
+    document
+        .getElementById("btnPause")
+        .addEventListener("click", (e) => {
             if (isRunning) {
-                stepModelA();
-                stepModelB();
+                isRunning = false;
+                if (animationFrameId !== null) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+                e.target.innerText = "Resume";
+            } else {
+                isRunning = true;
+                elapsedRunning = 0;
+                lastTimestamp = null;
+                e.target.innerText = "Pause";
+                startAnimation();
             }
+        });
+
+    document
+        .getElementById("btnReset")
+        .addEventListener("click", () => {
+            if (animationFrameId !== null) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
+            initGrids();
+            elapsedRunning = 0;
+            lastTimestamp = null;
+            isRunning = true;
+
+            document.getElementById("btnPause").innerText = "Pause";
+
             draw(phiA, ctxA, imgDataA);
             draw(phiB, ctxB, imgDataB);
-            requestAnimationFrame(update);
-        }
-
-        document.getElementById("btnPause").addEventListener("click", (e) => {
-            isRunning = !isRunning;
-            e.target.innerText = isRunning ? "Pause" : "Resume";
+            startAnimation();
         });
 
-        document.getElementById("btnReset").addEventListener("click", () => {
-            initGrids();
-            if (!isRunning) {
-                draw(phiA, ctxA, imgDataA);
-                draw(phiB, ctxB, imgDataB);
-            }
-        });
-
-        initGrids();
-        update();
-    })();
+    initGrids();
+    draw(phiA, ctxA, imgDataA);
+    draw(phiB, ctxB, imgDataB);
+    startAnimation();
+})();
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-domain-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -895,243 +1048,236 @@ window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
-  window.document.addEventListener("DOMContentLoaded", function (event) {
-    const icon = "";
-    const anchorJS = new window.AnchorJS();
-    anchorJS.options = {
-      placement: 'right',
-      icon: icon
-    };
-    anchorJS.add('.anchored');
-    const isCodeAnnotation = (el) => {
-      for (const clz of el.classList) {
-        if (clz.startsWith('code-annotation-')) {                     
-          return true;
-        }
-      }
-      return false;
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
     }
-    const onCopySuccess = function(e) {
-      // button target
-      const button = e.trigger;
-      // don't keep focus
-      button.blur();
-      // flash "checked"
-      button.classList.add('code-copy-button-checked');
-      var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
-      let tooltip;
-      if (window.bootstrap) {
-        button.setAttribute("data-bs-toggle", "tooltip");
-        button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
-        tooltip = new bootstrap.Tooltip(button, 
-          { trigger: "manual", 
-            customClass: "code-copy-button-tooltip",
-            offset: [0, -8]});
-        tooltip.show();    
-      }
-      setTimeout(function() {
-        if (tooltip) {
-          tooltip.hide();
-          button.removeAttribute("data-bs-title");
-          button.removeAttribute("data-bs-toggle");
-          button.removeAttribute("data-bs-placement");
-        }
-        button.setAttribute("title", currentTitle);
-        button.classList.remove('code-copy-button-checked');
-      }, 1000);
-      // clear code selection
-      e.clearSelection();
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
     }
-    const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
       for (const childEl of codeEl.children) {
         if (isCodeAnnotation(childEl)) {
           childEl.remove();
         }
       }
       return codeEl.innerText;
-    }
-    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-      text: getTextToCopy
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
-    clipboard.on('success', onCopySuccess);
-    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-        text: getTextToCopy,
-        container: window.document.getElementById('quarto-embedded-source-code-modal')
-      });
-      clipboardModal.on('success', onCopySuccess);
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
-      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
-      var isInternal = (href) => {
-          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-      }
-      // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-      for (var i=0; i<links.length; i++) {
-        const link = links[i];
-        if (!isInternal(link.href)) {
-          // undo the damage that might have been done by quarto-nav.js in the case of
-          // links that we want to consider external
-          if (link.dataset.originalHref !== undefined) {
-            link.href = link.dataset.originalHref;
-          }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
         }
       }
-    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-      const config = {
-        allowHTML: true,
-        maxWidth: 500,
-        delay: 100,
-        arrow: false,
-        appendTo: function(el) {
-            return el.parentElement;
-        },
-        interactive: true,
-        interactiveBorder: 10,
-        theme: 'quarto',
-        placement: 'bottom-start',
-      };
-      if (contentFn) {
-        config.content = contentFn;
-      }
-      if (onTriggerFn) {
-        config.onTrigger = onTriggerFn;
-      }
-      if (onUntriggerFn) {
-        config.onUntrigger = onUntriggerFn;
-      }
-      window.tippy(el, config); 
     }
-    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-    for (var i=0; i<noterefs.length; i++) {
-      const ref = noterefs[i];
-      tippyHover(ref, function() {
-        // use id or data attribute instead here
-        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-        try { href = new URL(href).hash; } catch {}
-        const id = href.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note) {
-          return note.innerHTML;
-        } else {
-          return "";
-        }
-      });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
     }
-    const xrefs = window.document.querySelectorAll('a.quarto-xref');
-    const processXRef = (id, note) => {
-      // Strip column container classes
-      const stripColumnClz = (el) => {
-        el.classList.remove("page-full", "page-columns");
-        if (el.children) {
-          for (const child of el.children) {
-            stripColumnClz(child);
-          }
-        }
-      }
-      stripColumnClz(note)
-      if (id === null || id.startsWith('sec-')) {
-        // Special case sections, only their first couple elements
-        const container = document.createElement("div");
-        if (note.children && note.children.length > 2) {
-          container.appendChild(note.children[0].cloneNode(true));
-          for (let i = 1; i < note.children.length; i++) {
-            const child = note.children[i];
-            if (child.tagName === "P" && child.innerText === "") {
-              continue;
-            } else {
-              container.appendChild(child.cloneNode(true));
-              break;
-            }
-          }
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(container);
-          }
-          return container.innerHTML
-        } else {
-          if (window.Quarto?.typesetMath) {
-            window.Quarto.typesetMath(note);
-          }
-          return note.innerHTML;
-        }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
       } else {
-        // Remove any anchor links if they are present
-        const anchorLink = note.querySelector('a.anchorjs-link');
-        if (anchorLink) {
-          anchorLink.remove();
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
         }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        if (note.classList.contains("callout")) {
-          return note.outerHTML;
-        } else {
-          return note.innerHTML;
-        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
       }
     }
-    for (var i=0; i<xrefs.length; i++) {
-      const xref = xrefs[i];
-      tippyHover(xref, undefined, function(instance) {
-        instance.disable();
-        let url = xref.getAttribute('href');
-        let hash = undefined; 
-        if (url.startsWith('#')) {
-          hash = url;
-        } else {
-          try { hash = new URL(url).hash; } catch {}
-        }
-        if (hash) {
-          const id = hash.replace(/^#\/?/, "");
-          const note = window.document.getElementById(id);
-          if (note !== null) {
-            try {
-              const html = processXRef(id, note.cloneNode(true));
-              instance.setContent(html);
-            } finally {
-              instance.enable();
-              instance.show();
-            }
-          } else {
-            // See if we can fetch this
-            fetch(url.split('#')[0])
-            .then(res => res.text())
-            .then(html => {
-              const parser = new DOMParser();
-              const htmlDoc = parser.parseFromString(html, "text/html");
-              const note = htmlDoc.getElementById(id);
-              if (note !== null) {
-                const html = processXRef(id, note);
-                instance.setContent(html);
-              } 
-            }).finally(() => {
-              instance.enable();
-              instance.show();
-            });
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
           }
         } else {
-          // See if we can fetch a full url (with no hash to target)
-          // This is a special case and we should probably do some content thinning / targeting
-          fetch(url)
+          // See if we can fetch this
+          fetch(url.split('#')[0])
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.querySelector('main.content');
+            const note = htmlDoc.getElementById(id);
             if (note !== null) {
-              // This should only happen for chapter cross references
-              // (since there is no id in the URL)
-              // remove the first header
-              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-                note.children[0].remove();
-              }
-              const html = processXRef(null, note);
+              const html = processXRef(id, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1139,161 +1285,185 @@ window._ojs.runtime.interpretFromScriptTags();
             instance.show();
           });
         }
-      }, function(instance) {
-      });
-    }
-        let selectedAnnoteEl;
-        const selectorForAnnotation = ( cell, annotation) => {
-          let cellAttr = 'data-code-cell="' + cell + '"';
-          let lineAttr = 'data-code-annotation="' +  annotation + '"';
-          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-          return selector;
-        }
-        const selectCodeLines = (annoteEl) => {
-          const doc = window.document;
-          const targetCell = annoteEl.getAttribute("data-target-cell");
-          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-          const lineIds = lines.map((line) => {
-            return targetCell + "-" + line;
-          })
-          let top = null;
-          let height = null;
-          let parent = null;
-          if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
-            }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
-            }
-            selectedAnnoteEl = annoteEl;
-          }
-        };
-        const unselectCodeLines = () => {
-          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-          elementsIds.forEach((elId) => {
-            const div = window.document.getElementById(elId);
-            if (div) {
-              div.remove();
-            }
-          });
-          selectedAnnoteEl = undefined;
-        };
-          // Handle positioning of the toggle
-      window.addEventListener(
-        "resize",
-        throttle(() => {
-          elRect = undefined;
-          if (selectedAnnoteEl) {
-            selectCodeLines(selectedAnnoteEl);
-          }
-        }, 10)
-      );
-      function throttle(fn, ms) {
-      let throttle = false;
-      let timer;
-        return (...args) => {
-          if(!throttle) { // first call gets through
-              fn.apply(this, args);
-              throttle = true;
-          } else { // all the others get throttled
-              if(timer) clearTimeout(timer); // cancel #2
-              timer = setTimeout(() => {
-                fn.apply(this, args);
-                timer = throttle = false;
-              }, ms);
-          }
-        };
-      }
-        // Attach click handler to the DT
-        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-        for (const annoteDlNode of annoteDls) {
-          annoteDlNode.addEventListener('click', (event) => {
-            const clickedEl = event.target;
-            if (clickedEl !== selectedAnnoteEl) {
-              unselectCodeLines();
-              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-              if (activeEl) {
-                activeEl.classList.remove('code-annotation-active');
-              }
-              selectCodeLines(clickedEl);
-              clickedEl.classList.add('code-annotation-active');
-            } else {
-              // Unselect the line
-              unselectCodeLines();
-              clickedEl.classList.remove('code-annotation-active');
-            }
-          });
-        }
-    const findCites = (el) => {
-      const parentEl = el.parentElement;
-      if (parentEl) {
-        const cites = parentEl.dataset.cites;
-        if (cites) {
-          return {
-            el,
-            cites: cites.split(' ')
-          };
-        } else {
-          return findCites(el.parentElement)
-        }
       } else {
-        return undefined;
-      }
-    };
-    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-    for (var i=0; i<bibliorefs.length; i++) {
-      const ref = bibliorefs[i];
-      const citeInfo = findCites(ref);
-      if (citeInfo) {
-        tippyHover(citeInfo.el, function() {
-          var popup = window.document.createElement('div');
-          citeInfo.cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
             }
-            popup.appendChild(citeDiv);
-          });
-          return popup.innerHTML;
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
         });
       }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
     }
-  });
-  </script>
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
       <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="pagination-link" aria-label="Langevin and Brownian dynamics">
