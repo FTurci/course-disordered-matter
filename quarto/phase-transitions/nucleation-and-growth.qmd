@@ -1,273 +1,545 @@
-
 # Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition
 
 ## Introduction to nucleation
 
-In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the *dynamical* 
-mechanism by which a system evolves from one phase to another. We now address this question explicitly.
+In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the *dynamical* mechanism by which a system evolves from one phase to another. We now address this question explicitly.
 
-Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at
- zero external field, $H = 0$. We now examine the system’s response to the application of a small negative external field $H < 0$, which lowers the free energy of the spin-down phase relative to the spin-up phase.
+Consider again the Ising model at a temperature $T < T_c$, where the system is initially prepared in the majority spin-up phase at zero external field, $H = 0$. At $H=0$ the spin-up and spin-down phases coexist. We now apply a small negative external field $H < 0$, which lowers the free energy of the spin-down phase relative to the spin-up phase. The spin-down phase is therefore stable, while the spin-up phase is metastable.
 
-Despite the global free energy favoring the spin-down phase, the system does not undergo an instantaneous transition. 
-This delay is a consequence of the free energy barrier associated with nucleating a region of the stable phase within the metastable one, 
-as introduced in @sec-breaking. The dynamical pathway of the phase transition proceeds via *nucleation* of localized regions—referred to as *droplets*—of the stable (spin-down) phase embedded within the metastable (spin-up) background. Once nucleated, these droplets may grow over time and ultimately coalesce to transform the system to the stable phase.
+It is useful at this point to identify the thermodynamic driving force for the transition. Let
 
-The nucleation of a droplet of the stable phase of size $n$ spins entails a competition between bulk and interfacial contributions 
-to the free energy. The bulk free energy gain is linear in $n$, given by $-nH$, due to the alignment of spins with the external field. 
-However, this gain is offset by an interfacial free energy cost arising from broken bonds at the boundary between phases. For the Ising model, 
-each broken bond contributes an energy cost of $+2J$, so the total interfacial energy scales with the perimeter (in 2D) or surface area (in 3D) of the droplet. 
-This interfacial contribution is referred to as the *surface tension*, and constitutes a true free energy cost: it includes not only the energetic penalty 
-from broken bonds but also an entropic contribution due to the configurational degrees of freedom associated with the droplet shape.
+$$
+\Delta f = f_{\mathrm{meta}}-f_{\mathrm{stable}}>0
+$$
 
-The resulting competition between the extensive free energy gain and the sub-extensive interfacial cost leads to a free energy barrier for droplet formation. Only fluctuations that produce a droplet larger than a critical size $n_c$ will grow; smaller droplets will shrink. This framework is formalized in *classical nucleation theory*, which provides a quantitative description of the nucleation rate, critical droplet size, and the associated activation energy barrier.
+be the bulk free-energy density difference between the metastable and stable phases. Converting a volume $V$ of metastable material into the stable phase lowers the bulk free energy by
 
+$$
+\Delta F_{\mathrm{bulk}}=-V\Delta f.
+$$
+
+For the Ising model, this free-energy difference is produced by the applied field. Close to coexistence,
+
+$$
+\Delta f \simeq 2m_0|H|,
+$$
+
+where $m_0$ is the magnitude of the spontaneous magnetisation. Thus the bulk driving force vanishes as $H\to0$, where the two phases coexist.
+
+For a molecular system, the same driving force is often expressed in terms of a chemical-potential difference,
+
+$$
+\Delta\mu=\mu_{\mathrm{meta}}-\mu_{\mathrm{stable}}>0.
+$$
+
+The bulk free-energy gain for converting $N$ particles to the stable phase is then approximately
+
+$$
+\Delta F_{\mathrm{bulk}}\simeq-N\Delta\mu.
+$$
+
+Thus $\Delta f$ and $\Delta\mu$ are simply two ways of expressing the bulk thermodynamic driving force, per unit volume or per particle.
+
+Despite the spin-down phase having the lower free energy, the system does not undergo an instantaneous transition. This delay is a consequence of the free-energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in @sec-breaking. The transition proceeds via *nucleation* of local regions---or *droplets*---of the stable (spin-down) phase embedded in the metastable (spin-up) background. Once nucleated, sufficiently large droplets grow and can ultimately transform the system to the stable phase.
+
+The nucleation of a droplet therefore involves a competition between two contributions to the free energy. There is a bulk free-energy gain, proportional to the volume of the droplet, because the droplet is in the stable phase. This is offset by an interfacial free-energy cost arising from the boundary between the two phases. For the Ising model, broken bonds contribute an energetic cost, while the fluctuating shape of the interface also gives an entropic contribution. Their combined effect is described by the *surface tension* $\sigma$.
+
+The competition between the extensive bulk free-energy gain and the sub-extensive interfacial cost gives a free-energy barrier to droplet formation. Only fluctuations that produce a droplet larger than a critical size will grow; smaller droplets will shrink. This is the basis of *classical nucleation theory*.
 
 ## Classical Nucleation Theory: Homogeneous Nucleation {#sec-cnt}
 
-We now present the framework of **classical nucleation theory** (CNT) for the case of *homogeneous nucleation*, in which the nucleation 
-of the stable phase occurs spontaneously and uniformly throughout the bulk of the metastable phase, without the aid of impurities, 
-defects, or surfaces.
+We now consider **classical nucleation theory** (CNT) for *homogeneous nucleation*, in which the stable phase nucleates spontaneously in the bulk of the metastable phase, without the aid of impurities, defects or surfaces.
 
-Let us consider a droplet of the stable (spin-down) phase of radius $R$ embedded within the metastable (spin-up) background. 
-The total change in free energy $\Delta F(R)$ associated with forming such a droplet consists of two competing contributions:
+Consider a droplet of the stable (spin-down) phase of radius $R$ embedded in the metastable (spin-up) phase. The change in free energy $\Delta F(R)$ has two contributions:
 
-1. **Bulk free energy gain**: The interior of the droplet consists of $V \sim R^d$ spins aligned with the external field $H < 0$, leading to a volume free energy change
+1. **Bulk free-energy gain**: The stable phase has a lower bulk free-energy density than the metastable phase by $\Delta f>0$. Thus
 
    $$
-   \Delta F_{\text{bulk}}(R) = -|\Delta f| \, R^d,
+   \Delta F_{\mathrm{bulk}}(R)=-\Delta f\,V_dR^d,
    $$
 
-   where $|\Delta f| \propto |H|$ is the free energy density difference between the metastable and stable phases, and $d$ is the spatial dimensionality of the system.
+   where $V_dR^d$ is the volume of the droplet in $d$ dimensions. For the Ising model, $\Delta f\propto |H|$ close to coexistence. For a molecular system the same contribution can instead be expressed in terms of $\Delta\mu$.
 
-2. **Interfacial free energy cost**: The boundary between the two phases has a surface area scaling as $R^{d-1}$, and incurs a free energy cost proportional to the *surface tension* $\sigma$:
+2. **Interfacial free-energy cost**: The boundary between the two phases has area $S_dR^{d-1}$ and carries a free-energy cost proportional to the surface tension $\sigma$:
 
    $$
-   \Delta F_{\text{surface}}(R) = \sigma \, S_d \, R^{d-1},
+   \Delta F_{\mathrm{surface}}(R)=\sigma S_dR^{d-1},
    $$
 
-   where $S_d$ is a geometrical factor (e.g., $S_2 = 2\pi$ in 2D and $S_3 = 4\pi$ in 3D).
+   where $S_d$ is a geometrical factor (e.g. $S_2=2\pi$ in 2D and $S_3=4\pi$ in 3D).
 
-The total free energy change is therefore given by
-
-$$
-\Delta F(R) = \sigma \, S_d \, R^{d-1} - |\Delta f| \, V_d \, R^d,
-$$
-
-where $V_d$ is another dimension-dependent constant (eg. $4\pi/3$ for $d=3$). This expression (@fig-cnt-schem) exhibits a characteristic maximum at a critical droplet radius $R_c$, obtained by extremizing $\Delta F(R)$ with respect to $R$:
+The total free-energy change is therefore
 
 $$
-\frac{d \Delta F}{dR} = 0 \quad \Rightarrow \quad R_c = \frac{(d-1)\sigma S_d}{d |\Delta f| V_d}.
+\Delta F(R)=\sigma S_dR^{d-1}-\Delta f\,V_dR^d.
 $$
 
+For small droplets the surface term dominates, so increasing the droplet size raises the free energy. For sufficiently large droplets the bulk term dominates and further growth lowers the free energy. The resulting free-energy barrier is shown schematically in @fig-cnt-schem.
 
- ![Free energy barrier $\Delta F(r)$ for nucleation of a spherical droplet as a function of radius $R$ (schematic)](Figs/cnt_schematic.png){width=50% fig-align="center" #fig-cnt-schem}
-
-
-
-The corresponding free energy barrier for nucleation is
+The maximum occurs at the critical droplet radius $R_c$, obtained from
 
 $$
-\Delta F_c = \Delta F(R_c) = \frac{(d-1)^{d-1}}{d^d} \cdot \frac{(S_d)^d \, \sigma^d}{(|\Delta f|)^{d-1} \, (V_d)^{d-1}}.
+\frac{d\Delta F}{dR}=0,
 $$
 
-This barrier must be surmounted by thermal fluctuations in order for a critical nucleus to form and grow. The nucleation rate per unit volume is given (in the Arrhenius approximation) by
+which gives
 
 $$
-I \sim I_0 \exp\left( -\frac{\Delta F_c}{k_B T} \right),
+R_c=\frac{(d-1)\sigma S_d}{d\Delta f V_d}.
 $$
 
-where $I_0$ is a prefactor determined by microscopic kinetics, and $k_B$ is Boltzmann’s constant.
+![Free-energy barrier $\Delta F(R)$ for nucleation of a spherical droplet as a function of radius $R$ (schematic)](Figs/cnt_schematic.png){width=50% fig-align="center" #fig-cnt-schem}
 
-### Interpretation and Scaling Behavior
+Droplets with $R<R_c$ lower their free energy by shrinking, whereas droplets with $R>R_c$ lower it by growing.
 
-Several key features emerge from this analysis:
+The corresponding nucleation barrier is
 
-- **Barrier scaling**: The nucleation barrier $\Delta F_c \sim \sigma^d / |\Delta f|^{d-1}$ diverges as $H \to 0$, reflecting the increasing stability of the metastable phase near the coexistence point.
-- **Critical radius**: The critical droplet size $R_c \sim \sigma / |\Delta f|$ also diverges as $|\Delta f| \to 0$, indicating that larger fluctuations are required to initiate nucleation close to the coexistence line.
-- **Dimensional dependence**: Both $\Delta F_c$ and $R_c$ exhibit strong dependence on the spatial dimension $d$, with nucleation becoming increasingly suppressed in higher dimensions due to the dominance of interfacial cost.
+$$
+\Delta F_c=\Delta F(R_c)
+=\frac{(d-1)^{d-1}}{d^d}
+\frac{(S_d)^d\sigma^d}{(\Delta f)^{d-1}(V_d)^{d-1}}.
+$$
 
-In summary, homogeneous nucleation in a first-order transition is governed by a delicate balance between surface tension and bulk free energy gain. Only droplets exceeding a critical size can overcome the barrier and initiate a transition. 
-This sets an intrinsic timescale for the dynamics of phase transformation, which can become extremely long near coexistence due to the exponentially small nucleation rate.
+This barrier must be surmounted by thermal fluctuations in order for a critical nucleus to form and grow. The nucleation rate per unit volume is, in the Arrhenius approximation,
 
+$$
+I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
+$$
 
+where $I_0$ is a prefactor determined by microscopic kinetics.
+
+### Interpretation and Scaling Behaviour
+
+Several key features follow immediately:
+
+- **Critical radius**: $R_c\sim\sigma/\Delta f$, so the critical droplet becomes very large as $\Delta f\to0$.
+- **Barrier height**: $\Delta F_c\sim\sigma^d/(\Delta f)^{d-1}$, so the nucleation barrier also grows strongly as coexistence is approached.
+- **Moving away from coexistence**: Increasing the bulk driving force $\Delta f$ (or equivalently $\Delta\mu$) reduces both $R_c$ and the barrier, making nucleation easier.
+
+Thus homogeneous nucleation is governed by a competition between the bulk thermodynamic driving force and the interfacial free-energy cost. Close to coexistence the bulk driving force is weak and nucleation can be extremely slow.
 
 ## Domain growth
-Following successful nucleation of a supercritical droplet, the system enters a regime where the global transformation is driven by the deterministic growth of domains of the stable phase. Such *domain growth* involves more atoms or molecules attaching to these nuclei, causing them to expand into larger structures (e.g., growing crystals or droplets).
 
-Growth rate depends on factors like temperature, concentration, and the availability of building blocks.
+Once a droplet is larger than $R_c$, further growth lowers the free energy. During this stage the bulk free-energy difference between the metastable and stable phases continues to drive the transformation.
 
-The shape and structure of the final phase often depend on how growth occurs (e.g., slow growth may form perfect crystals; rapid growth may be irregular).
+Growth rates depend on the microscopic dynamics: for example, on how rapidly atoms, molecules or spins can rearrange, and on how rapidly material can be transported to the growing phase.
 
+At later times the situation is rather different. The interiors of the domains are then already close to their equilibrium bulk states, and the remaining excess free energy is mainly associated with interfaces. The system then *coarsens* so as to reduce the amount of interface.
+
+It is useful to distinguish these two driving forces:
+
+- nucleation and early growth are driven by the **bulk free-energy difference** between metastable and stable phases;
+- late-stage coarsening is driven mainly by the reduction of **interfacial free energy**.
 
 ## Spinodal decomposition
-Previously we have considered a scenario in which we move our system to a statepoint just inside the coexistence region so that the original phase remains metastable. 
-We then wait for a fluctuation that yields a critical nucleus and subsequent growth. 
 
-Now imagine that rather than positioning the system just inside the coexistence region we move immediately to a state point well inside the coexistence region (cf. @fig-spinodal) such that there is no metastable minimum in the free energy.  Then there is no nucleation and growth, rather the system is *unstable* and immediately starts to phase separate at all points in the system.  This so called *spinodal decomposition*. 
+So far we have considered a state point just inside the coexistence region, where the original phase remains metastable. The system must then wait for a sufficiently large fluctuation to create a critical nucleus.
 
+Now imagine moving much farther into the coexistence region, as illustrated in @fig-spinodal, until the metastable minimum in the free energy disappears. The original phase is then *unstable* rather than metastable. There is no nucleation barrier: small fluctuations can lower the free energy and begin to grow throughout the system. These growing fluctuations develop into regions rich in each of the two equilibrium phases, producing a domain pattern. At later times the domains coarsen: small domains disappear and the typical domain size increases. This process is called *spinodal decomposition*. 
 
- ![Schematic phase diagram for a magnet showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
+![Schematic phase diagram for a magnet showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
 
-Formally the spinodal is located by the locus of points that satisfy $\partial F/\partial Q=\partial^2 F/\partial Q^2=0$, where $F(Q)$ is the free energy as a function of the order parameter $Q$ at a given temperature. This corresponds to the points at which the metastable minimum is lost and the system can simply run downhill in free energy to the stable phase.
+If $F(Q)$ is the free energy as a function of an order parameter $Q$, the spinodal occurs when the metastable minimum merges with the neighbouring maximum. Thus
 
-The nature of spinodal decomposition and late-time domain growth depends sensitively on whether the order parameter is conserved or not.
+$$
+\frac{\partial F}{\partial Q}=0,
+\qquad
+\frac{\partial^2F}{\partial Q^2}=0.
+$$
 
+Inside the unstable region the curvature of the free energy is negative, so small fluctuations can grow rather than having to cross a nucleation barrier.
 
+After either nucleation and growth or spinodal decomposition, the system generally enters a late-time coarsening regime. The nature of this coarsening depends strongly on whether the order parameter is conserved.
 
 ---
 
 ### Non-Conserved Order Parameter Dynamics (Model A)
 
-In systems with a non-conserved order parameter, such as the Ising model with single spin flip (so called Glauber) 
-dynamics, the order parameter can relax locally without constraint. Motion of interfaces is driven by local chemical potential differences. 
-In the jargon of the field, this is called 'model A' dynamics.
+In systems with a non-conserved order parameter, such as the Ising model with single-spin-flip (Glauber) dynamics, the order parameter can relax locally without any conservation constraint. This is called **Model A** dynamics.
 
-
-The typical domain size $L(t)$ grows algebraically with time:
+The coarse-grained order parameter field $\phi(\mathbf r,t)$ evolves so as to reduce the free energy. A simple description is the **Allen--Cahn equation**:
 
 $$
-L(t) \sim t^{1/2},
+\frac{\partial\phi}{\partial t}
+=-\Gamma\frac{\delta F[\phi]}{\delta\phi},
 $$
 
-corresponding to a dynamic exponent $z = 2$, where in general $L(t)\sim t^{1/z}$. 
-The local chemical potential difference across a domain wall depends on its curvature. 
-Thus regions of high curvature (small domains) shrink and are absorbed by larger, flatter ones.
+where $\Gamma$ is a kinetic coefficient. The functional derivative $\delta F/\delta\phi$ is the local thermodynamic driving force for changing the order parameter. Since $\phi$ is not conserved, the system can lower its free energy by changing $\phi$ locally.
 
-Let is assume that domain walls move with velocity proportional to curvature:
-  $$
-  v \sim \frac{1}{L}
-  $$
-Then with the typical domain size being $L(t)$ it follows that
-
-  $$
-  \frac{dL}{dt} \sim \frac{1}{L}
-  $$
-
-Integrating both sides yields the $t^{1/2}$ domain growth law.
-
-It turns out that the detailed evolution of the coarse-grained order parameter field $\phi(\mathbf{r}, t)$ is governed by the **Allen–Cahn equation**:
+A simple Ginzburg--Landau free-energy functional is
 
 $$
-\frac{\partial \phi}{\partial t} = - \frac{\delta F[\phi]}{\delta \phi},
-$$
-where the derivative on the RHS is the local chemical potential. 
-
-$F[\phi]$ is a coarse-grained Ginzburg–Landau free energy functional:
-
-$$
-F[\phi] = \int d^d x \left[ \frac{1}{2} (\nabla \phi)^2 + V(\phi) \right],
+F[\phi]=\int d^dx\left[\frac{1}{2}(\nabla\phi)^2+V(\phi)\right],
 $$
 
-with $V(\phi)$ typically a double-well potential such as $V(\phi) = \frac{1}{4}(\phi^2 - 1)^2$.n The squared gradient term serves to penalise interfaces in the system.
+with $V(\phi)$ typically a double-well potential such as
 
+$$
+V(\phi)=\frac{1}{4}(\phi^2-1)^2.
+$$
+
+The squared-gradient term penalises interfaces.
+
+For a curved interface, the reduction of interfacial free energy causes the interface to move. The interface velocity is proportional to its curvature, so for domains of typical size $L$,
+
+$$
+v\sim\frac{1}{L}.
+$$
+
+Thus
+
+$$
+\frac{dL}{dt}\sim\frac{1}{L},
+$$
+
+and hence
+
+$$
+L(t)\sim t^{1/2},
+$$
+
+corresponding to a dynamic exponent $z=2$. Small, highly curved domains disappear while the typical domain size grows.
+
+::: {.callout-caution collapse="true"}
+
+### Why is the interface velocity proportional to curvature? (non examinable)
+
+Consider a circular domain of radius $R$ in two dimensions. Its interfacial free energy is
+
+$$
+F_{\mathrm{int}} = 2\pi R\sigma.
+$$
+
+The thermodynamic force tending to reduce $R$ is obtained from the change of free energy with radius,
+
+$$
+-\frac{dF_{\mathrm{int}}}{dR}=-2\pi\sigma.
+$$
+
+This force acts around an interface of length $2\pi R$, so the driving force per unit length of interface is
+
+$$
+\frac{1}{2\pi R}\left|\frac{dF_{\mathrm{int}}}{dR}\right|
+=\frac{\sigma}{R}.
+$$
+
+Since the curvature of a circle is $\kappa=1/R$, the local driving force is therefore proportional to curvature,
+
+$$
+\text{driving force} \sim \sigma\kappa.
+$$
+
+For non-conserved dynamics the interface responds locally to this force. Assuming overdamped dynamics, its velocity is proportional to the local driving force, giving
+
+$$
+v\propto\kappa.
+$$
+
+Thus for domains of typical size $L$,
+
+$$
+v\sim\frac{1}{L}.
+$$
+
+Small, highly curved domains therefore shrink faster than large ones.
+:::
 ---
 
 ### Conserved Order Parameter Dynamics (Model B)
 
-For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model 
-with spin-swap (so called 'Kawasaki') dynamics, the order parameter (e.g., composition or particle number) must be conserved locally. 
-This imposes a diffusive constraint on the dynamics (so-called 'model B' dynamics).
+For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model with spin-swap (Kawasaki) dynamics, the order parameter must be conserved locally. It cannot simply change at a point: material has to be transported from one region to another. This gives **Model B** dynamics.
 
-The domain size again grows algebraically, but with a different exponent:
+In this case the functional derivative of the free energy plays the role of a local chemical potential,
 
 $$
-L(t) \sim t^{1/3},
+\mu(\mathbf r)=\frac{\delta F[\phi]}{\delta\phi(\mathbf r)}.
 $$
 
-corresponding to a dynamic exponent $z = 3$.
-
-A chemical potential difference drives diffusion and is given by
-$$
-\Delta \mu \sim \frac{\sigma}{L}
-$$
-(again due to curvature, where $\sigma$ is surface tension)
-
-Now the flux is proportional to the chemical potential gradient (Fick's law):
-$$
-\text{Flux} \sim -\nabla \mu \sim \frac{\Delta \mu}{L} \sim \frac{\sigma}{L^2}
-$$
-
-and the rate of change of domain size is proportional to this flux:
-$$
-\frac{dL}{dt} \sim \frac{1}{L^2}
-\quad\Rightarrow\quad
-L(t) \sim t^{1/3}
-$$
-
-It turns out that the detailed dynamics are described by the **Cahn–Hilliard equation**, a continuity equation of the form:
+Surface tension means that material in a small, highly curved domain has a higher chemical potential than material in a large, more weakly curved domain. This is because small domains have a larger interfacial free-energy cost relative to their volume. Since the curvature of a domain of size $L$ is of order $1/L$, the resulting chemical-potential difference scales as
 
 $$
-\frac{\partial \phi}{\partial t} = \nabla^2 \left( \frac{\delta F[\phi]}{\delta \phi} \right),
+\Delta\mu\sim\frac{\sigma}{L}.
 $$
 
-reflecting that the order parameter can only evolve via diffusion of its conjugate chemical potential.
-This leads to the slow transport of material across domains and a more sluggish coarsening process compared to the non-conserved case.
+This is a curvature-induced chemical-potential difference. It should not be confused with the bulk $\Delta\mu$ introduced earlier as the driving force for nucleation. At late times the bulk phases are already close to coexistence; the remaining driving force comes mainly from interfaces.
+
+Material diffuses down gradients in chemical potential. The flux is therefore
+
+$$
+\mathbf J=-M\nabla\mu,
+$$
+
+where $M$ is a mobility. Neighbouring domains are typically separated by a distance of order $L$, so this chemical-potential difference occurs over a distance of the same order. Hence
+
+$$
+|\nabla\mu|\sim\frac{\Delta\mu}{L}\sim\frac{\sigma}{L^2}.
+$$
+
+The rate of change of domain size therefore scales as
+
+$$
+\frac{dL}{dt}\sim\frac{1}{L^2},
+$$
+
+which gives
+
+$$
+L(t)\sim t^{1/3}.
+$$
+
+Thus conserved dynamics coarsen more slowly because growth requires diffusion of material over increasing distances.
+
+The corresponding coarse-grained dynamics are described by the **Cahn--Hilliard equation**:
+
+$$
+\frac{\partial\phi}{\partial t}
+=\nabla\cdot\left(M\nabla\mu\right)
+=\nabla\cdot\left[M\nabla\left(\frac{\delta F[\phi]}{\delta\phi}\right)\right].
+$$
+
+For constant mobility $M$ this reduces to
+
+$$
+\frac{\partial\phi}{\partial t}
+=M\nabla^2\left(\frac{\delta F[\phi]}{\delta\phi}\right).
+$$
 
 ### Schematic of Domain Growth in 2D Ising model
 
 Here are schematic illustrations of domain growth for:
 
-* Non-conserved dynamics (Model A): Domains coarsen rapidly, with smoother and larger regions due to free relaxation of the order parameter.
+* Non-conserved dynamics (Model A): Domains coarsen rapidly because the order parameter can relax locally.
 
-* Conserved dynamics (Model B): Coarsening is slower and domains are more intricate, reflecting the constraint of local conservation.
+* Conserved dynamics (Model B): Coarsening is slower because material has to be transported between domains.
 
-::: {#fig-growth layout-ncol=2}
-![Non-Conserved Dynamics (Model A)](Figs/non_conserved_domains.png)
 
-![Conserved Dynamics (Model B)](Figs/conserved_domains.png)
+::: {#fig-domain-growth}
 
-Schematic illustrations of domain morphology resulting from spinodal decomposition or late-time domain growth for non-conserved and conserved dynamics.
+```{=html}
+<style>
+    .sim-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+    .sim-panel {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+    .sim-title { margin-top: 0; font-size: 1.2rem; font-weight: bold; }
+    .sim-law { font-size: 0.9rem; color: #0066cc; font-weight: bold; margin-bottom: 10px; }
+    .sim-canvas {
+        background: #000;
+        border-radius: 4px;
+        display: block;
+    }
+    .sim-controls {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .sim-btn {
+        background-color: #0071e3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 0 10px;
+        font-weight: 500;
+    }
+    .sim-btn:hover { background-color: #0077ed; }
+    .sim-btn-secondary { background-color: #86868b; }
+    .sim-btn-secondary:hover { background-color: #98989d; }
+</style>
+
+<div class="sim-container">
+    <div class="sim-panel">
+        <div class="sim-title">Model A (Allen-Cahn)</div>
+        <div class="sim-law">Non-Conserved Order Parameter: L(t) ~ t¹ᐟ²</div>
+        <canvas id="canvasA" width="250" height="250" class="sim-canvas"></canvas>
+    </div>
+
+    <div class="sim-panel">
+        <div class="sim-title">Model B (Cahn-Hilliard)</div>
+        <div class="sim-law">Conserved Order Parameter: L(t) ~ t¹ᐟ³</div>
+        <canvas id="canvasB" width="250" height="250" class="sim-canvas"></canvas>
+    </div>
+</div>
+
+<div class="sim-controls">
+    <button id="btnPause" class="sim-btn">Pause</button>
+    <button id="btnReset" class="sim-btn sim-btn-secondary">Reset / Sync States</button>
+</div>
+
+<script>
+    (function() {
+        const N = 128;
+        const canvasA = document.getElementById("canvasA");
+        const canvasB = document.getElementById("canvasB");
+        const ctxA = canvasA.getContext("2d");
+        const ctxB = canvasB.getContext("2d");
+
+        const dtA = 0.1;       
+        const dtB = 0.01;      
+        const modelB_substeps = 40; 
+
+        let phiA = new Float32Array(N * N);
+        let phiB = new Float32Array(N * N);
+        let nextPhi = new Float32Array(N * N);
+        let mu = new Float32Array(N * N); 
+
+        let isRunning = true;
+
+        function idx(x, y) {
+            return ((x + N) % N) + ((y + N) % N) * N;
+        }
+
+        function initGrids() {
+            for (let i = 0; i < N * N; i++) {
+                const val = (Math.random() - 0.5) * 0.2; 
+                phiA[i] = val;
+                phiB[i] = val;
+            }
+        }
+
+        function laplacian(grid, x, y) {
+            const center = grid[idx(x, y)];
+            return grid[idx(x - 1, y)] + grid[idx(x + 1, y)] + grid[idx(x, y - 1)] + grid[idx(x, y + 1)] - 4 * center;
+        }
+
+        function stepModelA() {
+            for (let y = 0; y < N; y++) {
+                for (let x = 0; x < N; x++) {
+                    const i = idx(x, y);
+                    const p = phiA[i];
+                    nextPhi[i] = p + dtA * (laplacian(phiA, x, y) + (p - p * p * p));
+                }
+            }
+            let temp = phiA; phiA = nextPhi; nextPhi = temp;
+        }
+
+        function stepModelB() {
+            for (let sub = 0; sub < modelB_substeps; sub++) {
+                for (let y = 0; y < N; y++) {
+                    for (let x = 0; x < N; x++) {
+                        const i = idx(x, y);
+                        const p = phiB[i];
+                        mu[i] = -laplacian(phiB, x, y) - p + p * p * p;
+                    }
+                }
+                for (let y = 0; y < N; y++) {
+                    for (let x = 0; x < N; x++) {
+                        const i = idx(x, y);
+                        nextPhi[i] = phiB[i] + dtB * laplacian(mu, x, y);
+                    }
+                }
+                let temp = phiB; phiB = nextPhi; nextPhi = temp;
+            }
+        }
+
+        function draw(grid, ctx, imgData) {
+            const data = imgData.data;
+            const cWidth = canvasA.width;
+            const scale = cWidth / N;
+            for (let y = 0; y < cWidth; y++) {
+                const srcY = Math.floor(y / scale);
+                for (let x = 0; x < cWidth; x++) {
+                    const srcX = Math.floor(x / scale);
+                    let norm = Math.floor((grid[srcX + srcY * N] + 1) * 127.5);
+                    norm = Math.max(0, Math.min(255, norm));
+                    const pIdx = (x + y * cWidth) * 4;
+                    data[pIdx] = data[pIdx+1] = data[pIdx+2] = norm;
+                    data[pIdx+3] = 255;
+                }
+            }
+            ctx.putImageData(imgData, 0, 0);
+        }
+
+        const imgDataA = ctxA.createImageData(canvasA.width, canvasA.height);
+        const imgDataB = ctxB.createImageData(canvasB.width, canvasB.height);
+
+        function update() {
+            if (isRunning) {
+                stepModelA();
+                stepModelB();
+            }
+            draw(phiA, ctxA, imgDataA);
+            draw(phiB, ctxB, imgDataB);
+            requestAnimationFrame(update);
+        }
+
+        document.getElementById("btnPause").addEventListener("click", (e) => {
+            isRunning = !isRunning;
+            e.target.innerText = isRunning ? "Pause" : "Resume";
+        });
+
+        document.getElementById("btnReset").addEventListener("click", () => {
+            initGrids();
+            if (!isRunning) {
+                draw(phiA, ctxA, imgDataA);
+                draw(phiB, ctxB, imgDataB);
+            }
+        });
+
+        initGrids();
+        update();
+    })();
+</script>
+```
+
+Interactive side-by-side simulation demonstrating non-conserved domain growth driven by local curvature (Model A) versus conserved phase separation driven by mass diffusion (Model B).
 :::
 
-### Dynamic Scaling Hypothesis
 
+### Dynamic Scaling Hypothesis
 
 At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by $L(t)$.
 
 For example, the equal-time two-point correlation function satisfies
 
 $$
-C(r, t) = f\left(\frac{r}{L(t)}\right),
+C(r,t)=f\left(\frac{r}{L(t)}\right),
 $$
 
-where $f(x)$ is a time-independent scaling function. Plots of $C(r, t)$ collapse when plotted as a function of $r/L(t)$.
+where $f(x)$ is a time-independent scaling function. Plots of $C(r,t)$ collapse when plotted as a function of $r/L(t)$.
 
-The structure factor $S(k, t)$, which is the Fourier transform of the correlation function, is experimentally accessible eg via X-ray or neutron scattering, and also obeys dynamic scaling:
-
-$$
-S(k, t) = \int d^d r \, e^{-i \vec{k} \cdot \vec{r}} \, C(r, t).
-$$
-
-Substituting the scaling form of $C(r, t)$ into this expression, and changing variables to $\vec{u} = \vec{r}/L(t)$, gives:
+The structure factor $S(k,t)$, which is the Fourier transform of the correlation function, is experimentally accessible, for example via X-ray or neutron scattering, and also obeys dynamic scaling:
 
 $$
-S(k, t) = L(t)^d \int d^d u \, e^{-i \vec{k} \cdot L(t) \vec{u}} \, f(u) = L(t)^d \, g(kL(t)),
+S(k,t)=\int d^dr\,e^{-i\vec{k}\cdot\vec{r}}\,C(r,t).
 $$
 
-with $g(x)$ a universal scaling function dependent on the dynamical class and dimensionality.
+Substituting the scaling form of $C(r,t)$ into this expression, and changing variables to $\vec{u}=\vec{r}/L(t)$, gives
 
+$$
+S(k,t)=L(t)^d\int d^du\,e^{-i\vec{k}\cdot L(t)\vec{u}}f(u)
+=L(t)^d g(kL(t)),
+$$
 
+with $g(x)$ a scaling function.
 
 ### Summary of Growth Laws
 
-| Dynamics Type              | Conservation | Equation Type         | Growth Law            | Dynamic Exponent |
-|---------------------------|--------------|------------------------|------------------------|------------------|
-| Model A (e.g. Glauber)    | No           | Allen–Cahn             | $L(t) \sim t^{1/2}$    | $z = 2$          |
-| Model B (e.g. Kawasaki)   | Yes          | Cahn–Hilliard          | $L(t) \sim t^{1/3}$    | $z = 3$          |
+| Dynamics Type           | Conservation | Equation Type          | Growth Law         | Dynamic Exponent |
+|-------------------------|--------------|------------------------|--------------------|------------------|
+| Model A (e.g. Glauber)  | No           | Allen--Cahn            | $L(t)\sim t^{1/2}$ | $z=2$            |
+| Model B (e.g. Kawasaki) | Yes          | Cahn--Hilliard         | $L(t)\sim t^{1/3}$ | $z=3$            |
 
 ---
 
-
-
->  Remarks: 
-The domain growth exponents $1/z$ are robust under many conditions, but can be modified in the presence of disorder, long-range interactions, or hydrodynamic effects.
-
-> In both the model A and model B cases, the system coarsens until it reaches equilibrium, characterized by a uniform macroscopic phase and the complete elimination of interfaces.
-
->  The approach to equilibrium is algebraically slow (described by power laws) due to the scale-free nature of domain dynamics.
-
-
+> Remarks:
+>
+> The domain-growth exponents $1/z$ are robust under many conditions, but can be modified in the presence of disorder, long-range interactions or hydrodynamic effects.
+>
+> In Model A the system can ultimately reach a uniform equilibrium phase because the order parameter is not conserved. In Model B the overall composition is fixed, so the equilibrium state will in general still contain both phases if the mean composition lies inside the two-phase region.
+>
+> The approach to equilibrium is algebraically slow because coarsening involves structures on an ever-increasing length scale.
 
 More about the scientists mentioned in this chapter:
 
