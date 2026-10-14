@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>10&nbsp; Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -38,10 +44,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f22b733819789c3b94469819c4966741.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -75,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -88,7 +94,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -130,7 +136,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -239,22 +246,33 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">First experimental interlude</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/PDF_notes/notes.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes as pdf</span></a>
+  <a href="../experimental/part0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparing your computer for the first experimental interlude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Solutions to problems</span></a>
+  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">First coursework assignment</span></a>
+  <a href="../experimental/part2New.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
       </ul>
@@ -270,7 +288,10 @@ window.Quarto = {
    
   <ul>
   <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</a></li>
-  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a></li>
+  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a>
+  <ul class="collapse">
+  <li><a href="#interpretation-and-scaling-behaviour" id="toc-interpretation-and-scaling-behaviour" class="nav-link" data-scroll-target="#interpretation-and-scaling-behaviour"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behaviour</a></li>
+  </ul></li>
   <li><a href="#domain-growth" id="toc-domain-growth" class="nav-link" data-scroll-target="#domain-growth"><span class="header-section-number">10.3</span> Domain growth</a></li>
   <li><a href="#spinodal-decomposition" id="toc-spinodal-decomposition" class="nav-link" data-scroll-target="#spinodal-decomposition"><span class="header-section-number">10.4</span> Spinodal decomposition</a>
   <ul class="collapse">
@@ -354,7 +375,7 @@ window.Quarto = {
 <p>The total free-energy change is therefore</p>
 <p><span class="math display">\[
 \Delta F(R)=\sigma S_dR^{d-1}-\Delta f\,V_dR^d.
-\]</span> (here for clarity we have not made the temperature dependence explicit, but both the surface tension <span class="math inline">\(\sigma\)</span> and the bulk free-energy density difference <span class="math inline">\(\Delta f\)</span> generally depend on <span class="math inline">\(T\)</span>.)</p>
+\]</span></p>
 <p>For small droplets the surface term dominates, so increasing the droplet size raises the free energy. For sufficiently large droplets the bulk term dominates and further growth lowers the free energy. The resulting free-energy barrier is shown schematically in <a href="#fig-cnt-schem" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>.</p>
 <p>The maximum occurs at the critical droplet radius <span class="math inline">\(R_c\)</span>, obtained from</p>
 <p><span class="math display">\[
@@ -386,7 +407,8 @@ Figure&nbsp;10.1: Free-energy barrier <span class="math inline">\(\Delta F(R)\)<
 I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
 \]</span></p>
 <p>where <span class="math inline">\(I_0\)</span> is a prefactor determined by microscopic kinetics.</p>
-<p><strong>Interpretation and Scaling Behaviour</strong></p>
+<section id="interpretation-and-scaling-behaviour" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="interpretation-and-scaling-behaviour"><span class="header-section-number">10.2.1</span> Interpretation and Scaling Behaviour</h3>
 <p>Several key features follow immediately:</p>
 <ul>
 <li><strong>Critical radius</strong>: <span class="math inline">\(R_c\sim\sigma/\Delta f\)</span>, so the critical droplet becomes very large as <span class="math inline">\(\Delta f\to0\)</span>.</li>
@@ -394,6 +416,7 @@ I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
 <li><strong>Moving away from coexistence</strong>: Increasing the bulk driving force <span class="math inline">\(\Delta f\)</span> (or equivalently <span class="math inline">\(\Delta\mu\)</span>) reduces both <span class="math inline">\(R_c\)</span> and the barrier, making nucleation easier.</li>
 </ul>
 <p>Thus homogeneous nucleation is governed by a competition between the bulk thermodynamic driving force and the interfacial free-energy cost. Close to coexistence the bulk driving force is weak and nucleation can be extremely slow.</p>
+</section>
 </section>
 <section id="domain-growth" class="level2" data-number="10.3">
 <h2 data-number="10.3" class="anchored" data-anchor-id="domain-growth"><span class="header-section-number">10.3</span> Domain growth</h2>
@@ -501,12 +524,12 @@ L(t)\sim t^{1/2},
 \]</span></p>
 <p>corresponding to a dynamic exponent <span class="math inline">\(z=2\)</span>. Small, highly curved domains disappear while the typical domain size grows.</p>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why is the interface velocity proportional to curvature? (non examinable)
+<span class="screen-reader-only">Caution</span>Why is the interface velocity proportional to curvature? (non examinable)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -554,54 +577,6 @@ v\sim\frac{1}{L}.
 <p><span class="math display">\[
 \Delta\mu\sim\frac{\sigma}{L}.
 \]</span></p>
-<div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Why does the chemical-potential difference scale as <span class="math inline">\(1/L\)</span>? (non-examinable)
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A curved interface raises the chemical potential of material in a finite domain. For a domain of typical size <span class="math inline">\(L\)</span>, the interfacial free energy scales as</p>
-<p><span class="math display">\[
-F_{\mathrm{int}} \sim \sigma L^{d-1},
-\]</span></p>
-<p>while the amount of material in the domain scales as</p>
-<p><span class="math display">\[
-N \sim L^d.
-\]</span></p>
-<p>The excess chemical potential associated with the interface is therefore of order</p>
-<p><span class="math display">\[
-\Delta \mu
-\sim
-\frac{dF_{\mathrm{int}}}{dN}
-=
-\frac{dF_{\mathrm{int}}/dL}{dN/dL}.
-\]</span></p>
-<p>Using</p>
-<p><span class="math display">\[
-\frac{dF_{\mathrm{int}}}{dL}
-\sim
-\sigma L^{d-2},
-\qquad
-\frac{dN}{dL}
-\sim
-L^{d-1},
-\]</span></p>
-<p>gives</p>
-<p><span class="math display">\[
-\Delta \mu
-\sim
-\frac{\sigma}{L}.
-\]</span></p>
-<p>Thus small, highly curved domains have a higher chemical potential than larger ones.</p>
-</div>
-</div>
-</div>
 <p>This is a curvature-induced chemical-potential difference. It should not be confused with the bulk <span class="math inline">\(\Delta\mu\)</span> introduced earlier as the driving force for nucleation. At late times the bulk phases are already close to coexistence; the remaining driving force comes mainly from interfaces.</p>
 <p>Material diffuses down gradients in chemical potential. The flux is therefore</p>
 <p><span class="math display">\[
@@ -650,7 +625,6 @@ L(t)\sim t^{1/3}.
         margin-bottom: 25px;
         flex-wrap: wrap;
     }
-
     .sim-panel {
         background: white;
         padding: 15px;
@@ -658,31 +632,17 @@ L(t)\sim t^{1/3}.
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         text-align: center;
     }
-
-    .sim-title {
-        margin-top: 0;
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
-
-    .sim-law {
-        font-size: 0.9rem;
-        color: #0066cc;
-        font-weight: bold;
-        margin-bottom: 10px;
-    }
-
+    .sim-title { margin-top: 0; font-size: 1.2rem; font-weight: bold; }
+    .sim-law { font-size: 0.9rem; color: #0066cc; font-weight: bold; margin-bottom: 10px; }
     .sim-canvas {
         background: #000;
         border-radius: 4px;
         display: block;
     }
-
     .sim-controls {
         text-align: center;
         margin-top: 20px;
     }
-
     .sim-btn {
         background-color: #0071e3;
         color: white;
@@ -694,18 +654,9 @@ L(t)\sim t^{1/3}.
         margin: 0 10px;
         font-weight: 500;
     }
-
-    .sim-btn:hover {
-        background-color: #0077ed;
-    }
-
-    .sim-btn-secondary {
-        background-color: #86868b;
-    }
-
-    .sim-btn-secondary:hover {
-        background-color: #98989d;
-    }
+    .sim-btn:hover { background-color: #0077ed; }
+    .sim-btn-secondary { background-color: #86868b; }
+    .sim-btn-secondary:hover { background-color: #98989d; }
 </style>
 
 <div class="sim-container">
@@ -728,223 +679,118 @@ L(t)\sim t^{1/3}.
 </div>
 
 <script>
-(function() {
-    const N = 128;
+    (function() {
+        const N = 128;
+        const canvasA = document.getElementById("canvasA");
+        const canvasB = document.getElementById("canvasB");
+        const ctxA = canvasA.getContext("2d");
+        const ctxB = canvasB.getContext("2d");
 
-    const canvasA = document.getElementById("canvasA");
-    const canvasB = document.getElementById("canvasB");
+        const dtA = 0.1;       
+        const dtB = 0.01;      
+        const modelB_substeps = 40; 
 
-    const ctxA = canvasA.getContext("2d");
-    const ctxB = canvasB.getContext("2d");
+        let phiA = new Float32Array(N * N);
+        let phiB = new Float32Array(N * N);
+        let nextPhi = new Float32Array(N * N);
+        let mu = new Float32Array(N * N); 
 
-    const dtA = 0.1;
-    const dtB = 0.01;
-    const modelB_substeps = 40;
+        let isRunning = true;
 
-    let phiA = new Float32Array(N * N);
-    let phiB = new Float32Array(N * N);
-    let nextPhi = new Float32Array(N * N);
-    let mu = new Float32Array(N * N);
-
-    let isRunning = true;
-    let animationFrameId = null;
-    let elapsedRunning = 0;
-    let lastTimestamp = null;
-    const autoPauseAfter = 12000; // milliseconds
-
-    function idx(x, y) {
-        return ((x + N) % N) + ((y + N) % N) * N;
-    }
-
-    function initGrids() {
-        for (let i = 0; i < N * N; i++) {
-            const val = (Math.random() - 0.5) * 0.2;
-            phiA[i] = val;
-            phiB[i] = val;
+        function idx(x, y) {
+            return ((x + N) % N) + ((y + N) % N) * N;
         }
-    }
 
-    function laplacian(grid, x, y) {
-        const center = grid[idx(x, y)];
-
-        return (
-            grid[idx(x - 1, y)] +
-            grid[idx(x + 1, y)] +
-            grid[idx(x, y - 1)] +
-            grid[idx(x, y + 1)] -
-            4 * center
-        );
-    }
-
-    function stepModelA() {
-        for (let y = 0; y < N; y++) {
-            for (let x = 0; x < N; x++) {
-                const i = idx(x, y);
-                const p = phiA[i];
-
-                nextPhi[i] =
-                    p +
-                    dtA * (
-                        laplacian(phiA, x, y) +
-                        (p - p * p * p)
-                    );
+        function initGrids() {
+            for (let i = 0; i < N * N; i++) {
+                const val = (Math.random() - 0.5) * 0.2; 
+                phiA[i] = val;
+                phiB[i] = val;
             }
         }
 
-        let temp = phiA;
-        phiA = nextPhi;
-        nextPhi = temp;
-    }
+        function laplacian(grid, x, y) {
+            const center = grid[idx(x, y)];
+            return grid[idx(x - 1, y)] + grid[idx(x + 1, y)] + grid[idx(x, y - 1)] + grid[idx(x, y + 1)] - 4 * center;
+        }
 
-    function stepModelB() {
-        for (let sub = 0; sub < modelB_substeps; sub++) {
-
+        function stepModelA() {
             for (let y = 0; y < N; y++) {
                 for (let x = 0; x < N; x++) {
                     const i = idx(x, y);
-                    const p = phiB[i];
-
-                    mu[i] =
-                        -laplacian(phiB, x, y)
-                        - p
-                        + p * p * p;
+                    const p = phiA[i];
+                    nextPhi[i] = p + dtA * (laplacian(phiA, x, y) + (p - p * p * p));
                 }
             }
+            let temp = phiA; phiA = nextPhi; nextPhi = temp;
+        }
 
-            for (let y = 0; y < N; y++) {
-                for (let x = 0; x < N; x++) {
-                    const i = idx(x, y);
+        function stepModelB() {
+            for (let sub = 0; sub < modelB_substeps; sub++) {
+                for (let y = 0; y < N; y++) {
+                    for (let x = 0; x < N; x++) {
+                        const i = idx(x, y);
+                        const p = phiB[i];
+                        mu[i] = -laplacian(phiB, x, y) - p + p * p * p;
+                    }
+                }
+                for (let y = 0; y < N; y++) {
+                    for (let x = 0; x < N; x++) {
+                        const i = idx(x, y);
+                        nextPhi[i] = phiB[i] + dtB * laplacian(mu, x, y);
+                    }
+                }
+                let temp = phiB; phiB = nextPhi; nextPhi = temp;
+            }
+        }
 
-                    nextPhi[i] =
-                        phiB[i] +
-                        dtB * laplacian(mu, x, y);
+        function draw(grid, ctx, imgData) {
+            const data = imgData.data;
+            const cWidth = canvasA.width;
+            const scale = cWidth / N;
+            for (let y = 0; y < cWidth; y++) {
+                const srcY = Math.floor(y / scale);
+                for (let x = 0; x < cWidth; x++) {
+                    const srcX = Math.floor(x / scale);
+                    let norm = Math.floor((grid[srcX + srcY * N] + 1) * 127.5);
+                    norm = Math.max(0, Math.min(255, norm));
+                    const pIdx = (x + y * cWidth) * 4;
+                    data[pIdx] = data[pIdx+1] = data[pIdx+2] = norm;
+                    data[pIdx+3] = 255;
                 }
             }
-
-            let temp = phiB;
-            phiB = nextPhi;
-            nextPhi = temp;
-        }
-    }
-
-    function draw(grid, ctx, imgData) {
-        const data = imgData.data;
-        const cWidth = ctx.canvas.width;
-        const cHeight = ctx.canvas.height;
-
-        const scaleX = cWidth / N;
-        const scaleY = cHeight / N;
-
-        for (let y = 0; y < cHeight; y++) {
-            const srcY = Math.floor(y / scaleY);
-
-            for (let x = 0; x < cWidth; x++) {
-                const srcX = Math.floor(x / scaleX);
-
-                let norm = Math.floor(
-                    (grid[srcX + srcY * N] + 1) * 127.5
-                );
-
-                norm = Math.max(0, Math.min(255, norm));
-
-                const pIdx = (x + y * cWidth) * 4;
-
-                data[pIdx] = norm;
-                data[pIdx + 1] = norm;
-                data[pIdx + 2] = norm;
-                data[pIdx + 3] = 255;
-            }
+            ctx.putImageData(imgData, 0, 0);
         }
 
-        ctx.putImageData(imgData, 0, 0);
-    }
+        const imgDataA = ctxA.createImageData(canvasA.width, canvasA.height);
+        const imgDataB = ctxB.createImageData(canvasB.width, canvasB.height);
 
-    const imgDataA =
-        ctxA.createImageData(canvasA.width, canvasA.height);
-
-    const imgDataB =
-        ctxB.createImageData(canvasB.width, canvasB.height);
-
-    function update(timestamp) {
-        if (!isRunning) {
-            animationFrameId = null;
-            return;
-        }
-
-        if (lastTimestamp === null) {
-            lastTimestamp = timestamp;
-        }
-
-        elapsedRunning += timestamp - lastTimestamp;
-        lastTimestamp = timestamp;
-
-        stepModelA();
-        stepModelB();
-
-        draw(phiA, ctxA, imgDataA);
-        draw(phiB, ctxB, imgDataB);
-
-        if (elapsedRunning >= autoPauseAfter) {
-            isRunning = false;
-            animationFrameId = null;
-            document.getElementById("btnPause").innerText = "Resume";
-            return;
-        }
-
-        animationFrameId = requestAnimationFrame(update);
-    }
-
-    function startAnimation() {
-        if (isRunning && animationFrameId === null) {
-            lastTimestamp = null;
-            animationFrameId = requestAnimationFrame(update);
-        }
-    }
-
-    document
-        .getElementById("btnPause")
-        .addEventListener("click", (e) => {
+        function update() {
             if (isRunning) {
-                isRunning = false;
-                if (animationFrameId !== null) {
-                    cancelAnimationFrame(animationFrameId);
-                    animationFrameId = null;
-                }
-                e.target.innerText = "Resume";
-            } else {
-                isRunning = true;
-                elapsedRunning = 0;
-                lastTimestamp = null;
-                e.target.innerText = "Pause";
-                startAnimation();
+                stepModelA();
+                stepModelB();
             }
-        });
-
-    document
-        .getElementById("btnReset")
-        .addEventListener("click", () => {
-            if (animationFrameId !== null) {
-                cancelAnimationFrame(animationFrameId);
-                animationFrameId = null;
-            }
-
-            initGrids();
-            elapsedRunning = 0;
-            lastTimestamp = null;
-            isRunning = true;
-
-            document.getElementById("btnPause").innerText = "Pause";
-
             draw(phiA, ctxA, imgDataA);
             draw(phiB, ctxB, imgDataB);
-            startAnimation();
+            requestAnimationFrame(update);
+        }
+
+        document.getElementById("btnPause").addEventListener("click", (e) => {
+            isRunning = !isRunning;
+            e.target.innerText = isRunning ? "Pause" : "Resume";
         });
 
-    initGrids();
-    draw(phiA, ctxA, imgDataA);
-    draw(phiB, ctxB, imgDataB);
-    startAnimation();
-})();
+        document.getElementById("btnReset").addEventListener("click", () => {
+            initGrids();
+            if (!isRunning) {
+                draw(phiA, ctxA, imgDataA);
+                draw(phiB, ctxB, imgDataB);
+            }
+        });
+
+        initGrids();
+        update();
+    })();
 </script>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-domain-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -1099,13 +945,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
