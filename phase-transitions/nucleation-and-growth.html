@@ -413,8 +413,9 @@ I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
 </section>
 <section id="spinodal-decomposition" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="spinodal-decomposition"><span class="header-section-number">10.4</span> Spinodal decomposition</h2>
-<p>So far we have considered a state point just inside the coexistence region, where the original phase remains metastable. The system must then wait for a sufficiently large fluctuation to create a critical nucleus.</p>
-<p>Now imagine moving much farther into the coexistence region, as illustrated in <a href="#fig-spinodal" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>, until the metastable minimum in the free energy disappears. The original phase is then <em>unstable</em> rather than metastable. There is no nucleation barrier: small fluctuations can lower the free energy and begin to grow throughout the system. These growing fluctuations develop into regions rich in each of the two equilibrium phases, producing a domain pattern. At later times the domains coarsen: small domains disappear and the typical domain size increases. This process is called <em>spinodal decomposition</em>.</p>
+<p>So far we have considered a state in which the original phase is metastable. It corresponds to a local minimum of the free energy, and the system must therefore wait for a sufficiently large fluctuation to create a critical nucleus.</p>
+<p>Spinodal decomposition occurs when the initial homogeneous state is instead <em>unstable</em>. Small fluctuations can then lower the free energy and grow spontaneously, so there is no nucleation barrier.</p>
+<p>For example, at fixed <span class="math inline">\(T&lt;T_c\)</span> in the Ising model, increasing a field opposed to the initial magnetisation eventually causes the metastable minimum to disappear, as illustrated in <a href="#fig-spinodal" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>.</p>
 <div id="fig-spinodal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-spinodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -425,15 +426,19 @@ Figure&nbsp;10.2: Schematic phase diagram for a magnet showing the regions in wh
 </figcaption>
 </figure>
 </div>
-<p>If <span class="math inline">\(F(Q)\)</span> is the free energy as a function of an order parameter <span class="math inline">\(Q\)</span>, the spinodal occurs when the metastable minimum merges with the neighbouring maximum. Thus</p>
+<p>The same type of instability occurs following a temperature quench. If a system at <span class="math inline">\(H=0\)</span> is quenched from <span class="math inline">\(T&gt;T_c\)</span> to <span class="math inline">\(T&lt;T_c\)</span>, the initially homogeneous state with <span class="math inline">\(m\simeq0\)</span> becomes unstable and fluctuations towards positive and negative magnetisation grow to form domains.</p>
+<p>If <span class="math inline">\(F(Q)\)</span> is the free energy as a function of an order parameter <span class="math inline">\(Q\)</span>, the spinodal marks the point at which a metastable minimum disappears:</p>
 <p><span class="math display">\[
 \frac{\partial F}{\partial Q}=0,
 \qquad
-\frac{\partial^2F}{\partial Q^2}=0.
+\frac{\partial^2 F}{\partial Q^2}=0.
 \]</span></p>
-<p>Inside the unstable region the curvature of the free energy is negative, so small fluctuations can grow rather than having to cross a nucleation barrier.</p>
-<p>After either nucleation and growth or spinodal decomposition, the system generally enters a late-time coarsening regime. The nature of this coarsening depends strongly on whether the order parameter is conserved.</p>
-<hr>
+<p>Within the unstable region the curvature is negative,</p>
+<p><span class="math display">\[
+\frac{\partial^2 F}{\partial Q^2}&lt;0,
+\]</span></p>
+<p>so small fluctuations grow rather than having to cross a nucleation barrier.</p>
+<p>The resulting domains subsequently coarsen, with small domains disappearing and the typical domain size increasing. The nature of this late-time coarsening depends strongly on whether the order parameter is conserved.</p>
 <section id="non-conserved-order-parameter-dynamics-model-a" class="level3" data-number="10.4.1">
 <h3 data-number="10.4.1" class="anchored" data-anchor-id="non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.4.1</span> Non-Conserved Order Parameter Dynamics (Model A)</h3>
 <p>In systems with a non-conserved order parameter, such as the Ising model with single-spin-flip (Glauber) dynamics, the order parameter can relax locally without any conservation constraint. This is called <strong>Model A</strong> dynamics.</p>
