@@ -471,23 +471,38 @@ L(t)\sim t^{1/2},
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Why is the interface velocity proportional to curvature?
+Why is the interface velocity proportional to curvature? (non examinable)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Surface tension acts to reduce the amount of interface. A curved interface can lower its free energy by moving towards its centre of curvature.</p>
-<p>For a domain of typical size (L), the curvature is of order</p>
+<p>Consider a circular domain of radius <span class="math inline">\(R\)</span> in two dimensions. Its interfacial free energy is</p>
 <p><span class="math display">\[
-\kappa \sim \frac{1}{L}.
+F_{\mathrm{int}} = 2\pi R\sigma.
 \]</span></p>
-<p>In non-conserved (Allen–Cahn) dynamics, the local interface velocity is proportional to this thermodynamic driving force, so</p>
+<p>The thermodynamic force tending to reduce <span class="math inline">\(R\)</span> is obtained from the change of free energy with radius,</p>
 <p><span class="math display">\[
-v \propto \kappa
-\sim \frac{1}{L}.
+-\frac{dF_{\mathrm{int}}}{dR}=-2\pi\sigma.
 \]</span></p>
-<p>Thus small, highly curved domains shrink faster than large, weakly curved ones.</p>
+<p>This force acts around an interface of length <span class="math inline">\(2\pi R\)</span>, so the driving force per unit length of interface is</p>
+<p><span class="math display">\[
+\frac{1}{2\pi R}\left|\frac{dF_{\mathrm{int}}}{dR}\right|
+=\frac{\sigma}{R}.
+\]</span></p>
+<p>Since the curvature of a circle is <span class="math inline">\(\kappa=1/R\)</span>, the local driving force is therefore proportional to curvature,</p>
+<p><span class="math display">\[
+\text{driving force} \sim \sigma\kappa.
+\]</span></p>
+<p>For non-conserved dynamics the interface responds locally to this force. Assuming overdamped dynamics, its velocity is proportional to the local driving force, giving</p>
+<p><span class="math display">\[
+v\propto\kappa.
+\]</span></p>
+<p>Thus for domains of typical size <span class="math inline">\(L\)</span>,</p>
+<p><span class="math display">\[
+v\sim\frac{1}{L}.
+\]</span></p>
+<p>Small, highly curved domains therefore shrink faster than large ones.</p>
 </div>
 </div>
 </div>
