@@ -283,7 +283,7 @@ window.Quarto = {
   <li><a href="#colloidal-diffusion" id="toc-colloidal-diffusion" class="nav-link" data-scroll-target="#colloidal-diffusion">12. Colloidal diffusion</a></li>
   <li><a href="#einsteins-expression-for-the-diffusion-coefficient" id="toc-einsteins-expression-for-the-diffusion-coefficient" class="nav-link" data-scroll-target="#einsteins-expression-for-the-diffusion-coefficient">13. Einstein’s expression for the diffusion coefficient</a></li>
   <li><a href="#master-equation" id="toc-master-equation" class="nav-link" data-scroll-target="#master-equation">14. Master equation</a></li>
-  <li><a href="#detailed-balance" id="toc-detailed-balance" class="nav-link" data-scroll-target="#detailed-balance">15. Detailed balance</a></li>
+  <li><a href="#coarsening-dynamics" id="toc-coarsening-dynamics" class="nav-link" data-scroll-target="#coarsening-dynamics">15. Coarsening dynamics</a></li>
   <li><a href="#jump-processes" id="toc-jump-processes" class="nav-link" data-scroll-target="#jump-processes">16. Jump processes</a></li>
   </ul>
 </nav>
@@ -479,17 +479,58 @@ D = \lim_{t \to \infty} \frac{1}{2t} \langle [X(t) - X(0)]^2 \rangle,
 <p>If at any time <span class="math inline">\(t\)</span> there are <span class="math inline">\(n_+(t)\)</span> atoms at the higher level and <span class="math inline">\(n_-(t)\)</span> at the lower level, then <span class="math inline">\(n(t) = n_-(t) - n_+(t)\)</span> is a convenient measure of the non-equilibrium state.</p>
 <p>Obtain the master equation for <span class="math inline">\(n(t)\)</span> and hence the relaxation time <span class="math inline">\(\tau\)</span> which characterizes the exponential approach of the system to equilibrium.</p>
 <hr>
-</section>
-<section id="detailed-balance" class="level3">
-<h3 class="anchored" data-anchor-id="detailed-balance">15. Detailed balance</h3>
-<p><strong>(a)</strong> Starting from the principle of detailed balance for an isolated system, show that for two groups of states within it, <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, the overall rate of transitions from group <span class="math inline">\(A\)</span> to group <span class="math inline">\(B\)</span> is balanced, in equilibrium, by those from <span class="math inline">\(B\)</span> to <span class="math inline">\(A\)</span>:</p>
-<p><span class="math display">\[
+<!--
+### 15. Detailed balance
+
+**(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states
+ within it, $A$ and $B$, the overall rate of transitions from group $A$ to group $B$ is balanced, in equilibrium, 
+ by those from $B$ to $A$:
+
+$$
 \lambda_{A \to B} p^{\text{eq}}_A = \lambda_{B \to A} p^{\text{eq}}_B
-\]</span></p>
-<p><strong>(b)</strong> Deduce that the principle applies to microstates in the canonical ensemble, and hence that the jump rates between states of a subsystem (of fixed number of particles) connected to a heat bath must obey</p>
-<p><span class="math display">\[
+$$
+
+**(b)** Deduce that the principle applies to microstates in the canonical ensemble, and hence that the jump rates
+ between states of a subsystem (of fixed number of particles) connected to a heat bath must obey
+
+$$
 \frac{\lambda_{i \to j}}{\lambda_{j \to i}} = e^{-(E_j - E_i)/kT}.
+$$
+-->
+</section>
+<section id="coarsening-dynamics" class="level3">
+<h3 class="anchored" data-anchor-id="coarsening-dynamics">15. Coarsening dynamics</h3>
+<p>At late times following phase separation, consider an approximately circular domain of one phase, of radius <span class="math inline">\(R(t)\)</span>, surrounded by the other phase. The two phases are locally close to equilibrium, so the remaining excess free energy is mainly associated with the interface.</p>
+<p><strong>(a)</strong> Explain why a small circular domain tends to shrink even when the two bulk phases have the same free-energy density.</p>
+<p><strong>(b)</strong> For a non-conserved order parameter (Model A), suppose that the normal velocity of the interface is proportional to its curvature,</p>
+<p><span class="math display">\[
+v \sim \frac{1}{R}.
 \]</span></p>
+<p>Taking <span class="math inline">\(v=-dR/dt\)</span> for a shrinking domain, show that</p>
+<p><span class="math display">\[
+R^2(t)=R_0^2-Ct,
+\]</span></p>
+<p>where <span class="math inline">\(C\)</span> is a constant. Hence show that the lifetime of a domain of initial radius <span class="math inline">\(R_0\)</span> scales as</p>
+<p><span class="math display">\[
+\tau_A \sim R_0^2.
+\]</span></p>
+<p><strong>(c)</strong> For a conserved order parameter (Model B), curvature produces a chemical-potential difference of order</p>
+<p><span class="math display">\[
+\Delta\mu \sim \frac{\sigma}{R}.
+\]</span></p>
+<p>Explain why the characteristic chemical-potential gradient is then of order</p>
+<p><span class="math display">\[
+|\nabla\mu| \sim \frac{\sigma}{R^2}.
+\]</span></p>
+<p>Assuming that the diffusive flux is proportional to this gradient, and that the interface velocity is proportional to the flux, show that</p>
+<p><span class="math display">\[
+\frac{dR}{dt}\sim -\frac{1}{R^2},
+\]</span></p>
+<p>and hence that the lifetime scales as</p>
+<p><span class="math display">\[
+\tau_B\sim R_0^3.
+\]</span></p>
+<p><strong>(d)</strong> If the initial radius of a domain is doubled, by what factor does its lifetime increase for Model A and for Model B? Explain physically why the Model B domain survives for longer.</p>
 <hr>
 </section>
 <section id="jump-processes" class="level3">
