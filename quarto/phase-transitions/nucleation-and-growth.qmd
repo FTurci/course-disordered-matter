@@ -133,25 +133,45 @@ It is useful to distinguish these two driving forces:
 
 ## Spinodal decomposition
 
-So far we have considered a state point just inside the coexistence region, where the original phase remains metastable. The system must then wait for a sufficiently large fluctuation to create a critical nucleus.
+So far we have considered a state in which the original phase is metastable. It corresponds to a local minimum of the free energy, and the system must therefore wait for a sufficiently large fluctuation to create a critical nucleus.
 
-Now imagine moving much farther into the coexistence region, as illustrated in @fig-spinodal, until the metastable minimum in the free energy disappears. The original phase is then *unstable* rather than metastable. There is no nucleation barrier: small fluctuations can lower the free energy and begin to grow throughout the system. These growing fluctuations develop into regions rich in each of the two equilibrium phases, producing a domain pattern. At later times the domains coarsen: small domains disappear and the typical domain size increases. This process is called *spinodal decomposition*. 
+Spinodal decomposition occurs when the initial homogeneous state is instead *unstable*. Small fluctuations can then lower the free energy and grow spontaneously, so there is no nucleation barrier.
+
+For example, at fixed $T<T_c$ in the Ising model, increasing a field opposed to the initial magnetisation eventually causes the metastable minimum to disappear, as illustrated in @fig-spinodal.
 
 ![Schematic phase diagram for a magnet showing the regions in which one observes nucleation and growth, or spinodal decomposition](Figs/spinodal.png){width=50% fig-align="center" #fig-spinodal}
 
-If $F(Q)$ is the free energy as a function of an order parameter $Q$, the spinodal occurs when the metastable minimum merges with the neighbouring maximum. Thus
+The same type of instability occurs following a temperature quench. If a system at $H=0$ is quenched from $T>T_c$ to $T<T_c$, the initially homogeneous state with $m\simeq0$ becomes unstable and fluctuations towards positive and negative magnetisation grow to form domains.
+
+If $F(Q)$ is the free energy as a function of an order parameter $Q$, the spinodal marks the point at which a metastable minimum disappears:
 
 $$
 \frac{\partial F}{\partial Q}=0,
 \qquad
-\frac{\partial^2F}{\partial Q^2}=0.
+\frac{\partial^2 F}{\partial Q^2}=0.
 $$
 
-Inside the unstable region the curvature of the free energy is negative, so small fluctuations can grow rather than having to cross a nucleation barrier.
+Within the unstable region the curvature is negative,
 
-After either nucleation and growth or spinodal decomposition, the system generally enters a late-time coarsening regime. The nature of this coarsening depends strongly on whether the order parameter is conserved.
+$$
+\frac{\partial^2 F}{\partial Q^2}<0,
+$$
 
----
+so small fluctuations grow rather than having to cross a nucleation barrier.
+
+The resulting domains subsequently coarsen, with small domains disappearing and the typical domain size increasing. The nature of this late-time coarsening depends strongly on whether the order parameter is conserved.
+
+
+
+::: {#fig-spinodal-snapshots layout-ncol=3}
+![Shortly after the quench](Figs/spinodal_snapshot_early.png){width=95% fig-align="center"}
+
+![Intermediate time](Figs/spinodal_snapshot_intermediate.png){width=95% fig-align="center"}
+
+![Later time](Figs/spinodal_snapshot_late.png){width=95% fig-align="center"}
+
+Snapshots from a conserved-order-parameter simulation following a temperature quench into the unstable region. Small fluctuations first grow throughout the system, then domains of the two phases emerge, and at later times these domains coarsen so that the typical lengthscale increases.
+:::
 
 ### Non-Conserved Order Parameter Dynamics (Model A)
 
