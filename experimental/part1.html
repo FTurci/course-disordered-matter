@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Macroscopic measurements</title>
+<title>12&nbsp; Measurements in real space</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../experimental/part2.html" rel="next">
-<link href="../phase-transitions/Lecture Slides/Slides.pdf" rel="prev">
+<link href="../experimental/part2New.html" rel="next">
+<link href="../experimental/part0.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -115,7 +150,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part1.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part0.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -239,6 +274,24 @@ window.Quarto = {
  <span class="menu-text">Lecture slides</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/PDF_notes/notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -252,112 +305,24 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></span></a>
+  <a href="../experimental/part0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparing your computer for the first experimental interlude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part2.html" class="sidebar-item-text sidebar-link">
+  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
   </div>
 </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Complex disordered systems</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_liquidcrystals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/slides.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Lecture slides</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problems</span></a>
+  <a href="../experimental/part2New.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Second experimental interlude</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../experimental/part4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes as pdf</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -368,34 +333,43 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">11.1</span> Introduction</a></li>
-  <li><a href="#macroscopic-observation-and-experiments" id="toc-macroscopic-observation-and-experiments" class="nav-link" data-scroll-target="#macroscopic-observation-and-experiments"><span class="header-section-number">11.2</span> Macroscopic observation and experiments</a>
+  <li><a href="#a-simple-description-of-gr" id="toc-a-simple-description-of-gr" class="nav-link active" data-scroll-target="#a-simple-description-of-gr"><span class="header-section-number">12.1</span> A simple description of <span class="math inline">\(g(r)\)</span></a></li>
+  <li><a href="#how-to-we-measure-gr-directly-for-a-material" id="toc-how-to-we-measure-gr-directly-for-a-material" class="nav-link" data-scroll-target="#how-to-we-measure-gr-directly-for-a-material"><span class="header-section-number">12.2</span> How to we measure <span class="math inline">\(g(r)\)</span> directly for a material?</a></li>
+  <li><a href="#the-structure-of-colloidal-systems" id="toc-the-structure-of-colloidal-systems" class="nav-link" data-scroll-target="#the-structure-of-colloidal-systems"><span class="header-section-number">12.3</span> The structure of colloidal systems</a></li>
+  <li><a href="#how-to-we-obtain-gr-and-information-about-coordination-from-colloid-systems." id="toc-how-to-we-obtain-gr-and-information-about-coordination-from-colloid-systems." class="nav-link" data-scroll-target="#how-to-we-obtain-gr-and-information-about-coordination-from-colloid-systems."><span class="header-section-number">12.4</span> How to we obtain <span class="math inline">\(g(r)\)</span> and information about coordination from colloid systems.</a></li>
+  <li><a href="#confocal-microscopy." id="toc-confocal-microscopy." class="nav-link" data-scroll-target="#confocal-microscopy."><span class="header-section-number">12.5</span> Confocal microscopy.</a></li>
+  <li><a href="#calculation-of-gr-directly-from-simulation" id="toc-calculation-of-gr-directly-from-simulation" class="nav-link" data-scroll-target="#calculation-of-gr-directly-from-simulation"><span class="header-section-number">12.6</span> Calculation of <span class="math inline">\(g(r)\)</span> directly from simulation</a></li>
+  <li><a href="#practical-exercise-determining-structure-from-the-radial-distribution-function" id="toc-practical-exercise-determining-structure-from-the-radial-distribution-function" class="nav-link" data-scroll-target="#practical-exercise-determining-structure-from-the-radial-distribution-function"><span class="header-section-number">12.7</span> Practical Exercise: Determining Structure from the Radial Distribution Function</a>
   <ul class="collapse">
-  <li><a href="#st-order-phase-transitions---ice-and-water-as-an-example." id="toc-st-order-phase-transitions---ice-and-water-as-an-example." class="nav-link" data-scroll-target="#st-order-phase-transitions---ice-and-water-as-an-example."><span class="header-section-number">11.2.1</span> 1st Order Phase Transitions - ice and water as an example.</a></li>
-  <li><a href="#first-order-transitions---experimental-measurements." id="toc-first-order-transitions---experimental-measurements." class="nav-link" data-scroll-target="#first-order-transitions---experimental-measurements."><span class="header-section-number">11.2.2</span> First Order transitions - Experimental measurements.</a></li>
-  <li><a href="#first-order-phase-transitions---nucleation-and-growth." id="toc-first-order-phase-transitions---nucleation-and-growth." class="nav-link" data-scroll-target="#first-order-phase-transitions---nucleation-and-growth."><span class="header-section-number">11.2.3</span> First Order Phase transitions - nucleation and growth.</a></li>
-  <li><a href="#phase-separation-in-mixtures---spinodal-decomposition." id="toc-phase-separation-in-mixtures---spinodal-decomposition." class="nav-link" data-scroll-target="#phase-separation-in-mixtures---spinodal-decomposition."><span class="header-section-number">11.2.4</span> Phase Separation in mixtures - spinodal decomposition.</a></li>
-  <li><a href="#the-glass-transition." id="toc-the-glass-transition." class="nav-link" data-scroll-target="#the-glass-transition."><span class="header-section-number">11.2.5</span> The Glass Transition.</a></li>
-  <li><a href="#second-order-phase-transitions" id="toc-second-order-phase-transitions" class="nav-link" data-scroll-target="#second-order-phase-transitions"><span class="header-section-number">11.2.6</span> Second Order Phase transitions</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives"><span class="header-section-number">12.7.1</span> Learning Objectives</a></li>
+  <li><a href="#obtaining-and-visualising-the-data" id="toc-obtaining-and-visualising-the-data" class="nav-link" data-scroll-target="#obtaining-and-visualising-the-data"><span class="header-section-number">12.7.2</span> Obtaining and Visualising the Data</a></li>
+  <li><a href="#running-the-code" id="toc-running-the-code" class="nav-link" data-scroll-target="#running-the-code"><span class="header-section-number">12.7.3</span> Running the Code</a></li>
+  <li><a href="#first-analysis-of-your-graph" id="toc-first-analysis-of-your-graph" class="nav-link" data-scroll-target="#first-analysis-of-your-graph"><span class="header-section-number">12.7.4</span> First Analysis of Your Graph</a></li>
+  <li><a href="#finite-size-effects-and-periodic-boundary-conditions" id="toc-finite-size-effects-and-periodic-boundary-conditions" class="nav-link" data-scroll-target="#finite-size-effects-and-periodic-boundary-conditions"><span class="header-section-number">12.7.5</span> Finite-Size Effects and Periodic Boundary Conditions</a></li>
+  <li><a href="#identifying-the-phase" id="toc-identifying-the-phase" class="nav-link" data-scroll-target="#identifying-the-phase"><span class="header-section-number">12.7.6</span> Identifying the Phase</a></li>
+  <li><a href="#quantitative-information-from-gr" id="toc-quantitative-information-from-gr" class="nav-link" data-scroll-target="#quantitative-information-from-gr"><span class="header-section-number">12.7.7</span> Quantitative Information from <span class="math inline">\(g(r)\)</span></a></li>
+  <li><a href="#extension-activity-effect-of-temperature" id="toc-extension-activity-effect-of-temperature" class="nav-link" data-scroll-target="#extension-activity-effect-of-temperature"><span class="header-section-number">12.7.8</span> Extension Activity: Effect of Temperature</a></li>
+  <li><a href="#conclusions" id="toc-conclusions" class="nav-link" data-scroll-target="#conclusions"><span class="header-section-number">12.7.9</span> Conclusions</a></li>
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources"><span class="header-section-number">12.7.10</span> Data Sources</a></li>
   </ul></li>
-  <li><a href="#experimental-observation-of-phase-transitions" id="toc-experimental-observation-of-phase-transitions" class="nav-link" data-scroll-target="#experimental-observation-of-phase-transitions"><span class="header-section-number">12</span> Experimental observation of phase transitions</a>
+  <li><a href="#in-summary-what-can-we-learn-from-gr" id="toc-in-summary-what-can-we-learn-from-gr" class="nav-link" data-scroll-target="#in-summary-what-can-we-learn-from-gr"><span class="header-section-number">12.8</span> In summary: What can we learn from <span class="math inline">\(g(r)\)</span>?</a>
   <ul class="collapse">
-  <li><a href="#examples-of-macroscopic-measurements." id="toc-examples-of-macroscopic-measurements." class="nav-link" data-scroll-target="#examples-of-macroscopic-measurements."><span class="header-section-number">12.1</span> Examples of macroscopic measurements.</a>
-  <ul class="collapse">
-  <li><a href="#differential-thermal-analysis." id="toc-differential-thermal-analysis." class="nav-link" data-scroll-target="#differential-thermal-analysis."><span class="header-section-number">12.1.1</span> Differential Thermal analysis.</a></li>
-  <li><a href="#other-techniques-non-exhaustive" id="toc-other-techniques-non-exhaustive" class="nav-link" data-scroll-target="#other-techniques-non-exhaustive"><span class="header-section-number">12.1.2</span> Other techniques (non exhaustive)</a></li>
+  <li><a href="#the-exclusion-zone" id="toc-the-exclusion-zone" class="nav-link" data-scroll-target="#the-exclusion-zone"><span class="header-section-number">12.8.1</span> The exclusion zone</a></li>
+  <li><a href="#average-first-neighbour-distance" id="toc-average-first-neighbour-distance" class="nav-link" data-scroll-target="#average-first-neighbour-distance"><span class="header-section-number">12.8.2</span> Average first neighbour distance</a></li>
+  <li><a href="#peak-positions." id="toc-peak-positions." class="nav-link" data-scroll-target="#peak-positions."><span class="header-section-number">12.8.3</span> Peak positions.</a></li>
+  <li><a href="#coordination-numbers." id="toc-coordination-numbers." class="nav-link" data-scroll-target="#coordination-numbers."><span class="header-section-number">12.8.4</span> Coordination numbers.</a></li>
   </ul></li>
-  <li><a href="#keypoints" id="toc-keypoints" class="nav-link" data-scroll-target="#keypoints"><span class="header-section-number">12.2</span> Keypoints</a></li>
-  </ul></li>
+  <li><a href="#dynamics-in-real-space" id="toc-dynamics-in-real-space" class="nav-link" data-scroll-target="#dynamics-in-real-space"><span class="header-section-number">12.9</span> Dynamics in real space</a></li>
+  <li><a href="#conclusion-and-keypoints" id="toc-conclusion-and-keypoints" class="nav-link" data-scroll-target="#conclusion-and-keypoints"><span class="header-section-number">12.10</span> Conclusion and keypoints</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part1.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../experimental/part0.html">First experimental interlude</a></li><li class="breadcrumb-item"><a href="../experimental/part1.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Measurements in real space</span></h1>
 </div>
 
 
@@ -412,133 +386,597 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">11.1</span> Introduction</h2>
-<p>In the course so far you have discussed the theoretical origins of phase transitions and have been given a theoretical introduction to the properties of disordered materials. In this section we will look briefly at some of the experimental techniques and experimental data that have driven and tested the theoretical work. Much of the quantitative experimental work is challenging and in many cases would take many lectures to justify properly. So, in these notes we will concentrate on the ideas underpinning the experiments and I will try to give a justification for the results obtained. The number of techniques discussed is limited and not exhaustive, you may find others as you read along.</p>
-</section>
-<section id="macroscopic-observation-and-experiments" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="macroscopic-observation-and-experiments"><span class="header-section-number">11.2</span> Macroscopic observation and experiments</h2>
-<p>Before discussing experiments in detail it is worth taking a little time to think about our observation of phase transitions and the different types of material we encounter in our everyday life. In the following I will concentrate mainly on water and its states as we know them well. You may consider it as a liquid at room temperature, a solid at cold temperatures and a gas at high temperatures. However, even for this `simple’ material we can observe unusual effects as we change its state. So in the following I will use water as an example even though, hopefully, you can see how the ideas will apply in general to other materials.</p>
-<section id="st-order-phase-transitions---ice-and-water-as-an-example." class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="st-order-phase-transitions---ice-and-water-as-an-example."><span class="header-section-number">11.2.1</span> 1st Order Phase Transitions - ice and water as an example.</h3>
-<p>Phase transitions are all around us in our everyday life. Some take place naturally, for example, the freezing of water on a cold winter night, some are exploited (and maybe hidden) in the technology that surrounds us in for example, liquid crystal displays or non-volatile computer memory.</p>
-<p>Let’s take water as our example and consider our everyday experience. In a warm building at a temperature of 20<span class="math inline">\(^o\)</span>C, water in a beaker is a liquid, it freely flows and you can pour it from one container to another. What happens as we lower the temperature slowly (so that we keep, as best we can, a uniform temperature in the liquid). Common experience tells us it remains as a liquid until we reach its freezing point at 0<span class="math inline">\(^o\)</span>C when it starts to solidify and form solid water - ice. But how does happen and does it always happen in the same way? Let’s think about this a little more deeply.</p>
-<p>Suppose we put our beaker of water at 20<span class="math inline">\(^o\)</span>C straight into a freezer at, say, -10<span class="math inline">\(^o\)</span> C. To start with the water in the beaker will lose heat to the surroundings (mainly by conduction and convection) and temperature gradients will appear in the water (the water at the edges will be cooler than the water in the middle). As the outside approaches 0<span class="math inline">\(^o\)</span>C we expect the water at the edges to freeze (we’ll discuss this further later) and a block of solid ice will eventually form in the beaker. (We might break our container as, unusually, the density of ice is less than water so the total volume occupied by the water tries to get larger). During this process we will have an ice-water <span class="math inline">\(\textit{interface}\)</span> that stays at 0<span class="math inline">\(^o\)</span>C but with large temperature gradients in the freezer and beaker - we are far from having the uniform temperature we mentioned above. As we can see from this short description, the temperature gradients mean that in practise phase transitions never take place uniformly in a material and there will always be some localization of the processes taking place. We can already see that freezing is more complicated than we might first imagine!</p>
-<p>If we are going to look at the ice-water transition more carefully experimentally and to reduce these non-local effects we try to do things more slowly and try to maintain a uniform temperature by e.g.&nbsp;stirring. Ideally we’d also like to know qualitatively how quickly we are removing the heat and how much heat is removed in the process (the latent heat). What happens in this case? Well, if the outside temperature of the beaker is very slightly below zero then heat will be lost slowly from the (stirred) water and we expect small regions of ice mixed with the water to form. The water in the beaker does not freeze instantaneously but the ratio of the amount of ice to water steadily increases as heat is gradually removed (we should describe this as quasi-equilibrium where we consider we are moving gradually from one thermodynamic equilibrium state to another). As more ice forms we get a slushy mixture. If we carefully measure the temperature of the ice-water mixture (slush) during this process we will see that it remains at 0<span class="math inline">\(^o\)</span>C until all the water has changed to ice at which point the ice will reach equilibrium with its surroundings (that we remember was just below zero). If, at any time during the process we prevent heat entering or leaving the system, the ice-water mixture will maintain the same ratio (although changes in the sizes of the regions may take place). The ice and water are then said to be in co-existence at the <span class="math inline">\(\textit{phase ~ transition ~temperature}\)</span> of 0<span class="math inline">\(^o\)</span>C.</p>
-<p>Co-existence of two phases at the transition temperature is the typical characteristic of a first order transition.</p>
-<p>You may wish to remind yourself of this process when we discuss thermal analysis later.</p>
-</section>
-<section id="first-order-transitions---experimental-measurements." class="level3" data-number="11.2.2">
-<h3 data-number="11.2.2" class="anchored" data-anchor-id="first-order-transitions---experimental-measurements."><span class="header-section-number">11.2.2</span> First Order transitions - Experimental measurements.</h3>
-<p>In the discussion above I tried to define more carefully how we were cooling the system. This hints at some of the difficulties in actually trying to measure the details of about what happens when the transition is taking place. Fundamentally we are trying to use equlibrium thermodynamics to explain what happens in a system that is not in equilibrium but in the process of equilibrating. The study of non-equilibrium processes is a very active and important area of study. We might note that the ice-water co-existence is an equilibrium state - it is all at 0<span class="math inline">\(^o\)</span>C but can have very different appearances (slushy, an ice cube surrounded by water etc.). The result is that in all careful (accurate calorimetry) experiments care is taken to avoid non-unformity in the system (i.e.&nbsp;temperature gradients, field gradients in magnetic systems, …). The problem of non-uniform temeperature is even more acute for second order phases transitions as we will discuss below.</p>
-<p>There are many ways in which you might study phase transitions apart from visually, but the most common, quantative and closely related techniques are Differential Thermal Analysis (DTA) and Differential Scanning Calorimetry (DSC). Machines for doing this are commercially available and are ubiquitous in materials science labs.</p>
-<p>We will look at these techniques in more detail later.</p>
-</section>
-<section id="first-order-phase-transitions---nucleation-and-growth." class="level3" data-number="11.2.3">
-<h3 data-number="11.2.3" class="anchored" data-anchor-id="first-order-phase-transitions---nucleation-and-growth."><span class="header-section-number">11.2.3</span> First Order Phase transitions - nucleation and growth.</h3>
-<p>The form of the system after the transition has taken place may be of more interest for practical applications. For example, we know we can get ice by cooling water below 0<span class="math inline">\(^o\)</span>C and if you are looking to cool your drink, the water in the form of a large ice cube is ideal (‘Scotch on the rocks’) whereas it wouldn’t be nice to ‘eat’ on a hot summers day. In contrast, if we can make ice crystals as small as possible (10’s of <span class="math inline">\(\mu\)</span>m), we have the basis for making good ice cream. Indeed if the crystals are small enough the texture is creamy without the need for any ‘cream’ at all. Hence, the way in which macroscopic properties through the transition can be controlled may be as important as understanding the transition itself. For example, one favourite method of making ice cream is to use liquid nitrogen. This has the effect, with rapid stirring, of forming the tiny crystals needed for good ice cream. The processing of materials through phase transitions is ubiquitous. It’s perhaps no surprise to see that major industries including food processing, cosmetics, engineering materials are all heavily dependent on our knowledge of what happens as phase transitions take place.</p>
-<p>To deepen our knowledge of how the transitions take place we need to think beyond the thermodynamics and ask what happens at the microscopic (atomic) level. So what happens to the atoms/particles as a first order freezing transition takes place? To make progress we need to introduce the ideas and theories of the nucleation and growth of crystals at the phase transition temperature. These concepts have been introduced in the theory part of these lectures but let’s thing about what happens in our water/ice system. If I start with liquid water at 0<span class="math inline">\(^o\)</span>C and remove a small amount of heat from the system I expect, from our discussion above, to start forming an ice/water mixture. But how does the first ice crystal start to form?</p>
-<p>The first thing to note and you may be surprised to learn is that crystallization doesn’t have to take place at all at 0<span class="math inline">\(^o\)</span>C! It is perfectly possible to have stable liquid water below 0<span class="math inline">\(^o\)</span>C even under standard atmosphere and pressure. This is known as supercooling or undercooling. It can also occur at other transitions, for example you can find superheated water above 100<span class="math inline">\(^o\)</span>C. Although supercooled/superheated materials are not the equilbrium states they can stay in this <span class="math inline">\(\textit{metastable}\)</span> state for many weeks/months on end unless disturbed.</p>
-<p>Hence, if we are careful we can cool water to well below 0<span class="math inline">\(^o\)</span>C without it freezing. So what happens as we cool our water below 0<span class="math inline">\(^o\)</span>C and why, in some cases does it not freeze? What observations measurements could we make? Firstly, if it supercools, no first-order phase transition has taken place and there is no release of latent heat. Hence, in heat capacity measurements (DSC) we would expect to see a steady and smooth decrease in temperature. The physical properties of the supercooled liquid water would stay broadly the same - it will still flow and pour as a liquid but we might observe steady changes in, for example, its volume or viscosity (which we will discuss in relation to the glass transition later) as the temperature decreases. But where has the heat (energy) associated with the latent heat of freezing (if the sample had frozen) gone? The answer is it hasn’t gone anywhere, it remains in the water even though the temperature has decreased. In other words there is more energy in supercooled water at -10 <span class="math inline">\(^o\)</span>C than ice at the same temperature. Hence, the metastable state is not the <span class="math inline">\(\textit{global}\)</span> minimum energy configuration of the system but is at a <span class="math inline">\(\textit{local}\)</span> energy minimum (i.e.&nbsp;it will return to this local equilibrium after small deviations from the equilibrium state). In order for the global minimum to be reached from the local minimum there is an energy barrier to overcome. In order to freeze from the supercooled state this energy barrier needs to be overcome. The idea that there may be one or more possible local minima for a configuration is known as the <span class="math inline">\(\textit{energy landscape}\)</span> of the material. This is illustrated conceptually in the figure below. Any configuration that lies above the landscape (the squiggly line) is a possible state of the system. For a given energy the system is rapidly changing configuration by moving to a neighbouring state on the configuration axis (in practise the energy landscape is multidimensional). At high energies (above the blue dotted line) it is possible to reach any configuration of the system in time. This would be equivalent to the normal liquid state. The lowest minimum (green dotted line) represents the equilibrium (minimum energy state) state e.g.&nbsp;ice. Now we imagine starting in the liquid state to the left of the vertical purple line and remove some energy. Once we are below this line we see that we cannot access any states to its right - the global minimum, ice, has become inaccessible. If we continue to remove energy we may find ourselves in the local minimum in this part of configuration space. This could perhaps be the supercooled liquid state. To reach the global minimum we have to overcome the energy barrier separating the local from the global minimum. Natural fluctuations in energy may be sufficient and explain why under normal cicumstances we get to the global minimum. However, if the local minimum is deep enough we get stuck in the metastable state.</p>
+<p>In the theory part of the course you have been introduced formally to the radial distribution function <span class="math inline">\(g(r)\)</span> and seen how it is a useful description of the arrangement of particles in a disordered system. In particular, in the absence of the long range periodic order that is associated with crystalline materials it is one of the first things we wish to find for liquid or glassy material. In our examples we assume that we are looking at a uniform and isotropic material, that is, there is no preferred direction in the material and no density variations on length scales much greater than the particle size. That is, macroscopically the material appears is of uniform density. It is also possible to give a more general definition <span class="math inline">\(g(\bf{r})\)</span> where we recognise that there is some preferred orientation of the atoms around each other in the material but we will not consider it here.</p>
+<section id="a-simple-description-of-gr" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="a-simple-description-of-gr"><span class="header-section-number">12.1</span> A simple description of <span class="math inline">\(g(r)\)</span></h2>
+<p>In layman’s terms the radial distribution function is often described loosely as the probability of finding another particle at a distance from a particle at the origin. If we think about it this way we must remember that <span class="math inline">\(g(r)\)</span> is a statistical function so what we are really trying to express is the average of this distribution taking each atom in the material in turn as the ‘origin’. Expressed in this way you might worry about what this means for atoms on the ‘edge’. Normally this is not a concern for large samples, but beware about the definition of <span class="math inline">\(g(r)\)</span>if you start approaching ‘nano-sized’ materials.</p>
+<p>A better definition is that <span class="math inline">\(g(r)\)</span> represents the deviation from the mean particle density, normalised to one, as you move outward from a particle at the origin. It can be mathematically formulated as <span class="math display">\[
+g(r)=\frac{1}{4\pi r^2\rho}\left\langle \sum_{i\neq0}\delta\!\left(r-r_i\right)\right\rangle,
+\]</span> where <span class="math inline">\(\rho=N/V\)</span> is the average number density, <span class="math inline">\(r_i\)</span> is the distance of particle <span class="math inline">\(i\)</span> from the reference particle, and <span class="math inline">\(\langle\cdots\rangle\)</span> denotes an average over all reference particles. Note that we assumed that this function only depends on the modulus <span class="math inline">\(r=\left|\mathbf{r}\right|\)</span>, i.e., that the material is isotropic. This is not always the case, but if the material is translationally invariant, then this second-order correlation function stil only depends on <span class="math inline">\(\mathbf{r}=\mathbf{r_i}\)</span>, and not on the choice of the reference particle. This means that a straightforward generalization is <span class="math inline">\(g(\mathbf{r})=\frac{1}{\rho}\left\langle \sum_{i\neq0}\delta\!\left(\mathbf{r}-\mathbf{r_i}\right)\right\rangle\)</span>. This generalized relationship will be useful in the next session.</p>
+<p>At large <span class="math inline">\(r\)</span> we expect this to equate to a constant, related to the mean particle density of the material. When properly normalised to the mean density <span class="math inline">\(g(r) _{r\rightarrow \infty} \rightarrow 1\)</span>. The figure below shows the key features of a typical radial distribution function.</p>
 <center>
-<img src="part1_figs/energylandscape.png" alt="Illustration of the energy landscape concept " width="800">
+<img src="part1_figs/gofr.png" alt="g of r" width="500">
 </center>
-<p>In principle we could get ‘stuck’ in any of the local minima if we process our material in a certain way.</p>
-<p>So what happens as we cool the water further - there are two possibilities: it will suddenly freeze to form ice (we find the global minimum energy), or its viscosity becomes so high that the internal molecular motion of the atoms is slowed down so much that the disordered arrangements of the atoms become ‘frozen’ so that it forms a ‘solid’ disordered structure that we call a glass (i.e.&nbsp;we’ve got stuck in a local minimum). In fact, no one has ever been able to produce ‘glassy’ water in this way <span class="math inline">\(^*\)</span> but the transition to a glass on cooling does a occur in many materials. We’ll leave discussion of the glass transition and how we observe it until later.</p>
-<p>So, if we observe our water as we cool it, we find it will suddenly and rapidly appear to freeze to form ice. If you seacrh for `supercooled water’ on youtube (or other) you will find many videos of this happening. So what is happening? In our supercooled water there will always be small regions that spontaneously start to form the atomic arrangements reminiscent of the crystal you’d expect to see at that temperature. But, as you’ve seen in the theory lectures, there is an energy barrier to overcome before the crystals become large enough to start growing continuously. In other words our embryonic crystals start to grow but dissolve again before they have the chance to grow further. However, if a crystal gets large enough, there is no energy barrier to stop more atoms/molecules attaching to the nascent crystal and it will continue to grow.</p>
-<p>Once the crystals are macroscopically large we start to see them and can observe the growth. However, there are a few things we should note. Firstly, this spontaneous crystallization (known as <span class="math inline">\(\textit{homogeneous nucleation}\)</span>), is a ‘local’ event - it could happen anywhere in the liquid. There are many questions that can then be asked. Is it only one crystal that forms and grows, or does homogeneous nucleation take place simultaneously in different parts of fluid at the same time? This poses some very difficult questions and when you investigate further you realise that the simple theory of nucleation and growth is just that - in reality how and where nucleation physically takes place in different materials is hard to predict! In some materials you might see a small number of large crystal form, in others, lots of smaller crystals start to form at the same time. In many cases you see a `front’ of nucleation advancing rapidly from the original nucleation event. We don’t have time in these lectures to explore this fascinating subject but the consequences for materials science (i.e the strength and physical properties of the materials produced) are important.</p>
-<p>There are still a few things we should note. We know in our example that there is more energy in the supercooled liquid water than the same amount of water in the form of ice. So what happens when an ice crystal starts to grow spontaneously in our supercooled water? As the crystal starts to grow, the latent heat associated with the transition, that has remained in the liquid, must be released, so locally around the forming crystal the temperature of the liquid and the crystal will start to rise. In other words temperature gradients will start to form around the crystal and heat will only leave via transport processes (conduction, convection, possibly radiation) through the liquid. So, as the nucleation takes place the material is far from equlibrium with large variations in temperature present etc. What is the final state of the system once equlibrium has been reached in an isolated system? Well, as we noted, as nucleation takes place, the temperature goes up. So, do we end up with ice at a temperature below zero or a mixture of ice and water, which we know should be at 0<span class="math inline">\(^o\)</span>C (at stp)? The answer is the latter, you end up with an ice/water mixture at 0<span class="math inline">\(^o\)</span>C with the ratio of ice to water dependent on the level of supercooling. The more deeply supercooled the greater the proportion of ice to water.</p>
-<p>Exercise. Look up the latent heat of freezing for water and estimate the temperature at which supercooled water needs to be if it was form only ice (i.e.&nbsp;no water) at 0<span class="math inline">\(^o\)</span>C on nucleation.</p>
-<p>From the discussion above you can see that the local and microscopic nature of the nucleation processes make precise experiments difficult. The results will depend, on the size of the sample, the rate of heat transfer through the sample, the randomness, of the nucleation processes, whether the process was at fixed pressure or constant volume (remember ice at stp has lower density than water and think about the implications if the process takes place at constant volume) etc.</p>
-<p>So how does a first order transition from a supercooled state manifest itself in a calorimetry experiment, for example in a DSC? Well, if the transition takes place at the freezing temperature we’d expect to see the temperature of the sample remain at the transition temperature until the transition is complete, at which point the temperatures starts to drop steadily again at a rate corresponding to the heat capacity of the material. If however the material supercools its temperature will decrease steadily through the the transition temperature (no transition takes place). When the material eventually nucleates and crystallizes you observe a sudden rise in temperature (back to the transtion temperature) where it stays until the transition is complete and the temperature decreases as before. The deeper the supercooling the bigger the temperature jump. As noted above, the precise shape of the reheating peak observed depends on the sample size, thermal conductivity etc.</p>
-<p>The sudden reheating of a material from a supercooled state is called <span class="math inline">\(\textit{recalescence}\)</span>.</p>
-<p>Exercise. Recalescence is not confined to liquid/solid/gas transitions. It may occur for any first order transition, for example, the austenitic transition in stainless steel which is of commerical importance. Can you find other examples.</p>
-<p>Final comments about 1st order phase transitions.</p>
+<p>Points to note are</p>
 <ul>
-<li><p>Supercooling is often difficult to achieve. The reason is that in real situations we need to hold the material in containers in which there might be impurities or specks of dirt etc. These impurities can act very much like embryonic crystals that form in homogeneous nucleation and they lower the free energy barrier for nucleation. Processing materials under very clean conditions in smooth walled containers is very difficult. Nucleation on impurities is known as <span class="math inline">\(\textit{heterogeneous}\)</span> nucleation and is often the process most observed unless great attention is taken to the preparation method.</p></li>
-<li><p>If there is a known transition and neither the transition or recalescence is observed in for example a DSC scan, then it is possible that the material formed a glass. This is discussed below.</p></li>
+<li><p>that <span class="math inline">\(g(r) = 0\)</span> for distances below a characteristic cutoff distance (also referred to as the exclusion zone). Since particles occupy a finite volume and their positions are defined by their centres, two particles cannot approach more closely than a certain minimum distance. In dense systems such as liquids, this minimum distance is often identified with the particle diameter. However, the definition of particle diameter is not always straightforward, and might differ from this value, particularly in crystalline solids.</p></li>
+<li><p><span class="math inline">\(g(r)\)</span> typically rises from 0 to give a ‘first peak’. The position of this peak is referred to as the nearest neighbour distance. (NB. it is not the same as the diameter of the particles).</p></li>
+<li><p>After the nearest neighbour peak, <span class="math inline">\(g(r)\)</span> typically dips below the mean density and is characterised by damped oscillating peaks and troughs until <span class="math inline">\(g(r)\)</span> reaches the constant mean density.</p></li>
 </ul>
-<p><span class="math inline">\(^*\)</span> Although it is possible to make amorphous ice - a topic great interest but we don’t have time to study it here.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+For the curious and rigorous: from the pair correlation function to the radial distribution function
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The most curious and/or mathematically rigorous of you might wonder how the <span class="math inline">\(4\pi r^2\)</span> appears when assuming that the <strong>pair correlation function</strong> applies to an isotropic material. Let’s start from its most general expression:</p>
+<p><span class="math display">\[
+g(\mathbf r)
+=
+\frac{1}{\rho}
+\left\langle
+\sum_{i\neq0}
+\delta^{(3)}(\mathbf r-\mathbf r_i)
+\right\rangle.
+\]</span></p>
+<p>To connect this expression to the radial distribution function, we must average over all directions while keeping the distance <span class="math inline">\(r=|\mathbf{r}|\)</span> fixed:</p>
+<p><span class="math display">\[
+g(r)
+=
+\frac{1}{4\pi}
+\int g(\mathbf r)\,d\Omega,
+\]</span></p>
+<p>where</p>
+<p><span class="math display">\[
+d\Omega=\sin\theta\,d\theta\,d\phi.
+\]</span></p>
+<p>Substituting the definition of <span class="math inline">\(g(\mathbf r)\)</span> gives</p>
+<p><span class="math display">\[
+g(r)
+=
+\frac{1}{4\pi\rho}
+\left\langle
+\sum_{i\neq0}
+\int d\Omega\,
+\delta^{(3)}(\mathbf r-\mathbf r_i)
+\right\rangle.
+\]</span></p>
+<p>The key question is therefore how to express the three-dimensional Dirac delta in spherical coordinates.</p>
+<p>Recall that under a change of variables, a Dirac delta acquires the inverse Jacobian. In one dimension,</p>
+<p><span class="math display">\[
+\delta(f(x))
+=
+\sum_i
+\frac{\delta(x-x_i)}
+{\left|f'(x_i)\right|},
+\]</span></p>
+<p>where the <span class="math inline">\(x_i\)</span> are the roots of <span class="math inline">\(f(x)\)</span>.</p>
+<p>More generally, if a coordinate transformation <span class="math inline">\((x,y,z)\mapsto(u,v,w)\)</span> has Jacobian <span class="math inline">\(J\)</span>, then</p>
+<p><span class="math display">\[
+\delta(x-x_0)\,
+\delta(y-y_0)\,
+\delta(z-z_0)
+=
+\frac{
+\delta(u-u_0)\,
+\delta(v-v_0)\,
+\delta(w-w_0)
+}{
+|J|
+}.
+\]</span></p>
+<p>For spherical coordinates,</p>
+<p><span class="math display">\[
+(x,y,z)
+=
+(r\sin\theta\cos\phi,
+\; r\sin\theta\sin\phi,
+\; r\cos\theta),
+\]</span></p>
+<p>whose Jacobian is</p>
+<p><span class="math display">\[
+J=r^2\sin\theta.
+\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+d^3r
+=
+r^2\sin\theta\,dr\,d\theta\,d\phi,
+\]</span></p>
+<p>and the three-dimensional delta becomes</p>
+<p><span class="math display">\[
+\delta^{(3)}(\mathbf r-\mathbf r_i)
+=
+\frac{
+\delta(r-r_i)\,
+\delta(\theta-\theta_i)\,
+\delta(\phi-\phi_i)
+}{
+r^2\sin\theta
+}.
+\]</span></p>
+<p>Substituting this result into the angular average yields</p>
+<p><span class="math display">\[
+\int d\Omega\,
+\delta^{(3)}(\mathbf r-\mathbf r_i)
+=
+\int
+\sin\theta\,d\theta\,d\phi\,
+\frac{
+\delta(r-r_i)\,
+\delta(\theta-\theta_i)\,
+\delta(\phi-\phi_i)
+}{
+r^2\sin\theta
+}.
+\]</span></p>
+<p>The factor of <span class="math inline">\(\sin\theta\)</span> from the solid-angle element cancels the <span class="math inline">\(\sin\theta\)</span> in the denominator:</p>
+<p><span class="math display">\[
+=
+\frac{\delta(r-r_i)}{r^2}
+\int d\theta\,
+\delta(\theta-\theta_i)
+\int d\phi\,
+\delta(\phi-\phi_i).
+\]</span></p>
+<p>Using the defining property of the Dirac delta,</p>
+<p><span class="math display">\[
+\int d\theta\,\delta(\theta-\theta_i)=1,
+\qquad
+\int d\phi\,\delta(\phi-\phi_i)=1,
+\]</span></p>
+<p>we obtain</p>
+<p><span class="math display">\[
+\int d\Omega\,
+\delta^{(3)}(\mathbf r-\mathbf r_i)
+=
+\frac{\delta(r-r_i)}{r^2}.
+\]</span></p>
+<p>Substituting this back into the definition of <span class="math inline">\(g(r)\)</span> gives</p>
+<p><span class="math display">\[
+g(r)
+=
+\frac{1}{4\pi r^2\rho}
+\left\langle
+\sum_{i\neq0}
+\delta(r-r_i)
+\right\rangle.
+\]</span></p>
+<p>This is the standard expression for the radial distribution function.</p>
+<p>The factor <span class="math inline">\(4\pi r^2\)</span> therefore has a purely geometric origin: it arises from the Jacobian <span class="math inline">\(r^2\sin\theta\)</span> associated with transforming the three-dimensional Dirac delta from Cartesian to spherical coordinates and then integrating over all directions.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="phase-separation-in-mixtures---spinodal-decomposition." class="level3" data-number="11.2.4">
-<h3 data-number="11.2.4" class="anchored" data-anchor-id="phase-separation-in-mixtures---spinodal-decomposition."><span class="header-section-number">11.2.4</span> Phase Separation in mixtures - spinodal decomposition.</h3>
-<p>In the previous section we saw that a first order transition doesn’t necessarily take place at the transition temperature. That is, rather than observing two phases in coexistence at the transition temperature, the material may remain in a metastable supercooled or superheated single state. The crucial observation is that for the transition to start, a nucleation event needs to take place, from which the second phase will grow. The next question you might ask is what happens if I continue to cool the material? Firstly, as the temperature difference increases the likelihood of homogeneous nucleation (and recalescence) increases. However, there are other possibilities, the material may form a glass (which we will discuss shortly) or we reach the point where spinodal decomposition takes place. You have discussed spinodal decomposition in the theoretical section of this course, but briefly there comes a point where the barrier to the separation disappears and the formation of two distinct phases occurs throughout the material (it does not rely on a nucleation centre). This is especially true if you are below and close to the critical point. This is a dynamic process as the size of the different regions grows over time - eventually two distinct macroscopically large phases appear. Spinodal decomposition, has an important role to play in material processing as it has an effect on the microsctructure of the material produced. If the material is quenched fast the growth of the separate regions that form will be rapidly arrested leading to a fine grained solid. If the quench is slow the resulting structure will be coarse grained. This graining of the microstructure will affect the physical properties of the material produced. This behaviour is most associated with phase transitions that involve the separation of components in composition, such as metallic alloys and polymer blends rather than pure liquid/gas, liquid/solid transitions in which spinodal decomposition is far harder to observe.</p>
+<section id="how-to-we-measure-gr-directly-for-a-material" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="how-to-we-measure-gr-directly-for-a-material"><span class="header-section-number">12.2</span> How to we measure <span class="math inline">\(g(r)\)</span> directly for a material?</h2>
+<p>In order to measure <span class="math inline">\(g(r)\)</span> directly, we need to obtain a 3D (unless we are looking at a 2D system) image of the material in which all the particle coordinates <span class="math inline">\(r_i(x,y,z)\)</span> can be obtained. Although some modern techniques can obtain images with atomic resolution (for example scanning tunneling microscopy) they are mostly limited to surface imaging and not suitable for studying liquids (where atoms are moving around). Although some X-ray and electron microscopy techniques (see for example ptychography) can produce atomic scale resolution (using coherent imaging techniques) these are again largely confined to 2D surfaces and are again not suitable for atomic liquids.</p>
+<!--
+Historically (1950-60s) the first attempts to determine $g(r)$ came from measurement of the packing of real particles made by literally constructing disordered structures with balls and sticks, gelatine balls, plasticine etc. and then painstakingly finding the particle coordinates during a careful and systematic  disassembly. Needless to say this wasn't a particularly accurate method but it did reveal, what suprised many at the time, dense packing of particles in liquids was characterised by 5-fold coordination. 
+-->
+<p>A powerful alternative is to study colloidal suspensions, in which the constituent particles are typically hundreds of nanometres to several micrometres in size. Because these particles are many orders of magnitude larger than atoms, they can often be imaged directly in three dimensions using optical techniques. Colloids therefore provide an excellent model system for investigating disorder, phase transitions, and particle-scale dynamics in condensed matter. In particular, confocal microscopy makes it possible to reconstruct the three-dimensional coordinates of individual particles, and even to track their motion over time. As a result, many concepts that are difficult to probe directly in atomic liquids can be studied experimentally in colloidal systems. In the following sections, we will examine some of the techniques used to extract particle positions and characterize their structure and dynamics. We will manipulate real microscopic images from colloidal suspensions at the end of this course.</p>
 </section>
-<section id="the-glass-transition." class="level3" data-number="11.2.5">
-<h3 data-number="11.2.5" class="anchored" data-anchor-id="the-glass-transition."><span class="header-section-number">11.2.5</span> The Glass Transition.</h3>
-<p>In the section above we discussed how, particularly in the case of compositional phase separation, the microstucture of a material may be related to the speed in which it is quenched. As a consequence the end point is a material that is composed of a mixture of different phases rather than a single phase - the result of a true first order phase transition. So, what happens if we manage to cool without nucleation or spinodal decomposition occuring? i.e.&nbsp;what happens if we rapidly quench the sample to the extent that the dynamics driving for example spinodal decomposition are ‘frozen’ out. If we manage to slow the diffusion of the atoms enough, then the atomic re-arrangements needed to cause crystallization or spinodal decomposition cannot take place and the atoms/molecules appear to be fixed in place, but with a disordered arrangement. However we note that overall the material remains homogeneous and uniform - there is no microstructure. As in the case of supercooled liquids, this is not the equilibrium state, but another form of metastable state known as a glass. An example, is typically the material in our windows, `glass’, that is the result of cooling liquid silicates. Not all materials readily form glasses and this is often expressed loosely as the glass forming ability of the material. A good glass former is a material that can be cooled quite slowly, a poor glass former is one that needs to be quenched fast (there are more complex definitions but this is the gist). A characteristic of the glass is that no transition appears to take place in the material as it is quenched. There is no latent heat released, there is no recalescence and there is no evidence of phase separation (microstructure) in the material produced. In other words we imagine the glass forming from the supercooled liquid. So what do we mean by the glass transition and the glass transition temperature <span class="math inline">\(T_g\)</span>? To answer this question, it is interesting to ask what happens as we heat our glass up? If, all we had was a very very high viscosity (behaving like a solid), but metastable supercooled liquid phase, then we would eventually return to the true liquid phase (above the melting point) without any evidence of a phase transition taking place (unless nucleation and recalescence took place). However, when we heat glass, we do see heat evolved at a temperature below the melting point (we’ll see this later on our summary of thermal analysis). For any given glass this occurs consistently at roughly the same temperature (but notably not well defined) and the material will start to change into a more viscous, `rubbery’ state. This is known as the glass transition. It is not a true thermodynamic transition and there are many ways in which it may defined (all occuring at roughly the same temperature). It depends on cooling/heating rate and can be observed in a change in for example viscosity, thermal expansion coefficients, heat capacity etc. It also depends on the thermal history of the material.</p>
-<p>In summary, the existence of a glassy state of matter is readily apparent. However, the transformation of a liquid into a glass and how and why the structure changes on heating/cooling at the glass transition are still very poorly understood and the subject of much research. Indeed, there is no universal definition of the glass transition despite many attempts to define it in a rigorous thermodynamic way.</p>
-<p>The terms glassy and amorphous materials are often used synonymously. Stricter definitions state that a (true) glass is formed by quenching from the liquid state whereas an amorphous solid includes materials that have been formed by for example deposition from a vapour, preciptation from a solution, mechanical processing. Amorphous materials also show a glass transition temperature but the manner in which they form is more complicated to describe theoretically.</p>
+<section id="the-structure-of-colloidal-systems" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="the-structure-of-colloidal-systems"><span class="header-section-number">12.3</span> The structure of colloidal systems</h2>
+<p>If you ask someone what paint, milk, blood, fog, coffee and ink have in common, they would probably struggle to find a convincing answer. Physically, however, they all belong to the same broad class of materials: <strong>colloidal systems</strong>.</p>
+<p>A colloid consists of a dispersed phase made of particles, droplets or bubbles suspended within a continuous phase. Depending on whether the dispersed and continuous phases are solid, liquid or gas, colloids can take many different forms, ranging from aerosols (fog, smoke) to emulsions (milk, mayonnaise), foams (whipped cream) and particle suspensions (paint, blood).</p>
+<center>
+<img src="part1_figs/ColloidalTable.jpg" alt="Table of existing colloidal materials" width="500">
+</center>
+<p align="center">
+<em>Various types of colloids depending on the thermodynamic state of dispersed and continuous phase. Pictures represents, from left to right, then from top to bottom : whipped cream, shaving foam, marshmallow, suitcase foam, clouds, liquid spray, mayonnaise, milk, butter, cheese, smoke, suspended dust, coffee, paint, zircon gemstone and selenium ruby (a type of coloured glass).</em>
+</p>
+<p>Despite their diversity, all colloids share a common characteristic: the dispersed objects are small enough to exhibit behaviour that differs markedly from both molecules and macroscopic particles. Their typical size ranges from a few nanometres to a few tens of micrometres. Because of this intermediate size scale, colloidal systems often display unique optical, rheological and transport properties that underpin countless applications in food processing, pharmaceuticals, coatings, printing technologies and environmental science.</p>
+<p>A schematic colloidal suspension is shown below. The dispersed particles (phase <span class="math inline">\(\beta\)</span>) are suspended within a continuous phase (phase <span class="math inline">\(\alpha\)</span>). At sufficiently small sizes, the particles are continuously bombarded by molecules of the surrounding fluid, giving rise to <strong>Brownian motion</strong>, the random motion first observed by Robert Brown in 1827.</p>
+<center>
+<img src="part1_figs/ColloidalScheme2.png" alt="Scheme of Colloidal structure" width="500">
+</center>
+<p align="center">
+<em>Typical structure of a colloidal suspension. The colloid is constituted by a continuous (or dispersing) phase, noted <span class="math inline">\(\alpha\)</span>, and a dispersed phase, noted <span class="math inline">\(\beta\)</span>. The radius (or typical size) <span class="math inline">\(R\)</span> of the suspended particles ranges from between the nanometre and a few hundreds of micrometre. A typical example of Brownian motion is represented in dotted lines for the central particle. The P'eclet number, sometimes used in the definition of colloids, explicitly depends on the diffusion coefficient of this motion. The Brownian motion results from the interaction between the resulting force from the weight and the buoyancy of the particles <span class="math inline">\(\vec{P}\)</span> and the random thermodynamic force <span class="math inline">\(\vec{\xi}\)</span> due to collisions with molecules of the continuous phase, according to Langevin theory.</em>
+</p>
+<p>Some authors define colloidal systems primarily through this Brownian motion. In this view, a suspension is considered colloidal when random thermal motion is significant compared with the tendency of particles to sediment under gravity. A convenient measure of this competition is the <strong>Péclet number</strong></p>
+<p><span class="math display">\[
+Pe=\frac{D}{vL},
+\]</span></p>
+<p>where <span class="math inline">\(D\)</span> is the particle diffusion coefficient, <span class="math inline">\(v\)</span> a characteristic sedimentation velocity and <span class="math inline">\(L\)</span> a characteristic length scale. When <span class="math inline">\(Pe \gg 1\)</span>, Brownian diffusion dominates over sedimentation and particles remain well dispersed. For particles suspended in water under ambient conditions, this criterion typically corresponds to particle sizes below roughly one micrometre, in good agreement with the conventional size range of colloidal particles.</p>
+<p>In this course we will focus primarily on <strong>colloidal suspensions</strong>, namely solid particles dispersed in a liquid. For simplicity, we will often model the particles as spherical objects interacting as nearly ideal <strong>hard-sphere systems</strong>, where particles interact primarily through excluded volume effects. Such systems have become invaluable model materials for investigating phase transitions, crystallisation and glass formation at the particle scale. Although idealised, this description captures many of the fundamental physical phenomena that make colloids attractive model systems for studying phase transitions, crystallisation, glasses and particle-scale organisation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+One step further: Colloidal stability
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>In reality, colloidal interactions are much more complex than ideal hard spheres: some practical difficulty immediately arises when attempting to create a colloidal suspension. If spherical particles are simply mixed into a solvent, they rarely remain uniformly dispersed for long. Attractive interactions, particularly van der Waals forces, tend to pull neighbouring particles together, leading to aggregation or <strong>flocculation</strong> (potentially visible in your coffee cup if you add oat milk in it).</p>
+<p>From a thermodynamic perspective, colloidal dispersions are generally only metastable. Without additional stabilising mechanisms, particles progressively aggregate into larger clusters, due to (at least) so-called Van der Waals attraction, eventually resulting in macroscopic phase separation.</p>
+<p>To maintain a homogeneous suspension, a repulsive interaction must be introduced to counteract these attractive forces. The most common stabilisation mechanism is <strong>electrostatic stabilisation</strong>. When particles acquire a surface charge, counter-ions in the surrounding liquid form an electrical double layer around each particle. As two particles approach one another, overlap of these double layers generates a repulsive force that can prevent aggregation.</p>
+<center>
+<img src="part1_figs/DoubleLayerModif.png" alt="Scheme of Colloidal structure" width="500">
+</center>
+<p align="center">
+<em>Illustration of the ionic double layer around a charged colloidal particle. Picture modified from Adapted from T. Cosgrove, <em>Colloid Science: Principles, Methods and Applications</em>, John Wiley &amp; Sons, 2010.</em>
+</p>
+<p>The thickness of the diffuse ionic layer is characterised by the so-called <strong>Debye length</strong>, which depends strongly on the salt concentration of the solvent. By modifying parameters such as pH or ionic strength, it is therefore possible to tune the balance between attraction and repulsion and control the stability of the suspension.</p>
+<p>Another widely used approach is <strong>steric stabilisation</strong>. In this case, polymer chains are grafted onto the particle surfaces, creating a protective “hairy” layer. As particles approach each other, compression of these polymer layers becomes energetically unfavourable, generating a strong repulsion that suppresses aggregation.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="second-order-phase-transitions" class="level3" data-number="11.2.6">
-<h3 data-number="11.2.6" class="anchored" data-anchor-id="second-order-phase-transitions"><span class="header-section-number">11.2.6</span> Second Order Phase transitions</h3>
-<p>In the discussion above we charaterised a first order phase transtion as one in which latent heat is absorbed/emitted. i.e.&nbsp;one in which two phases coexist at the transition temperature and the temperature stays constant until the transition is complete. However, we can also identify other transitions in which no latent heat is associated with the change in phase taking place. Typical examples might be the liquid-vapour transition at the critical point or the ferromagnetic transition. The key point is that the transition between the two states is continuous. For example, in the ferromagnetic transition the magnetization is zero above the transition and increases steadily from zero below the transition. In this case it is the discontinuity in slope of the magnetization vs.&nbsp;temperature that is the signature of the transition taking place. In other cases a discontinuity in the gradient of the temperature dependence of the heat capacity is observed (while the heat capacity itself is continuous across the transition). These transitions have been discussed in the the theory section of this course and their beauty is the observation that the behaviour for a variety of supposedly very different physical transitions may be characterised in terms of universal behaviour. The <span class="math inline">\(\textit{universality class}\)</span> of the transition is characterised by its critical exponents. You might note that many attempts have been made (unsuccessfully) to describe the glass transition in terms of an underlying second order phase transition.</p>
-<p>Experiments to determine, for example, the critical exponents of the transition (rather than observing the transition itself) are extremely difficult. Precise control and accuracy of the temperature measurements is needed, great care must be taken to make any temperature gradients in the material as small as possible and in order to get accurate values of the critical exponents you need to get very close to the transition temperature.</p>
+<section id="how-to-we-obtain-gr-and-information-about-coordination-from-colloid-systems." class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="how-to-we-obtain-gr-and-information-about-coordination-from-colloid-systems."><span class="header-section-number">12.4</span> How to we obtain <span class="math inline">\(g(r)\)</span> and information about coordination from colloid systems.</h2>
+<p>If we have our ideal colloid there are several things we may wish to control. For example, what is the size of the particles (there will be a tendency for large particles to sediment), are the particles all the same size (polydispersivity), can we make systems with different shapes (e.g.&nbsp;ovoid), can we make systems with mixed particle sizes, can we introduce directional interactions (Janus particles) and how do you control the number density of the particles (the density of the particles is the crucial parameter for describing the hard sphere phase diagram)? These all pose theoretical and experimental difficulties of their own. Finally, once we’ve prepared our colloid with a controlled density … how do we study its structure (and dynamics)?</p>
 </section>
+<section id="confocal-microscopy." class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="confocal-microscopy."><span class="header-section-number">12.5</span> Confocal microscopy.</h2>
+<p>There are a few further steps we need to achieve to be able to measure and track the positions of the particles in our hard sphere colloid. Firstly, it is important that the particles are transparent, otherwise, we will not be able to see into the depth of the sample and secondly we need to match, as closely as possible, the refractive index of the solvent. If we don’t do this the difference in refractive index will mean light is quickly scattered in all directions meaning we will just have an opaque material. However, by making the particles all but invisible how to we determine their positions? The trick is to include a fluorescent dye their centre. When illuminated with the correct wavelength of light (using a laser) the particles will glow. This works well but how do we measure the positions of the particles in 3D. The answer is to use a confocal microscope as illustrated below (figure take from Royall et. al.2024).</p>
+<center>
+<img src="part1_figs/confocal.png" alt="schematic of confocal microscope" width="500">
+</center>
+In the confocal microscope laser light is passed through a small pinhole and then brought to focus at a point in the sample by a lens, known as the condenser lens. The fluorescent light coming back from the illuminated samples is then focused by the objective lens (which in this case is the same lens as the condenser) and the microscopy image is obtained by the camera. However, although the laser light is brought to a tight focus in the sample there are nevertheless still regions that are illuminated by the laser that, under normal circumstances, would also bring unwanted light into the camera. The key point of the confocal system is that a second pinhole is placed precisely at the focus (hence confocal) of the objective lens for the light coming from the sample. The effect of this pinhole is to reduce the volume of the sample that is illuminated and then seen by the camera. The method is good enough that the fluorescence from individual particles can be observed clearly and the ultimate ability to resolve the individual particles is given by the diffraction limit imposed by the wavelength of the laser light used. (There are also ways in which this has been overcome to an extent in practical systems). The figures below, also taken from Royall et. al.&nbsp;2024 show examples of confocal images used to map out the phase diagram of the hard sphere system.
+<center>
+<img src="part1_figs/confocalimage.png" alt="Phase diagram of hard spheres with confocal images" width="500">
+</center>
+<p>Note, moving the sample up and down changes the ‘z’ direction and a three dimensional image may be obtained by ‘stacking’ vertically scanned 2D images.</p>
+Once the particles positions have been determined it is possible to plot <span class="math inline">\(g(r)\)</span> for the different packing densities to show how it varies over the phase diagram as shown below
+<center>
+<img src="part1_figs/experimental gr.png" alt="Experimental g of r" width="500">
+</center>
+<p>The early attempts at understanding the packing of particles in disordered materials came to te conclusion that 5 fold coordination (inconsistent with the long range order required for crystals) was the characteristic of simple dense packed structures. In the same spirit as these early experiments the results from confocal imaging have allowed the prevalence of different types of local ordering to be investigated. This leads to the mapping out the <span class="math inline">\(\textit{topological cluster distribution}\)</span> (i.e.&nbsp;the different types of local structure) that occur in the system. As noted before, these higher order correlations may be calculated from the particle positions (once we have them) but cannot be determined unambiguously from measurements of <span class="math inline">\(g(r)\)</span> alone.</p>
+<center>
+<img src="part1_figs/topcluster.png" alt="topological clusters" width="500">
+</center>
+<p>These are just a few examples of the areas studied using colloids and confocal microscopy techqniues.</p>
 </section>
-<section id="experimental-observation-of-phase-transitions" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Experimental observation of phase transitions</h1>
-<p>In the rest of this course we will highlight a few of the various techniques that are used to investigate and study the various forms of transitions discussed and the materials produced from them. Where possible we will relate them to some of the theoretical concepts that have been discussed in other parts. We will separate the discussion into four broad categories:</p>
+<section id="calculation-of-gr-directly-from-simulation" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="calculation-of-gr-directly-from-simulation"><span class="header-section-number">12.6</span> Calculation of <span class="math inline">\(g(r)\)</span> directly from simulation</h2>
+<p>Although simulation is not strictly an experimental method, it is neither a truly theoretical method either. This said, from the experimentalist point of view, especially in the case of the colloind systems studied above, they provide a direct comparison in real space with the data. As such the experiemntal results are an important check of the veracity of the simulation methods especially with regard to the application of for example theoretical potentials. The simulation methods naturally exploit the interaction of the particles in real space (we know the positions of the particles and we calculate how they move under the influence of the interparticle forces. Hence, it is quite straight forward to compare the real space configurations measured in experiment with the particle coordinates in the simulation. The comparison between the experiment and simulation and the level of agreement that can be achieved can be strikingly seen in the comparison of <span class="math inline">\(g(r)\)</span> for hard spheres shown above. Simulations however are not the answer to everything. They get more and more computer intensive as larger numbers of particles are included and the time scales over which they are carried out are extremely short compared to those in experiments. The latter is a particular issue with studies of the glass transition (as always) where the physical processes taking place may occur over a very wide range of timescales.</p>
+<p>The comparison of simulation results with experimental diffraction data is more difficult. Diffraction experiments are a reciprocal space measurement and to compare to simulation we need to work out the corresponding real space (<span class="math inline">\(g(r)\)</span> ) distributions. Hence when comparing experiment with simulation we have to choose whether to transform our reciprocal space data to real space (with associated problems) or convert the real space data from our simulations to reciprocal space for comparison (that also has problems). This is the subject of the next part of this course.</p>
+</section>
+<section id="practical-exercise-determining-structure-from-the-radial-distribution-function" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="practical-exercise-determining-structure-from-the-radial-distribution-function"><span class="header-section-number">12.7</span> Practical Exercise: Determining Structure from the Radial Distribution Function</h2>
+<p>In this exercise, you will use the provided Python code to calculate the radial distribution function, <span class="math inline">\(g(r)\)</span>, from a set of particle coordinates. By applying the same analysis to different systems, you will discover how <span class="math inline">\(g(r)\)</span> can distinguish between gases, liquids, and solids, and how quantitative structural information can be extracted from experimental and simulation data.</p>
+<section id="learning-objectives" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">12.7.1</span> Learning Objectives</h3>
+<p>By the end of this exercise, you should be able to:</p>
 <ul>
-<li>observation of the changes in macroscopic variables associated with transitions,</li>
-<li>the structure and changes in structure in real space (i.e.&nbsp;positions of atoms and particles) as transitions take place,</li>
-<li>the structure and changes in structure as seen in reciprocal space (i.e.&nbsp;by scattering and diffraction),</li>
-<li>and the changes that take place in the structure and the dynamics of the particles in differennt phases.</li>
+<li>Run a Python script that calculates <span class="math inline">\(g(r)\)</span> from particle coordinates.</li>
+<li>Understand the purpose of each section of the code.</li>
+<li>Interpret the main features of a radial distribution function.</li>
+<li>Identify whether a sample is a gas, liquid, or solid from its <span class="math inline">\(g(r)\)</span>.</li>
+<li>Estimate:
+<ul>
+<li>the closest distance of approach,</li>
+<li>the average nearest-neighbour distance,</li>
+<li>the cutoff distance defining the first coordination shell,</li>
+<li>the coordination number.</li>
+</ul></li>
 </ul>
-<section id="examples-of-macroscopic-measurements." class="level2" data-number="12.1">
-<h2 data-number="12.1" class="anchored" data-anchor-id="examples-of-macroscopic-measurements."><span class="header-section-number">12.1</span> Examples of macroscopic measurements.</h2>
-<section id="differential-thermal-analysis." class="level3" data-number="12.1.1">
-<h3 data-number="12.1.1" class="anchored" data-anchor-id="differential-thermal-analysis."><span class="header-section-number">12.1.1</span> Differential Thermal analysis.</h3>
-<p>Differential Thermal Analysis (DTA) methods are now a common and routine way of establishing the existenceo of phase transitions in materials in both a qualitative and quantitative way. The methods are all based on the same principle, namely the response to heating/cooling of the material under study is compared to that of a known calibration material that does not have any phase transitions in the region of study. I describe the two most common forms below.</p>
-<section id="heat-flux-dsc-boersma-dta" class="level4" data-number="12.1.1.1">
-<h4 data-number="12.1.1.1" class="anchored" data-anchor-id="heat-flux-dsc-boersma-dta"><span class="header-section-number">12.1.1.1</span> Heat flux DSC (Boersma DTA)</h4>
-<p>This is the simplest thermal analysis technqiue. Two materials, a sample and a reference are heated together in a single furnace as shown below.</p>
-<center>
-<img src="part1_figs/DTA.png" alt="Schematic of a DTA apparatus " width="800">
-</center>
-<p>The temperature of the two materials is monitored carefully as the furnace is heated steadily. The reference is known not to show any phase transitions over the temperature range studied and will therefore heat steadily. If there is a phase change in the sample on heating/cooling, it will show as a temperature difference between the sample and reference. If the change is endothermic the sample will be at a lower temperature until the transition is complete after which the sample will catch up to the base temperature of the furnace, if the change is exothermic its temperature will increase until the transition is complete and then return to the furnace temperature. If the mass of the sample and reference is known and the heat capacity of the reference known, quantative values of, for example, latent heat, can be obtained. In quantitative measurements it is sometimes known as a heat flux DSC. A schematic of a heat flux DSC trace is shown below.</p>
-<center>
-<img src="part1_figs/DTAtrace.png" alt="Schematic of a DTA trace " width="800">
-</center>
+<hr>
 </section>
-<section id="heat-flow-dsc" class="level4" data-number="12.1.1.2">
-<h4 data-number="12.1.1.2" class="anchored" data-anchor-id="heat-flow-dsc"><span class="header-section-number">12.1.1.2</span> Heat flow DSC</h4>
-<p>This technique is similar to heat flux DSC but the sample and reference are located in their own separate furnaces (it is a double furnace technique). The power needed to steadily heat the sample and reference (and hence the heat added to the system) is controlled in such a way as to keep the temperature of the sample and reference the same.</p>
-<center>
-<img src="part1_figs/heatflowDSC.png" alt="Schematic of a Heat Flow DSC apparatus " width="800">
-</center>
-<p>The difference in power supplied to the furnaces indicates when a transition takes place and with the mass of the reference and sample allows the energy absorbed/released in the transition be determined. If on heating there is a first order phase transition then more power is needed to overcome the latent heat to maintain the temperature. If an endothermic transition takes place then the power needed would decrease. The output from the instrument is usually presented as the heat flow to the sample as the temperature is raised. The trace is very similar in form to the heat flux DSC above except that the peaks and troughs observed are the opposite directions. (Increased heat flow into the sample is equivalent to the temperature of the sample being lower in the heat heat flux DSC). With computer control and a carefully designed and insulated chamber accurate measurements of latent heat etc. may be made.</p>
-</section>
-<section id="practical-considerations" class="level4" data-number="12.1.1.3">
-<h4 data-number="12.1.1.3" class="anchored" data-anchor-id="practical-considerations"><span class="header-section-number">12.1.1.3</span> Practical considerations</h4>
-<p>In use, practical questions involve the rate at which you wish to heat/cool the sample (transitions don’t take place instantaneously) and the sensitivity to small changes you are tryinh to observe. One common extension to the technique is <span class="math inline">\(\textit{Temperature ~ Modulated ~ DSC}\)</span>. In this case the heating/cooling may be modulated (e.g.&nbsp;stopped or reversed periodically. Application of this method allows the kinetics of the transition in the DSC to be observed. In particular, it can distinguish between a reversible second order phase transition and an irreversible transition such as the glass transition.</p>
-<p>A typical DSC analysis would involve monitoring the sample as it is heated to some target temperature, for example, to above its melting point. (The limit would be set by the maximum temperature limit of the apparatus, the material stability (does it breakdown/oxidise) or the onset of a reaction between sample and container). If the sample was initially in a non equilibrium state (glassy, supercooled so you pass through <span class="math inline">\(T_g\)</span> or recalescence takes place) then you do not expect to see transitions at the same place in the heating/cooling cycles. Similarly, observations of the differences in the DSC trace of materials with different thermal histories will be different.</p>
-</section>
-</section>
-<section id="other-techniques-non-exhaustive" class="level3" data-number="12.1.2">
-<h3 data-number="12.1.2" class="anchored" data-anchor-id="other-techniques-non-exhaustive"><span class="header-section-number">12.1.2</span> Other techniques (non exhaustive)</h3>
-<p>Differential thermal analysis is not the only method for studying phase transitions. There are many other ways, quantitative and qualitative that may be used. Here are a few examples.</p>
-<p><span class="math inline">\(\bf{Thermal ~ mechanical ~ analysis ~ (TMA)}\)</span>. In this case the mechanical properties (modulus) of the material is observed on heating/cooling. For example, on heating, at the glass transition temperature, a glass will start to soften. Note, the glass transition temperature measured in this way is often slightly different to that measured by DSC and is indicative of the vagueness of the definition of <span class="math inline">\(T_g\)</span> itself!</p>
-<p><span class="math inline">\(\bf{Thermogravimetric ~ analysis}\)</span>. Observation of changes in sample mass with temperature.</p>
-<p><span class="math inline">\(\bf{Imaging}\)</span>. It is quite possible to observe (and hence video) the phase transition taking place and getting some insight into the mechanism of the transition taking place.</p>
-<p><span class="math inline">\(\bf{Magnetic ~ susceptibilty}\)</span>. To observe transitions in para to ferro/antiferro magnetic transitions. (e.g.&nbsp;Curie and Néel points),</p>
-<p><span class="math inline">\(\bf{Electrical ~ Conductivity}\)</span>. In addition to structural changes in a material changes in other properties, for example, the electronic conductivity may also take place. For example, some chalcogenide (S,Se,Te) based materials are good glass formers and have very high resistivity (low conductivity) in the glassy state. By contrast, in the crystalline state they have high conductivity. The associated glass and melting transitions may be observed easily by measuring resistance. Indeed, the glass transition in these materials, is exploited in non-volatile memory devices.</p>
-<p><span class="math inline">\(\bf{Pyrometric ~ measurements}\)</span>. This is an example from my own research on oxide glasses (that melt in excess of 2000K). In this case, the glass transition, recalescence, and freezing my all be observed in a semi-quantitative way by measuring the temperature of a cooling sample as a function of time.</p>
-<center>
-<img src="part1_figs/Barnes-recalescence.png" alt="example of recalescence from Barnes 2011" width="1200">
-</center>
-</section>
-</section>
-<section id="keypoints" class="level2" data-number="12.2">
-<h2 data-number="12.2" class="anchored" data-anchor-id="keypoints"><span class="header-section-number">12.2</span> Keypoints</h2>
-<p>We have taken some time here to discuss various aspects about phase transitions as macroscopically observable changes in a material. We have introduced the ideas of</p>
+<section id="obtaining-and-visualising-the-data" class="level3" data-number="12.7.2">
+<h3 data-number="12.7.2" class="anchored" data-anchor-id="obtaining-and-visualising-the-data"><span class="header-section-number">12.7.2</span> Obtaining and Visualising the Data</h3>
+<p>If not already done, download the coordinate and code files from the shared University of Bristol folder:</p>
+<p><strong>Data folder:</strong> <a href="https://uob-my.sharepoint.com/:f:/g/personal/ln25672_bristol_ac_uk/IgDS4fWx21eIQK4b2bYKJoA0Aar7IxB0Xre7D_8mxekCLfA?e=q40WSa">Download the coordinate datasets</a></p>
+<p>The folder contains particle coordinates for several systems:</p>
 <ul>
-<li><p>first and second order phase transitions,</p></li>
-<li><p>nucleation and growth,</p></li>
-<li><p>supercooling and superheating,</p></li>
-<li><p>spinodal decomposition,</p></li>
-<li><p>the formation of glasses</p>
-<p>andhave given a brief introduction as how to observe and measure them with especial emphasis on differential thermal analysis techniques.</p></li>
+<li>Graphite (perfect structure)</li>
+<li>Graphite at room temperature</li>
+<li>Silicon (perfect structure)</li>
+<li>Silicon at room temperature</li>
+<li>Water</li>
+<li>A theoretical Lennard-Jones Gas (with arbitrary length units!)</li>
+</ul>
+<p>Each file contains the <span class="math inline">\((x,y,z)\)</span> coordinates of all particles in the sample.</p>
+<p>Choose <strong>one dataset</strong> to analyse. Later in the exercise you will compare your results with your classmates having worked on different systems. It is a good idea to coordinate with one or two of your direct neighbours to work on different datasets.</p>
+<hr>
+</section>
+<section id="running-the-code" class="level3" data-number="12.7.3">
+<h3 data-number="12.7.3" class="anchored" data-anchor-id="running-the-code"><span class="header-section-number">12.7.3</span> Running the Code</h3>
+<p>Locate the line in the Python script that loads the particle coordinates:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(<span class="st">"filename.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Replace the filename by one of the supplied datasets and execute the script.</p>
+<p>Let’s review the code main steps and make sure we understand what information is being calculated.</p>
+<section id="loading-the-coordinates" class="level4" data-number="12.7.3.1">
+<h4 data-number="12.7.3.1" class="anchored" data-anchor-id="loading-the-coordinates"><span class="header-section-number">12.7.3.1</span> Loading the Coordinates</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(...)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(positions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>positions</code> contains a table whose various rows are the (x,y,z) components of the particles in the sample</li>
+<li><code>N</code> is the number of lines, i.e.&nbsp;the number of particles</li>
+</ul>
+<hr>
+</section>
+<section id="determining-the-simulation-volume" class="level4" data-number="12.7.3.2">
+<h4 data-number="12.7.3.2" class="anchored" data-anchor-id="determining-the-simulation-volume"><span class="header-section-number">12.7.3.2</span> Determining the Simulation Volume</h4>
+<p>The code determines the dimensions of the simulation box and estimates its volume, which is necessary to compute the number density of the particles:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xmin <span class="op">=</span> np.<span class="bu">min</span>(positions[:,<span class="dv">0</span>])</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>xmax <span class="op">=</span> np.<span class="bu">max</span>(positions[:,<span class="dv">0</span>])</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>...</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>volume <span class="op">=</span> Lx <span class="op">*</span> Ly <span class="op">*</span> Lz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="calculating-the-number-density" class="level4" data-number="12.7.3.3">
+<h4 data-number="12.7.3.3" class="anchored" data-anchor-id="calculating-the-number-density"><span class="header-section-number">12.7.3.3</span> Calculating the Number Density</h4>
+<p>The particle number density is calculated as</p>
+<p><span class="math display">\[
+\rho=\frac{N}{V}.
+\]</span></p>
+</section>
+<section id="questions" class="level4" data-number="12.7.3.4">
+<h4 data-number="12.7.3.4" class="anchored" data-anchor-id="questions"><span class="header-section-number">12.7.3.4</span> Questions</h4>
+<ol type="1">
+<li><em>What physical quantity does <span class="math inline">\(\rho\)</span> represent?</em></li>
+<li><em>Would you expect <span class="math inline">\(\rho\)</span> to be larger for a gas or a liquid?</em></li>
+</ol>
+<hr>
+</section>
+<section id="dividing-distances-into-bins" class="level4" data-number="12.7.3.5">
+<h4 data-number="12.7.3.5" class="anchored" data-anchor-id="dividing-distances-into-bins"><span class="header-section-number">12.7.3.5</span> Dividing Distances into Bins</h4>
+<p>The code creates a histogram of interparticle distances.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="questions-1" class="level4" data-number="12.7.3.6">
+<h4 data-number="12.7.3.6" class="anchored" data-anchor-id="questions-1"><span class="header-section-number">12.7.3.6</span> Questions</h4>
+<ol type="1">
+<li><em>What is the purpose of the histogram bins?</em></li>
+<li><em>What would happen if very few bins were used?</em></li>
+<li><em>What would happen if an extremely large number of bins were used?</em></li>
+</ol>
+<hr>
+</section>
+<section id="measuring-pair-distances" class="level4" data-number="12.7.3.7">
+<h4 data-number="12.7.3.7" class="anchored" data-anchor-id="measuring-pair-distances"><span class="header-section-number">12.7.3.7</span> Measuring Pair Distances</h4>
+<p>The code loops over all particle pairs and calculates their separation:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.sqrt(dx<span class="op">*</span>dx <span class="op">+</span> dy<span class="op">*</span>dy <span class="op">+</span> dz<span class="op">*</span>dz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+<section id="normalisation" class="level4" data-number="12.7.3.8">
+<h4 data-number="12.7.3.8" class="anchored" data-anchor-id="normalisation"><span class="header-section-number">12.7.3.8</span> Normalisation</h4>
+<p>The histogram is converted into the radial distribution function,</p>
+<p><span class="math display">\[
+g(r),
+\]</span></p>
+<p>by comparing the measured number of neighbours with the number expected in a perfectly random distribution.</p>
+<hr>
+</section>
+</section>
+<section id="first-analysis-of-your-graph" class="level3" data-number="12.7.4">
+<h3 data-number="12.7.4" class="anchored" data-anchor-id="first-analysis-of-your-graph"><span class="header-section-number">12.7.4</span> First Analysis of Your Graph</h3>
+<p>Run the code and examine the resulting plot.</p>
+<section id="questions-2" class="level4" data-number="12.7.4.1">
+<h4 data-number="12.7.4.1" class="anchored" data-anchor-id="questions-2"><span class="header-section-number">12.7.4.1</span> Questions</h4>
+<ol type="1">
+<li><em>Why is <span class="math inline">\(g(r)\)</span> zero at short distances?</em></li>
+<li><em>At what value of <span class="math inline">\(r\)</span> does it first become non-zero?</em></li>
+<li><em>Is there a clear first peak?</em></li>
+<li><em>Are there several peaks?</em></li>
+<li><em>Does the curve eventually approach <span class="math inline">\(g(r)=1\)</span>?</em></li>
+</ol>
+<p>Discuss your observations with your neighbours, and compare with their own systems.</p>
+<hr>
+</section>
+</section>
+<section id="finite-size-effects-and-periodic-boundary-conditions" class="level3" data-number="12.7.5">
+<h3 data-number="12.7.5" class="anchored" data-anchor-id="finite-size-effects-and-periodic-boundary-conditions"><span class="header-section-number">12.7.5</span> Finite-Size Effects and Periodic Boundary Conditions</h3>
+<p>Before moving on to identifying the phase of your material, take a careful look at your <span class="math inline">\(g(r)\)</span> curve.</p>
+<section id="an-observation" class="level4" data-number="12.7.5.1">
+<h4 data-number="12.7.5.1" class="anchored" data-anchor-id="an-observation"><span class="header-section-number">12.7.5.1</span> An Observation</h4>
+<p>For an ideal liquid or gas, we would expect</p>
+<p><span class="math display">\[
+g(r) \rightarrow 1
+\]</span></p>
+<p>after <span class="math inline">\(r\)</span> exceeds a few particle diameters, since particles become effectively uncorrelated when they are sufficiently far apart. It should also happen for crystals, but often at distances bigger than what can be observed experimentally while still resolving the first neighbours structure.</p>
+<p>However, you may notice that your calculated <span class="math inline">\(g(r)\)</span> for the <strong>liquid</strong> and <strong>gas</strong> datasets does <strong>not</strong> seem to approach 1 at large <span class="math inline">\(r\)</span>.</p>
+</section>
+<section id="think-about-it" class="level4" data-number="12.7.5.2">
+<h4 data-number="12.7.5.2" class="anchored" data-anchor-id="think-about-it"><span class="header-section-number">12.7.5.2</span> Think About It</h4>
+<p><em>Why might the measured <span class="math inline">\(g(r)\)</span> fail to reach 1, even though the system should behave like a liquid or gas?</em></p>
+<p>Discuss your ideas with your neighbours before continuing.</p>
+<hr>
+</section>
+<section id="a-clue-in-the-code" class="level4" data-number="12.7.5.3">
+<h4 data-number="12.7.5.3" class="anchored" data-anchor-id="a-clue-in-the-code"><span class="header-section-number">12.7.5.3</span> A Clue in the Code</h4>
+<p>In the distance-calculation section of the script, you may have noticed the following commented-out lines:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For a gas or liquid, implement periodic boundary conditions</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (minimum-image convention)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dx = dx - Lx * round(dx / Lx)</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dy = dy - Ly * round(dy / Ly)</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dz = dz - Lz * round(dz / Lz)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These lines implement <strong>periodic boundary conditions</strong> using the <strong>minimum-image convention</strong>.</p>
+<p>The idea is to treat the simulation box as if it were repeated infinitely in every direction.</p>
+<p>A particle leaving one side of the box immediately re-enters from the opposite side.</p>
+<p>When calculating distances, we therefore measure the <strong>shortest possible separation</strong> between two particles, taking into account all neighbouring copies of the simulation box.</p>
+<hr>
+</section>
+<section id="try-it-yourself" class="level4" data-number="12.7.5.4">
+<h4 data-number="12.7.5.4" class="anchored" data-anchor-id="try-it-yourself"><span class="header-section-number">12.7.5.4</span> Try It Yourself</h4>
+<p>You might first want to change the variables <code>OutputName</code> and <code>GraphName</code> to be able to compare both outputs.</p>
+<p>Uncomment the three lines:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> dx <span class="op">-</span> Lx <span class="op">*</span> <span class="bu">round</span>(dx <span class="op">/</span> Lx)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dy <span class="op">=</span> dy <span class="op">-</span> Ly <span class="op">*</span> <span class="bu">round</span>(dy <span class="op">/</span> Ly)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dz <span class="op">=</span> dz <span class="op">-</span> Lz <span class="op">*</span> <span class="bu">round</span>(dz <span class="op">/</span> Lz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and run the code again on your dataset.</p>
+<ol type="1">
+<li><p><em>Does <span class="math inline">\(g(r)\)</span> now approach 1 at large distances?</em></p></li>
+<li><p><em>Which result should you consider as correct and why?</em></p></li>
+</ol>
+<hr>
+</section>
+<section id="discussion" class="level4" data-number="12.7.5.5">
+<h4 data-number="12.7.5.5" class="anchored" data-anchor-id="discussion"><span class="header-section-number">12.7.5.5</span> Discussion</h4>
+<p>The answer is not necessarily the same as for liquids and gases.</p>
+<p>For liquids and gases, periodic boundary conditions are often essential because they reduce finite-size effects and better represent an effectively infinite bulk material, provided their structure is not correlated over the length of the box.</p>
+<p>For crystals, however, the coordinates correspond to a specific finite arrangement of atoms. Artificially repeating the simulation box may introduce correlations that were not directly present in the original dataset. Whether periodic boundaries should be used therefore depends on what physical system the coordinates are intended to represent.</p>
+</section>
+</section>
+<section id="identifying-the-phase" class="level3" data-number="12.7.6">
+<h3 data-number="12.7.6" class="anchored" data-anchor-id="identifying-the-phase"><span class="header-section-number">12.7.6</span> Identifying the Phase</h3>
+<p>The overall shape of <span class="math inline">\(g(r)\)</span> reveals the state of matter.</p>
+<section id="typical-gas" class="level4" data-number="12.7.6.1">
+<h4 data-number="12.7.6.1" class="anchored" data-anchor-id="typical-gas"><span class="header-section-number">12.7.6.1</span> Typical Gas</h4>
+<ul>
+<li>Weak or no pronounced peaks.</li>
+<li><span class="math inline">\(g(r)\approx1\)</span> over most distances.</li>
+<li>Little spatial order.</li>
+</ul>
+</section>
+<section id="typical-liquid" class="level4" data-number="12.7.6.2">
+<h4 data-number="12.7.6.2" class="anchored" data-anchor-id="typical-liquid"><span class="header-section-number">12.7.6.2</span> Typical Liquid</h4>
+<ul>
+<li>Strong first peak.</li>
+<li>Smaller secondary peaks.</li>
+<li>Oscillations gradually decay towards 1.</li>
+</ul>
+</section>
+<section id="typical-crystal-solid" class="level4" data-number="12.7.6.3">
+<h4 data-number="12.7.6.3" class="anchored" data-anchor-id="typical-crystal-solid"><span class="header-section-number">12.7.6.3</span> Typical Crystal / Solid</h4>
+<ul>
+<li>Many sharp peaks.</li>
+<li>Well defined neighbour shells.</li>
+<li>Long-range order visible over large distances. (<span class="math inline">\(g(r)\approx1\)</span> might not ne observable over realistic datasets)</li>
+</ul>
+</section>
+<section id="questions-3" class="level4" data-number="12.7.6.4">
+<h4 data-number="12.7.6.4" class="anchored" data-anchor-id="questions-3"><span class="header-section-number">12.7.6.4</span> Questions</h4>
+<ol type="1">
+<li><em>Does your sample behave as a gas, liquid, or solid?</em></li>
+<li><em>Compare your graph with those obtained by neighbouring classmates.</em></li>
+<li><em>What are the main differences between the three classes of materials?</em></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="quantitative-information-from-gr" class="level3" data-number="12.7.7">
+<h3 data-number="12.7.7" class="anchored" data-anchor-id="quantitative-information-from-gr"><span class="header-section-number">12.7.7</span> Quantitative Information from <span class="math inline">\(g(r)\)</span></h3>
+<p>One of the strengths of the radial distribution function is that it contains quantitative structural information.</p>
+<section id="closest-distance-of-approach" class="level4" data-number="12.7.7.1">
+<h4 data-number="12.7.7.1" class="anchored" data-anchor-id="closest-distance-of-approach"><span class="header-section-number">12.7.7.1</span> Closest Distance of Approach</h4>
+<p><em>Estimate the distance at which <span class="math inline">\(g(r)\)</span> first becomes significantly different from zero. What is the closest distance of approach in your sample?</em></p>
+<hr>
+</section>
+<section id="nearest-neighbour-distance" class="level4" data-number="12.7.7.2">
+<h4 data-number="12.7.7.2" class="anchored" data-anchor-id="nearest-neighbour-distance"><span class="header-section-number">12.7.7.2</span> Nearest-Neighbour Distance</h4>
+<p>Locate the first maximum of <span class="math inline">\(g(r)\)</span>.</p>
+<p>The position of this first peak corresponds to the most probable nearest-neighbour distance.</p>
+<p><em>What is the nearest-neighbour distance in your sample?</em></p>
+<hr>
+</section>
+<section id="cutoff-distance-of-the-first-coordination-shell" class="level4" data-number="12.7.7.3">
+<h4 data-number="12.7.7.3" class="anchored" data-anchor-id="cutoff-distance-of-the-first-coordination-shell"><span class="header-section-number">12.7.7.3</span> Cutoff Distance of the First Coordination Shell</h4>
+<p>Locate the first minimum immediately after the first peak.</p>
+<p>This is commonly used to define the boundary of the first coordination shell. <em>What value do you obtain for the cutoff distance?</em></p>
+<hr>
+</section>
+<section id="coordination-number-if-time-allows" class="level4" data-number="12.7.7.4">
+<h4 data-number="12.7.7.4" class="anchored" data-anchor-id="coordination-number-if-time-allows"><span class="header-section-number">12.7.7.4</span> Coordination Number (if time allows)</h4>
+<p>The coordination number is the average number of neighbours contained within the first shell.</p>
+<p>It can be obtained from</p>
+<p><span class="math display">\[
+N_c=4\pi\rho \int_0^{r_c}g(r)r^2dr,
+\]</span></p>
+<p>where <span class="math inline">\(r_c\)</span> is the position of the first minimum.</p>
+<ol type="1">
+<li><em>Estimate the coordination number of your sample.</em></li>
+<li><em>How does your result compare with those obtained by neighbouring groups?</em></li>
+<li><em>Which sample appears to have the largest coordination number?</em></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="extension-activity-effect-of-temperature" class="level3" data-number="12.7.8">
+<h3 data-number="12.7.8" class="anchored" data-anchor-id="extension-activity-effect-of-temperature"><span class="header-section-number">12.7.8</span> Extension Activity: Effect of Temperature</h3>
+<p>Analyse both:</p>
+<ul>
+<li>Silicon at 0 K</li>
+<li>Silicon at Room Temperature</li>
+</ul>
+<p>Compare the resulting radial distribution functions.</p>
+<ol type="1">
+<li><em>How does temperature affect the height of the peaks?</em></li>
+<li><em>How does temperature affect the width of the peaks?</em></li>
+<li><em>Does long-range order disappear completely?</em></li>
+<li><em>What physical mechanism explains the observed differences?</em></li>
+</ol>
+<hr>
+</section>
+<section id="conclusions" class="level3" data-number="12.7.9">
+<h3 data-number="12.7.9" class="anchored" data-anchor-id="conclusions"><span class="header-section-number">12.7.9</span> Conclusions</h3>
+<p>Before moving on, make sure that you can confidently:</p>
+<ul>
+<li><p>Distinguish a gas, liquid, and solid from a radial distribution function.</p></li>
+<li><p>Estimate the closest distance of approach.</p></li>
+<li><p>Determine the average nearest-neighbour distance.</p></li>
+<li><p>Identify the cutoff distance of the first coordination shell.</p></li>
+<li><p>Estimate the coordination number.</p></li>
+</ul>
+<hr>
+</section>
+<section id="data-sources" class="level3" data-number="12.7.10">
+<h3 data-number="12.7.10" class="anchored" data-anchor-id="data-sources"><span class="header-section-number">12.7.10</span> Data Sources</h3>
+<p>The coordinate datasets used in this exercise were generated from the following sources:</p>
+<ul>
+<li><p><strong>Graphite and Silicon:</strong> crystal structures obtained from the <a href="https://next-gen.materialsproject.org">Materials Project database</a>, with Gaussian positional noise added to mimic thermal motion.</p></li>
+<li><p><strong>Liquid configurations (water):</strong> are obtained from the <a href="https://zenodo.org/records/10029720">Zenodo public database</a> published along <a href="https://doi.org/10.1038/s41467-024-46131-z">Cassone, G., Martelli, F. Electrofreezing of liquid water at ambient conditions. Nat Commun 15, 1856 (2024)</a></p></li>
+<li><p><strong>Gas configurations:</strong> obtained from running the simulations from <a href="https://github.com/AlexeiKorolev/Gas-Simulation">Alexei Korolev’s GitHub</a></p></li>
+</ul>
+<p>Please acknowledge these sources if you use the datasets outside this practical session.</p>
+</section>
+</section>
+<section id="in-summary-what-can-we-learn-from-gr" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="in-summary-what-can-we-learn-from-gr"><span class="header-section-number">12.8</span> In summary: What can we learn from <span class="math inline">\(g(r)\)</span>?</h2>
+<section id="the-exclusion-zone" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="the-exclusion-zone"><span class="header-section-number">12.8.1</span> The exclusion zone</h3>
+<p>A characteristic feature of the radial distribution function is the presence of an <strong>exclusion zone</strong>, corresponding to a range of distances for which <span class="math inline">\(g(r)=0\)</span>. This reflects the fact that particles occupy a finite volume and that their positions are defined by the locations of their centres. Consequently, two particles cannot approach each other more closely than a certain minimum distance, making the probability of finding particle centres within this range effectively zero. In dense systems such as liquids, this minimum distance is often taken to be approximately equal to the particle diameter. More generally, however, the exclusion zone should be interpreted as the closest distance of approach between neighbouring particles. The precise relationship between this distance and the particle diameter depends on the nature of the interactions and the structure of the material, and is not always straightforward, particularly in crystalline solids.</p>
+</section>
+<section id="average-first-neighbour-distance" class="level3" data-number="12.8.2">
+<h3 data-number="12.8.2" class="anchored" data-anchor-id="average-first-neighbour-distance"><span class="header-section-number">12.8.2</span> Average first neighbour distance</h3>
+<p>A second important feature of the radial distribution function is the presence of a <strong>first peak</strong>. Starting from the exclusion zone, where <span class="math inline">\(g(r)=0\)</span>, the function rises rapidly and reaches a maximum at a characteristic distance. This peak corresponds to the most probable separation between a particle and its nearest neighbours and is therefore referred to as the <strong>nearest-neighbour distance</strong>. Physically, it reflects the preferred local arrangement of particles within the material. It is important to note that the nearest-neighbour distance is generally not the same as the particle diameter. While the particle diameter characterises the size of an individual particle, the nearest-neighbour distance is determined by the structure of the system and the interactions between particles, and can therefore be significantly larger than the distance of closest approach.</p>
+</section>
+<section id="peak-positions." class="level3" data-number="12.8.3">
+<h3 data-number="12.8.3" class="anchored" data-anchor-id="peak-positions."><span class="header-section-number">12.8.3</span> Peak positions.</h3>
+<p>The peaks observed in <span class="math inline">\(g(r)\)</span> correspond to the most common interparticle seperation. For an atomic system, they can typically be associated with chemical bonds and as you move further in <span class="math inline">\(r\)</span> the <span class="math inline">\(\textit{medium}\)</span> (i.e.&nbsp;next nearest neighbour …) range ordering. However, we must remember that this is only a pair corrrelation function. It does not <span class="math inline">\(\it{per~se}\)</span> tell us about for example bond angles. These are formally be obtained from higher order correlation functionz (triplet, …) but these are not obtainable directly from <span class="math inline">\(g(r)\)</span> itself.</p>
+<p>Note. If we have a crystalline material the peaks in <span class="math inline">\(g(r)\)</span> will be narrow (they will have an intrinsic width at least due to thermal vibration) and at low values of <span class="math inline">\(r\)</span>, <span class="math inline">\(g(r)\)</span> will be zero between them. However, even in a crystalline material these peaks will start to broaden and get smaller at high <span class="math inline">\(r\)</span> until, again, <span class="math inline">\(g(r)\)</span> reaches mean density.</p>
+</section>
+<section id="coordination-numbers." class="level3" data-number="12.8.4">
+<h3 data-number="12.8.4" class="anchored" data-anchor-id="coordination-numbers."><span class="header-section-number">12.8.4</span> Coordination numbers.</h3>
+<p><span class="math inline">\(g(r)\)</span> is a dimensionless function that normalises to a mean density of one at large <span class="math inline">\(r\)</span>. For a material with a <span class="math inline">\(\textit{number~density}\)</span>, <span class="math inline">\(\rho_N\)</span>, the mean number density at distance <span class="math inline">\(r\)</span> is hence <span class="math inline">\(\rho_N g(r)\)</span>. A thin spherical shell of thickness <span class="math inline">\(\Delta r\)</span> at a distance <span class="math inline">\(r\)</span> will have a volume <span class="math inline">\(4\pi r^2 \Delta r\)</span> so that the mean number of atoms in the shell will be,</p>
+<p><span class="math inline">\(4\pi r^2 \rho_N(r) \Delta r\)</span>.</p>
+<p>Hence the mean number of atoms in a spherical shell of inner radius <span class="math inline">\(r_1\)</span> and outer radius <span class="math inline">\(r_2\)</span> will be given by,</p>
+<p><span class="math inline">\(\bar{n} = 4\pi\rho_N\int_{r1}^{r2}r^2g(r)dr\)</span>.</p>
+<p>If we define a peak in <span class="math inline">\(g(r)\)</span> by <span class="math inline">\(r_1\)</span> and <span class="math inline">\(r_2\)</span> we call <span class="math inline">\(n\)</span> the coordination number of the particles in the peak. The coordination number is the average number of neighbours contained within the first shell.</p>
+<center>
+<img src="part1_figs/coordno.png" alt="coordination number" width="500">
+</center>
+<p>It is important to note that the coordination number is an average (<span class="math inline">\(g(r)\)</span> is a statistical distribution) and in general will vary particle by particle in the material. It does not have to be integer and unless <span class="math inline">\(g(r_1)=g(r_2)=0\)</span> it is an ill defined quantity. Nevertheless, it is a commonly quoted number in research papers so it is important to read carefully how it has been caclulated to obtain meaningful conclusions that can be compared to figures in other research work.</p>
+</section>
+</section>
+<section id="dynamics-in-real-space" class="level2" data-number="12.9">
+<h2 data-number="12.9" class="anchored" data-anchor-id="dynamics-in-real-space"><span class="header-section-number">12.9</span> Dynamics in real space</h2>
+<p>Confocal microscopy experiments are not only useful for static measurements of <span class="math inline">\(g(r)\)</span> but also open up the possibility for studying the dynamics of the system (how the particles move over time), that is, measurement of the time dependent pair correlation function <span class="math inline">\(G(r,t)\)</span> I’ll not say much about dynamics in this lecture, but it is worth mentioning it as it is a very active research field. Needless to say the process involves taking confocal images of the particles over time scales in which they will move only slightly from their initial position. With sophisticated software it is then possible to label the particles and track their position and hence coordinates in succesive image frames. This work well if you are in the sweet spot for the measurements but is a challenge, for example in glass transition experiments, where the experimental timescales become longer and longer as you approach the conditions for the glass transition to take place. This is still a very active field.</p>
+</section>
+<section id="conclusion-and-keypoints" class="level2" data-number="12.10">
+<h2 data-number="12.10" class="anchored" data-anchor-id="conclusion-and-keypoints"><span class="header-section-number">12.10</span> Conclusion and keypoints</h2>
+<p>In this section we have considered the experimental determination of <span class="math inline">\(g(r)\)</span>.</p>
+<ul>
+<li>We have seen that this is not realistically possible for atmonic systems,</li>
+<li>we have seen how colloid systems are ideal systems for studying the properties of hard-sphere and closely related systems on the 100nm scale,</li>
+<li>we have seen how <span class="math inline">\(g(r)\)</span> for colloids may be obtained from the coordinates obtained from confocal microscopy,</li>
+<li>we have seen how <span class="math inline">\(g(r)\)</span> and higher order correlations may be obtained from these coordinates,</li>
+<li>we have seen how we can extend the confocal microscopy method to study particle dynamics.</li>
 </ul>
 
 
@@ -556,7 +994,6 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -972,13 +1409,13 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../phase-transitions/Lecture Slides/Slides.pdf" class="pagination-link" aria-label="Lecture slides">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Lecture slides</span>
+      <a href="../experimental/part0.html" class="pagination-link" aria-label="Preparing your computer for the first experimental interlude">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparing your computer for the first experimental interlude</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../experimental/part2.html" class="pagination-link" aria-label="Real-space measurements">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../experimental/part2New.html" class="pagination-link" aria-label="Reciprocal-space measurements">
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
