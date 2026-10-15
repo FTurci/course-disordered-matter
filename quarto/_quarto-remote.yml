@@ -29,10 +29,10 @@ book:
            href: phase-transitions/Ising-model.qmd            
          - text: "Mean field theory"
            href:  phase-transitions/mean-field-theory.qmd
-          #  keep commented
-#        - text: "The lattice gas"
-#           href: phase-transitions/lattice-gas.qmd
-# end of kee commented
+            #  keep commented
+            #        - text: "The lattice gas"
+            #           href: phase-transitions/lattice-gas.qmd
+            # end of kee commented
 
          - text: "The static scaling hypothesis"
            href: phase-transitions/scaling.qmd
@@ -64,14 +64,16 @@ book:
            href: phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.qmd      
 #          - href: phase-transitions/live-test.qmd
 #            text: "Coding"  
-    # - part: "First experimental interlude"
-    #   chapters:
-    #     - href: experimental/part0.ipynb
-    #       text: "Preparing your computer for the first experimental interlude"
-    #     - href: experimental/part1.ipynb
-    #       text: "Real-space measurements"
-    #     - href: experimental/part2New.ipynb
-    #       text: "Reciprocal-space measurements"
+    - part: "First experimental interlude"
+      chapters:
+        - text: "Preparing your computer for the first experimental interlude"
+          href: experimental/part0.ipynb
+        - text: "Real-space measurements"
+          href: experimental/part1.ipynb
+        - text: "Reciprocal-space measurements"
+          href: experimental/part2New.ipynb
+          
+
 
     # - part: "Complex disordered systems"
     #   chapters:
