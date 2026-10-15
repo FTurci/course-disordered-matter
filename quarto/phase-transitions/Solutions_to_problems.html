@@ -204,7 +204,7 @@ Figure&nbsp;3: (a) <span class="math inline">\(\frac{\partial p}{\partial v}\)</
 <p>Subcritical isotherms (first order phase transition) exhibit a so called van-der Waals loop.</p>
 <p>To find the compressibility critical exponent <span class="math inline">\(\gamma\)</span>, we recall that</p>
 <p><span class="math display">\[
-\kappa_T=\frac{-1}{V}\left(\frac{\partial V}{\partial P}\right)_T=\frac{-1}{p_cv}\left(\frac{\partial v}{\partial p}\right)_t\propto \tilde{t}^{-\gamma}
+\kappa_T=\frac{-1}{V}\left(\frac{\partial V}{\partial P}\right)_T=\frac{-1}{P_cv}\left(\frac{\partial v}{\partial p}\right)_t\propto \tilde{t}^{-\gamma}
 \]</span> with <span class="math inline">\(\tilde{t}=(T-T_c)/T_c\)</span> small.</p>
 <p>Now from the reduced equation of state</p>
 <p><span class="math display">\[
@@ -227,7 +227,7 @@ Figure&nbsp;3: (a) <span class="math inline">\(\frac{\partial p}{\partial v}\)</
 \:                =&amp; \frac{3NqJt}{2}\\
 \:                =&amp; \frac{3Nk_B(T-T_c)}{2}
 \end{aligned}
-\]</span> while <span class="math inline">\(\langle E \rangle= \textrm{ constant}\)</span> for <span class="math inline">\(T&gt;T_c\)</span>.</p>
+\]</span> while <span class="math inline">\(\langle E \rangle= \textrm{ constant}\)</span> (zero) for <span class="math inline">\(T&gt;T_c\)</span> because <span class="math inline">\(m=0\)</span>.</p>
 <p>Hence differentiating, we find <span class="math display">\[
 \begin{aligned}
 C_H= 0; &amp;\quad T&gt;T_c\\
@@ -585,122 +585,340 @@ D = \int_0^\infty \langle u(t_0) u(t_0 + \tau) \rangle\, d\tau.
 <hr>
 <section id="master-equation" class="level3">
 <h3 class="anchored" data-anchor-id="master-equation">14. Master equation</h3>
-<p>The rates of change of <span class="math inline">\(n_+\)</span> and <span class="math inline">\(n_-\)</span> are given by the master equations:</p>
+<p>For brevity define</p>
 <p><span class="math display">\[
-\frac{dn_+}{dt} = -n_+ \lambda_{+-} + n_- \lambda_{-+};
+\lambda_{\uparrow} \equiv \lambda_{-\to+},
+\qquad
+\lambda_{\downarrow} \equiv \lambda_{+\to-}.
 \]</span></p>
+<p>The rates of change of the populations are</p>
 <p><span class="math display">\[
-\frac{dn_-}{dt} = n_+ \lambda_{+-} - n_- \lambda_{-+}.
-\]</span> where since the particles are independent we have written <span class="math inline">\(n_i=Np_i\)</span>.</p>
-<p>At equilibrium the right-hand sides of the above master equations must vanish. Hence the ratio of the transition probabilities is given by:</p>
-<p><span class="math display">\[
-\left. \frac{\lambda_{-+}}{\lambda_{+-}} = \frac{n_+}{n_-} \right|_{\text{eq}} = e^{-2\beta \varepsilon}.
+\frac{dn_+}{dt}
+=
+n_-\lambda_{\uparrow}
+-
+n_+\lambda_{\downarrow},
 \]</span></p>
-<p>with <span class="math inline">\(\beta = 1/k_BT\)</span>, as usual.</p>
-<p>Following the lead in the question, we define <span class="math inline">\(n = n_- - n_+\)</span>. Subtracting one of the above master equations from the other, we obtain:</p>
+<p>and</p>
 <p><span class="math display">\[
-\frac{dn}{dt} = 2n_+ \lambda_{+-} - 2n_- \lambda_{-+}
+\frac{dn_-}{dt}
+=
+n_+\lambda_{\downarrow}
+-
+n_-\lambda_{\uparrow}.
 \]</span></p>
-<p>Then, noting that <span class="math inline">\(N = n_- + n_+\)</span>, we have that:</p>
+<p>At equilibrium these rates vanish, so</p>
 <p><span class="math display">\[
-n_- = \frac{N + n}{2} \quad \text{and} \quad n_+ = \frac{N - n}{2},
+n_-^{\mathrm{eq}}\lambda_{\uparrow}
+=
+n_+^{\mathrm{eq}}\lambda_{\downarrow}.
 \]</span></p>
-<p>allowing to rewrite as:</p>
+<p>Since the energy difference between the two levels is <span class="math inline">\(2\epsilon\)</span>,</p>
 <p><span class="math display">\[
-\frac{dn}{dt} = -n(\lambda_{+-} + \lambda_{-+}) + N(\lambda_{+-} - \lambda_{-+})
+\frac{\lambda_{\uparrow}}{\lambda_{\downarrow}}
+=
+\frac{n_+^{\mathrm{eq}}}{n_-^{\mathrm{eq}}}
+=
+e^{-2\beta\epsilon},
 \]</span></p>
-<p>The equilibrium value of <span class="math inline">\(n(t)\)</span> follows by setting <span class="math inline">\(\frac{dn}{dt}=0\)</span> to find</p>
+<p>where <span class="math inline">\(\beta=1/k_BT\)</span>.</p>
+<p>Now define, as in the question,</p>
 <p><span class="math display">\[
-n_{\text{eq}} = N \frac{\lambda_{+-} - \lambda_{-+}}{\lambda_{+-} + \lambda_{-+}}.
+n=n_- - n_+.
 \]</span></p>
-<p>Rewrite the differential equation in the suggestive form:</p>
+<p>Subtracting the two population equations gives</p>
 <p><span class="math display">\[
-\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - \frac{N(\lambda_{+-} - \lambda_{-+})}{\lambda_{+-} + \lambda_{-+}} \right]
+\frac{dn}{dt}
+=
+2n_+\lambda_{\downarrow}
+-
+2n_-\lambda_{\uparrow}.
+\]</span></p>
+<p>Let <span class="math inline">\(N=n_+ + n_-\)</span> be the total number of atoms. Using</p>
+<p><span class="math display">\[
+n_-=\frac{N+n}{2},
+\qquad
+n_+=\frac{N-n}{2},
+\]</span></p>
+<p>we obtain</p>
+<p><span class="math display">\[
+\frac{dn}{dt}
+=
+N(\lambda_{\downarrow}-\lambda_{\uparrow})
+-
+n(\lambda_{\downarrow}+\lambda_{\uparrow}).
+\]</span></p>
+<p>The equilibrium value is found by setting <span class="math inline">\(dn/dt=0\)</span>:</p>
+<p><span class="math display">\[
+n_{\mathrm{eq}}
+=
+N
+\frac{\lambda_{\downarrow}-\lambda_{\uparrow}}
+{\lambda_{\downarrow}+\lambda_{\uparrow}}.
+\]</span></p>
+<p>Hence</p>
+<p><span class="math display">\[
+\frac{dn}{dt}
+=
+-(\lambda_{\downarrow}+\lambda_{\uparrow})
+(n-n_{\mathrm{eq}}).
+\]</span></p>
+<p>To solve this differential equation, make the change of variable</p>
+<p><span class="math display">\[
+u=n-n_{\mathrm{eq}}.
+\]</span></p>
+<p>Since <span class="math inline">\(n_{\mathrm{eq}}\)</span> is constant,</p>
+<p><span class="math display">\[
+\frac{du}{dt}
+=
+-(\lambda_{\downarrow}+\lambda_{\uparrow})u.
+\]</span></p>
+<p>Therefore</p>
+<p><span class="math display">\[
+u(t)=u(0)e^{-t/\tau},
 \]</span></p>
 <p>where</p>
 <p><span class="math display">\[
-\tau = \frac{1}{\lambda_{+-} + \lambda_{-+}}.
+\tau
+=
+\frac{1}
+{\lambda_{\uparrow}+\lambda_{\downarrow}}.
 \]</span></p>
-<p>Inserting the result (above) for <span class="math inline">\(n_{\text{eq}}\)</span> yields</p>
+<p>Returning to <span class="math inline">\(n\)</span>,</p>
 <p><span class="math display">\[
-\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - n_{\text{eq}} \right],
+n(t)
+=
+n_{\mathrm{eq}}
++
+[n(0)-n_{\mathrm{eq}}]e^{-t/\tau}.
 \]</span></p>
-<p>Making a change of variables and separating variables in the standard way, one finds the solution to be:</p>
+<p>Thus <span class="math inline">\(n(t)\)</span> approaches its equilibrium value exponentially with relaxation time</p>
 <p><span class="math display">\[
-n(t) = n_{\text{eq}} + e^{-t/\tau} [n(0) - n_{\text{eq}}].
+\tau
+=
+\frac{1}
+{\lambda_{\uparrow}+\lambda_{\downarrow}}.
 \]</span></p>
-<p>You should note the behaviour of this solution as <span class="math inline">\(t \to 0\)</span> and <span class="math inline">\(t \to \infty\)</span>.</p>
+<!--
+### 15. Detailed balance
+
+**(a)** For individual states, the rates of transition are:
+
+$$
+1 \rightarrow 2 \quad = \quad v_{12} p_1
+$$
+
+$$
+2 \rightarrow 1 \quad = \quad v_{21} p_2
+$$
+
+Define groups of states:  
+Group A: $\alpha = 1, \cdots, N$  
+Group B: $\beta = 1, \cdots, M$
+
+Then
+
+$$
+\sum_{\alpha=1}^N p_\alpha = p_A \quad ; \quad \sum_{\beta=1}^M p_\beta = p_B
+$$
+
+(Note: $p_A \ne p_B$)
+
+**Overall rate**
+
+$$
+A \rightarrow B = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\alpha \beta} p_\alpha
+$$
+
+**Overall rate**
+
+$$
+B \rightarrow A = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\beta \alpha} p_\beta
+$$
+
+where  
+$v_{\alpha \beta} = v_{\beta \alpha}$ : jump rate symmetry  
+$p_\alpha = p_\beta$ : principle of equal *a priori* probabilities (for microstates)
+
+Hence:
+
+$$
+\text{rate}(A \rightarrow B) \equiv v_{AB} p_A^{eq}
+$$
+
+$$
+\text{rate}(B \rightarrow A) \equiv v_{BA} p_B^{eq}
+$$
+
+are equal in equilibrium.
+
+
+
+**(b)** 
+
+The probability $p_A$ of a group of states $A$ is given by
+
+$$
+p_A = \frac{e^{-\beta F_A}}{Z},
+$$
+
+for the canonical ensemble, and a similar result may be written for group $B$.
+
+As this system is in the canonical ensemble, we can assume that it is in a large heat bath, with the ‘system + heat bath’ being treated as ‘isolated’.
+
+Take $A$ to be the microstate $i$ of the system + any state of the heat bath, such that
+
+$$
+E_{system} + E_{reservoir} = E \, \text{(fixed)}.
+$$
+
+For a large reservoir,
+
+$$
+p_i = \frac{e^{-\beta E_i}}{Z} = \textrm{``$p_A$''},
+$$
+
+with a similar result for $B$.
+
+Hence the result of part (a), that
+
+$$
+\text{Rate}(A \rightarrow B) = \text{Rate}(B \rightarrow A)
+$$
+
+means here that
+
+$$
+v_{ij} p_i = v_{ji} p_j,
+$$
+
+even though, for states of different system energy $E_i$,
+
+$$
+p_i \ne p_j \quad \text{and} \quad v_{ij} \ne v_{ji}.
+$$
+
+This implies:
+
+$$
+\frac{v_{ij}}{v_{ji}} = \frac{p_j}{p_i} = e^{\beta(E_j - E_i)}
+$$
+
+This result has important implications for Monte Carlo simulation
+-->
 <hr>
 </section>
-<section id="detailed-balance" class="level3">
-<h3 class="anchored" data-anchor-id="detailed-balance">15. Detailed balance</h3>
-<p><strong>(a)</strong> For individual states, the rates of transition are:</p>
+<section id="coarsening-dynamics-solution" class="level3">
+<h3 class="anchored" data-anchor-id="coarsening-dynamics-solution">15. Coarsening dynamics — solution</h3>
+<p><strong>(a)</strong></p>
+<p>For a circular domain of radius <span class="math inline">\(R\)</span>, the interfacial free energy is</p>
 <p><span class="math display">\[
-1 \rightarrow 2 \quad = \quad v_{12} p_1
+F_{\mathrm{int}} = 2\pi R\sigma.
 \]</span></p>
-<p><span class="math display">\[
-2 \rightarrow 1 \quad = \quad v_{21} p_2
-\]</span></p>
-<p>Define groups of states:<br>
-Group A: <span class="math inline">\(\alpha = 1, \cdots, N\)</span><br>
-Group B: <span class="math inline">\(\beta = 1, \cdots, M\)</span></p>
-<p>Then</p>
-<p><span class="math display">\[
-\sum_{\alpha=1}^N p_\alpha = p_A \quad ; \quad \sum_{\beta=1}^M p_\beta = p_B
-\]</span></p>
-<p>(Note: <span class="math inline">\(p_A \ne p_B\)</span>)</p>
-<p><strong>Overall rate</strong></p>
-<p><span class="math display">\[
-A \rightarrow B = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\alpha \beta} p_\alpha
-\]</span></p>
-<p><strong>Overall rate</strong></p>
-<p><span class="math display">\[
-B \rightarrow A = \sum_{\alpha=1}^N \sum_{\beta=1}^m v_{\beta \alpha} p_\beta
-\]</span></p>
-<p>where<br>
-<span class="math inline">\(v_{\alpha \beta} = v_{\beta \alpha}\)</span> : jump rate symmetry<br>
-<span class="math inline">\(p_\alpha = p_\beta\)</span> : principle of equal <em>a priori</em> probabilities (for microstates)</p>
-<p>Hence:</p>
-<p><span class="math display">\[
-\text{rate}(A \rightarrow B) \equiv v_{AB} p_A^{eq}
-\]</span></p>
-<p><span class="math display">\[
-\text{rate}(B \rightarrow A) \equiv v_{BA} p_B^{eq}
-\]</span></p>
-<p>are equal in equilibrium.</p>
+<p>Even if the two bulk phases have the same free-energy density, reducing the size of the domain reduces the amount of interface and hence lowers the free energy. Small domains therefore tend to shrink.</p>
 <p><strong>(b)</strong></p>
-<p>The probability <span class="math inline">\(p_A\)</span> of a group of states <span class="math inline">\(A\)</span> is given by</p>
+<p>For Model A the interface velocity is proportional to its curvature,</p>
 <p><span class="math display">\[
-p_A = \frac{e^{-\beta F_A}}{Z},
+v\sim \frac{1}{R}.
 \]</span></p>
-<p>for the canonical ensemble, and a similar result may be written for group <span class="math inline">\(B\)</span>.</p>
-<p>As this system is in the canonical ensemble, we can assume that it is in a large heat bath, with the ‘system + heat bath’ being treated as ‘isolated’.</p>
-<p>Take <span class="math inline">\(A\)</span> to be the microstate <span class="math inline">\(i\)</span> of the system + any state of the heat bath, such that</p>
+<p>For a shrinking domain,</p>
 <p><span class="math display">\[
-E_{system} + E_{reservoir} = E \, \text{(fixed)}.
+v=-\frac{dR}{dt},
 \]</span></p>
-<p>For a large reservoir,</p>
+<p>so</p>
 <p><span class="math display">\[
-p_i = \frac{e^{-\beta E_i}}{Z} = \textrm{``$p_A$''},
+\frac{dR}{dt}\sim -\frac{1}{R}.
 \]</span></p>
-<p>with a similar result for <span class="math inline">\(B\)</span>.</p>
-<p>Hence the result of part (a), that</p>
+<p>Writing the proportionality constant as <span class="math inline">\(A\)</span>,</p>
 <p><span class="math display">\[
-\text{Rate}(A \rightarrow B) = \text{Rate}(B \rightarrow A)
+\frac{dR}{dt}=-\frac{A}{R}.
 \]</span></p>
-<p>means here that</p>
+<p>Hence</p>
 <p><span class="math display">\[
-v_{ij} p_i = v_{ji} p_j,
+R\,dR=-A\,dt.
 \]</span></p>
-<p>even though, for states of different system energy <span class="math inline">\(E_i\)</span>,</p>
+<p>Integrating from <span class="math inline">\(R=R_0\)</span> at <span class="math inline">\(t=0\)</span>,</p>
 <p><span class="math display">\[
-p_i \ne p_j \quad \text{and} \quad v_{ij} \ne v_{ji}.
+\frac{1}{2}\left(R^2-R_0^2\right)=-At,
 \]</span></p>
-<p>This implies:</p>
+<p>or</p>
 <p><span class="math display">\[
-\frac{v_{ij}}{v_{ji}} = \frac{p_j}{p_i} = e^{\beta(E_j - E_i)}
+R^2(t)=R_0^2-2At.
 \]</span></p>
-<p>This result has important implications for Monte Carlo simulation</p>
+<p>Thus, writing <span class="math inline">\(C=2A\)</span>,</p>
+<p><span class="math display">\[
+R^2(t)=R_0^2-Ct.
+\]</span></p>
+<p>The domain disappears when <span class="math inline">\(R=0\)</span>, so its lifetime is</p>
+<p><span class="math display">\[
+\tau_A=\frac{R_0^2}{C}.
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\boxed{\tau_A\sim R_0^2}.
+\]</span></p>
+<p><strong>(c)</strong></p>
+<p>For Model B the curvature of the domain produces a chemical-potential difference</p>
+<p><span class="math display">\[
+\Delta\mu\sim\frac{\sigma}{R}.
+\]</span></p>
+<p>The chemical potential varies over a characteristic distance of order <span class="math inline">\(R\)</span>, so</p>
+<p><span class="math display">\[
+|\nabla\mu|
+\sim
+\frac{\Delta\mu}{R}
+\sim
+\frac{\sigma}{R^2}.
+\]</span></p>
+<p>The diffusive flux is proportional to this gradient,</p>
+<p><span class="math display">\[
+J\sim M|\nabla\mu|
+\sim
+\frac{M\sigma}{R^2}.
+\]</span></p>
+<p>Since the motion of the interface requires transport of the conserved order parameter, the interface velocity is proportional to this flux. Thus, for a shrinking domain,</p>
+<p><span class="math display">\[
+\frac{dR}{dt}\sim-\frac{1}{R^2}.
+\]</span></p>
+<p>Writing the proportionality constant as <span class="math inline">\(B\)</span>,</p>
+<p><span class="math display">\[
+\frac{dR}{dt}=-\frac{B}{R^2}.
+\]</span></p>
+<p>Hence</p>
+<p><span class="math display">\[
+R^2\,dR=-B\,dt.
+\]</span></p>
+<p>Integrating,</p>
+<p><span class="math display">\[
+\frac{1}{3}\left(R^3-R_0^3\right)=-Bt,
+\]</span></p>
+<p>so</p>
+<p><span class="math display">\[
+R^3(t)=R_0^3-3Bt.
+\]</span></p>
+<p>The domain disappears when <span class="math inline">\(R=0\)</span>, giving</p>
+<p><span class="math display">\[
+\tau_B=\frac{R_0^3}{3B}.
+\]</span></p>
+<p>Therefore,</p>
+<p><span class="math display">\[
+\boxed{\tau_B\sim R_0^3}.
+\]</span></p>
+<p><strong>(d)</strong></p>
+<p>If the initial radius is doubled, <span class="math inline">\(R_0\rightarrow 2R_0\)</span>, then for Model A</p>
+<p><span class="math display">\[
+\tau_A\sim R_0^2
+\quad\Rightarrow\quad
+\tau_A\rightarrow 2^2\tau_A=4\tau_A,
+\]</span></p>
+<p>whereas for Model B</p>
+<p><span class="math display">\[
+\tau_B\sim R_0^3
+\quad\Rightarrow\quad
+\tau_B\rightarrow 2^3\tau_B=8\tau_B.
+\]</span></p>
+<p>Thus doubling the initial radius increases the lifetime by a factor of <span class="math inline">\(4\)</span> for Model A and <span class="math inline">\(8\)</span> for Model B.</p>
+<p>Model B is slower because the order parameter is conserved, so removal of a domain requires material to be transported by diffusion rather than relaxing locally.</p>
 <hr>
 </section>
 <section id="jump-processes" class="level3">

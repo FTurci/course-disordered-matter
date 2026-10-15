@@ -160,7 +160,7 @@ lectures, for the critical exponents $\gamma=1$ and $\alpha=0$ of
 the Ising model. For the latter, you should first prove the result
 
 $$C_H =-T\frac{\partial^2 F}{\partial T^2}$$ starting from the
-classical theormodynamics expression for changes in the free energy
+classical thermodynamics expression for changes in the free energy
 of a magnet $dF=-SdT-MdH$.
 
 (*Hint: If you get stuck with the proof see standard thermodynamics
@@ -300,7 +300,7 @@ Obtain the master equation for $n(t)$ and hence the relaxation time $\tau$ which
 
 ---
 
-
+<!--
 ### 15. Detailed balance
 
 **(a)** Starting from the principle of detailed balance for an isolated system, show that for two groups of states
@@ -317,6 +317,67 @@ $$
 $$
 \frac{\lambda_{i \to j}}{\lambda_{j \to i}} = e^{-(E_j - E_i)/kT}.
 $$
+-->
+
+### 15. Coarsening dynamics
+
+At late times following phase separation, consider an approximately circular
+domain of one phase, of radius $R(t)$, surrounded by the other phase.
+The two phases are locally close to equilibrium, so the remaining excess free
+energy is mainly associated with the interface.
+
+**(a)** Explain why a small circular domain tends to shrink even when the two
+bulk phases have the same free-energy density.
+
+**(b)** For a non-conserved order parameter (Model A), suppose that the normal
+velocity of the interface is proportional to its curvature,
+
+$$
+v \sim \frac{1}{R}.
+$$
+
+Taking $v=-dR/dt$ for a shrinking domain, show that
+
+$$
+R^2(t)=R_0^2-Ct,
+$$
+
+where $C$ is a constant. Hence show that the lifetime of a domain of initial
+radius $R_0$ scales as
+
+$$
+\tau_A \sim R_0^2.
+$$
+
+**(c)** For a conserved order parameter (Model B), curvature produces a
+chemical-potential difference of order
+
+$$
+\Delta\mu \sim \frac{\sigma}{R}.
+$$
+
+Explain why the characteristic chemical-potential gradient is then of order
+
+$$
+|\nabla\mu| \sim \frac{\sigma}{R^2}.
+$$
+
+Assuming that the diffusive flux is proportional to this gradient, and that
+the interface velocity is proportional to the flux, show that
+
+$$
+\frac{dR}{dt}\sim -\frac{1}{R^2},
+$$
+
+and hence that the lifetime scales as
+
+$$
+\tau_B\sim R_0^3.
+$$
+
+**(d)** If the initial radius of a domain is doubled, by what factor does its
+lifetime increase for Model A and for Model B? Explain physically why the
+Model B domain survives for longer.
 
 ---
 

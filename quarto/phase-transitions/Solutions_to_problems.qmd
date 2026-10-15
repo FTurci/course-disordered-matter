@@ -737,85 +737,161 @@ $$
 \gamma = \frac{kT}{D}.
 $$
 
-
 ---
 
 ### 14. Master equation
 
-The rates of change of $n_+$ and $n_-$ are given by the master equations:
+For brevity define
 
 $$
-\frac{dn_+}{dt} = -n_+ \lambda_{+-} + n_- \lambda_{-+};
+\lambda_{\uparrow} \equiv \lambda_{-\to+},
+\qquad
+\lambda_{\downarrow} \equiv \lambda_{+\to-}.
 $$
 
-$$
-\frac{dn_-}{dt} = n_+ \lambda_{+-} - n_- \lambda_{-+}.
-$$
-where since the particles are independent we have written $n_i=Np_i$.
-
-At equilibrium the right-hand sides of the above master equations must vanish. Hence the ratio of the transition probabilities is given by:
+The rates of change of the populations are
 
 $$
-\left. \frac{\lambda_{-+}}{\lambda_{+-}} = \frac{n_+}{n_-} \right|_{\text{eq}} = e^{-2\beta \varepsilon}.
+\frac{dn_+}{dt}
+=
+n_-\lambda_{\uparrow}
+-
+n_+\lambda_{\downarrow},
 $$
 
-with $\beta = 1/k_BT$, as usual.
-
-Following the lead in the question, we define $n = n_- - n_+$.  Subtracting one of the above master equations from the other, we obtain:
+and
 
 $$
-\frac{dn}{dt} = 2n_+ \lambda_{+-} - 2n_- \lambda_{-+}
+\frac{dn_-}{dt}
+=
+n_+\lambda_{\downarrow}
+-
+n_-\lambda_{\uparrow}.
 $$
 
-Then, noting that $N = n_- + n_+$, we have that:
+At equilibrium these rates vanish, so
 
 $$
-n_- = \frac{N + n}{2} \quad \text{and} \quad n_+ = \frac{N - n}{2},
+n_-^{\mathrm{eq}}\lambda_{\uparrow}
+=
+n_+^{\mathrm{eq}}\lambda_{\downarrow}.
 $$
 
-allowing to rewrite as:
+Since the energy difference between the two levels is $2\epsilon$,
 
 $$
-\frac{dn}{dt} = -n(\lambda_{+-} + \lambda_{-+}) + N(\lambda_{+-} - \lambda_{-+})
+\frac{\lambda_{\uparrow}}{\lambda_{\downarrow}}
+=
+\frac{n_+^{\mathrm{eq}}}{n_-^{\mathrm{eq}}}
+=
+e^{-2\beta\epsilon},
 $$
 
+where $\beta=1/k_BT$.
 
-The equilibrium value of $n(t)$ follows by setting $\frac{dn}{dt}=0$ to find
-
-$$
-n_{\text{eq}} = N \frac{\lambda_{+-} - \lambda_{-+}}{\lambda_{+-} + \lambda_{-+}}.
-$$
-
-
-Rewrite the differential equation in the suggestive form:
+Now define, as in the question,
 
 $$
-\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - \frac{N(\lambda_{+-} - \lambda_{-+})}{\lambda_{+-} + \lambda_{-+}} \right]
+n=n_- - n_+.
+$$
+
+Subtracting the two population equations gives
+
+$$
+\frac{dn}{dt}
+=
+2n_+\lambda_{\downarrow}
+-
+2n_-\lambda_{\uparrow}.
+$$
+
+Let $N=n_+ + n_-$ be the total number of atoms. Using
+
+$$
+n_-=\frac{N+n}{2},
+\qquad
+n_+=\frac{N-n}{2},
+$$
+
+we obtain
+
+$$
+\frac{dn}{dt}
+=
+N(\lambda_{\downarrow}-\lambda_{\uparrow})
+-
+n(\lambda_{\downarrow}+\lambda_{\uparrow}).
+$$
+
+The equilibrium value is found by setting $dn/dt=0$:
+
+$$
+n_{\mathrm{eq}}
+=
+N
+\frac{\lambda_{\downarrow}-\lambda_{\uparrow}}
+{\lambda_{\downarrow}+\lambda_{\uparrow}}.
+$$
+
+Hence
+
+$$
+\frac{dn}{dt}
+=
+-(\lambda_{\downarrow}+\lambda_{\uparrow})
+(n-n_{\mathrm{eq}}).
+$$
+
+To solve this differential equation, make the change of variable
+
+$$
+u=n-n_{\mathrm{eq}}.
+$$
+
+Since $n_{\mathrm{eq}}$ is constant,
+
+$$
+\frac{du}{dt}
+=
+-(\lambda_{\downarrow}+\lambda_{\uparrow})u.
+$$
+
+Therefore
+
+$$
+u(t)=u(0)e^{-t/\tau},
 $$
 
 where
 
 $$
-\tau = \frac{1}{\lambda_{+-} + \lambda_{-+}}.
+\tau
+=
+\frac{1}
+{\lambda_{\uparrow}+\lambda_{\downarrow}}.
 $$
 
-Inserting the result (above) for $n_{\text{eq}}$ yields
+Returning to $n$,
 
 $$
-\frac{dn}{dt} = -\frac{1}{\tau} \left[ n(t) - n_{\text{eq}} \right],
+n(t)
+=
+n_{\mathrm{eq}}
++
+[n(0)-n_{\mathrm{eq}}]e^{-t/\tau}.
 $$
 
-
-Making a change of variables and separating variables in the standard way, one finds the solution to be:
+Thus $n(t)$ approaches its equilibrium value exponentially with relaxation
+time
 
 $$
-n(t) = n_{\text{eq}} + e^{-t/\tau} [n(0) - n_{\text{eq}}].
+\tau
+=
+\frac{1}
+{\lambda_{\uparrow}+\lambda_{\downarrow}}.
 $$
 
-You should note the behaviour of this solution as $t \to 0$ and $t \to \infty$.
-
----
-
+<!--
 ### 15. Detailed balance
 
 **(a)** For individual states, the rates of transition are:
@@ -921,8 +997,188 @@ $$
 $$
 
 This result has important implications for Monte Carlo simulation
+-->
 
 ---
+
+### 15. Coarsening dynamics — solution
+
+**(a)**
+
+For a circular domain of radius $R$, the interfacial free energy is
+
+$$
+F_{\mathrm{int}} = 2\pi R\sigma.
+$$
+
+Even if the two bulk phases have the same free-energy density, reducing the
+size of the domain reduces the amount of interface and hence lowers the free
+energy. Small domains therefore tend to shrink.
+
+
+
+**(b)**
+
+For Model A the interface velocity is proportional to its curvature,
+
+$$
+v\sim \frac{1}{R}.
+$$
+
+For a shrinking domain,
+
+$$
+v=-\frac{dR}{dt},
+$$
+
+so
+
+$$
+\frac{dR}{dt}\sim -\frac{1}{R}.
+$$
+
+Writing the proportionality constant as $A$,
+
+$$
+\frac{dR}{dt}=-\frac{A}{R}.
+$$
+
+Hence
+
+$$
+R\,dR=-A\,dt.
+$$
+
+Integrating from $R=R_0$ at $t=0$,
+
+$$
+\frac{1}{2}\left(R^2-R_0^2\right)=-At,
+$$
+
+or
+
+$$
+R^2(t)=R_0^2-2At.
+$$
+
+Thus, writing $C=2A$,
+
+$$
+R^2(t)=R_0^2-Ct.
+$$
+
+The domain disappears when $R=0$, so its lifetime is
+
+$$
+\tau_A=\frac{R_0^2}{C}.
+$$
+
+Therefore,
+
+$$
+\boxed{\tau_A\sim R_0^2}.
+$$
+
+
+**(c)**
+
+For Model B the curvature of the domain produces a chemical-potential
+difference
+
+$$
+\Delta\mu\sim\frac{\sigma}{R}.
+$$
+
+The chemical potential varies over a characteristic distance of order $R$,
+so
+
+$$
+|\nabla\mu|
+\sim
+\frac{\Delta\mu}{R}
+\sim
+\frac{\sigma}{R^2}.
+$$
+
+The diffusive flux is proportional to this gradient,
+
+$$
+J\sim M|\nabla\mu|
+\sim
+\frac{M\sigma}{R^2}.
+$$
+
+Since the motion of the interface requires transport of the conserved order
+parameter, the interface velocity is proportional to this flux. Thus, for a
+shrinking domain,
+
+$$
+\frac{dR}{dt}\sim-\frac{1}{R^2}.
+$$
+
+Writing the proportionality constant as $B$,
+
+$$
+\frac{dR}{dt}=-\frac{B}{R^2}.
+$$
+
+Hence
+
+$$
+R^2\,dR=-B\,dt.
+$$
+
+Integrating,
+
+$$
+\frac{1}{3}\left(R^3-R_0^3\right)=-Bt,
+$$
+
+so
+
+$$
+R^3(t)=R_0^3-3Bt.
+$$
+
+The domain disappears when $R=0$, giving
+
+$$
+\tau_B=\frac{R_0^3}{3B}.
+$$
+
+Therefore,
+
+$$
+\boxed{\tau_B\sim R_0^3}.
+$$
+
+
+**(d)**
+
+If the initial radius is doubled, $R_0\rightarrow 2R_0$, then for Model A
+
+$$
+\tau_A\sim R_0^2
+\quad\Rightarrow\quad
+\tau_A\rightarrow 2^2\tau_A=4\tau_A,
+$$
+
+whereas for Model B
+
+$$
+\tau_B\sim R_0^3
+\quad\Rightarrow\quad
+\tau_B\rightarrow 2^3\tau_B=8\tau_B.
+$$
+
+Thus doubling the initial radius increases the lifetime by a factor of $4$
+for Model A and $8$ for Model B.
+
+Model B is slower because the order parameter is conserved, so removal of a
+domain requires material to be transported by diffusion rather than relaxing
+locally.
+
+***
 
 ### 16. Jump processes
 

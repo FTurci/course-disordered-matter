@@ -62,40 +62,25 @@ $$
 
 :::
 
-The steps $\Delta x(t)$ are uncorrelated across time.
-
-
-
-To take the continuum limit, we let both $a \to 0$ and $\Delta t \to 0$, while keeping the diffusion constant
-$$
-D = \nu a^2
-$$
-fixed. This requirement implies that we need $\nu\propto a^{-2}$, which is satisfied if 
-$$
-a \propto \sqrt{\Delta t}.
-$$
-
-Hence the step size must shrink as the square root of the time step.
-Only under this scaling does the random walk converge to a well-defined continuum process
-with finite diffusion constant, namely Brownian motion or the Langevin equation.
-
-In this limit, we obtain the **Langevin equation**:
+The steps $\Delta x(t)$ are independent over different time intervals. In the continuum limit we represent these random increments by a noise $\eta(t)$:
 
 $$
-\dot{x}(t) = \eta(t)
+\dot{x}(t)=\eta(t).
 $$
 
-where $\eta(t)\equiv\frac{\Delta x(t)}{\Delta t}$ is a stochastic noise satisfying:
+Since the increments are independent, the noise is uncorrelated at different times:
 
 $$
-\langle \eta(t) \rangle = 0
+\langle \eta(t) \rangle = 0,
 $$
 
 $$
-\langle \eta(t) \eta(t') \rangle = \Gamma \delta(t - t')
+\langle \eta(t)\eta(t')\rangle
+=
+\Gamma\,\delta(t-t').
 $$
 
-This $\eta(t)$ is known as white noise — it has zero mean and is uncorrelated at different times. $\Gamma$ measures its amplitude.
+This is called *white noise*. The amplitude $\Gamma$ will be related below to the diffusion constant $D$.
 
 The Langevin equation tells us that the velocity $\dot{x}(t)$ is purely driven by noise. We can formally integrate it:
 
@@ -127,24 +112,65 @@ Hence, the Langevin description yields the same physical behavior — not just t
 
 For more details, see: *Stochastic Processes in Physics and Chemistry* by N.G. van Kampen (North Holland, 1981).
 
+
 ## Brownian Motion
 
-Let us now examine Brownian motion, originally observed as the erratic motion of colloidal particles suspended in a fluid. These particles undergo constant collisions with surrounding (smaller) fluid molecules, which results in seemingly random movement.
+Let us now examine Brownian motion, originally observed as the erratic motion of colloidal particles suspended in a fluid. The particles undergo continual collisions with the surrounding, much smaller, fluid molecules, producing apparently random motion.
 
-From a coarse-grained perspective — where we do not track each individual collision — this appears as motion under random forces. This statistical treatment introduces irreversibility at the macroscopic level, even though the underlying molecular dynamics are reversible.
+From a coarse-grained perspective, where we do not track each individual molecular collision, these microscopic interactions can be represented by a fluctuating random force. This statistical description introduces an effectively irreversible dynamics at the macroscopic level, even though the underlying molecular dynamics are reversible.
 
-The Langevin equation provides a way to model this behavior. For a particle of mass $m$ in one dimension, Langevin proposed the equation:
+For a Brownian particle of mass $m$ moving in one dimension, Langevin proposed
 
 $$
-m \ddot{x} = -\gamma \dot{x} + f(t)
+m\ddot{x}=-\gamma\dot{x}+f(t).
 $$
 
 Here:
 
-* $-\gamma \dot{x}$ is a frictional damping force, where $\gamma$ is the damping coefficient.
-* $f(t)$ is a random force due to molecular collisions.
+- $-\gamma\dot{x}$ is a frictional damping force, with damping coefficient $\gamma$.
+- $f(t)$ is the fluctuating force arising from molecular collisions.
 
-> Often, the mobility is defined as $\mu = 1/\gamma$ — note that this is unrelated to chemical potential.
+The term $m\ddot{x}$ represents the particle's inertia: because the particle has a finite mass, its velocity cannot change instantaneously in response to the random force.
+
+::: {.callout-note collapse="true"}
+## Relation to the previous Langevin equation
+
+Earlier, starting from a random walk, we obtained the simpler Langevin equation
+
+$$
+\dot{x}=\eta(t).
+$$
+
+This describes the motion on timescales for which the particle's velocity has already relaxed and its inertia can be neglected.
+
+From the full Langevin equation, the characteristic timescale for the velocity to relax is
+
+$$
+\tau=\frac{m}{\gamma}.
+$$
+
+For times $t\gg\tau$, the inertial term $m\ddot{x}$ can be neglected, giving
+
+$$
+\gamma\dot{x}=f(t),
+$$
+
+or
+
+$$
+\dot{x}=\frac{f(t)}{\gamma}.
+$$
+
+Identifying
+
+$$
+\eta(t)=\frac{f(t)}{\gamma},
+$$
+
+we recover the Langevin equation obtained from the random-walk description. Thus $\dot{x}=\eta(t)$ is the **overdamped**, or long-time, limit of the more complete Langevin equation.
+:::
+
+Often, the mobility is defined as $\mu=1/\gamma$ — note that this is unrelated to chemical potential.
 
 
 ### Noise Properties

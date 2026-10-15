@@ -16,7 +16,7 @@ $${#eq-chipow}
 
 (where $M=mN$),
 $$
-C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=\textrm{ constant}) 
+C_H \equiv \frac{\partial E}{\partial T}\propto t^{-\alpha} ~~~~ (H=0) 
 $${#eq-Cv}
 
 Another key quantity is the correlation length $\xi$, which measures the

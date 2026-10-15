@@ -60,7 +60,9 @@ Were we able to track all the particle positions there would be no need to talk 
 :::
 ## From the Master Equation to the Diffusion Equation
 
-Now consider the situation where the state index $i$ corresponds to a position in space, $x_i = i a$, ie a one-dimensional lattice with lattice spacing $a$, and transitions only occur between neighboring lattice sites.
+Now consider the situation where the state index $i$ corresponds to a position in space, $x_i = i a$, ie a one-dimensional lattice with lattice spacing $a$, and transitions only occur between neighboring lattice sites. The situation is illustrated schematically in @fig-random-walk.
+
+![Schematic of the one-dimensional lattice random walk with nearest-neighbour transitions at rate $\nu$.](Figs/1D_random_walk_lattice_diagram.png){#fig-random-walk width=80%}
 
 We assume:
 

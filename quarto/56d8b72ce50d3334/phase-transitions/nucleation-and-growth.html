@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>10&nbsp; Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../phase-transitions/precourse-reading.html" rel="next">
+<link href="../phase-transitions/Brownian-and-Langevin-dynamics.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-64bf98b9c4f550222d6b78498c405ba7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended texts</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Unifying concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to phase behaviour</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Background concepts</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/approach-to-criticality.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">The approach to criticality</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Ising-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">The Ising model</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/mean-field-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Mean field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/scaling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The static scaling hypothesis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/rg.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Universality and renormalization group theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/master-equation-and-diffusion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introduction to stochastic processes</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/nucleation-and-growth.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/precourse-reading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Precourse reading and revision</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Lecture Slides/Slides.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/PDF_notes/notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions to problems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">First coursework assignment</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction-to-nucleation" id="toc-introduction-to-nucleation" class="nav-link active" data-scroll-target="#introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</a></li>
+  <li><a href="#sec-cnt" id="toc-sec-cnt" class="nav-link" data-scroll-target="#sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</a></li>
+  <li><a href="#domain-growth" id="toc-domain-growth" class="nav-link" data-scroll-target="#domain-growth"><span class="header-section-number">10.3</span> Domain growth</a></li>
+  <li><a href="#spinodal-decomposition" id="toc-spinodal-decomposition" class="nav-link" data-scroll-target="#spinodal-decomposition"><span class="header-section-number">10.4</span> Spinodal decomposition</a>
+  <ul class="collapse">
+  <li><a href="#non-conserved-order-parameter-dynamics-model-a" id="toc-non-conserved-order-parameter-dynamics-model-a" class="nav-link" data-scroll-target="#non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.4.1</span> Non-Conserved Order Parameter Dynamics (Model A)</a></li>
+  <li><a href="#conserved-order-parameter-dynamics-model-b" id="toc-conserved-order-parameter-dynamics-model-b" class="nav-link" data-scroll-target="#conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.4.2</span> Conserved Order Parameter Dynamics (Model B)</a></li>
+  <li><a href="#schematic-of-domain-growth-in-2d-ising-model" id="toc-schematic-of-domain-growth-in-2d-ising-model" class="nav-link" data-scroll-target="#schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">10.4.3</span> Schematic of Domain Growth in 2D Ising model</a></li>
+  <li><a href="#dynamic-scaling-hypothesis" id="toc-dynamic-scaling-hypothesis" class="nav-link" data-scroll-target="#dynamic-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamic Scaling Hypothesis</a></li>
+  <li><a href="#summary-of-growth-laws" id="toc-summary-of-growth-laws" class="nav-link" data-scroll-target="#summary-of-growth-laws"><span class="header-section-number">10.4.5</span> Summary of Growth Laws</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../phase-transitions/introduction.html">Unifying concepts</a></li><li class="breadcrumb-item"><a href="../phase-transitions/nucleation-and-growth.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Nucleation, growth and spinodal decomposition</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Dynamics of first order phase transitions: nucleation, growth and spinodal decomposition</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction-to-nucleation" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introduction-to-nucleation"><span class="header-section-number">10.1</span> Introduction to nucleation</h2>
+<p>In previous discussions, we considered first-order phase transitions but deferred a detailed analysis of the <em>dynamical</em> mechanism by which a system evolves from one phase to another. We now address this question explicitly.</p>
+<p>Consider again the Ising model at a temperature <span class="math inline">\(T &lt; T_c\)</span>, where the system is initially prepared in the majority spin-up phase at zero external field, <span class="math inline">\(H = 0\)</span>. At <span class="math inline">\(H=0\)</span> the spin-up and spin-down phases coexist. We now apply a small negative external field <span class="math inline">\(H &lt; 0\)</span>, which lowers the free energy of the spin-down phase relative to the spin-up phase. The spin-down phase is therefore stable, while the spin-up phase is metastable.</p>
+<p>It is useful at this point to identify the thermodynamic driving force for the transition. Let</p>
+<p><span class="math display">\[
+\Delta f = f_{\mathrm{meta}}-f_{\mathrm{stable}}&gt;0
+\]</span></p>
+<p>be the bulk free-energy density difference between the metastable and stable phases. Converting a volume <span class="math inline">\(V\)</span> of metastable material into the stable phase lowers the bulk free energy by</p>
+<p><span class="math display">\[
+\Delta F_{\mathrm{bulk}}=-V\Delta f.
+\]</span></p>
+<p>For the Ising model, this free-energy difference is produced by the applied field. Close to coexistence,</p>
+<p><span class="math display">\[
+\Delta f \simeq 2m_0|H|,
+\]</span></p>
+<p>where <span class="math inline">\(m_0\)</span> is the magnitude of the spontaneous magnetisation. Thus the bulk driving force vanishes as <span class="math inline">\(H\to0\)</span>, where the two phases coexist.</p>
+<p>For a molecular system, the same driving force is often expressed in terms of a chemical-potential difference,</p>
+<p><span class="math display">\[
+\Delta\mu=\mu_{\mathrm{meta}}-\mu_{\mathrm{stable}}&gt;0.
+\]</span></p>
+<p>The bulk free-energy gain for converting <span class="math inline">\(N\)</span> particles to the stable phase is then approximately</p>
+<p><span class="math display">\[
+\Delta F_{\mathrm{bulk}}\simeq-N\Delta\mu.
+\]</span></p>
+<p>Thus <span class="math inline">\(\Delta f\)</span> and <span class="math inline">\(\Delta\mu\)</span> are simply two ways of expressing the bulk thermodynamic driving force, per unit volume or per particle.</p>
+<p>Despite the spin-down phase having the lower free energy, the system does not undergo an instantaneous transition. This delay is a consequence of the free-energy barrier associated with nucleating a region of the stable phase within the metastable one, as introduced in <a href="mean-field-theory.html#sec-breaking" class="quarto-xref"><span>Section 5.2</span></a>. The transition proceeds via <em>nucleation</em> of local regions—or <em>droplets</em>—of the stable (spin-down) phase embedded in the metastable (spin-up) background. Once nucleated, sufficiently large droplets grow and can ultimately transform the system to the stable phase.</p>
+<p>The nucleation of a droplet therefore involves a competition between two contributions to the free energy. There is a bulk free-energy gain, proportional to the volume of the droplet, because the droplet is in the stable phase. This is offset by an interfacial free-energy cost arising from the boundary between the two phases. For the Ising model, broken bonds contribute an energetic cost, while the fluctuating shape of the interface also gives an entropic contribution. Their combined effect is described by the <em>surface tension</em> <span class="math inline">\(\sigma\)</span>.</p>
+<p>The competition between the extensive bulk free-energy gain and the sub-extensive interfacial cost gives a free-energy barrier to droplet formation. Only fluctuations that produce a droplet larger than a critical size will grow; smaller droplets will shrink. This is the basis of <em>classical nucleation theory</em>.</p>
+</section>
+<section id="sec-cnt" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="sec-cnt"><span class="header-section-number">10.2</span> Classical Nucleation Theory: Homogeneous Nucleation</h2>
+<p>We now consider <strong>classical nucleation theory</strong> (CNT) for <em>homogeneous nucleation</em>, in which the stable phase nucleates spontaneously in the bulk of the metastable phase, without the aid of impurities, defects or surfaces.</p>
+<p>Consider a droplet of the stable (spin-down) phase of radius <span class="math inline">\(R\)</span> embedded in the metastable (spin-up) phase. The change in free energy <span class="math inline">\(\Delta F(R)\)</span> has two contributions:</p>
+<ol type="1">
+<li><p><strong>Bulk free-energy gain</strong>: The stable phase has a lower bulk free-energy density than the metastable phase by <span class="math inline">\(\Delta f&gt;0\)</span>. Thus</p>
+<p><span class="math display">\[
+\Delta F_{\mathrm{bulk}}(R)=-\Delta f\,V_dR^d,
+\]</span></p>
+<p>where <span class="math inline">\(V_dR^d\)</span> is the volume of the droplet in <span class="math inline">\(d\)</span> dimensions. For the Ising model, <span class="math inline">\(\Delta f\propto |H|\)</span> close to coexistence. For a molecular system the same contribution can instead be expressed in terms of <span class="math inline">\(\Delta\mu\)</span>.</p></li>
+<li><p><strong>Interfacial free-energy cost</strong>: The boundary between the two phases has area <span class="math inline">\(S_dR^{d-1}\)</span> and carries a free-energy cost proportional to the surface tension <span class="math inline">\(\sigma\)</span>:</p>
+<p><span class="math display">\[
+\Delta F_{\mathrm{surface}}(R)=\sigma S_dR^{d-1},
+\]</span></p>
+<p>where <span class="math inline">\(S_d\)</span> is a geometrical factor (e.g.&nbsp;<span class="math inline">\(S_2=2\pi\)</span> in 2D and <span class="math inline">\(S_3=4\pi\)</span> in 3D).</p></li>
+</ol>
+<p>The total free-energy change is therefore</p>
+<p><span class="math display">\[
+\Delta F(R)=\sigma S_dR^{d-1}-\Delta f\,V_dR^d.
+\]</span> (here for clarity we have not made the temperature dependence explicit, but both the surface tension <span class="math inline">\(\sigma\)</span> and the bulk free-energy density difference <span class="math inline">\(\Delta f\)</span> generally depend on <span class="math inline">\(T\)</span>.)</p>
+<p>For small droplets the surface term dominates, so increasing the droplet size raises the free energy. For sufficiently large droplets the bulk term dominates and further growth lowers the free energy. The resulting free-energy barrier is shown schematically in <a href="#fig-cnt-schem" class="quarto-xref">Figure&nbsp;<span>10.1</span></a>.</p>
+<p>The maximum occurs at the critical droplet radius <span class="math inline">\(R_c\)</span>, obtained from</p>
+<p><span class="math display">\[
+\frac{d\Delta F}{dR}=0,
+\]</span></p>
+<p>which gives</p>
+<p><span class="math display">\[
+R_c=\frac{(d-1)\sigma S_d}{d\Delta f V_d}.
+\]</span></p>
+<div id="fig-cnt-schem" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cnt-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/cnt_schematic.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cnt-schem-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.1: Free-energy barrier <span class="math inline">\(\Delta F(R)\)</span> for nucleation of a spherical droplet as a function of radius <span class="math inline">\(R\)</span> (schematic)
+</figcaption>
+</figure>
+</div>
+<p>Droplets with <span class="math inline">\(R&lt;R_c\)</span> lower their free energy by shrinking, whereas droplets with <span class="math inline">\(R&gt;R_c\)</span> lower it by growing.</p>
+<p>The corresponding nucleation barrier is</p>
+<p><span class="math display">\[
+\Delta F_c=\Delta F(R_c)
+=\frac{(d-1)^{d-1}}{d^d}
+\frac{(S_d)^d\sigma^d}{(\Delta f)^{d-1}(V_d)^{d-1}}.
+\]</span></p>
+<p>This barrier must be surmounted by thermal fluctuations in order for a critical nucleus to form and grow. The nucleation rate per unit volume is, in the Arrhenius approximation,</p>
+<p><span class="math display">\[
+I\sim I_0\exp\left(-\frac{\Delta F_c}{k_BT}\right),
+\]</span></p>
+<p>where <span class="math inline">\(I_0\)</span> is a prefactor determined by microscopic kinetics.</p>
+<p><strong>Interpretation and Scaling Behaviour</strong></p>
+<p>Several key features follow immediately:</p>
+<ul>
+<li><strong>Critical radius</strong>: <span class="math inline">\(R_c\sim\sigma/\Delta f\)</span>, so the critical droplet becomes very large as <span class="math inline">\(\Delta f\to0\)</span>.</li>
+<li><strong>Barrier height</strong>: <span class="math inline">\(\Delta F_c\sim\sigma^d/(\Delta f)^{d-1}\)</span>, so the nucleation barrier also grows strongly as coexistence is approached.</li>
+<li><strong>Moving away from coexistence</strong>: Increasing the bulk driving force <span class="math inline">\(\Delta f\)</span> (or equivalently <span class="math inline">\(\Delta\mu\)</span>) reduces both <span class="math inline">\(R_c\)</span> and the barrier, making nucleation easier.</li>
+</ul>
+<p>Thus homogeneous nucleation is governed by a competition between the bulk thermodynamic driving force and the interfacial free-energy cost. Close to coexistence the bulk driving force is weak and nucleation can be extremely slow.</p>
+</section>
+<section id="domain-growth" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="domain-growth"><span class="header-section-number">10.3</span> Domain growth</h2>
+<p>Once a droplet is larger than <span class="math inline">\(R_c\)</span>, further growth lowers the free energy. During this stage the bulk free-energy difference between the metastable and stable phases continues to drive the transformation.</p>
+<p>Growth rates depend on the microscopic dynamics: for example, on how rapidly atoms, molecules or spins can rearrange, and on how rapidly material can be transported to the growing phase.</p>
+<p>At later times the situation is rather different. The interiors of the domains are then already close to their equilibrium bulk states, and the remaining excess free energy is mainly associated with interfaces. The system then <em>coarsens</em> so as to reduce the amount of interface.</p>
+<p>It is useful to distinguish these two driving forces:</p>
+<ul>
+<li>nucleation and early growth are driven by the <strong>bulk free-energy difference</strong> between metastable and stable phases;</li>
+<li>late-stage coarsening is driven mainly by the reduction of <strong>interfacial free energy</strong>.</li>
+</ul>
+</section>
+<section id="spinodal-decomposition" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="spinodal-decomposition"><span class="header-section-number">10.4</span> Spinodal decomposition</h2>
+<p>So far we have considered a state in which the original phase is metastable. It corresponds to a local minimum of the free energy, and the system must therefore wait for a sufficiently large fluctuation to create a critical nucleus.</p>
+<p>Spinodal decomposition occurs when the initial homogeneous state is instead <em>unstable</em>. Small fluctuations can then lower the free energy and grow spontaneously, so there is no nucleation barrier.</p>
+<p>For example, at fixed <span class="math inline">\(T&lt;T_c\)</span> in the Ising model, increasing a field opposed to the initial magnetisation eventually causes the metastable minimum to disappear, as illustrated in <a href="#fig-spinodal" class="quarto-xref">Figure&nbsp;<span>10.2</span></a>.</p>
+<div id="fig-spinodal" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spinodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figs/spinodal.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spinodal-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.2: Schematic phase diagram for a magnet showing the regions in which one observes nucleation and growth, or spinodal decomposition
+</figcaption>
+</figure>
+</div>
+<p>The same type of instability occurs following a temperature quench. If a system at <span class="math inline">\(H=0\)</span> is quenched from <span class="math inline">\(T&gt;T_c\)</span> to <span class="math inline">\(T&lt;T_c\)</span>, the initially homogeneous state with <span class="math inline">\(m\simeq0\)</span> becomes unstable and fluctuations towards positive and negative magnetisation grow to form domains.</p>
+<p>If <span class="math inline">\(F(Q)\)</span> is the free energy as a function of an order parameter <span class="math inline">\(Q\)</span>, the spinodal marks the point at which a metastable minimum disappears:</p>
+<p><span class="math display">\[
+\frac{\partial F}{\partial Q}=0,
+\qquad
+\frac{\partial^2 F}{\partial Q^2}=0.
+\]</span></p>
+<p>Within the unstable region the curvature is negative,</p>
+<p><span class="math display">\[
+\frac{\partial^2 F}{\partial Q^2}&lt;0,
+\]</span></p>
+<p>so small fluctuations grow rather than having to cross a nucleation barrier.</p>
+<p>The resulting domains subsequently coarsen, with small domains disappearing and the typical domain size increasing. The nature of this late-time coarsening depends strongly on whether the order parameter is conserved.</p>
+<div id="fig-spinodal-snapshots" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-spinodal-snapshots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/spinodal_snapshot_early.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Shortly after the quench</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/spinodal_snapshot_intermediate.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Intermediate time</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figs/spinodal_snapshot_late.png" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Later time</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spinodal-snapshots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.3: Snapshots from a conserved-order-parameter simulation following a temperature quench into the unstable region. Small fluctuations first grow throughout the system, then domains of the two phases emerge, and at later times these domains coarsen so that the typical lengthscale increases.
+</figcaption>
+</figure>
+</div>
+<section id="non-conserved-order-parameter-dynamics-model-a" class="level3" data-number="10.4.1">
+<h3 data-number="10.4.1" class="anchored" data-anchor-id="non-conserved-order-parameter-dynamics-model-a"><span class="header-section-number">10.4.1</span> Non-Conserved Order Parameter Dynamics (Model A)</h3>
+<p>In systems with a non-conserved order parameter, such as the Ising model with single-spin-flip (Glauber) dynamics, the order parameter can relax locally without any conservation constraint. This is called <strong>Model A</strong> dynamics.</p>
+<p>The coarse-grained order parameter field <span class="math inline">\(\phi(\mathbf r,t)\)</span> evolves so as to reduce the free energy. A simple description is the <strong>Allen–Cahn equation</strong>:</p>
+<p><span class="math display">\[
+\frac{\partial\phi}{\partial t}
+=-\Gamma\frac{\delta F[\phi]}{\delta\phi},
+\]</span></p>
+<p>where <span class="math inline">\(\Gamma\)</span> is a kinetic coefficient. The functional derivative <span class="math inline">\(\delta F/\delta\phi\)</span> is the local thermodynamic driving force for changing the order parameter. Since <span class="math inline">\(\phi\)</span> is not conserved, the system can lower its free energy by changing <span class="math inline">\(\phi\)</span> locally.</p>
+<p>A simple Ginzburg–Landau free-energy functional is</p>
+<p><span class="math display">\[
+F[\phi]=\int d^dx\left[\frac{1}{2}(\nabla\phi)^2+V(\phi)\right],
+\]</span></p>
+<p>with <span class="math inline">\(V(\phi)\)</span> typically a double-well potential such as</p>
+<p><span class="math display">\[
+V(\phi)=\frac{1}{4}(\phi^2-1)^2.
+\]</span></p>
+<p>The squared-gradient term penalises interfaces.</p>
+<p>For a curved interface, the reduction of interfacial free energy causes the interface to move. The interface velocity is proportional to its curvature, so for domains of typical size <span class="math inline">\(L\)</span>,</p>
+<p><span class="math display">\[
+v\sim\frac{1}{L}.
+\]</span></p>
+<p>Thus</p>
+<p><span class="math display">\[
+\frac{dL}{dt}\sim\frac{1}{L},
+\]</span></p>
+<p>and hence</p>
+<p><span class="math display">\[
+L(t)\sim t^{1/2},
+\]</span></p>
+<p>corresponding to a dynamic exponent <span class="math inline">\(z=2\)</span>. Small, highly curved domains disappear while the typical domain size grows.</p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why is the interface velocity proportional to curvature? (non examinable)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Consider a circular domain of radius <span class="math inline">\(R\)</span> in two dimensions. Its interfacial free energy is</p>
+<p><span class="math display">\[
+F_{\mathrm{int}} = 2\pi R\sigma.
+\]</span></p>
+<p>The thermodynamic force tending to reduce <span class="math inline">\(R\)</span> is obtained from the change of free energy with radius,</p>
+<p><span class="math display">\[
+-\frac{dF_{\mathrm{int}}}{dR}=-2\pi\sigma.
+\]</span></p>
+<p>This force acts around an interface of length <span class="math inline">\(2\pi R\)</span>, so the driving force per unit length of interface is</p>
+<p><span class="math display">\[
+\frac{1}{2\pi R}\left|\frac{dF_{\mathrm{int}}}{dR}\right|
+=\frac{\sigma}{R}.
+\]</span></p>
+<p>Since the curvature of a circle is <span class="math inline">\(\kappa=1/R\)</span>, the local driving force is therefore proportional to curvature,</p>
+<p><span class="math display">\[
+\text{driving force} \sim \sigma\kappa.
+\]</span></p>
+<p>For non-conserved dynamics the interface responds locally to this force. Assuming overdamped dynamics, its velocity is proportional to the local driving force, giving</p>
+<p><span class="math display">\[
+v\propto\kappa.
+\]</span></p>
+<p>Thus for domains of typical size <span class="math inline">\(L\)</span>,</p>
+<p><span class="math display">\[
+v\sim\frac{1}{L}.
+\]</span></p>
+<p>Small, highly curved domains therefore shrink faster than large ones.</p>
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="conserved-order-parameter-dynamics-model-b" class="level3" data-number="10.4.2">
+<h3 data-number="10.4.2" class="anchored" data-anchor-id="conserved-order-parameter-dynamics-model-b"><span class="header-section-number">10.4.2</span> Conserved Order Parameter Dynamics (Model B)</h3>
+<p>For systems with a conserved order parameter, such as phase separation in binary alloys or the Ising model with spin-swap (Kawasaki) dynamics, the order parameter must be conserved locally. It cannot simply change at a point: material has to be transported from one region to another. This gives <strong>Model B</strong> dynamics.</p>
+<p>In this case the functional derivative of the free energy plays the role of a local chemical potential,</p>
+<p><span class="math display">\[
+\mu(\mathbf r)=\frac{\delta F[\phi]}{\delta\phi(\mathbf r)}.
+\]</span></p>
+<p>Surface tension means that material in a small, highly curved domain has a higher chemical potential than material in a large, more weakly curved domain. This is because small domains have a larger interfacial free-energy cost relative to their volume. Since the curvature of a domain of size <span class="math inline">\(L\)</span> is of order <span class="math inline">\(1/L\)</span>, the resulting chemical-potential difference scales as</p>
+<p><span class="math display">\[
+\Delta\mu\sim\frac{\sigma}{L}.
+\]</span></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Why does the chemical-potential difference scale as <span class="math inline">\(1/L\)</span>? (non-examinable)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A curved interface raises the chemical potential of material in a finite domain. For a domain of typical size <span class="math inline">\(L\)</span>, the interfacial free energy scales as</p>
+<p><span class="math display">\[
+F_{\mathrm{int}} \sim \sigma L^{d-1},
+\]</span></p>
+<p>while the amount of material in the domain scales as</p>
+<p><span class="math display">\[
+N \sim L^d.
+\]</span></p>
+<p>The excess chemical potential associated with the interface is therefore of order</p>
+<p><span class="math display">\[
+\Delta \mu
+\sim
+\frac{dF_{\mathrm{int}}}{dN}
+=
+\frac{dF_{\mathrm{int}}/dL}{dN/dL}.
+\]</span></p>
+<p>Using</p>
+<p><span class="math display">\[
+\frac{dF_{\mathrm{int}}}{dL}
+\sim
+\sigma L^{d-2},
+\qquad
+\frac{dN}{dL}
+\sim
+L^{d-1},
+\]</span></p>
+<p>gives</p>
+<p><span class="math display">\[
+\Delta \mu
+\sim
+\frac{\sigma}{L}.
+\]</span></p>
+<p>Thus small, highly curved domains have a higher chemical potential than larger ones.</p>
+</div>
+</div>
+</div>
+<p>This is a curvature-induced chemical-potential difference. It should not be confused with the bulk <span class="math inline">\(\Delta\mu\)</span> introduced earlier as the driving force for nucleation. At late times the bulk phases are already close to coexistence; the remaining driving force comes mainly from interfaces.</p>
+<p>Material diffuses down gradients in chemical potential. The flux is therefore</p>
+<p><span class="math display">\[
+\mathbf J=-M\nabla\mu,
+\]</span></p>
+<p>where <span class="math inline">\(M\)</span> is a mobility. Neighbouring domains are typically separated by a distance of order <span class="math inline">\(L\)</span>, so this chemical-potential difference occurs over a distance of the same order. Hence</p>
+<p><span class="math display">\[
+|\nabla\mu|\sim\frac{\Delta\mu}{L}\sim\frac{\sigma}{L^2}.
+\]</span></p>
+<p>The rate of change of domain size therefore scales as</p>
+<p><span class="math display">\[
+\frac{dL}{dt}\sim\frac{1}{L^2},
+\]</span></p>
+<p>which gives</p>
+<p><span class="math display">\[
+L(t)\sim t^{1/3}.
+\]</span></p>
+<p>Thus conserved dynamics coarsen more slowly because growth requires diffusion of material over increasing distances.</p>
+<p>The corresponding coarse-grained dynamics are described by the <strong>Cahn–Hilliard equation</strong>:</p>
+<p><span class="math display">\[
+\frac{\partial\phi}{\partial t}
+=\nabla\cdot\left(M\nabla\mu\right)
+=\nabla\cdot\left[M\nabla\left(\frac{\delta F[\phi]}{\delta\phi}\right)\right].
+\]</span></p>
+<p>For constant mobility <span class="math inline">\(M\)</span> this reduces to</p>
+<p><span class="math display">\[
+\frac{\partial\phi}{\partial t}
+=M\nabla^2\left(\frac{\delta F[\phi]}{\delta\phi}\right).
+\]</span></p>
+</section>
+<section id="schematic-of-domain-growth-in-2d-ising-model" class="level3" data-number="10.4.3">
+<h3 data-number="10.4.3" class="anchored" data-anchor-id="schematic-of-domain-growth-in-2d-ising-model"><span class="header-section-number">10.4.3</span> Schematic of Domain Growth in 2D Ising model</h3>
+<p>Here are schematic illustrations of domain growth for:</p>
+<ul>
+<li><p>Non-conserved dynamics (Model A): Domains coarsen rapidly because the order parameter can relax locally.</p></li>
+<li><p>Conserved dynamics (Model B): Coarsening is slower because material has to be transported between domains.</p></li>
+</ul>
+<div id="fig-domain-growth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-domain-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<style>
+    .sim-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-bottom: 25px;
+        flex-wrap: wrap;
+    }
+
+    .sim-panel {
+        background: white;
+        padding: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        text-align: center;
+    }
+
+    .sim-title {
+        margin-top: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    .sim-law {
+        font-size: 0.9rem;
+        color: #0066cc;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    .sim-canvas {
+        background: #000;
+        border-radius: 4px;
+        display: block;
+    }
+
+    .sim-controls {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .sim-btn {
+        background-color: #0071e3;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        margin: 0 10px;
+        font-weight: 500;
+    }
+
+    .sim-btn:hover {
+        background-color: #0077ed;
+    }
+
+    .sim-btn-secondary {
+        background-color: #86868b;
+    }
+
+    .sim-btn-secondary:hover {
+        background-color: #98989d;
+    }
+</style>
+
+<div class="sim-container">
+    <div class="sim-panel">
+        <div class="sim-title">Model A (Allen-Cahn)</div>
+        <div class="sim-law">Non-Conserved Order Parameter: L(t) ~ t¹ᐟ²</div>
+        <canvas id="canvasA" width="250" height="250" class="sim-canvas"></canvas>
+    </div>
+
+    <div class="sim-panel">
+        <div class="sim-title">Model B (Cahn-Hilliard)</div>
+        <div class="sim-law">Conserved Order Parameter: L(t) ~ t¹ᐟ³</div>
+        <canvas id="canvasB" width="250" height="250" class="sim-canvas"></canvas>
+    </div>
+</div>
+
+<div class="sim-controls">
+    <button id="btnPause" class="sim-btn">Pause</button>
+    <button id="btnReset" class="sim-btn sim-btn-secondary">Reset / Sync States</button>
+</div>
+
+<script>
+(function() {
+    const N = 128;
+
+    const canvasA = document.getElementById("canvasA");
+    const canvasB = document.getElementById("canvasB");
+
+    const ctxA = canvasA.getContext("2d");
+    const ctxB = canvasB.getContext("2d");
+
+    const dtA = 0.1;
+    const dtB = 0.01;
+    const modelB_substeps = 40;
+
+    let phiA = new Float32Array(N * N);
+    let phiB = new Float32Array(N * N);
+    let nextPhi = new Float32Array(N * N);
+    let mu = new Float32Array(N * N);
+
+    let isRunning = true;
+    let animationFrameId = null;
+    let elapsedRunning = 0;
+    let lastTimestamp = null;
+    const autoPauseAfter = 12000; // milliseconds
+
+    function idx(x, y) {
+        return ((x + N) % N) + ((y + N) % N) * N;
+    }
+
+    function initGrids() {
+        for (let i = 0; i < N * N; i++) {
+            const val = (Math.random() - 0.5) * 0.2;
+            phiA[i] = val;
+            phiB[i] = val;
+        }
+    }
+
+    function laplacian(grid, x, y) {
+        const center = grid[idx(x, y)];
+
+        return (
+            grid[idx(x - 1, y)] +
+            grid[idx(x + 1, y)] +
+            grid[idx(x, y - 1)] +
+            grid[idx(x, y + 1)] -
+            4 * center
+        );
+    }
+
+    function stepModelA() {
+        for (let y = 0; y < N; y++) {
+            for (let x = 0; x < N; x++) {
+                const i = idx(x, y);
+                const p = phiA[i];
+
+                nextPhi[i] =
+                    p +
+                    dtA * (
+                        laplacian(phiA, x, y) +
+                        (p - p * p * p)
+                    );
+            }
+        }
+
+        let temp = phiA;
+        phiA = nextPhi;
+        nextPhi = temp;
+    }
+
+    function stepModelB() {
+        for (let sub = 0; sub < modelB_substeps; sub++) {
+
+            for (let y = 0; y < N; y++) {
+                for (let x = 0; x < N; x++) {
+                    const i = idx(x, y);
+                    const p = phiB[i];
+
+                    mu[i] =
+                        -laplacian(phiB, x, y)
+                        - p
+                        + p * p * p;
+                }
+            }
+
+            for (let y = 0; y < N; y++) {
+                for (let x = 0; x < N; x++) {
+                    const i = idx(x, y);
+
+                    nextPhi[i] =
+                        phiB[i] +
+                        dtB * laplacian(mu, x, y);
+                }
+            }
+
+            let temp = phiB;
+            phiB = nextPhi;
+            nextPhi = temp;
+        }
+    }
+
+    function draw(grid, ctx, imgData) {
+        const data = imgData.data;
+        const cWidth = ctx.canvas.width;
+        const cHeight = ctx.canvas.height;
+
+        const scaleX = cWidth / N;
+        const scaleY = cHeight / N;
+
+        for (let y = 0; y < cHeight; y++) {
+            const srcY = Math.floor(y / scaleY);
+
+            for (let x = 0; x < cWidth; x++) {
+                const srcX = Math.floor(x / scaleX);
+
+                let norm = Math.floor(
+                    (grid[srcX + srcY * N] + 1) * 127.5
+                );
+
+                norm = Math.max(0, Math.min(255, norm));
+
+                const pIdx = (x + y * cWidth) * 4;
+
+                data[pIdx] = norm;
+                data[pIdx + 1] = norm;
+                data[pIdx + 2] = norm;
+                data[pIdx + 3] = 255;
+            }
+        }
+
+        ctx.putImageData(imgData, 0, 0);
+    }
+
+    const imgDataA =
+        ctxA.createImageData(canvasA.width, canvasA.height);
+
+    const imgDataB =
+        ctxB.createImageData(canvasB.width, canvasB.height);
+
+    function update(timestamp) {
+        if (!isRunning) {
+            animationFrameId = null;
+            return;
+        }
+
+        if (lastTimestamp === null) {
+            lastTimestamp = timestamp;
+        }
+
+        elapsedRunning += timestamp - lastTimestamp;
+        lastTimestamp = timestamp;
+
+        stepModelA();
+        stepModelB();
+
+        draw(phiA, ctxA, imgDataA);
+        draw(phiB, ctxB, imgDataB);
+
+        if (elapsedRunning >= autoPauseAfter) {
+            isRunning = false;
+            animationFrameId = null;
+            document.getElementById("btnPause").innerText = "Resume";
+            return;
+        }
+
+        animationFrameId = requestAnimationFrame(update);
+    }
+
+    function startAnimation() {
+        if (isRunning && animationFrameId === null) {
+            lastTimestamp = null;
+            animationFrameId = requestAnimationFrame(update);
+        }
+    }
+
+    document
+        .getElementById("btnPause")
+        .addEventListener("click", (e) => {
+            if (isRunning) {
+                isRunning = false;
+                if (animationFrameId !== null) {
+                    cancelAnimationFrame(animationFrameId);
+                    animationFrameId = null;
+                }
+                e.target.innerText = "Resume";
+            } else {
+                isRunning = true;
+                elapsedRunning = 0;
+                lastTimestamp = null;
+                e.target.innerText = "Pause";
+                startAnimation();
+            }
+        });
+
+    document
+        .getElementById("btnReset")
+        .addEventListener("click", () => {
+            if (animationFrameId !== null) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+
+            initGrids();
+            elapsedRunning = 0;
+            lastTimestamp = null;
+            isRunning = true;
+
+            document.getElementById("btnPause").innerText = "Pause";
+
+            draw(phiA, ctxA, imgDataA);
+            draw(phiB, ctxB, imgDataB);
+            startAnimation();
+        });
+
+    initGrids();
+    draw(phiA, ctxA, imgDataA);
+    draw(phiB, ctxB, imgDataB);
+    startAnimation();
+})();
+</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-domain-growth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10.4: Interactive side-by-side simulation demonstrating non-conserved domain growth driven by local curvature (Model A) versus conserved phase separation driven by mass diffusion (Model B).
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="dynamic-scaling-hypothesis" class="level3" data-number="10.4.4">
+<h3 data-number="10.4.4" class="anchored" data-anchor-id="dynamic-scaling-hypothesis"><span class="header-section-number">10.4.4</span> Dynamic Scaling Hypothesis</h3>
+<p>At late times, both conserved and non-conserved systems exhibit dynamic scaling: the statistical properties of the domain morphology become self-similar under rescaling of lengths by <span class="math inline">\(L(t)\)</span>.</p>
+<p>For example, the equal-time two-point correlation function satisfies</p>
+<p><span class="math display">\[
+C(r,t)=f\left(\frac{r}{L(t)}\right),
+\]</span></p>
+<p>where <span class="math inline">\(f(x)\)</span> is a time-independent scaling function. Plots of <span class="math inline">\(C(r,t)\)</span> collapse when plotted as a function of <span class="math inline">\(r/L(t)\)</span>.</p>
+<p>The structure factor <span class="math inline">\(S(k,t)\)</span>, which is the Fourier transform of the correlation function, is experimentally accessible, for example via X-ray or neutron scattering, and also obeys dynamic scaling:</p>
+<p><span class="math display">\[
+S(k,t)=\int d^dr\,e^{-i\vec{k}\cdot\vec{r}}\,C(r,t).
+\]</span></p>
+<p>Substituting the scaling form of <span class="math inline">\(C(r,t)\)</span> into this expression, and changing variables to <span class="math inline">\(\vec{u}=\vec{r}/L(t)\)</span>, gives</p>
+<p><span class="math display">\[
+S(k,t)=L(t)^d\int d^du\,e^{-i\vec{k}\cdot L(t)\vec{u}}f(u)
+=L(t)^d g(kL(t)),
+\]</span></p>
+<p>with <span class="math inline">\(g(x)\)</span> a scaling function.</p>
+</section>
+<section id="summary-of-growth-laws" class="level3" data-number="10.4.5">
+<h3 data-number="10.4.5" class="anchored" data-anchor-id="summary-of-growth-laws"><span class="header-section-number">10.4.5</span> Summary of Growth Laws</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 24%">
+<col style="width: 13%">
+<col style="width: 23%">
+<col style="width: 19%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dynamics Type</th>
+<th>Conservation</th>
+<th>Equation Type</th>
+<th>Growth Law</th>
+<th>Dynamic Exponent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Model A (e.g.&nbsp;Glauber)</td>
+<td>No</td>
+<td>Allen–Cahn</td>
+<td><span class="math inline">\(L(t)\sim t^{1/2}\)</span></td>
+<td><span class="math inline">\(z=2\)</span></td>
+</tr>
+<tr class="even">
+<td>Model B (e.g.&nbsp;Kawasaki)</td>
+<td>Yes</td>
+<td>Cahn–Hilliard</td>
+<td><span class="math inline">\(L(t)\sim t^{1/3}\)</span></td>
+<td><span class="math inline">\(z=3\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote class="blockquote">
+<p>Remarks:</p>
+<p>The domain-growth exponents <span class="math inline">\(1/z\)</span> are robust under many conditions, but can be modified in the presence of disorder, long-range interactions or hydrodynamic effects.</p>
+<p>In Model A the system can ultimately reach a uniform equilibrium phase because the order parameter is not conserved. In Model B the overall composition is fixed, so the equilibrium state will in general still contain both phases if the mean composition lies inside the two-phase region.</p>
+<p>The approach to equilibrium is algebraically slow because coarsening involves structures on an ever-increasing length scale.</p>
+</blockquote>
+<p>More about the scientists mentioned in this chapter:</p>
+<p><a href="https://en.wikipedia.org/wiki/John_W._Cahn">John Cahn</a></p>
+
+
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<div id="exercise-loading-indicator" class="exercise-loading-indicator d-none d-flex align-items-center gap-2">
+<div id="exercise-loading-status" class="d-flex gap-2">
+
+</div>
+<div class="spinner-grow spinner-grow-sm">
+
+</div>
+</div>
+<script type="vfs-file">
+W10=
+</script>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../phase-transitions";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation column-body">
+  <div class="nav-page nav-page-previous">
+      <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html" class="pagination-link" aria-label="Langevin and Brownian dynamics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Langevin and Brownian dynamics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../phase-transitions/precourse-reading.html" class="pagination-link" aria-label="Precourse reading and revision">
+        <span class="nav-page-text">Precourse reading and revision</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
