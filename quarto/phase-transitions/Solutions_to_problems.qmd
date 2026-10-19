@@ -498,8 +498,9 @@ $$
 The free energy in generalised homogeneous form is 
 
 $$
-F(\lambda^a t,\lambda^b h)=\lambda F(t,h) 
+F(\lambda^a t,\lambda^b h)=\lambda F(t,h) ,
 $$
+valid for all $\lambda$.
 
 The first of the scaling relations to be derived was covered in lectures:
 Let $\lambda^a=1/t$, so that $\lambda=t^{-1/a}$. Then
@@ -531,7 +532,7 @@ C_H =& -\frac{T}{T_c^2}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
 C_H \approx& -\frac{1}{T_c}\frac{\partial^2}{\partial t^2}[t^{1/a}F(1,t^{-b/a}h)]\\
 C_H =& -\frac{1}{T_c}\frac{1}{a}(\frac{1}{a}-1)t^{(1/a-2)}F(1,0)
 \end{aligned}$$
-Here we have neglected all derivatives of $F$ since they are multiplied
+Here we have neglected all terms containing derivatives of $F$ since they are multiplied
 by at least one power of $h$ which is zero. Hence $\boxed{\alpha=2-1/a}$.
 
 Finally, if we let $\lambda^b=1/h$, so that $\lambda=h^{-1/b}$ and
@@ -739,7 +740,7 @@ $$
 
 ---
 
-### 14. Master equation
+## 14. Master equation
 
 For brevity define
 
@@ -749,7 +750,7 @@ $$
 \lambda_{\downarrow} \equiv \lambda_{+\to-}.
 $$
 
-The rates of change of the populations are
+Note that $NP_+=n_+$ and $NP_-=n_-$. The rates of change of the populations are given by the master equation
 
 $$
 \frac{dn_+}{dt}
@@ -1001,7 +1002,7 @@ This result has important implications for Monte Carlo simulation
 
 ---
 
-### 15. Coarsening dynamics — solution
+## 15. Coarsening dynamics — solution
 
 **(a)**
 
@@ -1076,7 +1077,7 @@ $$
 Therefore,
 
 $$
-\boxed{\tau_A\sim R_0^2}.
+\tau_A\sim R_0^2.
 $$
 
 
@@ -1180,7 +1181,7 @@ locally.
 
 ***
 
-### 16. Jump processes
+## 16. Jump processes
 
 
 
