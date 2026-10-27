@@ -1086,58 +1086,30 @@ f-f_0=\alpha\mathcal{S}^2-\beta\mathcal{S}^3+\gamma\mathcal{S}^4,
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>The tensor and its traces</strong></li>
-</ol>
-<p>With the <span class="math inline">\(z\)</span> axis along the director, <span class="math inline">\(\mathbf{n}=(0,0,1)\)</span> and <span class="math inline">\(\mathbf{n}\otimes\mathbf{n}\)</span> has a single non-zero entry, <span class="math inline">\(n_zn_z=1\)</span>. Subtracting <span class="math inline">\(\frac{1}{3}\mathbf{I}\)</span> gives a diagonal matrix: <span class="math display">\[
-\mathbf{Q}=\mathcal{S}\begin{pmatrix}-\frac{1}{3} &amp; 0 &amp; 0\\ 0 &amp; -\frac{1}{3} &amp; 0\\ 0 &amp; 0 &amp; \frac{2}{3}\end{pmatrix}.
-\]</span> The trace is <span class="math inline">\(\mathcal{S}\left(-\frac{1}{3}-\frac{1}{3}+\frac{2}{3}\right)=0\)</span>: this is not an accident, but the reason why we subtracted <span class="math inline">\(\frac{1}{3}\mathbf{I}\)</span> in the first place, so that <span class="math inline">\(\mathbf{Q}\)</span> contains no isotropic part.</p>
-<p>Since <span class="math inline">\(\mathbf{Q}\)</span> is diagonal, its powers are obtained by raising each diagonal element to that power: <span class="math display">\[
+<li><p>With the <span class="math inline">\(z\)</span> axis along <span class="math inline">\(\mathbf{n}\)</span>, the only non-zero entry of <span class="math inline">\(\mathbf{n}\otimes\mathbf{n}\)</span> is <span class="math inline">\(n_zn_z=1\)</span>, so <span class="math display">\[
+\mathbf{Q}=\mathcal{S}\begin{pmatrix}-\frac{1}{3} &amp; 0 &amp; 0\\ 0 &amp; -\frac{1}{3} &amp; 0\\ 0 &amp; 0 &amp; \frac{2}{3}\end{pmatrix},
+\]</span> which is traceless by construction. Since <span class="math inline">\(\mathbf{Q}\)</span> is diagonal, its powers are obtained by raising the diagonal elements to the same power: <span class="math display">\[
 \mathrm{Tr}\,\mathbf{Q}^2=\mathcal{S}^2\left(\tfrac{1}{9}+\tfrac{1}{9}+\tfrac{4}{9}\right)=\tfrac{2}{3}\mathcal{S}^2,\qquad
 \mathrm{Tr}\,\mathbf{Q}^3=\mathcal{S}^3\left(-\tfrac{1}{27}-\tfrac{1}{27}+\tfrac{8}{27}\right)=\tfrac{2}{9}\mathcal{S}^3 .
-\]</span> Traces do not change under rotations, so these results hold whatever the orientation of the director: choosing <span class="math inline">\(z\)</span> along <span class="math inline">\(\mathbf{n}\)</span> simply makes the calculation easy. Notice that <span class="math inline">\(\mathrm{Tr}\,\mathbf{Q}^3\)</span> does not vanish, because the three eigenvalues of <span class="math inline">\(\mathbf{Q}\)</span> (<span class="math inline">\(-\frac{1}{3}\)</span>, <span class="math inline">\(-\frac{1}{3}\)</span> and <span class="math inline">\(\frac{2}{3}\)</span>, times <span class="math inline">\(\mathcal{S}\)</span>) are not symmetric around zero.</p>
-<ol start="2" type="1">
-<li><strong>The free energy as a function of <span class="math inline">\(\mathcal{S}\)</span></strong></li>
+\]</span> Traces are invariant under rotations, so the result does not depend on our choice of axes.</p></li>
+<li><p>Substituting the traces <span class="math display">\[
+f-f_0=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4,
+\]</span> so <span class="math inline">\(\alpha=A/3\)</span>, <span class="math inline">\(\beta=2B/27\)</span> and <span class="math inline">\(\gamma=C/9\)</span>. With <span class="math inline">\(A=a(T-T^*)\)</span> as in the notes, <span class="math inline">\(\alpha\)</span> is the coefficient that changes sign with temperature.</p></li>
+<li><p>Set <span class="math inline">\(df/d\mathcal{S}=0\)</span>: <span class="math display">\[
+2\alpha\mathcal{S}-3\beta\mathcal{S}^2+4\gamma\mathcal{S}^3=\mathcal{S}\left(2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2\right)=0 .
+\]</span> So either <span class="math inline">\(\mathcal{S}=0\)</span> (isotropic) or <span class="math display">\[
+\mathcal{S}_\pm=\frac{3\beta\pm\sqrt{9\beta^2-32\alpha\gamma}}{8\gamma},
+\]</span> which only exist for <span class="math inline">\(9\beta^2\geq32\alpha\gamma\)</span>. Since <span class="math inline">\(f''(0)=2\alpha\)</span>, <span class="math inline">\(\mathcal{S}=0\)</span> is a minimum for <span class="math inline">\(\alpha&gt;0\)</span> and becomes unstable for <span class="math inline">\(\alpha&lt;0\)</span>, i.e.&nbsp;below <span class="math inline">\(T^*\)</span>: <span class="math inline">\(T^*\)</span> is the spinodal of the isotropic phase. When they exist, <span class="math inline">\(\mathcal{S}_+\)</span> is the nematic minimum and <span class="math inline">\(\mathcal{S}_-\)</span> the maximum (the barrier) in between.</p></li>
+<li><p>As <span class="math inline">\(\alpha\)</span> decreases, we go from a single minimum at <span class="math inline">\(\mathcal{S}=0\)</span>, to a second (metastable) minimum at <span class="math inline">\(\mathcal{S}_+\)</span>, to two minima of equal depth (the transition), to a nematic minimum lower than the isotropic one, until <span class="math inline">\(\mathcal{S}=0\)</span> becomes unstable at <span class="math inline">\(\alpha=0\)</span>.</p></li>
 </ol>
-<p>Substituting the traces, <span class="math display">\[
-f-f_0=\frac{A}{2}\cdot\frac{2}{3}\mathcal{S}^2-\frac{B}{3}\cdot\frac{2}{9}\mathcal{S}^3+\frac{C}{4}\cdot\frac{4}{9}\mathcal{S}^4
-=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4,
-\]</span> so that <span class="math display">\[
-\alpha=\frac{A}{3},\qquad \beta=\frac{2B}{27},\qquad \gamma=\frac{C}{9}.
-\]</span> The free energy of a tensor has become an ordinary Landau expansion in a single scalar. In the notes, <span class="math inline">\(A=a(T-T^*)\)</span>, so <span class="math inline">\(\alpha\)</span> is the coefficient that changes sign with temperature, while <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> are positive constants.</p>
-<ol start="3" type="1">
-<li><strong>Stationary points</strong></li>
-</ol>
-<p>Differentiating, <span class="math display">\[
-\frac{df}{d\mathcal{S}}=2\alpha\mathcal{S}-3\beta\mathcal{S}^2+4\gamma\mathcal{S}^3=\mathcal{S}\left(2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2\right)=0 .
-\]</span> One solution is always <span class="math inline">\(\mathcal{S}=0\)</span>, the isotropic phase. The others solve the quadratic in brackets: <span class="math display">\[
-\mathcal{S}_\pm=\frac{3\beta\pm\sqrt{9\beta^2-32\alpha\gamma}}{8\gamma}.
-\]</span> Let us read these solutions physically:</p>
-<ul>
-<li><span class="math inline">\(\mathcal{S}=0\)</span> is a minimum as long as <span class="math inline">\(\alpha&gt;0\)</span> (since <span class="math inline">\(f''(0)=2\alpha\)</span>), and becomes a maximum for <span class="math inline">\(\alpha&lt;0\)</span>. So <span class="math inline">\(\alpha=0\)</span>, i.e.&nbsp;<span class="math inline">\(T=T^*\)</span>, is where the isotropic phase becomes <strong>unstable</strong>: it is the spinodal of the isotropic phase.</li>
-<li>The non-zero solutions only exist if <span class="math inline">\(9\beta^2\geq 32\alpha\gamma\)</span>. For larger <span class="math inline">\(\alpha\)</span> (high temperatures) the isotropic phase is the only stationary point.</li>
-<li>When they exist, <span class="math inline">\(\mathcal{S}_+\)</span> is a local minimum (the nematic phase) and <span class="math inline">\(\mathcal{S}_-\)</span> is the maximum separating it from the isotropic minimum, i.e.&nbsp;a free energy barrier.</li>
-</ul>
-<ol start="4" type="1">
-<li><strong>The transition</strong></li>
-</ol>
-<p>Sketching <span class="math inline">\(f(\mathcal{S})\)</span> as <span class="math inline">\(\alpha\)</span> decreases, we find the following sequence:</p>
-<ul>
-<li>for large <span class="math inline">\(\alpha\)</span> there is a single minimum, at <span class="math inline">\(\mathcal{S}=0\)</span>: the system is isotropic;</li>
-<li>for <span class="math inline">\(\alpha&lt;9\beta^2/32\gamma\)</span> a second, local minimum appears at <span class="math inline">\(\mathcal{S}_+&gt;0\)</span>, separated from <span class="math inline">\(\mathcal{S}=0\)</span> by a barrier: the nematic phase is metastable;</li>
-<li>at some value of <span class="math inline">\(\alpha\)</span> the two minima have the same free energy: this is the transition;</li>
-<li>below it the nematic minimum is the lower one and the isotropic phase is metastable, until it becomes unstable at <span class="math inline">\(\alpha=0\)</span>.</li>
-</ul>
-<p>At the transition the nematic minimum satisfies two conditions at the same time: it is a stationary point, <span class="math inline">\(f'(\mathcal{S})=0\)</span>, and it has the same free energy as the isotropic phase, <span class="math inline">\(f(\mathcal{S})=f(0)\)</span>. Dividing by the trivial factors of <span class="math inline">\(\mathcal{S}\)</span>, these read <span class="math display">\[
+<p>At the transition the nematic minimum is stationary and has the same free energy as the isotropic phase, <span class="math inline">\(f(\mathcal{S})=f(0)\)</span> and <span class="math inline">\(f'(\mathcal{S})=0\)</span>. Dividing by <span class="math inline">\(\mathcal{S}^2\)</span> and <span class="math inline">\(\mathcal{S}\)</span> respectively: <span class="math display">\[
 \alpha-\beta\mathcal{S}+\gamma\mathcal{S}^2=0,\qquad 2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2=0 .
-\]</span> Subtracting twice the first from the second gives <span class="math inline">\(-\beta\mathcal{S}+2\gamma\mathcal{S}^2=0\)</span>, hence <span class="math display">\[
+\]</span> Subtracting twice the first from the second gives <span class="math inline">\(-\beta\mathcal{S}+2\gamma\mathcal{S}^2=0\)</span>, so <span class="math display">\[
 \mathcal{S}_{NI}=\frac{\beta}{2\gamma},
-\]</span> and substituting back into the first condition <span class="math display">\[
-\alpha=\beta\mathcal{S}_{NI}-\gamma\mathcal{S}_{NI}^2=\frac{\beta^2}{2\gamma}-\frac{\beta^2}{4\gamma}=\frac{\beta^2}{4\gamma}.
-\]</span></p>
-<p>At the transition the order parameter therefore <strong>jumps</strong> from <span class="math inline">\(\mathcal{S}=0\)</span> to the finite value <span class="math inline">\(\mathcal{S}_{NI}=\beta/2\gamma\)</span>: the isotropic-nematic transition is <strong>first order</strong>. The term responsible is the cubic one, <span class="math inline">\(-\beta\mathcal{S}^3\)</span>: it makes the free energy asymmetric in <span class="math inline">\(\mathcal{S}\)</span>, so that the nematic minimum can appear at a finite distance from <span class="math inline">\(\mathcal{S}=0\)</span>, separated from it by a barrier, rather than growing continuously out of it.</p>
-<p>Using the coefficients of the notes, <span class="math inline">\(\alpha=a(T-T^*)/3\)</span>, <span class="math inline">\(\beta=2b/27\)</span> and <span class="math inline">\(\gamma=c/9\)</span>, the transition condition gives back <span class="math display">\[
-T_{NI}=T^*+\frac{b^2}{27ac},\qquad \mathcal{S}_{NI}=\frac{b}{3c}.
-\]</span> Since <span class="math inline">\(T_{NI}&gt;T^*\)</span>, the transition happens before the isotropic phase becomes unstable: between <span class="math inline">\(T_{NI}\)</span> and <span class="math inline">\(T^*\)</span> the isotropic liquid can be supercooled, as we expect for a first order transition (compare with nucleation and growth in the first part of the course).</p>
+\]</span> and back into the first equation <span class="math display">\[
+\alpha=\beta\mathcal{S}_{NI}-\gamma\mathcal{S}_{NI}^2=\frac{\beta^2}{4\gamma}.
+\]</span> The order parameter jumps from zero to a finite value: the transition is first order. This is due to the cubic term <span class="math inline">\(-\beta\mathcal{S}^3\)</span>, which allows a nematic minimum separated from <span class="math inline">\(\mathcal{S}=0\)</span> by a barrier.</p>
+<p>With the coefficients of the notes we recover <span class="math inline">\(T_{NI}=T^*+b^2/27ac\)</span> and <span class="math inline">\(\mathcal{S}_{NI}=b/3c\)</span>. Since <span class="math inline">\(T_{NI}&gt;T^*\)</span>, between <span class="math inline">\(T_{NI}\)</span> and <span class="math inline">\(T^*\)</span> the isotropic phase can be supercooled.</p>
 </div>
 </div>
 </div>
@@ -1170,23 +1142,18 @@ T_{NI}=T^*+\frac{b^2}{27ac},\qquad \mathcal{S}_{NI}=\frac{b}{3c}.
 <div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Arrhenius law</strong></li>
-</ol>
-<p>Taking the logarithm, <span class="math inline">\(\ln\eta=\ln\eta_0+\dfrac{E_A}{k_B}\dfrac{1}{T}\)</span>. As a function of <span class="math inline">\(1/T\)</span> this is a straight line with slope <span class="math inline">\(E_A/k_B\)</span>: a single, temperature independent energy barrier <span class="math inline">\(E_A\)</span> controls the dynamics at all temperatures. This is the behaviour of strong glassformers such as silica.</p>
-<ol start="2" type="1">
-<li><strong>Apparent activation energy of a fragile glassformer</strong></li>
-</ol>
-<p>Writing <span class="math inline">\(x=1/T\)</span>, the VFT law reads <span class="math inline">\(\ln\eta=\ln\eta_0+\dfrac{B}{1/x-T_0}\)</span>. Differentiating with respect to <span class="math inline">\(x\)</span>, <span class="math display">\[
-\frac{d\ln\eta}{dx}=\frac{B}{(1/x-T_0)^2}\cdot\frac{1}{x^2}=\frac{BT^2}{(T-T_0)^2}.
-\]</span> For an Arrhenius law this slope would be a constant. Here instead it <strong>grows</strong> as <span class="math inline">\(T\)</span> decreases, and diverges as <span class="math inline">\(T\to T_0\)</span>. The plot of <span class="math inline">\(\ln\eta\)</span> against <span class="math inline">\(1/T\)</span> curves upwards: the effective barrier the liquid has to overcome becomes larger and larger as it is cooled. This growing barrier is the signature of fragile glassformers in the Angell plot, and it is what theories of the glass transition (such as Adam-Gibbs) try to explain, e.g.&nbsp;through the growth of cooperatively rearranging regions.</p>
-<ol start="3" type="1">
-<li><strong>Adam-Gibbs gives VFT</strong></li>
-</ol>
-<p>Substituting <span class="math inline">\(S_{\rm conf}=K(1-T_K/T)\)</span>, <span class="math display">\[
+<li><p>Taking the logarithm <span class="math display">\[
+\ln\eta=\ln\eta_0+\frac{E_A}{k_B}\frac{1}{T},
+\]</span> which is linear in <span class="math inline">\(1/T\)</span> with slope <span class="math inline">\(E_A/k_B\)</span>: a single barrier controls the dynamics at all temperatures.</p></li>
+<li><p>With <span class="math inline">\(x=1/T\)</span>: <span class="math display">\[
+\frac{d\ln\eta}{dx}=\frac{d}{dx}\left(\frac{B}{1/x-T_0}\right)=\frac{B}{(1/x-T_0)^2}\frac{1}{x^2}=\frac{BT^2}{(T-T_0)^2}.
+\]</span> The slope is no longer constant: the apparent barrier grows on cooling and diverges at <span class="math inline">\(T_0\)</span>. The Angell plot curves upwards, as for fragile glassformers.</p></li>
+<li><p>Substituting <span class="math inline">\(S_{\rm conf}\)</span>: <span class="math display">\[
 TS_{\rm conf}=KT\left(1-\frac{T_K}{T}\right)=K(T-T_K),
-\]</span> so that <span class="math display">\[
-\tau_\alpha=\tau_0\exp\left(\frac{A}{K(T-T_K)}\right).
-\]</span> This is exactly the VFT form, with <span class="math inline">\(B=A/K\)</span> and <span class="math inline">\(T_0=T_K\)</span>. The divergence of the relaxation time at <span class="math inline">\(T_0\)</span> is therefore interpreted as the vanishing of the configurational entropy at the Kauzmann temperature: as the number of available amorphous basins goes to zero, the rearranging regions have to grow without bound, and so does the barrier to relax. Remember that in practice the liquid falls out of equilibrium at <span class="math inline">\(T_g&gt;T_0\)</span>, so this divergence is never observed directly.</p>
+\]</span> so <span class="math display">\[
+\tau_\alpha=\tau_0\exp\left(\frac{A}{K(T-T_K)}\right),
+\]</span> which is the VFT form with <span class="math inline">\(B=A/K\)</span> and <span class="math inline">\(T_0=T_K\)</span>: the relaxation time diverges where the configurational entropy vanishes. In practice the system falls out of equilibrium at <span class="math inline">\(T_g&gt;T_0\)</span>, so the divergence is never reached.</p></li>
+</ol>
 </div>
 </div>
 </div>
@@ -1219,31 +1186,22 @@ D_T=\frac{k_BT}{6\pi\eta R},\qquad D_r=\frac{k_BT}{8\pi\eta R^3},
 <div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
-<li><strong>Limits of the MSD</strong></li>
-</ol>
-<p>For <span class="math inline">\(\tau\ll\tau_R\)</span> we expand the exponential to second order, <span class="math inline">\(e^{-\tau/\tau_R}\simeq1-\tau/\tau_R+\tau^2/2\tau_R^2\)</span>. The terms linear in <span class="math inline">\(v^2\tau\)</span> cancel and we are left with <span class="math display">\[
+<li><p>For <span class="math inline">\(\tau\ll\tau_R\)</span> we expand the exponential to second order, <span class="math inline">\(e^{-\tau/\tau_R}\simeq1-\tau/\tau_R+\tau^2/2\tau_R^2\)</span>, and the terms linear in <span class="math inline">\(v^2\tau\)</span> cancel: <span class="math display">\[
 \operatorname{MSD}(\tau)\simeq4D_T\tau+v^2\tau^2 .
-\]</span> At the very shortest times the linear term dominates (thermal diffusion), then the quadratic one takes over (ballistic, persistent swimming). The crossover between the two is where <span class="math inline">\(4D_T\tau_1=v^2\tau_1^2\)</span>, i.e.&nbsp;<span class="math inline">\(\tau_1=4D_T/v^2\)</span>.</p>
-<p>For <span class="math inline">\(\tau\gg\tau_R\)</span> the exponential vanishes and the leading term is linear in <span class="math inline">\(\tau\)</span>: <span class="math display">\[
+\]</span> For <span class="math inline">\(\tau\gg\tau_R\)</span> the exponential vanishes: <span class="math display">\[
 \operatorname{MSD}(\tau)\simeq\left(4D_T+2v^2\tau_R\right)\tau=4D_{\rm eff}\,\tau,\qquad D_{\rm eff}=D_T+\frac{v^2\tau_R}{2}.
-\]</span> We recover the three regimes: diffusive (<span class="math inline">\(\tau\ll\tau_1\)</span>), ballistic (<span class="math inline">\(\tau_1\ll\tau\ll\tau_R\)</span>) and diffusive again, with an enhanced diffusion coefficient (<span class="math inline">\(\tau\gg\tau_R\)</span>).</p>
-<ol start="2" type="1">
-<li><strong>Numbers</strong></li>
-</ol>
-<p><span class="math display">\[
-D_T\approx\frac{4.1\times10^{-21}}{6\pi\times10^{-3}\times10^{-6}}\,\text{m}^2/\text{s}\approx0.22\,\mu\text{m}^2/\text{s},\qquad
-D_r\approx\frac{4.1\times10^{-21}}{8\pi\times10^{-3}\times10^{-18}}\,\text{s}^{-1}\approx0.16\,\text{s}^{-1},
-\]</span> so <span class="math inline">\(\tau_R\approx6\)</span> s: the particle keeps its swimming direction for several seconds. The crossover to ballistic motion happens at <span class="math display">\[
-\tau_1=\frac{4D_T}{v^2}\approx\frac{4\times0.22}{25}\,\text{s}\approx0.035\,\text{s}.
-\]</span> The ballistic regime therefore spans more than two decades in time, from tens of milliseconds to several seconds.</p>
-<ol start="3" type="1">
-<li><strong>Enhanced diffusion and activity</strong></li>
-</ol>
-<p><span class="math display">\[
+\]</span> So the motion is diffusive at very short times, ballistic once <span class="math inline">\(v^2\tau^2\)</span> takes over, and diffusive again at long times, with a larger diffusion coefficient.</p></li>
+<li><p>Plugging in the numbers <span class="math display">\[
+D_T=\frac{k_BT}{6\pi\eta R}\approx0.22\,\mu\text{m}^2/\text{s},\qquad D_r=\frac{k_BT}{8\pi\eta R^3}\approx0.16\,\text{s}^{-1},
+\]</span> so <span class="math inline">\(\tau_R\approx6\)</span> s. The crossover from diffusive to ballistic motion is where <span class="math inline">\(4D_T\tau_1=v^2\tau_1^2\)</span>: <span class="math display">\[
+\tau_1=\frac{4D_T}{v^2}\approx0.035\,\text{s},
+\]</span> so the ballistic regime covers more than two decades in time.</p></li>
+<li><p><span class="math display">\[
 D_{\rm eff}=D_T+\frac{v^2\tau_R}{2}\approx0.22+\frac{25\times6.1}{2}\approx77\,\mu\text{m}^2/\text{s},
-\]</span> about <span class="math inline">\(350\)</span> times larger than the thermal <span class="math inline">\(D_T\)</span>. The Péclet number is <span class="math display">\[
+\]</span> about <span class="math inline">\(350\)</span> times <span class="math inline">\(D_T\)</span>, and <span class="math display">\[
 \mathrm{Pe}=\frac{v}{\sqrt{D_TD_r}}\approx\frac{5}{\sqrt{0.22\times0.16}}\approx27\gg1,
-\]</span> so self-propulsion dominates over thermal motion: the particle is strongly active, and at high enough density a suspension of such particles can undergo motility-induced phase separation.</p>
+\]</span> so the particle is strongly active.</p></li>
+</ol>
 </div>
 </div>
 </div>
