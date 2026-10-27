@@ -375,6 +375,15 @@ window.Quarto = {
   <li><a href="#liquid-crystals" id="toc-liquid-crystals" class="nav-link" data-scroll-target="#liquid-crystals">Liquid crystals</a>
   <ul class="collapse">
   <li><a href="#linearising-maier-saupe" id="toc-linearising-maier-saupe" class="nav-link" data-scroll-target="#linearising-maier-saupe">Linearising Maier-Saupe</a></li>
+  <li><a href="#landau-de-gennes-theory-in-three-dimensions" id="toc-landau-de-gennes-theory-in-three-dimensions" class="nav-link" data-scroll-target="#landau-de-gennes-theory-in-three-dimensions">Landau-de Gennes theory in three dimensions</a></li>
+  </ul></li>
+  <li><a href="#arrested-states" id="toc-arrested-states" class="nav-link" data-scroll-target="#arrested-states">Arrested states</a>
+  <ul class="collapse">
+  <li><a href="#strong-and-fragile-glassformers" id="toc-strong-and-fragile-glassformers" class="nav-link" data-scroll-target="#strong-and-fragile-glassformers">Strong and fragile glassformers</a></li>
+  </ul></li>
+  <li><a href="#active-matter" id="toc-active-matter" class="nav-link" data-scroll-target="#active-matter">Active matter</a>
+  <ul class="collapse">
+  <li><a href="#active-brownian-janus-particles" id="toc-active-brownian-janus-particles" class="nav-link" data-scroll-target="#active-brownian-janus-particles">Active Brownian Janus particles</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1045,6 +1054,196 @@ S = \frac{uS}{5k_BT}
 <p>The critical value is <span class="math inline">\(k_BT_c/u = 1/5\)</span>, which is the point at which the instability to the order parameter fluctuations sets in and corresponds therefore to the spinodal point of the isotropic phase.</p>
 <p>Let’s think for a moment however about what we have done: we have assumed to stay in the isotropic phase and looked at small perturbations around it that satisfy the self-consistent equation. We have found that trivially the isotropic phase is always a solution. However we have also found that at <span class="math inline">\(k_BT/u=1/5\)</span> we can change any value of S (provided that it is small enough for the linearisation to hold) into a solution of the self-consistent equation.</p>
 <p>This means that at such temperature the isotropic phase becomes marginally stable: any small perturbation in S will not be restored back to zero. This is the definition of a spinodal point.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="landau-de-gennes-theory-in-three-dimensions" class="level3">
+<h3 class="anchored" data-anchor-id="landau-de-gennes-theory-in-three-dimensions">Landau-de Gennes theory in three dimensions</h3>
+<p>For a uniaxial nematic in three dimensions, the alignment tensor can be written as <span class="math display">\[
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n}\otimes\mathbf{n}-\tfrac{1}{3}\mathbf{I}\right),
+\]</span> where <span class="math inline">\(\mathbf{n}\)</span> is the director and <span class="math inline">\(\mathcal{S}\)</span> the scalar order parameter.</p>
+<ol type="1">
+<li><p>Choosing the <span class="math inline">\(z\)</span> axis along <span class="math inline">\(\mathbf{n}\)</span>, write <span class="math inline">\(\mathbf{Q}\)</span> explicitly and show that <span class="math inline">\(\mathrm{Tr}\,\mathbf{Q}=0\)</span>, <span class="math inline">\(\mathrm{Tr}\,\mathbf{Q}^2=\frac{2}{3}\mathcal{S}^2\)</span> and <span class="math inline">\(\mathrm{Tr}\,\mathbf{Q}^3=\frac{2}{9}\mathcal{S}^3\)</span>.</p></li>
+<li><p>Hence show that the Landau-de Gennes free energy density <span class="math display">\[
+f=f_0+\frac{A}{2}\mathrm{Tr}\,\mathbf{Q}^2-\frac{B}{3}\mathrm{Tr}\,\mathbf{Q}^3+\frac{C}{4}\left(\mathrm{Tr}\,\mathbf{Q}^2\right)^2
+\]</span> becomes <span class="math display">\[
+f-f_0=\alpha\mathcal{S}^2-\beta\mathcal{S}^3+\gamma\mathcal{S}^4,
+\]</span> and give <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> in terms of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>.</p></li>
+<li><p>Find the stationary points of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(\mathcal{S}\)</span>.</p></li>
+<li><p>Sketch <span class="math inline">\(f(\mathcal{S})\)</span> for decreasing values of <span class="math inline">\(\alpha\)</span>, keeping <span class="math inline">\(\beta,\gamma&gt;0\)</span> fixed. At the transition the isotropic (<span class="math inline">\(\mathcal{S}=0\)</span>) and nematic minima have the same free energy. Show that this happens for <span class="math inline">\(\alpha=\beta^2/4\gamma\)</span>, with <span class="math inline">\(\mathcal{S}_{NI}=\beta/2\gamma\)</span>. What kind of transition is this, and which term is responsible?</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>The tensor and its traces</strong></li>
+</ol>
+<p>With the <span class="math inline">\(z\)</span> axis along the director, <span class="math inline">\(\mathbf{n}=(0,0,1)\)</span> and <span class="math inline">\(\mathbf{n}\otimes\mathbf{n}\)</span> has a single non-zero entry, <span class="math inline">\(n_zn_z=1\)</span>. Subtracting <span class="math inline">\(\frac{1}{3}\mathbf{I}\)</span> gives a diagonal matrix: <span class="math display">\[
+\mathbf{Q}=\mathcal{S}\begin{pmatrix}-\frac{1}{3} &amp; 0 &amp; 0\\ 0 &amp; -\frac{1}{3} &amp; 0\\ 0 &amp; 0 &amp; \frac{2}{3}\end{pmatrix}.
+\]</span> The trace is <span class="math inline">\(\mathcal{S}\left(-\frac{1}{3}-\frac{1}{3}+\frac{2}{3}\right)=0\)</span>: this is not an accident, but the reason why we subtracted <span class="math inline">\(\frac{1}{3}\mathbf{I}\)</span> in the first place, so that <span class="math inline">\(\mathbf{Q}\)</span> contains no isotropic part.</p>
+<p>Since <span class="math inline">\(\mathbf{Q}\)</span> is diagonal, its powers are obtained by raising each diagonal element to that power: <span class="math display">\[
+\mathrm{Tr}\,\mathbf{Q}^2=\mathcal{S}^2\left(\tfrac{1}{9}+\tfrac{1}{9}+\tfrac{4}{9}\right)=\tfrac{2}{3}\mathcal{S}^2,\qquad
+\mathrm{Tr}\,\mathbf{Q}^3=\mathcal{S}^3\left(-\tfrac{1}{27}-\tfrac{1}{27}+\tfrac{8}{27}\right)=\tfrac{2}{9}\mathcal{S}^3 .
+\]</span> Traces do not change under rotations, so these results hold whatever the orientation of the director: choosing <span class="math inline">\(z\)</span> along <span class="math inline">\(\mathbf{n}\)</span> simply makes the calculation easy. Notice that <span class="math inline">\(\mathrm{Tr}\,\mathbf{Q}^3\)</span> does not vanish, because the three eigenvalues of <span class="math inline">\(\mathbf{Q}\)</span> (<span class="math inline">\(-\frac{1}{3}\)</span>, <span class="math inline">\(-\frac{1}{3}\)</span> and <span class="math inline">\(\frac{2}{3}\)</span>, times <span class="math inline">\(\mathcal{S}\)</span>) are not symmetric around zero.</p>
+<ol start="2" type="1">
+<li><strong>The free energy as a function of <span class="math inline">\(\mathcal{S}\)</span></strong></li>
+</ol>
+<p>Substituting the traces, <span class="math display">\[
+f-f_0=\frac{A}{2}\cdot\frac{2}{3}\mathcal{S}^2-\frac{B}{3}\cdot\frac{2}{9}\mathcal{S}^3+\frac{C}{4}\cdot\frac{4}{9}\mathcal{S}^4
+=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4,
+\]</span> so that <span class="math display">\[
+\alpha=\frac{A}{3},\qquad \beta=\frac{2B}{27},\qquad \gamma=\frac{C}{9}.
+\]</span> The free energy of a tensor has become an ordinary Landau expansion in a single scalar. In the notes, <span class="math inline">\(A=a(T-T^*)\)</span>, so <span class="math inline">\(\alpha\)</span> is the coefficient that changes sign with temperature, while <span class="math inline">\(\beta\)</span> and <span class="math inline">\(\gamma\)</span> are positive constants.</p>
+<ol start="3" type="1">
+<li><strong>Stationary points</strong></li>
+</ol>
+<p>Differentiating, <span class="math display">\[
+\frac{df}{d\mathcal{S}}=2\alpha\mathcal{S}-3\beta\mathcal{S}^2+4\gamma\mathcal{S}^3=\mathcal{S}\left(2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2\right)=0 .
+\]</span> One solution is always <span class="math inline">\(\mathcal{S}=0\)</span>, the isotropic phase. The others solve the quadratic in brackets: <span class="math display">\[
+\mathcal{S}_\pm=\frac{3\beta\pm\sqrt{9\beta^2-32\alpha\gamma}}{8\gamma}.
+\]</span> Let us read these solutions physically:</p>
+<ul>
+<li><span class="math inline">\(\mathcal{S}=0\)</span> is a minimum as long as <span class="math inline">\(\alpha&gt;0\)</span> (since <span class="math inline">\(f''(0)=2\alpha\)</span>), and becomes a maximum for <span class="math inline">\(\alpha&lt;0\)</span>. So <span class="math inline">\(\alpha=0\)</span>, i.e.&nbsp;<span class="math inline">\(T=T^*\)</span>, is where the isotropic phase becomes <strong>unstable</strong>: it is the spinodal of the isotropic phase.</li>
+<li>The non-zero solutions only exist if <span class="math inline">\(9\beta^2\geq 32\alpha\gamma\)</span>. For larger <span class="math inline">\(\alpha\)</span> (high temperatures) the isotropic phase is the only stationary point.</li>
+<li>When they exist, <span class="math inline">\(\mathcal{S}_+\)</span> is a local minimum (the nematic phase) and <span class="math inline">\(\mathcal{S}_-\)</span> is the maximum separating it from the isotropic minimum, i.e.&nbsp;a free energy barrier.</li>
+</ul>
+<ol start="4" type="1">
+<li><strong>The transition</strong></li>
+</ol>
+<p>Sketching <span class="math inline">\(f(\mathcal{S})\)</span> as <span class="math inline">\(\alpha\)</span> decreases, we find the following sequence:</p>
+<ul>
+<li>for large <span class="math inline">\(\alpha\)</span> there is a single minimum, at <span class="math inline">\(\mathcal{S}=0\)</span>: the system is isotropic;</li>
+<li>for <span class="math inline">\(\alpha&lt;9\beta^2/32\gamma\)</span> a second, local minimum appears at <span class="math inline">\(\mathcal{S}_+&gt;0\)</span>, separated from <span class="math inline">\(\mathcal{S}=0\)</span> by a barrier: the nematic phase is metastable;</li>
+<li>at some value of <span class="math inline">\(\alpha\)</span> the two minima have the same free energy: this is the transition;</li>
+<li>below it the nematic minimum is the lower one and the isotropic phase is metastable, until it becomes unstable at <span class="math inline">\(\alpha=0\)</span>.</li>
+</ul>
+<p>At the transition the nematic minimum satisfies two conditions at the same time: it is a stationary point, <span class="math inline">\(f'(\mathcal{S})=0\)</span>, and it has the same free energy as the isotropic phase, <span class="math inline">\(f(\mathcal{S})=f(0)\)</span>. Dividing by the trivial factors of <span class="math inline">\(\mathcal{S}\)</span>, these read <span class="math display">\[
+\alpha-\beta\mathcal{S}+\gamma\mathcal{S}^2=0,\qquad 2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2=0 .
+\]</span> Subtracting twice the first from the second gives <span class="math inline">\(-\beta\mathcal{S}+2\gamma\mathcal{S}^2=0\)</span>, hence <span class="math display">\[
+\mathcal{S}_{NI}=\frac{\beta}{2\gamma},
+\]</span> and substituting back into the first condition <span class="math display">\[
+\alpha=\beta\mathcal{S}_{NI}-\gamma\mathcal{S}_{NI}^2=\frac{\beta^2}{2\gamma}-\frac{\beta^2}{4\gamma}=\frac{\beta^2}{4\gamma}.
+\]</span></p>
+<p>At the transition the order parameter therefore <strong>jumps</strong> from <span class="math inline">\(\mathcal{S}=0\)</span> to the finite value <span class="math inline">\(\mathcal{S}_{NI}=\beta/2\gamma\)</span>: the isotropic-nematic transition is <strong>first order</strong>. The term responsible is the cubic one, <span class="math inline">\(-\beta\mathcal{S}^3\)</span>: it makes the free energy asymmetric in <span class="math inline">\(\mathcal{S}\)</span>, so that the nematic minimum can appear at a finite distance from <span class="math inline">\(\mathcal{S}=0\)</span>, separated from it by a barrier, rather than growing continuously out of it.</p>
+<p>Using the coefficients of the notes, <span class="math inline">\(\alpha=a(T-T^*)/3\)</span>, <span class="math inline">\(\beta=2b/27\)</span> and <span class="math inline">\(\gamma=c/9\)</span>, the transition condition gives back <span class="math display">\[
+T_{NI}=T^*+\frac{b^2}{27ac},\qquad \mathcal{S}_{NI}=\frac{b}{3c}.
+\]</span> Since <span class="math inline">\(T_{NI}&gt;T^*\)</span>, the transition happens before the isotropic phase becomes unstable: between <span class="math inline">\(T_{NI}\)</span> and <span class="math inline">\(T^*\)</span> the isotropic liquid can be supercooled, as we expect for a first order transition (compare with nucleation and growth in the first part of the course).</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="arrested-states" class="level2">
+<h2 class="anchored" data-anchor-id="arrested-states">Arrested states</h2>
+<section id="strong-and-fragile-glassformers" class="level3">
+<h3 class="anchored" data-anchor-id="strong-and-fragile-glassformers">Strong and fragile glassformers</h3>
+<p>The viscosity of a <strong>strong</strong> glassformer follows an Arrhenius law, <span class="math inline">\(\eta=\eta_0\exp\left(E_A/k_BT\right)\)</span>, while that of a <strong>fragile</strong> glassformer is often fitted by the Vogel-Fulcher-Tammann (VFT) law <span class="math display">\[
+\eta(T)=\eta_0\exp\left(\frac{B}{T-T_0}\right),
+\]</span> where <span class="math inline">\(B\)</span> (with units of temperature) and <span class="math inline">\(T_0\)</span> are empirical parameters.</p>
+<ol type="1">
+<li><p>Show that for an Arrhenius law the plot of <span class="math inline">\(\ln\eta\)</span> against <span class="math inline">\(1/T\)</span> is a straight line, and give its slope.</p></li>
+<li><p>For the VFT law, define an <em>apparent</em> activation energy through <span class="math inline">\(E_{\rm app}/k_B=d\ln\eta/d(1/T)\)</span> (the local slope of the same plot). Show that <span class="math display">\[
+\frac{E_{\rm app}}{k_B}=\frac{BT^2}{(T-T_0)^2},
+\]</span> and describe how <span class="math inline">\(E_{\rm app}\)</span> changes as the liquid is cooled towards <span class="math inline">\(T_0\)</span>.</p></li>
+<li><p>In the Adam-Gibbs picture the relaxation time is <span class="math inline">\(\tau_\alpha=\tau_0\exp\left(A/TS_{\rm conf}\right)\)</span>. Assume that close to the Kauzmann temperature the configurational entropy behaves as <span class="math inline">\(S_{\rm conf}(T)=K\left(1-T_K/T\right)\)</span>, with <span class="math inline">\(K&gt;0\)</span>. Show that the Adam-Gibbs relation then takes exactly the VFT form, and identify <span class="math inline">\(B\)</span> and <span class="math inline">\(T_0\)</span>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Arrhenius law</strong></li>
+</ol>
+<p>Taking the logarithm, <span class="math inline">\(\ln\eta=\ln\eta_0+\dfrac{E_A}{k_B}\dfrac{1}{T}\)</span>. As a function of <span class="math inline">\(1/T\)</span> this is a straight line with slope <span class="math inline">\(E_A/k_B\)</span>: a single, temperature independent energy barrier <span class="math inline">\(E_A\)</span> controls the dynamics at all temperatures. This is the behaviour of strong glassformers such as silica.</p>
+<ol start="2" type="1">
+<li><strong>Apparent activation energy of a fragile glassformer</strong></li>
+</ol>
+<p>Writing <span class="math inline">\(x=1/T\)</span>, the VFT law reads <span class="math inline">\(\ln\eta=\ln\eta_0+\dfrac{B}{1/x-T_0}\)</span>. Differentiating with respect to <span class="math inline">\(x\)</span>, <span class="math display">\[
+\frac{d\ln\eta}{dx}=\frac{B}{(1/x-T_0)^2}\cdot\frac{1}{x^2}=\frac{BT^2}{(T-T_0)^2}.
+\]</span> For an Arrhenius law this slope would be a constant. Here instead it <strong>grows</strong> as <span class="math inline">\(T\)</span> decreases, and diverges as <span class="math inline">\(T\to T_0\)</span>. The plot of <span class="math inline">\(\ln\eta\)</span> against <span class="math inline">\(1/T\)</span> curves upwards: the effective barrier the liquid has to overcome becomes larger and larger as it is cooled. This growing barrier is the signature of fragile glassformers in the Angell plot, and it is what theories of the glass transition (such as Adam-Gibbs) try to explain, e.g.&nbsp;through the growth of cooperatively rearranging regions.</p>
+<ol start="3" type="1">
+<li><strong>Adam-Gibbs gives VFT</strong></li>
+</ol>
+<p>Substituting <span class="math inline">\(S_{\rm conf}=K(1-T_K/T)\)</span>, <span class="math display">\[
+TS_{\rm conf}=KT\left(1-\frac{T_K}{T}\right)=K(T-T_K),
+\]</span> so that <span class="math display">\[
+\tau_\alpha=\tau_0\exp\left(\frac{A}{K(T-T_K)}\right).
+\]</span> This is exactly the VFT form, with <span class="math inline">\(B=A/K\)</span> and <span class="math inline">\(T_0=T_K\)</span>. The divergence of the relaxation time at <span class="math inline">\(T_0\)</span> is therefore interpreted as the vanishing of the configurational entropy at the Kauzmann temperature: as the number of available amorphous basins goes to zero, the rearranging regions have to grow without bound, and so does the barrier to relax. Remember that in practice the liquid falls out of equilibrium at <span class="math inline">\(T_g&gt;T_0\)</span>, so this divergence is never observed directly.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="active-matter" class="level2">
+<h2 class="anchored" data-anchor-id="active-matter">Active matter</h2>
+<section id="active-brownian-janus-particles" class="level3">
+<h3 class="anchored" data-anchor-id="active-brownian-janus-particles">Active Brownian Janus particles</h3>
+<p>A Janus colloid of radius <span class="math inline">\(R=1\,\mu\)</span>m swims at <span class="math inline">\(v=5\,\mu\)</span>m/s close to a flat wall, so that its motion is effectively two-dimensional. Its translational and rotational diffusion coefficients are given by the Stokes-Einstein relations <span class="math display">\[
+D_T=\frac{k_BT}{6\pi\eta R},\qquad D_r=\frac{k_BT}{8\pi\eta R^3},
+\]</span> with <span class="math inline">\(\eta=10^{-3}\)</span> Pa s and <span class="math inline">\(k_BT\approx4.1\times10^{-21}\)</span> J. The mean squared displacement of an active Brownian particle in two dimensions is <span class="math display">\[
+\operatorname{MSD}(\tau)=\left(4D_T+2v^2\tau_R\right)\tau+2v^2\tau_R^2\left(e^{-\tau/\tau_R}-1\right),\qquad\tau_R=1/D_r .
+\]</span></p>
+<ol type="1">
+<li><p>Expand the MSD for <span class="math inline">\(\tau\ll\tau_R\)</span> and for <span class="math inline">\(\tau\gg\tau_R\)</span>, and identify the three regimes discussed in the lectures.</p></li>
+<li><p>Calculate <span class="math inline">\(D_T\)</span>, <span class="math inline">\(D_r\)</span> and <span class="math inline">\(\tau_R\)</span> for this particle, and estimate the time <span class="math inline">\(\tau_1\)</span> at which the motion crosses over from diffusive to ballistic.</p></li>
+<li><p>Calculate the long-time effective diffusion coefficient and the Péclet number <span class="math inline">\(\mathrm{Pe}=v/\sqrt{D_TD_r}\)</span>. Is this particle strongly active?</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Limits of the MSD</strong></li>
+</ol>
+<p>For <span class="math inline">\(\tau\ll\tau_R\)</span> we expand the exponential to second order, <span class="math inline">\(e^{-\tau/\tau_R}\simeq1-\tau/\tau_R+\tau^2/2\tau_R^2\)</span>. The terms linear in <span class="math inline">\(v^2\tau\)</span> cancel and we are left with <span class="math display">\[
+\operatorname{MSD}(\tau)\simeq4D_T\tau+v^2\tau^2 .
+\]</span> At the very shortest times the linear term dominates (thermal diffusion), then the quadratic one takes over (ballistic, persistent swimming). The crossover between the two is where <span class="math inline">\(4D_T\tau_1=v^2\tau_1^2\)</span>, i.e.&nbsp;<span class="math inline">\(\tau_1=4D_T/v^2\)</span>.</p>
+<p>For <span class="math inline">\(\tau\gg\tau_R\)</span> the exponential vanishes and the leading term is linear in <span class="math inline">\(\tau\)</span>: <span class="math display">\[
+\operatorname{MSD}(\tau)\simeq\left(4D_T+2v^2\tau_R\right)\tau=4D_{\rm eff}\,\tau,\qquad D_{\rm eff}=D_T+\frac{v^2\tau_R}{2}.
+\]</span> We recover the three regimes: diffusive (<span class="math inline">\(\tau\ll\tau_1\)</span>), ballistic (<span class="math inline">\(\tau_1\ll\tau\ll\tau_R\)</span>) and diffusive again, with an enhanced diffusion coefficient (<span class="math inline">\(\tau\gg\tau_R\)</span>).</p>
+<ol start="2" type="1">
+<li><strong>Numbers</strong></li>
+</ol>
+<p><span class="math display">\[
+D_T\approx\frac{4.1\times10^{-21}}{6\pi\times10^{-3}\times10^{-6}}\,\text{m}^2/\text{s}\approx0.22\,\mu\text{m}^2/\text{s},\qquad
+D_r\approx\frac{4.1\times10^{-21}}{8\pi\times10^{-3}\times10^{-18}}\,\text{s}^{-1}\approx0.16\,\text{s}^{-1},
+\]</span> so <span class="math inline">\(\tau_R\approx6\)</span> s: the particle keeps its swimming direction for several seconds. The crossover to ballistic motion happens at <span class="math display">\[
+\tau_1=\frac{4D_T}{v^2}\approx\frac{4\times0.22}{25}\,\text{s}\approx0.035\,\text{s}.
+\]</span> The ballistic regime therefore spans more than two decades in time, from tens of milliseconds to several seconds.</p>
+<ol start="3" type="1">
+<li><strong>Enhanced diffusion and activity</strong></li>
+</ol>
+<p><span class="math display">\[
+D_{\rm eff}=D_T+\frac{v^2\tau_R}{2}\approx0.22+\frac{25\times6.1}{2}\approx77\,\mu\text{m}^2/\text{s},
+\]</span> about <span class="math inline">\(350\)</span> times larger than the thermal <span class="math inline">\(D_T\)</span>. The Péclet number is <span class="math display">\[
+\mathrm{Pe}=\frac{v}{\sqrt{D_TD_r}}\approx\frac{5}{\sqrt{0.22\times0.16}}\approx27\gg1,
+\]</span> so self-propulsion dominates over thermal motion: the particle is strongly active, and at high enough density a suspension of such particles can undergo motility-induced phase separation.</p>
 </div>
 </div>
 </div>
