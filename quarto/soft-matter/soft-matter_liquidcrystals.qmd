@@ -12,9 +12,17 @@ bibliography: references.bib
 toc-depth: 4
 ---
 
+::: {.callout-tip appearance="simple"}
+## Learning outcomes
+
+1.  Understand the emergence of orientational order and its description in terms of tensorial and scalar order parameters.
+2.  Construction of mean-field theories: phenomenological (Landau-de Gennes) and microscopic (Maier-Saupe).
+3.  Describe large-scale distortions of the director field with Frank elasticity, and characterise topological defects by their charge.
+:::
+
 Ordered phases of matter are typically characterised by spatial correlations, which can be **positional** or **orientational** in nature. 
 
-Positional order is the regular arrangement of particle positions in space, often forming a repeating lattice structure. Orientational order refers to the angular alignment of the neighbours of a particle, influenced for example by the anisotropy of the particle itself (e.g. rods tending to align with other rods).
+Positional order is the regular arrangement of particle positions in space, often forming a repeating lattice structure. Orientational order refers to the alignment of the particles' axes, influenced for example by the anisotropy of the particle itself (e.g. rods tending to align with other rods).
 
 In crystalline phases, both positional and orientational order are long-ranged, meaning that the arrangement and orientation of particles are correlated over macroscopic distances. In contrast, simple liquids exhibit only very short-range (positional and orientational) correlations. 
 
@@ -117,7 +125,7 @@ plt.show()
 
 ## Orientational correlations and the isotropic/nematic transition
 
-While for the spherical colloids we focused on positional correlation functions like the radial distribution function, for anisotropic particle we need to quantify orientational correlations.
+While for the spherical colloids we focused on positional correlation functions like the [radial distribution function](soft-matter_colloids.qmd#structural-properties-the-radial-distribution-function), for anisotropic particle we need to quantify orientational correlations.
 
 Suppose we have $N$ rod-like particles, each with an orientation angle $\theta_i$ (in 2D) or a unit vector $\mathbf{u}_i$ (in 3D). We want to determine the director, i.e. the average direction of the long molecular axes of all molecules in the liquid crystal.
 
@@ -145,7 +153,7 @@ The analysis of the tensor yield the main characteristics of the orientation of 
 Notice that $\mathcal{S}$ is not the entropy $S$! These commonly used symbols should not be confused.
 :::
 
-while in three dimensions this gives 
+In three dimensions, measuring $\theta_i$ from the director, this gives 
 
 <div style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;">
 $$
@@ -175,7 +183,7 @@ $$
 \mathbf{u}_i \otimes \mathbf{u}_i = \begin{pmatrix} \cos^2 \theta_i & \cos \theta_i \sin \theta_i \\ \cos \theta_i \sin \theta_i & \sin^2 \theta_i \end{pmatrix}.
 $$
 
-The resulting matrix is clearly symmetric and has obviously trace equale to 1 because $\cos^2 \theta_i + \sin^2 \theta_i = 1$.  Angled brackets $\langle \cdot \rangle$ denote the average over all particles in the system. The alignment tensor is then defined as
+The resulting matrix is clearly symmetric and has obviously trace equal to 1 because $\cos^2 \theta_i + \sin^2 \theta_i = 1$.  Angled brackets $\langle \cdot \rangle$ denote the average over all particles in the system. The alignment tensor is then defined as
 $$
 Q = 2\left\langle \mathbf{u}_i \otimes \mathbf{u}_i \right\rangle -\mathbf{I}
 $$
@@ -272,7 +280,7 @@ $$
 \mathbf{Q}=\mathcal{S}\left(\mathbf{n} \otimes \mathbf{n}-\frac{1}{3} \mathbf{I}\right)
 $$
 
-for some scalar value $\mathcal{S}$ (the order parameter between 0 for the isotropic and 1 for the nematic). Notice that this is slighlty different from the general definition above, but it is equivalent up to a multiplicative factor. We will work with this definition because it consistently produces the standard Landau-de Gennes free energy functional without further manipulations.
+for some scalar value $\mathcal{S}$ (the order parameter, between 0 for the isotropic phase and 1 for perfect alignment). Notice that this is slightly different from the general definition above, but it is equivalent up to a multiplicative factor. We will work with this definition because it consistently produces the standard Landau-de Gennes free energy functional without further manipulations.
 
 If we choose now the $z$ axis along $\mathbf{n}$ we can write this explicitly as 
 
@@ -325,8 +333,7 @@ f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 
 $$
 
 This has the form of standard Landau free energy (combinations of power of S up to the power of 4 with real coefficients that depend on the temperature).
-<!-- possible problem -->
-It can be shown that this corresponds to a first order phase transition without critical point (because the isotropic and nematic phase have different symmetry) with transition temperature 
+The cubic term makes this a **first order** phase transition: in a range of temperatures the free energy has two minima, the isotropic one ($\mathcal{S}=0$) and the nematic one ($\mathcal{S}>0$). There is no critical point, because the isotropic and nematic phases have different symmetry. It can be shown that the transition temperature is 
 
 $$
 T_{N I}=T^{\ast}+\frac{b^2}{27 a c}
@@ -344,19 +351,19 @@ The nematic phase has full **cylindrical symmetry** around the director, meaning
 $$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle = \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
 
 
-A complementary approach to the macroscopic free energy picture of Landau-de Gennes is to  consider the minimal physical ingredients that lead to the transition itself. As in the case of the colloids, we have essentially two classes
+A complementary approach to the macroscopic free energy picture of Landau-de Gennes is to  consider the minimal physical ingredients that lead to the transition itself. As in the case of the [colloids](soft-matter_colloids.qmd#stability-of-colloids-and-colloid-colloid-interactions), we have essentially two classes
 
 1. attractive interactions that can favour the new symmetries (e.g. the nematic order)
 2. entropic contributions that make it easier to pack the rods in the new symmetry (i.e. when they are aligned)
 
 Phenomenologically, we can put these two together assuming a form for the energetic and entropic contributions to write down a free energy of the following form
 
-$$f = f_0 - u\dfrac{S^2}{2}+k_BT \int_0^\pi p(\theta) \ln (4\pi p(\theta)) \sin\theta d\theta$$
+$$f = f_0 - u\dfrac{S^2}{2}+k_BT \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin\theta d\theta$$
 
 where:
 
 - $u$ is the coupling strength parameter that quantifies the energetic preference for orientational alignment (higher $u$ favors stronger nematic order),
-- the $4\pi$ term assumes that $p(\theta)$ is correctly normalised on the sphere and $\sin\theta d\theta$ is the usual Jacobian.
+- the factor $2$ ensures that the entropic term vanishes for the isotropic distribution $p(\theta)=1/2$ (with $p(\theta)$ normalised as $\int_0^\pi p(\theta)\sin\theta d\theta=1$), and $\sin\theta d\theta$ is the usual Jacobian.
 
 The two terms above identify two simple contributions:
 
@@ -378,7 +385,7 @@ $$
 Plugging in the expression for $f$ and simplifying, we obtain the solution:
 
 $$
-p(\theta) = \frac{1}{Z} \exp\left( \lambda P_2(\cos\theta) \right)= \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
+p(\theta) = \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
 $$
 
 where $\mathcal{S}$ is the nematic order parameter to be determined self-consistently, and $Z$ is the normalization constant (partition function):
@@ -410,7 +417,7 @@ for u in np.linspace(1, 10, 10):
         p_theta = np.exp(l * P2)
         p_theta /= np.trapz(p_theta * np.sin(thetas), thetas)
         S_l = np.trapz(p_theta * P2 * np.sin(thetas), thetas)
-        f = -0.5*u*S_l**2 + np.trapz(p_theta * np.log(4*np.pi*p_theta) * np.sin(thetas), thetas)
+        f = -0.5*u*S_l**2 + np.trapz(p_theta * np.log(2*p_theta) * np.sin(thetas), thetas)
         S_list.append(S_l)
         F_list.append(f)
     S_array = np.array(S_list)
@@ -426,9 +433,20 @@ plt.show()
 
 These profiles are example of simple **free energy landscapes**. We will see more about this later in  @sec-energy-landscapes.
 
+### Hard rods: ordering from entropy alone
+
+The Maier-Saupe theory relies on the first ingredient listed above: without the coupling $u$ there is no transition. However, the second ingredient alone is sufficient: even **hard rods**, with no attractions at all, undergo a transition from the **isotropic** to the **nematic** phase at high enough density. Since there is no interaction energy, the transition is **purely entropic** (temperature only sets the scale, as for hard spheres). Two entropic contributions compete:
+
+- **orientational entropy** favours the isotropic phase: aligning the rods reduces the number of available orientations;
+- **translational entropy** favours the nematic phase: aligned rods exclude less volume to each other, so each rod has more free volume to move in.
+
+At low density the first contribution wins and the rods are isotropic. At high density the gain in translational entropy outweighs the loss of orientational entropy, and the nematic phase has the **higher** total entropy.
+
+This mirrors the [freezing of hard spheres](soft-matter_colloids.qmd#dense-packing-metastability-and-crystalisation): there too the ordered phase wins on entropy. The spheres lose the disorder of their positions, but each sphere gains free volume to vibrate around its lattice site.
+
 ### Lattice model: the Lebwohl-Lasher model
 
-The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals and is a lattice version of the Maier-Saupe mean field model. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
+The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals and is a lattice version of the Maier-Saupe mean field model, in the same way as the [Ising model](../phase-transitions/Ising-model.qmd) is a lattice model for magnets. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
 
 The Hamiltonian of the Lebwohl-Lasher model is given by:
 
@@ -451,7 +469,7 @@ $$
 H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} \cos^2(\theta_i - \theta_j) - \frac{1}{2} \right]
 $$
 
-where the sum is over nearest-neighbor pairs on a 2D lattice. This model captures the essential features of orientational ordering and the isotropic-nematic transition in two-dimensional systems.
+where the sum is over nearest-neighbor pairs on a 2D lattice. This model captures the essential features of orientational ordering in two-dimensional systems. Note however that in two dimensions the continuous rotational symmetry of the director cannot be spontaneously broken at finite temperature (Mermin-Wagner theorem): the low temperature phase only has *quasi*-long-range orientational order, and the transition is not a true isotropic-nematic transition.
 
 
 ```{pyodide}
@@ -516,7 +534,7 @@ snapshots = to_js(snapshots) -->
 
 Modify the script above to check the following 
 
-1.  The high temperature regime ($T\gg 0.5$$) is mostly disordered (isotropic)
+1.  The high temperature regime ($T\gg 0.5$) is mostly disordered (isotropic)
 2.  The low temperature regime forms larger and larger patches with coherent orientations
 3. Define and plot a global nematic order parameter. Τhe global nematic order parameter S is defined as:
 
@@ -538,7 +556,7 @@ $$\psi = \dfrac{1}{2} {\rm atan2}(\langle \sin(2\theta)\rangle, \langle \cos(2\t
 
 ## Splay, twist and bend 
 
-In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from the average over a large number of particles in a single volume).
+In the continuum limit, the nematic liquid crystal can be characterised in terms of the deformation of a vector field $\mathbf{n}(\mathbf{r})$ which represents the director at every point $\mathbf{r}$ (a *local* director, resulting from the average over a large number of particles in a single volume, another example of [coarse-graining](soft-matter_intro.qmd#coarse-graining)).
 
 
 The Frank free energy density for distortions of the director field is
@@ -698,7 +716,7 @@ plt.show()
 
 Common disclination strengths in nematic liquid crystals are $s = \pm \frac{1}{2}$ and $s = \pm 1$. For example, a $+1/2$ disclination corresponds to a director field that rotates by $+\pi$ as one encircles the defect, while a $-1/2$ disclination rotates by $-\pi$.
 
-When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed. This is because the idealise equilibrium state should in principle be free of any such defects, as they cost energy: they deform the director field on long distances, leading to a deformation cost, and they also engenders a complete loss of orientational order at the singularity point, which costs energy by itself.
+When two disclinations of opposite charges meet, they **annihilate**. This means the defects can cancel each other out, restoring uniform orientational order in the region. The annihilation of defect pairs is a key mechanism by which nematic liquid crystals relax toward equilibrium after being disturbed (compare with the [coarsening of domains](../phase-transitions/nucleation-and-growth.qmd#domain-growth) after a quench, where interfaces rather than point defects disappear over time). This is because the ideal equilibrium state should in principle be free of any such defects, as they cost energy: they deform the director field on long distances, leading to a deformation cost, and they also cause a complete loss of orientational order at the singularity point, which costs energy by itself.
 
 In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 
@@ -788,5 +806,21 @@ fig.show()
 
 
 ```
+
+## Summary
+
+The table collects the main results of this chapter. Follow the links to go back to the relevant part.
+
+| Topic | Key result | Remember |
+|---|---|---|
+| [Phases](#liquid-crystal-phases) | isotropic, nematic, cholesteric, smectic, columnar, crystal | Orientational order without (full) positional order |
+| [Alignment tensor](#orientational-correlations-and-the-isotropicnematic-transition) | $\mathbf Q=\frac{d}{d-1}\left\langle\mathbf u_i\otimes\mathbf u_i-\frac1d\mathbf I\right\rangle$ | Head-tail symmetry: $\langle\mathbf u\rangle=0$, so we need a tensor |
+| [Order parameter, director](#orientational-correlations-and-the-isotropicnematic-transition) | $\mathcal S$ = largest eigenvalue, $\mathbf n$ = its eigenvector; in 3D $\mathcal S=\langle P_2(\cos\theta)\rangle$ | $\mathcal S=0$ isotropic, $\mathcal S=1$ perfect alignment |
+| [Landau-de Gennes](#landau-de-gennes-mean-field-theory) | $f-f_0=\frac a3(T-T^*)\mathcal S^2-\frac{2b}{27}\mathcal S^3+\frac c9\mathcal S^4$ | Cubic term: first order, $T_{NI}=T^*+\frac{b^2}{27ac}$ |
+| [Maier-Saupe](#maier-saupe-theory) | $p(\theta)\propto\exp\left(\frac{u\mathcal S}{k_BT}P_2(\cos\theta)\right)$ | Self-consistent; weakly first order |
+| [Hard rods](#hard-rods-ordering-from-entropy-alone) | No attractions | Orientational entropy lost, translational entropy gained |
+| [Lebwohl-Lasher](#lattice-model-the-lebwohl-lasher-model) | $H=-\epsilon\sum_{\langle i,j\rangle}P_2(\mathbf n_i\cdot\mathbf n_j)$ | Lattice Maier-Saupe; in 2D only quasi-long-range order |
+| [Frank elasticity](#splay-twist-and-bend) | $f=\frac12K_1(\nabla\cdot\mathbf n)^2+\frac12K_2[\mathbf n\cdot(\nabla\times\mathbf n)]^2+\frac12K_3[\mathbf n\times(\nabla\times\mathbf n)]^2$ | Splay, twist, bend |
+| [Topological defects](#topological-defects) | $\Delta\theta=2\pi s$, $s=\pm\frac12,\pm1$ | Topologically protected; annihilate in $\pm$ pairs |
 
 ## References {.unnumbered}
