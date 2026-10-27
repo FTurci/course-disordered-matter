@@ -88,12 +88,12 @@ Nonetheless, coarse-graining can also be made mathematically rigorous. For examp
 
 ### Classes of systems
 
-In our exploration of soft matter we will focus on six main classes of systems which display different physics:
+In our exploration of soft matter we will focus on five main classes of systems which display different physics:
 
 - [colloidal dispersions](soft-matter_colloids.qmd)
 - [polymeric systems](soft-matter_polymers.qmd)
 - [liquid crystals](soft-matter_liquidcrystals.qmd)
-- surfactant aggregates
+<!-- - surfactant aggregates -->
 - [arrested systems](soft-matter_glasses.qmd)
 - [active matter](soft-matter_active.qmd)
 
@@ -138,12 +138,13 @@ Such states are referred to as **liquid crystal** and can be described successfu
 
 Components that form liquid crystals are called **mesogens** and  include highly anisotropic organic macromolecules (as used in liquid crystal displays), rod-like molecules or polymeric aggregates, as well as disk-shaped molecules and particles(such as triphenylene and derivatives).
 
+<!--
 #### Surfactant aggregates {.unnumbered}
 
 When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called **surfactants**.
 
 Hence, surfactants are molecules which contain chemical groups with different affinities (they are **amphiphilic**). A key example is the case of phospholipids, which possess both hydrophilic (water-preferring) heads and hydrophobic (water avoiding) tails. As surfactants sit at interfaces they separate different fluid phases; above a critical concentration they also **self-assemble** in the bulk, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.
-
+-->
 
 #### Arrested systems {.unnumbered}
 
