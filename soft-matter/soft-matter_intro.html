@@ -543,12 +543,11 @@ window.Quarto = {
 </section>
 <section id="classes-of-systems" class="level3" data-number="14.1.2">
 <h3 data-number="14.1.2" class="anchored" data-anchor-id="classes-of-systems"><span class="header-section-number">14.1.2</span> Classes of systems</h3>
-<p>In our exploration of soft matter we will focus on six main classes of systems which display different physics:</p>
+<p>In our exploration of soft matter we will focus on five main classes of systems which display different physics:</p>
 <ul>
 <li><a href="../soft-matter/soft-matter_colloids.html">colloidal dispersions</a></li>
 <li><a href="../soft-matter/soft-matter_polymers.html">polymeric systems</a></li>
-<li><a href="../soft-matter/soft-matter_liquidcrystals.html">liquid crystals</a></li>
-<li>surfactant aggregates</li>
+<li><a href="../soft-matter/soft-matter_liquidcrystals.html">liquid crystals</a> <!-- - surfactant aggregates --></li>
 <li><a href="../soft-matter/soft-matter_glasses.html">arrested systems</a></li>
 <li><a href="../soft-matter/soft-matter_active.html">active matter</a></li>
 </ul>
@@ -565,7 +564,7 @@ window.Quarto = {
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="b13cce74" class="cell" data-execution_count="1">
+<div id="a043f21f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -576,8 +575,8 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_17931166071372108" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_17931166071372108" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_1793118142010298" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_1793118142010298" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -608,18 +607,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_17931166071372108 = null;
-var warn = document.getElementById("3dmolwarning_17931166071372108");
+var viewer_1793118142010298 = null;
+var warn = document.getElementById("3dmolwarning_1793118142010298");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_17931166071372108 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17931166071372108"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_17931166071372108, {}, function() {
-viewer_17931166071372108.zoomTo();
-    viewer_17931166071372108.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_17931166071372108.setBackgroundColor("white");
-viewer_17931166071372108.render();
+viewer_1793118142010298 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1793118142010298"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_1793118142010298, {}, function() {
+viewer_1793118142010298.zoomTo();
+    viewer_1793118142010298.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_1793118142010298.setBackgroundColor("white");
+viewer_1793118142010298.render();
 })
 });
 </script>
@@ -633,11 +632,13 @@ viewer_17931166071372108.render();
 <p>When we take soft matter units that are highly anisotropic (e.g.&nbsp;elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states with a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal.</p>
 <p>Such states are referred to as <strong>liquid crystal</strong> and can be described successfully with continuum free energy theories that take into account the symmetries of the order parameters.</p>
 <p>Components that form liquid crystals are called <strong>mesogens</strong> and include highly anisotropic organic macromolecules (as used in liquid crystal displays), rod-like molecules or polymeric aggregates, as well as disk-shaped molecules and particles(such as triphenylene and derivatives).</p>
-</section>
-<section id="surfactant-aggregates" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="surfactant-aggregates">Surfactant aggregates</h4>
-<p>When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called <strong>surfactants</strong>.</p>
-<p>Hence, surfactants are molecules which contain chemical groups with different affinities (they are <strong>amphiphilic</strong>). A key example is the case of phospholipids, which possess both hydrophilic (water-preferring) heads and hydrophobic (water avoiding) tails. As surfactants sit at interfaces they separate different fluid phases; above a critical concentration they also <strong>self-assemble</strong> in the bulk, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.</p>
+<!--
+#### Surfactant aggregates {.unnumbered}
+
+When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called **surfactants**.
+
+Hence, surfactants are molecules which contain chemical groups with different affinities (they are **amphiphilic**). A key example is the case of phospholipids, which possess both hydrophilic (water-preferring) heads and hydrophobic (water avoiding) tails. As surfactants sit at interfaces they separate different fluid phases; above a critical concentration they also **self-assemble** in the bulk, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.
+-->
 </section>
 <section id="arrested-systems" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="arrested-systems">Arrested systems</h4>
