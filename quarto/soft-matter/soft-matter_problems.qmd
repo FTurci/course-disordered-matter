@@ -763,3 +763,105 @@ Let's think for a moment however about what we have done: we have assumed to sta
 This means that at such temperature the isotropic phase becomes marginally stable: any small perturbation in S will not be restored back to zero. This is the definition of a spinodal point.
 
 :::
+### Landau-de Gennes theory in three dimensions
+
+For a uniaxial nematic in three dimensions, the alignment tensor can be written as
+$$
+\mathbf{Q}=\mathcal{S}\left(\mathbf{n}\otimes\mathbf{n}-\tfrac{1}{3}\mathbf{I}\right),
+$$
+where $\mathbf{n}$ is the director and $\mathcal{S}$ the scalar order parameter.
+
+1. Choosing the $z$ axis along $\mathbf{n}$, write $\mathbf{Q}$ explicitly and show that $\mathrm{Tr}\,\mathbf{Q}=0$, $\mathrm{Tr}\,\mathbf{Q}^2=\frac{2}{3}\mathcal{S}^2$ and $\mathrm{Tr}\,\mathbf{Q}^3=\frac{2}{9}\mathcal{S}^3$.
+
+2. Hence show that the Landau-de Gennes free energy density
+$$
+f=f_0+\frac{A}{2}\mathrm{Tr}\,\mathbf{Q}^2-\frac{B}{3}\mathrm{Tr}\,\mathbf{Q}^3+\frac{C}{4}\left(\mathrm{Tr}\,\mathbf{Q}^2\right)^2
+$$
+becomes
+$$
+f-f_0=\alpha\mathcal{S}^2-\beta\mathcal{S}^3+\gamma\mathcal{S}^4,
+$$
+and give $\alpha$, $\beta$ and $\gamma$ in terms of $A$, $B$ and $C$.
+
+3. Find the stationary points of $f$ with respect to $\mathcal{S}$.
+
+4. Sketch $f(\mathcal{S})$ for decreasing values of $\alpha$, keeping $\beta,\gamma>0$ fixed. At the transition the isotropic ($\mathcal{S}=0$) and nematic minima have the same free energy. Show that this happens for $\alpha=\beta^2/4\gamma$, with $\mathcal{S}_{NI}=\beta/2\gamma$. What kind of transition is this, and which term is responsible?
+
+::: {.callout-note collapse="true"}
+## Solution
+
+1. **The tensor and its traces**
+
+With the $z$ axis along the director, $\mathbf{n}=(0,0,1)$ and $\mathbf{n}\otimes\mathbf{n}$ has a single non-zero entry, $n_zn_z=1$. Subtracting $\frac{1}{3}\mathbf{I}$ gives a diagonal matrix:
+$$
+\mathbf{Q}=\mathcal{S}\begin{pmatrix}-\frac{1}{3} & 0 & 0\\ 0 & -\frac{1}{3} & 0\\ 0 & 0 & \frac{2}{3}\end{pmatrix}.
+$$
+The trace is $\mathcal{S}\left(-\frac{1}{3}-\frac{1}{3}+\frac{2}{3}\right)=0$: this is not an accident, but the reason why we subtracted $\frac{1}{3}\mathbf{I}$ in the first place, so that $\mathbf{Q}$ contains no isotropic part.
+
+Since $\mathbf{Q}$ is diagonal, its powers are obtained by raising each diagonal element to that power:
+$$
+\mathrm{Tr}\,\mathbf{Q}^2=\mathcal{S}^2\left(\tfrac{1}{9}+\tfrac{1}{9}+\tfrac{4}{9}\right)=\tfrac{2}{3}\mathcal{S}^2,\qquad
+\mathrm{Tr}\,\mathbf{Q}^3=\mathcal{S}^3\left(-\tfrac{1}{27}-\tfrac{1}{27}+\tfrac{8}{27}\right)=\tfrac{2}{9}\mathcal{S}^3 .
+$$
+Traces do not change under rotations, so these results hold whatever the orientation of the director: choosing $z$ along $\mathbf{n}$ simply makes the calculation easy. Notice that $\mathrm{Tr}\,\mathbf{Q}^3$ does not vanish, because the three eigenvalues of $\mathbf{Q}$ ($-\frac{1}{3}$, $-\frac{1}{3}$ and $\frac{2}{3}$, times $\mathcal{S}$) are not symmetric around zero.
+
+2. **The free energy as a function of $\mathcal{S}$**
+
+Substituting the traces,
+$$
+f-f_0=\frac{A}{2}\cdot\frac{2}{3}\mathcal{S}^2-\frac{B}{3}\cdot\frac{2}{9}\mathcal{S}^3+\frac{C}{4}\cdot\frac{4}{9}\mathcal{S}^4
+=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}^4,
+$$
+so that
+$$
+\alpha=\frac{A}{3},\qquad \beta=\frac{2B}{27},\qquad \gamma=\frac{C}{9}.
+$$
+The free energy of a tensor has become an ordinary Landau expansion in a single scalar. In the notes, $A=a(T-T^*)$, so $\alpha$ is the coefficient that changes sign with temperature, while $\beta$ and $\gamma$ are positive constants.
+
+3. **Stationary points**
+
+Differentiating,
+$$
+\frac{df}{d\mathcal{S}}=2\alpha\mathcal{S}-3\beta\mathcal{S}^2+4\gamma\mathcal{S}^3=\mathcal{S}\left(2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2\right)=0 .
+$$
+One solution is always $\mathcal{S}=0$, the isotropic phase. The others solve the quadratic in brackets:
+$$
+\mathcal{S}_\pm=\frac{3\beta\pm\sqrt{9\beta^2-32\alpha\gamma}}{8\gamma}.
+$$
+Let us read these solutions physically:
+
+- $\mathcal{S}=0$ is a minimum as long as $\alpha>0$ (since $f''(0)=2\alpha$), and becomes a maximum for $\alpha<0$. So $\alpha=0$, i.e. $T=T^*$, is where the isotropic phase becomes **unstable**: it is the spinodal of the isotropic phase.
+- The non-zero solutions only exist if $9\beta^2\geq 32\alpha\gamma$. For larger $\alpha$ (high temperatures) the isotropic phase is the only stationary point.
+- When they exist, $\mathcal{S}_+$ is a local minimum (the nematic phase) and $\mathcal{S}_-$ is the maximum separating it from the isotropic minimum, i.e. a free energy barrier.
+
+4. **The transition**
+
+Sketching $f(\mathcal{S})$ as $\alpha$ decreases, we find the following sequence:
+
+- for large $\alpha$ there is a single minimum, at $\mathcal{S}=0$: the system is isotropic;
+- for $\alpha<9\beta^2/32\gamma$ a second, local minimum appears at $\mathcal{S}_+>0$, separated from $\mathcal{S}=0$ by a barrier: the nematic phase is metastable;
+- at some value of $\alpha$ the two minima have the same free energy: this is the transition;
+- below it the nematic minimum is the lower one and the isotropic phase is metastable, until it becomes unstable at $\alpha=0$.
+
+At the transition the nematic minimum satisfies two conditions at the same time: it is a stationary point, $f'(\mathcal{S})=0$, and it has the same free energy as the isotropic phase, $f(\mathcal{S})=f(0)$. Dividing by the trivial factors of $\mathcal{S}$, these read
+$$
+\alpha-\beta\mathcal{S}+\gamma\mathcal{S}^2=0,\qquad 2\alpha-3\beta\mathcal{S}+4\gamma\mathcal{S}^2=0 .
+$$
+Subtracting twice the first from the second gives $-\beta\mathcal{S}+2\gamma\mathcal{S}^2=0$, hence
+$$
+\mathcal{S}_{NI}=\frac{\beta}{2\gamma},
+$$
+and substituting back into the first condition
+$$
+\alpha=\beta\mathcal{S}_{NI}-\gamma\mathcal{S}_{NI}^2=\frac{\beta^2}{2\gamma}-\frac{\beta^2}{4\gamma}=\frac{\beta^2}{4\gamma}.
+$$
+
+At the transition the order parameter therefore **jumps** from $\mathcal{S}=0$ to the finite value $\mathcal{S}_{NI}=\beta/2\gamma$: the isotropic-nematic transition is **first order**. The term responsible is the cubic one, $-\beta\mathcal{S}^3$: it makes the free energy asymmetric in $\mathcal{S}$, so that the nematic minimum can appear at a finite distance from $\mathcal{S}=0$, separated from it by a barrier, rather than growing continuously out of it.
+
+Using the coefficients of the notes, $\alpha=a(T-T^*)/3$, $\beta=2b/27$ and $\gamma=c/9$, the transition condition gives back
+$$
+T_{NI}=T^*+\frac{b^2}{27ac},\qquad \mathcal{S}_{NI}=\frac{b}{3c}.
+$$
+Since $T_{NI}>T^*$, the transition happens before the isotropic phase becomes unstable: between $T_{NI}$ and $T^*$ the isotropic liquid can be supercooled, as we expect for a first order transition (compare with nucleation and growth in the first part of the course).
+
+:::
