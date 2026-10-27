@@ -8,9 +8,17 @@ pyodide:
 bibliography: references.bib
 ---
 
+::: {.callout-tip appearance="simple"}
+## Learning outcomes
+
+1.  Understand how local energy consumption in the form of self-propulsion leads to new, nonequilibrium physics, with the help of example minimal models.
+2.  Understand how self-propulsion modifies the scaling behaviour of the mean squared displacement in active systems.
+3.  Describe how self-propulsion leads to nonequilibrium phase separation.
+:::
+
 ## Beyond thermal systems
 
-All the system we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.
+All the systems we have considered up to now are composed of naturally occurring or synthetic molecules (or atoms) which interact via conservative forces (potentials) and are subject to thermal fluctuations. Essentially, energy is either stored in the system as potential energy or exchanged with the environment as heat, leading to equilibrium dynamics governed by the laws of thermodynamics and statistical mechanics. In these systems, the random motion of particles arises from thermal noise, and the system eventually relaxes to a Boltzmann distribution.
 
 However, many systems in nature and technology are driven out of equilibrium by continuous energy consumption at the microscopic scale. These are known as **active matter** systems. Here, each constituent (such as a bacterium, a synthetic microswimmer, or a molecular motor) converts energy from its surroundings into a variety of mechanisms:
 
@@ -19,7 +27,7 @@ However, many systems in nature and technology are driven out of equilibrium by 
 - processing
 - growth and deformation
 
-This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on of the most fundamental kins of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
+This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on one of the most fundamental kinds of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
 
 We could, at this stage, say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
 
@@ -30,6 +38,57 @@ To do so we need to understand how systems that dissipate energy locally to prod
 
 The field of research that studies such systems is called physics of **active matter** and in this chapter we will describe some reference model systems and main results.
 
+
+## Flocking: the Vicsek model
+
+The **Vicsek model** [@vicsek1995novel] is one of the simplest models of active matter. Its key ingredients are **self-propulsion** and **alignment**: $N$ particles move at constant speed $v_0$ and, at each time step, take the average direction of their neighbours within a radius $R$, up to some noise:
+$$
+\mathbf{r}_i(t+1)=\mathbf{r}_i(t)+v_0\hat{\mathbf{n}}_i(t),\qquad
+\theta_i(t+1)=\arg\Big(\sum_{|\mathbf{r}_j-\mathbf{r}_i|<R}e^{i\theta_j(t)}\Big)+\xi_i,
+$$
+where $\xi_i$ is uniform in $[-\eta/2,\eta/2]$.
+
+- At **high noise** $\eta$ (or low density) the particles move in random directions.
+- At **low noise** (or high density) they spontaneously move together: the system **flocks**.
+
+The transition is measured by the polar order parameter $\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|$, which goes from $0$ (disordered) to $1$ (all particles moving together).
+
+```{pyodide}
+#| caption: "Vicsek model [press ctrl/cmd [ENTER] to run]"
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Parameters: change the noise amplitude eta (between 0 and 2*pi) and compare!
+N = 300         # number of particles
+L = 10.0        # box size (periodic)
+R = 1.0         # interaction radius
+v0 = 0.1        # speed
+eta = 0.5       # noise amplitude
+steps = 300
+
+rng = np.random.default_rng(1)
+pos = rng.uniform(0, L, (N, 2))
+theta = rng.uniform(-np.pi, np.pi, N)
+phi = []
+
+for t in range(steps):
+    # neighbours within R, with periodic boundaries
+    d = pos[:, None, :] - pos[None, :, :]
+    d -= L * np.round(d / L)
+    neigh = (d**2).sum(axis=-1) < R**2
+    # align with the average direction of the neighbours, plus noise
+    theta = np.angle(neigh @ np.exp(1j * theta)) + rng.uniform(-eta / 2, eta / 2, N)
+    pos = (pos + v0 * np.column_stack((np.cos(theta), np.sin(theta)))) % L
+    phi.append(np.abs(np.exp(1j * theta).mean()))
+
+fig, ax = plt.subplots(1, 2, figsize=(9, 4))
+ax[0].quiver(pos[:, 0], pos[:, 1], np.cos(theta), np.sin(theta), theta, cmap="hsv", scale=30)
+ax[0].set(xlim=(0, L), ylim=(0, L), aspect="equal", title=rf"$\eta={eta}$")
+ax[1].plot(phi)
+ax[1].set(xlabel="time step", ylabel=r"polar order $\phi$", ylim=(0, 1))
+plt.tight_layout()
+plt.show()
+```
 
 ## Life-inspired motion: *run and tumble*
 
@@ -190,7 +249,7 @@ We can imagine a schematic algorithm:
 
 Here, $\lambda$ is the tumble rate, which determines the frequency of reorientation events.
 
-The mean squared displacement (MSD) of run-and-tumble particles exhibits a characteristic three-phase behavior:
+The [mean squared displacement](../phase-transitions/Brownian-and-Langevin-dynamics.qmd#mean-square-displacement) (MSD) of run-and-tumble particles exhibits two regimes, connected by a crossover:
 
 1. **Ballistic regime (short times):**  
     At very short times, before the first tumble occurs, particles move in straight lines at constant speed. The MSD grows quadratically with time:
@@ -206,7 +265,7 @@ The mean squared displacement (MSD) of run-and-tumble particles exhibits a chara
     where $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ in 2D.
 
 
- At intermediate timescales, the MSD transitions smoothly from ballistic to diffusive behavior. This crossover is a hallmark of persistent random walks like run-and-tumble dynamics.
+ At intermediate timescales, the MSD transitions smoothly from ballistic to diffusive behavior.
 
 
 ```{pyodide}
@@ -221,22 +280,26 @@ lambda_tumble = 0.1 # tumble rate
 dt = 0.01           # time step
 T = 1000             # total time
 steps = int(T/dt)
+stride = 100        # store one configuration every `stride` steps to limit memory
 
 # Arrays to store positions
-x = np.zeros((N, steps))
-y = np.zeros((N, steps))
+x = np.zeros((N, steps // stride))
+y = np.zeros((N, steps // stride))
+xc, yc = np.zeros(N), np.zeros(N)
 theta = np.random.uniform(0, 2*np.pi, N)
 
 # Simulate run-and-tumble
 for t in range(1, steps):
     tumble = np.random.rand(N) < lambda_tumble * dt
     theta[tumble] = np.random.uniform(0, 2*np.pi, tumble.sum())
-    x[:, t] = x[:, t-1] + v0 * np.cos(theta) * dt
-    y[:, t] = y[:, t-1] + v0 * np.sin(theta) * dt 
+    xc += v0 * np.cos(theta) * dt
+    yc += v0 * np.sin(theta) * dt
+    if t % stride == 0:
+        x[:, t // stride], y[:, t // stride] = xc, yc
 
 # Compute MSD
 msd = np.mean((x - x[:, 0:1])**2 + (y - y[:, 0:1])**2, axis=0)
-time = np.arange(steps) * dt
+time = np.arange(steps // stride) * stride * dt
 
 #Plotting
 plt.figure(figsize=(9,4))
@@ -247,7 +310,7 @@ t_diffusive = 10 / lambda_tumble
 plt.loglog(time, msd, label="Simulated MSD")
 plt.loglog(time, (v0*time)**2, '--', label=r"Ballistic: $v_0^2 t^2$")
 plt.loglog(time, 4*(v0**2/(2*lambda_tumble))*time, '--', label=r"Diffusive: $4D_\mathrm{eff} t$")
-plt.xlim(1*dt,time.max())
+plt.xlim(stride*dt, time.max())
 plt.tick_params(axis='both', labelsize=8, pad=15)
 plt.tight_layout()
 
@@ -258,29 +321,6 @@ plt.legend(frameon=False)
 
 plt.show()
 ```
-
-
-## Coloured noise
-Coloured noise introduces temporal correlations into the random forces acting on a particle, unlike white noise, which is uncorrelated. This is often modeled using an Ornstein-Uhlenbeck process for the noise term.
-
-In the context of active matter, coloured noise can be used to describe the dynamics of active particles, where the noise term $\boldsymbol{\eta}(t)$ evolves as:
-$$
-\frac{d\boldsymbol{\eta}(t)}{dt} = -\frac{\boldsymbol{\eta}(t)}{\tau_c} + \sqrt{\frac{2D_c}{\tau_c}} \boldsymbol{\xi}(t),
-$$
-
-where:
-
-- $\tau_c$ is the correlation time of the noise,
-- $D_c$ is the noise strength,
-- $\boldsymbol{\xi}(t)$ is a Gaussian white noise term with zero mean and unit variance.
-
-The particle's velocity $\mathbf{v}(t)$ is then given by:
-$$
-\mathbf{v}(t) = v_0 \hat{\mathbf{n}}(t) + \boldsymbol{\eta}(t),
-$$
-where $\hat{\mathbf{n}}(t)$ is the direction of self-propulsion.
-
-The coloured noise description of active matter is a generalisation of the run and tumble dynamics. The run phase corresponds to the persistence of $\hat{\mathbf{n}}(t)$ over time, governed by the correlation time $\tau_c$, whereas the tumble phase is analogous to a rapid decorrelation of $\hat{\mathbf{n}}(t)$, which can be modeled by resetting $\boldsymbol{\eta}(t)$ or introducing a large noise term.
 
 
 ## Active Brownian particle and motility-induced phase separation
@@ -299,17 +339,17 @@ The dynamics of an ABP can be described by the following equations:
     where:
     - $v_0$ is the self-propulsion speed,
     - $\hat{\mathbf{n}}(t)$ is the unit vector indicating the particle's orientation,
-    - $D_t$ is the translational diffusion coefficient,
-    - $\boldsymbol{\xi}(t)$ is a Gaussian white noise term with zero mean and unit variance.
+    - $D_t$ is the translational diffusion coefficient (for a sphere, given by the [Stokes-Einstein relation](soft-matter_colloids.qmd#stokes-einstein-relation)),
+    - $\boldsymbol{\xi}(t)$ is a Gaussian white noise term with zero mean and correlations $\langle\xi_i(t)\xi_j(t')\rangle=\delta_{ij}\delta(t-t')$.
 
 2. **Rotational Motion**:
     The orientation $\hat{\mathbf{n}}(t)$ undergoes rotational diffusion, described by:
     $$
-    \frac{d\hat{\mathbf{n}}(t)}{dt} = \sqrt{2D_r} \boldsymbol{\eta}(t),
+    \frac{d\hat{\mathbf{n}}(t)}{dt} = \sqrt{2D_r}\, \boldsymbol{\eta}(t)\times\hat{\mathbf{n}}(t),
     $$
     where:
     - $D_r$ is the rotational diffusion coefficient,
-    - $\boldsymbol{\eta}(t)$ is a Gaussian white noise term with zero mean and unit variance.
+    - $\boldsymbol{\eta}(t)$ is a Gaussian white noise term as above (the cross product keeps $\hat{\mathbf{n}}$ a unit vector).
 
     In 2D, the orientation $\hat{\mathbf{n}}(t)$ can be expressed in terms of an angle $\theta(t)$:
     $$
@@ -320,6 +360,8 @@ The dynamics of an ABP can be described by the following equations:
     \frac{d\theta(t)}{dt} = \sqrt{2D_r} \eta_\theta(t),
     $$
     where $\eta_\theta(t)$ is a scalar Gaussian white noise term.
+
+The relative importance of self-propulsion and thermal motion is measured by the [Péclet number](soft-matter_colloids.qmd#kinds-of-colloids) $\mathrm{Pe}=v_0/\sqrt{D_tD_r}$: for $\mathrm{Pe}\ll1$ the particles behave as passive Brownian colloids, while for $\mathrm{Pe}\gg1$ they are strongly active.
 
 We can analyse this a little more in detail by considering the characteristic features of the displacements of (dilute or noninteracting) active Brownian particles.
 
@@ -332,12 +374,12 @@ $$
 $$
 
 where:
-- $D_{\mathrm{eff}} = \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient,
+- $D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient (with $\tau_R = 1/D_r$),
 
 This clearly shows that there are three main regimes: 
 
-- a very short time diffusive regime $MSD(\tau) = \propto 4D_T\tau$
-- an intermediate regime around the reorientation time $\tau_R$: 
+- a very short time diffusive regime $\operatorname{MSD}(\tau) \simeq 4D_T\tau$
+- an intermediate regime, $4D_T/v^2 \ll \tau \ll \tau_R$, before any reorientation has taken place: 
     $$
     \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + v^2 \tau^2
     $$
@@ -432,20 +474,6 @@ $$
 :::
 
 
-- $\tau_p = 1/D_r$ is the persistence time.
-
-**Short times ($t \ll \tau_p$):**  
-The motion is ballistic:
-$$
-\langle \Delta r^2(t) \rangle \approx v_0^2 t^2
-$$
-
-**Long times ($t \gg \tau_p$):**  
-The motion is diffusive:
-$$
-\langle \Delta r^2(t) \rangle \approx 4 D_{\mathrm{eff}} t
-$$
-
 This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs.
 
 ```{pyodide}
@@ -461,10 +489,12 @@ Dt = 0.0          # translational diffusion coefficient (set to 0 for pure ABP)
 dt = 0.01         # time step
 T = 1000          # total time
 steps = int(T/dt)
+stride = 100      # store one configuration every `stride` steps to limit memory
 
 # Arrays to store positions
-x = np.zeros((N, steps))
-y = np.zeros((N, steps))
+x = np.zeros((N, steps // stride))
+y = np.zeros((N, steps // stride))
+xc, yc = np.zeros(N), np.zeros(N)
 theta = np.random.uniform(0, 2*np.pi, N)
 
 # Simulate ABP
@@ -472,12 +502,14 @@ for t in range(1, steps):
     # Rotational diffusion
     theta += np.sqrt(2*Dr*dt) * np.random.randn(N)
     # Translational motion
-    x[:, t] = x[:, t-1] + v0 * np.cos(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
-    y[:, t] = y[:, t-1] + v0 * np.sin(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
+    xc += v0 * np.cos(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
+    yc += v0 * np.sin(theta) * dt + np.sqrt(2*Dt*dt) * np.random.randn(N)
+    if t % stride == 0:
+        x[:, t // stride], y[:, t // stride] = xc, yc
 
 # Compute MSD
 msd = np.mean((x - x[:, 0:1])**2 + (y - y[:, 0:1])**2, axis=0)
-time = np.arange(steps) * dt
+time = np.arange(steps // stride) * stride * dt
 
 # Theoretical curves
 tau_p = 1 / Dr
@@ -489,7 +521,7 @@ plt.figure(figsize=(9,4))
 plt.loglog(time, msd, label="Simulated MSD")
 plt.loglog(time, msd_ballistic, '--', label=r"Ballistic: $v_0^2 t^2$")
 plt.loglog(time, msd_diffusive, '--', label=r"Diffusive: $4D_\mathrm{eff} t$")
-plt.xlim(1*dt, time.max())
+plt.xlim(stride*dt, time.max())
 plt.tick_params(axis='both', labelsize=8, pad=15)
 plt.tight_layout()
 plt.xlabel("Time $t$")
@@ -511,9 +543,21 @@ However, as we reduce the rotational diffusion, the persistent motion becomes mo
 
 In particular, the collision between particles are no longer leading to quick decorrelation: on the contrary, head-to-head collisions between the particles mean that there is a finite residence time for a pair of particles to stay in each other neighborhoods. This effect is amplified by multiple collisions, leading to many-body caging effects that promote density heterogeneities in the fluid.
 
-The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of equilibrium systems. Before reaching this regime, the fluid also displays a critical like phenomenology, with enhanced fluctuations terminating a critical point. 
+The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of [equilibrium systems](soft-matter_colloids.qmd#beyond-hard-spheres-simple-liquids). As in equilibrium liquid-gas coexistence, the coexistence region ends at a [critical point](../phase-transitions/approach-to-criticality.qmd), where density fluctuations are strongly enhanced. 
 
-This has been examined in detail in computer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situation of colloid-polymer mixtures due to the very short range nature of the effective interactions between active particles).
+This has been examined in detail in computer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situation of [colloid-polymer mixtures](soft-matter_glasses.qmd#colloid-polymer-mixtures-as-an-example) due to the very short range nature of the effective interactions between active particles).
 
+## Summary
 
+The table collects the main results of this chapter. Follow the links to go back to the relevant part.
 
+| Topic | Key result | Remember |
+|---|---|---|
+| [Active matter](#beyond-thermal-systems) | Local energy consumption → self-propulsion | No Boltzmann distribution |
+| [Vicsek model](#flocking-the-vicsek-model) | Self-propulsion + alignment, noise $\eta$; polar order $\phi=\lvert\frac1N\sum_ie^{i\theta_i}\rvert$ | Flocking at low noise or high density |
+| [Run-and-tumble](#life-inspired-motion-run-and-tumble) | Straight runs at $v_0$, random tumbles at rate $\lambda$ | $D_{\rm eff}=v_0^2/2\lambda$ (2D) |
+| [Active Brownian particles](#active-brownian-particle-and-motility-induced-phase-separation) | $\dot{\mathbf r}=v_0\hat{\mathbf n}+\sqrt{2D_t}\,\boldsymbol\xi$, $\dot\theta=\sqrt{2D_r}\,\eta_\theta$; $\mathrm{Pe}=v_0/\sqrt{D_tD_r}$ | Continuous reorientation, $\tau_R=1/D_r$ |
+| [MSD](#mean-squared-displacement-of-active-brownian-particles) | $4D_T\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, with $D_{\rm eff}=D_T+v_0^2/2D_r$ | Diffusive, then ballistic, then enhanced diffusion |
+| [MIPS](#interacting-abps-and-motility-induced-phase-separation) | Purely repulsive ABPs phase separate at low $D_r$ | Persistent collisions slow particles down: dense and dilute phases, with a critical point |
+
+## References {.unnumbered}
