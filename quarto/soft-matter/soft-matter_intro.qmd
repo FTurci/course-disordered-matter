@@ -3,7 +3,17 @@ title: "Entropy matters"
 bibliography: references.bib
 ---
 
+::: {.callout-tip appearance="simple"}
+## Learning outcomes
+
+1.  Explain why entropy and thermal fluctuations, and not only energy, control the behaviour of soft matter, whose interaction energies are of the order of $k_BT$.
+2.  Explain the idea of coarse-graining, and why very different microscopic constituents can share similar macroscopic behaviour.
+3.  Recognise the main classes of soft and disordered systems studied in this course.
+:::
+
 Most of the matter around us does not simply fit within the idealized pictures of crystalline solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.
+
+As Philip Anderson put it in a famous essay, *more is different* [@anderson1972more]: when many simple units interact, collective properties emerge that cannot be understood by studying the individual components alone.
 
 This means that cellular **life itself** (the very constituents that make us) obeys principles that go beyond the standard patterns of conventional solid-state physics.
 
@@ -26,17 +36,19 @@ $$F = U-TS$$
 
 where $U$ is the internal energy, $T$ the temperature and $S$ is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales.
 
-In other words, **fluctuations of the internal energy** are on the same scale as **thermal fluctuations**:
+Per particle, the free energy reads $f = u - Ts$. The entropy approximately counts the number of arrangements per particle, $s = \dfrac{k_B}{N}\ln\Omega$: for hundreds of arrangements per particle one has $s = O(1)\,k_B$, so that the entropic term $Ts$ is of the order of $k_BT$.
 
-$$\Delta U \sim k_BT $$
+In other words, **fluctuations of the internal energy** per constituent are on the same scale as **thermal fluctuations**:
 
-where $k_B$ is the Boltzmann constant and $\Delta U$ indicates standard deviations from the average internal energy.
+$$\Delta u \sim k_BT $$
+
+where $k_B$ is the Boltzmann constant and $\Delta u$ indicates standard deviations from the average internal energy per constituent.
 
 
 ::: {.callout-note collapse="true"}
 # The Physics of Entropy
 
-Soft matter physics is fundamentally the physics of **entropy**. Unlike
+Soft matter physics is fundamentally the physics of **entropy**. Unlike traditional systems where interaction energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behaviour of the system. The interplay between entropy and intermolecular energy leads to the rich and diverse phenomena observed in soft matter systems.
 :::
 
 
@@ -44,7 +56,7 @@ Soft matter physics is fundamentally the physics of **entropy**. Unlike
 
 ### Elementary constituents and energy scales
 
-Soft matter covers a wide spectrum of deformable systems. Each is constituted of many parts . Each is deformable because the interactions amongst such parts are **weak** compared to the perturbing forces (e.g. thermal fluctuations or mechanical loading).
+Soft matter covers a wide spectrum of deformable systems. Each is constituted of many parts. Each is deformable because the interactions amongst such parts are **weak** compared to the perturbing forces (e.g. thermal fluctuations or mechanical loading).
 
 In hard condensed matter, the elementary constituents are the atoms themselves, eventually with their subatomic particles. Between atoms, the scale of the interaction energies is in the 0.1 to 10 eV: for example the carbon-carbon covalent bond is approximately 3.6  eV. 
 
@@ -52,38 +64,38 @@ The main units of soft matter are not atoms. They are instead themselves aggrega
 
 - **colloids**, micrometer- to nanometer-sized particles dispersed in a fluid.
 - **polymers**, macromolecules composed of long chains such as DNA, proteins, plastics
-- **surfactants**, macromolecules wuth polar head and tails that lead to the spontaneous formation of structures such as bilayers (e.g. the cellular membrane).  
+- **surfactants**, molecules with polar head and tails that lead to the spontaneous formation of structures such as bilayers (e.g. the cellular membrane).  
 
 Amongst such units, the dominating forces of soft matter are much weaker than in hard condensed matter:
 
-- Van der Waals forces are of the order of 0.001-0.01 eV 
+- Van der Waals interaction energies are of the order of 0.001-0.01 eV 
 - weak interactions such as hydrogen-bonds are typically in the 0.01-0.2 eV range
 - the thermal energy at room temperature is $k_B T \approx 0.025 eV$ (check it for yourself)
 
-At the **microscopic** level, all these interactions have essentialy one source: the electrostatic force. However, this information is practically of no use when we want to understand how the units of soft matter come together to give rise to **macroscopic** properties of soft matter systems, such as their elastic properties, their viscosities, their plasticity. In fact, the emphasis on the atomistic details of the various units is fundamentally misleading: atomistically very different objects (e.g. colloids and micelles) can in fact share very similar macroscopic behaviours.
+At the **microscopic** level, all these interactions have essentially one source: the electrostatic force. However, this information is practically of no use when we want to understand how the units of soft matter come together to give rise to **macroscopic** properties of soft matter systems, such as their elastic properties, their viscosities, their plasticity. In fact, the emphasis on the atomistic details of the various units is fundamentally misleading: atomistically very different objects (e.g. colloids and micelles) can in fact share very similar macroscopic behaviours.
 
-Therefore, theories of soft matter leverage the concept of **coarse-graining**, rooted in the renormalisation group notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain the forms the backbone. An example of DNA coarse garining is provided by the succesful model [oxDNA](https://dna.physics.ox.ac.uk/index.php/Main_Page) (see picture below):
+Therefore, theories of soft matter leverage the concept of **coarse-graining**, rooted in the [renormalisation group](../phase-transitions/rg.qmd) notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain that forms the backbone. An example of DNA coarse graining is provided by the successful model [oxDNA](https://dna.physics.ox.ac.uk/index.php/Main_Page) (see picture below):
 
 ![oxDNA model: (a) Base structure on one strand; (b) planarity of the bonding; (c) an example of the resulting double strand.](figs/The_model_half.png)
 
 
 ::: {.callout-note collapse="true"}
 # Coarse graining
-Coarse graining is often motivated by intuition, experimental insights or a simple desire of simplification. It allows for a multi-scale description of the problem which permits to describe large systems and log time scales.
+Coarse graining is often motivated by intuition, experimental insights or a simple desire of simplification. It allows for a multi-scale description of the problem which permits to describe large systems and long time scales.
 
-Nonetheless, coarse-graining can also be made mathematically rigorous. For example, rigorous coarse graining in statistical mechanics can be performed by projecting the dynamics onto a relevant and an irrelevant (fluctutating) part, in the so called [**Mori-Zwanzig** formalism](https://en.wikipedia.org/wiki/Mori-Zwanzig_formalism) [@mori1965].
+Nonetheless, coarse-graining can also be made mathematically rigorous. For example, rigorous coarse graining in statistical mechanics can be performed by projecting the dynamics onto a relevant and an irrelevant (fluctuating) part, in the so called [**Mori-Zwanzig** formalism](https://en.wikipedia.org/wiki/Mori-Zwanzig_formalism) [@mori1965].
 :::
 
 ### Classes of systems
 
 In our exploration of soft matter we will focus on six main classes of systems which display different physics:
 
-- colloidal dispersions
-- polymeric systems
-- liquid crystals
+- [colloidal dispersions](soft-matter_colloids.qmd)
+- [polymeric systems](soft-matter_polymers.qmd)
+- [liquid crystals](soft-matter_liquidcrystals.qmd)
 - surfactant aggregates
-- arrested systems
-- active matter
+- [arrested systems](soft-matter_glasses.qmd)
+- [active matter](soft-matter_active.qmd)
 
 #### Colloidal dispersions {.unnumbered}
 
@@ -116,13 +128,13 @@ view.show()
 ```
 
 
-Compared to colloids, polymers have distiunctive characteristics common to all chain-like molecules, such as their topological constraints due to teh fact that two polymers cannot cross each other (a phenomenon known as *polymer entanglement*).
+Compared to colloids, polymers have distinctive characteristics common to all chain-like molecules, such as their topological constraints due to the fact that two polymers cannot cross each other (a phenomenon known as *polymer entanglement*).
 
 #### Liquid crystals {.unnumbered}
 
-When we take soft matter units that are highly anisotropic (e.g. elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states woth a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal. 
+When we take soft matter units that are highly anisotropic (e.g. elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states with a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal. 
 
-Such states are referred to as **liquid crystal** and can be described successffully with continuum free energy theories that take into account the symmetries of the order parameters.
+Such states are referred to as **liquid crystal** and can be described successfully with continuum free energy theories that take into account the symmetries of the order parameters.
 
 Components that form liquid crystals are called **mesogens** and  include highly anisotropic organic macromolecules (as used in liquid crystal displays), rod-like molecules or polymeric aggregates, as well as disk-shaped molecules and particles(such as triphenylene and derivatives).
 
@@ -130,19 +142,19 @@ Components that form liquid crystals are called **mesogens** and  include highly
 
 When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called **surfactants**.
 
-Hence, surfactants are molecules which contain chemical groups with different affinities (they are **amphiphilic**). A key example is the case of phospholipids, which posses both hydrophilic (water-preferring) heads and hyrdrophobic (water avoiding) tails. As surfactants sit at inetrface they are able to **self-assemble** and separate different fluid phases, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.
+Hence, surfactants are molecules which contain chemical groups with different affinities (they are **amphiphilic**). A key example is the case of phospholipids, which possess both hydrophilic (water-preferring) heads and hydrophobic (water avoiding) tails. As surfactants sit at interfaces they separate different fluid phases; above a critical concentration they also **self-assemble** in the bulk, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.
 
 
 #### Arrested systems {.unnumbered}
 
-We have stressed that the thermal energy is distinctive of soft matter systems. It would be then natural to assume that as we reduce the temperature, we should converge readily to the solid state physics of crystalline solids. In fact, on the way to low temperatures, the lack of long-range order of most soft-matter systems has important consequences: many such systems find themselves trapped in states that are not corresponding to the global energy minimum (i.e. the crystal) and instead display non trivial mechanisms of structural relaxation. These systems are disordered a bit like liquids, but share various mechanical properties, such as emergence rigidity, elasticity and plasticity. 
+We have stressed that the thermal energy is distinctive of soft matter systems. It would be then natural to assume that as we reduce the temperature, we should converge readily to the solid state physics of crystalline solids. In fact, on the way to low temperatures, the lack of long-range order of most soft-matter systems has important consequences: many such systems find themselves trapped in states that are not corresponding to the global energy minimum (i.e. the crystal) and instead display non trivial mechanisms of structural relaxation. These systems are disordered a bit like liquids, but share various mechanical properties, such as emergent rigidity, elasticity and plasticity. 
 
 Examples of arrested systems include:
 
 - **Glasses**, such as silica glass or metallic glasses, where the system is kinetically trapped in a disordered state.
 - **Gels**, which are networks of interconnected particles or polymers that span the entire system, providing rigidity despite being mostly liquid.
 
-These systems are arrested as their relaxation towards equilibrium is so slow that is longer than any observable timescales. This makes them fundamentally **out-of-equilibrium** systems, escaping from an ordinary description in terms of equilibrium statistical mechanics.
+These systems are arrested as their relaxation towards equilibrium is so slow that it is longer than any observable timescales. This makes them fundamentally **out-of-equilibrium** systems, escaping from an ordinary description in terms of equilibrium statistical mechanics.
 
 
 #### Active matter {.unnumbered}
@@ -153,135 +165,3 @@ Active matter refers to systems composed of units that consume energy to generat
 - **Synthetic systems**, like self-propelled colloids or active gels.
 
 The study of active matter focuses on understanding how individual activity leads to emergent collective behaviors, such as swarming, clustering, or pattern formation, often described using hydrodynamic theories or agent-based models.
-
-<!--  Hard disks in observablejs
-
-```{ojs}
-//| echo: false
-viewof N = Inputs.range([8, 512], {
-  label: "Number of disks",
-  step: 1,
-  value: 64
-})
-```
-
-```{ojs}
-//| echo: false
-// Cell: MC steps
-viewof steps = Inputs.range([1, 100000], {
-  label: "MC steps",
-  step: 100,
-  value: 1000
-})
-```
-```{ojs}
-//| echo: false
-// Cell: Density
-viewof density = Inputs.range([0.02, 0.8], {
-  label: "Density",
-  step: 0.01,
-  value: 0.4
-})
-```
-```{ojs}
-//| echo: false
-// Cell: Disk radius (can be constant or adjustable)
-diskRadius = 0.5
-```
-
-
-```{ojs}
-//| echo: false
-// Cell 2: Initialize positions
-function initPositions(N, L, r) {
-  const positions = [];
-  let attempts = 0;
-  while (positions.length < N && attempts < 10000000) {
-    const x = Math.random() * L;
-    const y = Math.random() * L;
-    if (positions.every(p => {
-      const dx = x - p[0];
-      const dy = y - p[1];
-      return dx * dx + dy * dy > 4 * r * r;
-    })) {
-      positions.push([x, y]);
-    }
-    attempts++;
-  }
-  return positions;
-}
-```
-
-```{ojs}
-//| echo: false
-// Cell 3: MC step
-function mcStep(positions, L, r) {
-  const i = Math.floor(Math.random() * positions.length);
-  const dx = (Math.random() - 0.5);
-  const dy = (Math.random() - 0.5);
-  const [x, y] = positions[i];
-  const xNew = (x + dx + L) % L;
-  const yNew = (y + dy + L) % L;
-
-  for (let j = 0; j < positions.length; j++) {
-    if (j === i) continue;
-    const [xj, yj] = positions[j];
-    const dx = (xNew - xj + L/2) % L - L/2;
-    const dy = (yNew - yj + L/2) % L - L/2;
-    if (dx * dx + dy * dy < 4 * r * r) return positions; // reject move
-  }
-
-  positions[i] = [xNew, yNew]; // accept
-  return positions;
-}
-
-```
-
-```{ojs}
-//| echo: false
-// Cell: Run simulation on demand
-function runSimulation(N, steps, density, diskRadius) {
-  const L = Math.sqrt(N * Math.PI * diskRadius ** 2 / density);
-  let pos = initPositions(N, L, diskRadius);
-  for (let i = 0; i < steps; i++) mcStep(pos, L, diskRadius);
-  return {positions: pos, boxSize: L};
-}
-
-```
-```{ojs}
-sim = runSimulation(N,steps,density,diskRadius)
-```
-```{ojs}
-//| echo: false
-function plotter(width, height){
-
-let   scale = width / sim.boxSize;
-console.log("Done. Density:", density)
-return Plot.plot({
-  x: {domain: [0, sim.boxSize]},
-  y: {domain: [0, sim.boxSize]},
-
-  marks: [
-    Plot.dot(sim.positions.map(([x, y]) => ({
-      x,
-      y,
-    })),
-     {
-      x: "x",
-      y: "y",
-      r: diskRadius*scale,
-      stroke: null,
-      fill: "steelblue"
-    })
-  ],
-  width: width,
-  height: height
-})
-}
-
-```
-
-```{ojs}
-//| echo: false
-plotter(400,400)
-``` -->
