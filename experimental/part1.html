@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>12&nbsp; Measurements in real space</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -73,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -110,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -123,7 +126,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -165,7 +168,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -323,6 +327,65 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">Complex disordered systems</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_liquidcrystals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_glasses.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Arrested states</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_active.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Active matter</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/slides.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lecture slides</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../soft-matter/soft-matter_problems.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -404,12 +467,12 @@ g(r)=\frac{1}{4\pi r^2\rho}\left\langle \sum_{i\neq0}\delta\!\left(r-r_i\right)\
 <li><p>After the nearest neighbour peak, <span class="math inline">\(g(r)\)</span> typically dips below the mean density and is characterised by damped oscillating peaks and troughs until <span class="math inline">\(g(r)\)</span> reaches the constant mean density.</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-For the curious and rigorous: from the pair correlation function to the radial distribution function
+<span class="screen-reader-only">Note</span>For the curious and rigorous: from the pair correlation function to the radial distribution function
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -587,12 +650,12 @@ Pe=\frac{D}{vL},
 <p>where <span class="math inline">\(D\)</span> is the particle diffusion coefficient, <span class="math inline">\(v\)</span> a characteristic sedimentation velocity and <span class="math inline">\(L\)</span> a characteristic length scale. When <span class="math inline">\(Pe \gg 1\)</span>, Brownian diffusion dominates over sedimentation and particles remain well dispersed. For particles suspended in water under ambient conditions, this criterion typically corresponds to particle sizes below roughly one micrometre, in good agreement with the conventional size range of colloidal particles.</p>
 <p>In this course we will focus primarily on <strong>colloidal suspensions</strong>, namely solid particles dispersed in a liquid. For simplicity, we will often model the particles as spherical objects interacting as nearly ideal <strong>hard-sphere systems</strong>, where particles interact primarily through excluded volume effects. Such systems have become invaluable model materials for investigating phase transitions, crystallisation and glass formation at the particle scale. Although idealised, this description captures many of the fundamental physical phenomena that make colloids attractive model systems for studying phase transitions, crystallisation, glasses and particle-scale organisation.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-One step further: Colloidal stability
+<span class="screen-reader-only">Note</span>One step further: Colloidal stability
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -684,13 +747,13 @@ Once the particles positions have been determined it is possible to plot <span c
 <section id="running-the-code" class="level3" data-number="12.7.3">
 <h3 data-number="12.7.3" class="anchored" data-anchor-id="running-the-code"><span class="header-section-number">12.7.3</span> Running the Code</h3>
 <p>Locate the line in the Python script that loads the particle coordinates:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(<span class="st">"filename.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(<span class="st">"filename.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Replace the filename by one of the supplied datasets and execute the script.</p>
 <p>Let’s review the code main steps and make sure we understand what information is being calculated.</p>
 <section id="loading-the-coordinates" class="level4" data-number="12.7.3.1">
 <h4 data-number="12.7.3.1" class="anchored" data-anchor-id="loading-the-coordinates"><span class="header-section-number">12.7.3.1</span> Loading the Coordinates</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(...)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(positions)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>positions <span class="op">=</span> np.loadtxt(...)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(positions)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><code>positions</code> contains a table whose various rows are the (x,y,z) components of the particles in the sample</li>
 <li><code>N</code> is the number of lines, i.e.&nbsp;the number of particles</li>
@@ -700,12 +763,12 @@ Once the particles positions have been determined it is possible to plot <span c
 <section id="determining-the-simulation-volume" class="level4" data-number="12.7.3.2">
 <h4 data-number="12.7.3.2" class="anchored" data-anchor-id="determining-the-simulation-volume"><span class="header-section-number">12.7.3.2</span> Determining the Simulation Volume</h4>
 <p>The code determines the dimensions of the simulation box and estimates its volume, which is necessary to compute the number density of the particles:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xmin <span class="op">=</span> np.<span class="bu">min</span>(positions[:,<span class="dv">0</span>])</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>xmin <span class="op">=</span> np.<span class="bu">min</span>(positions[:,<span class="dv">0</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>xmax <span class="op">=</span> np.<span class="bu">max</span>(positions[:,<span class="dv">0</span>])</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>volume <span class="op">=</span> Lx <span class="op">*</span> Ly <span class="op">*</span> Lz</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>volume <span class="op">=</span> Lx <span class="op">*</span> Ly <span class="op">*</span> Lz</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 <section id="calculating-the-number-density" class="level4" data-number="12.7.3.3">
@@ -726,7 +789,7 @@ Once the particles positions have been determined it is possible to plot <span c
 <section id="dividing-distances-into-bins" class="level4" data-number="12.7.3.5">
 <h4 data-number="12.7.3.5" class="anchored" data-anchor-id="dividing-distances-into-bins"><span class="header-section-number">12.7.3.5</span> Dividing Distances into Bins</h4>
 <p>The code creates a histogram of interparticle distances.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>n_bins <span class="op">=</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="questions-1" class="level4" data-number="12.7.3.6">
 <h4 data-number="12.7.3.6" class="anchored" data-anchor-id="questions-1"><span class="header-section-number">12.7.3.6</span> Questions</h4>
@@ -740,7 +803,7 @@ Once the particles positions have been determined it is possible to plot <span c
 <section id="measuring-pair-distances" class="level4" data-number="12.7.3.7">
 <h4 data-number="12.7.3.7" class="anchored" data-anchor-id="measuring-pair-distances"><span class="header-section-number">12.7.3.7</span> Measuring Pair Distances</h4>
 <p>The code loops over all particle pairs and calculates their separation:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.sqrt(dx<span class="op">*</span>dx <span class="op">+</span> dy<span class="op">*</span>dy <span class="op">+</span> dz<span class="op">*</span>dz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.sqrt(dx<span class="op">*</span>dx <span class="op">+</span> dy<span class="op">*</span>dy <span class="op">+</span> dz<span class="op">*</span>dz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
 <section id="normalisation" class="level4" data-number="12.7.3.8">
@@ -790,12 +853,12 @@ g(r) \rightarrow 1
 <section id="a-clue-in-the-code" class="level4" data-number="12.7.5.3">
 <h4 data-number="12.7.5.3" class="anchored" data-anchor-id="a-clue-in-the-code"><span class="header-section-number">12.7.5.3</span> A Clue in the Code</h4>
 <p>In the distance-calculation section of the script, you may have noticed the following commented-out lines:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For a gas or liquid, implement periodic boundary conditions</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For a gas or liquid, implement periodic boundary conditions</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (minimum-image convention)</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># dx = dx - Lx * round(dx / Lx)</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># dy = dy - Ly * round(dy / Ly)</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dz = dz - Lz * round(dz / Lz)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># dz = dz - Lz * round(dz / Lz)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>These lines implement <strong>periodic boundary conditions</strong> using the <strong>minimum-image convention</strong>.</p>
 <p>The idea is to treat the simulation box as if it were repeated infinitely in every direction.</p>
 <p>A particle leaving one side of the box immediately re-enters from the opposite side.</p>
@@ -806,9 +869,9 @@ g(r) \rightarrow 1
 <h4 data-number="12.7.5.4" class="anchored" data-anchor-id="try-it-yourself"><span class="header-section-number">12.7.5.4</span> Try It Yourself</h4>
 <p>You might first want to change the variables <code>OutputName</code> and <code>GraphName</code> to be able to compare both outputs.</p>
 <p>Uncomment the three lines:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> dx <span class="op">-</span> Lx <span class="op">*</span> <span class="bu">round</span>(dx <span class="op">/</span> Lx)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dx <span class="op">=</span> dx <span class="op">-</span> Lx <span class="op">*</span> <span class="bu">round</span>(dx <span class="op">/</span> Lx)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dy <span class="op">=</span> dy <span class="op">-</span> Ly <span class="op">*</span> <span class="bu">round</span>(dy <span class="op">/</span> Ly)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dz <span class="op">=</span> dz <span class="op">-</span> Lz <span class="op">*</span> <span class="bu">round</span>(dz <span class="op">/</span> Lz)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>dz <span class="op">=</span> dz <span class="op">-</span> Lz <span class="op">*</span> <span class="bu">round</span>(dz <span class="op">/</span> Lz)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>and run the code again on your dataset.</p>
 <ol type="1">
 <li><p><em>Does <span class="math inline">\(g(r)\)</span> now approach 1 at large distances?</em></p></li>
@@ -1059,13 +1122,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

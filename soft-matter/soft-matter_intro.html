@@ -2,13 +2,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>13&nbsp; Entropy matters</title>
+<title>14&nbsp; Entropy matters</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -59,7 +62,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -78,7 +80,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -86,17 +88,17 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../soft-matter/soft-matter_colloids.html" rel="next">
-<link href="../experimental/part2.html" rel="prev">
+<link href="../experimental/part2New.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f9e9f27e2f64dd25e94c2742b294698a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -128,12 +130,12 @@ div.csl-indent {
 }</script>
 <script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -146,7 +148,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -173,7 +175,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entropy matters</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,7 +190,8 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
       <a href="../index.html" class="sidebar-logo-link">
-      <img src="../courselogo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../courselogo.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
       </a>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -299,13 +302,19 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/Solutions_partial.html" class="sidebar-item-text sidebar-link">
+  <a href="../phase-transitions/PDF_notes/notes.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Notes as pdf</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../phase-transitions/Solutions_to_problems.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Solutions to problems</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../phase-transitions/assignment_October2025.html" class="sidebar-item-text sidebar-link">
+  <a href="../phase-transitions/New_coursework/PHYSM0071_course-work_assignment-1-Oct26.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">First coursework assignment</span></a>
   </div>
 </li>
@@ -322,14 +331,20 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Macroscopic measurements</span></span></a>
+  <a href="../experimental/part0.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Preparing your computer for the first experimental interlude</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../experimental/part2.html" class="sidebar-item-text sidebar-link">
+  <a href="../experimental/part1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/part2New.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
   </div>
 </li>
       </ul>
@@ -346,31 +361,25 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_intro.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entropy matters</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_colloids.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Colloids</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_polymers.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Polymers</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../soft-matter/soft-matter_liquidcrystals.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../soft-matter/soft-matter_surfactants.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Surfactants</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Liquid crystals</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -399,35 +408,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">Second experimental interlude</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../experimental/part3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../experimental/part4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Structure and dynamics</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../notes.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Notes as pdf</span></a>
-  </div>
-</li>
     </ul>
     </div>
 </nav>
@@ -438,10 +418,10 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#systems-and-definitions" id="toc-systems-and-definitions" class="nav-link active" data-scroll-target="#systems-and-definitions"><span class="header-section-number">13.1</span> Systems and definitions</a>
+  <li><a href="#systems-and-definitions" id="toc-systems-and-definitions" class="nav-link active" data-scroll-target="#systems-and-definitions"><span class="header-section-number">14.1</span> Systems and definitions</a>
   <ul class="collapse">
-  <li><a href="#elementary-constituents-and-energy-scales" id="toc-elementary-constituents-and-energy-scales" class="nav-link" data-scroll-target="#elementary-constituents-and-energy-scales"><span class="header-section-number">13.1.1</span> Elementary constituents and energy scales</a></li>
-  <li><a href="#classes-of-systems" id="toc-classes-of-systems" class="nav-link" data-scroll-target="#classes-of-systems"><span class="header-section-number">13.1.2</span> Classes of systems</a></li>
+  <li><a href="#elementary-constituents-and-energy-scales" id="toc-elementary-constituents-and-energy-scales" class="nav-link" data-scroll-target="#elementary-constituents-and-energy-scales"><span class="header-section-number">14.1.1</span> Elementary constituents and energy scales</a></li>
+  <li><a href="#classes-of-systems" id="toc-classes-of-systems" class="nav-link" data-scroll-target="#classes-of-systems"><span class="header-section-number">14.1.2</span> Classes of systems</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -449,9 +429,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html">Complex disordered systems</a></li><li class="breadcrumb-item"><a href="../soft-matter/soft-matter_intro.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entropy matters</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Entropy matters</span></h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Entropy matters</span></h1>
 </div>
 
 
@@ -468,7 +448,25 @@ window.Quarto = {
 </header>
 
 
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Learning outcomes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Explain why entropy and thermal fluctuations, and not only energy, control the behaviour of soft matter, whose interaction energies are of the order of <span class="math inline">\(k_BT\)</span>.</li>
+<li>Explain the idea of coarse-graining, and why very different microscopic constituents can share similar macroscopic behaviour.</li>
+<li>Recognise the main classes of soft and disordered systems studied in this course.</li>
+</ol>
+</div>
+</div>
 <p>Most of the matter around us does not simply fit within the idealized pictures of crystalline solids or simple liquids: examples include colloids, polymers, surfactants, liquid crystals, foams, gels, and biological materials such as proteins, DNA, and cell membranes.</p>
+<p>As Philip Anderson put it in a famous essay, <em>more is different</em> <span class="citation" data-cites="anderson1972more">(<a href="#ref-anderson1972more" role="doc-biblioref">Anderson 1972</a>)</span>: when many simple units interact, collective properties emerge that cannot be understood by studying the individual components alone.</p>
 <p>This means that cellular <strong>life itself</strong> (the very constituents that make us) obeys principles that go beyond the standard patterns of conventional solid-state physics.</p>
 <p>This branch of physics is called <strong>soft condensed matter physics</strong>, or <strong>macromolecular</strong> physics, or the physics of <strong>complex fluids</strong>. Specifically, <em>soft matter</em> refers to an area of condensed matter focused on systems that can be <em>easily deformed</em>.</p>
 <p>In this course, we will emphasize the fact that many such systems are not crystalline: thermal noise and disordered configurations play a key role in their phase behavior, and hence we think of them as <strong>complex disordered systems</strong>.</p>
@@ -479,45 +477,46 @@ window.Quarto = {
 </div></div><p>This is because soft matter systems are typically composed of <strong>many microscopic constituents</strong> in contact with an <strong>environment</strong>. The appropriate description of the <strong>macroscopic state</strong> of such systems is therefore <strong>statistical</strong> and uses the language of <strong>statistical mechanics</strong>. The relevant <strong>energy</strong>, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy</p>
 <p><span class="math display">\[F = U-TS\]</span></p>
 <p>where <span class="math inline">\(U\)</span> is the internal energy, <span class="math inline">\(T\)</span> the temperature and <span class="math inline">\(S\)</span> is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales.</p>
-<p>In other words, <strong>fluctuations of the internal energy</strong> are on the same scale as <strong>thermal fluctuations</strong>:</p>
-<p><span class="math display">\[\Delta U \sim k_BT \]</span></p>
-<p>where <span class="math inline">\(k_B\)</span> is the Boltzmann constant and <span class="math inline">\(\Delta U\)</span> indicates standard deviations from the average internal energy.</p>
+<p>Per particle, the free energy reads <span class="math inline">\(f = u - Ts\)</span>. The entropy approximately counts the number of arrangements per particle, <span class="math inline">\(s = \dfrac{k_B}{N}\ln\Omega\)</span>: for hundreds of arrangements per particle one has <span class="math inline">\(s = O(1)\,k_B\)</span>, so that the entropic term <span class="math inline">\(Ts\)</span> is of the order of <span class="math inline">\(k_BT\)</span>.</p>
+<p>In other words, <strong>fluctuations of the internal energy</strong> per constituent are on the same scale as <strong>thermal fluctuations</strong>:</p>
+<p><span class="math display">\[\Delta u \sim k_BT \]</span></p>
+<p>where <span class="math inline">\(k_B\)</span> is the Boltzmann constant and <span class="math inline">\(\Delta u\)</span> indicates standard deviations from the average internal energy per constituent.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-The Physics of Entropy
+<span class="screen-reader-only">Note</span>The Physics of Entropy
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Soft matter physics is fundamentally the physics of <strong>entropy</strong>. Unlike</p>
+<p>Soft matter physics is fundamentally the physics of <strong>entropy</strong>. Unlike traditional systems where interaction energy minimization dominates, in soft matter, entropy plays a crucial role in determining the structure, dynamics, and behaviour of the system. The interplay between entropy and intermolecular energy leads to the rich and diverse phenomena observed in soft matter systems.</p>
 </div>
 </div>
 </div>
-<section id="systems-and-definitions" class="level2" data-number="13.1">
-<h2 data-number="13.1" class="anchored" data-anchor-id="systems-and-definitions"><span class="header-section-number">13.1</span> Systems and definitions</h2>
-<section id="elementary-constituents-and-energy-scales" class="level3" data-number="13.1.1">
-<h3 data-number="13.1.1" class="anchored" data-anchor-id="elementary-constituents-and-energy-scales"><span class="header-section-number">13.1.1</span> Elementary constituents and energy scales</h3>
-<p>Soft matter covers a wide spectrum of deformable systems. Each is constituted of many parts . Each is deformable because the interactions amongst such parts are <strong>weak</strong> compared to the perturbing forces (e.g.&nbsp;thermal fluctuations or mechanical loading).</p>
+<section id="systems-and-definitions" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="systems-and-definitions"><span class="header-section-number">14.1</span> Systems and definitions</h2>
+<section id="elementary-constituents-and-energy-scales" class="level3" data-number="14.1.1">
+<h3 data-number="14.1.1" class="anchored" data-anchor-id="elementary-constituents-and-energy-scales"><span class="header-section-number">14.1.1</span> Elementary constituents and energy scales</h3>
+<p>Soft matter covers a wide spectrum of deformable systems. Each is constituted of many parts. Each is deformable because the interactions amongst such parts are <strong>weak</strong> compared to the perturbing forces (e.g.&nbsp;thermal fluctuations or mechanical loading).</p>
 <p>In hard condensed matter, the elementary constituents are the atoms themselves, eventually with their subatomic particles. Between atoms, the scale of the interaction energies is in the 0.1 to 10 eV: for example the carbon-carbon covalent bond is approximately 3.6 eV.</p>
 <p>The main units of soft matter are not atoms. They are instead themselves aggregates of atoms such as:</p>
 <ul>
 <li><strong>colloids</strong>, micrometer- to nanometer-sized particles dispersed in a fluid.</li>
 <li><strong>polymers</strong>, macromolecules composed of long chains such as DNA, proteins, plastics</li>
-<li><strong>surfactants</strong>, macromolecules wuth polar head and tails that lead to the spontaneous formation of structures such as bilayers (e.g.&nbsp;the cellular membrane).</li>
+<li><strong>surfactants</strong>, molecules with polar head and tails that lead to the spontaneous formation of structures such as bilayers (e.g.&nbsp;the cellular membrane).</li>
 </ul>
 <p>Amongst such units, the dominating forces of soft matter are much weaker than in hard condensed matter:</p>
 <ul>
-<li>Van der Waals forces are of the order of 0.001-0.01 eV</li>
+<li>Van der Waals interaction energies are of the order of 0.001-0.01 eV</li>
 <li>weak interactions such as hydrogen-bonds are typically in the 0.01-0.2 eV range</li>
 <li>the thermal energy at room temperature is <span class="math inline">\(k_B T \approx 0.025 eV\)</span> (check it for yourself)</li>
 </ul>
-<p>At the <strong>microscopic</strong> level, all these interactions have essentialy one source: the electrostatic force. However, this information is practically of no use when we want to understand how the units of soft matter come together to give rise to <strong>macroscopic</strong> properties of soft matter systems, such as their elastic properties, their viscosities, their plasticity. In fact, the emphasis on the atomistic details of the various units is fundamentally misleading: atomistically very different objects (e.g.&nbsp;colloids and micelles) can in fact share very similar macroscopic behaviours.</p>
-<p>Therefore, theories of soft matter leverage the concept of <strong>coarse-graining</strong>, rooted in the renormalisation group notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain the forms the backbone. An example of DNA coarse garining is provided by the succesful model <a href="https://dna.physics.ox.ac.uk/index.php/Main_Page">oxDNA</a> (see picture below):</p>
+<p>At the <strong>microscopic</strong> level, all these interactions have essentially one source: the electrostatic force. However, this information is practically of no use when we want to understand how the units of soft matter come together to give rise to <strong>macroscopic</strong> properties of soft matter systems, such as their elastic properties, their viscosities, their plasticity. In fact, the emphasis on the atomistic details of the various units is fundamentally misleading: atomistically very different objects (e.g.&nbsp;colloids and micelles) can in fact share very similar macroscopic behaviours.</p>
+<p>Therefore, theories of soft matter leverage the concept of <strong>coarse-graining</strong>, rooted in the <a href="../phase-transitions/rg.html">renormalisation group</a> notions explored earlier. Coarse-graining means integrating out the unimportant degrees of freedom and only describing the units in terms of a few important parameters. For example, instead of taking a full atomistic representation of the DNA we may want to focus on the fact that structurally it is a long chain with specific bending energies: we may want to include the fact that it is formed by a double helix but we may not want to specifically construct every single atom in the sugar chain that forms the backbone. An example of DNA coarse graining is provided by the successful model <a href="https://dna.physics.ox.ac.uk/index.php/Main_Page">oxDNA</a> (see picture below):</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figs/The_model_half.png" class="img-fluid figure-img"></p>
@@ -525,33 +524,33 @@ The Physics of Entropy
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Coarse graining
+<span class="screen-reader-only">Note</span>Coarse graining
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Coarse graining is often motivated by intuition, experimental insights or a simple desire of simplification. It allows for a multi-scale description of the problem which permits to describe large systems and log time scales.</p>
-<p>Nonetheless, coarse-graining can also be made mathematically rigorous. For example, rigorous coarse graining in statistical mechanics can be performed by projecting the dynamics onto a relevant and an irrelevant (fluctutating) part, in the so called <a href="https://en.wikipedia.org/wiki/Mori-Zwanzig_formalism"><strong>Mori-Zwanzig</strong> formalism</a> <span class="citation" data-cites="mori1965">(<a href="#ref-mori1965" role="doc-biblioref">Mori 1965</a>)</span>.</p>
+<p>Coarse graining is often motivated by intuition, experimental insights or a simple desire of simplification. It allows for a multi-scale description of the problem which permits to describe large systems and long time scales.</p>
+<p>Nonetheless, coarse-graining can also be made mathematically rigorous. For example, rigorous coarse graining in statistical mechanics can be performed by projecting the dynamics onto a relevant and an irrelevant (fluctuating) part, in the so called <a href="https://en.wikipedia.org/wiki/Mori-Zwanzig_formalism"><strong>Mori-Zwanzig</strong> formalism</a> <span class="citation" data-cites="mori1965">(<a href="#ref-mori1965" role="doc-biblioref">Mori 1965</a>)</span>.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="classes-of-systems" class="level3" data-number="13.1.2">
-<h3 data-number="13.1.2" class="anchored" data-anchor-id="classes-of-systems"><span class="header-section-number">13.1.2</span> Classes of systems</h3>
+<section id="classes-of-systems" class="level3" data-number="14.1.2">
+<h3 data-number="14.1.2" class="anchored" data-anchor-id="classes-of-systems"><span class="header-section-number">14.1.2</span> Classes of systems</h3>
 <p>In our exploration of soft matter we will focus on six main classes of systems which display different physics:</p>
 <ul>
-<li>colloidal dispersions</li>
-<li>polymeric systems</li>
-<li>liquid crystals</li>
+<li><a href="../soft-matter/soft-matter_colloids.html">colloidal dispersions</a></li>
+<li><a href="../soft-matter/soft-matter_polymers.html">polymeric systems</a></li>
+<li><a href="../soft-matter/soft-matter_liquidcrystals.html">liquid crystals</a></li>
 <li>surfactant aggregates</li>
-<li>arrested systems</li>
-<li>active matter</li>
+<li><a href="../soft-matter/soft-matter_glasses.html">arrested systems</a></li>
+<li><a href="../soft-matter/soft-matter_active.html">active matter</a></li>
 </ul>
 <section id="colloidal-dispersions" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="colloidal-dispersions">Colloidal dispersions</h4>
@@ -566,8 +565,8 @@ Coarse graining
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="91997603" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
+<div id="b13cce74" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch the PDB structure from the RCSB PDB server</span></span>
@@ -575,10 +574,10 @@ Coarse graining
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Customize visualization (you can change the style or the color)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>view.setStyle({}, {<span class="st">'sphere'</span>: {<span class="st">'color'</span>: <span class="st">'spectrum'</span>}})<span class="op">;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_1766051122308675" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_1766051122308675" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_17931166071372108" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_17931166071372108" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -606,49 +605,49 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@2.5.3/build/3Dmol-min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_1766051122308675 = null;
-var warn = document.getElementById("3dmolwarning_1766051122308675");
+var viewer_17931166071372108 = null;
+var warn = document.getElementById("3dmolwarning_17931166071372108");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_1766051122308675 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1766051122308675"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_1766051122308675, {}, function() {
-viewer_1766051122308675.zoomTo();
-    viewer_1766051122308675.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_1766051122308675.setBackgroundColor("white");
-viewer_1766051122308675.render();
+viewer_17931166071372108 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17931166071372108"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_17931166071372108, {}, function() {
+viewer_17931166071372108.zoomTo();
+    viewer_17931166071372108.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_17931166071372108.setBackgroundColor("white");
+viewer_17931166071372108.render();
 })
 });
 </script>
 <p><em>3D Rendering of the bio-polymer synuclein as extracted from the <a href="https://www.rcsb.org">RCSB Protein Data Bank</a> (click to rotate)</em></p>
 </div>
 </div>
-<p>Compared to colloids, polymers have distiunctive characteristics common to all chain-like molecules, such as their topological constraints due to teh fact that two polymers cannot cross each other (a phenomenon known as <em>polymer entanglement</em>).</p>
+<p>Compared to colloids, polymers have distinctive characteristics common to all chain-like molecules, such as their topological constraints due to the fact that two polymers cannot cross each other (a phenomenon known as <em>polymer entanglement</em>).</p>
 </section>
 <section id="liquid-crystals" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="liquid-crystals">Liquid crystals</h4>
-<p>When we take soft matter units that are highly anisotropic (e.g.&nbsp;elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states woth a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal.</p>
-<p>Such states are referred to as <strong>liquid crystal</strong> and can be described successffully with continuum free energy theories that take into account the symmetries of the order parameters.</p>
+<p>When we take soft matter units that are highly anisotropic (e.g.&nbsp;elongate in particular directions) thermal fluctuations and high packing lead to equilibrium states with a degree of order that is intermediate between the complete disorder of a liquid and the long-ranged, three-dimensional order of a crystal.</p>
+<p>Such states are referred to as <strong>liquid crystal</strong> and can be described successfully with continuum free energy theories that take into account the symmetries of the order parameters.</p>
 <p>Components that form liquid crystals are called <strong>mesogens</strong> and include highly anisotropic organic macromolecules (as used in liquid crystal displays), rod-like molecules or polymeric aggregates, as well as disk-shaped molecules and particles(such as triphenylene and derivatives).</p>
 </section>
 <section id="surfactant-aggregates" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="surfactant-aggregates">Surfactant aggregates</h4>
 <p>When two distinct fluid phases are put into contact, a free energy cost per unit area ensues: this is the surface tension. It is possible to control the tension by introducing molecules that sit at the interface between the two phases, called <strong>surfactants</strong>.</p>
-<p>Hence, surfactants are molecules which contain chemical groups with different affinities (they are <strong>amphiphilic</strong>). A key example is the case of phospholipids, which posses both hydrophilic (water-preferring) heads and hyrdrophobic (water avoiding) tails. As surfactants sit at inetrface they are able to <strong>self-assemble</strong> and separate different fluid phases, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.</p>
+<p>Hence, surfactants are molecules which contain chemical groups with different affinities (they are <strong>amphiphilic</strong>). A key example is the case of phospholipids, which possess both hydrophilic (water-preferring) heads and hydrophobic (water avoiding) tails. As surfactants sit at interfaces they separate different fluid phases; above a critical concentration they also <strong>self-assemble</strong> in the bulk, forming equilibrium bilayers and vesicles that are ubiquitous in cell biology.</p>
 </section>
 <section id="arrested-systems" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="arrested-systems">Arrested systems</h4>
-<p>We have stressed that the thermal energy is distinctive of soft matter systems. It would be then natural to assume that as we reduce the temperature, we should converge readily to the solid state physics of crystalline solids. In fact, on the way to low temperatures, the lack of long-range order of most soft-matter systems has important consequences: many such systems find themselves trapped in states that are not corresponding to the global energy minimum (i.e.&nbsp;the crystal) and instead display non trivial mechanisms of structural relaxation. These systems are disordered a bit like liquids, but share various mechanical properties, such as emergence rigidity, elasticity and plasticity.</p>
+<p>We have stressed that the thermal energy is distinctive of soft matter systems. It would be then natural to assume that as we reduce the temperature, we should converge readily to the solid state physics of crystalline solids. In fact, on the way to low temperatures, the lack of long-range order of most soft-matter systems has important consequences: many such systems find themselves trapped in states that are not corresponding to the global energy minimum (i.e.&nbsp;the crystal) and instead display non trivial mechanisms of structural relaxation. These systems are disordered a bit like liquids, but share various mechanical properties, such as emergent rigidity, elasticity and plasticity.</p>
 <p>Examples of arrested systems include:</p>
 <ul>
 <li><strong>Glasses</strong>, such as silica glass or metallic glasses, where the system is kinetically trapped in a disordered state.</li>
 <li><strong>Gels</strong>, which are networks of interconnected particles or polymers that span the entire system, providing rigidity despite being mostly liquid.</li>
 </ul>
-<p>These systems are arrested as their relaxation towards equilibrium is so slow that is longer than any observable timescales. This makes them fundamentally <strong>out-of-equilibrium</strong> systems, escaping from an ordinary description in terms of equilibrium statistical mechanics.</p>
+<p>These systems are arrested as their relaxation towards equilibrium is so slow that it is longer than any observable timescales. This makes them fundamentally <strong>out-of-equilibrium</strong> systems, escaping from an ordinary description in terms of equilibrium statistical mechanics.</p>
 </section>
 <section id="active-matter" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="active-matter">Active matter</h4>
@@ -658,215 +657,6 @@ viewer_1766051122308675.render();
 <li><strong>Synthetic systems</strong>, like self-propelled colloids or active gels.</li>
 </ul>
 <p>The study of active matter focuses on understanding how individual activity leads to emergent collective behaviors, such as swarming, clustering, or pattern formation, often described using hydrodynamic theories or agent-based models.</p>
-<!--  Hard disks in observablejs
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="160" source-offset="0"}
-viewof N = Inputs.range([8, 512], {
-  label: "Number of disks",
-  step: 1,
-  value: 64
-})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-1 nodetype="declaration"}
-:::
-::::
-:::::
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="169" source-offset="0"}
-// Cell: MC steps
-viewof steps = Inputs.range([1, 100000], {
-  label: "MC steps",
-  step: 100,
-  value: 1000
-})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-2 nodetype="declaration"}
-:::
-::::
-:::::
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="178" source-offset="0"}
-// Cell: Density
-viewof density = Inputs.range([0.02, 0.8], {
-  label: "Density",
-  step: 0.01,
-  value: 0.4
-})
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-3 nodetype="declaration"}
-:::
-::::
-:::::
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="187" source-offset="0"}
-// Cell: Disk radius (can be constant or adjustable)
-diskRadius = 0.5
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-4 nodetype="declaration"}
-:::
-::::
-:::::
-
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="194" source-offset="0"}
-// Cell 2: Initialize positions
-function initPositions(N, L, r) {
-  const positions = [];
-  let attempts = 0;
-  while (positions.length < N && attempts < 10000000) {
-    const x = Math.random() * L;
-    const y = Math.random() * L;
-    if (positions.every(p => {
-      const dx = x - p[0];
-      const dy = y - p[1];
-      return dx * dx + dy * dy > 4 * r * r;
-    })) {
-      positions.push([x, y]);
-    }
-    attempts++;
-  }
-  return positions;
-}
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-5 nodetype="declaration"}
-:::
-::::
-:::::
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="216" source-offset="0"}
-// Cell 3: MC step
-function mcStep(positions, L, r) {
-  const i = Math.floor(Math.random() * positions.length);
-  const dx = (Math.random() - 0.5);
-  const dy = (Math.random() - 0.5);
-  const [x, y] = positions[i];
-  const xNew = (x + dx + L) % L;
-  const yNew = (y + dy + L) % L;
-
-  for (let j = 0; j < positions.length; j++) {
-    if (j === i) continue;
-    const [xj, yj] = positions[j];
-    const dx = (xNew - xj + L/2) % L - L/2;
-    const dy = (yNew - yj + L/2) % L - L/2;
-    if (dx * dx + dy * dy < 4 * r * r) return positions; // reject move
-  }
-
-  positions[i] = [xNew, yNew]; // accept
-  return positions;
-}
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-6 nodetype="declaration"}
-:::
-::::
-:::::
-
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="241" source-offset="0"}
-// Cell: Run simulation on demand
-function runSimulation(N, steps, density, diskRadius) {
-  const L = Math.sqrt(N * Math.PI * diskRadius ** 2 / density);
-  let pos = initPositions(N, L, diskRadius);
-  for (let i = 0; i < steps; i++) mcStep(pos, L, diskRadius);
-  return {positions: pos, boxSize: L};
-}
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-7 nodetype="declaration"}
-:::
-::::
-:::::
-
-:::::{.cell}
-
-```{.js .cell-code startFrom="251" source-offset="0"}
-sim = runSimulation(N,steps,density,diskRadius)
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-8 nodetype="declaration"}
-:::
-::::
-:::::
-
-:::::{.cell}
-
-```{.js .cell-code .hidden startFrom="255" source-offset="0"}
-function plotter(width, height){
-
-let   scale = width / sim.boxSize;
-console.log("Done. Density:", density)
-return Plot.plot({
-  x: {domain: [0, sim.boxSize]},
-  y: {domain: [0, sim.boxSize]},
-
-  marks: [
-    Plot.dot(sim.positions.map(([x, y]) => ({
-      x,
-      y,
-    })),
-     {
-      x: "x",
-      y: "y",
-      r: diskRadius*scale,
-      stroke: null,
-      fill: "steelblue"
-    })
-  ],
-  width: width,
-  height: height
-})
-}
-```
-
-::::{.cell-output .cell-output-display}
-
-:::{#ojs-cell-9 nodetype="declaration"}
-:::
-::::
-:::::
-
-//| echo: false
-plotter(400,400)
-``` -->
 
 
 <script type="ojs-module-contents">
@@ -883,7 +673,10 @@ eyJjb250ZW50cyI6W119
 <script type="vfs-file">
 W10=
 </script>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-anderson1972more" class="csl-entry" role="listitem">
+Anderson, Philip W. 1972. <span>“More Is Different.”</span> <em>Science</em> 177 (4047): 393–96. <a href="https://doi.org/10.1126/science.177.4047.393">https://doi.org/10.1126/science.177.4047.393</a>.
+</div>
 <div id="ref-mori1965" class="csl-entry" role="listitem">
 Mori, Hazime. 1965. <span>“Transport, Collective Motion, and Brownian Motion.”</span> <em>Progress of Theoretical Physics</em> 33 (3): 423–55. <a href="https://bris.on.worldcat.org/oclc/8091001741">https://bris.on.worldcat.org/oclc/8091001741</a>.
 </div>
@@ -894,7 +687,7 @@ Mori, Hazime. 1965. <span>“Transport, Collective Motion, and Brownian Motion.�
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBOID0gSW5wdXRzLnJhbmdlKFs4LCA1MTJdLCB7XG4gIGxhYmVsOiBcIk51bWJlciBvZiBkaXNrc1wiLFxuICBzdGVwOiAxLFxuICB2YWx1ZTogNjRcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBDZWxsOiBNQyBzdGVwc1xudmlld29mIHN0ZXBzID0gSW5wdXRzLnJhbmdlKFsxLCAxMDAwMDBdLCB7XG4gIGxhYmVsOiBcIk1DIHN0ZXBzXCIsXG4gIHN0ZXA6IDEwMCxcbiAgdmFsdWU6IDEwMDBcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBDZWxsOiBEZW5zaXR5XG52aWV3b2YgZGVuc2l0eSA9IElucHV0cy5yYW5nZShbMC4wMiwgMC44XSwge1xuICBsYWJlbDogXCJEZW5zaXR5XCIsXG4gIHN0ZXA6IDAuMDEsXG4gIHZhbHVlOiAwLjRcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBDZWxsOiBEaXNrIHJhZGl1cyAoY2FuIGJlIGNvbnN0YW50IG9yIGFkanVzdGFibGUpXG5kaXNrUmFkaXVzID0gMC41XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBDZWxsIDI6IEluaXRpYWxpemUgcG9zaXRpb25zXG5mdW5jdGlvbiBpbml0UG9zaXRpb25zKE4sIEwsIHIpIHtcbiAgY29uc3QgcG9zaXRpb25zID0gW107XG4gIGxldCBhdHRlbXB0cyA9IDA7XG4gIHdoaWxlIChwb3NpdGlvbnMubGVuZ3RoIDwgTiAmJiBhdHRlbXB0cyA8IDEwMDAwMDAwKSB7XG4gICAgY29uc3QgeCA9IE1hdGgucmFuZG9tKCkgKiBMO1xuICAgIGNvbnN0IHkgPSBNYXRoLnJhbmRvbSgpICogTDtcbiAgICBpZiAocG9zaXRpb25zLmV2ZXJ5KHAgPT4ge1xuICAgICAgY29uc3QgZHggPSB4IC0gcFswXTtcbiAgICAgIGNvbnN0IGR5ID0geSAtIHBbMV07XG4gICAgICByZXR1cm4gZHggKiBkeCArIGR5ICogZHkgPiA0ICogciAqIHI7XG4gICAgfSkpIHtcbiAgICAgIHBvc2l0aW9ucy5wdXNoKFt4LCB5XSk7XG4gICAgfVxuICAgIGF0dGVtcHRzKys7XG4gIH1cbiAgcmV0dXJuIHBvc2l0aW9ucztcbn1cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIENlbGwgMzogTUMgc3RlcFxuZnVuY3Rpb24gbWNTdGVwKHBvc2l0aW9ucywgTCwgcikge1xuICBjb25zdCBpID0gTWF0aC5mbG9vcihNYXRoLnJhbmRvbSgpICogcG9zaXRpb25zLmxlbmd0aCk7XG4gIGNvbnN0IGR4ID0gKE1hdGgucmFuZG9tKCkgLSAwLjUpO1xuICBjb25zdCBkeSA9IChNYXRoLnJhbmRvbSgpIC0gMC41KTtcbiAgY29uc3QgW3gsIHldID0gcG9zaXRpb25zW2ldO1xuICBjb25zdCB4TmV3ID0gKHggKyBkeCArIEwpICUgTDtcbiAgY29uc3QgeU5ldyA9ICh5ICsgZHkgKyBMKSAlIEw7XG5cbiAgZm9yIChsZXQgaiA9IDA7IGogPCBwb3NpdGlvbnMubGVuZ3RoOyBqKyspIHtcbiAgICBpZiAoaiA9PT0gaSkgY29udGludWU7XG4gICAgY29uc3QgW3hqLCB5al0gPSBwb3NpdGlvbnNbal07XG4gICAgY29uc3QgZHggPSAoeE5ldyAtIHhqICsgTC8yKSAlIEwgLSBMLzI7XG4gICAgY29uc3QgZHkgPSAoeU5ldyAtIHlqICsgTC8yKSAlIEwgLSBMLzI7XG4gICAgaWYgKGR4ICogZHggKyBkeSAqIGR5IDwgNCAqIHIgKiByKSByZXR1cm4gcG9zaXRpb25zOyAvLyByZWplY3QgbW92ZVxuICB9XG5cbiAgcG9zaXRpb25zW2ldID0gW3hOZXcsIHlOZXddOyAvLyBhY2NlcHRcbiAgcmV0dXJuIHBvc2l0aW9ucztcbn1cblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gQ2VsbDogUnVuIHNpbXVsYXRpb24gb24gZGVtYW5kXG5mdW5jdGlvbiBydW5TaW11bGF0aW9uKE4sIHN0ZXBzLCBkZW5zaXR5LCBkaXNrUmFkaXVzKSB7XG4gIGNvbnN0IEwgPSBNYXRoLnNxcnQoTiAqIE1hdGguUEkgKiBkaXNrUmFkaXVzICoqIDIgLyBkZW5zaXR5KTtcbiAgbGV0IHBvcyA9IGluaXRQb3NpdGlvbnMoTiwgTCwgZGlza1JhZGl1cyk7XG4gIGZvciAobGV0IGkgPSAwOyBpIDwgc3RlcHM7IGkrKykgbWNTdGVwKHBvcywgTCwgZGlza1JhZGl1cyk7XG4gIHJldHVybiB7cG9zaXRpb25zOiBwb3MsIGJveFNpemU6IEx9O1xufVxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJzaW0gPSBydW5TaW11bGF0aW9uKE4sc3RlcHMsZGVuc2l0eSxkaXNrUmFkaXVzKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZnVuY3Rpb24gcGxvdHRlcih3aWR0aCwgaGVpZ2h0KXtcblxubGV0ICAgc2NhbGUgPSB3aWR0aCAvIHNpbS5ib3hTaXplO1xuY29uc29sZS5sb2coXCJEb25lLiBEZW5zaXR5OlwiLCBkZW5zaXR5KVxucmV0dXJuIFBsb3QucGxvdCh7XG4gIHg6IHtkb21haW46IFswLCBzaW0uYm94U2l6ZV19LFxuICB5OiB7ZG9tYWluOiBbMCwgc2ltLmJveFNpemVdfSxcblxuICBtYXJrczogW1xuICAgIFBsb3QuZG90KHNpbS5wb3NpdGlvbnMubWFwKChbeCwgeV0pID0+ICh7XG4gICAgICB4LFxuICAgICAgeSxcbiAgICB9KSksXG4gICAgIHtcbiAgICAgIHg6IFwieFwiLFxuICAgICAgeTogXCJ5XCIsXG4gICAgICByOiBkaXNrUmFkaXVzKnNjYWxlLFxuICAgICAgc3Ryb2tlOiBudWxsLFxuICAgICAgZmlsbDogXCJzdGVlbGJsdWVcIlxuICAgIH0pXG4gIF0sXG4gIHdpZHRoOiB3aWR0aCxcbiAgaGVpZ2h0OiBoZWlnaHRcbn0pXG59XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnTicpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzdGVwcycpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdkZW5zaXR5JykifV19
+eyJjb250ZW50cyI6W119
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -955,13 +748,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1305,13 +1099,13 @@ window._ojs.runtime.interpretFromScriptTags();
   </script>
 <nav class="page-navigation column-body">
   <div class="nav-page nav-page-previous">
-      <a href="../experimental/part2.html" class="pagination-link" aria-label="Real-space measurements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Real-space measurements</span></span>
+      <a href="../experimental/part2New.html" class="pagination-link" aria-label="Reciprocal-space measurements">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Reciprocal-space measurements</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../soft-matter/soft-matter_colloids.html" class="pagination-link" aria-label="Colloids">
-        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Colloids</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Colloids</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
