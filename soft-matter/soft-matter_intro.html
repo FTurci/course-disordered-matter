@@ -477,10 +477,10 @@ window.Quarto = {
 </div></div><p>This is because soft matter systems are typically composed of <strong>many microscopic constituents</strong> in contact with an <strong>environment</strong>. The appropriate description of the <strong>macroscopic state</strong> of such systems is therefore <strong>statistical</strong> and uses the language of <strong>statistical mechanics</strong>. The relevant <strong>energy</strong>, therefore, is the free energy of the statistical ensemble representative of the system under consideration. For example, in the canonical ensemble, this is the Helmholtz free energy</p>
 <p><span class="math display">\[F = U-TS\]</span></p>
 <p>where <span class="math inline">\(U\)</span> is the internal energy, <span class="math inline">\(T\)</span> the temperature and <span class="math inline">\(S\)</span> is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales.</p>
-<p>Per particle, the free energy reads <span class="math inline">\(f = u - Ts\)</span>. The entropy approximately counts the number of arrangements per particle, <span class="math inline">\(s = \dfrac{k_B}{N}\ln\Omega\)</span>: for hundreds of arrangements per particle one has <span class="math inline">\(s = O(1)\,k_B\)</span>, so that the entropic term <span class="math inline">\(Ts\)</span> is of the order of <span class="math inline">\(k_BT\)</span>.</p>
-<p>In other words, <strong>fluctuations of the internal energy</strong> per constituent are on the same scale as <strong>thermal fluctuations</strong>:</p>
+<p>Per particle, the free energy reads <span class="math inline">\(f = u - Ts\)</span>. The entropy approximately counts the number of arrangements: <span class="math inline">\(s = \dfrac{k_B}{N}\ln\Omega = k_B\ln\omega\)</span>, where <span class="math inline">\(\omega=\Omega^{1/N}\)</span> is the number of arrangements per particle. Because of the logarithm, anything between tens and thousands of arrangements per particle gives <span class="math inline">\(s\)</span> of a few <span class="math inline">\(k_B\)</span> (for liquid water, <span class="math inline">\(s\approx 8\,k_B\)</span> per molecule), so that the entropic term <span class="math inline">\(Ts\)</span> is of the order of <span class="math inline">\(k_BT\)</span>.</p>
+<p>In soft matter, the <strong>interaction energies</strong> per constituent are also of the order of the <strong>thermal energy</strong>:</p>
 <p><span class="math display">\[\Delta u \sim k_BT \]</span></p>
-<p>where <span class="math inline">\(k_B\)</span> is the Boltzmann constant and <span class="math inline">\(\Delta u\)</span> indicates standard deviations from the average internal energy per constituent.</p>
+<p>where <span class="math inline">\(k_B\)</span> is the Boltzmann constant and <span class="math inline">\(\Delta u\)</span> indicates the typical energy change when a constituent rearranges (breaking a contact, moving out of a potential well). The two terms in <span class="math inline">\(f\)</span> are then comparable, and entropy can decide the structure. In hard condensed matter, by contrast, bond energies are of the order of eV, while <span class="math inline">\(k_BT\approx 0.025\)</span> eV at room temperature.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -564,7 +564,7 @@ window.Quarto = {
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="9c86c8d7" class="cell" data-execution_count="1">
+<div id="db553741" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -575,8 +575,8 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_1793122309911402" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_1793122309911402" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_17931963370763159" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_17931963370763159" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -607,18 +607,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_1793122309911402 = null;
-var warn = document.getElementById("3dmolwarning_1793122309911402");
+var viewer_17931963370763159 = null;
+var warn = document.getElementById("3dmolwarning_17931963370763159");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_1793122309911402 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1793122309911402"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_1793122309911402, {}, function() {
-viewer_1793122309911402.zoomTo();
-    viewer_1793122309911402.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_1793122309911402.setBackgroundColor("white");
-viewer_1793122309911402.render();
+viewer_17931963370763159 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17931963370763159"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_17931963370763159, {}, function() {
+viewer_17931963370763159.zoomTo();
+    viewer_17931963370763159.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_17931963370763159.setBackgroundColor("white");
+viewer_17931963370763159.render();
 })
 });
 </script>
