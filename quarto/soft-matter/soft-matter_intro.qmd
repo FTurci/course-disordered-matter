@@ -36,13 +36,13 @@ $$F = U-TS$$
 
 where $U$ is the internal energy, $T$ the temperature and $S$ is the entropy of the system. Therefore, in a broader sense, soft matter is the physics of those systems for which the internal energy and the entropy are on comparable scales.
 
-Per particle, the free energy reads $f = u - Ts$. The entropy approximately counts the number of arrangements per particle, $s = \dfrac{k_B}{N}\ln\Omega$: for hundreds of arrangements per particle one has $s = O(1)\,k_B$, so that the entropic term $Ts$ is of the order of $k_BT$.
+Per particle, the free energy reads $f = u - Ts$. The entropy approximately counts the number of arrangements: $s = \dfrac{k_B}{N}\ln\Omega = k_B\ln\omega$, where $\omega=\Omega^{1/N}$ is the number of arrangements per particle. Because of the logarithm, anything between tens and thousands of arrangements per particle gives $s$ of a few $k_B$ (for liquid water, $s\approx 8\,k_B$ per molecule), so that the entropic term $Ts$ is of the order of $k_BT$.
 
-In other words, **fluctuations of the internal energy** per constituent are on the same scale as **thermal fluctuations**:
+In soft matter, the **interaction energies** per constituent are also of the order of the **thermal energy**:
 
 $$\Delta u \sim k_BT $$
 
-where $k_B$ is the Boltzmann constant and $\Delta u$ indicates standard deviations from the average internal energy per constituent.
+where $k_B$ is the Boltzmann constant and $\Delta u$ indicates the typical energy change when a constituent rearranges (breaking a contact, moving out of a potential well). The two terms in $f$ are then comparable, and entropy can decide the structure. In hard condensed matter, by contrast, bond energies are of the order of eV, while $k_BT\approx 0.025$ eV at room temperature.
 
 
 ::: {.callout-note collapse="true"}
