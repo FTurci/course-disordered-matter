@@ -135,7 +135,7 @@ where $C \propto \alpha_1 \alpha_2$ depends on the polarizabilities and ionizati
 
 The resulting $r^{-6}$ dependence is also referred to as the **London dispersion force**, which can be derived within quantum-mechanical perturbation theory [@london1937general].
 
-We can then assume two identical spherical colloids of radius $R$ at distance $h$ and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the colloidal spheres' **Van der Waals attractive potential** in the form
+We can then assume two identical spherical colloids of radius $R$ whose centres are at distance $h$ (so that their surfaces are separated by the **gap** $D=h-2R$) and that every volume element of such spheres interacts with the London dispersion force (see the semi-classical approach of Hamaker @hamaker1937london for illustration). Integrating over all volume elements yields the colloidal spheres' **Van der Waals attractive potential** in the form
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$W_{vdW}(h)=-\dfrac{A_H}{6}f(h/R)$$
@@ -217,9 +217,11 @@ Suppose we now have two colloids of the same size and total charge in the solven
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
-W_{DR}(h) = B\dfrac{R}{\lambda_B}\exp{(-h/\lambda_D)}
+W_{DR}(h) = B\dfrac{R}{\lambda_B}\exp{\left(-\dfrac{h-2R}{\lambda_D}\right)}
 $$
 :::
+
+where $h$ is the same centre-to-centre distance as in $W_{vdW}$, so that $h-2R=D$ is the gap between the two surfaces: the repulsion decays with the distance between the double layers, not between the centres.
 
 where $\lambda_D$ is called the **Debye length** $$
 \lambda_D = \sqrt{\dfrac{1}{8\pi\lambda_B n_s}}
@@ -229,7 +231,7 @@ $$ while $\lambda_B$ is the **Bjerrum length**, which is itself derived from the
     \lambda_B = \dfrac{e^2}{4\pi \varepsilon_0\varepsilon_r k_B T}
     $$
 
-The coefficient $B$ is a material property that depends on the surface potential. We are not going into the details of these features, which are however important for the design of colloidal experiments.
+The coefficient $B$ is a material property that depends on the surface potential $\psi_0$: for a monovalent salt $B=8\tanh^2(e\psi_0/4k_BT)\leq 8$ [@israelachvili2011intermolecular]. We are not going into the details of these features, which are however important for the design of colloidal experiments.
 
 ::: {.callout-note collapse="true"}
 ## Sketch of a derivation of the double layer repulsion
@@ -280,17 +282,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 R = 1.0  # Radius of the colloid (micron) 
-h = np.linspace(2.01 * R, 2+R*2, 1000)  # Separation distance (h > 2R)
+D = np.geomspace(1e-4, 0.2, 2000)  # gap between the surfaces (micron), from 0.1 nm
+h = 2*R + D                        # centre-to-centre distance
 # Van der Waals attractive potential
 def van_der_waals_potential(h, R, A_H):
     f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
     return -A_H / 6 * f_h_R
 # double layer repulsive potential
-def double_layer(h, R,B,ns ):
+def double_layer(h, R,B,salt_mM ):
     lambdaB = 0.0007 # typical Bjerrum length for water at 25 degrees (micron)
+    ns = salt_mM*6.02e5 # ions per micron^3 (1 mM = 6.02e23 per m^3)
     lambdaD = np.sqrt(1/(8*np.pi*lambdaB*ns))
-    print("Debye length of", lambdaD)
-    return  B*R/lambdaB*np.exp(-h/lambdaD)
+    print(f"Debye length of {lambdaD*1e3:.2f} nm")
+    return  B*R/lambdaB*np.exp(-(h-2*R)/lambdaD)
 ```
 
 ```{pyodide}
@@ -298,13 +302,13 @@ def double_layer(h, R,B,ns ):
 #| autorun: true
 # parameters: CHANGE them to explore the interaction!
 
-A_H = 1.0  # Hamaker constant (kBT)
-B = 50.0 # double layer energy scale 
-salt_ns = 2000 # salt concentration (particles/micron^3)
+A_H = 2.4  # Hamaker constant (kBT)
+B = 0.5 # double layer energy scale (at most 8)
+salt_mM = 1.0 # salt concentration (mM)
 
 # compute potentials
 W_vdW = van_der_waals_potential(h, R, A_H)
-W_DR = double_layer(h, R, B,salt_ns)
+W_DR = double_layer(h, R, B,salt_mM)
 DLVO = W_vdW+W_DR
 
 
@@ -312,8 +316,8 @@ import plotting
 from IPython.display import HTML
 # nicer clipping (zoom with the mouse, double-click to reset)
 ylim  = max(DLVO.max(),0.5)
-fig = plotting.plotly_multi_plot(h, W_vdW, W_DR,DLVO,
-    xlabel="h [µm]", ylabel="Interaction strength [kBT]",
+fig = plotting.plotly_multi_plot(D*1e3, W_vdW, W_DR,DLVO,
+    xlabel="gap D = h-2R [nm]", ylabel="Interaction strength [kBT]",
     ylim=[-ylim*1.1, ylim*1.1])
 HTML(fig.to_html(include_plotlyjs=False, full_html=False))
 ```
@@ -324,7 +328,7 @@ HTML(fig.to_html(include_plotlyjs=False, full_html=False))
 Modify the script above and test graphically that:
 
 1.  When the salt concentration is low, the double layer repulsion dominates the DLVO interaction.
-2.  There are salt concentrations where two minima occur in the DLVO potential: one at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at intermediate distances comparable to $2(R+\lambda_D)$. This minimum can lead to weak aggregation of colloids.
+2.  There are salt concentrations where two minima occur in the DLVO potential: one at very close distance (dominated by the Van der Waals attraction) and one, much shallower, at gaps of several Debye lengths. This minimum can lead to weak aggregation of colloids.
 3.  Large salt concentrations depress the DLVO maximum altogether and eventually the Van der Waals interaction dominates.
 :::
 
@@ -1423,7 +1427,7 @@ The table collects the main results of this chapter. Follow the links to go back
 |---|---|---|
 | [Colloidal scale](#kinds-of-colloids) | $1\,\text{nm}$–$1\,\mu\text{m}$; ${\rm Pe}_g=\Delta m\, g R/k_BT\lesssim 1$ | Brownian motion beats sedimentation |
 | [Van der Waals](#van-der-waals-interaction) | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$ | Attractive, short-range, from fluctuating dipoles ($U\sim -C/r^6$) |
-| [Double layer](#double-layer-interaction) | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-h/\lambda_D}$, $\lambda_D=(8\pi\lambda_B n_s)^{-1/2}$ | Repulsive; salt shortens $\lambda_D$ |
+| [Double layer](#double-layer-interaction) | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-(h-2R)/\lambda_D}$, $\lambda_D=(8\pi\lambda_B n_s)^{-1/2}$ | Repulsive; salt shortens $\lambda_D$ |
 | [DLVO](#double-layer-interaction) | $W_{DLVO}=W_{vdW}+W_{DR}$ | Salt switches between stable and aggregating |
 | [Depletion (AO)](#sec-ao-potential) | $W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)$, for $2R\le r<2(R+\delta)$ | Attraction from purely entropic effects |
 | [Hard spheres](#sec-hard-spheres) | $U=\infty$ for $r<\sigma$, $0$ otherwise; $\phi=\pi\sigma^3\rho/6$ | Single control parameter; entropy only |
