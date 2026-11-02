@@ -1009,13 +1009,13 @@ U(r) = \begin{cases}
 <p>The hard repulsion between hard spheres means that each sphere is surrounded by an excluded volume in which the center of other spheres cannot be placed. Since the distance of closest approach between two spheres is <span class="math inline">\(\sigma\)</span> such <strong>excluded volume</strong> per particle is simply <span class="math inline">\(v_{\rm ex} =4\pi\sigma^3/3\)</span> and at low densities it is much smaller than the volume per particle <span class="math inline">\(v= V/N\)</span>. A collection of <span class="math inline">\(N\)</span> hard spheres has a total excluded volume <span class="math inline">\(V_{\rm ex}\neq N v_{\rm ex}\)</span> simply because the excluded volumes of individual particles can in general overlap, as we saw earlier with the case of depletion.</p>
 <p>At very low densities, most hard spheres are isolated. So, in this case, we can approximate the total excluded volume as <span class="math inline">\(V_{\rm ex} \approx N v_{\rm ex}\)</span> so that the accessible volume (the volume not occupied by the spheres) is</p>
 <p><span class="math display">\[V_{\rm accessible} = V-Nv_{\rm ex}\]</span></p>
-<p>We use this to perform an appropriate statistical mechanical calculation for the Helmholtz free energy of system <span class="math inline">\(F\)</span>, which we know is purely entropic <span class="math inline">\(F=-TS\)</span>. The partition function <span class="math inline">\(\mathcal{Z}\)</span> is <span class="math display">\[
+<p>We use this to perform an appropriate statistical mechanical calculation for the Helmholtz free energy of system <span class="math inline">\(F=-k_BT\ln\mathcal{Z}\)</span>. The only energy of hard spheres is the kinetic energy <span class="math inline">\(U=\frac{3}{2}Nk_BT\)</span>, which does not depend on the volume, so we can write <span class="math inline">\(F=-TS\)</span> with <span class="math inline">\(S=k_B\ln\mathcal{Z}\)</span>, up to a term <span class="math inline">\(\frac{3}{2}Nk_B\)</span> from the momenta that does not depend on <span class="math inline">\(V\)</span>: only the positions (the <strong>configurations</strong>) matter for the pressure. The partition function <span class="math inline">\(\mathcal{Z}\)</span> is <span class="math display">\[
 \mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N
 \]</span> where <span class="math inline">\(\Lambda\)</span> is the thermal de Broglie wavelength</p>
 <p><span class="math display">\[\Lambda = h/\sqrt{2\pi mk_B T},\]</span> and originates from the integration over the Maxwell-Boltzmann distribution of momenta for particles of mass <span class="math inline">\(m\)</span>, while <span class="math inline">\(h\)</span> is Planck’s constant.</p>
 <p>For hard spheres, the integral is over all configurations where no two spheres overlap (i.e., <span class="math inline">\(|\mathbf{r}_i - \mathbf{r}_j| \geq \sigma\)</span> for all <span class="math inline">\(i \neq j\)</span>), and <span class="math inline">\(V_{\rm accessible}\)</span> is the total accessible volume. The result is that</p>
 <p><span class="math display">\[\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},\]</span></p>
-<p>with the <span class="math inline">\(1/2\)</span> factor coming from the fact that we avoid double counting the excluded volume of pairs. The entropy is <span class="math display">\[
+<p>with the <span class="math inline">\(1/2\)</span> factor coming from the fact that we avoid double counting the excluded volume of pairs. The entropy is then <span class="math display">\[
 S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]
 \]</span></p>
 <p>From the partition function, we use Stirling’s formula <span class="math inline">\(\ln N! = N\ln N -N\)</span> and obtain</p>
@@ -1247,7 +1247,7 @@ h\left(r_{12}\right)=c\left(r_{12}\right)+\rho \int c\left(r_{13}\right) h\left(
 c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
 \]</span> where the pairwise interaction enters explicitly.</p>
 <p>Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.</p>
-<div id="829027ac" class="cell" data-execution_count="1">
+<div id="cdc5de3b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1626,7 +1626,7 @@ D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
 <p>For sufficiently dense hard spheres (e.g.&nbsp;above <span class="math inline">\(\phi \sim 0.3\)</span>), however, different regimes are observed. At short times the particles diffuse with the short time (self) diffusion constant <span class="math inline">\(D_{s}\)</span>. This is determined from the short time limit and is smaller than the <span class="math inline">\(D_{0}\)</span> measured for <span class="math inline">\(\phi \rightarrow 0\)</span>. The motion of the particles (self diffusion) is still driven by collisions with the liquid molecules, but in addition the interactions between particles become significant.</p>
 <p>While the particles are diffusing in their cages formed by their neighbours, the hydrodynamic interaction with the neighbours, transmitted through flows in the liquid, causes slowing down relative to the free diffusion at low concentrations. At intermediate times the particles encounter the neighbours and the interactions slow the motion down. To make further progress, the particle has to break out of the cage formed by its neighbours. Now the particles experience a further interaction, direct interactions (hard-sphere interactions), in addition to the hydrodynamic interactions. The long-time and long-ranged movement is also diffusive, i.e.&nbsp;we still have <span class="math display">\[\langle r^{2}(t)\rangle \propto t\]</span> when the particles undergo large-scale random-walk diffusion through many cages.</p>
 <p>However, the motion is further slowed and a smaller diffusion constant relative to the motion in the short time limit is observed, the long time (self) diffusion constant <span class="math inline">\(D_{L}\)</span>.</p>
-<div id="3fb89c55" class="cell" data-execution_count="2">
+<div id="303eddec" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
