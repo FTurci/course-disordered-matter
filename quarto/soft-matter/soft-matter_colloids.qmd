@@ -11,6 +11,8 @@ resources:
     - src/plotting.py
     - src/hardspheres.py
 bibliography: references.bib
+include-in-header:
+    text: <script src="https://cdn.plot.ly/plotly-4.1.1.min.js" charset="utf-8"></script>
 
 toc-depth: 4
 ---
@@ -171,22 +173,33 @@ $$
 
 ```{pyodide}
 #| autorun: true
+#| echo: false
 import numpy as np
-import plotting
-# parameters: change them to explore the interaction!
-R = 5.0  # Radius of the colloid
-A_H = 1e-20  # Hamaker constant (in Joules)
-h = np.linspace(2.01 * R, 10+R*2, 1000)  # Separation distance (h > 2R)
-# Van der Waals potential
-def van_der_waals_potential(h, R, A_H):
-    f_h_R = (2 * R**2 / (h**2 - 4 * R**2)) + (2 * R**2 / h**2) + np.log((h**2 - 4 * R**2) / h**2)
-    return -A_H / 6 * f_h_R
+import matplotlib.pyplot as plt
 
-# compute potential
-W_vdW = van_der_waals_potential(h, R, A_H)
-# convenience plotting function, you can use matplotlib if you prefer
-plotting.simple_plot(h,W_vdW)
+def plot_vdw(R, A_H):
+    D = np.logspace(-3, 1, 400)  # surface-to-surface gap (micron)
+    h = 2*R + D                  # centre-to-centre distance
+    f = 2*R**2/(h**2 - 4*R**2) + 2*R**2/h**2 + np.log((h**2 - 4*R**2)/h**2)
+    W_vdW = -A_H/6*f
+    plt.figure(figsize=(5.1, 3.5))
+    plt.loglog(D, -W_vdW, label="exact (Hamaker)")
+    plt.loglog(D, A_H*R/(12*D), '--', label=r"contact: $A_HR/12D$")
+    plt.loglog(D, 16*A_H*R**6/(9*h**6), ':', label=r"far: $16A_HR^6/9h^6$")
+    plt.axhline(1, color='k', lw=0.8)  # thermal energy
+    plt.xlabel(r"gap $D=h-2R$ [µm]"); plt.ylabel(r"$-W_{vdW}$ [$k_BT$]")
+    plt.ylim(1e-6, 1e3); plt.yticks(10.0**np.arange(-6, 4, 2)); plt.legend(); plt.tight_layout(); plt.show()
 ```
+
+```{pyodide}
+#| autorun: true
+# parameters: change them to explore the interaction!
+R = 0.5    # radius of the colloid (micron)
+A_H = 2.4  # Hamaker constant (kBT), i.e. 1e-20 J at room temperature
+plot_vdw(R, A_H)
+```
+
+Near contact the attraction diverges as $A_HR/12D$ and exceeds $k_BT$ for gaps up to $\sim 50$ nm for a micron-sized colloid: without a repulsion to keep them apart, colloids that touch stay stuck. Far away ($D\gg R$) the two spheres look like point particles, and the atomic $1/h^6$ decay is recovered.
 
 Van der Waals interactions are regarded as **short-range** forces because their decay rate (e.g., London's $1/r^6$) is much faster than that of Coulombic interactions ($1/r$). Importantly, since their origin lies in the fluctuation of charges on the colloids, their strength is *not additive*: simply summing all the pairwise interactions does not fully account for many-body effects. We often rely on such two-body approximations, but we should be aware that they are a simplified scenario.
 
@@ -296,12 +309,13 @@ DLVO = W_vdW+W_DR
 
 
 import plotting
-plotting.multi_plot(h, W_vdW, W_DR,DLVO,
-    xlabel="h [µm]", ylabel="Interaction strength [kBT]")
-# nicer clipping
+from IPython.display import HTML
+# nicer clipping (zoom with the mouse, double-click to reset)
 ylim  = max(DLVO.max(),0.5)
-plt.ylim(-ylim*1.1, ylim*1.1)
-plt.show()
+fig = plotting.plotly_multi_plot(h, W_vdW, W_DR,DLVO,
+    xlabel="h [µm]", ylabel="Interaction strength [kBT]",
+    ylim=[-ylim*1.1, ylim*1.1])
+HTML(fig.to_html(include_plotlyjs=False, full_html=False))
 ```
 
 ::: {.callout-important appearance="simple"}

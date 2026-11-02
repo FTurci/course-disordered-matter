@@ -67,6 +67,32 @@ def multi_plot(*args, xlabel="x", ylabel="y",zero='true'):
     plt.show()
 
 
+def plotly_multi_plot(*args, xlabel="x", ylabel="y", ylim=None):
+    import plotly.graph_objects as go
+
+    x = args[0]
+    caller_locals = inspect.currentframe().f_back.f_locals
+
+    fig = go.Figure()
+    for a in args[1:]:
+        arr_name = next((name for name, val in caller_locals.items() if val is a), 'data')
+        # plotly output is not typeset by MathJax, so use HTML subscripts
+        if "_" in arr_name:
+            base, sub = arr_name.split("_", 1)
+            arr_name = f"{base}<sub>{sub}</sub>"
+        fig.add_trace(go.Scatter(x=x, y=a, mode='lines', name=arr_name, opacity=0.8))
+
+    fig.add_hline(y=0, line_dash='dot', line_color='black', line_width=1)
+    fig.update_layout(
+        xaxis_title=xlabel, yaxis_title=ylabel,
+        template='simple_white', width=600, height=420,
+        margin=dict(l=60, r=20, b=50, t=20),
+    )
+    if ylim is not None:
+        fig.update_yaxes(range=ylim)
+    return fig
+
+
 
 
 def plotly_3d(x, y, z, title="", name="", marker_size=3, line_color='blue', line_width=4, marker_color=None, colorscale='Peach', fig=None):
