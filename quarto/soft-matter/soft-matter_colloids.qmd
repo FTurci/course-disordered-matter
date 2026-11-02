@@ -609,7 +609,7 @@ At very low densities, most hard spheres are isolated. So, in this case, we can 
 
 $$V_{\rm accessible} = V-Nv_{\rm ex}$$
 
-We use this to perform an appropriate statistical mechanical calculation for the Helmholtz free energy of system $F$, which we know is purely entropic $F=-TS$. The partition function $\mathcal{Z}$ is $$
+We use this to perform an appropriate statistical mechanical calculation for the Helmholtz free energy of system $F=-k_BT\ln\mathcal{Z}$. The only energy of hard spheres is the kinetic energy $U=\frac{3}{2}Nk_BT$, which does not depend on the volume, so we can write $F=-TS$ with $S=k_B\ln\mathcal{Z}$, up to a term $\frac{3}{2}Nk_B$ from the momenta that does not depend on $V$: only the positions (the **configurations**) matter for the pressure. The partition function $\mathcal{Z}$ is $$
 \mathcal{Z} = \frac{1}{N! \Lambda^{3N}} \int_{V_{\rm accessible}} d\mathbf{r}_1 \ldots d\mathbf{r}_N
 $$ where $\Lambda$ is the thermal de Broglie wavelength
 
@@ -619,7 +619,7 @@ For hard spheres, the integral is over all configurations where no two spheres o
 
 $$\mathcal{Z} = \dfrac{(V-Nv_{\rm ex}/2)^N}{N!\Lambda^{3N}},$$
 
-with the $1/2$ factor coming from the fact that we avoid double counting the excluded volume of pairs. The entropy is $$
+with the $1/2$ factor coming from the fact that we avoid double counting the excluded volume of pairs. The entropy is then $$
 S = k_B \ln \mathcal{Z} = k_B \left[ N \ln(V - N v_{\rm ex}/2) - \ln N! - 3N \ln \Lambda \right]
 $$
 
