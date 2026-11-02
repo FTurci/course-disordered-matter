@@ -127,7 +127,7 @@ The dipole moments fluctuate due to quantum mechanical effects. The average inte
 
 ::: {style="border: 2px solid red; padding: 1em; border-radius: 8px; background-color: transparent;"}
 $$
-    U(r) = -\frac{C}{r^6}
+    V(r) = -\frac{C}{r^6}
 $$
 :::
 
@@ -568,8 +568,8 @@ Here we focus on the most elementary model of a colloid. The simplest such examp
 
 ### The archetype: hard-spheres {#sec-hard-spheres}
 
-A **hard-sphere** is an idealized particle model in which each particle is represented as a perfectly rigid sphere of fixed radius $R$ and diameter $\sigma=2R$. Hard spheres interact only through excluded volume: they cannot overlap, but otherwise experience no attraction or repulsion. The interaction potential $U(r)$ between two hard spheres separated by a center-to-center distance $r$ is: $$
-U(r) = \begin{cases}
+A **hard-sphere** is an idealized particle model in which each particle is represented as a perfectly rigid sphere of fixed radius $R$ and diameter $\sigma=2R$. Hard spheres interact only through excluded volume: they cannot overlap, but otherwise experience no attraction or repulsion. The interaction potential $V(r)$ between two hard spheres separated by a center-to-center distance $r$ is: $$
+V(r) = \begin{cases}
 \infty & \text{if } r < \sigma \\
 0 & \text{if } r \geq \sigma
 \end{cases}
@@ -579,7 +579,7 @@ This model captures the essential physics of **excluded volume** which, as we sa
 
 <svg width="400" height="220" viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg">
 <!-- Axes -->
-<line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">U(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
+<line x1="40" y1="180" x2="370" y2="180" stroke="black" stroke-width="2"/> <line x1="60" y1="200" x2="60" y2="30" stroke="black" stroke-width="2"/> <!-- x axis label --> <text x="360" y="195" font-size="16" font-family="sans-serif">r</text> <!-- y axis label --> <text x="30" y="40" font-size="16" font-family="sans-serif" transform="rotate(-90 30,40)">V(r)</text> <!-- Hard sphere potential: vertical line at r=2R, infinite wall --> <line x1="120" y1="180" x2="120" y2="40" stroke="red" stroke-width="4"/> <!-- Dashed line for r < 2R (forbidden region) --> <rect x="60" y="40" width="60" height="140" fill="#f88" fill-opacity="0.2"/> <!-- Label for r=2R --> <text x="115" y="195" font-size="14" font-family="sans-serif" text-anchor="middle">2R</text> <!-- Flat line for r > 2R (U=0) --> <line x1="120" y1="180" x2="360" y2="180" stroke="blue" stroke-width="3"/> <!-- Dotted line at U=infty --> <text x="80" y="55" font-size="14" font-family="sans-serif" fill="red" text-anchor="middle">∞</text> <!-- Label for U=0 --> <text x="70" y="175" font-size="14" font-family="sans-serif" fill="blue">0</text> <!-- Bracket for forbidden region --> <text x="95" y="210" font-size="13" font-family="sans-serif" text-anchor="middle" fill="#f88">forbidden</text> <!-- Title --> <text x="200" y="25" font-size="18" font-family="sans-serif" text-anchor="middle">Hard Sphere Potential</text>
 </svg>
 
 #### Phase behaviour of hard spheres {.unnumbered}
@@ -658,7 +658,7 @@ where $B_2, B_3, \dots$ are the **virial coefficients** and for systems that are
 -   $B_3$ for three-body correlations, and so on.
 
 Given an interaction potential the second virial coefficient $B_2$ can be calculated independently from the equation state $$
-B_2(T)=-\frac{1}{2} \int_0^{\infty}\left(\exp \left(-\frac{U(r)}{k_B T}\right)-1\right) 4 \pi r^2 d r 
+B_2(T)=-\frac{1}{2} \int_0^{\infty}\left(\exp \left(-\frac{V(r)}{k_B T}\right)-1\right) 4 \pi r^2 d r 
 $$ For hard spheres this results in $$
 B_2 =  \frac{2\pi}{3} \sigma^3
 $$ which is exactly what is predicted by the equation of state above, once you recognise that $\phi = \frac{\pi\sigma^3}{6}\rho$.
@@ -717,7 +717,7 @@ Thanks to their size, colloidal hard spheres allow us to *see* these phases dire
 ### Beyond hard-spheres: simple liquids
 
 A **simple liquid** is a system of particles interacting via short-range, spherically symmetric (isotropic) pair potentials. The most common model is the **Lennard-Jones (LJ) potential**, which captures both the short-range repulsion (due to Pauli exclusion) and longer-range van der Waals attraction: $$
-U_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
+V_{\mathrm{LJ}}(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]
 $$ where $\epsilon$ sets the depth of the potential well (interaction strength) and $\sigma$ is the particle diameter (distance at which $U=0$). The $r^{-12}$ term models steep repulsion, while $r^{-6}$ describes the attractive tail.
 
 The Lennard-Jones fluid exhibits rich phase behavior: at low temperatures and densities, it forms a gas; at intermediate conditions, a liquid; and at high densities, a solid. The LJ model is widely used to study atomic and molecular liquids, and serves as a reference for understanding real fluids and their phase transitions.
@@ -733,13 +733,13 @@ The following table provides you with a few example potentials and their functio
 +---------------------------+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | Potential Name            | Mathematical Form                                                                                          | Typical Systems/Features                                    |
 +===========================+============================================================================================================+=============================================================+
-| Lennard-Jones (LJ)        | $U(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$ | Simple atomic fluids, coarse-grained molecular interactions |
+| Lennard-Jones (LJ)        | $V(r) = 4\epsilon \left[ \left( \frac{\sigma}{r} \right)^{12} - \left( \frac{\sigma}{r} \right)^6 \right]$ | Simple atomic fluids, coarse-grained molecular interactions |
 +---------------------------+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| Hard Sphere               | $U(r) = \begin{cases} \infty & r < \sigma \\ 0 & r \geq \sigma \end{cases}$                                | Colloids, granular materials, excluded volume               |
+| Hard Sphere               | $V(r) = \begin{cases} \infty & r < \sigma \\ 0 & r \geq \sigma \end{cases}$                                | Colloids, granular materials, excluded volume               |
 +---------------------------+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| Yukawa (Screened Coulomb) | $U(r) = \epsilon \frac{e^{-\kappa r}}{r}$                                                                  | Charged colloids, plasmas, electrolytes                     |
+| Yukawa (Screened Coulomb) | $V(r) = \epsilon \frac{e^{-\kappa r}}{r}$                                                                  | Charged colloids, plasmas, electrolytes                     |
 +---------------------------+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
-| Dipolar                   | $U(r) = \frac{\mu_0}{4\pi} \frac{\mu_1 \mu_2}{r^3} (1 - 3\cos^2\theta)$                                    | Magnetic colloids, polar molecules                          |
+| Dipolar                   | $V(r) = \frac{\mu_0}{4\pi} \frac{\mu_1 \mu_2}{r^3} (1 - 3\cos^2\theta)$                                    | Magnetic colloids, polar molecules                          |
 +---------------------------+------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ## Characterisation of colloidal systems
@@ -912,7 +912,7 @@ where we defined the total correlation function as $h(r)=g(r)-1$. The OZ equatio
 $$ Since both $h(r)$ and $c(r)$ are unknown, an additional relationship is needed, called a **closure**. This is constructed through physical arguments. A common one is the so-called Percus-Yevick closure
 
 $$
-c(r)=[1+h(r)]\left[1-e^{\beta U(r)}\right]
+c(r)=[1+h(r)]\left[1-e^{\beta V(r)}\right]
 $$ where the pairwise interaction enters explicitly.
 
 Solving the OZ equation with the Percus-Yevick closure produces realistic radial distribution functions in a wide range of packing fractions for hard spheres.
@@ -1337,10 +1337,10 @@ return container.node();
 
 In the case of gravity, this leads to a sedimentation equilibrium. Consider first the flux due to the external force, $J_{F}$.
 
-The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=F / \xi$ which defines the friction coefficient $\xi$. Hence
+The velocity of a particle under an applied force $F$ in a viscous fluid can be written as $v=F / \gamma$ which defines the friction coefficient $\gamma$. Hence
 
 $$
-J_{F}=n(x) v=\frac{n(x) F}{\xi}
+J_{F}=n(x) v=\frac{n(x) F}{\gamma}
 $$
 
 Diffusive flux, $J_{D}$ is given by Fick's Law (see above):
@@ -1349,19 +1349,25 @@ $$
 J_{D}(x)=-D \frac{\partial n(x)}{\partial x}
 $$
 
-In equilibrium the two fluxes cancel, $J_{F}+J_{D}=0$ (the force pushes the particles towards negative $x$, so the drift flux is $-n(x)F/\xi$), and we get
+In equilibrium the two fluxes cancel, $J_{F}+J_{D}=0$ (the force pushes the particles towards negative $x$, so the drift flux is $-n(x)F/\gamma$), and we get
 
 $$
-\frac{n(x) F}{\xi}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_{B} T} n(x)
+\frac{n(x) F}{\gamma}=-D \frac{\partial n(x)}{d x}=D \frac{F}{k_{B} T} n(x)
 $$
 
 The second equality is obtained by differentiating the Maxwell-Boltzmann distribution. This gives the relation between the diffusion and friction coefficients:
 
 $$
-D=\frac{k_{B} T}{\xi}=\frac{k_{B} T}{6 \pi \eta R}
+D=\frac{k_{B} T}{\gamma}=\frac{k_{B} T}{6 \pi \eta R}
 $$
 
-The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\xi=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein (and Sutherland) relation.
+The last equation applies to a spherical particle of radius $R$ in a fluid of viscosity $\eta$, for which Stokes's Law gives $\gamma=6 \pi \eta R$ (which applies only at low Reynold's number, $\rho R v / \eta$ $\ll 1$ ) resulting in the Stokes-Einstein (and Sutherland) relation.
+
+::: {.callout-note collapse="true"}
+## Example: diffusion times
+
+For a colloid of radius $R=0.5\,\mu\text{m}$ in water at room temperature ($\eta\approx 0.89$ mPa s), $D\approx 0.5\,\mu\text{m}^2/\text{s}$. The time it takes to diffuse over its own radius is then $\tau_B=R^2/D\approx 0.5$ s, and grows as $R^3$. For an atom in a simple liquid (e.g. argon, $D\sim 2\times10^{-9}\,\text{m}^2/\text{s}$, size $\sim 0.2$ nm) the same estimate gives $\sim 10$ ps. Colloidal liquids and crystals evolve slowly enough to be filmed under a microscope, particle by particle.
+:::
 
 -   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the response to the 'fluctuations' $k_B T $. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
 
@@ -1431,18 +1437,18 @@ The table collects the main results of this chapter. Follow the links to go back
 | Topic | Key result | Remember |
 |---|---|---|
 | [Colloidal scale](#kinds-of-colloids) | $1\,\text{nm}$–$1\,\mu\text{m}$; ${\rm Pe}_g=\Delta m\, g R/k_BT\lesssim 1$ | Brownian motion beats sedimentation |
-| [Van der Waals](#van-der-waals-interaction) | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$ | Attractive, short-range, from fluctuating dipoles ($U\sim -C/r^6$) |
+| [Van der Waals](#van-der-waals-interaction) | $W_{vdW}(h)=-\frac{A_H}{6}f(h/R)$ | Attractive, $\approx -A_HR/12D$ near contact, from fluctuating dipoles ($V\sim -C/r^6$) |
 | [Double layer](#double-layer-interaction) | $W_{DR}(h)=B\frac{R}{\lambda_B}e^{-(h-2R)/\lambda_D}$, $\lambda_D=(8\pi\lambda_B n_s)^{-1/2}$ | Repulsive; salt shortens $\lambda_D$ |
 | [DLVO](#double-layer-interaction) | $W_{DLVO}=W_{vdW}+W_{DR}$ | Salt switches between stable and aggregating |
-| [Depletion (AO)](#sec-ao-potential) | $W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)$, for $2R\le r<2(R+\delta)$ | Attraction from purely entropic effects |
+| [Depletion (AO)](#sec-ao-potential) | $W_{AO}(r)=-k_BT\rho_p V_{\rm overlap}(r)$, for $2R\le r<2(R+\delta)$ | Entropic attraction, $W_{AO}(2R)=-(1+\frac{3R}{2\delta})\phi_p k_BT$ |
 | [Hard spheres](#sec-hard-spheres) | $U=\infty$ for $r<\sigma$, $0$ otherwise; $\phi=\pi\sigma^3\rho/6$ | Single control parameter; entropy only |
 | [Dilute hard spheres](#low-packing-fractions) | $Z_{\rm comp}=1+4\phi+\dots$, $B_2=\frac{2\pi}{3}\sigma^3$ | Ideal gas plus excluded-volume correction |
-| [Dense hard spheres](#dense-packing-metastability-and-crystalisation) | $Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}$ | Different branch: first-order transition |
+| [Hard-sphere crystal](#dense-packing-metastability-and-crystalisation) | $Z_{\rm comp}=\left[1-(\phi/\phi_{cp})^{1/3}\right]^{-1}$ (cell model) | Different branch: first-order transition |
 | [Phase diagram](#dense-packing-metastability-and-crystalisation) | $\phi_f=0.494$, $\phi_m=0.545$, $\phi_{\rm rcp}\approx0.64$, $\phi_{cp}=0.74$ | The crystal has **higher** entropy than the fluid |
 | [Simple liquids](#beyond-hard-spheres-simple-liquids) | $U_{LJ}=4\epsilon[(\sigma/r)^{12}-(\sigma/r)^6]$ | Attraction adds a liquid phase and a critical point |
 | [Structure](#structural-properties-the-radial-distribution-function) | $g(r)$; $S(k)=1+\rho\int[g(r)-1]e^{-i\mathbf k\cdot\mathbf r}d\mathbf r$ | Imaging gives $g(r)$, scattering gives $S(k)$ |
 | [Thermodynamics from $g(r)$](#structural-properties-the-radial-distribution-function) | $Z_{\rm comp}=1+4\phi\, g(\sigma^+)$ (hard spheres) | The contact value gives the equation of state |
-| [Liquid state theory](#structural-properties-the-radial-distribution-function) | Ornstein-Zernike: $h=c+\rho\, c*h$; Percus-Yevick closure | Predicts $g(r)$ from $U(r)$ |
+| [Liquid state theory](#structural-properties-the-radial-distribution-function) | Ornstein-Zernike: $h=c+\rho\, c*h$; Percus-Yevick closure | Predicts $g(r)$ from $V(r)$ |
 | [Diffusion](#dynamics-single-vs-collective-displacements) | $\langle\Delta r^2\rangle=2dDt$, $D=k_BT/\gamma$ | Measure $D$ from the mean squared displacement |
 | [Dense diffusion](#diffusion-and-interactions) | $D_0>D_s>D_L$ | Cages slow down long-time motion |
 | [Stokes-Einstein](#stokes-einstein-relation) | $D=\dfrac{k_BT}{6\pi\eta R}$ | Fluctuation ($k_BT$) $\leftrightarrow$ dissipation ($\eta$) |
