@@ -477,7 +477,7 @@ window.Quarto = {
 <li>processing</li>
 <li>growth and deformation</li>
 </ul>
-<p>This is what is typically performed by many living organisms: by consuming energy <strong>locally</strong> (hence dissipating heat) they perform some function. Here we focus on one of the most fundamental kinds of functions which is <strong>motion</strong>. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.</p>
+<p>This is what is typically performed by many living organisms: by consuming energy <strong>locally</strong> (hence dissipating heat) they perform some function. Here we focus on one of the most fundamental kinds of functions which is <strong>motion</strong>. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria. Active systems can reach steady states, whose observables do not change in time, but unlike equilibrium states these have <strong>positive entropy production</strong> and break detailed balance (compare with the <a href="../soft-matter/soft-matter_glasses.html">arrested states chapter</a>).</p>
 <p>We could, at this stage, say that these interactions and the behaviour emerging from them are inherently <em>biological</em> and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to <strong>gauge</strong> the level of biological surprise<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, as nicely put by Andrea Cavagna, a complex system physicist.</p>
 <p>To do so we need to understand how systems that dissipate energy locally to produce self-propelled motion can lead to the emergence of non-trivial phase behaviour and how this differs from systems that are either at thermal equilibrium (e.g.&nbsp;colloidal fluids) or are slowly relaxing towards it (e.g.&nbsp;glasses and gels).</p>
 <p>The field of research that studies such systems is called physics of <strong>active matter</strong> and in this chapter we will describe some reference model systems and main results.</p>
@@ -492,7 +492,7 @@ window.Quarto = {
 <li>At <strong>high noise</strong> <span class="math inline">\(\eta\)</span> (or low density) the particles move in random directions.</li>
 <li>At <strong>low noise</strong> (or high density) they spontaneously move together: the system <strong>flocks</strong>.</li>
 </ul>
-<p>The transition is measured by the polar order parameter <span class="math inline">\(\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|\)</span>, which goes from <span class="math inline">\(0\)</span> (disordered) to <span class="math inline">\(1\)</span> (all particles moving together).</p>
+<p>The transition is measured by the polar order parameter <span class="math inline">\(\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|\)</span>, which goes from <span class="math inline">\(0\)</span> (disordered) to <span class="math inline">\(1\)</span> (all particles moving together). Careful simulations show that the transition is <strong>discontinuous</strong>: close to it, the ordered phase forms dense travelling bands <span class="citation" data-cites="gregoire2004onset">(<a href="#ref-gregoire2004onset" role="doc-biblioref">Grégoire and Chaté 2004</a>)</span>.</p>
 <div>
 <div id="pyodide-1" class="exercise-cell">
 
@@ -659,7 +659,7 @@ Figure&nbsp;19.2: Non-interacting run and tumble particles.
 </ul></li>
 <li><p><strong>Tumble Phase</strong>: During a tumble, the particle randomly reorients. The new direction <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> is chosen from a uniform distribution over the unit sphere (in 3D) or circle (in 2D).</p></li>
 </ol>
-<p>We can imagine a schematic algorithm: - Initialize the particle’s position <span class="math inline">\(\mathbf{r}(0)\)</span> and direction <span class="math inline">\(\hat{\mathbf{n}}(0)\)</span>. - For each time step <span class="math inline">\(\Delta t\)</span>: - With probability <span class="math inline">\(\lambda \Delta t\)</span>, perform a tumble (randomize <span class="math inline">\(\hat{\mathbf{n}}\)</span>). - Otherwise, update the position using the run equation. - Repeat for the desired simulation duration.</p>
+<p>We can imagine a schematic algorithm: - Initialize the particle’s position <span class="math inline">\(\mathbf{r}(0)\)</span> and direction <span class="math inline">\(\hat{\mathbf{n}}(0)\)</span>. - For each time step <span class="math inline">\(\Delta t\)</span>: - With probability <span class="math inline">\(\lambda \Delta t\)</span>, perform a tumble (randomize <span class="math inline">\(\hat{\mathbf{n}}\)</span>). - Update the position using the run equation. - Repeat for the desired simulation duration.</p>
 <p>Here, <span class="math inline">\(\lambda\)</span> is the tumble rate, which determines the frequency of reorientation events.</p>
 <p>The <a href="../phase-transitions/Brownian-and-Langevin-dynamics.html#mean-square-displacement">mean squared displacement</a> (MSD) of run-and-tumble particles exhibits two regimes, connected by a crossover:</p>
 <ol type="1">
@@ -672,7 +672,9 @@ At times much longer than the average run time (<span class="math inline">\(t \g
 \langle \Delta r^2(t) \rangle \sim 4 D_{\text{eff}} t
 \]</span> where <span class="math inline">\(D_{\text{eff}} = \frac{v_0^2}{2\lambda}\)</span> in 2D.</p></li>
 </ol>
-<p>At intermediate timescales, the MSD transitions smoothly from ballistic to diffusive behavior.</p>
+<p>The full expression in 2D, <span class="math display">\[
+\langle \Delta r^2(t) \rangle = \frac{2v_0^2}{\lambda^2}\left(\lambda t-1+e^{-\lambda t}\right),
+\]</span> interpolates smoothly between the two regimes.</p>
 <div>
 <div id="pyodide-2" class="exercise-cell">
 
@@ -715,16 +717,16 @@ In 2D, the orientation <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span> 
 <section id="mean-squared-displacement-of-active-brownian-particles" class="level3" data-number="19.4.1">
 <h3 data-number="19.4.1" class="anchored" data-anchor-id="mean-squared-displacement-of-active-brownian-particles"><span class="header-section-number">19.4.1</span> Mean squared displacement of Active Brownian Particles</h3>
 <p>Indeed, it can be shown (see below) that the mean squared displacement for active Brownian particles displays three regimes: <span class="math display">\[
-\operatorname{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
+\operatorname{MSD}(\tau) = \left[4 D_t + 2 v_0^2 \tau_R \right] \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
 \]</span></p>
-<p>where: - <span class="math inline">\(D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2 D_r}\)</span> is the effective long-time diffusion coefficient (with <span class="math inline">\(\tau_R = 1/D_r\)</span>),</p>
+<p>where: - <span class="math inline">\(D_{\mathrm{eff}} = D_t + \frac{v_0^2}{2 D_r}\)</span> is the effective long-time diffusion coefficient (with <span class="math inline">\(\tau_R = 1/D_r\)</span>),</p>
 <p>This clearly shows that there are three main regimes:</p>
 <ul>
-<li>a very short time diffusive regime <span class="math inline">\(\operatorname{MSD}(\tau) \simeq 4D_T\tau\)</span></li>
-<li>an intermediate regime, <span class="math inline">\(4D_T/v^2 \ll \tau \ll \tau_R\)</span>, before any reorientation has taken place: <span class="math display">\[
-  \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + v^2 \tau^2
+<li>a very short time diffusive regime <span class="math inline">\(\operatorname{MSD}(\tau) \simeq 4D_t\tau\)</span></li>
+<li>an intermediate regime, <span class="math inline">\(4D_t/v_0^2 \ll \tau \ll \tau_R\)</span>, before any reorientation has taken place: <span class="math display">\[
+  \operatorname{MSD}(\tau) = 4 D_t \tau + v_0^2 \tau^2
   \]</span> leading to <strong>super-diffusive</strong> (ballistic) motion</li>
-<li>a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e.&nbsp;<span class="math inline">\(\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau\)</span> but with a new diffusion constant.</li>
+<li>a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e.&nbsp;<span class="math inline">\(\operatorname{MSD}(\tau)=\left[4 D_t+2 v_0^2 \tau_{\mathrm{R}}\right] \tau\)</span> but with a new diffusion constant.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -741,13 +743,13 @@ Note
 <p>We derive the MSD expression for 2d Active Brownian particles.</p>
 <p>We first integrate the velocity</p>
 <p><span class="math display">\[
-\mathbf{r}(\tau) - \mathbf{r}(0) = v \int_0^\tau \hat{\mathbf{n}}(s) ds + \sqrt{2 D_T} \int_0^\tau \boldsymbol{\eta}(s) ds.
+\mathbf{r}(\tau) - \mathbf{r}(0) = v_0 \int_0^\tau \hat{\mathbf{n}}(s) ds + \sqrt{2 D_t} \int_0^\tau \boldsymbol{\eta}(s) ds.
 \]</span></p>
 <p>Since <span class="math inline">\(\boldsymbol{\eta}(t)\)</span> is independent from <span class="math inline">\(\hat{\mathbf{n}}(t)\)</span>,</p>
 <p><span class="math display">\[
-\langle \Delta r^2(\tau) \rangle = v^2 \left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle + 4 D_T \tau,
+\langle \Delta r^2(\tau) \rangle = v_0^2 \left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle + 4 D_t \tau,
 \]</span></p>
-<p>using <span class="math inline">\(\langle |\int \boldsymbol{\eta}(s) ds|^2 \rangle = 2 d D_T \tau\)</span> with dimension <span class="math inline">\(d=2\)</span>.</p>
+<p>using <span class="math inline">\(\langle |\sqrt{2D_t}\int_0^\tau \boldsymbol{\eta}(s) ds|^2 \rangle = 2 d D_t \tau\)</span> with dimension <span class="math inline">\(d=2\)</span>.</p>
 <p>We first need to evaluate the orientation correlation integral.</p>
 <p>Write the first term as a double integral:</p>
 <p><span class="math display">\[
@@ -784,18 +786,18 @@ I(\tau) = 2 \tau_R \left[ \tau - \tau_R \left(1 - e^{-\tau/\tau_R} \right) \righ
 \]</span></p>
 <p>Putting it all together,</p>
 <p><span class="math display">\[
-\langle \Delta r^2(\tau) \rangle = v^2 I(\tau) + 4 D_T \tau = v^2 \left[ 2 \tau_R \tau - 2 \tau_R^2 (1 - e^{-\tau/\tau_R}) \right] + 4 D_T \tau,
+\langle \Delta r^2(\tau) \rangle = v_0^2 I(\tau) + 4 D_t \tau = v_0^2 \left[ 2 \tau_R \tau - 2 \tau_R^2 (1 - e^{-\tau/\tau_R}) \right] + 4 D_t \tau,
 \]</span></p>
 <p>or equivalently</p>
 <p><span class="math display">\[
 \boxed{
-\langle \Delta r^2(\tau) \rangle = \left(4 D_T + 2 v^2 \tau_R \right) \tau + 2 v^2 \tau_R^2 \left( e^{-\tau/\tau_R} - 1 \right).
+\langle \Delta r^2(\tau) \rangle = \left(4 D_t + 2 v_0^2 \tau_R \right) \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau/\tau_R} - 1 \right).
 }
 \]</span></p>
 </div>
 </div>
 </div>
-<p>This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs.</p>
+<p>This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs. With <span class="math inline">\(D_t=0\)</span> it is identical to the run-and-tumble result for <span class="math inline">\(\lambda=1/\tau_R\)</span>: more generally, run-and-tumble and active Brownian particles are equivalent on large scales when <span class="math inline">\(\lambda=(d-1)D_r\)</span> <span class="citation" data-cites="cates2013active">(<a href="#ref-cates2013active" role="doc-biblioref">Cates and Tailleur 2013</a>)</span>. Note that <span class="math inline">\(\tau_R=1/D_r\)</span> in 2D, while in 3D <span class="math inline">\(\langle\hat{\mathbf n}(t)\cdot\hat{\mathbf n}(0)\rangle=e^{-2D_rt}\)</span>.</p>
 <div>
 <div id="pyodide-3" class="exercise-cell">
 
@@ -821,6 +823,11 @@ Figure&nbsp;19.3: Motility induced phase separation in a 3D system of active Bro
 <p>The idea is to consider purely repulsive particles (i.e hard spheres) obeying the ABP dynamics. This means that, in equilibrium (i.e.&nbsp;in the absence of self-propulsion) no liquid-gas phase separation is possible (see <a href="soft-matter_colloids.html#sec-hard-spheres" class="quarto-xref"><span>Section 15.3.1</span></a>).</p>
 <p>However, as we reduce the rotational diffusion, the persistent motion becomes more important, the system becomes more out of equilibrium and new physics comes to play.</p>
 <p>In particular, the collision between particles are no longer leading to quick decorrelation: on the contrary, head-to-head collisions between the particles mean that there is a finite residence time for a pair of particles to stay in each other neighborhoods. This effect is amplified by multiple collisions, leading to many-body caging effects that promote density heterogeneities in the fluid.</p>
+<p>The mechanism is a <strong>positive feedback</strong> <span class="citation" data-cites="cates2015motility">(<a href="#ref-cates2015motility" role="doc-biblioref">Cates and Tailleur 2015</a>)</span>. First, active particles accumulate where they move slowly: non-interacting active particles with a slowly varying speed <span class="math inline">\(v(\mathbf r)\)</span> reach a steady state with <span class="math display">\[
+\rho(\mathbf r)\propto\frac{1}{v(\mathbf r)},
+\]</span> a non-uniform density without any potential, which no Boltzmann distribution can produce. Second, collisions make the speed decrease with density, <span class="math inline">\(v(\rho)\)</span>. Together, a denser region slows particles down, which makes it denser still. The homogeneous state becomes unstable (a spinodal instability) when <span class="math display">\[
+\frac{d\ln v}{d\ln\rho}&lt;-1 .
+\]</span></p>
 <p>The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of <a href="../soft-matter/soft-matter_colloids.html#beyond-hard-spheres-simple-liquids">equilibrium systems</a>. As in equilibrium liquid-gas coexistence, the coexistence region ends at a <a href="../phase-transitions/approach-to-criticality.html">critical point</a>, where density fluctuations are strongly enhanced.</p>
 <p>This has been examined in detail in computer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situation of <a href="../soft-matter/soft-matter_glasses.html#colloid-polymer-mixtures-as-an-example">colloid-polymer mixtures</a> due to the very short range nature of the effective interactions between active particles).</p>
 </section>
@@ -850,7 +857,7 @@ Figure&nbsp;19.3: Motility induced phase separation in a 3D system of active Bro
 <tr class="odd">
 <td><a href="#life-inspired-motion-run-and-tumble">Run-and-tumble</a></td>
 <td>Straight runs at <span class="math inline">\(v_0\)</span>, random tumbles at rate <span class="math inline">\(\lambda\)</span></td>
-<td><span class="math inline">\(D_{\rm eff}=v_0^2/2\lambda\)</span> (2D)</td>
+<td><span class="math inline">\(D_{\rm eff}=v_0^2/2\lambda\)</span> (2D); equivalent to ABPs for <span class="math inline">\(\lambda=(d-1)D_r\)</span></td>
 </tr>
 <tr class="even">
 <td><a href="#active-brownian-particle-and-motility-induced-phase-separation">Active Brownian particles</a></td>
@@ -859,13 +866,13 @@ Figure&nbsp;19.3: Motility induced phase separation in a 3D system of active Bro
 </tr>
 <tr class="odd">
 <td><a href="#mean-squared-displacement-of-active-brownian-particles">MSD</a></td>
-<td><span class="math inline">\(4D_T\tau\)</span> → <span class="math inline">\(v_0^2\tau^2\)</span> → <span class="math inline">\(4D_{\rm eff}\tau\)</span>, with <span class="math inline">\(D_{\rm eff}=D_T+v_0^2/2D_r\)</span></td>
+<td><span class="math inline">\(4D_t\tau\)</span> → <span class="math inline">\(v_0^2\tau^2\)</span> → <span class="math inline">\(4D_{\rm eff}\tau\)</span>, with <span class="math inline">\(D_{\rm eff}=D_t+v_0^2/2D_r\)</span></td>
 <td>Diffusive, then ballistic, then enhanced diffusion</td>
 </tr>
 <tr class="even">
 <td><a href="#interacting-abps-and-motility-induced-phase-separation">MIPS</a></td>
 <td>Purely repulsive ABPs phase separate at low <span class="math inline">\(D_r\)</span></td>
-<td>Persistent collisions slow particles down: dense and dilute phases, with a critical point</td>
+<td>Dense <span class="math inline">\(\to\)</span> slow <span class="math inline">\(\to\)</span> denser; unstable if <span class="math inline">\(d\ln v/d\ln\rho&lt;-1\)</span>; critical point</td>
 </tr>
 </tbody>
 </table>
@@ -892,6 +899,15 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTMiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 W10=
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cates2013active" class="csl-entry" role="listitem">
+Cates, Michael E., and Julien Tailleur. 2013. <span>“When Are Active <span>B</span>rownian Particles and Run-and-Tumble Particles Equivalent? <span>C</span>onsequences for Motility-Induced Phase Separation.”</span> <em>EPL</em> 101: 20010. <a href="https://doi.org/10.1209/0295-5075/101/20010">https://doi.org/10.1209/0295-5075/101/20010</a>.
+</div>
+<div id="ref-cates2015motility" class="csl-entry" role="listitem">
+Cates, Michael E., and Julien Tailleur. 2015. <span>“Motility-Induced Phase Separation.”</span> <em>Annual Review of Condensed Matter Physics</em> 6: 219–44. <a href="https://doi.org/10.1146/annurev-conmatphys-031214-014710">https://doi.org/10.1146/annurev-conmatphys-031214-014710</a>.
+</div>
+<div id="ref-gregoire2004onset" class="csl-entry" role="listitem">
+Grégoire, Guillaume, and Hugues Chaté. 2004. <span>“Onset of Collective and Cohesive Motion.”</span> <em>Physical Review Letters</em> 92: 025702. <a href="https://doi.org/10.1103/PhysRevLett.92.025702">https://doi.org/10.1103/PhysRevLett.92.025702</a>.
+</div>
 <div id="ref-PhysRevLett.126.038002" class="csl-entry" role="listitem">
 Turci, Francesco, and Nigel B. Wilding. 2021. <span>“Phase Separation and Multibody Effects in Three-Dimensional Active Brownian Particles.”</span> <em>Phys. Rev. Lett.</em> 126 (January): 038002. <a href="https://doi.org/10.1103/PhysRevLett.126.038002">https://doi.org/10.1103/PhysRevLett.126.038002</a>.
 </div>
