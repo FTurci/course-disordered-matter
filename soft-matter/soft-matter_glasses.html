@@ -475,7 +475,7 @@ window.Quarto = {
 <p>Equilibrium signifies time reversibility.</p>
 
 <div class="no-row-height column-margin column-container"><div class="">
-<p>At equilibrium, the entropy change <span class="math inline">\(\Delta S\)</span> of a system between two times <span class="math inline">\(t_1, t_2\)</span> or equivalently the entropy production <span class="math inline">\(\frac{dS}{dt}\)</span> are <strong>zero</strong>. Hence the transformation between <span class="math inline">\(t_1\)</span> and <span class="math inline">\(t_2\)</span> has to be <strong>reversible</strong>.</p>
+<p>At equilibrium the <strong>entropy production</strong> is <strong>zero</strong>: any transformation between two times <span class="math inline">\(t_1, t_2\)</span> is <strong>reversible</strong>.</p>
 </div></div><p>Many fluids, whether simple liquids like argon or complex liquids such as colloids and polymers, can be <strong>rapidly cooled</strong> (quenched) to temperatures well below their equilibrium freezing point without crystallization occurring on experimental timescales. In thermodynamic terms this is interpreted as a failure of the system to reach its true equilibrium (minimum free energy) state, namely the ordered crystalline phase. At these low temperatures, the dynamics slows down and the large scale structures remain disordered as the parent fluids. This slow dynamics is however characterised by a continuous drift <em>towards</em> equilibrium, with all of the characteristics of the systems (slowly) evolving during time as the system <strong>ages</strong>.</p>
 <p>These <strong>relaxation dynamics</strong> are examples of <strong>nonequilibrium processes</strong>: the system spontaneously relaxes under the competing constraints of its kinetic rules (typically, diffusion mechanisms) and from the shape of its free energy profile.</p>
 <p>In this chapter we are going to consider two paradigmatic cases of such nonequilibrium dynamics</p>
@@ -541,12 +541,12 @@ S(T) = S(T_0) + \int_{T_0}^{T} \frac{C_V(T')}{T'} dT'
 <tr class="odd">
 <td>Silicate glass</td>
 <td>Atomic (Si, O atoms)</td>
-<td>Strong, transparent, high melting point</td>
+<td>Hard, transparent, high melting point</td>
 </tr>
 <tr class="even">
 <td>Metallic glass</td>
 <td>Atomic (metal atoms)</td>
-<td>High strength, corrosion resistant, ductile</td>
+<td>High strength, elastic, corrosion resistant</td>
 </tr>
 <tr class="odd">
 <td>Polymer glass</td>
@@ -672,8 +672,8 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <p>We then assume that the activation free energy <span class="math inline">\(\Delta G\)</span> required for a CRR to rearrange is proportional to its size:</p>
 <p><span class="math display">\[\Delta G(T) \propto n_{CRR}(T)\]</span></p>
 <p>By assuming activated dynamics, the Adam-Gibbs relation follows: <span class="math display">\[
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
-\]</span> where <span class="math inline">\(A\)</span> is a constant. As temperature decreases, <span class="math inline">\(S_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>. If <span class="math inline">\(S_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form: <span class="math display">\[
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right)
+\]</span> where <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> is the configurational entropy per particle and <span class="math inline">\(A\)</span> is a constant. As temperature decreases, <span class="math inline">\(s_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>. If <span class="math inline">\(s_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form: <span class="math display">\[
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
 \]</span> with <span class="math inline">\(T_0 \approx T_K\)</span>. Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached.</p>
 <p>The temperature <span class="math inline">\(T_K\)</span> is named after Kauzmann, who noticed that if the entropy difference between the supercooled liquid and the crystal is extrapolated below <span class="math inline">\(T_g\)</span>, it vanishes at a finite temperature <span class="math inline">\(T_K&gt;0\)</span>, and would even become negative below it <span class="citation" data-cites="kauzmann1948nature">(<a href="#ref-kauzmann1948nature" role="doc-biblioref">Kauzmann 1948</a>)</span>. This <strong>Kauzmann paradox</strong> is avoided in practice because the liquid falls out of equilibrium at <span class="math inline">\(T_g\)</span> before reaching <span class="math inline">\(T_K\)</span>.</p>
@@ -697,9 +697,9 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 </ul>
 <p>This scenario predicts a <strong>parabolic law</strong> for the relaxation time:</p>
 <p><span class="math display">\[
-\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2
+\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2
 \]</span></p>
-<p>where <span class="math inline">\(J\)</span> is an energy scale and <span class="math inline">\(T_0\)</span> is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
+<p>where <span class="math inline">\(J\)</span> is an energy scale and <span class="math inline">\(T_o\)</span> is the onset temperature of glassy dynamics (above <span class="math inline">\(T_g\)</span>; not to be confused with the VFT <span class="math inline">\(T_0\)</span>). Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
 <p>Interestingly, both perspectives fit the viscosity data well within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).</p>
 <p>Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see <span class="citation" data-cites="hasyim2024emergent">Hasyim and Mandadapu (<a href="#ref-hasyim2024emergent" role="doc-biblioref">2024</a>)</span> for more details.</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video></div>
@@ -709,9 +709,9 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <section id="physical-gels" class="level2" data-number="18.3">
 <h2 data-number="18.3" class="anchored" data-anchor-id="physical-gels"><span class="header-section-number">18.3</span> Physical gels</h2>
 <p>The word <em>gel</em> signifies many different things to different scientific communities. In the context of soft matter physics, a physical gel is typically understood as a system in which the constituent particles or polymers are connected via reversible, non-covalent bonds to form a percolating network that spans the entire sample. This network imparts solid-like mechanical properties to the material, even though the underlying structure remains disordered and fluid-like on a microscopic scale.</p>
-<p>Physical gels differ from chemical gels, where the network is formed by <em>irreversible</em> covalent bonds. In physical gels, the bonds can break and reform dynamically, have an energy of order a few to tens of <span class="math inline">\(k_BT\)</span> (strong enough to persist, weak enough to break and reform), allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are <strong>reversible</strong> systems and often are known as thermoreversible gels. Reversible linking is typically achieved by the formation of dense local regions (e.g.&nbsp;microcrystalline or glassy) that act as <em>cross-links</em> to form a spanning network.</p>
+<p>Physical gels differ from chemical gels, where the network is formed by <em>irreversible</em> covalent bonds. In physical gels, the bonds can break and reform dynamically, have an energy of order a few to tens of <span class="math inline">\(k_BT\)</span> (strong enough to persist, weak enough to break and reform), allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are <strong>reversible</strong> systems and often are known as thermoreversible gels. Reversible linking is typically achieved by the formation of dense local regions (e.g.&nbsp;microcrystalline or glassy) or specific junctions (e.g.&nbsp;triple helices in gelatin) that act as <em>cross-links</em> to form a spanning network.</p>
 <p>Examples include gelatin desserts, agarose gels, and colloidal suspensions such as yoghurt, paint, inks where attractive interactions lead to network formation, see <span class="citation" data-cites="Zaccarelli2007">Zaccarelli (<a href="#ref-Zaccarelli2007" role="doc-biblioref">2007</a>)</span> for a comprehensive review.</p>
-<p>The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from <strong>percolation theory</strong>. The mechanical rigidity of the gel arises when this cluster forms, leading to a dramatic increase in viscosity and the emergence of an elastic response.</p>
+<p>The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from <strong>percolation theory</strong>. The mechanical rigidity of the gel arises when this cluster forms and its bonds live long enough to make it effectively <strong>permanent</strong> on the observation time, leading to a dramatic increase in viscosity and the emergence of an elastic response.</p>
 <p><span id="percolation"></span></p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
@@ -726,7 +726,7 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Percolation is the study of an apparently innocent mathematical problem: take a square grid of <span class="math inline">\(L\times L\)</span> sites and randomly label <span class="math inline">\(N\)</span> of them; how does the likelihood of forming a cluster that spans across the grid (i.e.&nbsp;<em>percolates</em>) depend on the probability <span class="math inline">\(p=N/L^2\)</span> of having a labelled square?</p>
-<p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transitions is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
+<p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transition is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
 <p>Analytically, percolation is tractable and exhibits <a href="../phase-transitions/scaling.html">universal critical exponents</a> near <span class="math inline">\(p_c\)</span>, making it a cornerstone of statistical physics and network theory.</p>
 <p>You can play with percolation on a squared lattice with the code below.</p>
 <div>
@@ -742,7 +742,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 
 </div>
 <script type="pyodide-2-contents">
-eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5wcyA9IG5wLmxpbnNwYWNlKDAuMSwgMS4wLCA1MClcbkwgPSA1MDBcbmxhcmdlc3Rfc2l6ZXMgPSBbXVxucmVwZWF0cyA9IDNcbmZvciBwIGluIHBzOlxuICAgIGdyaWQsIG1hc2sgPSBzYW1wbGVfcGVyY29sYXRpb24oTCwgcClcbiAgICBzaXplcyA9IFtdXG4gICAgZm9yIHIgaW4gcmFuZ2UocmVwZWF0cyk6XG4gICAgICAgIHNpemVzLmFwcGVuZChtYXNrLnN1bSgpIC8gKEwgKiBMKSkgICMgRnJhY3Rpb24gb2Ygc2l0ZXMgaW4gbGFyZ2VzdCBjbHVzdGVyXG4gICAgbGFyZ2VzdF9zaXplcy5hcHBlbmQobnAubWVhbihzaXplcykpXG5cbnBsdC5maWd1cmUoZmlnc2l6ZT0oNywgNCkpXG5wbHQucGxvdChwcywgbGFyZ2VzdF9zaXplcywgbWFya2VyPSdvJylcbnBsdC54bGFiZWwoJ09jY3VwYXRpb24gcHJvYmFiaWxpdHkgJHAkJylcbnBsdC55bGFiZWwoJ0ZyYWN0aW9uIGluIGxhcmdlc3QgY2x1c3RlcicpXG5wbHQudGl0bGUoJ1BlcmNvbGF0aW9uIHRyYW5zaXRpb24gaW4gMkQnKVxucGx0LnNob3coKSJ9
+eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5wcyA9IG5wLmxpbnNwYWNlKDAuMSwgMS4wLCA1MClcbkwgPSA1MDBcbmxhcmdlc3Rfc2l6ZXMgPSBbXVxucmVwZWF0cyA9IDNcbmZvciBwIGluIHBzOlxuICAgIHNpemVzID0gW11cbiAgICBmb3IgciBpbiByYW5nZShyZXBlYXRzKTpcbiAgICAgICAgZ3JpZCwgbWFzayA9IHNhbXBsZV9wZXJjb2xhdGlvbihMLCBwKVxuICAgICAgICBzaXplcy5hcHBlbmQobWFzay5zdW0oKSAvIChMICogTCkpICAjIEZyYWN0aW9uIG9mIHNpdGVzIGluIGxhcmdlc3QgY2x1c3RlclxuICAgIGxhcmdlc3Rfc2l6ZXMuYXBwZW5kKG5wLm1lYW4oc2l6ZXMpKVxuXG5wbHQuZmlndXJlKGZpZ3NpemU9KDcsIDQpKVxucGx0LnBsb3QocHMsIGxhcmdlc3Rfc2l6ZXMsIG1hcmtlcj0nbycpXG5wbHQueGxhYmVsKCdPY2N1cGF0aW9uIHByb2JhYmlsaXR5ICRwJCcpXG5wbHQueWxhYmVsKCdGcmFjdGlvbiBpbiBsYXJnZXN0IGNsdXN0ZXInKVxucGx0LnRpdGxlKCdQZXJjb2xhdGlvbiB0cmFuc2l0aW9uIGluIDJEJylcbnBsdC5zaG93KCkifQ==
 </script>
 </div>
 <p>The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical <span class="math inline">\(p_c\)</span>, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is require in order to find a percolating path.</p>
@@ -795,9 +795,9 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <tr class="odd">
 <td>Union Jack</td>
 <td>2</td>
-<td>8</td>
-<td>0.379</td>
-<td>0.429</td>
+<td>6 (mean)</td>
+<td><strong>0.5</strong></td>
+<td>0.3232</td>
 </tr>
 <tr class="even">
 <td>Cubic</td>
@@ -852,7 +852,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <td>Hypercubic (7D)</td>
 <td>7</td>
 <td>14</td>
-<td>0.091</td>
+<td>0.089</td>
 <td>0.079</td>
 </tr>
 <tr class="even">
@@ -890,10 +890,6 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <td>≈ 0.81</td>
 </tr>
 <tr class="odd">
-<td>6</td>
-<td>≈ 0.96</td>
-</tr>
-<tr class="even">
 <td>≥6 (Mean-field)</td>
 <td><strong>1</strong></td>
 </tr>
@@ -924,7 +920,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="d12fcea9" class="cell" data-execution_count="1">
+<div id="a58fa797" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -938,7 +934,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="ae766e47" class="cell" data-execution_count="2">
+<div id="18613b96" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -973,7 +969,7 @@ S(q) \sim q^{-D_f}
 <figcaption>The same changes of the previous figures as seen in changes in the structure factor <span class="math inline">\(S(q)\)</span> as time evolves and the frozen structure of a colloidal gel emerges. At small q, a characteristic power law behaviour emerges, while at higher q the microstructure changes are subtly capture by the reorganisation or splitting of the peaks.</figcaption>
 </figure>
 </div>
-<p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. Typical values for percolation clusters in 3D are <span class="math inline">\(D_f \approx 2.5\)</span>.</p>
+<p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. Typical values for percolation clusters in 3D are <span class="math inline">\(D_f \approx 2.5\)</span>. Colloidal aggregates are looser, with <span class="math inline">\(D_f\approx1.8\)</span> (diffusion-limited) to <span class="math inline">\(2.1\)</span> (reaction-limited aggregation).</p>
 <p>Thus, by analyzing the low-<span class="math inline">\(q\)</span> behavior of <span class="math inline">\(S(q)\)</span>, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
@@ -998,7 +994,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="dd8c70d5" class="cell" data-execution_count="3">
+<div id="8340ebaf" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1070,23 +1066,24 @@ N(\ell) \sim \ell^{-D_f}
 </div>
 </div>
 </div>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QOa2qhDdywc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
 <section id="arrested-spinodal-scenario-for-colloidal-gels" class="level3" data-number="18.3.2">
 <h3 data-number="18.3.2" class="anchored" data-anchor-id="arrested-spinodal-scenario-for-colloidal-gels"><span class="header-section-number">18.3.2</span> Arrested spinodal scenario for colloidal gels</h3>
-<p>But how do colloidal gels come about? A viable scenario is the so-called <strong>arrested spinodal decomposition</strong> scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via <a href="../phase-transitions/nucleation-and-growth.html#spinodal-decomposition">spinodal decomposition</a>. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.</p>
+<p>But how do colloidal gels come about? A viable scenario is the so-called <strong>arrested spinodal decomposition</strong> scenario. Here, a system is quenched deep into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via <a href="../phase-transitions/nucleation-and-growth.html#spinodal-decomposition">spinodal decomposition</a>. However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.</p>
 <p>This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, “frozen in” by the arrest of particle motion.</p>
 <p>For the arrested spinodal scenario to hold, the system evolves following these steps:</p>
 <ul>
 <li>The system is quenched inside the spinodal region, where spontaneous fluctuations grow.</li>
 <li>Domains of different densities form, but the dense domains become dynamically arrested before macroscopic phase separation completes.</li>
-<li>The final structure is a bicontinuous, percolating network with solid-like mechanical properties.</li>
+<li>The final structure is a bicontinuous, percolating network with solid-like mechanical properties. It keeps the characteristic length of the spinodal pattern, visible as a low-<span class="math inline">\(q\)</span> peak in <span class="math inline">\(S(q)\)</span>.</li>
 </ul>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/QOa2qhDdywc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p>Formation of a colloid-polymer gel by arrested spinodal decomposition. Video by Peter Lu, see <span class="citation" data-cites="lu2008gelation">Lu et al. (<a href="#ref-lu2008gelation" role="doc-biblioref">2008</a>)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./figs/arrestedSpinodal.svg" class="img-fluid figure-img" style="width:70.0%"></p>
-<figcaption>The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g.&nbsp;colloids), adapted from <span class="citation" data-cites="Zaccarelli2007">Zaccarelli (<a href="#ref-Zaccarelli2007" role="doc-biblioref">2007</a>)</span>. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (where phase separation is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conventional threshold, e.g.&nbsp;100 seconds). If a system is cooled rapidly down from the fluid to the coexistence region, two scenarios are possible: the fluid spontaneously phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, the cooling is so rapid that proper equilibrium phases cannot be formed and the systems separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenario corresponds to physical gel formation via spinodal decomposition.</figcaption>
+<figcaption>The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g.&nbsp;colloids), adapted from <span class="citation" data-cites="Zaccarelli2007">Zaccarelli (<a href="#ref-Zaccarelli2007" role="doc-biblioref">2007</a>)</span>. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (inside which the homogeneous fluid is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conventional threshold, e.g.&nbsp;100 seconds). If a system is quenched from the fluid into the coexistence region, two scenarios are possible: the fluid spontaneously phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, for a deep enough quench, the dense phase is glassy as it forms, so that proper equilibrium phases cannot be formed and the system separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenario corresponds to physical gel formation via spinodal decomposition.</figcaption>
 </figure>
 </div>
 <p>For more details, see <span class="citation" data-cites="Zaccarelli2007">Zaccarelli (<a href="#ref-Zaccarelli2007" role="doc-biblioref">2007</a>)</span>.</p>
@@ -1131,12 +1128,12 @@ N(\ell) \sim \ell^{-D_f}
 </tr>
 <tr class="even">
 <td><a href="#connection-between-vft-and-configurational-entropy-the-adam-gibbs-model">Adam-Gibbs</a></td>
-<td><span class="math inline">\(\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}\)</span></td>
+<td><span class="math inline">\(\tau_\alpha=\tau_0\,e^{A/Ts_{\rm conf}}\)</span></td>
 <td><span class="math inline">\(S_{\rm conf}\to0\)</span> at <span class="math inline">\(T_K\)</span> gives VFT; Kauzmann paradox</td>
 </tr>
 <tr class="odd">
 <td><a href="#alternative-perspective-dynamical-facilitation-and-the-parabolic-law">Dynamical facilitation</a></td>
-<td><span class="math inline">\(\log\tau_\alpha\sim J^2\left(\frac1T-\frac1{T_0}\right)^2\)</span></td>
+<td><span class="math inline">\(\log\tau_\alpha\sim J^2\left(\frac1T-\frac1{T_o}\right)^2\)</span></td>
 <td>Dynamical heterogeneity; no finite-<span class="math inline">\(T\)</span> divergence</td>
 </tr>
 <tr class="even">
@@ -1209,6 +1206,9 @@ Hasyim, Muhammad R, and Kranthi K Mandadapu. 2024. <span>“Emergent Facilitatio
 </div>
 <div id="ref-kauzmann1948nature" class="csl-entry" role="listitem">
 Kauzmann, Walter. 1948. <span>“The Nature of the Glassy State and the Behavior of Liquids at Low Temperatures.”</span> <em>Chemical Reviews</em> 43 (2): 219–56. <a href="https://doi.org/10.1021/cr60135a002">https://doi.org/10.1021/cr60135a002</a>.
+</div>
+<div id="ref-lu2008gelation" class="csl-entry" role="listitem">
+Lu, Peter J., Emanuela Zaccarelli, Fabio Ciulla, Andrew B. Schofield, Francesco Sciortino, and David A. Weitz. 2008. <span>“Gelation of Particles with Short-Range Attraction.”</span> <em>Nature</em> 453: 499–503. <a href="https://doi.org/10.1038/nature06931">https://doi.org/10.1038/nature06931</a>.
 </div>
 <div id="ref-royall2018race" class="csl-entry" role="listitem">
 Royall, C Patrick, Francesco Turci, Soichi Tatsumi, John Russo, and Joshua Robinson. 2018. <span>“The Race to the Bottom: Approaching the Ideal Glass?”</span> <em>Journal of Physics: Condensed Matter</em> 30 (36): 363001. <a href="https://bris.on.worldcat.org/oclc/1098708850">https://bris.on.worldcat.org/oclc/1098708850</a>.
