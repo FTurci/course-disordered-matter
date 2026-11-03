@@ -323,7 +323,7 @@ f=f_0+\frac{A}{3} S^2-\frac{2 B}{27} S^3+\frac{C}{9} S^4
 $$
 
 ::: column-margin
-We can expand $A,B,C$ around the reference temperature $T^\ast$ as $$ A(T)=a\left(T-T_*\right)+\cdots $$ and at zeroth order for both $B$ and $C$  as $B(T)= b+\dots$ , $C(T)=c+\dots$, with $a,b,c>0$ to preserve the most relevant terms.
+We can expand $A,B,C$ around the reference temperature $T^\ast$ as $$ A(T)=a\left(T-T_*\right)+\cdots $$ and at zeroth order for both $B$ and $C$  as $B(T)= b+\dots$ , $C(T)=c+\dots$, with $a,b,c>0$: $c>0$ keeps the free energy bounded, while $b>0$ favours $\mathcal S>0$ (rods aligned along $\mathbf n$).
 :::
 
 We can follow the scheme used for Landau phase transitions and obtain the so-called **Landau-de Gennes theory** result 
@@ -333,6 +333,7 @@ f-f_0=\frac{a}{3}\left(T-T^{\ast}\right) S^2-\frac{2 b}{27} S^3+\frac{c}{9} S^4 
 $$
 
 This has the form of standard Landau free energy (combinations of power of S up to the power of 4 with real coefficients that depend on the temperature).
+The cubic term is allowed because, unlike the magnetisation of a magnet, $\mathcal S$ and $-\mathcal S$ are not equivalent: $\mathcal S>0$ describes rods aligned along $\mathbf n$, while $\mathcal S<0$ describes rods lying in the plane perpendicular to $\mathbf n$.
 The cubic term makes this a **first order** phase transition: in a range of temperatures the free energy has two minima, the isotropic one ($\mathcal{S}=0$) and the nematic one ($\mathcal{S}>0$). There is no critical point, because the isotropic and nematic phases have different symmetry. It can be shown that the transition temperature is 
 
 $$
@@ -469,7 +470,7 @@ $$
 H = -\epsilon \sum_{\langle i, j \rangle} \left[ \frac{3}{2} \cos^2(\theta_i - \theta_j) - \frac{1}{2} \right]
 $$
 
-where the sum is over nearest-neighbor pairs on a 2D lattice. This model captures the essential features of orientational ordering in two-dimensional systems. Note however that in two dimensions the continuous rotational symmetry of the director cannot be spontaneously broken at finite temperature (Mermin-Wagner theorem): the low temperature phase only has *quasi*-long-range orientational order, and the transition is not a true isotropic-nematic transition.
+where the sum is over nearest-neighbor pairs on a 2D lattice. This model captures the essential features of orientational ordering in two-dimensional systems. Note however that in two dimensions the continuous rotational symmetry of the director cannot be spontaneously broken at finite temperature (Mermin-Wagner theorem): the low temperature phase only has *quasi*-long-range orientational order: correlations decay as a power law rather than exponentially. Since $\frac32\cos^2\Delta\theta-\frac12=\frac34\cos2\Delta\theta+\frac14$, the model is the XY model for the angle $2\theta$; its transition is driven by the unbinding of pairs of topological defects (Kosterlitz–Thouless transition).
 
 
 ```{pyodide}
@@ -663,7 +664,7 @@ def plot_charge_steps(ax, charge, step_frac, title=None):
     y = np.linspace(-1, 1, 20)
     X, Y = np.meshgrid(x, y)
     theta = np.arctan2(Y, X)
-    phi = charge * theta / 2
+    phi = charge * theta
     U = np.cos(phi)
     V = np.sin(phi)
     # Nematic symmetry
@@ -721,7 +722,7 @@ When two disclinations of opposite charges meet, they **annihilate**. This means
 In three dimensions, disclinations are line defects rather than point defects. These line defects represent regions where the orientational order of the director field is singular along a curve, rather than at isolated points. The topology and dynamics of disclination lines in 3D nematic liquid crystals are richer and more complex than in 2D, allowing for phenomena such as defect loops, entanglements, and reconnections. Disclination lines can form closed loops, terminate at surfaces, or interact with other defects, and play a crucial role in the response of liquid crystals to external fields, boundary conditions, and during phase transitions.
 
 
-The classification of disclination in 3D involves the rotation group **SO(3)** (that generalises the construction we have seen in two dimensions) and are more complex in general. They include **lines**, **closed loops**, point-like features (**hedgehogs** and **monopoles**) and complex **textures**.
+In 3D there is only **one** type of stable disclination line: half-integer lines are all equivalent, while integer lines can "escape into the third dimension" and disappear. Point defects (**hedgehogs**) also appear, with an integer charge. Defects therefore include **lines**, **closed loops**, **hedgehogs** and complex **textures**.
 
 You can read more about liquid crystal's defects and their coupling to the material properties in @jones2002soft.
 
