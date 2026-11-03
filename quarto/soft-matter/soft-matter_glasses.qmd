@@ -23,7 +23,7 @@ In these chapters we have been considering systems implicitly (or explicitly) in
 Equilibrium signifies time reversibility.
 
 ::: {.column-margin} 
-At equilibrium, the entropy change $\Delta S$ of a system between two times $t_1, t_2$ or equivalently the entropy production $\frac{dS}{dt}$ are **zero**. Hence the transformation between $t_1$ and $t_2$ has to be **reversible**.
+At equilibrium the **entropy production** is **zero**: any transformation between two times $t_1, t_2$ is **reversible**.
 :::
 
 
@@ -93,8 +93,8 @@ There exist numerous types of glassformers: these include atomic glasses (such a
 
 | Glassformer         | Scale of Constituents      | Properties                                      |
 |---------------------|---------------------------|-------------------------------------------------|
-| Silicate glass      | Atomic (Si, O atoms)      | Strong, transparent, high melting point         |
-| Metallic glass      | Atomic (metal atoms)      | High strength, corrosion resistant, ductile     |
+| Silicate glass      | Atomic (Si, O atoms)      | Hard, transparent, high melting point           |
+| Metallic glass      | Atomic (metal atoms)      | High strength, elastic, corrosion resistant     |
 | Polymer glass       | Macromolecular (polymers) | Flexible, low density, tunable glass transition |
 | Colloidal glass     | Mesoscopic (colloids, ~nm–μm) | Opaque, tunable rheology, soft solid-like   |
 | Molecular glass     | Molecular (organic molecules) | Low melting point, fragile, optical uses   |
@@ -236,9 +236,9 @@ $$\Delta G(T) \propto n_{CRR}(T)$$
 
 By assuming activated dynamics, the Adam-Gibbs relation follows:
 $$
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T S_{\rm conf}(T)}\right)
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right)
 $$
-where $A$ is a constant. As temperature decreases, $S_{\rm conf}$ drops, leading to a rapid increase in $\tau_\alpha$. If $S_{\rm conf}$ vanishes at a finite temperature $T_K$ (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form:
+where $s_{\rm conf}=S_{\rm conf}/N$ is the configurational entropy per particle and $A$ is a constant. As temperature decreases, $s_{\rm conf}$ drops, leading to a rapid increase in $\tau_\alpha$. If $s_{\rm conf}$ vanishes at a finite temperature $T_K$ (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form:
 $$
 \tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
 $$
@@ -266,10 +266,10 @@ A schematic illustration:
 This scenario predicts a **parabolic law** for the relaxation time:
 
 $$
-\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_0} \right)^2
+\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2
 $$
 
-where $J$ is an energy scale and $T_0$ is an onset temperature. Unlike the VFT law, the parabolic law does not diverge at finite $T$ but still captures the super-Arrhenius growth of relaxation times. 
+where $J$ is an energy scale and $T_o$ is the onset temperature of glassy dynamics (above $T_g$; not to be confused with the VFT $T_0$). Unlike the VFT law, the parabolic law does not diverge at finite $T$ but still captures the super-Arrhenius growth of relaxation times. 
 
 Interestingly, both perspectives fit the viscosity data well within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).
 
@@ -283,12 +283,12 @@ Here below is a the visual representation of the time evolution of the magnitude
 
 The word *gel* signifies many different things to different scientific communities. In the context of soft matter physics, a physical gel is typically understood as a system in which the constituent particles or polymers are connected via reversible, non-covalent bonds to form a percolating network that spans the entire sample. This network imparts solid-like mechanical properties to the material, even though the underlying structure remains disordered and fluid-like on a microscopic scale. 
 
-Physical gels differ from chemical gels, where the network is formed by *irreversible* covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of order a few to tens of $k_BT$ (strong enough to persist, weak enough to break and reform), allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are **reversible** systems and often are known as thermoreversible gels. Reversible linking is typically achieved by the formation of dense local regions (e.g. microcrystalline or glassy) that act as *cross-links* to form a spanning network. 
+Physical gels differ from chemical gels, where the network is formed by *irreversible* covalent bonds. In physical gels, the bonds can break and reform dynamically,  have an energy of order a few to tens of $k_BT$ (strong enough to persist, weak enough to break and reform), allowing the system to respond to external stresses and sometimes to self-heal. In this sense they are **reversible** systems and often are known as thermoreversible gels. Reversible linking is typically achieved by the formation of dense local regions (e.g. microcrystalline or glassy) or specific junctions (e.g. triple helices in gelatin) that act as *cross-links* to form a spanning network. 
 
 Examples include gelatin desserts, agarose gels, and  colloidal suspensions such as yoghurt, paint, inks where attractive interactions lead to network formation, see @Zaccarelli2007 for a comprehensive review.
 
 
-The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from **percolation theory**. The mechanical rigidity of the gel arises when this cluster forms, leading to a dramatic increase in viscosity and the emergence of an elastic response.
+The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from **percolation theory**. The mechanical rigidity of the gel arises when this cluster forms and its bonds live long enough to make it effectively **permanent** on the observation time, leading to a dramatic increase in viscosity and the emergence of an elastic response.
 
 []{#percolation}
 
@@ -297,7 +297,7 @@ The transition from a fluid to a gel state is often associated with the appearan
 
 Percolation is the study of an apparently innocent mathematical problem: take a square grid of $L\times L$ sites and randomly label $N$ of them; how does the likelihood of forming a cluster that spans across the grid (i.e. *percolates*) depend on the probability $p=N/L^2$ of having a labelled square?
 
-The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transitions is **continuous**, i.e. second order.
+The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transition is **continuous**, i.e. second order.
 
 Analytically, percolation is tractable and exhibits [universal critical exponents](../phase-transitions/scaling.qmd) near $p_c$, making it a cornerstone of statistical physics and network theory.
 
@@ -354,9 +354,9 @@ L = 500
 largest_sizes = []
 repeats = 3
 for p in ps:
-    grid, mask = sample_percolation(L, p)
     sizes = []
     for r in range(repeats):
+        grid, mask = sample_percolation(L, p)
         sizes.append(mask.sum() / (L * L))  # Fraction of sites in largest cluster
     largest_sizes.append(np.mean(sizes))
 
@@ -376,7 +376,7 @@ The following table illustrates that various values of the critical percolation 
 | Triangular      | 2         | 6                | **0.5**      | 0.347296     |
 | Honeycomb       | 2         | 3                | 0.697043     | **0.652703** |
 | Kagome          | 2         | 4                | 0.6527       | 0.5244       |
-| Union Jack      | 2         | 8                | 0.379        | 0.429        |
+| Union Jack      | 2         | 6 (mean)         | **0.5**      | 0.3232       |
 | Cubic           | 3         | 6                | 0.3116       | 0.2488       |
 | FCC             | 3         | 12               | 0.199        | 0.120        |
 | BCC             | 3         | 8                | 0.245        | 0.180        |
@@ -384,7 +384,7 @@ The following table illustrates that various values of the critical percolation 
 | Hypercubic (4D) | 4         | 8                | 0.197        | 0.160        |
 | Hypercubic (5D) | 5         | 10               | 0.141        | 0.118        |
 | Hypercubic (6D) | 6         | 12               | 0.109        | 0.094        |
-| Hypercubic (7D) | 7         | 14               | 0.091        | 0.079        |
+| Hypercubic (7D) | 7         | 14               | 0.089        | 0.079        |
 | Hypercubic (8D) | 8         | 16               | 0.078        | 0.069        |
 
 
@@ -396,7 +396,6 @@ Instead, other properties of percolation are **universal**: these are the critic
 | 3               | ≈ 0.41                |
 | 4               | ≈ 0.65                |
 | 5               | ≈ 0.81                |
-| 6               | ≈ 0.96                |
 | ≥6 (Mean-field) | **1**                 |
 
 
@@ -528,7 +527,7 @@ where $D_f$ is the **fractal dimension** of the gel network. This power-law regi
 
 ![The same changes of the previous figures as seen in changes in the structure factor $S(q)$ as time evolves and the frozen structure of a colloidal gel emerges. At small q, a characteristic power law behaviour emerges, while at higher q the microstructure changes are subtly capture by the reorganisation or splitting of the peaks.  ](./figs/sq_time.svg){width=60%}
 
-The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. Typical values for percolation clusters in 3D are $D_f \approx 2.5$.
+The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. Typical values for percolation clusters in 3D are $D_f \approx 2.5$. Colloidal aggregates are looser, with $D_f\approx1.8$ (diffusion-limited) to $2.1$ (reaction-limited aggregation).
 
 Thus, by analyzing the low-$q$ behavior of $S(q)$, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.
 
@@ -611,11 +610,9 @@ plt.show()
 :::
 
 
-{{< video https://www.youtube.com/watch?v=QOa2qhDdywc >}}
-
 ### Arrested spinodal scenario for colloidal gels
 
-But how do colloidal gels come about? A viable scenario is the so-called **arrested spinodal decomposition** scenario. Here, a system is rapidly quenched into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via [spinodal decomposition](../phase-transitions/nucleation-and-growth.qmd#spinodal-decomposition). However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
+But how do colloidal gels come about? A viable scenario is the so-called **arrested spinodal decomposition** scenario. Here, a system is quenched deep into a region of its phase diagram where it would normally phase separate into two distinct phases (e.g., a dense and a dilute phase) via [spinodal decomposition](../phase-transitions/nucleation-and-growth.qmd#spinodal-decomposition). However, before the phase separation can complete, the dynamics of the dense regions slow down dramatically—often due to glassy or jamming behavior—leading to a dynamically arrested, bicontinuous structure.
 
 This process is relevant for colloid-polymer mixtures, protein solutions, and some polymer blends. The resulting gels are characterized by a network-like structure that reflects the early stages of spinodal decomposition, "frozen in" by the arrest of particle motion.
 
@@ -623,12 +620,16 @@ For the arrested spinodal scenario to hold, the system evolves following these s
 
 - The system is quenched inside the spinodal region, where spontaneous fluctuations grow.
 - Domains of different densities form, but the dense domains become dynamically arrested before macroscopic phase separation completes.
-- The final structure is a bicontinuous, percolating network with solid-like mechanical properties. 
+- The final structure is a bicontinuous, percolating network with solid-like mechanical properties. It keeps the characteristic length of the spinodal pattern, visible as a low-$q$ peak in $S(q)$.
+
+{{< video https://www.youtube.com/watch?v=QOa2qhDdywc >}}
+
+Formation of a colloid-polymer gel by arrested spinodal decomposition. Video by Peter Lu, see @lu2008gelation.
 
 
 
 
-![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids), adapted from  @Zaccarelli2007. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (where phase separation is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conventional threshold, e.g. 100 seconds). If a system is cooled rapidly down from the fluid to the coexistence region, two scenarios are possible: the fluid spontaneously phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, the cooling is so rapid that proper equilibrium phases cannot be formed and the systems separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenario corresponds to physical gel formation via spinodal decomposition.](./figs/arrestedSpinodal.svg){ width=70%}
+![The arrested spinodal scenario mapped on the phase diagram of the dispersed particles (e.g. colloids), adapted from  @Zaccarelli2007. We distinguish various lines: the liquid-gas coexistence (binodal) in red, the spinodal line (inside which the homogeneous fluid is unstable) black dashed, the percolation line (across which a percolating cluster can be detected), the glass transition line (a dynamical line, where the relaxation time of the system exceeds a conventional threshold, e.g. 100 seconds). If a system is quenched from the fluid into the coexistence region, two scenarios are possible: the fluid spontaneously phase separates into two equilibrium phases (liquid and gas, orange horizontal line); or, for a deep enough quench, the dense phase is glassy as it forms, so that proper equilibrium phases cannot be formed and the system separates into a disordered arrested dense phase and a vapor phase (green horizontal line). This second scenario corresponds to physical gel formation via spinodal decomposition.](./figs/arrestedSpinodal.svg){ width=70%}
 
 For more details, see @Zaccarelli2007.
 
@@ -644,8 +645,8 @@ The table collects the main results of this chapter. Follow the links to go back
 | [Glass formation](#glass-formation) | Cool fast enough to avoid crystallisation; $T_g$ where $\tau_\alpha>t_{\rm obs}$ | Ergodicity is lost; $T_g$ depends on the protocol |
 | [Relaxation](#glass-formation) | Two-step $F_s(q,t)$: $\beta$ (cage), $\alpha$ (structural); $\tau_\alpha\propto\eta$ | Dramatic slowing down |
 | [Strong vs fragile](#viscosity-and-relaxation-times) | Arrhenius $\eta\propto e^{E_A/k_BT}$; VFT $\eta\propto e^{B/(T-T_0)}$ | Angell plot |
-| [Adam-Gibbs](#connection-between-vft-and-configurational-entropy-the-adam-gibbs-model) | $\tau_\alpha=\tau_0\,e^{A/TS_{\rm conf}}$ | $S_{\rm conf}\to0$ at $T_K$ gives VFT; Kauzmann paradox |
-| [Dynamical facilitation](#alternative-perspective-dynamical-facilitation-and-the-parabolic-law) | $\log\tau_\alpha\sim J^2\left(\frac1T-\frac1{T_0}\right)^2$ | Dynamical heterogeneity; no finite-$T$ divergence |
+| [Adam-Gibbs](#connection-between-vft-and-configurational-entropy-the-adam-gibbs-model) | $\tau_\alpha=\tau_0\,e^{A/Ts_{\rm conf}}$ | $S_{\rm conf}\to0$ at $T_K$ gives VFT; Kauzmann paradox |
+| [Dynamical facilitation](#alternative-perspective-dynamical-facilitation-and-the-parabolic-law) | $\log\tau_\alpha\sim J^2\left(\frac1T-\frac1{T_o}\right)^2$ | Dynamical heterogeneity; no finite-$T$ divergence |
 | [Physical gels](#physical-gels) | Reversible bonds (a few to tens of $k_BT$) forming a percolating network | Percolation is needed for rigidity |
 | [Percolation](#percolation) | $P_\infty\propto(p-p_c)^\beta$ | $p_c$ non-universal, $\beta$ universal |
 | [Colloid-polymer mixtures](#colloid-polymer-mixtures-as-an-example) | Short-range depletion (AO, square well, Morse) | Metastable binodal, so gels form |
