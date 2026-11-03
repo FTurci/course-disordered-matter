@@ -27,7 +27,7 @@ However, many systems in nature and technology are driven out of equilibrium by 
 - processing
 - growth and deformation
 
-This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on one of the most fundamental kinds of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria.
+This is what is typically performed by many living organisms: by consuming energy **locally** (hence dissipating heat) they perform some function. Here we focus on one of the most fundamental kinds of functions which is **motion**. A bacterium uses energy to propel itself into space, explore it and eventually interact with the environment, including other bacteria. Active systems can reach steady states, whose observables do not change in time, but unlike equilibrium states these have **positive entropy production** and break detailed balance (compare with the [arrested states chapter](soft-matter_glasses.qmd)).
 
 We could, at this stage, say that these interactions and the behaviour emerging from them are inherently *biological* and governed solely by mechanisms that transcend the physical correlations (behavioural science). As physicists, we do not negate the existence of such dimensions (especially when communication and sensing are involved) but aim to run a different research programme: we want to **gauge** the level of biological surprise[^cavagna-footnote], as nicely put by Andrea Cavagna, a complex system physicist.
 
@@ -51,7 +51,7 @@ where $\xi_i$ is uniform in $[-\eta/2,\eta/2]$.
 - At **high noise** $\eta$ (or low density) the particles move in random directions.
 - At **low noise** (or high density) they spontaneously move together: the system **flocks**.
 
-The transition is measured by the polar order parameter $\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|$, which goes from $0$ (disordered) to $1$ (all particles moving together).
+The transition is measured by the polar order parameter $\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|$, which goes from $0$ (disordered) to $1$ (all particles moving together). Careful simulations show that the transition is **discontinuous**: close to it, the ordered phase forms dense travelling bands [@gregoire2004onset].
 
 ```{pyodide}
 #| caption: "Vicsek model [press ctrl/cmd [ENTER] to run]"
@@ -244,7 +244,7 @@ We can imagine a schematic algorithm:
     - Initialize the particle's position $\mathbf{r}(0)$ and direction $\hat{\mathbf{n}}(0)$.
     - For each time step $\Delta t$:
         - With probability $\lambda \Delta t$, perform a tumble (randomize $\hat{\mathbf{n}}$).
-        - Otherwise, update the position using the run equation.
+        - Update the position using the run equation.
     - Repeat for the desired simulation duration.
 
 Here, $\lambda$ is the tumble rate, which determines the frequency of reorientation events.
@@ -265,7 +265,11 @@ The [mean squared displacement](../phase-transitions/Brownian-and-Langevin-dynam
     where $D_{\text{eff}} = \frac{v_0^2}{2\lambda}$ in 2D.
 
 
- At intermediate timescales, the MSD transitions smoothly from ballistic to diffusive behavior.
+ The full expression in 2D,
+$$
+\langle \Delta r^2(t) \rangle = \frac{2v_0^2}{\lambda^2}\left(\lambda t-1+e^{-\lambda t}\right),
+$$
+interpolates smoothly between the two regimes.
 
 
 ```{pyodide}
@@ -370,21 +374,21 @@ We can analyse this a little more in detail by considering the characteristic fe
 
 Indeed, it can be shown (see below) that the mean squared displacement for active Brownian particles displays three regimes:
 $$
-\operatorname{MSD}(\tau) = \left[4 D_T + 2 v^2 \tau_R \right] \tau + 2 v^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
+\operatorname{MSD}(\tau) = \left[4 D_t + 2 v_0^2 \tau_R \right] \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau / \tau_R} - 1 \right)
 $$
 
 where:
-- $D_{\mathrm{eff}} = D_T + \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient (with $\tau_R = 1/D_r$),
+- $D_{\mathrm{eff}} = D_t + \frac{v_0^2}{2 D_r}$ is the effective long-time diffusion coefficient (with $\tau_R = 1/D_r$),
 
 This clearly shows that there are three main regimes: 
 
-- a very short time diffusive regime $\operatorname{MSD}(\tau) \simeq 4D_T\tau$
-- an intermediate regime, $4D_T/v^2 \ll \tau \ll \tau_R$, before any reorientation has taken place: 
+- a very short time diffusive regime $\operatorname{MSD}(\tau) \simeq 4D_t\tau$
+- an intermediate regime, $4D_t/v_0^2 \ll \tau \ll \tau_R$, before any reorientation has taken place: 
     $$
-    \operatorname{MSD}(\tau) = 4 D_{\mathrm{T}} \tau + v^2 \tau^2
+    \operatorname{MSD}(\tau) = 4 D_t \tau + v_0^2 \tau^2
     $$
     leading to **super-diffusive** (ballistic) motion
-- a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_{\mathrm{T}}+2 v^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
+- a final regime where the reorientation has taken place and where a new diffusive regime is reached where the MSD is proportional to time, i.e. $\operatorname{MSD}(\tau)=\left[4 D_t+2 v_0^2 \tau_{\mathrm{R}}\right] \tau$ but with a new diffusion constant.
 
 ::: {.callout-note collapse="true"}
 
@@ -393,16 +397,16 @@ We derive the MSD expression for 2d Active Brownian particles.
 We first integrate the velocity
 
 $$
-\mathbf{r}(\tau) - \mathbf{r}(0) = v \int_0^\tau \hat{\mathbf{n}}(s) ds + \sqrt{2 D_T} \int_0^\tau \boldsymbol{\eta}(s) ds.
+\mathbf{r}(\tau) - \mathbf{r}(0) = v_0 \int_0^\tau \hat{\mathbf{n}}(s) ds + \sqrt{2 D_t} \int_0^\tau \boldsymbol{\eta}(s) ds.
 $$
 
 Since $\boldsymbol{\eta}(t)$ is independent from $\hat{\mathbf{n}}(t)$,
 
 $$
-\langle \Delta r^2(\tau) \rangle = v^2 \left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle + 4 D_T \tau,
+\langle \Delta r^2(\tau) \rangle = v_0^2 \left\langle \left| \int_0^\tau \hat{\mathbf{n}}(s) ds \right|^2 \right\rangle + 4 D_t \tau,
 $$
 
-using $\langle |\int \boldsymbol{\eta}(s) ds|^2 \rangle = 2 d D_T \tau$ with dimension $d=2$.
+using $\langle |\sqrt{2D_t}\int_0^\tau \boldsymbol{\eta}(s) ds|^2 \rangle = 2 d D_t \tau$ with dimension $d=2$.
 
 We first need to evaluate the orientation correlation integral.
 
@@ -460,21 +464,21 @@ $$
 Putting it all together,
 
 $$
-\langle \Delta r^2(\tau) \rangle = v^2 I(\tau) + 4 D_T \tau = v^2 \left[ 2 \tau_R \tau - 2 \tau_R^2 (1 - e^{-\tau/\tau_R}) \right] + 4 D_T \tau,
+\langle \Delta r^2(\tau) \rangle = v_0^2 I(\tau) + 4 D_t \tau = v_0^2 \left[ 2 \tau_R \tau - 2 \tau_R^2 (1 - e^{-\tau/\tau_R}) \right] + 4 D_t \tau,
 $$
 
 or equivalently
 
 $$
 \boxed{
-\langle \Delta r^2(\tau) \rangle = \left(4 D_T + 2 v^2 \tau_R \right) \tau + 2 v^2 \tau_R^2 \left( e^{-\tau/\tau_R} - 1 \right).
+\langle \Delta r^2(\tau) \rangle = \left(4 D_t + 2 v_0^2 \tau_R \right) \tau + 2 v_0^2 \tau_R^2 \left( e^{-\tau/\tau_R} - 1 \right).
 }
 $$
 
 :::
 
 
-This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs.
+This crossover from ballistic to diffusive behavior is a hallmark of persistent random walks such as ABPs. With $D_t=0$ it is identical to the run-and-tumble result for $\lambda=1/\tau_R$: more generally, run-and-tumble and active Brownian particles are equivalent on large scales when $\lambda=(d-1)D_r$ [@cates2013active]. Note that $\tau_R=1/D_r$ in 2D, while in 3D $\langle\hat{\mathbf n}(t)\cdot\hat{\mathbf n}(0)\rangle=e^{-2D_rt}$.
 
 ```{pyodide}
 #| autorun: true
@@ -543,6 +547,15 @@ However, as we reduce the rotational diffusion, the persistent motion becomes mo
 
 In particular, the collision between particles are no longer leading to quick decorrelation: on the contrary, head-to-head collisions between the particles mean that there is a finite residence time for a pair of particles to stay in each other neighborhoods. This effect is amplified by multiple collisions, leading to many-body caging effects that promote density heterogeneities in the fluid.
 
+The mechanism is a **positive feedback** [@cates2015motility]. First, active particles accumulate where they move slowly: non-interacting active particles with a slowly varying speed $v(\mathbf r)$ reach a steady state with
+$$
+\rho(\mathbf r)\propto\frac{1}{v(\mathbf r)},
+$$
+a non-uniform density without any potential, which no Boltzmann distribution can produce. Second, collisions make the speed decrease with density, $v(\rho)$. Together, a denser region slows particles down, which makes it denser still. The homogeneous state becomes unstable (a spinodal instability) when
+$$
+\frac{d\ln v}{d\ln\rho}<-1 .
+$$
+
 The result is striking: for sufficiently low rotational diffusions, the fluid of active Brownian particles spontaneously phase separates into a dilute and a dense phase, akin to the gas and liquid phase of [equilibrium systems](soft-matter_colloids.qmd#beyond-hard-spheres-simple-liquids). As in equilibrium liquid-gas coexistence, the coexistence region ends at a [critical point](../phase-transitions/approach-to-criticality.qmd), where density fluctuations are strongly enhanced. 
 
 This has been examined in detail in computer simulations, both in two dimensional systems and in three dimensional systems (where the physics is even richer and presents parallels with the situation of [colloid-polymer mixtures](soft-matter_glasses.qmd#colloid-polymer-mixtures-as-an-example) due to the very short range nature of the effective interactions between active particles).
@@ -555,9 +568,9 @@ The table collects the main results of this chapter. Follow the links to go back
 |---|---|---|
 | [Active matter](#beyond-thermal-systems) | Local energy consumption → self-propulsion | No Boltzmann distribution |
 | [Vicsek model](#flocking-the-vicsek-model) | Self-propulsion + alignment, noise $\eta$; polar order $\phi=\lvert\frac1N\sum_ie^{i\theta_i}\rvert$ | Flocking at low noise or high density |
-| [Run-and-tumble](#life-inspired-motion-run-and-tumble) | Straight runs at $v_0$, random tumbles at rate $\lambda$ | $D_{\rm eff}=v_0^2/2\lambda$ (2D) |
+| [Run-and-tumble](#life-inspired-motion-run-and-tumble) | Straight runs at $v_0$, random tumbles at rate $\lambda$ | $D_{\rm eff}=v_0^2/2\lambda$ (2D); equivalent to ABPs for $\lambda=(d-1)D_r$ |
 | [Active Brownian particles](#active-brownian-particle-and-motility-induced-phase-separation) | $\dot{\mathbf r}=v_0\hat{\mathbf n}+\sqrt{2D_t}\,\boldsymbol\xi$, $\dot\theta=\sqrt{2D_r}\,\eta_\theta$; $\mathrm{Pe}=v_0/\sqrt{D_tD_r}$ | Continuous reorientation, $\tau_R=1/D_r$ |
-| [MSD](#mean-squared-displacement-of-active-brownian-particles) | $4D_T\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, with $D_{\rm eff}=D_T+v_0^2/2D_r$ | Diffusive, then ballistic, then enhanced diffusion |
-| [MIPS](#interacting-abps-and-motility-induced-phase-separation) | Purely repulsive ABPs phase separate at low $D_r$ | Persistent collisions slow particles down: dense and dilute phases, with a critical point |
+| [MSD](#mean-squared-displacement-of-active-brownian-particles) | $4D_t\tau$ → $v_0^2\tau^2$ → $4D_{\rm eff}\tau$, with $D_{\rm eff}=D_t+v_0^2/2D_r$ | Diffusive, then ballistic, then enhanced diffusion |
+| [MIPS](#interacting-abps-and-motility-induced-phase-separation) | Purely repulsive ABPs phase separate at low $D_r$ | Dense $\to$ slow $\to$ denser; unstable if $d\ln v/d\ln\rho<-1$; critical point |
 
 ## References {.unnumbered}
