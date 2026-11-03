@@ -680,12 +680,12 @@ $$U=N_{s p} \varepsilon_{s p}+\frac{\left(z N_{s}-N_{s p}\right) \varepsilon_{s 
 Hence we obtain for the **energy of mixing**
 
 $$
-\Delta U_{\mathrm{mix}}=N_{s p}\left[\varepsilon_{s p}-\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right)\right]
+\Delta U_{\mathrm{mix}}=N_{s p}\left[\varepsilon_{s p}-\frac{1}{2}\left(\varepsilon_{s s}+\varepsilon_{p p}\right)\right]\equiv N_{sp}\,\Delta\varepsilon
 $$
 
 which can be either positive or negative.
 
-The energy is not the whole story. The lattice model also contains entropy: each site holds a single molecule, which is the excluded volume of the previous section. Its cost is entropic, of order $k_BT$ per monomer-monomer contact, because it removes configurations. The mixing energy works against it: for $\Delta\varepsilon=\varepsilon_{sp}-\frac{1}{2}\left(\varepsilon_{ss}+\varepsilon_{pp}\right)>0$, monomer-monomer contacts are energetically favoured. The $\varepsilon$ of the Flory argument is therefore an effective contact free energy
+The energy is not the whole story. The lattice model also contains **entropy**: each site holds a single molecule, which is the excluded volume of the previous section. Its cost is entropic, of order $k_BT$ per monomer-monomer contact, because it removes configurations. The mixing energy works against it: $\Delta\varepsilon$ is the energy of mixing per solvent-monomer contact, and for $\Delta\varepsilon>0$ (i.e. $\Delta U_{\rm mix}>0$) monomer-monomer contacts are energetically favoured. The $\varepsilon$ of the Flory argument is therefore an effective contact free energy
 
 $$
 \varepsilon_{\rm eff}\sim k_BT-z\,\Delta\varepsilon=k_B(T-\Theta),\qquad \Theta\sim\frac{z\,\Delta\varepsilon}{k_B},
@@ -703,7 +703,7 @@ This is the case of a 'good solvent': excluded volume wins and expands the chain
 
 This is the case of a 'poor solvent'. It requires $\Delta U_{\rm mix}>0$: the monomers prefer to be near to each other (and similarly for the solvent molecules). The attraction must also be strong enough to overcome the excluded volume, and then the chain collapses into a compact globule. Since the globule has a roughly uniform density, its volume grows linearly with the number of monomers, $R^3\propto N$, hence $R\sim N^{1/3}$. Examples include hydrophobic polypeptides (rich in e.g. alanine, leucine, methionine), polystyrene in water, and chromatin, packed into a compact globule in the cell nucleus.
 
-The importance of the attractions generally depends on temperature. At very high temperatures the coil is expanded and the solvent quality is good. In contrast, at very low temperatures, the solvent quality is poor, attraction dominates, the coil collapses and phase separation is observed. In between these two limits, there is a temperature, the so-called theta temperature $\Theta$, where the effects of excluded volume and attraction cancel each other ($\varepsilon_{\rm eff}=0$): in $d=3$ the coil has ideal dimensions and behaves as a random walk, $R\sim N^{1/2}$. The solvent at $T=\Theta$ is called a 'theta solvent'. The stronger the attractions the higher $\Theta$ will be, while for weak attractions $\Theta$ is low.
+The importance of the attractions generally depends on temperature. At very high temperatures the coil is expanded and the solvent quality is good. In contrast, at very low temperatures, the solvent quality is poor, attraction dominates, the coil collapses and phase separation is observed. In between these two limits, there is a temperature, the so-called **theta temperature** $\Theta$, where the effects of excluded volume and attraction cancel each other ($\varepsilon_{\rm eff}=0$): in $d=3$ the coil has ideal dimensions and behaves as a random walk, $R\sim N^{1/2}$. The solvent at $T=\Theta$ is called a 'theta solvent'. The stronger the attractions the higher $\Theta$ will be, while for weak attractions $\Theta$ is low.
 A full treatment of the coil expansion is rather involved and has to take into account excluded volume, attractions, configurational entropy and entropy of mixing. You can read more about the theta condition in @jones2002soft.
 
 
