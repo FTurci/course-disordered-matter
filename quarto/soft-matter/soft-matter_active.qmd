@@ -5,7 +5,10 @@ pyodide:
     packages:
         - numpy
         - matplotlib
+        - plotly
 bibliography: references.bib
+include-in-header:
+    text: <script src="https://cdn.plot.ly/plotly-4.1.1.min.js" charset="utf-8"></script>
 ---
 
 ::: {.callout-tip appearance="simple"}
@@ -54,9 +57,11 @@ where $\xi_i$ is uniform in $[-\eta/2,\eta/2]$.
 The transition is measured by the polar order parameter $\phi=\big|\frac1N\sum_i e^{i\theta_i}\big|$, which goes from $0$ (disordered) to $1$ (all particles moving together). Careful simulations show that the transition is **discontinuous**: close to it, the ordered phase forms dense travelling bands [@gregoire2004onset].
 
 ```{pyodide}
-#| caption: "Vicsek model [press ctrl/cmd [ENTER] to run]"
+#| caption: "Vicsek model [press ctrl/cmd [ENTER] to run, then press Play]"
 import numpy as np
-import matplotlib.pyplot as plt
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from IPython.display import HTML
 
 # Parameters: change the noise amplitude eta (between 0 and 2*pi) and compare!
 N = 300         # number of particles
@@ -65,11 +70,12 @@ R = 1.0         # interaction radius
 v0 = 0.1        # speed
 eta = 0.5       # noise amplitude
 steps = 300
+every = 2       # store one frame every `every` steps
 
 rng = np.random.default_rng(1)
 pos = rng.uniform(0, L, (N, 2))
 theta = rng.uniform(-np.pi, np.pi, N)
-phi = []
+phi, frames = [], []
 
 for t in range(steps):
     # neighbours within R, with periodic boundaries
@@ -80,14 +86,40 @@ for t in range(steps):
     theta = np.angle(neigh @ np.exp(1j * theta)) + rng.uniform(-eta / 2, eta / 2, N)
     pos = (pos + v0 * np.column_stack((np.cos(theta), np.sin(theta)))) % L
     phi.append(np.abs(np.exp(1j * theta).mean()))
+    if t % every == 0:
+        frames.append((t, pos.round(3), theta.round(3)))
 
-fig, ax = plt.subplots(1, 2, figsize=(9, 4))
-ax[0].quiver(pos[:, 0], pos[:, 1], np.cos(theta), np.sin(theta), theta, cmap="hsv", scale=30)
-ax[0].set(xlim=(0, L), ylim=(0, L), aspect="equal", title=rf"$\eta={eta}$")
-ax[1].plot(phi)
-ax[1].set(xlabel="time step", ylabel=r"polar order $\phi$", ylim=(0, 1))
-plt.tight_layout()
-plt.show()
+# Plotly arrows point up and rotate clockwise, in degrees
+def particles(pos, theta):
+    return go.Scatter(x=pos[:, 0], y=pos[:, 1], mode="markers",
+                      marker=dict(symbol="arrow", size=9, angle=90 - np.degrees(theta),
+                                  color=theta, colorscale="Phase", cmin=-np.pi, cmax=np.pi))
+
+def now(t):
+    return go.Scatter(x=[t], y=[phi[t]], mode="markers", marker=dict(size=10, color="black"))
+
+fig = make_subplots(rows=1, cols=2, column_widths=[0.55, 0.45], horizontal_spacing=0.15)
+fig.add_trace(particles(frames[0][1], frames[0][2]), row=1, col=1)
+fig.add_trace(go.Scatter(y=phi, mode="lines", line=dict(color="gray")), row=1, col=2)
+fig.add_trace(now(0), row=1, col=2)
+fig.frames = [go.Frame(data=[particles(p, th), now(t)], traces=[0, 2], name=str(t))
+              for t, p, th in frames]
+
+play = dict(frame=dict(duration=40, redraw=False), transition=dict(duration=0), fromcurrent=True)
+pause = dict(frame=dict(duration=0, redraw=False), mode="immediate")
+fig.update_layout(
+    title=f"η = {eta}", showlegend=False, height=450,
+    updatemenus=[dict(type="buttons", x=0, y=-0.12, xanchor="left", direction="left",
+                      buttons=[dict(label="Play", method="animate", args=[None, play]),
+                               dict(label="Pause", method="animate", args=[[None], pause])])],
+    sliders=[dict(x=0.15, len=0.85, y=-0.05, currentvalue=dict(prefix="time step "),
+                  steps=[dict(label=f.name, method="animate", args=[[f.name], pause])
+                         for f in fig.frames])])
+fig.update_xaxes(range=[0, L], row=1, col=1)
+fig.update_yaxes(range=[0, L], scaleanchor="x", row=1, col=1)
+fig.update_xaxes(title="time step", row=1, col=2)
+fig.update_yaxes(title="polar order φ", range=[0, 1], row=1, col=2)
+HTML(fig.to_html(include_plotlyjs=False, full_html=False, auto_play=False))
 ```
 
 ## Life-inspired motion: *run and tumble*
