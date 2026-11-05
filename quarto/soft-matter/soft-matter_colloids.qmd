@@ -460,7 +460,7 @@ $$
 W_{\rm AO}(r) = - k_B T \rho_p V_{\rm overlap}(r).
 $$
 
-The form can be expressed in terms of  $q = \delta / R $ by using
+The form can be expressed in terms of $q = \delta / R$ by using
 
 $$
 V_{\rm overlap}(r) = \frac{4 \pi}{3} (R+\delta)^3
@@ -1369,7 +1369,7 @@ The last equation applies to a spherical particle of radius $R$ in a fluid of vi
 For a colloid of radius $R=0.5\,\mu\text{m}$ in water at room temperature ($\eta\approx 0.89$ mPa s), $D\approx 0.5\,\mu\text{m}^2/\text{s}$. The time it takes to diffuse over its own radius is then $\tau_B=R^2/D\approx 0.5$ s, and grows as $R^3$. For an atom in a simple liquid (e.g. argon, $D\sim 2\times10^{-9}\,\text{m}^2/\text{s}$, size $\sim 0.2$ nm) the same estimate gives $\sim 10$ ps. Colloidal liquids and crystals evolve slowly enough to be filmed under a microscope, particle by particle.
 :::
 
--   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the response to the 'fluctuations' $k_B T $. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
+-   The Stokes-Einstein relation is a very deep result. It relates equilibrium fluctuations in a system to the energy dissipation when the system is driven off equilibrium. Here, the fluctuations in the fluid give rise to the diffusive motion of the suspended particle and $D$ is therefore the response to the 'fluctuations' $k_B T$. A sheared fluid will dissipate energy because of its finite viscosity and thus $\eta$ represents the dissipative part.
 
 -   More generally, Brownian motion sets a natural limit to the precision of physical measurements. Example from the [Feynman Lectures](https://www.feynmanlectures.caltech.edu/I_41.html):
 
