@@ -42,9 +42,10 @@ def problems(text):
 out.mkdir(parents=True, exist_ok=True)
 # Render outside the project, so the book's _quarto.yml does not apply.
 with tempfile.TemporaryDirectory() as tmp:
-    for i, (chapter, title, body) in enumerate(problems(src.read_text(encoding="utf-8")), start=1):
+    for chapter, title, body in problems(src.read_text(encoding="utf-8")):
         body = re.sub(r'(:::+\s*\{\s*\.callout-note)\s+collapse="true"\s*\}', r"\1}", body)
-        name = f"{i:02d}-{slug(chapter)}-{slug(title)}"
+        # Same name as the link inserted by quarto/soft-matter/problem-pdf-links.lua
+        name = f"{slug(chapter)}-{slug(title)}"
         qmd = Path(tmp) / f"{name}.qmd"
         qmd.write_text(
             f'---\ntitle: "{title}"\nsubtitle: "Complex disordered systems: {chapter}"\n'

@@ -1,3 +1,10 @@
+---
+filters:
+  - problem-pdf-links.lua
+resources:
+  - problem-pdfs/*.pdf
+---
+
 # Complex disordered systems: Problems {#problems-complex .unnumbered}
 
 ## Colloids
