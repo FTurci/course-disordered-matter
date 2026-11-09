@@ -587,53 +587,40 @@ $$\therefore \frac{V_{N}}{V_{\text {coil }}}=\frac{N b^{3}}{(4 \pi / 3) N^{3 / 2
 
 This means that for $N=10^{4}$ monomers occupy only about $1 \%$ of the whole coil volume.
 
-The overall chain size as estimated by the radius of gyration $\langle R_{g}^{2}\rangle^{1 / 2}$ is determined by the competition of two effects: 
+The size of the chain is set by a competition between two effects:
 
- 1. **Entropy** (and chain connectivity) favour a **compact chain** and avoid the more unlikely stretched configurations
- 2. Repulsive **excluded volume** interactions want to **expand the chain** to avoid overlap. 
- 
- Based on this balance we will estimate the effect of excluded volume in a very hand-waving way. (Due to a fortuitous cancellation of errors introduced by various approximations, the result is practically identical to more rigorous treatments, which are very involved.)
+ 1. **Entropy** (and chain connectivity) favours a coiled chain: stretched configurations are rare.
+ 2. **Excluded volume** favours a swollen chain: monomers cannot overlap, and squeezing them together removes configurations.
 
-We consider the Helmholtz function of a single chain, which is regarded as an assembly of particles with constant volume $\mathrm{NV}_{1}$ at constant temperature T :
+Flory's argument estimates both effects as a free energy $F(R)$ of a coil of size $R$; the typical size is the one that minimises $F$. The argument is deliberately rough, but its approximations cancel fortuitously, and the result is remarkably close to exact treatments.
 
-$$
-F=U-T S
-$$
-
-The entropy S is given by
+**Elastic term.** For a given end-to-end vector $\mathbf{R}$, the number of chain configurations is proportional to
 
 $$
-S=k_{B} \ln (\text {number of configurations })
+P(\mathbf{R})=\left(\frac{3}{2 \pi\langle R^{2}\rangle}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2\langle R^{2}\rangle}},
 $$
 
-where for a given end-to-end vector $\mathbf{R}$ the number of configurations is expected to be proportional to
+so the entropy is $S=k_B\ln P\simeq-\dfrac{3k_BR^2}{2Nb^2}+$ terms independent of $R$. The corresponding free energy, $-TS$, grows as $R^2$: the chain resists being stretched like an entropic spring.
+
+**Interaction term.** Ignore the connectivity of the chain and treat its $N$ monomers as a gas spread over the coil volume, with density $\rho\simeq N/R^3$. As for a non-ideal gas, the interaction free energy can be expanded in powers of the density (a virial expansion):
 
 $$
-P(\mathbf{R})=\left(\frac{3}{2 \pi\langle R^{2}\rangle}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2\langle R^{2}\rangle}}
+\frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
 $$
 
-and hence
+The **excluded-volume parameter** $v=B_2$ is the second virial coefficient: for hard monomers it is the volume one monomer excludes to another, $v\simeq b^3$. The three-body coefficient $w=B_3\simeq b^6$ is always positive. Adding the elastic term, the Flory free energy is
 
 $$
-S \sim \frac{-3 k_{B} R^{2}}{2 N b^{2}}+\text { terms indep. of } \mathrm{R}
+\frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
 $$
 
-The internal energy $U$ includes the kinetic and potential energy. However, the kinetic energy is *independent of the configuration* and thus of $\mathbf{R}$ and we only have to consider the potential energy. 
+Only the scaling with $N$ matters below, so numerical prefactors of order one are dropped from the results.
 
-To estimate the potential energy, we disregard the connectivity of the chain and calculate the interaction energy of a 'segment gas' confined in a volume $R^{3}$. The probability of a monomer to lie in this volume is given by the fraction of total coil volume occupied by monomers, which we estimated above to be $N V_{1} / R^{3}$
-
-Thus the number of monomer-monomer contacts is $N^{2} V_{1} / R^{3} \sim N^{1 / 2}$. With an energy $\varepsilon$ of a monomer-monomer contact, the potential energy $U \sim \varepsilon N^{2} V_{1} / R^{3}$.
-We thus obtain
+**Swollen chain.** With purely repulsive monomers, $v>0$. The two-body term then dominates the three-body one for a long chain (their ratio, $wN/vR^3$, vanishes as the coil swells), and minimising the first two terms, $dF/dR=0$, gives
 
 $$
-F=\frac{\varepsilon N^{2} V_{1}}{R^{3}}+\frac{3 k_{B} T R^{2}}{2 N b^{2}}+\text { terms indep. of } \mathrm{R}
+R^5\simeq v\,b^2N^3 \qquad\therefore\qquad R\sim N^{3/5}b .
 $$
-
-which can be minimized with respect to $R$, i.e. $d F / d R=0$, yielding
-
-$$R^{5}=\frac{\varepsilon V_{1} b^{2}}{k_{B} T} N^{3} \sim \frac{\varepsilon}{k_{B} T} N^{3} b^{5}$$ 
-
-$$ \therefore R \sim N^{3 / 5} b$$
 
 Simulations give a very similar scaling, $\mathrm{R} \sim N^{0.588}$. The chain can no longer be modelled by a random walk, but has to be described by a **self-avoiding random walk**. The distribution of end-to-end distances is also not Gaussian. Note that the exponent $3/5$ here is an example of a critical exponent (though not in exactly the same sense that you saw when [studying magnets and fluids](../phase-transitions/scaling.qmd)). Inclusion of excluded volume effects changes the universality class of the scaling of the chain length and radius of gyration with $N$ compared to the Gaussian chains that we looked at previously. 
 
@@ -685,26 +672,27 @@ $$
 
 which can be either positive or negative.
 
-The energy is not the whole story. The lattice model also contains **entropy**: each site holds a single molecule, which is the excluded volume of the previous section. Its cost is entropic, of order $k_BT$ per monomer-monomer contact, because it removes configurations. The mixing energy works against it: $\Delta\varepsilon$ is the energy of mixing per solvent-monomer contact, and for $\Delta\varepsilon>0$ (i.e. $\Delta U_{\rm mix}>0$) monomer-monomer contacts are energetically favoured. The $\varepsilon$ of the Flory argument is therefore an effective contact free energy
+**From the mixing energy to the excluded volume.** Excluded volume is an entropic effect: each monomer-monomer contact costs of order $k_BT$, because it removes configurations. When $\Delta\varepsilon>0$, the same contact is also energetically favoured, by an amount of order $z\,\Delta\varepsilon$. The net cost of a contact, and with it the excluded-volume parameter, is therefore
 
 $$
-\varepsilon_{\rm eff}\sim k_BT-z\,\Delta\varepsilon=k_B(T-\Theta),\qquad \Theta\sim\frac{z\,\Delta\varepsilon}{k_B},
+v\simeq b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta\simeq\frac{z\,\Delta\varepsilon}{k_B},
 $$
 
-where numerical prefactors of order one have been dropped.
+where the **theta temperature** $\Theta$ is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
 
-- **Good solvent**: $\varepsilon_{\rm eff}>0$, i.e. $T>\Theta$
+| Solvent | $v$ | Terms that set $R$ | Size |
+|---|---|---|---|
+| **Good**, $T>\Theta$ | $v>0$ | elastic and two-body | swollen coil, $R\sim N^{3/5}$ |
+| **Theta**, $T=\Theta$ | $v=0$ | elastic and three-body | ideal coil, $R\sim N^{1/2}$ |
+| **Poor**, $T<\Theta$ | $v<0$ | two-body and three-body | compact globule, $R\sim N^{1/3}$ |
 
-<!-- ![](https://cdn.mathpix.com/cropped/2025_01_27_a9af280ad9752fe3d0c0g-28.jpg?height=304&width=458&top_left_y=913&top_left_x=1279) -->
+- **Good solvent.** Excluded volume wins and the chain swells as derived above. This includes $\Delta U_{\rm mix}<0$, where the monomers prefer to be next to solvent molecules, but also weakly positive $\Delta U_{\rm mix}$.
 
-This is the case of a 'good solvent': excluded volume wins and expands the chain, which follows the self-avoiding walk scaling $R\sim N^{3/5}$ derived above. It includes $\Delta U_{\rm mix}<0$, where the monomers prefer to be near the solvent molecules, but also weakly positive $\Delta U_{\rm mix}$.
+- **Theta solvent.** Repulsion and attraction cancel, $v=0$, and the three-body term balances the elastic one: $R^2/Nb^2\sim wN^3/R^6$ gives $R^8\sim N^4$, i.e. $R\sim N^{1/2}$. In $d=3$ the chain therefore has ideal dimensions and behaves as a random walk (up to logarithmic corrections). This is special to three dimensions: in $d=2$ the same argument gives $\nu=2/3$, and a two-dimensional theta chain is not ideal.
 
-- **Poor solvent**: $\varepsilon_{\rm eff}<0$, i.e. $T<\Theta$
+- **Poor solvent.** The two-body interaction is attractive and pulls the chain together, until the three-body repulsion stops it; the elastic term is then negligible. Balancing $|v|N^2/R^3\sim wN^3/R^6$ gives $R^3\sim (w/|v|)\,N$ (see the problem *Flory exponent for a polymer globule* for the full minimisation): the globule has a uniform density, its volume grows linearly with $N$, and $R\sim N^{1/3}$. Examples include hydrophobic polypeptides (rich in e.g. alanine, leucine, methionine), polystyrene in water, and chromatin, packed into a compact globule in the cell nucleus. At finite concentration, poor solvents lead to phase separation into polymer-rich and polymer-poor phases.
 
-This is the case of a 'poor solvent'. It requires $\Delta U_{\rm mix}>0$: the monomers prefer to be near to each other (and similarly for the solvent molecules). The attraction must also be strong enough to overcome the excluded volume, and then the chain collapses into a compact globule. Since the globule has a roughly uniform density, its volume grows linearly with the number of monomers, $R^3\propto N$, hence $R\sim N^{1/3}$. Examples include hydrophobic polypeptides (rich in e.g. alanine, leucine, methionine), polystyrene in water, and chromatin, packed into a compact globule in the cell nucleus.
-
-The importance of the attractions generally depends on temperature. At very high temperatures the coil is expanded and the solvent quality is good. In contrast, at very low temperatures, the solvent quality is poor, attraction dominates, the coil collapses and phase separation is observed. In between these two limits, there is a temperature, the so-called **theta temperature** $\Theta$, where the effects of excluded volume and attraction cancel each other ($\varepsilon_{\rm eff}=0$): in $d=3$ the coil has ideal dimensions and behaves as a random walk, $R\sim N^{1/2}$. The solvent at $T=\Theta$ is called a 'theta solvent'. The stronger the attractions the higher $\Theta$ will be, while for weak attractions $\Theta$ is low.
-A full treatment of the coil expansion is rather involved and has to take into account excluded volume, attractions, configurational entropy and entropy of mixing. You can read more about the theta condition in @jones2002soft.
+A full treatment of coil expansion is rather involved and has to take into account excluded volume, attractions, configurational entropy and entropy of mixing. You can read more about the theta condition in @jones2002soft.
 
 
 ## Concentrated polymer solutions
@@ -796,8 +784,8 @@ The table collects the main results of this chapter. Follow the links to go back
 | [Freely-rotating chain](#freely-rotating-chain) | $\langle R^2\rangle=CNb_0^2$, $C=\frac{1+\cos\theta}{1-\cos\theta}$ | Stiffness only changes the prefactor |
 | [Kuhn length](#freely-rotating-chain) | $b=Cb_0$, $N'=N/C$; $\ell_p=b/2$ | Chemistry is hidden in $b$ |
 | [Length scales](#freely-rotating-chain) | $R_g$ (global) $\gg b$ (stiff rod) $\gg$ monomer | Different physics at each scale |
-| [Excluded volume](#excluded-volume-effects) | $R\sim N^{3/5}$ (Flory; simulations $\nu\approx0.588$) | Self-avoiding walk: a new exponent |
-| [Solvent quality](#good-poor-and-theta-solvents) | $\varepsilon_{\rm eff}\sim k_BT-z\,\Delta\varepsilon=k_B(T-\Theta)$ | Excluded volume (entropy) vs mixing energy. In $d=3$, good: $\nu\approx3/5$; $\Theta$: $\nu=1/2$; poor: collapse, $\nu=1/3$ |
+| [Excluded volume](#excluded-volume-effects) | $\frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\frac{N^2}{R^3}+w\frac{N^3}{R^6}$; $R\sim N^{3/5}$ (simulations $\nu\approx0.588$) | Self-avoiding walk: a new exponent |
+| [Solvent quality](#good-poor-and-theta-solvents) | $v\simeq b^3(1-\Theta/T)$, $\Theta\simeq z\,\Delta\varepsilon/k_B$ | Excluded volume (entropy) vs mixing energy. In $d=3$, good: $\nu\approx3/5$; $\Theta$: $\nu=1/2$; poor: collapse, $\nu=1/3$ |
 | [Overlap concentration](#dilute-regime) | $c^*=\frac{3M}{4\pi N_AR_g^3}\propto M^{1-3\nu}$ | Very small for long chains |
 | [Semi-dilute](#semi-dilute), [entanglement](#entanglement) | $c>c^*$ | Interpenetration, topological constraints, slow flow |
 | [Bulk polymers](#bulk-polymers) | Elastomers, thermosets, thermoplastics | On cooling: crystal (slow) or glass (fast, $T_g<T_m$) |
