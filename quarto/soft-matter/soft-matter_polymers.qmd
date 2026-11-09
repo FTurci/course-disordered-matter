@@ -604,7 +604,7 @@ $$
 so the entropy is $S=k_B\ln P\simeq-\dfrac{3k_BR^2}{2Nb^2}+$ terms independent of $R$. The corresponding free energy, $-TS$, grows as $R^2$: the chain resists being stretched like an entropic spring.
 
 **Interactions:** 
-Ignore the connectivity of the chain for a moment and treat its $N$ monomers as a gas spread over the coil volume, with density $\rho\simeq N/R^3$. As for a non-ideal gas, the interaction free energy can be expanded in powers of the density (a virial expansion):
+Ignore the connectivity of the chain for a moment and treat its $N$ monomers as a gas spread over the coil volume, with density $\rho\simeq N/R^3$. As for a non-ideal gas, the interaction free energy **per unit volume** can be expanded in powers of the density (a virial expansion), $f_{\rm int}/k_BT\simeq v\rho^2+w\rho^3$. Multiplying by the coil volume $R^3$ gives
 
 $$
 \frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
