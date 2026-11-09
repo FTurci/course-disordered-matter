@@ -589,12 +589,13 @@ This means that for $N=10^{4}$ monomers occupy only about $1 \%$ of the whole co
 
 The size of the chain is set by a competition between two effects:
 
- 1. **Entropy** (and chain connectivity) favours a coiled chain: stretched configurations are rare.
- 2. **Excluded volume** favours a swollen chain: monomers cannot overlap, and squeezing them together removes configurations.
+ 1. **Entropic elasticity** favours a coiled chain: stretched configurations are rare.
+ 2. **Monomer interactions**: excluded volume swells the chain, because monomers cannot overlap, while attractions, if present, shrink it. Their net effect is the excluded-volume parameter $v$ below (see [Good, poor and theta solvents](#good-poor-and-theta-solvents)).
 
 Flory's argument estimates both effects as a free energy $F(R)$ of a coil of size $R$; the typical size is the one that minimises $F$. The argument is deliberately rough, but its approximations cancel fortuitously, and the result is remarkably close to exact treatments.
 
-**Elastic term.** For a given end-to-end vector $\mathbf{R}$, the number of chain configurations is proportional to
+**Entropic elasticity:** 
+For a given end-to-end vector $\mathbf{R}$, the number of chain configurations is proportional to
 
 $$
 P(\mathbf{R})=\left(\frac{3}{2 \pi\langle R^{2}\rangle}\right)^{3 / 2} e^{-\frac{3 R^{2}}{2\langle R^{2}\rangle}},
@@ -602,21 +603,24 @@ $$
 
 so the entropy is $S=k_B\ln P\simeq-\dfrac{3k_BR^2}{2Nb^2}+$ terms independent of $R$. The corresponding free energy, $-TS$, grows as $R^2$: the chain resists being stretched like an entropic spring.
 
-**Interaction term.** Ignore the connectivity of the chain and treat its $N$ monomers as a gas spread over the coil volume, with density $\rho\simeq N/R^3$. As for a non-ideal gas, the interaction free energy can be expanded in powers of the density (a virial expansion):
+**Interactions:** 
+Ignore the connectivity of the chain for a moment and treat its $N$ monomers as a gas spread over the coil volume, with density $\rho\simeq N/R^3$. As for a non-ideal gas, the interaction free energy can be expanded in powers of the density (a virial expansion):
 
 $$
 \frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
 $$
 
-The **excluded-volume parameter** $v=B_2$ is the second virial coefficient: for hard monomers it is the volume one monomer excludes to another, $v\simeq b^3$. The three-body coefficient $w=B_3\simeq b^6$ is always positive. Adding the elastic term, the Flory free energy is
+The **excluded-volume parameter** $v=B_2$ is the second virial coefficient: for hard monomers it is the volume one monomer excludes to another, $v\simeq b^3$. The three-body coefficient $w=B_3\simeq b^6$ is always positive because the monomers are repulsive. 
+
+All together, the Flory free energy combines the entropic elasticity and the interaction contributions:
 
 $$
 \frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
 $$
 
-Only the scaling with $N$ matters below, so numerical prefactors of order one are dropped from the results.
+(Only the scaling with $N$ matters below, so numerical prefactors of order one are dropped from the results).
 
-**Swollen chain.** With purely repulsive monomers, $v>0$. The two-body term then dominates the three-body one for a long chain (their ratio, $wN/vR^3$, vanishes as the coil swells), and minimising the first two terms, $dF/dR=0$, gives
+For the case of purely repulsive monomers, $v>0$, the two-body term dominates the three-body one for a long chain (their ratio, $wN/vR^3$, vanishes as the coil swells), and minimising the first two terms, $dF/dR=0$, gives
 
 $$
 R^5\simeq v\,b^2N^3 \qquad\therefore\qquad R\sim N^{3/5}b .
