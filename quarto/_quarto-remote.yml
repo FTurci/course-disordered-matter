@@ -97,6 +97,8 @@ book:
           text: "Lecture slides"
         - href: soft-matter/soft-matter_problems.qmd
           text: "Problems"
+        - href: soft-matter/coursework2/PHYSM0071_coursework-2.qmd
+          text: "Second coursework assignment"
     # - part: "Second experimental interlude"
     #   chapters:
     #     - href: experimental/part3.ipynb
