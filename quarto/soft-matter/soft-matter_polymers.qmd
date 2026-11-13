@@ -676,13 +676,19 @@ $$
 
 which can be either positive or negative.
 
-**From the mixing energy to the excluded volume.** Excluded volume is an entropic effect: each monomer-monomer contact costs of order $k_BT$, because it removes configurations. When $\Delta\varepsilon>0$, the same contact is also energetically favoured, by an amount of order $z\,\Delta\varepsilon$. The net cost of a contact, and with it the excluded-volume parameter, is therefore
+**From the mixing energy to the excluded volume.** The excluded-volume parameter is the second virial coefficient of two monomers in the solvent, $v=B_2=\frac12\int\left(1-e^{-\beta u(\mathbf r)}\right)d^3r$, where $u$ is their effective interaction. On the lattice there are only three cases for where monomer 2 sits relative to monomer 1:
+
+- **On the same site.** This is forbidden ($u=\infty$) and contributes $b^3$: the excluded volume. It costs no energy; it is purely **entropic**, because it removes configurations.
+- **On one of the $z$ neighbouring sites.** The monomers touch. To make this contact, two monomer–solvent contacts are replaced by one monomer–monomer and one solvent–solvent contact, so $u=\varepsilon_{pp}+\varepsilon_{ss}-2\varepsilon_{sp}=-2\Delta\varepsilon$. For weak interactions each such site contributes $b^3\left(1-e^{2\Delta\varepsilon/k_BT}\right)\simeq -b^3\,2\Delta\varepsilon/k_BT$: this is **energetic**.
+- **Further away.** There is no interaction and no contribution.
+
+Adding the cases up, and dropping the factor $\frac12$ as before,
 
 $$
-v\simeq b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta\simeq\frac{z\,\Delta\varepsilon}{k_B},
+v\simeq b^3\left(1-\frac{2z\,\Delta\varepsilon}{k_BT}\right)=b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta=\frac{2z\,\Delta\varepsilon}{k_B},
 $$
 
-where $b$ is the monomer size (length) and the **theta temperature** $\Theta$ is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
+where $b$ is the monomer size (length). Entropy, through the excluded volume, favours swelling, and the mixing energy favours collapse. Their ratio is $\Theta/T$, and the **theta temperature** is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
 
 | Solvent | $v$ | Terms that set $R$ | Size |
 |---|---|---|---|
@@ -789,7 +795,7 @@ The table collects the main results of this chapter. Follow the links to go back
 | [Kuhn length](#freely-rotating-chain) | $b=Cb_0$, $N'=N/C$; $\ell_p=b/2$ | Chemistry is hidden in $b$ |
 | [Length scales](#freely-rotating-chain) | $R_g$ (global) $\gg b$ (stiff rod) $\gg$ monomer | Different physics at each scale |
 | [Excluded volume](#excluded-volume-effects) | $\frac{F}{k_BT}\simeq\frac{3R^2}{2Nb^2}+v\frac{N^2}{R^3}+w\frac{N^3}{R^6}$; $R\sim N^{3/5}$ (simulations $\nu\approx0.588$) | Self-avoiding walk: a new exponent |
-| [Solvent quality](#good-poor-and-theta-solvents) | $v\simeq b^3(1-\Theta/T)$, $\Theta\simeq z\,\Delta\varepsilon/k_B$ | Excluded volume (entropy) vs mixing energy. In $d=3$, good: $\nu\approx3/5$; $\Theta$: $\nu=1/2$; poor: collapse, $\nu=1/3$ |
+| [Solvent quality](#good-poor-and-theta-solvents) | $v\simeq b^3(1-\Theta/T)$, $\Theta=2z\,\Delta\varepsilon/k_B$ | Excluded volume (entropy) vs mixing energy. In $d=3$, good: $\nu\approx3/5$; $\Theta$: $\nu=1/2$; poor: collapse, $\nu=1/3$ |
 | [Overlap concentration](#dilute-regime) | $c^*=\frac{3M}{4\pi N_AR_g^3}\propto M^{1-3\nu}$ | Very small for long chains |
 | [Semi-dilute](#semi-dilute), [entanglement](#entanglement) | $c>c^*$ | Interpenetration, topological constraints, slow flow |
 | [Bulk polymers](#bulk-polymers) | Elastomers, thermosets, thermoplastics | On cooling: crystal (slow) or glass (fast, $T_g<T_m$) |
