@@ -682,7 +682,7 @@ $$
 v\simeq b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta\simeq\frac{z\,\Delta\varepsilon}{k_B},
 $$
 
-where the **theta temperature** $\Theta$ is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
+where $b$ is the monomer size (length) and the **theta temperature** $\Theta$ is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
 
 | Solvent | $v$ | Terms that set $R$ | Size |
 |---|---|---|---|
