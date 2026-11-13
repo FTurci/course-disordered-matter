@@ -610,7 +610,7 @@ $$
 \frac{F_{\rm int}}{k_BT}\simeq R^3\left(v\rho^2+w\rho^3\right)=v\,\frac{N^2}{R^3}+w\,\frac{N^3}{R^6}.
 $$
 
-The **excluded-volume parameter** $v=B_2$ is the second virial coefficient: for hard monomers it is the volume one monomer excludes to another, $v\simeq b^3$. The three-body coefficient $w=B_3\simeq b^6$ is always positive because the monomers are repulsive.
+The **excluded-volume parameter** $v=B_2$ is the second virial coefficient: for hard monomers it is the volume one monomer excludes to another, $v\simeq b^3$. The three-body coefficient $w=B_3\simeq b^6$ is positive even when the monomers attract: it comes from the hard core, which stops three monomers from crowding into the same space, and it is what prevents a collapsing chain from shrinking to a point.
 
 For hard monomers this term is also **entropic**: the probability that $N$ monomers in a volume $R^3$ never overlap is $\sim e^{-vN^2/R^3}$, so $F_{\rm int}=-TS$ with no energy involved. The two entropies pull in opposite directions: the elastic one favours small $R$ (more random-walk paths), the excluded-volume one favours large $R$ (fewer overlaps). Energy enters only through the mixing energy, in the next section.
 
