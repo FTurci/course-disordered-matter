@@ -688,7 +688,7 @@ $$
 v\simeq b^3\left(1-\frac{2z\,\Delta\varepsilon}{k_BT}\right)=b^3\left(1-\frac{\Theta}{T}\right),\qquad \Theta=\frac{2z\,\Delta\varepsilon}{k_B},
 $$
 
-where $b$ is the monomer size (length). Entropy, through the excluded volume, favours swelling, and the mixing energy favours collapse. Their ratio is $\Theta/T$, and the **theta temperature** is higher for stronger attractions. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
+where $b$ is the monomer size (length). Entropy, through the excluded volume, always favours swelling. For $\Delta\varepsilon>0$ the mixing energy favours collapse, their ratio is $\Theta/T$, and the **theta temperature** is higher for stronger attractions; for $\Delta\varepsilon<0$ it adds to the excluded volume, $\Theta<0$, and the solvent is good at all temperatures. Solvent quality is simply the sign of $v$, and each regime follows from the free energy $F(R)$ of the previous section by keeping the terms that matter:
 
 | Solvent | $v$ | Terms that set $R$ | Size |
 |---|---|---|---|
