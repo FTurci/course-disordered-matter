@@ -359,11 +359,11 @@ A complementary approach to the macroscopic free energy picture of Landau-de Gen
 
 Phenomenologically, we can put these two together assuming a form for the energetic and entropic contributions to write down a free energy of the following form
 
-$$f = f_0 - u\dfrac{S^2}{2}+k_BT \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin\theta d\theta$$
+$$f = f_0 - u\dfrac{\mathcal{S}^2}{2}+k_BT \int_0^\pi p(\theta) \ln (2 p(\theta)) \sin\theta d\theta$$
 
 where:
 
-- $u$ is the coupling strength parameter that quantifies the energetic preference for orientational alignment (higher $u$ favors stronger nematic order),
+- $u$ is the coupling strength parameter (a scalar, not the unit vector $\mathbf{u}$) that quantifies the energetic preference for orientational alignment (higher $u$ favors stronger nematic order),
 - the factor $2$ ensures that the entropic term vanishes for the isotropic distribution $p(\theta)=1/2$ (with $p(\theta)$ normalised as $\int_0^\pi p(\theta)\sin\theta d\theta=1$), and $\sin\theta d\theta$ is the usual Jacobian.
 
 The two terms above identify two simple contributions:
@@ -386,13 +386,13 @@ $$
 Plugging in the expression for $f$ and simplifying, we obtain the solution:
 
 $$
-p(\theta) = \frac{1}{Z} \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right)
+p(\theta) = \frac{1}{Z} \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right)
 $$
 
 where $\mathcal{S}$ is the nematic order parameter to be determined self-consistently, and $Z$ is the normalization constant (partition function):
 
 $$
-Z = \int_0^\pi \exp\left( \frac{u S}{k_B T} P_2(\cos\theta) \right) \sin\theta d\theta
+Z = \int_0^\pi \exp\left( \frac{u \mathcal{S}}{k_B T} P_2(\cos\theta) \right) \sin\theta d\theta
 $$
 
 This is the Maier-Saupe self-consistent equation for the orientational distribution in the mean-field theory of nematic liquid crystals. In the code below, we can see how this leads to a non trivial energy profile which corresponds to the emergence of a ordered state (a minimum at high $\mathcal{S}$) corresponding to the nematic phase.
@@ -425,7 +425,7 @@ for u in np.linspace(1, 10, 10):
     F_array = np.array(F_list)
     plt.plot(S_array, F_array - F_array[0], label=f"u={u:.1f}")
 
-plt.xlabel("Order parameter S")
+plt.xlabel(r"Order parameter $\mathcal{S}$")
 plt.ylabel("Free energy density / k_BT")
 plt.legend(frameon=False, title="u")
 plt.show()
