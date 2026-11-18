@@ -668,15 +668,15 @@ $$
 p(\theta)=\frac{1}{Z}\exp\big(\lambda P_2(\cos\theta)\big),\qquad
 Z=\int_0^\pi \exp\big(\lambda P_2(\cos\theta)\big)\sin\theta\,d\theta,
 $$
-where $\lambda=uS/(k_BT)$ and
+where $\lambda=u\mathcal{S}/(k_BT)$ and
 $$
-S=\langle P_2(\cos\theta)\rangle
+\mathcal{S}=\langle P_2(\cos\theta)\rangle
 =\frac{\int_0^\pi P_2(\cos\theta)p(\theta)\sin\theta\,d\theta}{\int_0^\pi p(\theta)\sin\theta\,d\theta}.
 $$
 
 This leads to the implicit ("self-consistent") relation
 $$
-S=\frac{\int_0^\pi P_2(\cos\theta)e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}{\int_0^\pi e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}.
+\mathcal{S}=\frac{\int_0^\pi P_2(\cos\theta)e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}{\int_0^\pi e^{\lambda P_2(\cos\theta)}\sin\theta\,d\theta}.
 $$
 
 You may use
@@ -693,18 +693,18 @@ e^{\lambda P_2(\cos\theta)}
 $$
 to first order in $\lambda$.
 
-3.  Using your expansion derive the linearised relation between $S$ and $\lambda$.
+3.  Using your expansion derive the linearised relation between $\mathcal{S}$ and $\lambda$.
 
-4. Using $\lambda=uS/(k_BT)$, determine the value of $k_BT/u$ at which a non-zero solution for $S$ first appears.
+4. Using $\lambda=u\mathcal{S}/(k_BT)$, determine the value of $k_BT/u$ at which a non-zero solution for $\mathcal{S}$ first appears.
 
 
 ::: {.callout-note collapse="true"}
 ## Solution
 1. **Why the equation is implicit and what linearization means**
 
-The equation is implicit because $S$ appears on both sides: explicitly on the left side, and implicitly on the right side through $\lambda = uS/(k_BT)$. To solve for $S$, we need to find values that satisfy this self-consistency condition.
+The equation is implicit because $\mathcal{S}$ appears on both sides: explicitly on the left side, and implicitly on the right side through $\lambda = u\mathcal{S}/(k_BT)$. To solve for $\mathcal{S}$, we need to find values that satisfy this self-consistency condition.
 
-Linearization near the isotropic phase means we expand around $S = 0$ (the isotropic state where there's no preferred orientation) and keep only first-order terms in small parameters. This allows us to find the critical temperature where nematic order first appears.
+Linearization near the isotropic phase means we expand around $\mathcal{S} = 0$ (the isotropic state where there's no preferred orientation) and keep only first-order terms in small parameters. This allows us to find the critical temperature where nematic order first appears.
 
 2. **Expand the exponential to first order**
 
@@ -737,17 +737,17 @@ $$
 
 Therefore, the linearized relation is:
 $$
-S = \frac{2\lambda/5}{2} = \frac{\lambda}{5}
+\mathcal{S} = \frac{2\lambda/5}{2} = \frac{\lambda}{5}
 $$
 
 4. **Find the critical temperature**
 
-Substituting $\lambda = uS/(k_BT)$:
+Substituting $\lambda = u\mathcal{S}/(k_BT)$:
 $$
-S = \frac{uS}{5k_BT}
+\mathcal{S} = \frac{u\mathcal{S}}{5k_BT}
 $$
 
-For a non-trivial solution ($S \neq 0$), we can divide both sides by $S$:
+For a non-trivial solution ($\mathcal{S} \neq 0$), we can divide both sides by $\mathcal{S}$:
 $$
 1 = \frac{u}{5k_BT}
 $$
@@ -759,9 +759,9 @@ $$
 
 The critical value is $k_BT_c/u = 1/5$, which is the point at which the instability to the order parameter fluctuations sets in and corresponds therefore to the spinodal point of the isotropic phase.
 
-Let's think for a moment however about what we have done: we have assumed to stay in the isotropic phase and looked at small perturbations around it that satisfy the self-consistent equation. We have found that trivially the isotropic phase is always a solution. However we have also found that at $k_BT/u=1/5$ we can change any value of S (provided that it is small enough for the linearisation to hold) into a solution of the self-consistent equation. 
+Let's think for a moment however about what we have done: we have assumed to stay in the isotropic phase and looked at small perturbations around it that satisfy the self-consistent equation. We have found that trivially the isotropic phase is always a solution. However we have also found that at $k_BT/u=1/5$ we can change any value of $\mathcal{S}$ (provided that it is small enough for the linearisation to hold) into a solution of the self-consistent equation. 
 
-This means that at such temperature the isotropic phase becomes marginally stable: any small perturbation in S will not be restored back to zero. This is the definition of a spinodal point.
+This means that at such temperature the isotropic phase becomes marginally stable: any small perturbation in $\mathcal{S}$ will not be restored back to zero. This is the definition of a spinodal point.
 
 :::
 ### Landau-de Gennes theory in three dimensions
