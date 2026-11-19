@@ -667,11 +667,24 @@ At low density the first contribution wins and the rods are isotropic. At high d
 
 This mirrors the [freezing of hard spheres](soft-matter_colloids.qmd#dense-packing-metastability-and-crystalisation): there too the ordered phase wins on entropy. The spheres lose the disorder of their positions, but each sphere gains free volume to vibrate around its lattice site.
 
-**Link to Maier-Saupe.** Two thin rods (length $L$, diameter $D\ll L$) at an angle $\gamma$ exclude a volume $2L^2D|\sin\gamma|$, which is smallest when they are aligned. To compare with Maier-Saupe we write $|\sin\gamma|=\sqrt{1-\cos^2\gamma}$ as a **Legendre expansion** in $x=\cos\gamma$, $|\sin\gamma|=\sum_\ell a_\ell P_\ell(\cos\gamma)$ with $a_\ell=\frac{2\ell+1}{2}\int_{-1}^{1}\sqrt{1-x^2}\,P_\ell(x)\,dx$. Unlike a Taylor expansion around $\gamma=0$, this expansion in orthogonal polynomials approximates the function over **all** relative orientations, from aligned to crossed. Odd terms vanish by head-tail symmetry, and keeping the first two:
+::: {.callout-warning collapse="true"}
+## Link to Maier-Saupe (Onsager theory)
+
+1. **Excluded volume.** Two thin rods (length $L$, diameter $D\ll L$) at an angle $\gamma$ exclude a volume
+$$v_{\rm ex}=2L^2D\,|\sin\gamma|,$$
+largest when crossed, zero when aligned.
+
+2. **Legendre expansion.** Expand $|\sin\gamma|=\sqrt{1-\cos^2\gamma}$ in Legendre polynomials of $\cos\gamma$, with coefficients $a_\ell=\frac{2\ell+1}{2}\int_{-1}^{1}\sqrt{1-x^2}\,P_\ell(x)\,dx$. Unlike a Taylor expansion around $\gamma=0$, it holds over **all** relative orientations. Odd terms vanish by head-tail symmetry; keeping the first two,
 $$|\sin\gamma|\simeq\frac{\pi}{4}-\frac{5\pi}{32}P_2(\cos\gamma).$$
-Averaging over two independently oriented rods gives $\langle P_2(\cos\gamma)\rangle=\mathcal{S}^2$, so the excluded-volume (second virial) term in the free energy becomes $-k_BT\,\frac{5\pi}{32}\rho L^2D\,\mathcal{S}^2$ plus a constant. This is the Maier-Saupe energy with
+
+3. **Average over pairs.** For two independently oriented rods $\langle P_2(\cos\gamma)\rangle=\mathcal{S}^2$, so the excluded-volume (second virial) free energy is
+$$\frac{f_{\rm ex}}{k_BT}=\frac{\rho}{2}\langle v_{\rm ex}\rangle\simeq\rho L^2D\left(\frac{\pi}{4}-\frac{5\pi}{32}\,\mathcal{S}^2\right).$$
+
+4. **Compare** with the Maier-Saupe energy $-\frac{u}{2}\mathcal{S}^2$:
 $$\frac{u}{k_BT}\;\to\;\frac{5\pi}{16}\,\rho L^2D .$$
-The density plays the role of the inverse temperature, and the "aligning interaction" is purely entropic. This is Onsager's theory [@onsager1949effects].
+
+The density plays the role of the inverse temperature, and the "aligning interaction" is purely entropic [@onsager1949effects].
+:::
 
 ### Lattice model: the Lebwohl-Lasher model
 
