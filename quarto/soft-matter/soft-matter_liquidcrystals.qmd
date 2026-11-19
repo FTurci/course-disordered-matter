@@ -350,7 +350,7 @@ The Landau-de Gennes theory illustrates how the simple existence of a suitably d
 
 We can also construct a more microscopically motivated theory. We can start by linking the scalar order parameter in terms of the **probability distribution** $p(\Omega)$ of finding a rod with polar angles $\Omega=(\theta,\phi)$ in a coordinate system with its polar axis along the director $\mathbf{n}$. The infinitesimal probability is $p(\Omega)d\Omega$.
 
-The nematic phase has full **cylindrical symmetry** around the director, meaning $p(\theta, \phi)$ is independent of the azimuthal angle $\phi$ and depends only on the deviation $\theta$. Accounting for head-tail symmetry via the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$, the scalar order parameter is defined as:
+The nematic phase has full **cylindrical symmetry** around the director, meaning $p(\theta, \phi)$ is independent of the azimuthal angle $\phi$ and depends only on the deviation $\theta$. Integrating over $\phi$, we work with $p(\theta)=2\pi\,p(\Omega)$, normalised as $\int_0^\pi p(\theta)\sin\theta\, d\theta=1$ (so $p=1/2$ in the isotropic phase). Accounting for head-tail symmetry via the first non-trivial [Legendre polynomial](https://mathworld.wolfram.com/LegendrePolynomial.html){target="_blank"}, $P_2(\cos\theta)$, the scalar order parameter is defined as:
 
 $$\mathcal{S}=\dfrac{3}{2}\left\langle(\mathbf{u} \cdot \mathbf{n})^2-\frac{1}{3}\right\rangle = \dfrac{1}{2}\langle 3 \cos^2\theta-1\rangle=\langle P_2(\cos\theta)\rangle = \int_0^{\pi}P_2(\cos\theta)p(\theta)\sin\theta d\theta$$
 
@@ -367,7 +367,7 @@ $$f = f_0 - u\dfrac{\mathcal{S}^2}{2}+k_BT \int_0^\pi p(\theta) \ln (2 p(\theta)
 where:
 
 - $u$ is the coupling strength parameter (a scalar, not the unit vector $\mathbf{u}$) that quantifies the energetic preference for orientational alignment (higher $u$ favors stronger nematic order),
-- the factor $2$ ensures that the entropic term vanishes for the isotropic distribution $p(\theta)=1/2$ (with $p(\theta)$ normalised as $\int_0^\pi p(\theta)\sin\theta d\theta=1$), and $\sin\theta d\theta$ is the usual Jacobian.
+- the entropic term is $k_BT\int p(\Omega)\ln p(\Omega)\,d\Omega$ written with $p(\theta)=2\pi p(\Omega)$, up to the constant $-k_BT\ln 4\pi$, which we drop: the factor $2$ makes the entropic term vanish for the isotropic distribution $p(\theta)=1/2$, and $\sin\theta d\theta$ is the usual Jacobian.
 
 The two terms above identify two simple contributions:
 
@@ -411,6 +411,7 @@ The transition is **weakly first** order: the barrier between the two basins is 
 
 ```{pyodide}
 #| autorun: true
+#| echo: false
 #| caption: "Maier-Saupe free energy landscape (left) and self-consistent order parameter (right) as a function of temperature"
 import numpy as np
 import plotly.graph_objects as go
@@ -525,6 +526,125 @@ fig.update_yaxes(title_text="𝒮", range=[-0.05, 1], row=1, col=2)
 print(f"Transition: k_B T_NI/u = {t_NI:.4f}, S jumps from 0 to {S_c:.3f}; nematic minimum exists up to k_B T/u = {t_sp:.4f}")
 HTML(fig.to_html(include_plotlyjs=False, full_html=False))
 ```
+
+::: {.callout-note collapse="true"}
+## Code for this figure
+
+```python
+import numpy as np
+import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+from IPython.display import HTML
+
+# Integrals over the sphere in x = cos(theta): head-tail symmetry restricts to x in [0, 1]
+x, wq = np.polynomial.legendre.leggauss(64)
+x, wq = (x + 1) / 2, wq / 2
+P2 = 1.5 * x**2 - 0.5
+
+# Trial distributions p ∝ exp(lam P2); lam is the variational parameter
+lam = np.concatenate([[0.0], np.geomspace(1e-2, 60, 300)])
+E = np.exp(np.outer(lam, P2))
+Z = E @ wq
+S = (E * P2) @ wq / Z
+ent = lam * S - np.log(Z)            # ∫ p ln(2p) sinθ dθ
+
+def landscape(t):                     # f / k_B T, with t = k_B T / u
+    return -S**2 / (2 * t) + ent
+
+def extrema(f):
+    d = np.diff(f)
+    mins = [0] if d[0] > 0 else []    # S = 0 is stationary by symmetry
+    maxs = [] if d[0] > 0 else [0]
+    for k in range(1, len(f) - 1):
+        if d[k - 1] < 0 <= d[k]:
+            mins.append(k)
+        elif d[k - 1] > 0 >= d[k]:
+            maxs.append(k)
+    fmin = min(f[k] for k in mins)
+    stable = [k for k in mins if f[k] - fmin < 1e-9]
+    meta = [k for k in mins if k not in stable]
+    return stable, meta, maxs
+
+# Self-consistent solutions S = <P2> with lam = S/t give t = S/lam exactly
+tsol = S[1:] / lam[1:]
+Ssol = S[1:]
+i_sp = np.argmax(tsol)
+t_sp = tsol[i_sp]                     # last temperature where the nematic minimum exists
+upper = slice(i_sp, None)
+f_nem = -Ssol[upper]**2 / (2 * tsol[upper]) + ent[1:][upper]
+t_NI = np.interp(0, f_nem[::-1], tsol[upper][::-1])   # coexistence: f_nem = f_iso = 0
+S_c = np.interp(t_NI, tsol[upper][::-1], Ssol[upper][::-1])
+
+ts = np.unique(np.round(np.concatenate([np.arange(0.17, 0.2501, 0.002), np.arange(0.216, 0.2261, 0.0005)]), 4))
+fig = make_subplots(rows=1, cols=2, horizontal_spacing=0.12)
+red, grey = "crimson", "grey"
+
+# Right panel: static branches
+mask_s = tsol[upper] <= t_NI
+fig.add_trace(go.Scatter(x=tsol[upper][mask_s], y=Ssol[upper][mask_s], mode="lines",
+                         line=dict(color=red, width=3), name="stable"), 1, 2)
+fig.add_trace(go.Scatter(x=tsol[upper][~mask_s], y=Ssol[upper][~mask_s], mode="lines",
+                         line=dict(color=grey, width=3), name="metastable"), 1, 2)
+fig.add_trace(go.Scatter(x=tsol[:i_sp + 1], y=Ssol[:i_sp + 1], mode="lines",
+                         line=dict(color=grey, dash="dot"), name="unstable (maximum)"), 1, 2)
+fig.add_trace(go.Scatter(x=[t_NI, ts[-1]], y=[0, 0], mode="lines",
+                         line=dict(color=red, width=3), showlegend=False), 1, 2)
+fig.add_trace(go.Scatter(x=[0.2, t_NI], y=[0, 0], mode="lines",
+                         line=dict(color=grey, width=3), showlegend=False), 1, 2)
+fig.add_trace(go.Scatter(x=[ts[0], 0.2], y=[0, 0], mode="lines",
+                         line=dict(color=grey, dash="dot"), showlegend=False), 1, 2)
+fig.add_trace(go.Scatter(x=[t_NI, t_NI], y=[0, S_c], mode="lines",
+                         line=dict(color=red, dash="dash", width=1), showlegend=False), 1, 2)
+n_static = len(fig.data)
+
+# Per-temperature traces: curve, stable, metastable, maxima, current-T line
+per = 5
+for t in ts:
+    f = landscape(t)
+    st, me, mx = extrema(f)
+    fig.add_trace(go.Scatter(x=S.round(4), y=f.round(5), mode="lines", line=dict(color="black"),
+                             visible=False, showlegend=False), 1, 1)
+    fig.add_trace(go.Scatter(x=S[st], y=f[st], mode="markers+text",
+                             marker=dict(color=red, size=12),
+                             text=[f"stable, 𝒮={abs(S[k]):.2f}" for k in st], textposition=["top right" if k == 0 else "top center" for k in st],
+                             visible=False, showlegend=False), 1, 1)
+    fig.add_trace(go.Scatter(x=S[me], y=f[me], mode="markers+text",
+                             marker=dict(color="white", size=12, line=dict(color=red, width=2)),
+                             text=[f"metastable, 𝒮={abs(S[k]):.2f}" for k in me], textposition=["bottom right" if k == 0 else "bottom center" for k in me],
+                             visible=False, showlegend=False), 1, 1)
+    fig.add_trace(go.Scatter(x=S[mx], y=f[mx], mode="markers",
+                             marker=dict(color=grey, size=10, symbol="x"),
+                             visible=False, showlegend=False), 1, 1)
+    fig.add_trace(go.Scatter(x=[t, t], y=[-0.05, 1], mode="lines",
+                             line=dict(color="black", dash="dash", width=1),
+                             visible=False, showlegend=False), 1, 2)
+
+def visible(j):
+    v = [True] * n_static + [False] * per * len(ts)
+    v[n_static + per * j: n_static + per * (j + 1)] = [True] * per
+    return v
+
+j0 = int(np.argmin(abs(ts - 0.22)))
+for k, val in enumerate(visible(j0)):
+    fig.data[k].visible = val
+def yrange(t):
+    f = landscape(t)[S < 0.85]
+    return [min(-0.02, f.min() - 0.01), 0.04]
+
+steps = [dict(method="update", args=[{"visible": visible(j)}, {"yaxis.range": yrange(t)}], label=f"{t:.4f}")
+         for j, t in enumerate(ts)]
+fig.update_layout(sliders=[dict(active=j0, steps=steps, currentvalue=dict(prefix="k<sub>B</sub>T/u = "),
+                                pad=dict(t=50))],
+                  height=560, template="simple_white", margin=dict(t=80),
+                  legend=dict(orientation="h", x=0.5, xanchor="center", y=1.15))
+fig.update_xaxes(title_text="order parameter 𝒮", range=[-0.02, 0.85], row=1, col=1)
+fig.update_yaxes(title_text="(<i>f</i> − <i>f</i><sub>iso</sub>) / <i>k</i><sub>B</sub><i>T</i>", range=yrange(ts[j0]), row=1, col=1)
+fig.update_xaxes(title_text="<i>k</i><sub>B</sub><i>T</i> / <i>u</i>", range=[ts[0], ts[-1]], row=1, col=2)
+fig.update_yaxes(title_text="𝒮", range=[-0.05, 1], row=1, col=2)
+print(f"Transition: k_B T_NI/u = {t_NI:.4f}, S jumps from 0 to {S_c:.3f}; nematic minimum exists up to k_B T/u = {t_sp:.4f}")
+HTML(fig.to_html(include_plotlyjs=False, full_html=False))
+```
+:::
 
 These profiles are example of simple **free energy landscapes**. We will see more about this later in  @sec-energy-landscapes.
 
