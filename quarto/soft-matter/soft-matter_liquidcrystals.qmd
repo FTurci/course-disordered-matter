@@ -539,6 +539,10 @@ At low density the first contribution wins and the rods are isotropic. At high d
 
 This mirrors the [freezing of hard spheres](soft-matter_colloids.qmd#dense-packing-metastability-and-crystalisation): there too the ordered phase wins on entropy. The spheres lose the disorder of their positions, but each sphere gains free volume to vibrate around its lattice site.
 
+**Link to Maier-Saupe.** Two thin rods (length $L$, diameter $D\ll L$) at an angle $\gamma$ exclude a volume $2L^2D|\sin\gamma|$, which is smallest when they are aligned. Expanding $|\sin\gamma|\simeq\frac{\pi}{4}-\frac{5\pi}{32}P_2(\cos\gamma)$, the excluded-volume (second virial) term in the free energy becomes $-k_BT\,\frac{5\pi}{32}\rho L^2D\,\mathcal{S}^2$ plus a constant. This is the Maier-Saupe energy with
+$$\frac{u}{k_BT}\;\to\;\frac{5\pi}{16}\,\rho L^2D .$$
+The density plays the role of the inverse temperature, and the "aligning interaction" is purely entropic. This is Onsager's theory [@onsager1949effects].
+
 ### Lattice model: the Lebwohl-Lasher model
 
 The Lebwohl-Lasher model is a lattice model designed to capture the orientational ordering of anisotropic particles, such as those found in nematic liquid crystals and is a lattice version of the Maier-Saupe mean field model, in the same way as the [Ising model](../phase-transitions/Ising-model.qmd) is a lattice model for magnets. In this model, each lattice site $i$ is associated with a unit vector $\mathbf{n}_i$ representing the local orientation (the "director") of a particle at that site.
