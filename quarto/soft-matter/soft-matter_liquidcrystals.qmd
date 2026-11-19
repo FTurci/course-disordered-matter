@@ -379,7 +379,7 @@ where:
 
 The two terms above identify two simple contributions:
 
-- an energetic contribution that is a simple quadratic function of the order parameter (more order, lower energy, with the isotropic phase paying the highest cost). Near the isotropic phase the free energy needs to be even due to the head-tail symmetry. 
+- an energetic contribution that is a simple quadratic function of the order parameter (more order, lower energy, with the isotropic phase paying the highest cost). The square comes from the pair interaction, each molecule of a pair contributing one factor $\mathcal{S}$.
 - a generic entropic contribution of the form $k_B\int p(\Omega)\ln p(\Omega) d\Omega$ using the [Gibbs entropy formula](https://en.wikipedia.org/wiki/Entropy_(statistical_thermodynamics)#Gibbs_entropy_formula){target="_blank"}.
 
 The minimization of the free energy with respect to $p(\theta)$, under the normalization constraint $\int_0^\pi p(\theta) \sin\theta d\theta = 1$, is performed using a Lagrange multiplier $\lambda$. The variational problem is:
