@@ -426,113 +426,126 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from IPython.display import HTML
 
-# Integrals over the sphere in x = cos(theta): head-tail symmetry restricts to x in [0, 1]
-x, wq = np.polynomial.legendre.leggauss(64)
-x, wq = (x + 1) / 2, wq / 2
+# --- Orientational averages -------------------------------------------------
+# Work in x = cos(theta). By head-tail symmetry x in [0, 1] is enough, and with
+# Gauss-Legendre weights w (normalised to 1) an average is <g> = sum(w * g).
+x, w = np.polynomial.legendre.leggauss(64)
+x, w = (x + 1) / 2, w / 2
 P2 = 1.5 * x**2 - 0.5
 
-# Trial distributions p ∝ exp(lam P2); lam is the variational parameter
-lam = np.concatenate([[0.0], np.geomspace(1e-2, 60, 300)])
-E = np.exp(np.outer(lam, P2))
-Z = E @ wq
-S = (E * P2) @ wq / Z
-ent = lam * S - np.log(Z)            # ∫ p ln(2p) sinθ dθ
+# --- Trial distributions p(theta) ~ exp(lam * P2), one for each lam ----------
+lam = np.concatenate([[0.0], np.geomspace(0.01, 60, 300)])
+boltzmann = np.exp(np.outer(lam, P2))    # one row per value of lam
+Z = boltzmann @ w
+S = boltzmann @ (w * P2) / Z             # order parameter of each trial p
+S[0] = 0.0                               # lam = 0 is the isotropic state (removes round-off)
+entropy = lam * S - np.log(Z)            # integral of p ln(2p) sin(theta) dtheta
 
-def landscape(t):                     # f / k_B T, with t = k_B T / u
-    return -S**2 / (2 * t) + ent
+
+def free_energy(t):
+    """f / k_B T of each trial distribution at reduced temperature t = k_B T / u."""
+    return -S**2 / (2 * t) + entropy
+
 
 def extrema(f):
-    d = np.diff(f)
-    mins = [0] if d[0] > 0 else []    # S = 0 is stationary by symmetry
-    maxs = [] if d[0] > 0 else [0]
+    """Indices of the minima and maxima of f along S."""
+    slope = np.diff(f)
+    minima = [0] if slope[0] > 0 else []  # S = 0 is always stationary
+    maxima = [] if slope[0] > 0 else [0]
     for k in range(1, len(f) - 1):
-        if d[k - 1] < 0 <= d[k]:
-            mins.append(k)
-        elif d[k - 1] > 0 >= d[k]:
-            maxs.append(k)
-    fmin = min(f[k] for k in mins)
-    stable = [k for k in mins if f[k] - fmin < 1e-9]
-    meta = [k for k in mins if k not in stable]
-    return stable, meta, maxs
+        if slope[k - 1] < 0 <= slope[k]:
+            minima.append(k)
+        elif slope[k - 1] > 0 >= slope[k]:
+            maxima.append(k)
+    return minima, maxima
 
-# Self-consistent solutions S = <P2> with lam = S/t give t = S/lam exactly
-tsol = S[1:] / lam[1:]
-Ssol = S[1:]
-i_sp = np.argmax(tsol)
-t_sp = tsol[i_sp]                     # last temperature where the nematic minimum exists
-upper = slice(i_sp, None)
-f_nem = -Ssol[upper]**2 / (2 * tsol[upper]) + ent[1:][upper]
-t_NI = np.interp(0, f_nem[::-1], tsol[upper][::-1])   # coexistence: f_nem = f_iso = 0
-S_c = np.interp(t_NI, tsol[upper][::-1], Ssol[upper][::-1])
 
-ts = np.unique(np.round(np.concatenate([np.arange(0.17, 0.2501, 0.002), np.arange(0.216, 0.2261, 0.0005)]), 4))
+# --- Self-consistent solutions ----------------------------------------------
+# S = <P2> with lam = S / t: every lam > 0 is a solution at temperature t = S / lam.
+t_sol, S_sol = S[1:] / lam[1:], S[1:]
+turn = np.argmax(t_sol)                  # nematic solutions exist only below t_sol[turn]
+t_nem, S_nem = t_sol[turn:], S_sol[turn:]            # upper branch: minima
+f_nem = -S_nem**2 / (2 * t_nem) + entropy[1:][turn:]
+# Transition: the nematic minimum reaches the isotropic free energy, f = 0
+t_NI = np.interp(0, f_nem[::-1], t_nem[::-1])
+S_NI = np.interp(t_NI, t_nem[::-1], S_nem[::-1])
+t_iso = 0.2                              # isotropic state unstable below k_B T = u / 5
+print(f"k_B T_NI / u = {t_NI:.4f}: S jumps from 0 to {S_NI:.3f}")
+
+# --- Figure ------------------------------------------------------------------
+temperatures = np.round(np.arange(0.17, 0.2501, 0.0025), 4)
+RED, GREY = "crimson", "grey"
 fig = make_subplots(rows=1, cols=2, horizontal_spacing=0.12)
-red, grey = "crimson", "grey"
 
-# Right panel: static branches
-mask_s = tsol[upper] <= t_NI
-fig.add_trace(go.Scatter(x=tsol[upper][mask_s], y=Ssol[upper][mask_s], mode="lines",
-                         line=dict(color=red, width=3), name="stable"), 1, 2)
-fig.add_trace(go.Scatter(x=tsol[upper][~mask_s], y=Ssol[upper][~mask_s], mode="lines",
-                         line=dict(color=grey, width=3), name="metastable"), 1, 2)
-fig.add_trace(go.Scatter(x=tsol[:i_sp + 1], y=Ssol[:i_sp + 1], mode="lines",
-                         line=dict(color=grey, dash="dot"), name="unstable (maximum)"), 1, 2)
-fig.add_trace(go.Scatter(x=[t_NI, ts[-1]], y=[0, 0], mode="lines",
-                         line=dict(color=red, width=3), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[0.2, t_NI], y=[0, 0], mode="lines",
-                         line=dict(color=grey, width=3), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[ts[0], 0.2], y=[0, 0], mode="lines",
-                         line=dict(color=grey, dash="dot"), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[t_NI, t_NI], y=[0, S_c], mode="lines",
-                         line=dict(color=red, dash="dash", width=1), showlegend=False), 1, 2)
-n_static = len(fig.data)
 
-# Per-temperature traces: curve, stable, metastable, maxima, current-T line
-per = 5
-for t in ts:
-    f = landscape(t)
-    st, me, mx = extrema(f)
-    fig.add_trace(go.Scatter(x=S.round(4), y=f.round(5), mode="lines", line=dict(color="black"),
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[st], y=f[st], mode="markers+text",
-                             marker=dict(color=red, size=12),
-                             text=[f"stable, 𝒮={abs(S[k]):.2f}" for k in st], textposition=["top right" if k == 0 else "top center" for k in st],
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[me], y=f[me], mode="markers+text",
-                             marker=dict(color="white", size=12, line=dict(color=red, width=2)),
-                             text=[f"metastable, 𝒮={abs(S[k]):.2f}" for k in me], textposition=["bottom right" if k == 0 else "bottom center" for k in me],
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[mx], y=f[mx], mode="markers",
-                             marker=dict(color=grey, size=10, symbol="x"),
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=[t, t], y=[-0.05, 1], mode="lines",
-                             line=dict(color="black", dash="dash", width=1),
-                             visible=False, showlegend=False), 1, 2)
+def landscape(t):
+    """Left-panel data at temperature t: curve, stable, metastable, maxima."""
+    f = free_energy(t)
+    minima, maxima = extrema(f)
+    lowest = min(f[k] for k in minima)
+    stable = [k for k in minima if f[k] - lowest < 1e-9]
+    metastable = [k for k in minima if k not in stable]
+    return [
+        dict(x=S, y=f),
+        dict(x=S[stable], y=f[stable], text=[f"stable, S={S[k]:.2f}" for k in stable]),
+        dict(x=S[metastable], y=f[metastable], text=[f"metastable, S={S[k]:.2f}" for k in metastable]),
+        dict(x=S[maxima], y=f[maxima]),
+        dict(x=[t, t], y=[-0.05, 1]),
+    ]
 
-def visible(j):
-    v = [True] * n_static + [False] * per * len(ts)
-    v[n_static + per * j: n_static + per * (j + 1)] = [True] * per
-    return v
 
-j0 = int(np.argmin(abs(ts - 0.22)))
-for k, val in enumerate(visible(j0)):
-    fig.data[k].visible = val
-def yrange(t):
-    f = landscape(t)[S < 0.85]
+# Left panel (traces 0-3) and current-temperature line on the right (trace 4)
+start = landscape(0.22)
+fig.add_trace(go.Scatter(**start[0], mode="lines", line_color="black", showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[1], mode="markers+text", textposition="top center",
+                         marker=dict(color=RED, size=12), showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[2], mode="markers+text", textposition="bottom right",
+                         marker=dict(color="white", size=12, line=dict(color=RED, width=2)),
+                         showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[3], mode="markers", marker=dict(color=GREY, size=10, symbol="x"),
+                         showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[4], mode="lines", line=dict(color="black", dash="dash", width=1),
+                         showlegend=False), 1, 2)
+
+# Right panel: branches of solutions S(t), drawn once
+def branch(t, s, color, dash="solid", name=None):
+    fig.add_trace(go.Scatter(x=t, y=s, mode="lines", name=name, showlegend=name is not None,
+                             line=dict(color=color, dash=dash, width=3)), 1, 2)
+
+below = t_nem <= t_NI
+branch(t_nem[below], S_nem[below], RED, name="stable")
+branch(t_nem[~below], S_nem[~below], GREY, name="metastable")
+branch(t_sol[:turn + 1], S_sol[:turn + 1], GREY, "dot", name="unstable (maximum)")
+branch([t_NI, temperatures[-1]], [0, 0], RED)
+branch([t_iso, t_NI], [0, 0], GREY)
+branch([temperatures[0], t_iso], [0, 0], GREY, "dot")
+branch([t_NI, t_NI], [0, S_NI], RED, "dash")
+
+# One animation frame per temperature, selected with the slider
+def y_range(t):
+    f = free_energy(t)[S < 0.85]
     return [min(-0.02, f.min() - 0.01), 0.04]
 
-steps = [dict(method="update", args=[{"visible": visible(j)}, {"yaxis.range": yrange(t)}], label=f"{t:.4f}")
-         for j, t in enumerate(ts)]
-fig.update_layout(sliders=[dict(active=j0, steps=steps, currentvalue=dict(prefix="k<sub>B</sub>T/u = "),
-                                pad=dict(t=50))],
-                  height=560, template="simple_white", margin=dict(t=80),
-                  legend=dict(orientation="h", x=0.5, xanchor="center", y=1.15))
-fig.update_xaxes(title_text="order parameter 𝒮", range=[-0.02, 0.85], row=1, col=1)
-fig.update_yaxes(title_text="(<i>f</i> − <i>f</i><sub>iso</sub>) / <i>k</i><sub>B</sub><i>T</i>", range=yrange(ts[j0]), row=1, col=1)
-fig.update_xaxes(title_text="<i>k</i><sub>B</sub><i>T</i> / <i>u</i>", range=[ts[0], ts[-1]], row=1, col=2)
-fig.update_yaxes(title_text="𝒮", range=[-0.05, 1], row=1, col=2)
-print(f"Transition: k_B T_NI/u = {t_NI:.4f}, S jumps from 0 to {S_c:.3f}; nematic minimum exists up to k_B T/u = {t_sp:.4f}")
-HTML(fig.to_html(include_plotlyjs=False, full_html=False))
+fig.frames = [go.Frame(name=str(t), data=landscape(t), traces=[0, 1, 2, 3, 4],
+                       layout=dict(yaxis=dict(range=y_range(t))))
+              for t in temperatures]
+fig.update_layout(
+    sliders=[dict(
+        active=int(np.argmin(abs(temperatures - 0.22))),
+        currentvalue=dict(prefix="k<sub>B</sub>T/u = "),
+        pad=dict(t=50),
+        transition=dict(duration=0),
+        steps=[dict(method="animate", label=f"{t:.4f}",
+                    args=[[str(t)], dict(mode="immediate", frame=dict(duration=0, redraw=True),
+                                        transition=dict(duration=0))])
+               for t in temperatures])],
+    height=560, template="simple_white", margin=dict(t=80),
+    legend=dict(orientation="h", x=0.5, xanchor="center", y=1.15))
+fig.update_xaxes(title_text="order parameter S", range=[-0.1, 0.9], row=1, col=1)
+fig.update_yaxes(title_text="(f - f<sub>iso</sub>) / k<sub>B</sub>T", range=y_range(0.22), row=1, col=1)
+fig.update_xaxes(title_text="k<sub>B</sub>T / u", range=[temperatures[0], temperatures[-1]], row=1, col=2)
+fig.update_yaxes(title_text="S", range=[-0.05, 1], row=1, col=2)
+HTML(fig.to_html(include_plotlyjs=False, full_html=False, auto_play=False))
 ```
 
 ::: {.callout-note collapse="true"}
@@ -544,113 +557,126 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 from IPython.display import HTML
 
-# Integrals over the sphere in x = cos(theta): head-tail symmetry restricts to x in [0, 1]
-x, wq = np.polynomial.legendre.leggauss(64)
-x, wq = (x + 1) / 2, wq / 2
+# --- Orientational averages -------------------------------------------------
+# Work in x = cos(theta). By head-tail symmetry x in [0, 1] is enough, and with
+# Gauss-Legendre weights w (normalised to 1) an average is <g> = sum(w * g).
+x, w = np.polynomial.legendre.leggauss(64)
+x, w = (x + 1) / 2, w / 2
 P2 = 1.5 * x**2 - 0.5
 
-# Trial distributions p ∝ exp(lam P2); lam is the variational parameter
-lam = np.concatenate([[0.0], np.geomspace(1e-2, 60, 300)])
-E = np.exp(np.outer(lam, P2))
-Z = E @ wq
-S = (E * P2) @ wq / Z
-ent = lam * S - np.log(Z)            # ∫ p ln(2p) sinθ dθ
+# --- Trial distributions p(theta) ~ exp(lam * P2), one for each lam ----------
+lam = np.concatenate([[0.0], np.geomspace(0.01, 60, 300)])
+boltzmann = np.exp(np.outer(lam, P2))    # one row per value of lam
+Z = boltzmann @ w
+S = boltzmann @ (w * P2) / Z             # order parameter of each trial p
+S[0] = 0.0                               # lam = 0 is the isotropic state (removes round-off)
+entropy = lam * S - np.log(Z)            # integral of p ln(2p) sin(theta) dtheta
 
-def landscape(t):                     # f / k_B T, with t = k_B T / u
-    return -S**2 / (2 * t) + ent
+
+def free_energy(t):
+    """f / k_B T of each trial distribution at reduced temperature t = k_B T / u."""
+    return -S**2 / (2 * t) + entropy
+
 
 def extrema(f):
-    d = np.diff(f)
-    mins = [0] if d[0] > 0 else []    # S = 0 is stationary by symmetry
-    maxs = [] if d[0] > 0 else [0]
+    """Indices of the minima and maxima of f along S."""
+    slope = np.diff(f)
+    minima = [0] if slope[0] > 0 else []  # S = 0 is always stationary
+    maxima = [] if slope[0] > 0 else [0]
     for k in range(1, len(f) - 1):
-        if d[k - 1] < 0 <= d[k]:
-            mins.append(k)
-        elif d[k - 1] > 0 >= d[k]:
-            maxs.append(k)
-    fmin = min(f[k] for k in mins)
-    stable = [k for k in mins if f[k] - fmin < 1e-9]
-    meta = [k for k in mins if k not in stable]
-    return stable, meta, maxs
+        if slope[k - 1] < 0 <= slope[k]:
+            minima.append(k)
+        elif slope[k - 1] > 0 >= slope[k]:
+            maxima.append(k)
+    return minima, maxima
 
-# Self-consistent solutions S = <P2> with lam = S/t give t = S/lam exactly
-tsol = S[1:] / lam[1:]
-Ssol = S[1:]
-i_sp = np.argmax(tsol)
-t_sp = tsol[i_sp]                     # last temperature where the nematic minimum exists
-upper = slice(i_sp, None)
-f_nem = -Ssol[upper]**2 / (2 * tsol[upper]) + ent[1:][upper]
-t_NI = np.interp(0, f_nem[::-1], tsol[upper][::-1])   # coexistence: f_nem = f_iso = 0
-S_c = np.interp(t_NI, tsol[upper][::-1], Ssol[upper][::-1])
 
-ts = np.unique(np.round(np.concatenate([np.arange(0.17, 0.2501, 0.002), np.arange(0.216, 0.2261, 0.0005)]), 4))
+# --- Self-consistent solutions ----------------------------------------------
+# S = <P2> with lam = S / t: every lam > 0 is a solution at temperature t = S / lam.
+t_sol, S_sol = S[1:] / lam[1:], S[1:]
+turn = np.argmax(t_sol)                  # nematic solutions exist only below t_sol[turn]
+t_nem, S_nem = t_sol[turn:], S_sol[turn:]            # upper branch: minima
+f_nem = -S_nem**2 / (2 * t_nem) + entropy[1:][turn:]
+# Transition: the nematic minimum reaches the isotropic free energy, f = 0
+t_NI = np.interp(0, f_nem[::-1], t_nem[::-1])
+S_NI = np.interp(t_NI, t_nem[::-1], S_nem[::-1])
+t_iso = 0.2                              # isotropic state unstable below k_B T = u / 5
+print(f"k_B T_NI / u = {t_NI:.4f}: S jumps from 0 to {S_NI:.3f}")
+
+# --- Figure ------------------------------------------------------------------
+temperatures = np.round(np.arange(0.17, 0.2501, 0.0025), 4)
+RED, GREY = "crimson", "grey"
 fig = make_subplots(rows=1, cols=2, horizontal_spacing=0.12)
-red, grey = "crimson", "grey"
 
-# Right panel: static branches
-mask_s = tsol[upper] <= t_NI
-fig.add_trace(go.Scatter(x=tsol[upper][mask_s], y=Ssol[upper][mask_s], mode="lines",
-                         line=dict(color=red, width=3), name="stable"), 1, 2)
-fig.add_trace(go.Scatter(x=tsol[upper][~mask_s], y=Ssol[upper][~mask_s], mode="lines",
-                         line=dict(color=grey, width=3), name="metastable"), 1, 2)
-fig.add_trace(go.Scatter(x=tsol[:i_sp + 1], y=Ssol[:i_sp + 1], mode="lines",
-                         line=dict(color=grey, dash="dot"), name="unstable (maximum)"), 1, 2)
-fig.add_trace(go.Scatter(x=[t_NI, ts[-1]], y=[0, 0], mode="lines",
-                         line=dict(color=red, width=3), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[0.2, t_NI], y=[0, 0], mode="lines",
-                         line=dict(color=grey, width=3), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[ts[0], 0.2], y=[0, 0], mode="lines",
-                         line=dict(color=grey, dash="dot"), showlegend=False), 1, 2)
-fig.add_trace(go.Scatter(x=[t_NI, t_NI], y=[0, S_c], mode="lines",
-                         line=dict(color=red, dash="dash", width=1), showlegend=False), 1, 2)
-n_static = len(fig.data)
 
-# Per-temperature traces: curve, stable, metastable, maxima, current-T line
-per = 5
-for t in ts:
-    f = landscape(t)
-    st, me, mx = extrema(f)
-    fig.add_trace(go.Scatter(x=S.round(4), y=f.round(5), mode="lines", line=dict(color="black"),
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[st], y=f[st], mode="markers+text",
-                             marker=dict(color=red, size=12),
-                             text=[f"stable, 𝒮={abs(S[k]):.2f}" for k in st], textposition=["top right" if k == 0 else "top center" for k in st],
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[me], y=f[me], mode="markers+text",
-                             marker=dict(color="white", size=12, line=dict(color=red, width=2)),
-                             text=[f"metastable, 𝒮={abs(S[k]):.2f}" for k in me], textposition=["bottom right" if k == 0 else "bottom center" for k in me],
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=S[mx], y=f[mx], mode="markers",
-                             marker=dict(color=grey, size=10, symbol="x"),
-                             visible=False, showlegend=False), 1, 1)
-    fig.add_trace(go.Scatter(x=[t, t], y=[-0.05, 1], mode="lines",
-                             line=dict(color="black", dash="dash", width=1),
-                             visible=False, showlegend=False), 1, 2)
+def landscape(t):
+    """Left-panel data at temperature t: curve, stable, metastable, maxima."""
+    f = free_energy(t)
+    minima, maxima = extrema(f)
+    lowest = min(f[k] for k in minima)
+    stable = [k for k in minima if f[k] - lowest < 1e-9]
+    metastable = [k for k in minima if k not in stable]
+    return [
+        dict(x=S, y=f),
+        dict(x=S[stable], y=f[stable], text=[f"stable, S={S[k]:.2f}" for k in stable]),
+        dict(x=S[metastable], y=f[metastable], text=[f"metastable, S={S[k]:.2f}" for k in metastable]),
+        dict(x=S[maxima], y=f[maxima]),
+        dict(x=[t, t], y=[-0.05, 1]),
+    ]
 
-def visible(j):
-    v = [True] * n_static + [False] * per * len(ts)
-    v[n_static + per * j: n_static + per * (j + 1)] = [True] * per
-    return v
 
-j0 = int(np.argmin(abs(ts - 0.22)))
-for k, val in enumerate(visible(j0)):
-    fig.data[k].visible = val
-def yrange(t):
-    f = landscape(t)[S < 0.85]
+# Left panel (traces 0-3) and current-temperature line on the right (trace 4)
+start = landscape(0.22)
+fig.add_trace(go.Scatter(**start[0], mode="lines", line_color="black", showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[1], mode="markers+text", textposition="top center",
+                         marker=dict(color=RED, size=12), showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[2], mode="markers+text", textposition="bottom right",
+                         marker=dict(color="white", size=12, line=dict(color=RED, width=2)),
+                         showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[3], mode="markers", marker=dict(color=GREY, size=10, symbol="x"),
+                         showlegend=False), 1, 1)
+fig.add_trace(go.Scatter(**start[4], mode="lines", line=dict(color="black", dash="dash", width=1),
+                         showlegend=False), 1, 2)
+
+# Right panel: branches of solutions S(t), drawn once
+def branch(t, s, color, dash="solid", name=None):
+    fig.add_trace(go.Scatter(x=t, y=s, mode="lines", name=name, showlegend=name is not None,
+                             line=dict(color=color, dash=dash, width=3)), 1, 2)
+
+below = t_nem <= t_NI
+branch(t_nem[below], S_nem[below], RED, name="stable")
+branch(t_nem[~below], S_nem[~below], GREY, name="metastable")
+branch(t_sol[:turn + 1], S_sol[:turn + 1], GREY, "dot", name="unstable (maximum)")
+branch([t_NI, temperatures[-1]], [0, 0], RED)
+branch([t_iso, t_NI], [0, 0], GREY)
+branch([temperatures[0], t_iso], [0, 0], GREY, "dot")
+branch([t_NI, t_NI], [0, S_NI], RED, "dash")
+
+# One animation frame per temperature, selected with the slider
+def y_range(t):
+    f = free_energy(t)[S < 0.85]
     return [min(-0.02, f.min() - 0.01), 0.04]
 
-steps = [dict(method="update", args=[{"visible": visible(j)}, {"yaxis.range": yrange(t)}], label=f"{t:.4f}")
-         for j, t in enumerate(ts)]
-fig.update_layout(sliders=[dict(active=j0, steps=steps, currentvalue=dict(prefix="k<sub>B</sub>T/u = "),
-                                pad=dict(t=50))],
-                  height=560, template="simple_white", margin=dict(t=80),
-                  legend=dict(orientation="h", x=0.5, xanchor="center", y=1.15))
-fig.update_xaxes(title_text="order parameter 𝒮", range=[-0.02, 0.85], row=1, col=1)
-fig.update_yaxes(title_text="(<i>f</i> − <i>f</i><sub>iso</sub>) / <i>k</i><sub>B</sub><i>T</i>", range=yrange(ts[j0]), row=1, col=1)
-fig.update_xaxes(title_text="<i>k</i><sub>B</sub><i>T</i> / <i>u</i>", range=[ts[0], ts[-1]], row=1, col=2)
-fig.update_yaxes(title_text="𝒮", range=[-0.05, 1], row=1, col=2)
-print(f"Transition: k_B T_NI/u = {t_NI:.4f}, S jumps from 0 to {S_c:.3f}; nematic minimum exists up to k_B T/u = {t_sp:.4f}")
-HTML(fig.to_html(include_plotlyjs=False, full_html=False))
+fig.frames = [go.Frame(name=str(t), data=landscape(t), traces=[0, 1, 2, 3, 4],
+                       layout=dict(yaxis=dict(range=y_range(t))))
+              for t in temperatures]
+fig.update_layout(
+    sliders=[dict(
+        active=int(np.argmin(abs(temperatures - 0.22))),
+        currentvalue=dict(prefix="k<sub>B</sub>T/u = "),
+        pad=dict(t=50),
+        transition=dict(duration=0),
+        steps=[dict(method="animate", label=f"{t:.4f}",
+                    args=[[str(t)], dict(mode="immediate", frame=dict(duration=0, redraw=True),
+                                        transition=dict(duration=0))])
+               for t in temperatures])],
+    height=560, template="simple_white", margin=dict(t=80),
+    legend=dict(orientation="h", x=0.5, xanchor="center", y=1.15))
+fig.update_xaxes(title_text="order parameter S", range=[-0.1, 0.9], row=1, col=1)
+fig.update_yaxes(title_text="(f - f<sub>iso</sub>) / k<sub>B</sub>T", range=y_range(0.22), row=1, col=1)
+fig.update_xaxes(title_text="k<sub>B</sub>T / u", range=[temperatures[0], temperatures[-1]], row=1, col=2)
+fig.update_yaxes(title_text="S", range=[-0.05, 1], row=1, col=2)
+HTML(fig.to_html(include_plotlyjs=False, full_html=False, auto_play=False))
 ```
 :::
 
