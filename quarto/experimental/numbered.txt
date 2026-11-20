@@ -1,0 +1,634 @@
+1:---
+2:title: "From Brownian Motion to Experimental Diffusion Measurements"
+3:subtitle: "Microscopy Analysis of Diffusing Magnetic Colloidal Chains"
+4:author: "Complex Disordered Matter"
+5:format:
+6:  html:
+7:    toc: true
+8:    number-sections: true
+9:  pdf:
+10:    toc: true
+11:    number-sections: true
+12:---
+13:
+14:# Learning objectives
+15:
+16:At the end of this session you should be able to:
+17:
+18:- identify an experimental observable that gives access to a diffusion coefficient;
+19:- explain why a chain of superparamagnetic colloids constitutes an excellent initial condition for a diffusion experiment;
+20:- transform microscopy images into concentration profiles;
+21:- fit Gaussian distributions to experimental data;
+22:- measure the evolution of the width of a diffusing particle cloud;
+23:- extract a diffusion coefficient from microscopy images.
+24:
+25:# Part I – Theory Reminder and Experimental Design
+26:
+27:## Brownian motion versus diffusion
+28:
+29:Previous lectures introduced Brownian motion and diffusion.
+30:
+31:At the microscopic level, particles execute random trajectories due to collisions with solvent molecules.
+32:
+33:At the macroscopic level, this random motion generates the diffusion equation
+34:
+35:$$
+36:\frac{\partial \rho}{\partial t}
+37:=
+38:D
+39:\frac{\partial^2 \rho}{\partial x^2}.
+40:$$
+41:
+42:Rather than following individual trajectories, we shall work with the concentration field
+43:
+44:$$
+45:\rho(x,t).
+46:$$
+47:
+48:The practical question for today is therefore:
+49:
+50:> How can we determine the diffusion coefficient experimentally?
+51:
+52:## What observable should we measure?
+53:
+54:For a localized initial condition,
+55:
+56:$$
+57:\rho(x,0)\approx \delta(x),
+58:$$
+59:
+60:the diffusion equation predicts a Gaussian profile
+61:
+62:$$
+63:\rho(x,t)
+64:=
+65:\frac{N}{\sqrt{4\pi Dt}}
+66:\exp
+67:\left(
+68:-\frac{x^2}{4Dt}
+69:\right).
+70:$$
+71:
+72:Instead of focusing on the profile itself, we characterize it using its Full Width at Half Maximum (FWHM).
+73:
+74:For a Gaussian distribution,
+75:
+76:$$
+77:W
+78:=
+79:4\sqrt{\ln(2)\,Dt}.
+80:$$
+81:
+82:Therefore
+83:
+84:$$
+85:W^2
+86:=
+87:16 \ln(2)\,Dt.
+88:$$
+89:
+90:The diffusion coefficient can be obtained directly from the growth of the profile width.
+91:
+92:::: {.callout-note}
+93:Key idea:
+94:
+95:Measure the width of the particle cloud as a function of time.
+96:
+97:No particle tracking is required.
+98::::
+99:
+100:# Creating a Localized Initial Condition
+101:
+102:## Experimental challenge
+103:
+104:The diffusion equation assumes an initially localized particle distribution.
+105:
+106:How can we create such a state experimentally?
+107:
+108:## Superparamagnetic colloids
+109:
+110:The system used in this experiment consists of superparamagnetic colloidal particles suspended in water.
+111:
+112:When an external magnetic field is applied:
+113:
+114:- particles acquire induced dipole moments;
+115:- dipoles align with the field;
+116:- particles attract each other along the field direction;
+117:- linear chains form spontaneously.
+118:
+119:**[Figure: Formation of chains under an applied magnetic field]**
+120:
+121:The chain provides an experimental realization of an initially narrow concentration profile.
+122:
+123:## Switching on diffusion
+124:
+125:The magnetic field is suddenly removed.
+126:
+127:The induced magnetic dipoles disappear.
+128:
+129:The chains become unstable and particles diffuse away from their initial positions.
+130:
+131:**[Figure: Sequence of experimental images showing chain disintegration]**
+132:
+133:The experiment therefore directly reproduces the localized initial condition discussed in diffusion theory.
+134:
+135:# From Images to Density Profiles
+136:
+137:The microscope does not measure density.
+138:
+139:It measures images.
+140:
+141:To connect experiment and theory we must transform images into concentration profiles.
+142:
+143:The analysis consists of four steps:
+144:
+145:1. Thresholding.
+146:2. Binarization.
+147:3. Profile extraction.
+148:4. Gaussian fitting.
+149:
+150:## Step 1: Thresholding
+151:
+152:Particles appear darker than the background.
+153:
+154:We choose a threshold intensity.
+155:
+156:Pixels are classified as either:
+157:
+158:- particle;
+159:- background.
+160:
+161:**[Figure: Raw image and threshold value]**
+162:
+163:## Step 2: Binarization
+164:
+165:After thresholding,
+166:
+167:$$
+168:I(x,y)
+169:=
+170:\begin{cases}
+171:1 & \text{particle}\\
+172:0 & \text{background}.
+173:\end{cases}
+174:$$
+175:
+176:The resulting binary image contains only the information needed for particle detection.
+177:
+178:**[Figure: Binary image obtained after thresholding]**
+179:
+180:## Step 3: Averaging
+181:
+182:Since the chain is approximately vertical, we average over the vertical direction:
+183:
+184:$$
+185:\rho(x)
+186:=
+187:\frac1{N_y}
+188:\sum_y I(x,y).
+189:$$
+190:
+191:This produces a one-dimensional concentration profile.
+192:
+193:**[Figure: Binary image and resulting concentration profile]**
+194:
+195:## Step 4: Gaussian fitting
+196:
+197:Diffusion predicts a Gaussian profile.
+198:
+199:We therefore fit
+200:
+201:$$
+202:\rho(x)
+203:=
+204:A
+205:\exp
+206:\left[
+207:-\frac{(x-x_0)^2}
+208:{2\sigma^2}
+209:\right].
+210:$$
+211:
+212:The fitted parameter $\sigma$ provides the profile width.
+213:
+214:The corresponding FWHM is
+215:
+216:$$
+217:W
+218:=
+219:2\sqrt{2\ln 2}\,\sigma.
+220:$$
+221:
+222:At this point we have all the ingredients required to measure a diffusion coefficient.
+223:
+224:---
+225:# Part II – Practical: Measuring a Diffusion Coefficient from a Sequence of Microscopy Images
+226:
+227:In this practical session, we will analyse a sequence of images showing the diffusion of a colloidal chain after removal of an external magnetic field.
+228:
+229:Rather than carrying out the analysis manually, we will use a Python workflow inspired by the code provided in the accompanying notebook.
+230:
+231:The objective is to understand each step of the analysis, visualize the intermediate results, and identify how the diffusion coefficient emerges from the image sequence.
+232:
+233:## Learning objectives
+234:
+235:At the end of this practical you should be able to:
+236:
+237:- load and display microscopy images in Python;
+238:- perform image thresholding;
+239:- visualize binary images;
+240:- extract concentration profiles;
+241:- fit Gaussian functions to experimental data;
+242:- determine the width of a diffusing particle cloud;
+243:- obtain a diffusion coefficient from experimental measurements.
+244:
+245:# 1. Loading the image sequence
+246:
+247:Navigate to the directory containing the image sequence.
+248:
+249:The images are named
+250:
+251:```text
+252:image10.jpg
+253:image11.jpg
+254:...
+255:image100.jpg
+256:```
+257:
+258:The first task is simply to inspect the data.
+259:
+260:```python
+261:from skimage.io import imread
+262:import matplotlib.pyplot as plt
+263:
+264:image = imread("image10.jpg")
+265:
+266:plt.figure(figsize=(6,6))
+267:plt.imshow(image, cmap="gray")
+268:plt.title("Raw image")
+269:plt.axis("off")
+270:plt.show()
+271:```
+272:
+273:## Discussion
+274:
+275:Observe the raw image carefully.
+276:
+277:Questions:
+278:
+279:- Can you clearly identify individual particles?
+280:- Is the chain approximately vertical?
+281:- Would it be possible to measure its width directly by eye?
+282:
+283:Repeat the procedure for several times in the experiment:
+284:
+285:```python
+286:for frame in [10, 30, 60, 100]:
+287:    image = imread(f"image{frame}.jpg")
+288:
+289:    plt.figure(figsize=(5,5))
+290:    plt.imshow(image, cmap="gray")
+291:    plt.title(f"Frame {frame}")
+292:    plt.axis("off")
+293:    plt.show()
+294:```
+295:
+296:### Question
+297:
+298:How does the appearance of the chain evolve with time?
+299:
+300:# 2. Understanding the Thresholding Step
+301:
+302:The analysis begins by separating particles from the background.
+303:
+304:The notebook uses Otsu thresholding.
+305:
+306:For a single image:
+307:
+308:```python
+309:from skimage.filters import threshold_otsu
+310:import numpy as np
+311:
+312:image = imread("image10.jpg")
+313:
+314:if image.ndim == 3:
+315:    image = np.mean(image, axis=2)
+316:
+317:image = np.max(image) - image
+318:
+319:threshold = threshold_otsu(image)
+320:
+321:binary = image > threshold
+322:```
+323:
+324:Display both images side-by-side:
+325:
+326:```python
+327:fig, ax = plt.subplots(1,2,figsize=(10,4))
+328:
+329:ax[0].imshow(image,cmap="gray")
+330:ax[0].set_title("Original")
+331:
+332:ax[1].imshow(binary,cmap="gray")
+333:ax[1].set_title("Binary image")
+334:
+335:for a in ax:
+336:    a.axis("off")
+337:
+338:plt.show()
+339:```
+340:
+341:## Discussion
+342:
+343:Verify that:
+344:
+345:- particles are identified correctly;
+346:- most of the background has been removed;
+347:- the chain remains clearly visible.
+348:
+349:What would happen if the threshold were:
+350:
+351:- too low?
+352:- too high?
+353:
+354:# 3. From a Binary Image to a Concentration Profile
+355:
+356:The binary image still contains two-dimensional information.
+357:
+358:The diffusion process occurs primarily in the horizontal direction.
+359:
+360:To obtain a concentration profile we average along the vertical direction.
+361:
+362:The notebook performs
+363:
+364:```python
+365:profile = binary.mean(axis=1)
+366:```
+367:
+368:Let us visualize this profile.
+369:
+370:```python
+371:import numpy as np
+372:
+373:x = np.arange(len(profile))
+374:
+375:plt.figure(figsize=(6,4))
+376:plt.plot(x, profile, "k-")
+377:plt.xlabel("Pixel index")
+378:plt.ylabel("Average occupation")
+379:plt.title("Concentration profile")
+380:plt.show()
+381:```
+382:
+383:## Discussion
+384:
+385:Compare the profile with the original chain.
+386:
+387:Questions:
+388:
+389:- Where is the centre of the chain?
+390:- Is the profile symmetric?
+391:- Does the profile resemble a Gaussian function?
+392:
+393:# 4. Visualizing Diffusion
+394:
+395:Repeat the profile extraction for several times.
+396:
+397:```python
+398:frames = [10,30,60,100]
+399:
+400:plt.figure(figsize=(7,5))
+401:
+402:for frame in frames:
+403:
+404:    image = imread(f"image{frame}.jpg")
+405:
+406:    if image.ndim == 3:
+407:        image = np.mean(image, axis=2)
+408:
+409:    image = np.max(image)-image
+410:
+411:    threshold = threshold_otsu(image)
+412:
+413:    binary = image > threshold
+414:
+415:    profile = binary.mean(axis=1)
+416:
+417:    x = np.arange(len(profile))
+418:
+419:    plt.plot(x, profile, label=f"t = {frame}")
+420:
+421:plt.xlabel("Pixel index")
+422:plt.ylabel("Average occupation")
+423:plt.legend()
+424:plt.show()
+425:```
+426:
+427:### Observation
+428:
+429:You should observe:
+430:
+431:- a decreasing peak height;
+432:- an increasing width;
+433:- an approximately Gaussian shape throughout the experiment.
+434:
+435:This is precisely what diffusion theory predicts.
+436:
+437:# 5. Gaussian Fits
+438:
+439:To quantify the width of the profile we fit a Gaussian function
+440:
+441:$$
+442:\rho(x)
+443:=
+444:A
+445:\exp
+446:\left[
+447:-\frac{(x-x_0)^2}{2\sigma^2}
+448:\right].
+449:$$
+450:
+451:The notebook uses:
+452:
+453:```python
+454:from scipy.optimize import curve_fit
+455:
+456:def gaussian(x,a,b,c):
+457:    return a*np.exp(-((x-b)/c)**2)
+458:```
+459:
+460:After fitting a profile, visualize the result.
+461:
+462:```python
+463:plt.figure(figsize=(6,4))
+464:
+465:plt.plot(x, profile, "ko", label="Data")
+466:plt.plot(x, gaussian(x,*popt), "r-", lw=2,
+467:         label="Gaussian fit")
+468:
+469:plt.xlabel("Pixel index")
+470:plt.ylabel("Occupation")
+471:plt.legend()
+472:
+473:plt.show()
+474:```
+475:
+476:## Discussion
+477:
+478:Questions:
+479:
+480:- Why is the Gaussian shape expected?
+481:- At what times does the fit appear most reliable?
+482:- Where are the largest deviations observed?
+483:
+484:# 6. Determining the Width
+485:
+486:The fitting parameter controlling the width is converted into a Full Width at Half Maximum (FWHM).
+487:
+488:The notebook computes
+489:
+490:```python
+491:FWHM = c*2*np.sqrt(np.log(2))
+492:```
+493:
+494:after converting pixels into micrometres.
+495:
+496:The script automatically extracts one width for every image of the sequence.
+497:
+498:To inspect the results:
+499:
+500:```python
+501:plt.figure(figsize=(6,4))
+502:
+503:plt.plot(times, widths, "ko")
+504:
+505:plt.xlabel("Time (s)")
+506:plt.ylabel("Width (µm)")
+507:plt.title("Raw width measurements")
+508:
+509:plt.show()
+510:```
+511:
+512:## Discussion
+513:
+514:Do the data appear:
+515:
+516:- linear?
+517:- square-root-like?
+518:- exponential?
+519:
+520:Compare your answer with the theoretical prediction
+521:
+522:$$
+523:W
+524:=
+525:4\sqrt{\ln(2)\,Dt}.
+526:$$
+527:
+528:# 7. Extracting the Diffusion Coefficient
+529:
+530:The final step consists of fitting the theoretical width evolution.
+531:
+532:The model used in the notebook is
+533:
+534:$$
+535:W
+536:=
+537:4\sqrt{\ln(2)\,D\,(t+t_0)}.
+538:$$
+539:
+540:where:
+541:
+542:- $D$ is the diffusion coefficient;
+543:- $t_0$ accounts for the finite initial width of the chain.
+544:
+545:The fitted curve can be visualized using
+546:
+547:```python
+548:plt.figure(figsize=(6,4))
+549:
+550:plt.errorbar(times,widths,yerr=errors,
+551:             fmt="ko",
+552:             label="Measurements")
+553:
+554:plt.plot(xfit,yfit,"r-",lw=2,
+555:         label="Theory")
+556:
+557:plt.xlabel("Time (s)")
+558:plt.ylabel("Width (µm)")
+559:plt.legend()
+560:
+561:plt.show()
+562:```
+563:
+564:The parameter of interest is
+565:
+566:```python
+567:print(D)
+568:```
+569:
+570:which gives the experimental diffusion coefficient.
+571:
+572:# 8. Interpreting the Result
+573:
+574:Compare the measured diffusion coefficient with your neighbours.
+575:
+576:Discuss possible differences arising from:
+577:
+578:- image thresholding;
+579:- image quality;
+580:- finite image resolution;
+581:- fitting uncertainties;
+582:- deviations from an ideal Gaussian distribution.
+583:
+584:## Additional Exploration
+585:
+586:If time permits, modify the code to display the binary images and concentration profiles for **every frame** in the sequence.
+587:
+588:For example:
+589:
+590:```python
+591:for frame in range(10,101,10):
+592:
+593:    image = imread(f"image{frame}.jpg")
+594:
+595:    if image.ndim == 3:
+596:        image = np.mean(image,axis=2)
+597:
+598:    image = np.max(image)-image
+599:
+600:    threshold = threshold_otsu(image)
+601:
+602:    binary = image > threshold
+603:
+604:    profile = binary.mean(axis=1)
+605:
+606:    fig,ax = plt.subplots(1,2,figsize=(10,4))
+607:
+608:    ax[0].imshow(binary,cmap="gray")
+609:    ax[0].set_title(f"Frame {frame}")
+610:
+611:    ax[1].plot(profile)
+612:
+613:    plt.show()
+614:```
+615:
+616:This visualization provides a useful connection between:
+617:
+618:- the raw experimental images;
+619:- the extracted concentration profiles;
+620:- the resulting width measurements.
+621:
+622:# Practical Summary
+623:
+624:In this exercise we reproduced the workflow used in the article:
+625:
+626:1. Load microscopy images.
+627:2. Threshold and binarize the images.
+628:3. Extract concentration profiles.
+629:4. Fit Gaussian distributions.
+630:5. Measure the profile width.
+631:6. Follow the broadening of the chain.
+632:7. Extract the diffusion coefficient.
+633:
+634:This experiment illustrates perfectly how a macroscopic transport coefficient emerges from the microscopic Brownian motion of individual particles.
