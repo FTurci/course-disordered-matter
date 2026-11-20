@@ -596,7 +596,7 @@ window.Quarto = {
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="b3c0a1e2" class="cell" data-execution_count="1">
+<div id="51842e4e" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -607,8 +607,8 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_17951712883870492" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_17951712883870492" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_179517278638547" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_179517278638547" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -639,18 +639,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@2.5.5/build/3Dmol-min.js');
 }
 
-var viewer_17951712883870492 = null;
-var warn = document.getElementById("3dmolwarning_17951712883870492");
+var viewer_179517278638547 = null;
+var warn = document.getElementById("3dmolwarning_179517278638547");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_17951712883870492 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17951712883870492"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_17951712883870492, {}, function() {
-viewer_17951712883870492.zoomTo();
-    viewer_17951712883870492.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_17951712883870492.setBackgroundColor("white");
-viewer_17951712883870492.render();
+viewer_179517278638547 = $3Dmol.createViewer(document.getElementById("3dmolviewer_179517278638547"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_179517278638547, {}, function() {
+viewer_179517278638547.zoomTo();
+    viewer_179517278638547.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_179517278638547.setBackgroundColor("white");
+viewer_179517278638547.render();
 })
 });
 </script>

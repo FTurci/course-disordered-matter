@@ -430,8 +430,9 @@ window.Quarto = {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">21.1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#from-trajectories-to-diffusion" id="toc-from-trajectories-to-diffusion" class="nav-link" data-scroll-target="#from-trajectories-to-diffusion"><span class="header-section-number">21.1.1</span> From trajectories to diffusion</a></li>
-  <li><a href="#computing-the-mean-square-displacement-msd" id="toc-computing-the-mean-square-displacement-msd" class="nav-link" data-scroll-target="#computing-the-mean-square-displacement-msd"><span class="header-section-number">21.1.2</span> Computing the Mean-Square Displacement (MSD)</a></li>
+  <li><a href="#from-microscopy-images-to-trajectories" id="toc-from-microscopy-images-to-trajectories" class="nav-link" data-scroll-target="#from-microscopy-images-to-trajectories"><span class="header-section-number">21.1.1</span> From microscopy images to trajectories</a></li>
+  <li><a href="#from-trajectories-to-diffusion" id="toc-from-trajectories-to-diffusion" class="nav-link" data-scroll-target="#from-trajectories-to-diffusion"><span class="header-section-number">21.1.2</span> From trajectories to diffusion</a></li>
+  <li><a href="#computing-the-mean-square-displacement-msd" id="toc-computing-the-mean-square-displacement-msd" class="nav-link" data-scroll-target="#computing-the-mean-square-displacement-msd"><span class="header-section-number">21.1.3</span> Computing the Mean-Square Displacement (MSD)</a></li>
   </ul></li>
   <li><a href="#loading-the-trajectory-data" id="toc-loading-the-trajectory-data" class="nav-link" data-scroll-target="#loading-the-trajectory-data"><span class="header-section-number">21.2</span> Loading the trajectory data</a></li>
   <li><a href="#visualizing-trajectories" id="toc-visualizing-trajectories" class="nav-link" data-scroll-target="#visualizing-trajectories"><span class="header-section-number">21.3</span> Visualizing trajectories</a>
@@ -523,7 +524,9 @@ window.Quarto = {
 <section id="introduction" class="level2" data-number="21.1">
 <h2 data-number="21.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">21.1</span> Introduction</h2>
 <p>In the previous practical, diffusion coefficients were determined from the spreading of an entire particle concentration profile. In this activity, we will extract the same physical quantity from a completely different type of measurement: the trajectories of individual particles.</p>
-<p>The starting point is a microscopy movie containing many diffusing particles. Rather than analysing the evolution of a particle cloud, we will follow the motion of individual particles through time and analyse their displacements statistically. This approach forms the basis of modern single-particle tracking experiments. ### From microscopy images to trajectories</p>
+<p>The starting point is a microscopy movie containing many diffusing particles. Rather than analysing the evolution of a particle cloud, we will follow the motion of individual particles through time and analyse their displacements statistically. This approach forms the basis of modern single-particle tracking experiments.</p>
+<section id="from-microscopy-images-to-trajectories" class="level3" data-number="21.1.1">
+<h3 data-number="21.1.1" class="anchored" data-anchor-id="from-microscopy-images-to-trajectories"><span class="header-section-number">21.1.1</span> From microscopy images to trajectories</h3>
 <p>Before any quantitative analysis can be performed, the particles must first be detected in each image. This is typically achieved through image-processing procedures such as thresholding and binarization, similar to the ones we described during last session, which identify the position of individual particles in every frame. The detailed method is highly specific to the experimental setup, and we will not explore this deeply in this lecture.</p>
 <p>Once particles have been detected, the next challenge is to associate detections between successive frames. Tracking algorithms compare possible particle matches and select the most probable trajectory by minimizing an appropriate cost function. Repeating this procedure throughout the image sequence produces a collection of particle trajectories. These algorithms are often taylored to the application, some taking into account the possibility for a particle to disappear, or for a new particle to appear, with constraints on the maximum object deformation or displacement between frames. In a numerical simulation, the trajectory is however often obtained as primary output, as each particle can be identified all along the computation.</p>
 <div id="fig-track" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -540,19 +543,20 @@ Figure&nbsp;21.1: Schematic of the particle-tracking workflow showing (i) partic
 <p><span class="math display">\[
 \mathbf r(t) = \bigl(x(t),y(t)\bigr),
 \]</span></p>
-<p>where the particle position is known at many successive times. These trajectories contain direct information about the microscopic random motion responsible for diffusion.</p>
+<p>where the particle position is known at many successive times. These trajectories contain direct information about the microscopic random motion responsible for diffusion. In this lecture, we will explore the algorithm and workflow established in a paper from <a href="https://doi.org/10.1016/j.cpc.2010.09.017">M. A. Charsooghi <em>et al.</em></a>, that they used to develop a software their software package.</p>
 <div id="fig-traj" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-traj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="part4_figs/Trajectories.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-traj-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21.2: Example set of tracked particle trajectories obtained from microscopy data.
+Figure&nbsp;21.2: Example set of tracked particle trajectories obtained from microscopy data.<a href="https://doi.org/10.1016/j.cpc.2010.09.017">M. A. Charsooghi <em>et al.</em></a>
 </figcaption>
 </figure>
 </div>
-<section id="from-trajectories-to-diffusion" class="level3" data-number="21.1.1">
-<h3 data-number="21.1.1" class="anchored" data-anchor-id="from-trajectories-to-diffusion"><span class="header-section-number">21.1.1</span> From trajectories to diffusion</h3>
+</section>
+<section id="from-trajectories-to-diffusion" class="level3" data-number="21.1.2">
+<h3 data-number="21.1.2" class="anchored" data-anchor-id="from-trajectories-to-diffusion"><span class="header-section-number">21.1.2</span> From trajectories to diffusion</h3>
 <p>To characterize diffusion, we analyse particle displacements over a lag time <span class="math inline">\(\tau\)</span>:</p>
 <p><span class="math display">\[
 \Delta x(t,\tau)=x(t+\tau)-x(t),
@@ -564,8 +568,8 @@ Figure&nbsp;21.2: Example set of tracked particle trajectories obtained from mic
 \]</span></p>
 <p>while the mean-square displacement grows with time. In practice, experimental data may contain a small drift resulting from fluid flow, stage motion, or other systematic effects. Subtracting the average displacement allows us to separate random diffusive motion from directed motion.</p>
 </section>
-<section id="computing-the-mean-square-displacement-msd" class="level3" data-number="21.1.2">
-<h3 data-number="21.1.2" class="anchored" data-anchor-id="computing-the-mean-square-displacement-msd"><span class="header-section-number">21.1.2</span> Computing the Mean-Square Displacement (MSD)</h3>
+<section id="computing-the-mean-square-displacement-msd" class="level3" data-number="21.1.3">
+<h3 data-number="21.1.3" class="anchored" data-anchor-id="computing-the-mean-square-displacement-msd"><span class="header-section-number">21.1.3</span> Computing the Mean-Square Displacement (MSD)</h3>
 <p>A powerful way to characterize diffusion is through the mean-square displacement (MSD). Because any time point can be chosen as the starting point of a displacement measurement, many displacement intervals can be extracted from a single trajectory. This greatly improves statistics.</p>
 <div id="fig-MSDover" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -573,7 +577,7 @@ Figure&nbsp;21.2: Example set of tracked particle trajectories obtained from mic
 <img src="part4_figs/MSDOverlap.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-MSDover-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21.3: Schematic showing displacements measured over a fixed lag time using multiple possible starting points along a trajectory.
+Figure&nbsp;21.3: Schematic showing displacements measured over a fixed lag time using multiple possible starting points along a trajectory.<a href="https://doi.org/10.1016/j.cpc.2010.09.017">M. A. Charsooghi <em>et al.</em></a>
 </figcaption>
 </figure>
 </div>
@@ -584,7 +588,7 @@ Figure&nbsp;21.3: Schematic showing displacements measured over a fixed lag time
 <img src="part4_figs/MSDDecorr.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-MSDdecorr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;21.4: Diagram illustrating overlapping (auto-correlated) and non-overlapping displacement intervals for a given lag time.
+Figure&nbsp;21.4: Diagram illustrating overlapping (auto-correlated) and non-overlapping displacement intervals for a given lag time.<a href="https://doi.org/10.1016/j.cpc.2010.09.017">M. A. Charsooghi <em>et al.</em></a>
 </figcaption>
 </figure>
 </div>
