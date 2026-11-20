@@ -14,7 +14,7 @@ format:
 In this lecture, we will explore how to extract the diffusion coefficient from the collective motion of magnetic colloids. The lecture is based on the article below:
 
 <video controls style="width:100%; max-width:700px;">
-  <source src="part3_figs/Relating Brownian motion to diffusion with superparamagnetic col.mp4">
+  <source src="part3_figs/BrownMotionDiffusion.mp4">
 </video>
 
 Video: Video abstract of [Relating Brownian motion to diffusion with superparamagnetic colloids](https://pubs.aip.org/aapt/ajp/article/85/4/265/1042575).
