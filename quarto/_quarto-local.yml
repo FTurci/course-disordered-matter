@@ -69,8 +69,8 @@ book:
           text: "Preparing your computer for the first experimental interlude"
         - href: experimental/part1.ipynb
           text: "Real-space measurements"
-         - href: experimental/part2New.ipynb
-           text: "Reciprocal-space measurements"
+        - href: experimental/part2New.ipynb
+          text: "Reciprocal-space measurements"
 
     # - part: "Complex disordered systems"
     #   chapters:
@@ -95,12 +95,12 @@ book:
            
     #     - href: soft-matter/soft-matter_problems.qmd
     #       text: "Problems"
-    # - part: "Second experimental interlude"
-    #   chapters:
-    #     - href: experimental/part3.ipynb
-    #       text: "Experimental link between Diffusion and Brownian Motion"
-    #     - href: experimental/part4.ipynb
-    #       text: "Practical Image Analysis session"
+    - part: "Second experimental interlude"
+      chapters:
+        - href: experimental/Part3_Brownian.qmd
+          text: "Experimental link between Diffusion and Brownian Motion"
+        - href: experimental/Part4_ImageAn.qmd
+          text: "Diffusion coefficient from individual trajectories"
     # - text: "Notes as pdf" 
     #   href: notes.pdf
   # appendices:

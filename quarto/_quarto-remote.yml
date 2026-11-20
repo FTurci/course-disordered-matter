@@ -99,12 +99,12 @@ book:
           text: "Problems"
         - href: soft-matter/coursework2/PHYSM0071_coursework-2.qmd
           text: "Second coursework assignment"
-    # - part: "Second experimental interlude"
-    #   chapters:
-    #     - href: experimental/part3.ipynb
-    #       text: "Experimental link between Diffusion and Brownian Motion"
-    #     - href: experimental/part4.ipynb
-    #       text: "Practical Image Analysis session"
+    - part: "Second experimental interlude"
+      chapters:
+        - href: experimental/Part3_Brownian.qmd
+          text: "Experimental link between Diffusion and Brownian Motion"
+        - href: experimental/Part4_ImageAn.qmd
+          text: "Diffusion coefficient from individual trajectories"
     # - text: "Notes as pdf" 
     #   href: notes.pdf
   # appendices:
