@@ -15,6 +15,7 @@ format:
 In the previous practical, diffusion coefficients were determined from the spreading of an entire particle concentration profile. In this activity, we will extract the same physical quantity from a completely different type of measurement: the trajectories of individual particles.
 
 The starting point is a microscopy movie containing many diffusing particles. Rather than analysing the evolution of a particle cloud, we will follow the motion of individual particles through time and analyse their displacements statistically. This approach forms the basis of modern single-particle tracking experiments.
+
 ### From microscopy images to trajectories
 
 Before any quantitative analysis can be performed, the particles must first be detected in each image. This is typically achieved through image-processing procedures such as thresholding and binarization, similar to the ones we described during last session, which identify the position of individual particles in every frame. The detailed method is highly specific to the experimental setup, and we will not explore this deeply in this lecture.
@@ -30,9 +31,9 @@ $$
 \mathbf r(t) = \bigl(x(t),y(t)\bigr),
 $$
 
-where the particle position is known at many successive times. These trajectories contain direct information about the microscopic random motion responsible for diffusion.
+where the particle position is known at many successive times. These trajectories contain direct information about the microscopic random motion responsible for diffusion. In this lecture, we will explore the algorithm and workflow established in a paper from  [M. A. Charsooghi *et al.*](https://doi.org/10.1016/j.cpc.2010.09.017), that they used to develop a software their software package.
 
-![Example set of tracked particle trajectories obtained from microscopy data.](part4_figs/Trajectories.png){#fig-traj}
+![Example set of tracked particle trajectories obtained from microscopy data.[M. A. Charsooghi *et al.*](https://doi.org/10.1016/j.cpc.2010.09.017)](part4_figs/Trajectories.png){#fig-traj}
 
 ### From trajectories to diffusion
 
@@ -56,11 +57,11 @@ while the mean-square displacement grows with time. In practice, experimental da
 
 A powerful way to characterize diffusion is through the mean-square displacement (MSD). Because any time point can be chosen as the starting point of a displacement measurement, many displacement intervals can be extracted from a single trajectory. This greatly improves statistics.
 
-![Schematic showing displacements measured over a fixed lag time using multiple possible starting points along a trajectory.](part4_figs/MSDOverlap.png){#fig-MSDover}
+![Schematic showing displacements measured over a fixed lag time using multiple possible starting points along a trajectory.[M. A. Charsooghi *et al.*](https://doi.org/10.1016/j.cpc.2010.09.017)](part4_figs/MSDOverlap.png){#fig-MSDover}
 
 However, many of these displacement intervals overlap and therefore share common trajectory segments. As a result, they are not statistically independent and become auto-correlated. One possible solution is to use only non-overlapping intervals, sacrificing some statistics in exchange for greater statistical independence. We will compare both approaches later in this practical.
 
-![Diagram illustrating overlapping (auto-correlated) and non-overlapping displacement intervals for a given lag time.](part4_figs/MSDDecorr.png){#fig-MSDdecorr}
+![Diagram illustrating overlapping (auto-correlated) and non-overlapping displacement intervals for a given lag time.[M. A. Charsooghi *et al.*](https://doi.org/10.1016/j.cpc.2010.09.017)](part4_figs/MSDDecorr.png){#fig-MSDdecorr}
 
 For a particle diffusing in $d$ dimensions, the MSD is expected to increase linearly with time according to
 
