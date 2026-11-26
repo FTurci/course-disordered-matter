@@ -856,7 +856,9 @@ $$
 $$
 and describe how $E_{\rm app}$ changes as the liquid is cooled towards $T_0$.
 
-3. In the Adam-Gibbs picture the relaxation time is $\tau_\alpha=\tau_0\exp\left(A/Ts_{\rm conf}\right)$. Assume that close to the Kauzmann temperature the configurational entropy per particle behaves as $s_{\rm conf}(T)=K\left(1-T_K/T\right)$, with $K>0$. Show that the Adam-Gibbs relation then takes exactly the VFT form, and identify $B$ and $T_0$.
+3. Calorimetry measures the **excess entropy** per particle of the liquid over the crystal through the excess heat capacity $\Delta c_p$: $ds_{\rm exc}/dT=\Delta c_p/T$. For many fragile liquids $\Delta c_p\simeq C/T$, with $C>0$ a constant. Identify $s_{\rm conf}\simeq s_{\rm exc}$ and take $s_{\rm conf}(T_K)=0$ at the Kauzmann temperature $T_K$. Show that $s_{\rm conf}(T)=K\left(1-T_K/T\right)$ and find $K$.
+
+4. In the Adam-Gibbs picture the relaxation time is $\tau_\alpha=\tau_0\exp\left(A/Ts_{\rm conf}\right)$. Using the result of part 3, show that the Adam-Gibbs relation takes exactly the VFT form, and identify $B$ and $T_0$.
 
 ::: {.callout-note collapse="true"}
 ## Solution
@@ -873,7 +875,13 @@ $$
 $$
 The slope is no longer constant: the apparent barrier grows on cooling and diverges at $T_0$. The Angell plot curves upwards, as for fragile glassformers.
 
-3. Substituting $s_{\rm conf}$:
+3. Integrating from $T_K$, where $s_{\rm conf}$ vanishes:
+$$
+s_{\rm conf}(T)=\int_{T_K}^{T}\frac{C}{T'^2}\,dT'=C\left(\frac{1}{T_K}-\frac{1}{T}\right)=K\left(1-\frac{T_K}{T}\right),\qquad K=\frac{C}{T_K}.
+$$
+The identification $s_{\rm conf}\simeq s_{\rm exc}$ is an approximation: the excess entropy also contains a vibrational contribution, because the liquid and the crystal vibrate differently.
+
+4. Substituting $s_{\rm conf}$:
 $$
 Ts_{\rm conf}=KT\left(1-\frac{T_K}{T}\right)=K(T-T_K),
 $$
