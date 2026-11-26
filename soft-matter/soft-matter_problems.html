@@ -357,6 +357,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Second experimental interlude</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/Part3_Brownian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experimental link between Diffusion and Brownian Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/Part4_ImageAn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Diffusion coefficient from individual trajectories</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -1137,7 +1160,8 @@ f-f_0=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}
 <li><p>For the VFT law, define an <em>apparent</em> activation energy through <span class="math inline">\(E_{\rm app}/k_B=d\ln\eta/d(1/T)\)</span> (the local slope of the same plot). Show that <span class="math display">\[
 \frac{E_{\rm app}}{k_B}=\frac{BT^2}{(T-T_0)^2},
 \]</span> and describe how <span class="math inline">\(E_{\rm app}\)</span> changes as the liquid is cooled towards <span class="math inline">\(T_0\)</span>.</p></li>
-<li><p>In the Adam-Gibbs picture the relaxation time is <span class="math inline">\(\tau_\alpha=\tau_0\exp\left(A/Ts_{\rm conf}\right)\)</span>. Assume that close to the Kauzmann temperature the configurational entropy per particle behaves as <span class="math inline">\(s_{\rm conf}(T)=K\left(1-T_K/T\right)\)</span>, with <span class="math inline">\(K&gt;0\)</span>. Show that the Adam-Gibbs relation then takes exactly the VFT form, and identify <span class="math inline">\(B\)</span> and <span class="math inline">\(T_0\)</span>.</p></li>
+<li><p>Calorimetry measures the <strong>excess entropy</strong> per particle of the liquid over the crystal through the excess heat capacity <span class="math inline">\(\Delta c_p\)</span>: <span class="math inline">\(ds_{\rm exc}/dT=\Delta c_p/T\)</span>. For many fragile liquids <span class="math inline">\(\Delta c_p\simeq C/T\)</span>, with <span class="math inline">\(C&gt;0\)</span> a constant. Identify <span class="math inline">\(s_{\rm conf}\simeq s_{\rm exc}\)</span> and take <span class="math inline">\(s_{\rm conf}(T_K)=0\)</span> at the Kauzmann temperature <span class="math inline">\(T_K\)</span>. Show that <span class="math inline">\(s_{\rm conf}(T)=K\left(1-T_K/T\right)\)</span> and find <span class="math inline">\(K\)</span>.</p></li>
+<li><p>In the Adam-Gibbs picture the relaxation time is <span class="math inline">\(\tau_\alpha=\tau_0\exp\left(A/Ts_{\rm conf}\right)\)</span>. Using the result of part 3, show that the Adam-Gibbs relation takes exactly the VFT form, and identify <span class="math inline">\(B\)</span> and <span class="math inline">\(T_0\)</span>.</p></li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
@@ -1158,6 +1182,9 @@ f-f_0=\frac{A}{3}\mathcal{S}^2-\frac{2B}{27}\mathcal{S}^3+\frac{C}{9}\mathcal{S}
 <li><p>With <span class="math inline">\(x=1/T\)</span>: <span class="math display">\[
 \frac{d\ln\eta}{dx}=\frac{d}{dx}\left(\frac{B}{1/x-T_0}\right)=\frac{B}{(1/x-T_0)^2}\frac{1}{x^2}=\frac{BT^2}{(T-T_0)^2}.
 \]</span> The slope is no longer constant: the apparent barrier grows on cooling and diverges at <span class="math inline">\(T_0\)</span>. The Angell plot curves upwards, as for fragile glassformers.</p></li>
+<li><p>Integrating from <span class="math inline">\(T_K\)</span>, where <span class="math inline">\(s_{\rm conf}\)</span> vanishes: <span class="math display">\[
+s_{\rm conf}(T)=\int_{T_K}^{T}\frac{C}{T'^2}\,dT'=C\left(\frac{1}{T_K}-\frac{1}{T}\right)=K\left(1-\frac{T_K}{T}\right),\qquad K=\frac{C}{T_K}.
+\]</span> The identification <span class="math inline">\(s_{\rm conf}\simeq s_{\rm exc}\)</span> is an approximation: the excess entropy also contains a vibrational contribution, because the liquid and the crystal vibrate differently.</p></li>
 <li><p>Substituting <span class="math inline">\(s_{\rm conf}\)</span>: <span class="math display">\[
 Ts_{\rm conf}=KT\left(1-\frac{T_K}{T}\right)=K(T-T_K),
 \]</span> so <span class="math display">\[
