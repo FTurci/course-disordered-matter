@@ -230,19 +230,34 @@ $S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*$
 Rearranging gives the size of a CRR as a function of the configurational entropy per particle $S_{conf}/N$:
 $$n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}$$
 
-We then assume that the activation free energy $\Delta G$ required for a CRR to rearrange is proportional to its size: 
+We then assume **activated dynamics**: rearranging costs a barrier $\Delta\mu$ per particle, so a CRR must cross a barrier proportional to its size,
 
-$$\Delta G(T) \propto n_{CRR}(T)$$
+$$\Delta E(T) = n_{CRR}(T)\,\Delta\mu = \frac{s^*\Delta\mu}{s_{\rm conf}(T)},$$
 
-By assuming activated dynamics, the Adam-Gibbs relation follows:
+where $s_{\rm conf}=S_{\rm conf}/N$ is the configurational entropy per particle. The Arrhenius law $\tau_\alpha=\tau_0 e^{\Delta E/k_BT}$ then gives the Adam-Gibbs relation [@adam1965temperature]:
 $$
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right)
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right),\qquad A=\frac{s^*\Delta\mu}{k_B}.
 $$
-where $s_{\rm conf}=S_{\rm conf}/N$ is the configurational entropy per particle and $A$ is a constant. As temperature decreases, $s_{\rm conf}$ drops, leading to a rapid increase in $\tau_\alpha$. If $s_{\rm conf}$ vanishes at a finite temperature $T_K$ (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form:
+As temperature decreases, $s_{\rm conf}$ drops, leading to a rapid increase in $\tau_\alpha$.
+
+To obtain the VFT law we need to know *how* $s_{\rm conf}$ decreases. Thermodynamics tells us: the configurational entropy is the part of the entropy that the liquid has in excess of the crystal (or of the glass, where configurations are frozen), and it is built up by the excess heat capacity $\Delta c_p$ (per particle) of the liquid, $ds_{\rm conf}/dT=\Delta c_p/T$. If $s_{\rm conf}$ vanishes at a finite temperature $T_K$ (the so-called Kauzmann temperature, see below), integrating from $T_K$ gives
+
 $$
-\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
+s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT'.
 $$
-with $T_0 \approx T_K$. Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached.
+
+Close to $T_K$, with $\Delta c_p$ smooth and nonzero, the configurational entropy vanishes **linearly**:
+
+$$
+s_{\rm conf}(T)\simeq\frac{\Delta c_p}{T_K}\,(T-T_K)\quad\Rightarrow\quad T s_{\rm conf}\simeq\Delta c_p\,(T-T_K).
+$$
+
+Substituting into the Adam-Gibbs relation, the relaxation time diverges at $T_K$ and takes the VFT form:
+$$
+\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_0}\right),\qquad B=\frac{A}{\Delta c_p},\quad T_0=T_K.
+$$
+
+Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached. It also makes a testable prediction: the temperature $T_0$ obtained by fitting relaxation times should coincide with the temperature $T_K$ obtained from calorimetry. For many fragile liquids the two agree closely [@richert1998dynamics].
 
 The temperature $T_K$ is named after Kauzmann, who noticed that if the entropy difference between the supercooled liquid and the crystal is extrapolated below $T_g$, it vanishes at a finite temperature $T_K>0$, and would even become negative below it [@kauzmann1948nature]. This **Kauzmann paradox** is avoided in practice because the liquid falls out of equilibrium at $T_g$ before reaching $T_K$.
 
