@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,13 +12,10 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -98,10 +95,10 @@ div.csl-indent {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-f22b733819789c3b94469819c4966741.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-e7c4855d89168155320c135cd18afa04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/live-runtime/live-runtime.js" type="module"></script>
 <link href="../site_libs/quarto-contrib/live-runtime/live-runtime.css" rel="stylesheet">
 <script src="../site_libs/quarto-contrib/videojs/video.min.js"></script>
@@ -137,7 +134,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -701,13 +698,23 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">\(s^*\)</span>, irrespective of its size</p>
 <p><span class="math inline">\(S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*\)</span></p>
 <p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">\(S_{conf}/N\)</span>: <span class="math display">\[n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}\]</span></p>
-<p>We then assume that the activation free energy <span class="math inline">\(\Delta G\)</span> required for a CRR to rearrange is proportional to its size:</p>
-<p><span class="math display">\[\Delta G(T) \propto n_{CRR}(T)\]</span></p>
-<p>By assuming activated dynamics, the Adam-Gibbs relation follows: <span class="math display">\[
-\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right)
-\]</span> where <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> is the configurational entropy per particle and <span class="math inline">\(A\)</span> is a constant. As temperature decreases, <span class="math inline">\(s_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>. If <span class="math inline">\(s_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature), the relaxation time diverges, reproducing the VFT form: <span class="math display">\[
-\tau_\alpha(T) \sim \exp\left(\frac{B}{T - T_0}\right)
-\]</span> with <span class="math inline">\(T_0 \approx T_K\)</span>. Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached.</p>
+<p>We then assume <strong>activated dynamics</strong>: rearranging costs a barrier <span class="math inline">\(\Delta\mu\)</span> per particle, so a CRR must cross a barrier proportional to its size,</p>
+<p><span class="math display">\[\Delta E(T) = n_{CRR}(T)\,\Delta\mu = \frac{s^*\Delta\mu}{s_{\rm conf}(T)},\]</span></p>
+<p>where <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> is the configurational entropy per particle. The Arrhenius law <span class="math inline">\(\tau_\alpha=\tau_0 e^{\Delta E/k_BT}\)</span> then gives the Adam-Gibbs relation <span class="citation" data-cites="adam1965temperature">(<a href="#ref-adam1965temperature" role="doc-biblioref">Adam and Gibbs 1965</a>)</span>: <span class="math display">\[
+\tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right),\qquad A=\frac{s^*\Delta\mu}{k_B}.
+\]</span> As temperature decreases, <span class="math inline">\(s_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>.</p>
+<p>To obtain the VFT law we need to know <em>how</em> <span class="math inline">\(s_{\rm conf}\)</span> decreases. Thermodynamics tells us: the configurational entropy is the part of the entropy that the liquid has in excess of the crystal (or of the glass, where configurations are frozen), and it is built up by the excess heat capacity <span class="math inline">\(\Delta c_p\)</span> (per particle) of the liquid, <span class="math inline">\(ds_{\rm conf}/dT=\Delta c_p/T\)</span>. If <span class="math inline">\(s_{\rm conf}\)</span> vanishes at a finite temperature <span class="math inline">\(T_K\)</span> (the so-called Kauzmann temperature, see below), integrating from <span class="math inline">\(T_K\)</span> gives</p>
+<p><span class="math display">\[
+s_{\rm conf}(T)=\int_{T_K}^{T}\frac{\Delta c_p}{T'}\,dT'.
+\]</span></p>
+<p>Close to <span class="math inline">\(T_K\)</span>, with <span class="math inline">\(\Delta c_p\)</span> smooth and nonzero, the configurational entropy vanishes <strong>linearly</strong>:</p>
+<p><span class="math display">\[
+s_{\rm conf}(T)\simeq\frac{\Delta c_p}{T_K}\,(T-T_K)\quad\Rightarrow\quad T s_{\rm conf}\simeq\Delta c_p\,(T-T_K).
+\]</span></p>
+<p>Substituting into the Adam-Gibbs relation, the relaxation time diverges at <span class="math inline">\(T_K\)</span> and takes the VFT form: <span class="math display">\[
+\tau_\alpha(T) \simeq \tau_0\exp\left(\frac{B}{T - T_0}\right),\qquad B=\frac{A}{\Delta c_p},\quad T_0=T_K.
+\]</span></p>
+<p>Thus, the Adam-Gibbs model provides a thermodynamic interpretation of the VFT law, connecting the kinetic slowdown to the loss of configurational entropy as the glass transition is approached. It also makes a testable prediction: the temperature <span class="math inline">\(T_0\)</span> obtained by fitting relaxation times should coincide with the temperature <span class="math inline">\(T_K\)</span> obtained from calorimetry. For many fragile liquids the two agree closely <span class="citation" data-cites="richert1998dynamics">(<a href="#ref-richert1998dynamics" role="doc-biblioref">Richert and Angell 1998</a>)</span>.</p>
 <p>The temperature <span class="math inline">\(T_K\)</span> is named after Kauzmann, who noticed that if the entropy difference between the supercooled liquid and the crystal is extrapolated below <span class="math inline">\(T_g\)</span>, it vanishes at a finite temperature <span class="math inline">\(T_K&gt;0\)</span>, and would even become negative below it <span class="citation" data-cites="kauzmann1948nature">(<a href="#ref-kauzmann1948nature" role="doc-biblioref">Kauzmann 1948</a>)</span>. This <strong>Kauzmann paradox</strong> is avoided in practice because the liquid falls out of equilibrium at <span class="math inline">\(T_g\)</span> before reaching <span class="math inline">\(T_K\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -952,7 +959,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="cd58ea9e" class="cell" data-execution_count="1">
+<div id="7bdaddeb" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -966,7 +973,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="cd7c5d08" class="cell" data-execution_count="2">
+<div id="36f8c5d0" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1026,7 +1033,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="b13ebbac" class="cell" data-execution_count="3">
+<div id="7467361c" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1090,7 +1097,7 @@ N(\ell) \sim \ell^{-D_f}
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="soft-matter_glasses_files/figure-html/cell-4-output-2.png" width="429" height="377" class="figure-img"></p>
+<p><img src="soft-matter_glasses_files/figure-html/cell-4-output-2.png" width="430" height="378" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1215,6 +1222,9 @@ eyJjb250ZW50cyI6W3siY2VsbE5hbWUiOiJweW9kaWRlLTIiLCJpbmxpbmUiOmZhbHNlLCJtZXRob2RO
 W10=
 </script>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-adam1965temperature" class="csl-entry" role="listitem">
+Adam, Gerold, and Julian H. Gibbs. 1965. <span>“On the Temperature Dependence of Cooperative Relaxation Properties in Glass-Forming Liquids.”</span> <em>The Journal of Chemical Physics</em> 43 (1): 139–46. <a href="https://doi.org/10.1063/1.1696442">https://doi.org/10.1063/1.1696442</a>.
+</div>
 <div id="ref-bouchaud2004adam" class="csl-entry" role="listitem">
 Bouchaud, Jean-Philippe, and Giulio Biroli. 2004. <span>“On the Adam-Gibbs-Kirkpatrick-Thirumalai-Wolynes Scenario for the Viscosity Increase in Glasses.”</span> <em>The Journal of Chemical Physics</em> 121 (15): 7347–54. <a href="https://bris.on.worldcat.org/oclc/110636005">https://bris.on.worldcat.org/oclc/110636005</a>.
 </div>
@@ -1241,6 +1251,9 @@ Kauzmann, Walter. 1948. <span>“The Nature of the Glassy State and the Behavior
 </div>
 <div id="ref-lu2008gelation" class="csl-entry" role="listitem">
 Lu, Peter J., Emanuela Zaccarelli, Fabio Ciulla, Andrew B. Schofield, Francesco Sciortino, and David A. Weitz. 2008. <span>“Gelation of Particles with Short-Range Attraction.”</span> <em>Nature</em> 453: 499–503. <a href="https://doi.org/10.1038/nature06931">https://doi.org/10.1038/nature06931</a>.
+</div>
+<div id="ref-richert1998dynamics" class="csl-entry" role="listitem">
+Richert, R., and C. A. Angell. 1998. <span>“Dynamics of Glass-Forming Liquids. V. On the Link Between Molecular Dynamics and Configurational Entropy.”</span> <em>The Journal of Chemical Physics</em> 108 (21): 9016–26. <a href="https://doi.org/10.1063/1.476348">https://doi.org/10.1063/1.476348</a>.
 </div>
 <div id="ref-royall2018race" class="csl-entry" role="listitem">
 Royall, C Patrick, Francesco Turci, Soichi Tatsumi, John Russo, and Joshua Robinson. 2018. <span>“The Race to the Bottom: Approaching the Ideal Glass?”</span> <em>Journal of Physics: Condensed Matter</em> 30 (36): 363001. <a href="https://bris.on.worldcat.org/oclc/1098708850">https://bris.on.worldcat.org/oclc/1098708850</a>.
