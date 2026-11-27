@@ -229,13 +229,23 @@ The key idea is the existence of **cooperatively rearranging regions** (CRRs): t
 
 The sketch of the theory is the following. At low temperatures a particle cannot move alone: its neighbours have to move too. A CRR is then the **smallest** region that can rearrange into a new configuration without requiring changes outside its boundary. Why the smallest? The barrier for a cooperative rearrangement grows with the number of particles that move together, so relaxation is dominated by the smallest regions that can rearrange at all.
 
-To rearrange, a region must have at least two distinct configurations available, $W^*=2$. The entropy $s^*=k_B\ln 2$ is therefore the **bare minimum** configurational entropy needed for relaxation: it is a threshold, the same at every temperature and for every region size. What changes on cooling is how many particles it takes to reach it. Cooling reduces the configurations available to any given region, so the minimal region that still reaches $s^*$ must grow. That the threshold stays at the bare minimum at all temperatures is a postulate of Adam and Gibbs: one could imagine that at low temperatures a region needs more alternatives than the minimum to actually relax.
+To rearrange, a region must have at least two distinct configurations available, $W^*=2$. We **assume** that each CRR has just this bare minimum, so that it carries the configurational entropy $s^*=k_B\ln 2$, the same at every temperature. This is a postulate of Adam and Gibbs: one could imagine that at low temperatures a region needs more alternatives than the minimum to actually relax.
 
-We **assume** that the configurational entropy is extensive: a region of $n$ particles has configurational entropy $n\,s_{\rm conf}$, where $s_{\rm conf}=S_{\rm conf}/N$ is the configurational entropy per particle of the bulk. This treats even a small region as a piece of bulk liquid, which is an approximation. The region can rearrange once $n\,s_{\rm conf}\geq s^*$, so the smallest CRR contains
-$$n_{CRR}(T)=\frac{s^*}{s_{\rm conf}(T)}$$
-particles. As $s_{\rm conf}$ drops on cooling, the CRRs grow.
+The size of the CRRs then follows from counting. The system is a mosaic of $M_{CRR}$ CRRs of $n_{CRR}$ particles each, so trivially
 
-The system is then a mosaic of $M_{CRR}=N/n_{CRR}$ independent CRRs and, by the same extensivity, the configurational entropy is additive, $S_{\rm conf}=M_{CRR}\,s^*$. A metabasin of the whole system corresponds to one choice of configuration for every CRR: a rearrangement of a single CRR moves the system to a neighbouring metabasin.
+$$N=M_{CRR}\,n_{CRR}.$$
+
+The CRRs rearrange independently of each other, so their configurational entropies add, each contributing $s^*$:
+
+$$S_{\rm conf}=M_{CRR}\,s^*.$$
+
+Dividing the two, with $s_{\rm conf}=S_{\rm conf}/N$ the configurational entropy per particle,
+
+$$n_{CRR}(T)=\frac{s^*}{s_{\rm conf}(T)}.$$
+
+The configurational entropy decreases on cooling (as Kauzmann's data show, and as required by a positive configurational heat capacity, $ds_{\rm conf}/dT=c_{\rm conf}/T\geq0$), while $s^*$ is fixed. Therefore the CRRs grow as the temperature is lowered.
+
+A metabasin of the whole system corresponds to one choice of configuration for every CRR: a rearrangement of a single CRR moves the system to a neighbouring metabasin.
 
 We then assume **activated dynamics**: rearranging costs a barrier $\Delta\mu$ per particle, so a CRR must cross a barrier proportional to its size,
 
