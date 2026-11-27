@@ -844,8 +844,8 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K},\qquad K&gt;0.
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Percolation is the study of an apparently innocent mathematical problem: take a square grid of <span class="math inline">\(L\times L\)</span> sites and randomly label <span class="math inline">\(N\)</span> of them; how does the likelihood of forming a cluster that spans across the grid (i.e.&nbsp;<em>percolates</em>) depend on the probability <span class="math inline">\(p=N/L^2\)</span> of having a labelled square?</p>
-<p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transition is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
-<p>Analytically, percolation is tractable and exhibits <a href="../phase-transitions/scaling.html">universal critical exponents</a> near <span class="math inline">\(p_c\)</span>, making it a cornerstone of statistical physics and network theory.</p>
+<p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It can be solved exactly only in special cases (on trees, and in 2D), but it is very easy to simulate. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transition is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
+<p>Percolation exhibits <a href="../phase-transitions/scaling.html">universal critical exponents</a> near <span class="math inline">\(p_c\)</span>, making it a cornerstone of statistical physics and network theory.</p>
 <p>You can play with percolation on a squared lattice with the code below.</p>
 <div>
 <div id="pyodide-1" class="exercise-cell">
@@ -863,7 +863,18 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiaW1w
 eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5wcyA9IG5wLmxpbnNwYWNlKDAuMSwgMS4wLCA1MClcbkwgPSA1MDBcbmxhcmdlc3Rfc2l6ZXMgPSBbXVxucmVwZWF0cyA9IDNcbmZvciBwIGluIHBzOlxuICAgIHNpemVzID0gW11cbiAgICBmb3IgciBpbiByYW5nZShyZXBlYXRzKTpcbiAgICAgICAgZ3JpZCwgbWFzayA9IHNhbXBsZV9wZXJjb2xhdGlvbihMLCBwKVxuICAgICAgICBzaXplcy5hcHBlbmQobWFzay5zdW0oKSAvIChMICogTCkpICAjIEZyYWN0aW9uIG9mIHNpdGVzIGluIGxhcmdlc3QgY2x1c3RlclxuICAgIGxhcmdlc3Rfc2l6ZXMuYXBwZW5kKG5wLm1lYW4oc2l6ZXMpKVxuXG5wbHQuZmlndXJlKGZpZ3NpemU9KDcsIDQpKVxucGx0LnBsb3QocHMsIGxhcmdlc3Rfc2l6ZXMsIG1hcmtlcj0nbycpXG5wbHQueGxhYmVsKCdPY2N1cGF0aW9uIHByb2JhYmlsaXR5ICRwJCcpXG5wbHQueWxhYmVsKCdGcmFjdGlvbiBpbiBsYXJnZXN0IGNsdXN0ZXInKVxucGx0LnRpdGxlKCdQZXJjb2xhdGlvbiB0cmFuc2l0aW9uIGluIDJEJylcbnBsdC5zaG93KCkifQ==
 </script>
 </div>
-<p>The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical <span class="math inline">\(p_c\)</span>, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is require in order to find a percolating path.</p>
+<p>Try fitting <span class="math inline">\((p-p_c)^\beta\)</span> to the curve just above <span class="math inline">\(p_c\)</span>. On a finite lattice the transition is rounded over a window <span class="math inline">\(|p-p_c|\sim L^{-1/\nu}\)</span> (where the clusters become as large as the box), so the fitted exponent is far from the exact value <span class="math inline">\(\beta=5/36\)</span> given below.</p>
+<section id="why-is-the-percolation-transition-critical" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="why-is-the-percolation-transition-critical">Why is the percolation transition critical?</h4>
+<p>A quick argument comes from percolation on a tree (the Bethe lattice), where every site has <span class="math inline">\(z\)</span> neighbours and there are no loops. Grow a cluster from an occupied site: every new site has <span class="math inline">\(z-1\)</span> further neighbours, each occupied with probability <span class="math inline">\(p\)</span>, so on average it generates <span class="math inline">\(p(z-1)\)</span> new sites. If <span class="math inline">\(p(z-1)&lt;1\)</span> the branches die out and all clusters are finite; if <span class="math inline">\(p(z-1)&gt;1\)</span> they can grow forever. Hence</p>
+<p><span class="math display">\[p_c=\frac{1}{z-1}.\]</span></p>
+<p>The mean number of sites <span class="math inline">\(T\)</span> hanging from a branch obeys <span class="math inline">\(T=p\,[1+(z-1)T]\)</span>, so the mean cluster size</p>
+<p><span class="math display">\[S=1+zT=1+\frac{zp}{1-p/p_c}\sim(p_c-p)^{-1}\]</span></p>
+<p>diverges at <span class="math inline">\(p_c\)</span>, like the susceptibility of the Ising model at <span class="math inline">\(T_c\)</span>.</p>
+<p>Above <span class="math inline">\(p_c\)</span>, take <span class="math inline">\(z=3\)</span> and call <span class="math inline">\(Q\)</span> the probability that a branch is finite: either its first site is empty, or it is occupied and both its sub-branches are finite, <span class="math inline">\(Q=1-p+pQ^2\)</span>, so that <span class="math inline">\(Q=(1-p)/p\)</span>. A site belongs to the infinite cluster if it is occupied and not all of its three branches are finite:</p>
+<p><span class="math display">\[P_\infty=p\,(1-Q^3)\simeq6\,(p-p_c).\]</span></p>
+<p>The order parameter grows continuously from zero, with no jump and no coexistence: the transition is second order, with the mean-field exponents <span class="math inline">\(\beta=1\)</span> and <span class="math inline">\(\gamma=1\)</span> (exact for <span class="math inline">\(d\geq6\)</span>). The size <span class="math inline">\(\xi\)</span> of the typical finite clusters plays the role of the correlation length and diverges as <span class="math inline">\(\xi\sim|p-p_c|^{-\nu}\)</span>. This tree calculation is in fact the classic Flory-Stockmayer theory of gelation <span class="citation" data-cites="stauffer1994introduction">(<a href="#ref-stauffer1994introduction" role="doc-biblioref">Stauffer and Aharony 1994</a>)</span>.</p>
+<p>The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical <span class="math inline">\(p_c\)</span>, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is required in order to find a percolating path. The Bethe lattice value <span class="math inline">\(1/(z-1)\)</span> becomes a better estimate as the coordination grows.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 23%">
@@ -886,7 +897,7 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <td>Square</td>
 <td>2</td>
 <td>4</td>
-<td>0.592746</td>
+<td>0.5927</td>
 <td><strong>0.5</strong></td>
 </tr>
 <tr class="even">
@@ -894,129 +905,74 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <td>2</td>
 <td>6</td>
 <td><strong>0.5</strong></td>
-<td>0.347296</td>
+<td>0.3473</td>
 </tr>
 <tr class="odd">
-<td>Honeycomb</td>
-<td>2</td>
-<td>3</td>
-<td>0.697043</td>
-<td><strong>0.652703</strong></td>
-</tr>
-<tr class="even">
-<td>Kagome</td>
-<td>2</td>
-<td>4</td>
-<td>0.6527</td>
-<td>0.5244</td>
-</tr>
-<tr class="odd">
-<td>Union Jack</td>
-<td>2</td>
-<td>6 (mean)</td>
-<td><strong>0.5</strong></td>
-<td>0.3232</td>
-</tr>
-<tr class="even">
 <td>Cubic</td>
 <td>3</td>
 <td>6</td>
 <td>0.3116</td>
 <td>0.2488</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>FCC</td>
 <td>3</td>
 <td>12</td>
 <td>0.199</td>
 <td>0.120</td>
 </tr>
-<tr class="even">
-<td>BCC</td>
-<td>3</td>
-<td>8</td>
-<td>0.245</td>
-<td>0.180</td>
-</tr>
 <tr class="odd">
-<td>Diamond</td>
-<td>3</td>
-<td>4</td>
-<td>0.43</td>
-<td>0.389</td>
-</tr>
-<tr class="even">
-<td>Hypercubic (4D)</td>
-<td>4</td>
-<td>8</td>
-<td>0.197</td>
-<td>0.160</td>
-</tr>
-<tr class="odd">
-<td>Hypercubic (5D)</td>
-<td>5</td>
-<td>10</td>
-<td>0.141</td>
-<td>0.118</td>
-</tr>
-<tr class="even">
 <td>Hypercubic (6D)</td>
 <td>6</td>
 <td>12</td>
 <td>0.109</td>
 <td>0.094</td>
 </tr>
-<tr class="odd">
-<td>Hypercubic (7D)</td>
-<td>7</td>
-<td>14</td>
-<td>0.089</td>
-<td>0.079</td>
-</tr>
 <tr class="even">
-<td>Hypercubic (8D)</td>
-<td>8</td>
-<td>16</td>
-<td>0.078</td>
-<td>0.069</td>
+<td>Bethe lattice</td>
+<td><span class="math inline">\(\infty\)</span></td>
+<td><span class="math inline">\(z\)</span></td>
+<td><span class="math inline">\(1/(z-1)\)</span></td>
+<td><span class="math inline">\(1/(z-1)\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>Instead, other properties of percolation are <strong>universal</strong>: these are the critical exponents of observables on the lattice,and do not depend on the lattice detail, such as the probability to find a site in a percolating cluster <span class="math inline">\(P_{\infty}(p)\propto (p-p_c)^{\beta}\)</span></p>
+<p>Instead, other properties of percolation are <strong>universal</strong>: these are the critical exponents of observables on the lattice and do not depend on the lattice details: the probability to find a site in the percolating cluster <span class="math inline">\(P_{\infty}\propto (p-p_c)^{\beta}\)</span>, the mean size of the finite clusters <span class="math inline">\(S\propto|p-p_c|^{-\gamma}\)</span> and their typical linear size <span class="math inline">\(\xi\propto|p-p_c|^{-\nu}\)</span>.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Dimension <span class="math inline">\(d\)</span></th>
-<th><span class="math inline">\(\beta\)</span> (Percolation)</th>
+<th><span class="math inline">\(\beta\)</span></th>
+<th><span class="math inline">\(\gamma\)</span></th>
+<th><span class="math inline">\(\nu\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>2</td>
-<td><strong>5/36 ≈ 0.1389</strong></td>
+<td><strong>5/36</strong></td>
+<td><strong>43/18</strong></td>
+<td><strong>4/3</strong></td>
 </tr>
 <tr class="even">
 <td>3</td>
 <td>≈ 0.41</td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>≈ 0.65</td>
-</tr>
-<tr class="even">
-<td>5</td>
-<td>≈ 0.81</td>
+<td>≈ 1.80</td>
+<td>≈ 0.88</td>
 </tr>
 <tr class="odd">
 <td>≥6 (Mean-field)</td>
 <td><strong>1</strong></td>
+<td><strong>1</strong></td>
+<td><strong>1/2</strong></td>
 </tr>
 </tbody>
 </table>
+</section>
 </div>
 </div>
 </div>
-<p>In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity.</p>
+<p>In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity. Close to the gel point the shear modulus vanishes as a power law, <span class="math inline">\(G\sim(p-p_c)^t\)</span>, while on the fluid (sol) side the viscosity diverges as <span class="math inline">\(\eta\sim(p_c-p)^{-s}\)</span>. de Gennes noticed that the elasticity of a percolating network is analogous to the conductivity of a random network of resistors, which gives <span class="math inline">\(t\approx2\)</span> in 3D <span class="citation" data-cites="degennes1976relation">(<a href="#ref-degennes1976relation" role="doc-biblioref">Gennes 1976</a>)</span>; experiments on real gels find exponents of this order, with considerable scatter.</p>
 <section id="colloid-polymer-mixtures-as-an-example" class="level3" data-number="18.3.1">
 <h3 data-number="18.3.1" class="anchored" data-anchor-id="colloid-polymer-mixtures-as-an-example"><span class="header-section-number">18.3.1</span> Colloid-polymer mixtures as an example</h3>
 <p>When the colloids are significantly larger than the polymers, the resulting depletion interaction is attractive and very short ranged: it is a so-called <strong>sticky</strong> interaction, ideally suited to form robust physical bonds where, the colloids cluster in a nonequilibrium, branched, dense phase.</p>
@@ -1038,7 +994,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="cda5a0b0" class="cell" data-execution_count="1">
+<div id="e2f5f889" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1052,7 +1008,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="0d37e256" class="cell" data-execution_count="2">
+<div id="f407fc80" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1087,7 +1043,9 @@ S(q) \sim q^{-D_f}
 <figcaption>The same changes of the previous figures as seen in changes in the structure factor <span class="math inline">\(S(q)\)</span> as time evolves and the frozen structure of a colloidal gel emerges. At small q, a characteristic power law behaviour emerges, while at higher q the microstructure changes are subtly capture by the reorganisation or splitting of the peaks.</figcaption>
 </figure>
 </div>
-<p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. Typical values for percolation clusters in 3D are <span class="math inline">\(D_f \approx 2.5\)</span>. Colloidal aggregates are looser, with <span class="math inline">\(D_f\approx1.8\)</span> (diffusion-limited) to <span class="math inline">\(2.1\)</span> (reaction-limited aggregation).</p>
+<p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. For percolation, <span class="math inline">\(D_f\)</span> follows from the critical exponents. Up to the scale <span class="math inline">\(\xi\)</span> the spanning cluster is fractal, so in a box of size <span class="math inline">\(\xi\)</span> its density is <span class="math inline">\(M(\xi)/\xi^d\sim\xi^{D_f-d}\)</span>. This density is the fraction of sites in the spanning cluster, <span class="math inline">\(P_\infty\sim(p-p_c)^\beta\)</span>, and with <span class="math inline">\(\xi\sim(p-p_c)^{-\nu}\)</span> we obtain</p>
+<p><span class="math display">\[D_f=d-\frac{\beta}{\nu}.\]</span></p>
+<p>This gives <span class="math inline">\(D_f=91/48\approx1.90\)</span> in 2D and <span class="math inline">\(D_f\approx2.5\)</span> in 3D. Colloidal aggregates are looser, with <span class="math inline">\(D_f\approx1.8\)</span> (diffusion-limited) to <span class="math inline">\(2.1\)</span> (reaction-limited aggregation).</p>
 <p>Thus, by analyzing the low-<span class="math inline">\(q\)</span> behavior of <span class="math inline">\(S(q)\)</span>, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
@@ -1112,7 +1070,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="96766922" class="cell" data-execution_count="3">
+<div id="8f802c25" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1322,6 +1280,9 @@ Dijkstra, Marjolein, Joseph M Brader, and Robert Evans. 1999. <span>“Phase Beh
 <div id="ref-garrahan2003coarse" class="csl-entry" role="listitem">
 Garrahan, Juan P., and David Chandler. 2003. <span>“Coarse-Grained Microscopic Model of Glass Formers.”</span> <em>Proceedings of the National Academy of Sciences</em> 100 (17): 9710–14. <a href="https://doi.org/10.1073/pnas.1233719100">https://doi.org/10.1073/pnas.1233719100</a>.
 </div>
+<div id="ref-degennes1976relation" class="csl-entry" role="listitem">
+Gennes, Pierre-Gilles de. 1976. <span>“On a Relation Between Percolation Theory and the Elasticity of Gels.”</span> <em>Journal de Physique Lettres</em> 37 (1): 1–2. <a href="https://doi.org/10.1051/jphyslet:019760037010100">https://doi.org/10.1051/jphyslet:019760037010100</a>.
+</div>
 <div id="ref-griffiths2017local" class="csl-entry" role="listitem">
 Griffiths, Samuel, Francesco Turci, and C Patrick Royall. 2017. <span>“Local Structure of Percolating Gels at Very Low Volume Fractions.”</span> <em>The Journal of Chemical Physics</em> 146 (1). <a href="https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low">https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low</a>.
 </div>
@@ -1351,6 +1312,9 @@ Sausset, F, G Biroli, and J Kurchan. 2010. <span>“Do Solids Flow?”</span> <e
 </div>
 <div id="ref-sollich1999glassy" class="csl-entry" role="listitem">
 Sollich, Peter, and Martin R. Evans. 1999. <span>“Glassy Time-Scale Divergence and Anomalous Coarsening in a Kinetically Constrained Spin Chain.”</span> <em>Physical Review Letters</em> 83 (16): 3238–41. <a href="https://doi.org/10.1103/PhysRevLett.83.3238">https://doi.org/10.1103/PhysRevLett.83.3238</a>.
+</div>
+<div id="ref-stauffer1994introduction" class="csl-entry" role="listitem">
+Stauffer, Dietrich, and Amnon Aharony. 1994. <em>Introduction to Percolation Theory</em>. 2nd ed. Taylor &amp; Francis.
 </div>
 <div id="ref-Zaccarelli2007" class="csl-entry" role="listitem">
 Zaccarelli, Emanuela. 2007. <span>“Colloidal Gels: Equilibrium and Non-Equilibrium Routes.”</span> <em>Journal of Physics: Condensed Matter</em> 19 (32): 323101. <a href="https://doi.org/10.1088/0953-8984/19/32/323101">https://doi.org/10.1088/0953-8984/19/32/323101</a>.
