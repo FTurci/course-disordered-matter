@@ -1784,5 +1784,423 @@
       "Complex disordered systems",
       "Second coursework assignment"
     ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html",
+    "href": "experimental/Part3_Brownian.html",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "",
+    "text": "21 Learning objectives\nIn this lecture, we will explore how to extract the diffusion coefficient from the collective motion of magnetic colloids. The lecture is based on the article below:\nVideo: Video abstract of Relating Brownian motion to diffusion with superparamagnetic colloids. All Figures in this website are material initially prepared for the aforementioned manuscript.\nAt the end of this session you should be able to:",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#brownian-motion-versus-diffusion",
+    "href": "experimental/Part3_Brownian.html#brownian-motion-versus-diffusion",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "22.1 Brownian motion versus diffusion",
+    "text": "22.1 Brownian motion versus diffusion\nPrevious lectures introduced Brownian motion and diffusion.\nAt the microscopic level, particles execute random trajectories due to collisions with solvent molecules.\nAt the macroscopic level, this random motion generates the diffusion equation\n\\[\n\\frac{\\partial \\rho}{\\partial t}\n=\nD\n\\frac{\\partial^2 \\rho}{\\partial x^2}.\n\\]\nRather than following individual trajectories, we shall work with the concentration field\n\\[\n\\rho(x,t).\n\\]\nThe practical question for today is therefore:\n\nHow can we determine the diffusion coefficient experimentally?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#what-observable-should-we-measure",
+    "href": "experimental/Part3_Brownian.html#what-observable-should-we-measure",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "22.2 What observable should we measure?",
+    "text": "22.2 What observable should we measure?\nFor a localized initial condition,\n\\[\n\\rho(x,0)\\approx \\delta(x),\n\\]\nthe diffusion equation predicts a Gaussian profile\n\\[\n\\rho(x,t)\n=\n\\frac{N}{\\sqrt{4\\pi Dt}}\n\\exp\n\\left(\n-\\frac{x^2}{4Dt}\n\\right).\n\\]\nInstead of focusing on the profile itself, we characterize it using its Full Width at Half Maximum (FWHM).\nFor a Gaussian distribution,\n\\[\nW\n=\n4\\sqrt{\\ln(2)\\,Dt}.\n\\]\nTherefore\n\\[\nW^2\n=\n16 \\ln(2)\\,Dt.\n\\]\nThe diffusion coefficient can be obtained directly from the growth of the profile width.\n\n\n\n\n\n\nNote\n\n\n\nKey idea:\nMeasure the width of the particle cloud as a function of time.\nNo particle tracking is required.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#experimental-challenge",
+    "href": "experimental/Part3_Brownian.html#experimental-challenge",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "23.1 Experimental challenge",
+    "text": "23.1 Experimental challenge\nThe diffusion equation assumes an initially localized particle distribution.\nHow can we create such a state experimentally?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#superparamagnetic-colloids",
+    "href": "experimental/Part3_Brownian.html#superparamagnetic-colloids",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "23.2 Superparamagnetic colloids",
+    "text": "23.2 Superparamagnetic colloids\nThe system used in this experiment consists of superparamagnetic colloidal particles suspended in water.\nWhen an external magnetic field is applied:\n\nparticles acquire induced dipole moments;\ndipoles align with the field;\nparticles attract each other along the field direction;\nlinear chains form spontaneously.\n\n\n\n\n\n\n\nFigure 23.1: Magnetic interaction potential\n\n\n\n\n\n\n\n\n\nFigure 23.2: Observation setup and chains formed under an applied magnetic field\n\n\n\nThe chain provides an experimental realization of an initially narrow concentration profile.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#switching-on-diffusion",
+    "href": "experimental/Part3_Brownian.html#switching-on-diffusion",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "23.3 Switching on diffusion",
+    "text": "23.3 Switching on diffusion\nThe magnetic field is suddenly removed.\nThe induced magnetic dipoles disappear.\nThe chains become unstable and particles diffuse away from their initial positions.\n\n\n\n\n\n\nFigure 23.3: Sequence of experimental images showing chain disintegration\n\n\n\nThe experiment therefore directly reproduces the localized initial condition discussed in diffusion theory.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#step-1-thresholding",
+    "href": "experimental/Part3_Brownian.html#step-1-thresholding",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "24.1 Step 1: Thresholding",
+    "text": "24.1 Step 1: Thresholding\nParticles appear darker than the background.\nWe choose a threshold intensity.\nPixels are classified as either:\n\nparticle;\nbackground.\n\n\n\n\n\n\n\nFigure 24.1: Left: image with red background, right: Intensity Histogram, used to define the threshold intensity sparating background and particles",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#step-2-binarization",
+    "href": "experimental/Part3_Brownian.html#step-2-binarization",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "24.2 Step 2: Binarization",
+    "text": "24.2 Step 2: Binarization\nAfter thresholding,\n\\[\nI(x,y)\n=\n\\begin{cases}\n1 & \\text{particle}\\\\\n0 & \\text{background}.\n\\end{cases}\n\\]\nThe resulting binary image contains only the information needed for particle detection.\n\n\n\n\n\n\nFigure 24.2: Top: Raw image, Bottom: Binarized picture",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#step-3-averaging",
+    "href": "experimental/Part3_Brownian.html#step-3-averaging",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "24.3 Step 3: Averaging",
+    "text": "24.3 Step 3: Averaging\nSince the chain is approximately vertical, we average over the vertical direction:\n\\[\n\\rho(x)\n=\n\\frac1{N_y}\n\\sum_y I(x,y).\n\\]\nThis produces a one-dimensional intensity profile, proportional to the concentration profile.\n\n\n\n\n\n\nFigure 24.3: Binary image and resulting average intensity profile",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#step-4-gaussian-fitting",
+    "href": "experimental/Part3_Brownian.html#step-4-gaussian-fitting",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "24.4 Step 4: Gaussian fitting",
+    "text": "24.4 Step 4: Gaussian fitting\nDiffusion predicts a Gaussian profile.\nWe therefore fit\n\\[\n\\rho(x)\n=\nA\n\\exp\n\\left[\n-\\frac{(x-x_0)^2}\n{2\\sigma^2}\n\\right].\n\\]\n\n\n\n\n\n\nFigure 24.4: Gaussian Fit of the average intensity profile\n\n\n\nThe fitted parameter \\(\\sigma\\) provides the profile width. The corresponding FWHM is \\[\nW\n=\n2\\sqrt{2\\ln 2}\\,\\sigma.\n\\]\nTherefore, as \\(\\sigma=\\sqrt{2Dt}\\), \\(W\\) whould evolve as\n\\[\nW\n=\n4\\sqrt{\\ln(2)\\,Dt}.\n\\]\nAt this point we have all the ingredients required to measure a diffusion coefficient by analyzing the time evolution of \\(W\\).",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#learning-objectives-1",
+    "href": "experimental/Part3_Brownian.html#learning-objectives-1",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "25.1 Learning objectives",
+    "text": "25.1 Learning objectives\nAt the end of this practical you should be able to:\n\nload and display microscopy images in Python;\nperform image thresholding;\nvisualize binary images;\nextract concentration profiles;\nfit Gaussian functions to experimental data;\ndetermine the width of a diffusing particle cloud;\nobtain a diffusion coefficient from experimental measurements.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#discussion",
+    "href": "experimental/Part3_Brownian.html#discussion",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "26.1 Discussion",
+    "text": "26.1 Discussion\nObserve the raw image carefully.\nQuestions:\n\nCan you clearly identify individual particles?\nIs the chain approximately vertical?\nWould it be possible to measure its width directly by eye?\n\nRepeat the procedure for several times in the experiment:\nfor frame in range(10,50,10):\n    image = imread(f\"image{frame}.jpg\")\n\n    plt.figure(figsize=(5,5))\n    plt.imshow(image, cmap=\"gray\")\n    plt.title(f\"Frame {frame}\")\n    plt.axis(\"off\")\n    plt.show()\n\n26.1.1 Question\nHow does the appearance of the chain evolve with time?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#discussion-1",
+    "href": "experimental/Part3_Brownian.html#discussion-1",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "27.1 Discussion",
+    "text": "27.1 Discussion\nVerify that:\n\nparticles are identified correctly;\nmost of the background has been removed;\nthe chain remains clearly visible.\n\nWhat would happen if the threshold were:\n\ntoo low?\ntoo high?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#discussion-2",
+    "href": "experimental/Part3_Brownian.html#discussion-2",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "28.1 Discussion",
+    "text": "28.1 Discussion\nCompare the profile with the original chain.\nQuestions:\n\nWhere is the centre of the chain?\nIs the profile symmetric?\nDoes the profile resemble a Gaussian function?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#discussion-3",
+    "href": "experimental/Part3_Brownian.html#discussion-3",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "30.1 Discussion",
+    "text": "30.1 Discussion\nQuestions:\n\nWhy is the Gaussian shape expected?\nAt what times does the fit appear most reliable?\nWhere are the largest deviations observed?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part3_Brownian.html#discussion-4",
+    "href": "experimental/Part3_Brownian.html#discussion-4",
+    "title": "20  From Brownian Motion to Experimental Diffusion Measurements",
+    "section": "31.1 Discussion",
+    "text": "31.1 Discussion\nDo the data appear:\n\nlinear?\nsquare-root-like?\nexponential?\n\nCompare your answer with the theoretical prediction\n\\[\nW\n=\n4\\sqrt{\\ln(2)\\,Dt}.\n\\]",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Experimental link between Diffusion and Brownian Motion</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html",
+    "href": "experimental/Part4_ImageAn.html",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "",
+    "text": "21.1 Introduction\nIn the previous practical, diffusion coefficients were determined from the spreading of an entire particle concentration profile. In this activity, we will extract the same physical quantity from a completely different type of measurement: the trajectories of individual particles.\nThe starting point is a microscopy movie containing many diffusing particles. Rather than analysing the evolution of a particle cloud, we will follow the motion of individual particles through time and analyse their displacements statistically. This approach forms the basis of modern single-particle tracking experiments.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#introduction",
+    "href": "experimental/Part4_ImageAn.html#introduction",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "",
+    "text": "21.1.1 From microscopy images to trajectories\nBefore any quantitative analysis can be performed, the particles must first be detected in each image. This is typically achieved through image-processing procedures such as thresholding and binarization, similar to the ones we described during last session, which identify the position of individual particles in every frame. The detailed method is highly specific to the experimental setup, and we will not explore this deeply in this lecture.\nOnce particles have been detected, the next challenge is to associate detections between successive frames. Tracking algorithms compare possible particle matches and select the most probable trajectory by minimizing an appropriate cost function. Repeating this procedure throughout the image sequence produces a collection of particle trajectories. These algorithms are often taylored to the application, some taking into account the possibility for a particle to disappear, or for a new particle to appear, with constraints on the maximum object deformation or displacement between frames. In a numerical simulation, the trajectory is however often obtained as primary output, as each particle can be identified all along the computation.\n\n\n\n\n\n\nFigure 21.1: Schematic of the particle-tracking workflow showing (i) particle detection, (ii) association matrix construction, (iii) cost minimization, and (iv) reconstruction of trajectories.\n\n\n\nAfter processing all frames (or computational time steps), the result is a list of particle trajectories:\n\\[\n\\mathbf r(t) = \\bigl(x(t),y(t)\\bigr),\n\\]\nwhere the particle position is known at many successive times. These trajectories contain direct information about the microscopic random motion responsible for diffusion. In this lecture, we will explore the algorithm and workflow established in a paper from M. A. Charsooghi et al., that they used to develop a software their software package.\n\n\n\n\n\n\nFigure 21.2: Example set of tracked particle trajectories obtained from microscopy data.M. A. Charsooghi et al.\n\n\n\n\n\n21.1.2 From trajectories to diffusion\nTo characterize diffusion, we analyse particle displacements over a lag time \\(\\tau\\):\n\\[\n\\Delta x(t,\\tau)=x(t+\\tau)-x(t),\n\\]\nand similarly for the \\(y\\) coordinate.\nFor purely random Brownian motion, the average displacement should vanish,\n\\[\n\\langle \\Delta x \\rangle = 0,\n\\]\nwhile the mean-square displacement grows with time. In practice, experimental data may contain a small drift resulting from fluid flow, stage motion, or other systematic effects. Subtracting the average displacement allows us to separate random diffusive motion from directed motion.\n\n\n21.1.3 Computing the Mean-Square Displacement (MSD)\nA powerful way to characterize diffusion is through the mean-square displacement (MSD). Because any time point can be chosen as the starting point of a displacement measurement, many displacement intervals can be extracted from a single trajectory. This greatly improves statistics.\n\n\n\n\n\n\nFigure 21.3: Schematic showing displacements measured over a fixed lag time using multiple possible starting points along a trajectory.M. A. Charsooghi et al.\n\n\n\nHowever, many of these displacement intervals overlap and therefore share common trajectory segments. As a result, they are not statistically independent and become auto-correlated. One possible solution is to use only non-overlapping intervals, sacrificing some statistics in exchange for greater statistical independence. We will compare both approaches later in this practical.\n\n\n\n\n\n\nFigure 21.4: Diagram illustrating overlapping (auto-correlated) and non-overlapping displacement intervals for a given lag time.M. A. Charsooghi et al.\n\n\n\nFor a particle diffusing in \\(d\\) dimensions, the MSD is expected to increase linearly with time according to\n\\[\n\\langle |\\Delta \\mathbf r(t)|^2 \\rangle -\n\\langle \\Delta \\mathbf r(t) \\rangle^2\n=\n2dDt,\n\\]\nwhere \\(D\\) is the diffusion coefficient. In our experiments, motion is tracked in two dimensions, so the theoretical prediction becomes\n\\[\nMSD(t)=4Dt.\n\\]\nBy measuring the MSD and fitting its dependence on time, we will determine the diffusion coefficient directly from individual particle trajectories.\nThe objectives of this practical are therefore to:\n\nVisualize particle trajectories.\nCompute particle displacements.\nCalculate mean-square displacements.\nDetermine diffusion coefficients from MSD analysis.\nCompare different statistical estimators of the MSD.\nRelate microscopic particle motion to macroscopic diffusion.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#loading-the-trajectory-data",
+    "href": "experimental/Part4_ImageAn.html#loading-the-trajectory-data",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.2 Loading the trajectory data",
+    "text": "21.2 Loading the trajectory data\nTheir example trajectory files describes 2D projection of elliptical particles and contains\ntime   x   y   theta \"Major Axis\" \"Minor Axis\"\nTime is provided in seconds and the angle theta is in radians. All distances and lengths are in micrometers.\ndepending on the experiment. Download the data and save it somewhere to access with Spyder or Noteable.\nLoad the data (choose a trajectory number, TrajNum, different from that of your neighbours):\nimport pandas as pd\n\nTrajNum = 25\n\ntraj = pd.read_csv(\n    f\"data{TrajNum}.txt\",\n    sep=r\"\\s+\",\n    header=None,\n    names=[\n        \"time\",\n        \"x\",\n        \"y\",\n        \"theta\",\n        \"MajorAxis\",\n        \"MinorAxis\"\n    ]\n)\n\ntraj.head()\nInspect the first few lines of the dataset.\nQuestions:\n\nHow many frames are available?\nWhich coordinates are recorded?\nIs time stored in seconds or frame numbers?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#visualizing-trajectories",
+    "href": "experimental/Part4_ImageAn.html#visualizing-trajectories",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.3 Visualizing trajectories",
+    "text": "21.3 Visualizing trajectories\nBefore calculating any quantity, always inspect the raw trajectories.\nimport matplotlib.pyplot as plt\n\nplt.figure(figsize=(6,6))\n\nplt.plot(traj[\"x\"], traj[\"y\"],lw=1)\nplt.ylabel(\"y\")\nplt.xlabel(\"x\")\nplt.axis(\"equal\")\n\n21.3.1 Discussion\nObserve the trajectory.\n\nDoes it appear isotropic?\nIs there any obvious drift?\nDoes the particle explore the entire field of view?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#position-versus-time",
+    "href": "experimental/Part4_ImageAn.html#position-versus-time",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.4 Position versus time",
+    "text": "21.4 Position versus time\nThe next step is to visualize the coordinates as functions of time.\nfig, ax = plt.subplots(\n    2,\n    1,\n    figsize=(8,5),\n    sharex=True\n)\n\nax[0].plot(\n    traj[\"time\"],\n    traj[\"x\"]\n)\n\nax[0].set_ylabel(r\"x ($\\mu$m)\")\n\nax[1].plot(\n    traj[\"time\"],\n    traj[\"y\"]\n)\n\nax[1].set_ylabel(r\"y ($\\mu$m)\")\nax[1].set_xlabel(\"Time (s)\")\n\nplt.show()\n\n21.4.1 Discussion\nWhat information is easier to identify here than in the trajectory plot?\nIn particular:\n\nAre there sudden jumps?\nAre some directions favoured?\nDoes the particle remain centred around a fixed position?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#computing-displacements",
+    "href": "experimental/Part4_ImageAn.html#computing-displacements",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.5 Computing displacements",
+    "text": "21.5 Computing displacements\nDiffusion is characterised by displacements over a given lag time.\nChoose a lag:\ntau = 10\nand compute\nimport numpy as np\n\nx = traj[\"x\"].values\ny = traj[\"y\"].values\n\ndx = x[tau:] - x[:-tau]\ndy = y[tau:] - y[:-tau]\nThese quantities represent particle displacements over a time interval corresponding to tau frames.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#visualizing-displacement-distributions",
+    "href": "experimental/Part4_ImageAn.html#visualizing-displacement-distributions",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.6 Visualizing displacement distributions",
+    "text": "21.6 Visualizing displacement distributions\nPlot the distribution of horizontal displacements.\nplt.figure(figsize=(6,4))\n\nplt.hist(\n    dx,\n    bins=40,\n    density=True\n)\n\nplt.xlabel(r\"$\\Delta$ x ($\\mu$ m)\")\nplt.ylabel(\"Probability density\")\n\nplt.show()\nRepeat for\ndy\n\n21.6.1 Discussion\nDiffusion predicts approximately Gaussian displacement distributions.\nQuestions:\n\nDoes the histogram resemble a Gaussian?\nAre the positive and negative displacements equally probable?\nDoes the distribution appear symmetric?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#calculating-the-mean-square-displacement",
+    "href": "experimental/Part4_ImageAn.html#calculating-the-mean-square-displacement",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.7 Calculating the Mean-Square Displacement",
+    "text": "21.7 Calculating the Mean-Square Displacement\nThe central quantity of this practical is the corrected MSD:\n\\[\nMSD(\\tau)\n=\n\\left&lt;\n|\\mathbf r(t+\\tau)-\\mathbf r(t)|^2\n\\right&gt;-\\left&lt;\n\\mathbf r(t+\\tau)-\\mathbf r(t)\n\\right&gt;^2.\n\\]\nDefine a function to compute it.\nimport numpy as np\n\ndef MSD(x, y, maxlag):\n\n    msd = []\n\n    for lag in range(1, maxlag):\n\n        dx = x[lag:] - x[:-lag]\n        dy = y[lag:] - y[:-lag]\n\n        msd.append(\n            np.mean(dx**2 + dy**2)-np.mean(dx)**2-np.mean(dy)**2\n        )\n\n    return np.array(msd)\nCompute the MSD:\nmsd = MSD(\n    x,\n    y,\n    maxlag=200\n)",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#visualizing-the-msd",
+    "href": "experimental/Part4_ImageAn.html#visualizing-the-msd",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.8 Visualizing the MSD",
+    "text": "21.8 Visualizing the MSD\nlags = np.arange(1, len(msd) + 1)\n#in physical units\ndt = np.mean(\n    np.diff(traj[\"time\"])\n)\n\nplt.figure(figsize=(6,4))\n\nplt.plot(\n    lags*dt,\n    msd,\n    \"ko\"\n)\n\nplt.xlabel(\"lag time (s)\")\nplt.ylabel(r\"MSD ($\\mu m^2$)\")\n\nplt.show()\n\n21.8.1 Discussion\nWhat is the overall trend?\nDiffusion predicts:\n\\[\nMSD = 4Dt\n\\]\nfor two-dimensional motion.\nDo the data appear compatible with a linear dependence?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#determining-the-diffusion-coefficient",
+    "href": "experimental/Part4_ImageAn.html#determining-the-diffusion-coefficient",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.9 Determining the diffusion coefficient",
+    "text": "21.9 Determining the diffusion coefficient\nFit the initial part of the MSD.\nfrom scipy.stats import linregress\n\nMaxLagFit=50\n\nfit = linregress(\n    lags[:MaxLagFit]*dt,\n    msd[:MaxLagFit]\n)\n\nD = fit.slope / 4\n\nprint(\"Diffusion coefficient =\", D)\nVisualize the fit.\nplt.figure(figsize=(6,4))\n\nplt.plot(\n    lags*dt,\n    msd,\n    \"ko\",\n    label=\"MSD\"\n)\n\nplt.plot(\n    lags[:MaxLagFit]*dt,\n    fit.intercept + fit.slope * lags[:MaxLagFit]*dt,\n    \"r-\",\n    lw=2,\n    label=\"Linear fit\"\n)\n\nplt.xlabel(\"Lag time (s)\")\nplt.ylabel(r\"MSD ($\\mu m^2$)\")\nplt.legend()\n\nplt.show()\n\n21.9.1 Discussion\nWhy might it be preferable to fit only short lag times?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#log-log-representation",
+    "href": "experimental/Part4_ImageAn.html#log-log-representation",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.10 Log-log representation",
+    "text": "21.10 Log-log representation\nA useful diagnostic tool is a log-log plot.\nIf we assume that the relationship is indeed linear, we should have\n#let's now use this shortcut\ntau=lags*dt\n\n\n\nlog_t = np.log10(\n    tau[:MaxLagFit]\n)\n\nlog_msd = np.log10(\n    msd[:MaxLagFit]\n)\n\nintercept = np.mean(\n    log_msd - log_t\n)\n\nD = 10**intercept / 4\n\nprint(f\"D = {D:.3f} µm²/s\")\n\nplt.loglog(\n    tau,\n    msd,\n    \"ko\"\n)\n\nplt.loglog(\n    tau[:MaxLagFit],\n    10**(intercept + log_t),\n    \"r-\",\n    lw=2,\n    label=f\"α = 1, D = {D:.2f} µm²/s\"\n)\nplt.xlabel(\"Lag time (s)\")\nplt.ylabel(r\"MSD ($\\mu m^2$)\")\nplt.show()\nBut we can also let the slope be freely adjusted:\n# Let's use this shortcut\ntau = lags * dt\n\nlog_t = np.log10(\n    tau[:MaxLagFit]\n)\n\nlog_msd = np.log10(\n    msd[:MaxLagFit]\n)\n\nfit = linregress(\n    log_t,\n    log_msd\n)\n\nalpha = fit.slope\n\nD = (\n    10**fit.intercept\n) / 4\n\nprint(\n    f\"alpha = {alpha:.3f}\"\n)\n\nprint(\n    f\"D = {D:.3f} (µm²/s^α)\"\n)\n\nplt.figure(figsize=(6,4))\n\nplt.loglog(\n    tau,\n    msd,\n    \"ko\",\n    label=\"MSD\"\n)\n\nplt.loglog(\n    tau[:MaxLagFit],\n    10**(\n        fit.intercept\n        +\n        fit.slope * np.log10(tau[:MaxLagFit])\n    ),\n    \"r-\",\n    lw=2,\n    label=(\n        f\"Fit: α = {alpha:.2f}, \"\n        f\"D = {D:.2f} µm²/s^α\"\n    )\n)\n\nplt.xlabel(\"Lag time (s)\")\nplt.ylabel(r\"MSD ($\\mu m^2$)\")\nplt.legend()\n\nplt.show()\nFor a power law,\n\\[\nMSD \\propto t^\\alpha,\n\\]\nthe exponent can be interpreted as:\n\n\\(\\alpha = 1\\): normal diffusion;\n\\(\\alpha &lt; 1\\): subdiffusion;\n\\(\\alpha &gt; 1\\): superdiffusion.\n\n\n21.10.1 Discussion\nDoes the experimental curve appear compatible with normal diffusion?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#improving-msd-statistics",
+    "href": "experimental/Part4_ImageAn.html#improving-msd-statistics",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.11 Improving MSD Statistics",
+    "text": "21.11 Improving MSD Statistics\nSo far, our MSD calculation has used every possible displacement separated by a given lag time,\n\\[\n\\Delta x = x(t+\\tau)-x(t).\n\\]\nThis approach maximizes the number of measurements contributing to the MSD, but many of these measurements are not statistically independent because they share data points.\nFor example, for a lag of 10 frames, the displacements\n\\[\nx_{20}-x_{10}\n\\]\nand\n\\[\nx_{21}-x_{11}\n\\]\noverlap strongly, since most of the trajectory segment is shared between them.\nAs the lag time increases, this overlap becomes increasingly significant.\n\n21.11.1 MSD using overlapping intervals\nOur previous implementation used all possible displacements for each lag:\ndef MSD_overlap(x, y, maxlag):\n\n    msd = []\n\n    for lag in range(1, maxlag):\n\n        dx = x[lag:] - x[:-lag]\n        dy = y[lag:] - y[:-lag]\n\n        msd.append(\n            np.mean(dx**2 + dy**2)-np.mean(dx)**2-np.mean(dy)**2\n        )\n\n    return np.array(msd)\nThis method uses the largest possible number of measurements and therefore often produces a smooth MSD curve.\n\n\n21.11.2 MSD using non-overlapping intervals\nTo reduce correlations between measurements, we can instead use only independent trajectory segments.\nFor each lag time, we select displacements separated by at least that lag:\ndef MSD_nonoverlap(x, y, maxlag):\n\n    msd = []\n\n    for lag in range(1, maxlag):\n\n        nblocks = len(x) // lag\n\n        if nblocks &lt; 2:\n            msd.append(np.nan)\n            continue\n\n        dx = (\n            x[lag:nblocks*lag:lag]\n            - x[:(nblocks-1)*lag:lag]\n        )\n\n        dy = (\n            y[lag:nblocks*lag:lag]\n            - y[:(nblocks-1)*lag:lag]\n        )\n\n        msd.append(\n            np.mean(dx**2 + dy**2)-np.mean(dx)**2-np.mean(dy)**2\n        )\n\n    return np.array(msd)\nCalculate both MSD estimates:\nmsd_overlap = MSD_overlap(\n    x,\n    y,\n    maxlag=200\n)\n\nmsd_nonoverlap = MSD_nonoverlap(\n    x,\n    y,\n    maxlag=200\n)\nCompare the results:\nlags = np.arange(\n    1,\n    len(msd_overlap)+1\n)\n\nplt.figure(figsize=(6,4))\n\nplt.plot(\n    lags*dt,\n    msd_overlap,\n    label=\"Overlapping MSD\"\n)\n\nplt.plot(\n    lags*dt,\n    msd_nonoverlap,\n    label=\"Non-overlapping MSD\"\n)\n\nplt.xlabel(\"tau (s)\")\nplt.ylabel(\"MSD (µm²)\")\nplt.legend()\n\n# Linear fits\n\n\n\n\n# Overlapping MSD fit\nfit_overlap = linregress(\n    tau[:MaxLagFit],\n    msd_overlap[:MaxLagFit]\n)\n\nD_overlap = fit_overlap.slope / 4\n\n# Non-overlapping MSD fit\nvalid = np.isfinite(msd_nonoverlap)\n\nfit_nonoverlap = linregress(\n    tau[:MaxLagFit][valid[:MaxLagFit]],\n    msd_nonoverlap[:MaxLagFit][valid[:MaxLagFit]]\n)\n\nD_nonoverlap = fit_nonoverlap.slope / 4\n\n\nplt.plot(\n    tau[:MaxLagFit],\n    fit_overlap.intercept\n    + fit_overlap.slope * tau[:MaxLagFit],\n    'r--',\n    lw=2,\n    label=f\"Overlap fit (slope={fit_overlap.slope:.4f})\"\n)\n\nplt.plot(\n    tau[:MaxLagFit],\n    fit_nonoverlap.intercept\n    + fit_nonoverlap.slope * tau[:MaxLagFit],\n    'k--',\n    lw=2,\n    label=f\"Non-overlap fit (slope={fit_nonoverlap.slope:.4f})\"\n)\n\nplt.show()\n\nprint(f\"Overlap MSD:\")\nprint(f\"  slope = {fit_overlap.slope:.6f} µm²/s\")\nprint(f\"  D = {D_overlap:.6f} µm²/s\")\n\nprint()\n\nprint(f\"Non-overlap MSD:\")\nprint(f\"  slope = {fit_nonoverlap.slope:.6f} µm²/s\")\nprint(f\"  D = {D_nonoverlap:.6f} µm²/s\")\n\n\n21.11.3 Questions\n\nWhich curve appears noisier?\nWhich method uses the largest number of displacement measurements?\nWhich method provides the most statistically independent measurements?\nWhy do the differences become larger at long lag times?\n\nAlthough the overlapping MSD typically looks smoother, many of its measurements are correlated. The non-overlapping MSD uses fewer data points but provides more statistically independent estimates.\nIn experimental studies it is common to compare both approaches to assess the influence of temporal correlations.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#time-averaging-and-ensemble-averaging",
+    "href": "experimental/Part4_ImageAn.html#time-averaging-and-ensemble-averaging",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.12 Time Averaging and Ensemble Averaging",
+    "text": "21.12 Time Averaging and Ensemble Averaging\nThere are two fundamentally different ways to improve the statistical quality of diffusion measurements:\n\nTime averaging: using longer trajectories.\nEnsemble averaging: combining measurements from multiple particles.\n\nSo far, each of us has analysed only one particle trajectory. However, the files dataXX.txt correspond to many different particles diffusing under the same experimental conditions.\nBy analysing several particles and averaging their results, we can obtain more reliable estimates of the MSD and diffusion coefficient.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#ensemble-averaged-msd",
+    "href": "experimental/Part4_ImageAn.html#ensemble-averaged-msd",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.13 Ensemble-Averaged MSD",
+    "text": "21.13 Ensemble-Averaged MSD\n\n21.13.1 Loading several trajectories\nSelect a set of trajectories:\ntrajectory_numbers = range(1,92)\nCalculate the MSD for each particle:\nall_msd = []\n\nfor num in trajectory_numbers:\n\n    traj = pd.read_csv(\n        f\"data{num}.txt\",\n        sep=r\"\\s+\",\n        header=None,\n        names=[\n            \"time\",\n            \"x\",\n            \"y\",\n            \"theta\",\n            \"MajorAxis\",\n            \"MinorAxis\"\n        ]\n    )\n\n    msd = MSD_nonoverlap(\n        traj[\"x\"].values,\n        traj[\"y\"].values,\n        maxlag=200\n    )\n\n    all_msd.append(msd)\n\nall_msd = np.array(all_msd)\nCalculate the ensemble average:\nmean_msd = np.nanmean(\n    all_msd,\n    axis=0\n)\n\nstd_msd = np.nanstd(\n    all_msd,\n    axis=0\n)\nVisualize the result:\nlags = np.arange(\n    1,\n    len(mean_msd)+1\n)\n\nplt.figure(figsize=(6,4))\n\n# Error bars in grey\nplt.errorbar(\n    lags,\n    mean_msd,\n    yerr=std_msd,\n    fmt=\"none\",\n    ecolor=\"0.6\",\n    capsize=2,\n    zorder=1\n)\n\n# Best estimates on top\nplt.plot(\n    lags,\n    mean_msd,\n    \"ro\",\n    ms=5,\n    label=\"Mean MSD\",\n    zorder=2\n)\n\nplt.xlabel(\"Lag (frames)\")\nplt.ylabel(\"MSD (µm²)\")\nplt.legend()\n\nplt.show()\n\n\n21.13.2 Questions\n\nHow does the ensemble-averaged MSD compare with that of a single particle?\nWhich curve appears less noisy? What is the origin of the jumps in the ensemble average?\nHow does increasing the number of particles affect the uncertainty?\n\nThe uncertainty on the ensemble average decreases approximately as\n\\[\n\\sigma_{\\mathrm{mean}}\n=\n\\frac{\\sigma}{\\sqrt{N}}\n\\]\nwhere \\(N\\) is the number of independent particle trajectories.\nThis is one of the main reasons why diffusion experiments typically analyse many particles rather than a single long trajectory.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#determining-the-diffusion-law",
+    "href": "experimental/Part4_ImageAn.html#determining-the-diffusion-law",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.14 Determining the Diffusion Law",
+    "text": "21.14 Determining the Diffusion Law\nFor normal diffusion,\n\\[\nMSD(t)=4Dt.\n\\]\nMore generally, anomalous diffusion is described by\n\\[\nMSD(t)=4Dt^{\\alpha},\n\\]\nwhere:\n\n\\(D\\) is the diffusion coefficient,\n\\(\\alpha=1\\) corresponds to normal diffusion,\n\\(\\alpha&lt;1\\) corresponds to subdiffusion,\n\\(\\alpha&gt;1\\) corresponds to superdiffusion.\n\nTaking the logarithm of both sides gives\n\\[\n\\log(MSD)\n=\n\\log(4D)\n+\n\\alpha\\log(t).\n\\]\nTherefore:\n\nthe slope of a log-log plot gives \\(\\alpha\\),\nthe intercept gives \\(\\log(4D)\\).",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#converting-lag-number-into-physical-time",
+    "href": "experimental/Part4_ImageAn.html#converting-lag-number-into-physical-time",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.15 Converting Lag Number into Physical Time",
+    "text": "21.15 Converting Lag Number into Physical Time\nThe previous blocks of code silently converted the lag values from numbers of frames to time intervals.\nFor a constant time frame, this can be done by determining the time interval between two frames:\ndt = np.mean(\n    np.diff(traj[\"time\"])\n)\nConvert lag numbers into physical lag times simply reads:\ntau = lags * dt\nThe lag times are now expressed in seconds.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#selecting-a-suitable-fitting-range",
+    "href": "experimental/Part4_ImageAn.html#selecting-a-suitable-fitting-range",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.16 Selecting a Suitable Fitting Range",
+    "text": "21.16 Selecting a Suitable Fitting Range\nVery short lag times are often affected by localization noise.\nVery long lag times contain relatively few independent measurements and therefore have larger uncertainty.\nInspect your MSD curve and choose an appropriate fitting region.\nFor example:\nfit_mask = (\n    (tau &gt;= 0.0)\n    &\n    (tau &lt;= 2.0)\n)\nYou may need to adjust these limits depending on your data.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#fitting-the-msd-in-log-log-space",
+    "href": "experimental/Part4_ImageAn.html#fitting-the-msd-in-log-log-space",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.17 Fitting the MSD in Log-Log Space",
+    "text": "21.17 Fitting the MSD in Log-Log Space\nPerform a linear regression on the logarithms, once for normal diffusion (\\(\\alpha=1\\)) and once taking into account possible anomaly:\n# Unconstrained fit\nlog_t = np.log10(\n    tau[fit_mask]\n)\n\nlog_msd = np.log10(\n    mean_msd[fit_mask]\n)\n\nfit = linregress(\n    log_t,\n    log_msd\n)\n\nalpha = fit.slope\n\nD = (\n    10**fit.intercept\n) / 4\n\nalpha_err = fit.stderr\n\nD_err = (\n    D\n    * np.log(10)\n    * fit.intercept_stderr\n)\n\nprint(\n    f\"α = {alpha:.3f} ± {alpha_err:.3f}\"\n)\n\nprint(\n    f\"D = {D:.3f} ± {D_err:.3f} µm²/s^α\"\n)\n\n# --------------------------------------------------\n# Constrained fit: alpha = 1 (normal diffusion)\n# --------------------------------------------------\n\nintercept_fixed = np.mean(\n    log_msd - log_t\n)\n\nD_normal = (\n    10**intercept_fixed\n) / 4\n\n\nsigma_intercept = np.std(\n    log_msd - log_t,\n    ddof=1\n) / np.sqrt(\n    len(log_msd)\n)\n\nD_normal_err = (\n    D_normal\n    * np.log(10)\n    * sigma_intercept\n)\n\nprint(\n    f\"D (assuming α=1) = {D_normal:.3f} ± {D_normal_err:.3f} µm²/s\"\n)",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#visualizing-the-fit",
+    "href": "experimental/Part4_ImageAn.html#visualizing-the-fit",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.18 Visualizing the Fit",
+    "text": "21.18 Visualizing the Fit\nplt.figure(figsize=(6,4))\n\nplt.loglog(\n    tau[fit_mask],\n    mean_msd[fit_mask],\n    \"ko\",\n    ms=4,\n    label=\"Mean MSD\"\n)\n\n# Free alpha fit\nplt.loglog(\n    tau[fit_mask],\n    10**(\n        fit.intercept\n        + fit.slope * log_t\n    ),\n    \"r-\",\n    lw=2,\n    label=(\n        f\"Fit: α = {alpha:.3f} ± {alpha_err:.3f}, \"\n        f\"D = {D:.3f} ± {D_err:.3f} µm²/s^α\"\n    )\n)\n\n# Fixed alpha=1 fit\nplt.loglog(\n    tau[fit_mask],\n    10**(\n        intercept_fixed\n        + log_t\n    ),\n    \"b--\",\n    lw=2,\n    label=(\n        f\"α = 1 fixed, \"\n        f\"D = {D_normal:.3f} ± {D_normal_err:.3f} µm²/s\"\n    )\n)\n\nplt.xlabel(\"τ (s)\")\nplt.ylabel(\"MSD (µm²)\")\nplt.legend()\nplt.tight_layout()\nplt.show()",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#discussion-6",
+    "href": "experimental/Part4_ImageAn.html#discussion-6",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.19 Discussion",
+    "text": "21.19 Discussion\nInterpret the fitted value of \\(\\alpha\\):\n\n\\(\\alpha \\approx 1\\): normal diffusion\n\\(\\alpha &lt; 1\\): subdiffusion\n\\(\\alpha &gt; 1\\): superdiffusion\n\nCompare your fitted diffusion coefficient with:\n\nthe value obtained previously from a single trajectory,\nthe value obtained using the concentration-profile method.\n\n\n21.19.1 Questions\n\nWhich diffusion coefficient appears most reliable?\nHow does ensemble averaging change the uncertainty?\nWhat are the advantages and disadvantages of overlapping and non-overlapping MSD calculations?\nWhat evidence do you find for normal or anomalous diffusion?",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#key-conclusions",
+    "href": "experimental/Part4_ImageAn.html#key-conclusions",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.20 Key Conclusions",
+    "text": "21.20 Key Conclusions\nThe quality of a diffusion measurement depends strongly on the number of statistically independent displacement measurements available.\nThe reliability of the analysis can be improved by:\n\nanalysing longer trajectories,\nusing non-overlapping displacements,\naveraging over multiple particles,\nfitting the MSD only over an appropriate range of lag times.\n\nThese ideas form the basis of modern single-particle tracking experiments and allow accurate determination of both diffusion coefficients and anomalous diffusion exponents.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
+  },
+  {
+    "objectID": "experimental/Part4_ImageAn.html#comparison-with-the-previous-practical",
+    "href": "experimental/Part4_ImageAn.html#comparison-with-the-previous-practical",
+    "title": "21  From individual trajectories to Experimental Diffusion coefficients",
+    "section": "21.21 Comparison with the Previous Practical",
+    "text": "21.21 Comparison with the Previous Practical\nYou have now measured a diffusion coefficient using two entirely different methods:\n\n21.21.1 Density-field method\n\nUse all particles simultaneously.\nMeasure the width of a concentration profile.\nFit the broadening of the profile.\n\n\n\n21.21.2 Trajectory method\n\nFollow individual particles.\nCalculate displacements.\nCompute the MSD.\n\nBoth methods should produce consistent values of the diffusion coefficient.\nThis agreement provides a powerful demonstration that the continuum diffusion equation emerges directly from the random motion of individual particles.",
+    "crumbs": [
+      "Second experimental interlude",
+      "<span class='chapter-number'>21</span>  <span class='chapter-title'>Diffusion coefficient from individual trajectories</span>"
+    ]
   }
 ]
