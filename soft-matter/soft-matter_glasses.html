@@ -866,9 +866,16 @@ eyJhdHRyIjp7ImF1dG9ydW4iOnRydWUsImVkaXQiOnRydWUsImV2YWwiOnRydWV9LCJjb2RlIjoiXG5w
 <p>Try fitting <span class="math inline">\((p-p_c)^\beta\)</span> to the curve just above <span class="math inline">\(p_c\)</span>. On a finite lattice the transition is rounded over a window <span class="math inline">\(|p-p_c|\sim L^{-1/\nu}\)</span> (where the clusters become as large as the box), so the fitted exponent is far from the exact value <span class="math inline">\(\beta=5/36\)</span> given below.</p>
 <section id="why-is-the-percolation-transition-critical" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="why-is-the-percolation-transition-critical">Why is the percolation transition critical?</h4>
-<p>A quick argument comes from percolation on a tree (the Bethe lattice), where every site has <span class="math inline">\(z\)</span> neighbours and there are no loops. Grow a cluster from an occupied site: every new site has <span class="math inline">\(z-1\)</span> further neighbours, each occupied with probability <span class="math inline">\(p\)</span>, so on average it generates <span class="math inline">\(p(z-1)\)</span> new sites. If <span class="math inline">\(p(z-1)&lt;1\)</span> the branches die out and all clusters are finite; if <span class="math inline">\(p(z-1)&gt;1\)</span> they can grow forever. Hence</p>
+<p>A quick argument comes from percolation on a tree (the Bethe lattice), where every site has <span class="math inline">\(z\)</span> neighbours and there are no loops.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/bethe_lattice.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<figcaption>A Bethe lattice with <span class="math inline">\(z=3\)</span>, drawn up to the fourth generation. Sites are occupied (filled) with probability <span class="math inline">\(p\)</span>; the cluster connected to the central seed is in red. Since there are no loops, each site reached from its parent opens <span class="math inline">\(z-1\)</span> new branches.</figcaption>
+</figure>
+</div>
+<p>Grow a cluster from an occupied site: every new site has <span class="math inline">\(z-1\)</span> further neighbours, each occupied with probability <span class="math inline">\(p\)</span>, so on average it generates <span class="math inline">\(p(z-1)\)</span> new sites. If <span class="math inline">\(p(z-1)&lt;1\)</span> the branches die out and all clusters are finite; if <span class="math inline">\(p(z-1)&gt;1\)</span> they can grow forever. Hence</p>
 <p><span class="math display">\[p_c=\frac{1}{z-1}.\]</span></p>
-<p>The mean number of sites <span class="math inline">\(T\)</span> hanging from a branch obeys <span class="math inline">\(T=p\,[1+(z-1)T]\)</span>, so the mean cluster size</p>
+<p>Call <span class="math inline">\(T\)</span> the mean number of occupied sites in a branch, i.e.&nbsp;reached through one bond pointing away from the seed. The first site of the branch is occupied with probability <span class="math inline">\(p\)</span>; if it is, it contributes itself plus <span class="math inline">\(z-1\)</span> sub-branches, which (since the tree has no loops) are copies of the original branch, each with mean <span class="math inline">\(T\)</span>. Hence <span class="math inline">\(T=p\,[1+(z-1)T]\)</span>, and the mean size of the cluster of the seed, which has <span class="math inline">\(z\)</span> branches, is</p>
 <p><span class="math display">\[S=1+zT=1+\frac{zp}{1-p/p_c}\sim(p_c-p)^{-1}\]</span></p>
 <p>diverges at <span class="math inline">\(p_c\)</span>, like the susceptibility of the Ising model at <span class="math inline">\(T_c\)</span>.</p>
 <p>Above <span class="math inline">\(p_c\)</span>, take <span class="math inline">\(z=3\)</span> and call <span class="math inline">\(Q\)</span> the probability that a branch is finite: either its first site is empty, or it is occupied and both its sub-branches are finite, <span class="math inline">\(Q=1-p+pQ^2\)</span>, so that <span class="math inline">\(Q=(1-p)/p\)</span>. A site belongs to the infinite cluster if it is occupied and not all of its three branches are finite:</p>
@@ -994,7 +1001,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="e2f5f889" class="cell" data-execution_count="1">
+<div id="b5a03c44" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1008,7 +1015,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="f407fc80" class="cell" data-execution_count="2">
+<div id="13f8738b" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1070,7 +1077,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="8f802c25" class="cell" data-execution_count="3">
+<div id="44de8733" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
