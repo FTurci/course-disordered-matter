@@ -414,6 +414,29 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">Second experimental interlude</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/Part3_Brownian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Experimental link between Diffusion and Brownian Motion</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../experimental/Part4_ImageAn.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Diffusion coefficient from individual trajectories</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -570,7 +593,7 @@ window.Quarto = {
 <li><strong>Synthetic polymers</strong>, including plastics (e.g., polyethylene, polystyrene) and synthetic rubbers.</li>
 <li><strong>Biopolymers</strong>, such as polymers like DNA, RNA, and proteins.</li>
 </ul>
-<div id="fe08d4ce" class="cell" data-execution_count="1">
+<div id="0cc1fedd" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> py3Dmol <span class="co">#install this with: pip install py3dmol</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pdb_id <span class="op">=</span> <span class="st">"1XQ8"</span>  <span class="co"># Human micelle-bound alpha-synuclein, an analog of long polymers </span></span>
@@ -581,8 +604,8 @@ window.Quarto = {
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>view.setBackgroundColor(<span class="st">'white'</span>)  <span class="co"># Set background color to white</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>view.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
-<div id="3dmolviewer_179448768737871" style="position: relative; width: 640px; height: 480px;">
-        <p id="3dmolwarning_179448768737871" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
+<div id="3dmolviewer_17957653957280629" style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_17957653957280629" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
@@ -613,18 +636,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.4.2/3Dmol-min.js');
 }
 
-var viewer_179448768737871 = null;
-var warn = document.getElementById("3dmolwarning_179448768737871");
+var viewer_17957653957280629 = null;
+var warn = document.getElementById("3dmolwarning_17957653957280629");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_179448768737871 = $3Dmol.createViewer(document.getElementById("3dmolviewer_179448768737871"),{backgroundColor:"white"});
-$3Dmol.download("pdb:1XQ8", viewer_179448768737871, {}, function() {
-viewer_179448768737871.zoomTo();
-    viewer_179448768737871.setStyle({},{"sphere": {"color": "spectrum"}});
-    viewer_179448768737871.setBackgroundColor("white");
-viewer_179448768737871.render();
+viewer_17957653957280629 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17957653957280629"),{backgroundColor:"white"});
+$3Dmol.download("pdb:1XQ8", viewer_17957653957280629, {}, function() {
+viewer_17957653957280629.zoomTo();
+    viewer_17957653957280629.setStyle({},{"sphere": {"color": "spectrum"}});
+    viewer_17957653957280629.setBackgroundColor("white");
+viewer_17957653957280629.render();
 })
 });
 </script>
