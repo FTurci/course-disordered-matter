@@ -689,13 +689,18 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 </ul>
 <p>The distinction is visualized in the so-called <strong>Angell plot</strong>, where strong glasses show nearly linear behavior, while fragile glasses show a dramatic upturn as <span class="math inline">\(T \to T_g\)</span>.</p>
 <p>These models are suggestive of a <strong>thermodynamic</strong> origin of the glass transition. Indeed, it is possible to think of the emerging barrier <span class="math inline">\(E_A\)</span> and <span class="math inline">\(B\)</span> as the result of some free energy expression from the sampling of the energy landscapes in various basins.</p>
-<section id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model" class="level4" data-number="18.2.2.1">
-<h4 data-number="18.2.2.1" class="anchored" data-anchor-id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model"><span class="header-section-number">18.2.2.1</span> Connection between VFT and configurational entropy: the Adam-Gibbs model</h4>
+<section id="cages-and-cooperativity" class="level4" data-number="18.2.2.1">
+<h4 data-number="18.2.2.1" class="anchored" data-anchor-id="cages-and-cooperativity"><span class="header-section-number">18.2.2.1</span> Cages and cooperativity</h4>
+<p>Before discussing theories, it helps to give a microscopic picture of the two-step decay of <span class="math inline">\(F_s(q,t)\)</span>. At low temperatures each particle is trapped in a <strong>cage</strong> formed by its neighbours. It rattles inside the cage, which gives the fast <span class="math inline">\(\beta\)</span>-relaxation on picosecond timescales, almost independent of temperature, and only rarely escapes from it, which gives the slow <span class="math inline">\(\alpha\)</span>-relaxation. The time <span class="math inline">\(\tau_\alpha\)</span> grows by many orders of magnitude on cooling while <span class="math inline">\(\tau_\beta\)</span> barely changes. Because of this <strong>separation of timescales</strong>, at any instant almost all particles are caged and only a few are moving.</p>
+<p>To escape, a particle needs its neighbours to make room, but the neighbours are caged too. Relaxation must therefore be <strong>cooperative</strong>. Any theory of the glass transition has to explain how large the cooperatively moving regions are, and what sets the time needed to rearrange them. Thermodynamic theories answer in terms of the number of available configurations; dynamical theories in terms of how mobility spreads through the system.</p>
+</section>
+<section id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model" class="level4" data-number="18.2.2.2">
+<h4 data-number="18.2.2.2" class="anchored" data-anchor-id="connection-between-vft-and-configurational-entropy-the-adam-gibbs-model"><span class="header-section-number">18.2.2.2</span> Connection between VFT and configurational entropy: the Adam-Gibbs model</h4>
 <p>A key theoretical link between the dramatic slowdown of dynamics (as described by the VFT law) and the underlying thermodynamics is provided by the <strong>Adam-Gibbs model</strong>, details in <span class="citation" data-cites="bouchaud2004adam">Bouchaud and Biroli (<a href="#ref-bouchaud2004adam" role="doc-biblioref">2004</a>)</span>.</p>
 <p>This model proposes that the structural relaxation time <span class="math inline">\(\tau_\alpha\)</span> is controlled by the <strong>configurational entropy</strong> <span class="math inline">\(S_{\rm conf}\)</span>, which counts the number of distinct amorphous basins available to the system.</p>
 <p>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together to explore a new metabasin in the energy landscape.</p>
 <p>The sketch of the theory is the following. At low temperatures a particle cannot move alone: its neighbours have to move too. A CRR is then the <strong>smallest</strong> region that can rearrange into a new configuration without requiring changes outside its boundary. Why the smallest? The barrier for a cooperative rearrangement grows with the number of particles that move together, so relaxation is dominated by the smallest regions that can rearrange at all.</p>
-<p>To rearrange, a region must have at least two distinct configurations available, <span class="math inline">\(W^*\geq 2\)</span>. At the minimal size it has just enough, so each CRR carries a threshold configurational entropy <span class="math inline">\(s^*=k_B\ln W^*\)</span> (of order <span class="math inline">\(k_B\ln 2\)</span>), independent of its size.</p>
+<p>To rearrange, a region must have at least two distinct configurations available, <span class="math inline">\(W^*=2\)</span>. The entropy <span class="math inline">\(s^*=k_B\ln 2\)</span> is therefore the <strong>bare minimum</strong> configurational entropy needed for relaxation: it is a threshold, the same at every temperature and for every region size. What changes on cooling is how many particles it takes to reach it. Cooling reduces the configurations available to any given region, so the minimal region that still reaches <span class="math inline">\(s^*\)</span> must grow. That the threshold stays at the bare minimum at all temperatures is a postulate of Adam and Gibbs: one could imagine that at low temperatures a region needs more alternatives than the minimum to actually relax.</p>
 <p>We <strong>assume</strong> that the configurational entropy is extensive: a region of <span class="math inline">\(n\)</span> particles has configurational entropy <span class="math inline">\(n\,s_{\rm conf}\)</span>, where <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> is the configurational entropy per particle of the bulk. This treats even a small region as a piece of bulk liquid, which is an approximation. The region can rearrange once <span class="math inline">\(n\,s_{\rm conf}\geq s^*\)</span>, so the smallest CRR contains <span class="math display">\[n_{CRR}(T)=\frac{s^*}{s_{\rm conf}(T)}\]</span> particles. As <span class="math inline">\(s_{\rm conf}\)</span> drops on cooling, the CRRs grow.</p>
 <p>The system is then a mosaic of <span class="math inline">\(M_{CRR}=N/n_{CRR}\)</span> independent CRRs and, by the same extensivity, the configurational entropy is additive, <span class="math inline">\(S_{\rm conf}=M_{CRR}\,s^*\)</span>. A metabasin of the whole system corresponds to one choice of configuration for every CRR: a rearrangement of a single CRR moves the system to a neighbouring metabasin.</p>
 <p>We then assume <strong>activated dynamics</strong>: rearranging costs a barrier <span class="math inline">\(\Delta\mu\)</span> per particle, so a CRR must cross a barrier proportional to its size,</p>
@@ -722,23 +727,92 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K},\qquad K&gt;0.
 </figure>
 </div>
 </section>
-<section id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law" class="level4" data-number="18.2.2.2">
-<h4 data-number="18.2.2.2" class="anchored" data-anchor-id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law"><span class="header-section-number">18.2.2.2</span> Alternative perspective: Dynamical facilitation and the parabolic law</h4>
+<section id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law" class="level4" data-number="18.2.2.3">
+<h4 data-number="18.2.2.3" class="anchored" data-anchor-id="alternative-perspective-dynamical-facilitation-and-the-parabolic-law"><span class="header-section-number">18.2.2.3</span> Alternative perspective: Dynamical facilitation and the parabolic law</h4>
 <p>While thermodynamic models like Adam-Gibbs relate the glass transition to configurational entropy, a radical alternative approach is the <strong>dynamical facilitation theory</strong>, see <span class="citation" data-cites="chandler2010dynamics">Chandler and Garrahan (<a href="#ref-chandler2010dynamics" role="doc-biblioref">2010</a>)</span> for more details. This framework emphasizes that glassy slowdown arises from the dynamics themselves, rather than underlying thermodynamic changes.</p>
 <p>Here the central observation is that the dynamics of all glassy systems is highly heterogeneous in space and time: some regions are very mobile, while others are essentially frozen. This <strong>dynamic heterogeneity</strong> is a hallmark of glassy dynamics. It corresponds to a <strong>dynamical coexistence</strong> between fast-relaxing and slow relaxing region that can be formalised as a <strong>dynamical phase transition</strong>.</p>
-<p>In dynamical facilitation, mobility is sparse at low temperatures: regions of the system can only relax if they are adjacent to already mobile regions—mobility <em>facilitates</em> further mobility. This leads to hierarchical, cooperative dynamics without invoking a thermodynamic singularity.</p>
-<p>A schematic illustration:</p>
-<ul>
-<li>At high <span class="math inline">\(T\)</span>, mobile regions are abundant and relaxation is fast.</li>
-<li>As <span class="math inline">\(T\)</span> decreases, mobile regions become rare, and relaxation requires the creation and propagation of mobility, which is a rare event.</li>
-<li>The relaxation time grows rapidly due to the need for cooperative rearrangements.</li>
-</ul>
-<p>This scenario predicts a <strong>parabolic law</strong> for the relaxation time:</p>
+<p>The starting point is again the cage picture. Thanks to the separation of timescales between rattling and escaping, we can coarse-grain space and time into regions that are either <strong>mobile</strong> (a cage has just broken) or <strong>immobile</strong> (still caged). At low temperatures mobile regions are rare, localised <strong>excitations</strong>. Creating one costs an energy <span class="math inline">\(J\)</span>, so their concentration is <span class="math inline">\(c\simeq e^{-J/k_BT}\)</span>. As a collection of independent excitations, their thermodynamics is trivial: there is no thermodynamic transition.</p>
+<p>The theory rests on one <strong>postulate</strong>, the <em>kinetic constraint</em>: an immobile region can relax only if a neighbouring region is mobile. Mobility <em>facilitates</em> further mobility <span class="citation" data-cites="garrahan2003coarse">(<a href="#ref-garrahan2003coarse" role="doc-biblioref">Garrahan and Chandler 2003</a>)</span>. This is the counterpart of the postulate on <span class="math inline">\(s^*\)</span> in the Adam-Gibbs model.</p>
+<p>The slowdown then comes from the way relaxation propagates. Excitations are typically a distance <span class="math inline">\(\ell\sim c^{-1/d_f}=e^{J/(d_f k_BT)}\)</span> apart, where <span class="math inline">\(d_f\)</span> is a fractal dimension. To relax a region, mobility has to be brought there over a distance <span class="math inline">\(\ell\)</span> through a chain of facilitated moves. Because of the constraint this chain is <strong>hierarchical</strong>: to move further, the system must first create intermediate excitations, then remove them. For the simplest constrained models (such as the East model) the resulting energy barrier grows only logarithmically with distance <span class="citation" data-cites="sollich1999glassy">(<a href="#ref-sollich1999glassy" role="doc-biblioref">Sollich and Evans 1999</a>)</span>,</p>
 <p><span class="math display">\[
-\log \tau_\alpha(T) \sim J^2 \left( \frac{1}{T} - \frac{1}{T_o} \right)^2
+\Delta E(\ell)\simeq\gamma\,J\ln\ell ,
 \]</span></p>
-<p>where <span class="math inline">\(J\)</span> is an energy scale and <span class="math inline">\(T_o\)</span> is the onset temperature of glassy dynamics (above <span class="math inline">\(T_g\)</span>; not to be confused with the VFT <span class="math inline">\(T_0\)</span>). Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
-<p>Interestingly, both perspectives fit the viscosity data well within their regimes of validity (and recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation).</p>
+<p>with <span class="math inline">\(\gamma\)</span> a constant. Using the Arrhenius law,</p>
+<p><span class="math display">\[
+\ln\tau_\alpha\simeq\frac{\Delta E(\ell)}{k_BT}\simeq\frac{\gamma}{d_f}\left(\frac{J}{k_BT}\right)^2 .
+\]</span></p>
+<p>The barrier grows on cooling because excitations become sparser, so the dynamics is super-Arrhenius. Facilitated dynamics only sets in below an onset temperature <span class="math inline">\(T_o\)</span> (above <span class="math inline">\(T_g\)</span>; not to be confused with the VFT <span class="math inline">\(T_0\)</span>). Measuring from there gives the <strong>parabolic law</strong></p>
+<p><span class="math display">\[
+\ln\frac{\tau_\alpha}{\tau_o}\simeq\frac{\gamma}{d_f}\,\frac{J^2}{k_B^2}\left(\frac{1}{T}-\frac{1}{T_o}\right)^2 .
+\]</span></p>
+<p>Unlike the VFT law, the parabolic law does not diverge at finite <span class="math inline">\(T\)</span> but still captures the super-Arrhenius growth of relaxation times.</p>
+<p>Interestingly, both perspectives fit the experimental data well. The figure below shows the <span class="math inline">\(\alpha\)</span>-relaxation times of glycerol, obtained from the peak frequency <span class="math inline">\(f_{\max}\)</span> of the dielectric loss as <span class="math inline">\(\tau_\alpha=1/(2\pi f_{\max})\)</span> <span class="citation" data-cites="nielsen2009prevalence">(<a href="#ref-nielsen2009prevalence" role="doc-biblioref">Nielsen et al. 2009</a>)</span>, fitted with the VFT law and with the parabolic law. Over the measured range both fits deviate from the data by less than <span class="math inline">\(0.02\)</span> decades, yet they describe very different physics: the VFT fit diverges at <span class="math inline">\(T_0\approx128\)</span> K, while the parabolic fit has an onset at <span class="math inline">\(T_o\approx313\)</span> K and never diverges. The two only part ways below <span class="math inline">\(T_g\)</span>, where the liquid cannot be equilibrated.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figs/vft_vs_parabola.svg" class="img-fluid figure-img" style="width:70.0%"></p>
+<figcaption>Relaxation times of glycerol (dielectric loss peak, data from <span class="citation" data-cites="nielsen2009prevalence">Nielsen et al. (<a href="#ref-nielsen2009prevalence" role="doc-biblioref">2009</a>)</span>, Glass and Time data repository) fitted with the VFT law and with the parabolic law of dynamical facilitation. The grey band is the measured range; the dotted line marks <span class="math inline">\(\tau_\alpha=100\)</span> s, the conventional definition of <span class="math inline">\(T_g\)</span>.</figcaption>
+</figure>
+</div>
+<p>Relaxation times alone therefore cannot decide between the two scenarios <span class="citation" data-cites="hecksher2008little">(<a href="#ref-hecksher2008little" role="doc-biblioref">Hecksher et al. 2008</a>)</span>. Tests must come from other predictions (whether <span class="math inline">\(T_0\)</span> coincides with <span class="math inline">\(T_K\)</span>, whether static lengthscales grow, how excitations and dynamical heterogeneity behave), or from reaching lower temperatures, for example with ultrastable glasses prepared by vapour deposition or with swap Monte Carlo simulations. Recent research suggests that close to the glass transition temperature the microscopic mechanisms resemble dynamical facilitation.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Code for this figure
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> curve_fit</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Glycerol dielectric loss-peak frequencies, Nielsen et al. J. Chem. Phys. 130, 154508 (2009),</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Glass and Time data repository; tau_alpha = 1/(2 pi f_max).</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> np.array([<span class="fl">235.971</span>, <span class="fl">231.984</span>, <span class="fl">227.969</span>, <span class="fl">223.967</span>, <span class="fl">219.977</span>, <span class="fl">215.979</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>              <span class="fl">211.948</span>, <span class="fl">207.949</span>, <span class="fl">203.958</span>, <span class="fl">199.954</span>, <span class="fl">195.933</span>, <span class="fl">191.963</span>])</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>log10_fmax <span class="op">=</span> np.array([<span class="fl">4.6155</span>, <span class="fl">4.2429</span>, <span class="fl">3.8446</span>, <span class="fl">3.4324</span>, <span class="fl">2.9656</span>, <span class="fl">2.4563</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                       <span class="fl">1.9076</span>, <span class="fl">1.2992</span>, <span class="fl">0.6348</span>, <span class="op">-</span><span class="fl">0.1085</span>, <span class="op">-</span><span class="fl">0.9567</span>, <span class="op">-</span><span class="fl">1.8954</span>])</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>log10_tau <span class="op">=</span> <span class="op">-</span>(log10_fmax <span class="op">+</span> np.log10(<span class="dv">2</span> <span class="op">*</span> np.pi))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> vft(T, log10_tau0, B, T0):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> log10_tau0 <span class="op">+</span> B <span class="op">/</span> (T <span class="op">-</span> T0) <span class="op">/</span> np.log(<span class="dv">10</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> parabola(T, log10_tau_o, J2, T_o):</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> log10_tau_o <span class="op">+</span> J2 <span class="op">*</span> (<span class="dv">1</span> <span class="op">/</span> T <span class="op">-</span> <span class="dv">1</span> <span class="op">/</span> T_o) <span class="op">**</span> <span class="dv">2</span> <span class="op">/</span> np.log(<span class="dv">10</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>p_vft, _ <span class="op">=</span> curve_fit(vft, T, log10_tau, p0<span class="op">=</span>[<span class="op">-</span><span class="dv">14</span>, <span class="dv">2000</span>, <span class="dv">120</span>])</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>p_par, _ <span class="op">=</span> curve_fit(parabola, T, log10_tau, p0<span class="op">=</span>[<span class="op">-</span><span class="dv">10</span>, <span class="fl">5e5</span>, <span class="dv">300</span>])</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>rms <span class="op">=</span> <span class="kw">lambda</span> f, p: np.sqrt(np.mean((log10_tau <span class="op">-</span> f(T, <span class="op">*</span>p)) <span class="op">**</span> <span class="dv">2</span>))</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"VFT: B = </span><span class="sc">{</span>p_vft[<span class="dv">1</span>]<span class="sc">:.0f}</span><span class="ss"> K, T0 = </span><span class="sc">{</span>p_vft[<span class="dv">2</span>]<span class="sc">:.1f}</span><span class="ss"> K, rms = </span><span class="sc">{</span>rms(vft, p_vft)<span class="sc">:.3f}</span><span class="ss"> decades"</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"parabola: J/k_B = </span><span class="sc">{</span>np<span class="sc">.</span>sqrt(p_par[<span class="dv">1</span>])<span class="sc">:.0f}</span><span class="ss"> K, T_o = </span><span class="sc">{</span>p_par[<span class="dv">2</span>]<span class="sc">:.1f}</span><span class="ss"> K, rms = </span><span class="sc">{</span>rms(parabola, p_par)<span class="sc">:.3f}</span><span class="ss"> decades"</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>T_line <span class="op">=</span> np.linspace(<span class="dv">150</span>, <span class="dv">330</span>, <span class="dv">400</span>)</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">7</span>, <span class="dv">5</span>))</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>ax.axvspan(<span class="dv">1000</span> <span class="op">/</span> T.<span class="bu">max</span>(), <span class="dv">1000</span> <span class="op">/</span> T.<span class="bu">min</span>(), color<span class="op">=</span><span class="st">"0.92"</span>, label<span class="op">=</span><span class="st">"measured range"</span>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">1000</span> <span class="op">/</span> T_line, vft(T_line, <span class="op">*</span>p_vft), color<span class="op">=</span><span class="st">"crimson"</span>, lw<span class="op">=</span><span class="dv">2</span>,</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="ss">f"VFT, divergence at $T_0=</span><span class="sc">{</span>p_vft[<span class="dv">2</span>]<span class="sc">:.0f}</span><span class="ss">$ K"</span>)</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>T_below_onset <span class="op">=</span> T_line[T_line <span class="op">&lt;</span> p_par[<span class="dv">2</span>]]  <span class="co"># the parabolic law applies only below the onset</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">1000</span> <span class="op">/</span> T_below_onset, parabola(T_below_onset, <span class="op">*</span>p_par), color<span class="op">=</span><span class="st">"royalblue"</span>, lw<span class="op">=</span><span class="dv">2</span>, ls<span class="op">=</span><span class="st">"--"</span>,</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        label<span class="op">=</span><span class="ss">f"parabolic law, onset $T_o=</span><span class="sc">{</span>p_par[<span class="dv">2</span>]<span class="sc">:.0f}</span><span class="ss">$ K"</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>ax.plot(<span class="dv">1000</span> <span class="op">/</span> T, log10_tau, <span class="st">"ko"</span>, ms<span class="op">=</span><span class="dv">7</span>, label<span class="op">=</span><span class="st">"glycerol (dielectric)"</span>)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>ax.axhline(<span class="dv">2</span>, color<span class="op">=</span><span class="st">"0.4"</span>, lw<span class="op">=</span><span class="dv">1</span>, ls<span class="op">=</span><span class="st">":"</span>)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>ax.text(<span class="fl">3.08</span>, <span class="fl">2.25</span>, <span class="vs">r"</span><span class="dv">$</span><span class="ch">\t</span><span class="vs">au_</span><span class="ch">\a</span><span class="vs">lpha=100</span><span class="dv">$</span><span class="vs"> s </span><span class="kw">(</span><span class="dv">$</span><span class="vs">T_g</span><span class="dv">$</span><span class="kw">)</span><span class="vs">"</span>, color<span class="op">=</span><span class="st">"0.3"</span>, fontsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="fl">3.0</span>, <span class="fl">6.7</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="op">-</span><span class="dv">9</span>, <span class="dv">12</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="vs">r"</span><span class="dv">$</span><span class="vs">1000/T</span><span class="dv">$</span><span class="vs">  </span><span class="pp">[K$^{-1}$]</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="vs">r"</span><span class="dv">$</span><span class="er">\</span><span class="vs">log_</span><span class="op">{10}</span><span class="ch">\,\t</span><span class="vs">au_</span><span class="ch">\a</span><span class="vs">lpha</span><span class="dv">$</span><span class="vs">  </span><span class="pp">[s]</span><span class="vs">"</span>, fontsize<span class="op">=</span><span class="dv">16</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>ax.legend(loc<span class="op">=</span><span class="st">"upper left"</span>, fontsize<span class="op">=</span><span class="dv">13</span>, frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>ax.tick_params(labelsize<span class="op">=</span><span class="dv">13</span>)</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>fig.tight_layout()</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 <p>Here below is a the visual representation of the time evolution of the magnitude of the displacement field in a model of glass governed by dynamical facilitation, see <span class="citation" data-cites="hasyim2024emergent">Hasyim and Mandadapu (<a href="#ref-hasyim2024emergent" role="doc-biblioref">2024</a>)</span> for more details.</p>
 <div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-big-play-centered vjs-fluid" controls="" preload="auto" data-setup="{}" title=""><source src="./figs/pnas.2322592121.sm04.mp4"></video></div>
 </section>
@@ -752,7 +826,7 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K},\qquad K&gt;0.
 <p>The transition from a fluid to a gel state is often associated with the appearance of a system-spanning cluster, which can be described using concepts from <strong>percolation theory</strong>. The mechanical rigidity of the gel arises when this cluster forms and its bonds live long enough to make it effectively <strong>permanent</strong> on the observation time, leading to a dramatic increase in viscosity and the emergence of an elastic response.</p>
 <p><span id="percolation"></span></p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -761,7 +835,7 @@ s_{\rm conf}(T)\simeq K\,\frac{T-T_K}{T_K},\qquad K&gt;0.
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Percolation is the study of an apparently innocent mathematical problem: take a square grid of <span class="math inline">\(L\times L\)</span> sites and randomly label <span class="math inline">\(N\)</span> of them; how does the likelihood of forming a cluster that spans across the grid (i.e.&nbsp;<em>percolates</em>) depend on the probability <span class="math inline">\(p=N/L^2\)</span> of having a labelled square?</p>
 <p>The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability <span class="math inline">\(p_c\)</span> at which a spanning cluster first appears is called the <strong>percolation threshold</strong>. For a large 2D square lattice, <span class="math inline">\(p_c \approx 0.5927\)</span>. Below <span class="math inline">\(p_c\)</span>, only small, disconnected clusters exist; above <span class="math inline">\(p_c\)</span>, a giant connected component spans the system. The transition is <strong>continuous</strong>, i.e.&nbsp;second order.</p>
@@ -958,7 +1032,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="78bdb05d" class="cell" data-execution_count="1">
+<div id="03bca089" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -972,7 +1046,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="79a49380" class="cell" data-execution_count="2">
+<div id="51728b1e" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1010,7 +1084,7 @@ S(q) \sim q^{-D_f}
 <p>The exponent <span class="math inline">\(D_f\)</span> is related to the spatial scaling of mass with size in the fractal cluster: <span class="math inline">\(M(R) \sim R^{D_f}\)</span>. Typical values for percolation clusters in 3D are <span class="math inline">\(D_f \approx 2.5\)</span>. Colloidal aggregates are looser, with <span class="math inline">\(D_f\approx1.8\)</span> (diffusion-limited) to <span class="math inline">\(2.1\)</span> (reaction-limited aggregation).</p>
 <p>Thus, by analyzing the low-<span class="math inline">\(q\)</span> behavior of <span class="math inline">\(S(q)\)</span>, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1019,7 +1093,7 @@ S(q) \sim q^{-D_f}
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Fractal dimensions are in practice quite tricky to measure. A common method is the <strong>box-counting algorithm</strong>:</p>
 <ol type="1">
@@ -1032,60 +1106,60 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="ab71439a" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sierpinski_carpet(n):</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate a Sierpinski carpet of order n as a 2D boolean array."""</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>n</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    carpet <span class="op">=</span> np.ones((size, size), dtype<span class="op">=</span><span class="bu">bool</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>i</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                carpet[x<span class="op">+</span>step:x<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step, y<span class="op">+</span>step:y<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step] <span class="op">=</span> <span class="va">False</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> carpet</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box_count(img, box_sizes):</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count number of boxes containing any part of the structure for each box size using histogramdd."""</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> []</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.argwhere(img)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> box <span class="kw">in</span> box_sizes:</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        bins <span class="op">=</span> [img.shape[<span class="dv">0</span>] <span class="op">//</span> box, img.shape[<span class="dv">1</span>] <span class="op">//</span> box]</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assign each coordinate to a box</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        hist, _ <span class="op">=</span> np.histogramdd(coords, bins<span class="op">=</span>bins, <span class="bu">range</span><span class="op">=</span>[[<span class="dv">0</span>, img.shape[<span class="dv">0</span>]], [<span class="dv">0</span>, img.shape[<span class="dv">1</span>]]])</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        N.append(np.count_nonzero(hist))</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(N)</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Sierpinski carpet</span></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>carpet <span class="op">=</span> sierpinski_carpet(order)</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Box sizes (powers of 3)</span></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>box_sizes <span class="op">=</span> [<span class="dv">3</span><span class="op">**</span>i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(order, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>)]</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>N_boxes <span class="op">=</span> box_count(carpet, box_sizes)</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Sierpinski carpet</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>plt.imshow(carpet, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sierpinski carpet (order </span><span class="sc">%d</span><span class="st">)'</span> <span class="op">%</span> order)</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Box-counting plot</span></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">4</span>))</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Box counting'</span>)</span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear fit for slope (fractal dimension)</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>slope, intercept <span class="op">=</span> np.polyfit(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="dv">1</span>)</span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), slope<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes))<span class="op">+</span>intercept, <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Fit: $D_f$=</span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log</span><span class="kw">(</span><span class="vs">1/</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log N</span><span class="kw">(</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box-counting for Sierpinski carpet'</span>)</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>plt.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f2eb5171" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sierpinski_carpet(n):</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Generate a Sierpinski carpet of order n as a 2D boolean array."""</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>n</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    carpet <span class="op">=</span> np.ones((size, size), dtype<span class="op">=</span><span class="bu">bool</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>        step <span class="op">=</span> <span class="dv">3</span><span class="op">**</span>i</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> y <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, size, <span class="dv">3</span><span class="op">*</span>step):</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                carpet[x<span class="op">+</span>step:x<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step, y<span class="op">+</span>step:y<span class="op">+</span><span class="dv">2</span><span class="op">*</span>step] <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> carpet</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> box_count(img, box_sizes):</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Count number of boxes containing any part of the structure for each box size using histogramdd."""</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    N <span class="op">=</span> []</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    coords <span class="op">=</span> np.argwhere(img)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> box <span class="kw">in</span> box_sizes:</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        bins <span class="op">=</span> [img.shape[<span class="dv">0</span>] <span class="op">//</span> box, img.shape[<span class="dv">1</span>] <span class="op">//</span> box]</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Assign each coordinate to a box</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        hist, _ <span class="op">=</span> np.histogramdd(coords, bins<span class="op">=</span>bins, <span class="bu">range</span><span class="op">=</span>[[<span class="dv">0</span>, img.shape[<span class="dv">0</span>]], [<span class="dv">0</span>, img.shape[<span class="dv">1</span>]]])</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        N.append(np.count_nonzero(hist))</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array(N)</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate Sierpinski carpet</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>order <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>carpet <span class="op">=</span> sierpinski_carpet(order)</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="co"># Box sizes (powers of 3)</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>box_sizes <span class="op">=</span> [<span class="dv">3</span><span class="op">**</span>i <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(order, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>)]</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>N_boxes <span class="op">=</span> box_count(carpet, box_sizes)</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot Sierpinski carpet</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">4</span>,<span class="dv">4</span>))</span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>plt.imshow(carpet, cmap<span class="op">=</span><span class="st">'binary'</span>)</span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Sierpinski carpet (order </span><span class="sc">%d</span><span class="st">)'</span> <span class="op">%</span> order)</span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">'off'</span>)</span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Box-counting plot</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">4</span>))</span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Box counting'</span>)</span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># Linear fit for slope (fractal dimension)</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>slope, intercept <span class="op">=</span> np.polyfit(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), np.log(N_boxes), <span class="dv">1</span>)</span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>plt.plot(np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes)), slope<span class="op">*</span>np.log(<span class="dv">1</span><span class="op">/</span>np.array(box_sizes))<span class="op">+</span>intercept, <span class="st">'--'</span>, label<span class="op">=</span><span class="ss">f'Fit: $D_f$=</span><span class="sc">{</span>slope<span class="sc">:.4f}</span><span class="ss">'</span>)</span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log</span><span class="kw">(</span><span class="vs">1/</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="vs">r'</span><span class="dv">$</span><span class="er">\</span><span class="vs">log N</span><span class="kw">(</span><span class="er">\</span><span class="vs">ell</span><span class="kw">)</span><span class="dv">$</span><span class="vs">'</span>)</span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box-counting for Sierpinski carpet'</span>)</span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>plt.legend(frameon<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1239,17 +1313,26 @@ Debenedetti, Pablo G, and Frank H Stillinger. 2001. <span>“Supercooled Liquids
 <div id="ref-dijkstra1999phase" class="csl-entry" role="listitem">
 Dijkstra, Marjolein, Joseph M Brader, and Robert Evans. 1999. <span>“Phase Behaviour and Structure of Model Colloid-Polymer Mixtures.”</span> <em>Journal of Physics: Condensed Matter</em> 11 (50): 10079. <a href="https://bris.on.worldcat.org/oclc/4843512718">https://bris.on.worldcat.org/oclc/4843512718</a>.
 </div>
+<div id="ref-garrahan2003coarse" class="csl-entry" role="listitem">
+Garrahan, Juan P., and David Chandler. 2003. <span>“Coarse-Grained Microscopic Model of Glass Formers.”</span> <em>Proceedings of the National Academy of Sciences</em> 100 (17): 9710–14. <a href="https://doi.org/10.1073/pnas.1233719100">https://doi.org/10.1073/pnas.1233719100</a>.
+</div>
 <div id="ref-griffiths2017local" class="csl-entry" role="listitem">
 Griffiths, Samuel, Francesco Turci, and C Patrick Royall. 2017. <span>“Local Structure of Percolating Gels at Very Low Volume Fractions.”</span> <em>The Journal of Chemical Physics</em> 146 (1). <a href="https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low">https://pubs.aip.org/aip/jcp/article/146/1/014501/313344/Local-structure-of-percolating-gels-at-very-low</a>.
 </div>
 <div id="ref-hasyim2024emergent" class="csl-entry" role="listitem">
 Hasyim, Muhammad R, and Kranthi K Mandadapu. 2024. <span>“Emergent Facilitation and Glassy Dynamics in Supercooled Liquids.”</span> <em>Proceedings of the National Academy of Sciences</em> 121 (23): e2322592121. <a href="https://www.pnas.org/doi/abs/10.1073/pnas.2322592121">https://www.pnas.org/doi/abs/10.1073/pnas.2322592121</a>.
 </div>
+<div id="ref-hecksher2008little" class="csl-entry" role="listitem">
+Hecksher, Tina, Albena I. Nielsen, Niels Boye Olsen, and Jeppe C. Dyre. 2008. <span>“Little Evidence for Dynamic Divergences in Ultraviscous Molecular Liquids.”</span> <em>Nature Physics</em> 4 (9): 737–41. <a href="https://doi.org/10.1038/nphys1033">https://doi.org/10.1038/nphys1033</a>.
+</div>
 <div id="ref-kauzmann1948nature" class="csl-entry" role="listitem">
 Kauzmann, Walter. 1948. <span>“The Nature of the Glassy State and the Behavior of Liquids at Low Temperatures.”</span> <em>Chemical Reviews</em> 43 (2): 219–56. <a href="https://doi.org/10.1021/cr60135a002">https://doi.org/10.1021/cr60135a002</a>.
 </div>
 <div id="ref-lu2008gelation" class="csl-entry" role="listitem">
 Lu, Peter J., Emanuela Zaccarelli, Fabio Ciulla, Andrew B. Schofield, Francesco Sciortino, and David A. Weitz. 2008. <span>“Gelation of Particles with Short-Range Attraction.”</span> <em>Nature</em> 453: 499–503. <a href="https://doi.org/10.1038/nature06931">https://doi.org/10.1038/nature06931</a>.
+</div>
+<div id="ref-nielsen2009prevalence" class="csl-entry" role="listitem">
+Nielsen, Albena I., Tage Christensen, Bo Jakobsen, et al. 2009. <span>“Prevalence of Approximate <span class="math inline">\(\sqrt{t}\)</span> Relaxation for the Dielectric <span class="math inline">\(\alpha\)</span> Process in Viscous Organic Liquids.”</span> <em>The Journal of Chemical Physics</em> 130 (15): 154508. <a href="https://doi.org/10.1063/1.3098911">https://doi.org/10.1063/1.3098911</a>.
 </div>
 <div id="ref-richert1998dynamics" class="csl-entry" role="listitem">
 Richert, R., and C. A. Angell. 1998. <span>“Dynamics of Glass-Forming Liquids. V. On the Link Between Molecular Dynamics and Configurational Entropy.”</span> <em>The Journal of Chemical Physics</em> 108 (21): 9016–26. <a href="https://doi.org/10.1063/1.476348">https://doi.org/10.1063/1.476348</a>.
@@ -1259,6 +1342,9 @@ Royall, C Patrick, Francesco Turci, Soichi Tatsumi, John Russo, and Joshua Robin
 </div>
 <div id="ref-sausset2010solids" class="csl-entry" role="listitem">
 Sausset, F, G Biroli, and J Kurchan. 2010. <span>“Do Solids Flow?”</span> <em>Journal of Statistical Physics</em> 140: 718–27. <a href="https://bris.on.worldcat.org/oclc/5649060652">https://bris.on.worldcat.org/oclc/5649060652</a>.
+</div>
+<div id="ref-sollich1999glassy" class="csl-entry" role="listitem">
+Sollich, Peter, and Martin R. Evans. 1999. <span>“Glassy Time-Scale Divergence and Anomalous Coarsening in a Kinetically Constrained Spin Chain.”</span> <em>Physical Review Letters</em> 83 (16): 3238–41. <a href="https://doi.org/10.1103/PhysRevLett.83.3238">https://doi.org/10.1103/PhysRevLett.83.3238</a>.
 </div>
 <div id="ref-Zaccarelli2007" class="csl-entry" role="listitem">
 Zaccarelli, Emanuela. 2007. <span>“Colloidal Gels: Equilibrium and Non-Equilibrium Routes.”</span> <em>Journal of Physics: Condensed Matter</em> 19 (32): 323101. <a href="https://doi.org/10.1088/0953-8984/19/32/323101">https://doi.org/10.1088/0953-8984/19/32/323101</a>.
