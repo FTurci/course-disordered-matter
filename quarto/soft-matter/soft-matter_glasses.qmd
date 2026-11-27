@@ -467,11 +467,15 @@ Try fitting $(p-p_c)^\beta$ to the curve just above $p_c$. On a finite lattice t
 
 #### Why is the percolation transition critical? {.unnumbered}
 
-A quick argument comes from percolation on a tree (the Bethe lattice), where every site has $z$ neighbours and there are no loops. Grow a cluster from an occupied site: every new site has $z-1$ further neighbours, each occupied with probability $p$, so on average it generates $p(z-1)$ new sites. If $p(z-1)<1$ the branches die out and all clusters are finite; if $p(z-1)>1$ they can grow forever. Hence
+A quick argument comes from percolation on a tree (the Bethe lattice), where every site has $z$ neighbours and there are no loops.
+
+![A Bethe lattice with $z=3$, drawn up to the fourth generation. Sites are occupied (filled) with probability $p$; the cluster connected to the central seed is in red. Since there are no loops, each site reached from its parent opens $z-1$ new branches.](./figs/bethe_lattice.svg){width=50%}
+
+ Grow a cluster from an occupied site: every new site has $z-1$ further neighbours, each occupied with probability $p$, so on average it generates $p(z-1)$ new sites. If $p(z-1)<1$ the branches die out and all clusters are finite; if $p(z-1)>1$ they can grow forever. Hence
 
 $$p_c=\frac{1}{z-1}.$$
 
-The mean number of sites $T$ hanging from a branch obeys $T=p\,[1+(z-1)T]$, so the mean cluster size
+Call $T$ the mean number of occupied sites in a branch, i.e. reached through one bond pointing away from the seed. The first site of the branch is occupied with probability $p$; if it is, it contributes itself plus $z-1$ sub-branches, which (since the tree has no loops) are copies of the original branch, each with mean $T$. Hence $T=p\,[1+(z-1)T]$, and the mean size of the cluster of the seed, which has $z$ branches, is
 
 $$S=1+zT=1+\frac{zp}{1-p/p_c}\sim(p_c-p)^{-1}$$
 
