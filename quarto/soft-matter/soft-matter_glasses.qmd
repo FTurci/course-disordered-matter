@@ -392,9 +392,9 @@ The transition from a fluid to a gel state is often associated with the appearan
 
 Percolation is the study of an apparently innocent mathematical problem: take a square grid of $L\times L$ sites and randomly label $N$ of them; how does the likelihood of forming a cluster that spans across the grid (i.e. *percolates*) depend on the probability $p=N/L^2$ of having a labelled square?
 
-The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It is amenable to an analytical treatment and can be solved via direct simulations. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transition is **continuous**, i.e. second order.
+The problem is interesting for its various applications across domains of science as diverse as networks formation, transport, material science, epidemiology and ecology. It can be solved exactly only in special cases (on trees, and in 2D), but it is very easy to simulate. Percolation is a classic example of a phase transition and critical phenomena. The probability $p_c$ at which a spanning cluster first appears is called the **percolation threshold**. For a large 2D square lattice, $p_c \approx 0.5927$. Below $p_c$, only small, disconnected clusters exist; above $p_c$, a giant connected component spans the system. The transition is **continuous**, i.e. second order.
 
-Analytically, percolation is tractable and exhibits [universal critical exponents](../phase-transitions/scaling.qmd) near $p_c$, making it a cornerstone of statistical physics and network theory.
+Percolation exhibits [universal critical exponents](../phase-transitions/scaling.qmd) near $p_c$, making it a cornerstone of statistical physics and network theory.
 
 You can play with percolation on a squared lattice with the code below.
 
@@ -463,40 +463,50 @@ plt.title('Percolation transition in 2D')
 plt.show()
 ```
 
-The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical $p_c$, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is require in order to find a percolating path.
+Try fitting $(p-p_c)^\beta$ to the curve just above $p_c$. On a finite lattice the transition is rounded over a window $|p-p_c|\sim L^{-1/\nu}$ (where the clusters become as large as the box), so the fitted exponent is far from the exact value $\beta=5/36$ given below.
+
+#### Why is the percolation transition critical? {.unnumbered}
+
+A quick argument comes from percolation on a tree (the Bethe lattice), where every site has $z$ neighbours and there are no loops. Grow a cluster from an occupied site: every new site has $z-1$ further neighbours, each occupied with probability $p$, so on average it generates $p(z-1)$ new sites. If $p(z-1)<1$ the branches die out and all clusters are finite; if $p(z-1)>1$ they can grow forever. Hence
+
+$$p_c=\frac{1}{z-1}.$$
+
+The mean number of sites $T$ hanging from a branch obeys $T=p\,[1+(z-1)T]$, so the mean cluster size
+
+$$S=1+zT=1+\frac{zp}{1-p/p_c}\sim(p_c-p)^{-1}$$
+
+diverges at $p_c$, like the susceptibility of the Ising model at $T_c$.
+
+Above $p_c$, take $z=3$ and call $Q$ the probability that a branch is finite: either its first site is empty, or it is occupied and both its sub-branches are finite, $Q=1-p+pQ^2$, so that $Q=(1-p)/p$. A site belongs to the infinite cluster if it is occupied and not all of its three branches are finite:
+
+$$P_\infty=p\,(1-Q^3)\simeq6\,(p-p_c).$$
+
+The order parameter grows continuously from zero, with no jump and no coexistence: the transition is second order, with the mean-field exponents $\beta=1$ and $\gamma=1$ (exact for $d\geq6$). The size $\xi$ of the typical finite clusters plays the role of the correlation length and diverges as $\xi\sim|p-p_c|^{-\nu}$. This tree calculation is in fact the classic Flory-Stockmayer theory of gelation [@stauffer1994introduction].
+
+The following table illustrates that various values of the critical percolation probability are known for various lattices, either exactly or via simulation. Notice that this non-universal feature, the critical $p_c$, decreases with increasing dimensionality: at higher dimensions, the connectivity is naturally higher and so a comparatively smaller fraction of the system is required in order to find a percolating path. The Bethe lattice value $1/(z-1)$ becomes a better estimate as the coordination grows.
 
 | Lattice Type    | Dimension | Coordination $z$ | $p_c^{site}$ | $p_c^{bond}$ |
 | --------------- | --------- | ---------------- | ------------ | ------------ |
-| Square          | 2         | 4                | 0.592746     | **0.5**      |
-| Triangular      | 2         | 6                | **0.5**      | 0.347296     |
-| Honeycomb       | 2         | 3                | 0.697043     | **0.652703** |
-| Kagome          | 2         | 4                | 0.6527       | 0.5244       |
-| Union Jack      | 2         | 6 (mean)         | **0.5**      | 0.3232       |
+| Square          | 2         | 4                | 0.5927       | **0.5**      |
+| Triangular      | 2         | 6                | **0.5**      | 0.3473       |
 | Cubic           | 3         | 6                | 0.3116       | 0.2488       |
 | FCC             | 3         | 12               | 0.199        | 0.120        |
-| BCC             | 3         | 8                | 0.245        | 0.180        |
-| Diamond         | 3         | 4                | 0.43         | 0.389        |
-| Hypercubic (4D) | 4         | 8                | 0.197        | 0.160        |
-| Hypercubic (5D) | 5         | 10               | 0.141        | 0.118        |
 | Hypercubic (6D) | 6         | 12               | 0.109        | 0.094        |
-| Hypercubic (7D) | 7         | 14               | 0.089        | 0.079        |
-| Hypercubic (8D) | 8         | 16               | 0.078        | 0.069        |
+| Bethe lattice   | $\infty$  | $z$              | $1/(z-1)$    | $1/(z-1)$    |
 
 
-Instead, other properties of percolation are **universal**: these are the critical exponents of observables on the lattice,and do not depend on the lattice detail, such as the probability to find a site in a percolating cluster $P_{\infty}(p)\propto (p-p_c)^{\beta}$
+Instead, other properties of percolation are **universal**: these are the critical exponents of observables on the lattice and do not depend on the lattice details: the probability to find a site in the percolating cluster $P_{\infty}\propto (p-p_c)^{\beta}$, the mean size of the finite clusters $S\propto|p-p_c|^{-\gamma}$ and their typical linear size $\xi\propto|p-p_c|^{-\nu}$.
 
-| Dimension $d$   | $\beta$ (Percolation) |
-| --------------- | --------------------- |
-| 2               | **5/36 ≈ 0.1389**     |
-| 3               | ≈ 0.41                |
-| 4               | ≈ 0.65                |
-| 5               | ≈ 0.81                |
-| ≥6 (Mean-field) | **1**                 |
+| Dimension $d$   | $\beta$        | $\gamma$        | $\nu$         |
+| --------------- | -------------- | --------------- | ------------- |
+| 2               | **5/36**       | **43/18**       | **4/3**       |
+| 3               | ≈ 0.41         | ≈ 1.80          | ≈ 0.88        |
+| ≥6 (Mean-field) | **1**          | **1**           | **1/2**       |
 
 
 :::
 
-In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity.
+In the case of physical gels, percolation is a required ingredient for mechanical stability: in the absence of a large spanning percolating network, it is not possible for the gel to sustain external stresses or even self-generated stresses such as its own weight under gravity. Close to the gel point the shear modulus vanishes as a power law, $G\sim(p-p_c)^t$, while on the fluid (sol) side the viscosity diverges as $\eta\sim(p_c-p)^{-s}$. de Gennes noticed that the elasticity of a percolating network is analogous to the conductivity of a random network of resistors, which gives $t\approx2$ in 3D [@degennes1976relation]; experiments on real gels find exponents of this order, with considerable scatter.
 
 ::: {.content-visible when-format="live-html"}
 ![Molecular dynamics simulation of the gradual formation of a very dilute colloidal gel by the growth of a system spanning (percolating) cluster (the largest cluster is highlighted in red). ](./figs/m.gif)
@@ -622,7 +632,11 @@ where $D_f$ is the **fractal dimension** of the gel network. This power-law regi
 
 ![The same changes of the previous figures as seen in changes in the structure factor $S(q)$ as time evolves and the frozen structure of a colloidal gel emerges. At small q, a characteristic power law behaviour emerges, while at higher q the microstructure changes are subtly capture by the reorganisation or splitting of the peaks.  ](./figs/sq_time.svg){width=60%}
 
-The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. Typical values for percolation clusters in 3D are $D_f \approx 2.5$. Colloidal aggregates are looser, with $D_f\approx1.8$ (diffusion-limited) to $2.1$ (reaction-limited aggregation).
+The exponent $D_f$ is related to the spatial scaling of mass with size in the fractal cluster: $M(R) \sim R^{D_f}$. For percolation, $D_f$ follows from the critical exponents. Up to the scale $\xi$ the spanning cluster is fractal, so in a box of size $\xi$ its density is $M(\xi)/\xi^d\sim\xi^{D_f-d}$. This density is the fraction of sites in the spanning cluster, $P_\infty\sim(p-p_c)^\beta$, and with $\xi\sim(p-p_c)^{-\nu}$ we obtain
+
+$$D_f=d-\frac{\beta}{\nu}.$$
+
+This gives $D_f=91/48\approx1.90$ in 2D and $D_f\approx2.5$ in 3D. Colloidal aggregates are looser, with $D_f\approx1.8$ (diffusion-limited) to $2.1$ (reaction-limited aggregation).
 
 Thus, by analyzing the low-$q$ behavior of $S(q)$, one can extract the fractal dimension and confirm scale-free, self-similar structure in gels.
 
