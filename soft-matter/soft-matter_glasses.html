@@ -694,13 +694,18 @@ F_s^{\text{self}}(q, t) = \left\langle \frac{1}{N} \sum_{j=1}^N e^{i \mathbf{q} 
 <p>A key theoretical link between the dramatic slowdown of dynamics (as described by the VFT law) and the underlying thermodynamics is provided by the <strong>Adam-Gibbs model</strong>, details in <span class="citation" data-cites="bouchaud2004adam">Bouchaud and Biroli (<a href="#ref-bouchaud2004adam" role="doc-biblioref">2004</a>)</span>.</p>
 <p>This model proposes that the structural relaxation time <span class="math inline">\(\tau_\alpha\)</span> is controlled by the <strong>configurational entropy</strong> <span class="math inline">\(S_{\rm conf}\)</span>, which counts the number of distinct amorphous basins available to the system.</p>
 <p>The key idea is the existence of <strong>cooperatively rearranging regions</strong> (CRRs): to relax, particles need to move together to explore a new metabasin in the energy landscape.</p>
-<p>The sketch of the theory is the following: we split the system into <span class="math inline">\(M_{CRR}\)</span> independent cooperatively rearranging regions of size <span class="math inline">\(n_{CRR}\)</span> particles each. The total number of particles is <span class="math inline">\(N = M_{CRR} n_{CRR}\)</span>.</p>
-<p>We <strong>assume</strong> that the total configurational entropy is additive and that each CRR contributes a constant amount <span class="math inline">\(s^*\)</span>, irrespective of its size</p>
-<p><span class="math inline">\(S_{conf} = M_{CRR} s^* = \dfrac{N}{n_{CRR}} s^*\)</span></p>
-<p>Rearranging gives the size of a CRR as a function of the configurational entropy per particle <span class="math inline">\(S_{conf}/N\)</span>: <span class="math display">\[n_{CRR}(T) \propto \dfrac{1}{S_{conf}(T)/N}\]</span></p>
+<p>The size of these regions follows from a simple argument:</p>
+<ol type="1">
+<li><strong>Why regions.</strong> At low temperature a particle cannot move alone: its neighbours have to move too. A CRR is the <strong>smallest</strong> region that can rearrange into a new configuration without requiring changes outside its boundary.</li>
+<li><strong>Why the smallest.</strong> The barrier to a cooperative rearrangement grows with the number of particles that move together, so relaxation is dominated by the smallest regions that can rearrange at all.</li>
+<li><strong>What “can rearrange” means.</strong> The region must have at least two distinct configurations available, <span class="math inline">\(W^*\ge 2\)</span>. At the minimal size it has just enough, so each CRR carries a <strong>threshold</strong> configurational entropy <span class="math inline">\(s^*=k_B\ln W^*\)</span> (of order <span class="math inline">\(k_B\ln 2\)</span>), independent of its size.</li>
+<li><strong>Size from entropy.</strong> With <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> the configurational entropy per particle, a region needs <span class="math display">\[n_{CRR}(T)=\frac{s^*}{s_{\rm conf}(T)}\]</span> particles to reach the threshold: as <span class="math inline">\(s_{\rm conf}\)</span> drops on cooling, CRRs grow.</li>
+<li><strong>Mosaic.</strong> The system tiles into <span class="math inline">\(M_{CRR}=N/n_{CRR}\)</span> independent CRRs, so the configurational entropy is additive, <span class="math inline">\(S_{\rm conf}=M_{CRR}\,s^*\)</span>.</li>
+</ol>
+<p>A metabasin of the whole system corresponds to one choice of configuration for every CRR; a rearrangement of a single CRR moves the system to a neighbouring metabasin.</p>
 <p>We then assume <strong>activated dynamics</strong>: rearranging costs a barrier <span class="math inline">\(\Delta\mu\)</span> per particle, so a CRR must cross a barrier proportional to its size,</p>
-<p><span class="math display">\[\Delta E(T) = n_{CRR}(T)\,\Delta\mu = \frac{s^*\Delta\mu}{s_{\rm conf}(T)},\]</span></p>
-<p>where <span class="math inline">\(s_{\rm conf}=S_{\rm conf}/N\)</span> is the configurational entropy per particle. The Arrhenius law <span class="math inline">\(\tau_\alpha=\tau_0 e^{\Delta E/k_BT}\)</span> then gives the Adam-Gibbs relation <span class="citation" data-cites="adam1965temperature">(<a href="#ref-adam1965temperature" role="doc-biblioref">Adam and Gibbs 1965</a>)</span>: <span class="math display">\[
+<p><span class="math display">\[\Delta E(T) = n_{CRR}(T)\,\Delta\mu = \frac{s^*\Delta\mu}{s_{\rm conf}(T)}.\]</span></p>
+<p>The Arrhenius law <span class="math inline">\(\tau_\alpha=\tau_0 e^{\Delta E/k_BT}\)</span> then gives the Adam-Gibbs relation <span class="citation" data-cites="adam1965temperature">(<a href="#ref-adam1965temperature" role="doc-biblioref">Adam and Gibbs 1965</a>)</span>: <span class="math display">\[
 \tau_\alpha(T) = \tau_0 \exp\left(\frac{A}{T s_{\rm conf}(T)}\right),\qquad A=\frac{s^*\Delta\mu}{k_B}.
 \]</span> As temperature decreases, <span class="math inline">\(s_{\rm conf}\)</span> drops, leading to a rapid increase in <span class="math inline">\(\tau_\alpha\)</span>.</p>
 <p>To obtain the VFT law we need to know <em>how</em> <span class="math inline">\(s_{\rm conf}\)</span> decreases. Following Kauzmann’s extrapolation (see below), we assume that it decreases <strong>smoothly</strong> on cooling and vanishes at a finite temperature <span class="math inline">\(T_K\)</span>, the Kauzmann temperature. Close to its zero, a smooth function is <strong>linear</strong>:</p>
@@ -956,7 +961,7 @@ U(r) =
 \end{cases}
 \]</span></p>
 <p>where <span class="math inline">\(\sigma\)</span> is the particle diameter (hard core), <span class="math inline">\(\epsilon\)</span> is the well depth (attractive strength), and <span class="math inline">\(\lambda\)</span> controls the range of the attraction.</p>
-<div id="6029c483" class="cell" data-execution_count="1">
+<div id="c89ef10a" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -970,7 +975,7 @@ U(r) =
 U_{\mathrm{Morse}}(r) = D \left[ e^{-2\alpha (r - r_0)} - 2 e^{-\alpha (r - r_0)} \right]
 \]</span></p>
 <p>where <span class="math inline">\(D\)</span> is the well depth, <span class="math inline">\(\alpha\)</span> controls the range (steepness) of the potential, and <span class="math inline">\(r_0\)</span> is the equilibrium bond distance.</p>
-<div id="89f58e9c" class="cell" data-execution_count="2">
+<div id="9e2fa6d4" class="cell" data-execution_count="2">
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
@@ -1030,7 +1035,7 @@ N(\ell) \sim \ell^{-D_f}
 </ol>
 <p>This method is widely used for experimental images and simulation data to estimate the fractal dimension of clusters, aggregates, or networks.</p>
 <p>Below, illustrate this using a known fractal, the <a href="https://en.wikipedia.org/wiki/Sierpiński_carpet" target="_blank">Sierpinski carpet</a>, whose fractal dimensions is exactly <span class="math inline">\(D_f = \log{8}/\log{3}\approx 1.8929\)</span></p>
-<div id="2e846977" class="cell" data-execution_count="3">
+<div id="e12b7050" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example: Box-counting fractal dimension for the Sierpinski carpet</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
