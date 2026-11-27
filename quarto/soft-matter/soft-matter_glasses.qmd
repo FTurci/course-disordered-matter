@@ -226,10 +226,10 @@ The size of these regions follows from a simple argument:
 1. **Why regions.** At low temperature a particle cannot move alone: its neighbours have to move too. A CRR is the **smallest** region that can rearrange into a new configuration without requiring changes outside its boundary.
 2. **Why the smallest.** The barrier to a cooperative rearrangement grows with the number of particles that move together, so relaxation is dominated by the smallest regions that can rearrange at all.
 3. **What "can rearrange" means.** The region must have at least two distinct configurations available, $W^*\ge 2$. At the minimal size it has just enough, so each CRR carries a **threshold** configurational entropy $s^*=k_B\ln W^*$ (of order $k_B\ln 2$), independent of its size.
-4. **Size from entropy.** With $s_{\rm conf}=S_{\rm conf}/N$ the configurational entropy per particle, a region needs
+4. **Size from entropy.** We **assume extensivity**: a region of $n$ particles has configurational entropy $n\,s_{\rm conf}$, where $s_{\rm conf}=S_{\rm conf}/N$ is the bulk configurational entropy per particle. This treats even a small region as a piece of bulk liquid, which is an approximation. The region can rearrange once $n\,s_{\rm conf}\ge s^*$, so the smallest CRR contains
 $$n_{CRR}(T)=\frac{s^*}{s_{\rm conf}(T)}$$
-particles to reach the threshold: as $s_{\rm conf}$ drops on cooling, CRRs grow.
-5. **Mosaic.** The system tiles into $M_{CRR}=N/n_{CRR}$ independent CRRs, so the configurational entropy is additive, $S_{\rm conf}=M_{CRR}\,s^*$.
+particles: as $s_{\rm conf}$ drops on cooling, CRRs grow.
+5. **Mosaic.** The system tiles into $M_{CRR}=N/n_{CRR}$ independent CRRs. By the same extensivity, the configurational entropy is additive, $S_{\rm conf}=M_{CRR}\,s^*$.
 
 A metabasin of the whole system corresponds to one choice of configuration for every CRR; a rearrangement of a single CRR moves the system to a neighbouring metabasin.
 
